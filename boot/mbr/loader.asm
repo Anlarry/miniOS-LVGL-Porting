@@ -239,6 +239,21 @@ _FOUND_KERNEL: ;modified by mingxuan 2020-9-16
 
 _NEXT_DATA_CLUSTER:
 	 ; 根据簇号计算扇区号
+	; xchg bx, bx
+; 	push ax
+; 	mov al, byte [read_cluster_times]
+; 	cmp al, 0feh
+; 	jb .skip
+; 	xchg bx,bx
+; .skip : 
+; 	inc byte [read_cluster_times]
+; 	mov byte [Col],0
+; 	mov byte [Row], 0
+; 	call MyDispAL
+; 	pop ax
+	
+
+
 	 DEC  EAX
 	 DEC  EAX  
 	 XOR  EBX,EBX
@@ -605,6 +620,49 @@ KillMotor:
 	pop	dx
 	ret
 ;----------------------------------------------------------------------------
+
+MyDispStr:
+    push bx
+    mov bx, sp
+    pusha
+    push es 
+
+    mov cx, 0
+    mov cx, [bx+6]
+    mov bp, [bx+4]
+    mov ax, ds
+    mov es, ax
+    mov ax, 01301h
+    mov bx, 0007h
+    mov dh, [Row]
+    mov dl, [Col]
+    int 10h
+    add byte [Col], cl
+
+    pop es
+    popa 
+    pop bx
+    ret 
+
+MyDispAL:
+	pusha
+    mov cx, 4
+    push ax
+    shr ax, cl
+    call MyDispNum
+    pop ax
+    call MyDispNum
+	popa
+    ret 
+
+MyDispNum:
+    and ax, 0fh
+    add ax, num
+    push 1
+    push ax
+    call MyDispStr
+    add sp, 4
+    ret
 
 ; 从此以后的代码在保护模式下执行 ----------------------------------------------------
 ; 32 位代码段. 由实模式跳入 ---------------------------------------------------------
@@ -1164,6 +1222,10 @@ ALIGN	32
 LABEL_DATA:
 ; 实模式下使用这些符号
 ; 字符串
+Col db 0
+Row db 0
+num db "0123456789ABCDEF" 
+read_cluster_times db 0
 _szMemChkTitle:			db	"BaseAddrL BaseAddrH LengthLow LengthHigh   Type", 0Ah, 0
 _szRAMSize:			db	"RAM size:", 0
 _szReturn:			db	0Ah, 0

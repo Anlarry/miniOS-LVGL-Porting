@@ -147,7 +147,6 @@ PRIVATE u32 exec_elfcpy(u32 fd,Elf32_Phdr Echo_Phdr,u32 attribute)  // 这部分
 PRIVATE u32 exec_load(u32 fd,const Elf32_Ehdr* Echo_Ehdr,const Elf32_Phdr Echo_Phdr[])
 {
 	u32 ph_num;
-	
 	if( 0==Echo_Ehdr->e_phnum )
 	{
 		disp_color_str("exec_load: elf ERROR!",0x74);
@@ -155,17 +154,21 @@ PRIVATE u32 exec_load(u32 fd,const Elf32_Ehdr* Echo_Ehdr,const Elf32_Phdr Echo_P
 	}
 
 	//我们还不能确定elf中一共能有几个program，但就目前我们查看过的elf文件中，只出现过两中program，一种.text（R-E）和一种.data（RW-）
+	int Flg_E = -1;
+	// ! Flg R  
 	for( ph_num=0; ph_num<Echo_Ehdr->e_phnum ; ph_num++ )
 	{
+		disp_int(Echo_Phdr[ph_num].p_flags);
 		if( 0==Echo_Phdr[ph_num].p_memsz )
 		{//最后一个program
 			break;
 		}
-		if( Echo_Phdr[ph_num].p_flags == 0x5 ) //101，只读
+		if( Echo_Phdr[ph_num].p_flags == 0x5 ) //101，只读+执行
 		{//.text
 			exec_elfcpy(fd,Echo_Phdr[ph_num],PG_P  | PG_USU | PG_RWR);//进程代码段
 			p_proc_current->task.memmap.text_lin_base = Echo_Phdr[ph_num].p_vaddr;	
 			p_proc_current->task.memmap.text_lin_limit = Echo_Phdr[ph_num].p_vaddr + Echo_Phdr[ph_num].p_memsz;
+			Flg_E = 0;
 		}
 		else if(Echo_Phdr[ph_num].p_flags == 0x6)//110，读写
 		{//.data
@@ -173,13 +176,19 @@ PRIVATE u32 exec_load(u32 fd,const Elf32_Ehdr* Echo_Ehdr,const Elf32_Phdr Echo_P
 			p_proc_current->task.memmap.data_lin_base = Echo_Phdr[ph_num].p_vaddr;
 			p_proc_current->task.memmap.data_lin_limit = Echo_Phdr[ph_num].p_vaddr + Echo_Phdr[ph_num].p_memsz;
 		}
-		else 
-		{
-			disp_color_str("exec_load: unKnown elf'program!",0x74);
-			return -1;
+		else if(Echo_Phdr[ph_num].p_flags == 0x4) // 只读
+		{// .rodata ...
+			// exec_elfcpy(fd,Echo_Phdr[ph_num],PG_P  | PG_USU | PG_RWW);//进程数据段
+			// p_proc_current->task.memmap.data_lin_base = Echo_Phdr[ph_num].p_vaddr;
+			// p_proc_current->task.memmap.data_lin_limit = Echo_Phdr[ph_num].p_vaddr + Echo_Phdr[ph_num].p_memsz;
+			// disp_color_str("exec_load: unKnown elf'program!",0x74);
+			// return -1;
+		}
+		else {
+			// disp_color_str("exec_load: unKnown elf'program!",0x74);
 		}
 	}
-	return 0;
+	return Flg_E;
 }
 
 

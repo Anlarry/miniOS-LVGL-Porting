@@ -44,21 +44,21 @@ AR		= ar
 ASMBFLAGS	= -I boot/floppy/include/	#added by mingxuan 2019-5-17
 ASMBFLAGS_grub  = -I boot/grub/include/ #added by mingxuan 2019-5-17
 ASMBFLAGS_mbr   = -I boot/mbr/include/	#added by mingxuan 2019-5-17
-ASMKFLAGS	= -I include/ -f elf
+ASMKFLAGS	= -I include/ -f elf32 -g
 DASMFLAGS	= -u -o $(ENTRYPOINT) -e $(ENTRYOFFSET)
 ARFLAGS		= rcs
 
 # CFLAGS		= -I include/ -c -fno-builtin -fno-stack-protector
 # CFLAGS		= -I include/ -m32 -c -fno-builtin -fno-stack-protector
 #modified by xw
-CFLAGS		= -O0 -I include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
-CFLAGS_app	= -O0 -I include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
+CFLAGS		= -I include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
+CFLAGS_app	= -I include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
 
 # LDFLAGS		= -s -Ttext $(ENTRYPOINT)
 # LDFLAGS		= -m elf_i386 -s -Ttext $(ENTRYPOINT)
 #generate map file. added by xw
-LDFLAGS_kernel	= -m elf_i386 -s -Ttext $(ENTRYPOINT) -Map misc/kernel.map
-LDFLAGS_init	= -m elf_i386 -s -Map init/init.map
+LDFLAGS_kernel	= -melf_i386 -s -Ttext $(ENTRYPOINT) -Map misc/kernel.map
+LDFLAGS_init	= -melf_i386 -s -Map init/init.map
 #discard -s, so keep symbol information that gdb can use. added by xw
 LDFLAGS_kernel_gdb	= -m elf_i386 -Ttext $(ENTRYPOINT)
 LDFLAGS_init_gdb	= -m elf_i386
@@ -458,3 +458,6 @@ kernel/shell.o: kernel/shell.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 include ./init/makefile	 #added by mingxuan 2019-5-19
+
+bochsgdb :
+	bochs-gdb -f bochsrc-gdb

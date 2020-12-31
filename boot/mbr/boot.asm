@@ -348,7 +348,6 @@ _CHECK_NEXT_ROOT_CLUSTER: ; 检查是否还有下一个簇
 	 JMP  _MISSING_LOADER
 
 _FOUND_LOADER:
-
 	;for test, added by mingxuan 2020-9-10
 	;call 	DispStr		; 
 	;JMP  	$ ;for test, added by mingxuan 2020-9-10

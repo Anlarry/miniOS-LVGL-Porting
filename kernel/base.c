@@ -280,6 +280,7 @@ STATE GetNextCluster(DWORD clusterIndex,PDWORD nextCluster)
 
 STATE ReadRecord(DWORD parentCluster,PCHAR name,PRecord record,PDWORD sectorIndex,PDWORD off_in_sector)
 {
+	// ! MAY NOT CORRECT 
 	CHAR temp[256]={0};
 	DWORD curSectorIndex=0,curClusterIndex=parentCluster,nextClusterIndex=0,off=0,size_of_Record;
 	BYTE *buf;
@@ -483,7 +484,7 @@ STATE FindSpaceInDir(DWORD parentClusterIndex,PCHAR name,PDWORD sectorIndex,PDWO
 			for(offset=0;offset<Bytes_Per_Sector;offset+=sizeof(Record))//目录项号循环
 			{
 				memcpy(&record,buf+offset,sizeof(Record));
-				if(record.filename[0]==0||record.filename[0]==(BYTE)0xE5)
+				if(record.filename[0]==0||record.filename[0]==(BYTE)0xE5) // E5文件已被删除
 				{
 					do
 					{
@@ -583,7 +584,7 @@ void CreateRecord(PCHAR filename,BYTE type,DWORD startCluster,DWORD size,PRecord
 	WORD time[2];
 	CHAR name[256]={0};
 	CHAR ext[256]={0};
-	if(type==(BYTE)0x08||type==(BYTE)0x10)
+	if(type==(BYTE)0x08||type==(BYTE)0x10) // 卷标 ，子目录
 	{
 		FormatDirNameAndExt(filename,name,ext);
 		precord->sysReserved=0x08;

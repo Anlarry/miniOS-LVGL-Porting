@@ -670,6 +670,7 @@ sched:
 ;renew process executing environment. Added by xw, 18/4/19
 renew_env:
 		call	switch_pde		;to change the global variable cr3_ready
+		mov eax, cr3
 		mov 	eax,[cr3_ready]	;to switch the page directory table
 		mov 	cr3,eax
 

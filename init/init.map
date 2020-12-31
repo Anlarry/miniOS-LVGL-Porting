@@ -11,9 +11,36 @@ lib/ulib.a(syscall.o)         init/init.o (malloc)
  .debug_aranges
                 0x0000000000000000       0x20 init/init.o
  .debug_line    0x0000000000000000      0x14e init/init.o
- .debug_str     0x0000000000000000      0x194 init/init.o
+ .debug_str     0x0000000000000000      0x164 init/init.o
  .note.GNU-stack
                 0x0000000000000000        0x0 init/init.o
+ .debug_aranges
+                0x0000000000000000       0x20 init/initstart.o
+ .debug_pubnames
+                0x0000000000000000        0x0 init/initstart.o
+ .debug_info    0x0000000000000000       0x44 init/initstart.o
+ .debug_abbrev  0x0000000000000000       0x1b init/initstart.o
+ .debug_line    0x0000000000000000       0x45 init/initstart.o
+ .debug_frame   0x0000000000000000        0x0 init/initstart.o
+ .debug_loc     0x0000000000000000        0x0 init/initstart.o
+ .debug_aranges
+                0x0000000000000000       0x20 lib/ulib.a(string.o)
+ .debug_pubnames
+                0x0000000000000000        0x0 lib/ulib.a(string.o)
+ .debug_info    0x0000000000000000       0x40 lib/ulib.a(string.o)
+ .debug_abbrev  0x0000000000000000       0x1b lib/ulib.a(string.o)
+ .debug_line    0x0000000000000000       0x80 lib/ulib.a(string.o)
+ .debug_frame   0x0000000000000000        0x0 lib/ulib.a(string.o)
+ .debug_loc     0x0000000000000000        0x0 lib/ulib.a(string.o)
+ .debug_aranges
+                0x0000000000000000       0x20 lib/ulib.a(syscall.o)
+ .debug_pubnames
+                0x0000000000000000        0x0 lib/ulib.a(syscall.o)
+ .debug_info    0x0000000000000000       0x44 lib/ulib.a(syscall.o)
+ .debug_abbrev  0x0000000000000000       0x1b lib/ulib.a(syscall.o)
+ .debug_line    0x0000000000000000       0xd2 lib/ulib.a(syscall.o)
+ .debug_frame   0x0000000000000000        0x0 lib/ulib.a(syscall.o)
+ .debug_loc     0x0000000000000000        0x0 lib/ulib.a(syscall.o)
 
 内存配置
 
@@ -93,7 +120,7 @@ LOAD lib/ulib.a
 .plt.sec
  *(.plt.sec)
 
-.text           0x0000000008049000      0x675
+.text           0x0000000008049000      0x680
  *(.text.unlikely .text.*_unlikely .text.unlikely.*)
  *(.text.exit .text.exit.*)
  *(.text.startup .text.startup.*)
@@ -118,35 +145,35 @@ LOAD lib/ulib.a
                 0x00000000080494da                strcpy
                 0x00000000080494f2                strlen
  *fill*         0x0000000008049508        0x8 
- .text          0x0000000008049510      0x165 lib/ulib.a(syscall.o)
+ .text          0x0000000008049510      0x170 lib/ulib.a(syscall.o)
                 0x0000000008049510                get_ticks
                 0x0000000008049518                get_pid
                 0x0000000008049520                kmalloc
                 0x000000000804952c                kmalloc_4k
                 0x0000000008049538                malloc
-                0x0000000008049544                malloc_4k
-                0x0000000008049550                free
-                0x000000000804955c                free_4k
-                0x0000000008049568                fork
-                0x0000000008049570                pthread
-                0x000000000804957c                udisp_int
-                0x0000000008049588                udisp_str
-                0x0000000008049594                exec
-                0x00000000080495a0                yield
-                0x00000000080495ac                sleep
-                0x00000000080495b8                print_E
-                0x00000000080495c4                print_F
-                0x00000000080495d0                open
-                0x00000000080495df                close
-                0x00000000080495ee                read
-                0x00000000080495fd                write
-                0x000000000804960c                lseek
-                0x000000000804961b                unlink
-                0x000000000804962a                create
-                0x0000000008049639                delete
-                0x0000000008049648                opendir
-                0x0000000008049657                createdir
-                0x0000000008049666                deletedir
+                0x0000000008049546                malloc_4k
+                0x0000000008049552                free
+                0x000000000804955e                free_4k
+                0x000000000804956a                fork
+                0x0000000008049572                pthread
+                0x0000000008049580                udisp_int
+                0x000000000804958c                udisp_str
+                0x0000000008049598                exec
+                0x00000000080495a4                yield
+                0x00000000080495b0                sleep
+                0x00000000080495bc                print_E
+                0x00000000080495ca                print_F
+                0x00000000080495d6                open
+                0x00000000080495ea                close
+                0x00000000080495f9                read
+                0x0000000008049608                write
+                0x0000000008049617                lseek
+                0x0000000008049626                unlink
+                0x0000000008049635                create
+                0x0000000008049644                delete
+                0x0000000008049653                opendir
+                0x0000000008049662                createdir
+                0x0000000008049671                deletedir
  *(.gnu.warning)
 
 .fini

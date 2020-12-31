@@ -1,20 +1,22 @@
 # INIT = init.bin
-INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthreadTest.bin forkTest.bin yieldTest.bin sleepTest.bin
+INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin forkTest.bin yieldTest.bin sleepTest.bin Hello.bin
 
 # you can add your elf in $(BIN) latter
 BIN = $(INIT)
+GDB_BIN = shell_0.gdb.bin
 TAR_NAME = app.tar
 HD = ../b.img
 
 ASM			= nasm
-ASMFLAGS	= -I ../include/ -f elf
+ASMFLAGS	= -I ../include/ -f elf32 
 AR 			= ar
 ARFLAGS		= rcs
 DASM		= objdump
 CC			= gcc
 LD			= ld
 CFLAGS		= -I ../include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
-LDFLAGS		= -m elf_i386 -s
+LDFLAGS		= -m elf_i386 -Tlds -s 
+LDFLAGS_DEBUG		= -m elf_i386 -Tlds 
 DASMFLAGS	= -D
 OBJSULIB 	= ../lib/ulib.a
 START_O 	= initstart.o
@@ -50,7 +52,7 @@ endif
 .PHONY : everything final clean_user realclean_user disasm all install $(OBJSULIB)
 
 # Default starting position
-everything : $(BIN)
+everything : $(BIN) $(GDB_BIN)
 
 all : realclean_user everything
 
@@ -87,6 +89,9 @@ shell_0.o: shell_0.c ../include/stdio.h
 shell_0.bin : shell_0.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS) -o $@ $^
 
+shell_0.gdb.bin : shell_0.o $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
+
 shell_1.o: shell_1.c ../include/stdio.h
 	$(CC) $(CFLAGS) -o $@ $<
 
@@ -106,10 +111,10 @@ execTest.o: execTest.c ../include/stdio.h
 execTest.bin : execTest.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS) -o $@ $^
 
-pthreadTest.o: pthreadTest.c ../include/stdio.h
+pthread.o: pthread.c ../include/stdio.h
 	$(CC) $(CFLAGS) -o $@ $<
 
-pthreadTest.bin : pthreadTest.o $(START_O) $(OBJSULIB)
+pthread.bin : pthread.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS) -o $@ $^
 
 forkTest.o: forkTest.c ../include/stdio.h
@@ -130,4 +135,5 @@ sleepTest.o: sleepTest.c ../include/stdio.h
 sleepTest.bin : sleepTest.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS) -o $@ $^
 
-
+Hello.bin : Hello.o $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS) -o $@ $^

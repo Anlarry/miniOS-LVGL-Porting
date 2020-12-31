@@ -547,6 +547,7 @@ PRIVATE int do_open(MESSAGE *fs_msg)
 		}
 	}
 	if ((fd < 0) || (fd >= NR_FILES)) {
+		return -1 ; // ! otherwise potential bug 
 		// panic("filp[] is full (PID:%d)", proc2pid(p_proc_current));
 		disp_str("filp[] is full (PID:");
 		disp_int(proc2pid(p_proc_current));
@@ -607,7 +608,7 @@ PRIVATE int do_open(MESSAGE *fs_msg)
 
 	if (pin) {
 		/* connects proc with file_descriptor */
-		p_proc_current->task.filp[fd] = &f_desc_table[i];
+		p_proc_current->task.filp[fd] = &f_desc_table[i]; // * WARNING  : overwrite cr3 if fd = -1 
 		
 		f_desc_table[i].flag = 1;	//added by mingxuan 2019-5-17
 

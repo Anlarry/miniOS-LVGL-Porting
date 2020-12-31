@@ -112,9 +112,11 @@ kmalloc_4k:
 ;                              malloc		//add by visual 2016.4.7
 ; ====================================================================
 malloc:
-	mov ebx,[esp+4] ; 将C函数调用时传来的参数放到ebx里!!111
+	push ebx
+	mov ebx,[esp+8] ; 将C函数调用时传来的参数放到ebx里!!111
 	mov	eax, _NR_malloc
 	int	INT_VECTOR_SYS_CALL
+	pop ebx
 	ret
 	
 ; ====================================================================
@@ -157,9 +159,11 @@ fork:
 ;                              pthread		//add by visual 2016.4.11
 ; ====================================================================
 pthread:
-	mov ebx,[esp+4] ; 将C函数调用时传来的参数放到ebx里!!说明:含有一个参数时,一定要这句,不含参数时,可以要这句,也可以不要这句,并不影响结果
+	push ebx
+	mov ebx,[esp+8] ; 将C函数调用时传来的参数放到ebx里!!说明:含有一个参数时,一定要这句,不含参数时,可以要这句,也可以不要这句,并不影响结果
 	mov	eax, _NR_pthread
 	int	INT_VECTOR_SYS_CALL
+	pop ebx
 	ret
 	
 ; ====================================================================
@@ -211,9 +215,11 @@ sleep:
 ;                              print_E	//added by xw
 ; ====================================================================	
 print_E:
-	mov ebx,[esp+4]
+	push ebx
+	mov ebx,[esp+8]
 	mov	eax, _NR_print_E
 	int	INT_VECTOR_SYS_CALL
+	pop ebx
 	ret
 
 ; ====================================================================
@@ -232,11 +238,14 @@ print_F:
 ; and ebx will be passed into kernel as usual. In kernel, we use the saved
 ; esp in user space to get the number of parameters and the values of them.
 open:
+	push ebx
 	push 2			;the number of parameters
 	mov ebx, esp
+	add ebx, 4
 	mov	eax, _NR_open
 	int	INT_VECTOR_SYS_CALL
 	add esp, 4
+	pop ebx
 	ret
 	
 ; ====================================================================

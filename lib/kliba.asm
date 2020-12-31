@@ -90,6 +90,7 @@ disp_color_str:
 	cmp	al, 0Ah	; 是回车吗?
 	jnz	.3
 	push	eax
+	push ebx
 	mov	eax, edi
 	mov	bl, 160
 	div	bl
@@ -98,6 +99,7 @@ disp_color_str:
 	mov	bl, 160
 	mul	bl
 	mov	edi, eax
+	pop ebx
 	pop	eax
 	jmp	.1
 .3:

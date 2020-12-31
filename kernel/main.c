@@ -53,6 +53,7 @@ PUBLIC int kernel_main()
 	k_reenter = 0;	//record nest level of only interruption! it's different from Orange's.
 					//usage modified by xw
 	ticks = 0;		//initialize system-wide ticks
+	disp_int(&proc_table[4].task.filp[0]);
 	p_proc_current = cpu_table;
 
 	/************************************************************************
@@ -462,6 +463,12 @@ PRIVATE int initialize_processes()
 	 * added by xw, 18/4/19
 	 */
 	proc_table[0].task.ticks = 2;
+
+	for(int i = 0; i < NR_PCBS; i++) {
+		for(int j = 0; j < NR_FILES; j++) {
+			proc_table[i].task.filp[j] = 0;
+		}
+	}
 	
 	return 0;
 }
