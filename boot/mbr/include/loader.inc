@@ -46,7 +46,7 @@ OffsetOfLoader		equ	  0100h	; LOADER.BIN 被加载到的位置 ---- 偏移地址
 
 BaseOfLoaderPhyAddr	equ	BaseOfLoader * 10h	; LOADER.BIN 被加载到的位置 ---- 物理地址 (= BaseOfLoader * 10h)
 
-BaseOfKernelFile	equ	 07000h	; KERNEL.BIN 被加载到的位置 ----  段地址
+BaseOfKernelFile	equ	 02000h	; KERNEL.BIN 被加载到的位置 ----  段地址
 OffsetOfKernelFile	equ	     0h	; KERNEL.BIN 被加载到的位置 ---- 偏移地址
 
 BaseOfKernelFilePhyAddr	equ	BaseOfKernelFile * 10h
@@ -56,7 +56,7 @@ OffsetOfEchoFile	equ	     0h	; KERNEL.BIN 被加载到的位置 ---- 偏移地�
 
 BaseOfEchoFilePhyAddr	equ	BaseOfKernelFile * 10h
 
-KernelEntryPointPhyAddr	equ	0xC0030400	; 注意：1、必须与 MAKEFILE 中参数 -Ttext 的值相等!!
+KernelEntryPointPhyAddr	equ	0xC0020400	; 注意：1、必须与 MAKEFILE 中参数 -Ttext 的值相等!!
 						;       2、这是个地址而非仅仅是个偏移
 
 PageDirBase		equ	200000h	; 页目录开始地址:		2M

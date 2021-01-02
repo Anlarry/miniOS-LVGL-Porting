@@ -5,7 +5,7 @@
 # Entry point of Orange'S
 # It must have the same value with 'KernelEntryPointPhyAddr' in load.inc!
 #############edit by visual 2016.5.10####
-ENTRYPOINT	= 0xC0030400
+ENTRYPOINT	= 0xC0020400
 
 # Offset of entry point in kernel file
 # It depends on ENTRYPOINT
@@ -36,12 +36,12 @@ FAT32_FS_START_OFFSET = 27263488
 # Programs, flags, etc.
 ASM		= nasm
 DASM	= ndisasm
-CC		= gcc
+CC		= gcc-7
 LD		= ld
 AR		= ar
 
 # ASMBFLAGS	= -I boot/include/	#deleted by mingxuan 2019-5-17
-ASMBFLAGS	= -I boot/floppy/include/	#added by mingxuan 2019-5-17
+ASMBFLAGS	= -I boot/floppy/include/ 	#added by mingxuan 2019-5-17
 ASMBFLAGS_grub  = -I boot/grub/include/ #added by mingxuan 2019-5-17
 ASMBFLAGS_mbr   = -I boot/mbr/include/	#added by mingxuan 2019-5-17
 ASMKFLAGS	= -I include/ -f elf32 -g
@@ -51,8 +51,8 @@ ARFLAGS		= rcs
 # CFLAGS		= -I include/ -c -fno-builtin -fno-stack-protector
 # CFLAGS		= -I include/ -m32 -c -fno-builtin -fno-stack-protector
 #modified by xw
-CFLAGS		= -I include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
-CFLAGS_app	= -I include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
+CFLAGS		= -std=gnu99 -I include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
+CFLAGS_app	= -std=gnu99 -I include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
 
 # LDFLAGS		= -s -Ttext $(ENTRYPOINT)
 # LDFLAGS		= -m elf_i386 -s -Ttext $(ENTRYPOINT)
@@ -62,6 +62,10 @@ LDFLAGS_init	= -melf_i386 -s -Map init/init.map
 #discard -s, so keep symbol information that gdb can use. added by xw
 LDFLAGS_kernel_gdb	= -m elf_i386 -Ttext $(ENTRYPOINT)
 LDFLAGS_init_gdb	= -m elf_i386
+
+
+LIB_GUI := ./kernel/gui/libgui.a
+LIB_LVGL := include/gui/lvgl/liblvgl.a
 
 # This Program
 # ORANGESBOOT	= boot/boot.bin boot/loader.bin	#deleted by mingxuan 2019-5-17
@@ -76,7 +80,10 @@ OBJS		= kernel/kernel.o kernel/syscall.o kernel/start.o kernel/main.o kernel/clo
 			kernel/elf.o kernel/file.o kernel/exec.o kernel/fork.o kernel/pthread.o \
 			kernel/ktest.o kernel/testfunc.o kernel/fs.o kernel/hd.o \
 			kernel/spinlock.o kernel/fat32.o kernel/base.o kernel/assist.o kernel/vfs.o \
-			kernel/keyboard.o kernel/tty.o kernel/shell.o kernel/console.o lib/ulib.a #added by mingxuan 2019-5-19
+			kernel/keyboard.o kernel/tty.o kernel/shell.o kernel/console.o lib/ulib.a \
+			$(LIB_GUI) $(LIB_LVGL)
+			#added by mingxuan 2019-5-19
+
 OBJSINIT	= init/init.o init/initstart.o lib/ulib.a
 #OBJSULIB 	= lib/string.o kernel/syscall.o	#deleted by mingxuan 2019-5-19
 OBJSULIB 	= lib/string.o kernel/syscall.o lib/printf.o lib/vsprintf.o lib/scanf.o #added by mingxuan 2019-5-19
@@ -85,6 +92,7 @@ DASMOUTPUT	= kernel.bin.asm
 GDBBIN = kernel.gdb.bin init/init.gdb.bin
 # added by mingxuan 2020-10-22
 MKFS = fs_flags/orange_flag.bin fs_flags/fat32_flag.bin
+
 
 # All Phony Targets
 # .PHONY : everything final image clean realclean disasm all buildimg tags 	#deleted by mingxuan 2019-5-19
@@ -260,7 +268,7 @@ boot/mbr/boot.bin : boot/mbr/boot.asm
 boot/mbr/loader.bin : boot/mbr/loader.asm boot/mbr/include/loader.inc boot/mbr/include/fat32.inc boot/mbr/include/pm.inc
 	$(ASM) $(ASMBFLAGS_mbr) -o $@ $<
 
-$(ORANGESKERNEL) : $(OBJS)
+$(ORANGESKERNEL) : $(OBJS) 
 #	$(LD) $(LDFLAGS) -o $(ORANGESKERNEL) $(OBJS)
 #modified by xw, 18/6/10
 #	$(LD) $(LDFLAGS) -Map kernel.map -o $(ORANGESKERNEL) $(OBJS)
@@ -461,3 +469,9 @@ include ./init/makefile	 #added by mingxuan 2019-5-19
 
 bochsgdb :
 	bochs-gdb -f bochsrc-gdb
+
+$(LIB_GUI) :
+	cd ./kernel/gui && make 
+
+$(LIB_LVGL) :
+	cd include/gui/lvgl && make

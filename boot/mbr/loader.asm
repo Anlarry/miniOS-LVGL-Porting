@@ -533,7 +533,7 @@ EXE_RUN_LOADER:
 
 ;;add end add by liang 2016.04.20	
 ; 下面准备跳入保护模式 -------------------------------------------
-	
+	call InitVGA
 	;for test
 	;added by mingxuan 2020-9-11
 	;mov		dh, 1
@@ -663,6 +663,18 @@ MyDispNum:
     call MyDispStr
     add sp, 4
     ret
+
+InitVGA : 
+	mov ax, 0x4F02
+	mov bx, 0x4111
+    ; mov ah, 0
+    ; mov al, 13h
+    int 10h
+    mov byte [VMODE], 8
+    mov word [SCRNX], 320
+    mov word [SCRNY], 200
+    mov word [VRAM], 0a0000h
+    ret 
 
 ; 从此以后的代码在保护模式下执行 ----------------------------------------------------
 ; 32 位代码段. 由实模式跳入 ---------------------------------------------------------
@@ -1225,6 +1237,10 @@ LABEL_DATA:
 Col db 0
 Row db 0
 num db "0123456789ABCDEF" 
+VMODE db 0
+SCRNX dw 0
+SCRNY dw 0
+VRAM  dd 0
 read_cluster_times db 0
 _szMemChkTitle:			db	"BaseAddrL BaseAddrH LengthLow LengthHigh   Type", 0Ah, 0
 _szRAMSize:			db	"RAM size:", 0

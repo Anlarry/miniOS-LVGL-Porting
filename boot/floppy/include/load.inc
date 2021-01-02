@@ -23,7 +23,7 @@ BaseOfKernelFilePhyAddr	equ	BaseOfKernelFile * 10h
 BaseOfEchoFilePhyAddr	equ	BaseOfKernelFile * 10h
 
 
-KernelEntryPointPhyAddr	equ	0C0030400h	; 注意：1、必须与 MAKEFILE 中参数 -Ttext 的值相等!! edit by visual 2016.5.10
+KernelEntryPointPhyAddr	equ	0C0020400h	; 注意：1、必须与 MAKEFILE 中参数 -Ttext 的值相等!! edit by visual 2016.5.10
 										;       2、这是个地址而非仅仅是个偏移，如果 -Ttext 的值为 0x400400，则它的值也应该是 0x400400。
 
 PageDirBase		equ	200000h	; 页目录开始地址:		2M

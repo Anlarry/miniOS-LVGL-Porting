@@ -16,6 +16,8 @@
 #include "hd.h"
 #include "fs.h"
 
+#include <gui/gui.h>
+
 PRIVATE int initialize_processes();	//added by xw, 18/5/26
 PRIVATE int initialize_cpus();		//added by xw, 18/6/2
 
@@ -39,6 +41,8 @@ PUBLIC int kernel_main()
 	kernel_initial = 1;	//kernel is in initial state. added by xw, 18/5/31
 	
 	init();//内存管理模块的初始化  add by liang 
+
+	InitScreen();
 	
 	//initialize PCBs, added by xw, 18/5/26
 	error = initialize_processes();

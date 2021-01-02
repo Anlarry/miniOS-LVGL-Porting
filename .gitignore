@@ -3,10 +3,13 @@
 
 # ignore all files in the ** directory
 /.vscode/*
+/.idea/*
 /tmp/*
 
 # ignore *.bin
 *.bin
+
+*.o
 
 # ignore hard disk image
 80m.img
@@ -27,3 +30,19 @@ bochsrc-gdb
 *.map
 
 gdb.cfg
+
+/include/gui/lvgl/.github/*
+/include/gui/lvgl/docs/*
+/include/gui/lvgl/examples/*
+/include/gui/lvgl/scripts/*
+/include/gui/lvgl/tests/*
+
+/include/gui/lvgl/*.md
+/include/gui/lvgl/*.mk
+/include/gui/lvgl/.*
+/include/gui/lvgl/Kconfig
+/include/gui/lvgl/*.json
+/include/gui/lvgl/Makefile
+include/gui/lvgl/library.properties
+/include/gui/lvgl/LICENCE.txt
+
