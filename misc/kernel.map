@@ -6,12 +6,14 @@ lib/ulib.a(vsprintf.o)        lib/ulib.a(printf.o) (vsprintf)
                               kernel/main.o (InitScreen)
 ./kernel/gui/libgui.a(plot.o)
                               ./kernel/gui/libgui.a(ginit.o) (PlotPixel)
+include/gui/lvgl/liblvgl.a(lv_disp.o)
+                              ./kernel/gui/libgui.a(ginit.o) (lv_disp_get_scr_act)
 include/gui/lvgl/liblvgl.a(lv_obj.o)
-                              ./kernel/gui/libgui.a(ginit.o) (lv_init)
+                              include/gui/lvgl/liblvgl.a(lv_disp.o) (_lv_obj_set_style_local_opa)
 include/gui/lvgl/liblvgl.a(lv_refr.o)
                               include/gui/lvgl/liblvgl.a(lv_obj.o) (_lv_refr_init)
 include/gui/lvgl/liblvgl.a(lv_style.o)
-                              include/gui/lvgl/liblvgl.a(lv_obj.o) (lv_style_remove_prop)
+                              include/gui/lvgl/liblvgl.a(lv_disp.o) (lv_style_remove_prop)
 include/gui/lvgl/liblvgl.a(lv_draw_img.o)
                               include/gui/lvgl/liblvgl.a(lv_obj.o) (lv_draw_img_dsc_init)
 include/gui/lvgl/liblvgl.a(lv_draw_label.o)
@@ -43,7 +45,7 @@ include/gui/lvgl/liblvgl.a(lv_hal_tick.o)
 include/gui/lvgl/liblvgl.a(lv_anim.o)
                               include/gui/lvgl/liblvgl.a(lv_obj.o) (lv_anim_path_def)
 include/gui/lvgl/liblvgl.a(lv_area.o)
-                              include/gui/lvgl/liblvgl.a(lv_refr.o) (lv_area_set)
+                              include/gui/lvgl/liblvgl.a(lv_disp.o) (lv_area_set)
 include/gui/lvgl/liblvgl.a(lv_async.o)
                               include/gui/lvgl/liblvgl.a(lv_obj.o) (lv_async_call)
 include/gui/lvgl/liblvgl.a(lv_debug.o)
@@ -68,8 +70,14 @@ include/gui/lvgl/liblvgl.a(lv_theme.o)
                               include/gui/lvgl/liblvgl.a(lv_obj.o) (lv_theme_set_act)
 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
                               include/gui/lvgl/liblvgl.a(lv_obj.o) (lv_theme_material_init)
-include/gui/lvgl/liblvgl.a(lv_disp.o)
-                              include/gui/lvgl/liblvgl.a(lv_obj.o) (lv_disp_get_scr_act)
+include/gui/lvgl/liblvgl.a(lv_bar.o)
+                              ./kernel/gui/libgui.a(ginit.o) (lv_bar_set_value)
+include/gui/lvgl/liblvgl.a(lv_btn.o)
+                              ./kernel/gui/libgui.a(ginit.o) (lv_btn_create)
+include/gui/lvgl/liblvgl.a(lv_cont.o)
+                              include/gui/lvgl/liblvgl.a(lv_btn.o) (lv_cont_create)
+include/gui/lvgl/liblvgl.a(lv_label.o)
+                              ./kernel/gui/libgui.a(ginit.o) (lv_label_create)
 include/gui/lvgl/liblvgl.a(lv_group.o)
                               include/gui/lvgl/liblvgl.a(lv_obj.o) (_lv_group_init)
 include/gui/lvgl/liblvgl.a(lv_indev.o)
@@ -130,12 +138,12 @@ cr2_save            0x4               kernel/pagetbl.o
  .debug_frame   0x0000000000000000        0x0 kernel/syscall.o
  .debug_loc     0x0000000000000000        0x0 kernel/syscall.o
  .group         0x0000000000000000        0x8 kernel/start.o
- .debug_info    0x0000000000000000      0xae8 kernel/start.o
+ .debug_info    0x0000000000000000      0xb0b kernel/start.o
  .debug_abbrev  0x0000000000000000      0x192 kernel/start.o
  .debug_aranges
                 0x0000000000000000       0x20 kernel/start.o
  .debug_line    0x0000000000000000       0xa6 kernel/start.o
- .debug_str     0x0000000000000000      0x6d6 kernel/start.o
+ .debug_str     0x0000000000000000      0x715 kernel/start.o
  .note.GNU-stack
                 0x0000000000000000        0x0 kernel/start.o
  .group         0x0000000000000000        0x8 kernel/main.o
@@ -588,12 +596,12 @@ cr2_save            0x4               kernel/pagetbl.o
                 0x0000000000000000        0x4 ./kernel/gui/libgui.a(ginit.o)
  .text.__x86.get_pc_thunk.bx
                 0x0000000000000000        0x4 ./kernel/gui/libgui.a(ginit.o)
- .debug_info    0x0000000000000000      0x531 ./kernel/gui/libgui.a(ginit.o)
- .debug_abbrev  0x0000000000000000      0x195 ./kernel/gui/libgui.a(ginit.o)
+ .debug_info    0x0000000000000000      0xb24 ./kernel/gui/libgui.a(ginit.o)
+ .debug_abbrev  0x0000000000000000      0x1d6 ./kernel/gui/libgui.a(ginit.o)
  .debug_aranges
                 0x0000000000000000       0x20 ./kernel/gui/libgui.a(ginit.o)
- .debug_line    0x0000000000000000      0x1b9 ./kernel/gui/libgui.a(ginit.o)
- .debug_str     0x0000000000000000      0x323 ./kernel/gui/libgui.a(ginit.o)
+ .debug_line    0x0000000000000000      0x366 ./kernel/gui/libgui.a(ginit.o)
+ .debug_str     0x0000000000000000      0x755 ./kernel/gui/libgui.a(ginit.o)
  .note.GNU-stack
                 0x0000000000000000        0x0 ./kernel/gui/libgui.a(ginit.o)
  .group         0x0000000000000000        0x8 ./kernel/gui/libgui.a(plot.o)
@@ -607,6 +615,20 @@ cr2_save            0x4               kernel/pagetbl.o
  .debug_str     0x0000000000000000       0xfc ./kernel/gui/libgui.a(plot.o)
  .note.GNU-stack
                 0x0000000000000000        0x0 ./kernel/gui/libgui.a(plot.o)
+ .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .debug_info    0x0000000000000000     0x1860 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .debug_abbrev  0x0000000000000000      0x2ff include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .debug_aranges
+                0x0000000000000000       0x20 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .debug_line    0x0000000000000000      0x6f5 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .debug_str     0x0000000000000000     0x18df include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 include/gui/lvgl/liblvgl.a(lv_disp.o)
  .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_obj.o)
  .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_obj.o)
  .text.__x86.get_pc_thunk.ax
@@ -618,7 +640,7 @@ cr2_save            0x4               kernel/pagetbl.o
  .debug_aranges
                 0x0000000000000000       0x20 include/gui/lvgl/liblvgl.a(lv_obj.o)
  .debug_ranges  0x0000000000000000      0x168 include/gui/lvgl/liblvgl.a(lv_obj.o)
- .debug_line    0x0000000000000000     0x22ba include/gui/lvgl/liblvgl.a(lv_obj.o)
+ .debug_line    0x0000000000000000     0x22bc include/gui/lvgl/liblvgl.a(lv_obj.o)
  .debug_str     0x0000000000000000     0x4d39 include/gui/lvgl/liblvgl.a(lv_obj.o)
  .note.GNU-stack
                 0x0000000000000000        0x0 include/gui/lvgl/liblvgl.a(lv_obj.o)
@@ -797,12 +819,15 @@ cr2_save            0x4               kernel/pagetbl.o
  .debug_str     0x0000000000000000      0xec1 include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
  .note.GNU-stack
                 0x0000000000000000        0x0 include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
- .debug_info    0x0000000000000000      0xaa1 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
- .debug_abbrev  0x0000000000000000      0x155 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+ .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+ .debug_info    0x0000000000000000      0xabb include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+ .debug_abbrev  0x0000000000000000      0x16f include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
  .debug_aranges
-                0x0000000000000000       0x18 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
- .debug_line    0x0000000000000000      0x645 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
- .debug_str     0x0000000000000000      0xc8f include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+                0x0000000000000000       0x20 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+ .debug_line    0x0000000000000000      0x669 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+ .debug_str     0x0000000000000000      0xca7 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
  .note.GNU-stack
                 0x0000000000000000        0x0 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
  .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_hal_disp.o)
@@ -982,13 +1007,13 @@ cr2_save            0x4               kernel/pagetbl.o
                 0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_txt.o)
  .text.__x86.get_pc_thunk.bx
                 0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_txt.o)
- .debug_info    0x0000000000000000      0xf61 include/gui/lvgl/liblvgl.a(lv_txt.o)
- .debug_abbrev  0x0000000000000000      0x2a7 include/gui/lvgl/liblvgl.a(lv_txt.o)
+ .debug_info    0x0000000000000000      0xf72 include/gui/lvgl/liblvgl.a(lv_txt.o)
+ .debug_abbrev  0x0000000000000000      0x2bd include/gui/lvgl/liblvgl.a(lv_txt.o)
  .debug_aranges
                 0x0000000000000000       0x20 include/gui/lvgl/liblvgl.a(lv_txt.o)
  .debug_ranges  0x0000000000000000       0x30 include/gui/lvgl/liblvgl.a(lv_txt.o)
- .debug_line    0x0000000000000000      0x6e7 include/gui/lvgl/liblvgl.a(lv_txt.o)
- .debug_str     0x0000000000000000      0x9c5 include/gui/lvgl/liblvgl.a(lv_txt.o)
+ .debug_line    0x0000000000000000      0x6f5 include/gui/lvgl/liblvgl.a(lv_txt.o)
+ .debug_str     0x0000000000000000      0x9cd include/gui/lvgl/liblvgl.a(lv_txt.o)
  .note.GNU-stack
                 0x0000000000000000        0x0 include/gui/lvgl/liblvgl.a(lv_txt.o)
  .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_utils.o)
@@ -1030,20 +1055,64 @@ cr2_save            0x4               kernel/pagetbl.o
  .debug_str     0x0000000000000000     0x3030 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
  .note.GNU-stack
                 0x0000000000000000        0x0 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
- .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_disp.o)
- .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_bar.o)
+ .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_bar.o)
  .text.__x86.get_pc_thunk.ax
-                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_disp.o)
+                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_bar.o)
  .text.__x86.get_pc_thunk.bx
-                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_disp.o)
- .debug_info    0x0000000000000000     0x1860 include/gui/lvgl/liblvgl.a(lv_disp.o)
- .debug_abbrev  0x0000000000000000      0x2ff include/gui/lvgl/liblvgl.a(lv_disp.o)
+                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_bar.o)
+ .debug_info    0x0000000000000000     0x2464 include/gui/lvgl/liblvgl.a(lv_bar.o)
+ .debug_abbrev  0x0000000000000000      0x336 include/gui/lvgl/liblvgl.a(lv_bar.o)
  .debug_aranges
-                0x0000000000000000       0x20 include/gui/lvgl/liblvgl.a(lv_disp.o)
- .debug_line    0x0000000000000000      0x6f5 include/gui/lvgl/liblvgl.a(lv_disp.o)
- .debug_str     0x0000000000000000     0x18df include/gui/lvgl/liblvgl.a(lv_disp.o)
+                0x0000000000000000       0x20 include/gui/lvgl/liblvgl.a(lv_bar.o)
+ .debug_line    0x0000000000000000      0xb85 include/gui/lvgl/liblvgl.a(lv_bar.o)
+ .debug_str     0x0000000000000000     0x2417 include/gui/lvgl/liblvgl.a(lv_bar.o)
  .note.GNU-stack
-                0x0000000000000000        0x0 include/gui/lvgl/liblvgl.a(lv_disp.o)
+                0x0000000000000000        0x0 include/gui/lvgl/liblvgl.a(lv_bar.o)
+ .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .debug_info    0x0000000000000000     0x12b8 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .debug_abbrev  0x0000000000000000      0x242 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .debug_aranges
+                0x0000000000000000       0x20 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .debug_line    0x0000000000000000      0x8b5 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .debug_str     0x0000000000000000     0x157d include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .debug_info    0x0000000000000000     0x1cf1 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .debug_abbrev  0x0000000000000000      0x2b0 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .debug_aranges
+                0x0000000000000000       0x20 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .debug_ranges  0x0000000000000000       0x30 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .debug_line    0x0000000000000000      0xc4a include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .debug_str     0x0000000000000000     0x1ff3 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .debug_info    0x0000000000000000     0x2c15 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .debug_abbrev  0x0000000000000000      0x385 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .debug_aranges
+                0x0000000000000000       0x20 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .debug_ranges  0x0000000000000000       0x30 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .debug_line    0x0000000000000000      0xfb1 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .debug_str     0x0000000000000000     0x24ca include/gui/lvgl/liblvgl.a(lv_label.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 include/gui/lvgl/liblvgl.a(lv_label.o)
  .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_group.o)
  .group         0x0000000000000000        0x8 include/gui/lvgl/liblvgl.a(lv_group.o)
  .text.__x86.get_pc_thunk.ax
@@ -1131,6 +1200,7 @@ cr2_save            0x4               kernel/pagetbl.o
 链结器命令稿和内存映射
 
 节 .text 的地址设置到 0xc0020400
+节 .bss 的地址设置到 0xc0100000
 LOAD kernel/kernel.o
 LOAD kernel/syscall.o
 LOAD kernel/start.o
@@ -1169,7 +1239,7 @@ LOAD lib/ulib.a
 LOAD ./kernel/gui/libgui.a
 LOAD include/gui/lvgl/liblvgl.a
                 [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x8048000))
-                0x00000000080480f4                . = (SEGMENT_START ("text-segment", 0x8048000) + SIZEOF_HEADERS)
+                0x0000000008048114                . = (SEGMENT_START ("text-segment", 0x8048000) + SIZEOF_HEADERS)
 
 .interp
  *(.interp)
@@ -1198,10 +1268,10 @@ LOAD include/gui/lvgl/liblvgl.a
 .gnu.version_r
  *(.gnu.version_r)
 
-.rel.dyn        0x00000000080480f4        0x0
+.rel.dyn        0x0000000008048114        0x0
  *(.rel.init)
  *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
- .rel.text      0x00000000080480f4        0x0 kernel/kernel.o
+ .rel.text      0x0000000008048114        0x0 kernel/kernel.o
  *(.rel.fini)
  *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
  *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
@@ -1211,15 +1281,15 @@ LOAD include/gui/lvgl/liblvgl.a
  *(.rel.ctors)
  *(.rel.dtors)
  *(.rel.got)
- .rel.got       0x00000000080480f4        0x0 kernel/kernel.o
+ .rel.got       0x0000000008048114        0x0 kernel/kernel.o
  *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
  *(.rel.ifunc)
 
-.rel.plt        0x00000000080480f4        0x0
+.rel.plt        0x0000000008048114        0x0
  *(.rel.plt)
                 [!provide]                        PROVIDE (__rel_iplt_start = .)
  *(.rel.iplt)
- .rel.iplt      0x00000000080480f4        0x0 kernel/kernel.o
+ .rel.iplt      0x0000000008048114        0x0 kernel/kernel.o
                 [!provide]                        PROVIDE (__rel_iplt_end = .)
                 0x0000000008049000                . = ALIGN (CONSTANT (MAXPAGESIZE))
 
@@ -1237,7 +1307,7 @@ LOAD include/gui/lvgl/liblvgl.a
 .plt.sec
  *(.plt.sec)
 
-.text           0x00000000c0020400    0x4a183
+.text           0x00000000c0020400    0x51bfd
  *(.text.unlikely .text.*_unlikely .text.unlikely.*)
  *(.text.exit .text.exit.*)
  *(.text.startup .text.startup.*)
@@ -1586,507 +1656,563 @@ LOAD include/gui/lvgl/liblvgl.a
                 0x00000000c0032322                strtoul
                 0x00000000c0032499                strtol
                 0x00000000c00324dc                atoi
- .text          0x00000000c00324fa      0x12f ./kernel/gui/libgui.a(ginit.o)
-                0x00000000c0032568                InitScreen
- .text          0x00000000c0032629       0x82 ./kernel/gui/libgui.a(plot.o)
-                0x00000000c0032652                PlotPixel
- .text          0x00000000c00326ab     0xb10e include/gui/lvgl/liblvgl.a(lv_obj.o)
-                0x00000000c0033c0c                lv_init
-                0x00000000c0033d2f                lv_deinit
-                0x00000000c0033d65                lv_obj_create
-                0x00000000c0034520                lv_obj_del
-                0x00000000c0034605                lv_obj_del_anim_ready_cb
-                0x00000000c0034629                lv_obj_del_async
-                0x00000000c0034689                lv_obj_clean
-                0x00000000c0034710                lv_obj_invalidate_area
-                0x00000000c00347a8                lv_obj_invalidate
-                0x00000000c003486a                lv_obj_area_is_visible
-                0x00000000c0034a13                lv_obj_is_visible
-                0x00000000c0034ad4                lv_obj_set_parent
-                0x00000000c0034ca4                lv_obj_move_foreground
-                0x00000000c0034d66                lv_obj_move_background
-                0x00000000c0034e28                lv_obj_set_pos
-                0x00000000c0034fd0                lv_obj_set_x
-                0x00000000c0035047                lv_obj_set_y
-                0x00000000c00350bc                lv_obj_set_size
-                0x00000000c0035284                lv_obj_set_width
-                0x00000000c00352fb                lv_obj_set_height
-                0x00000000c0035370                lv_obj_set_width_fit
-                0x00000000c00353d4                lv_obj_set_height_fit
-                0x00000000c0035438                lv_obj_set_width_margin
-                0x00000000c003549c                lv_obj_set_height_margin
-                0x00000000c0035500                lv_obj_align
-                0x00000000c0035603                lv_obj_align_x
-                0x00000000c00356c6                lv_obj_align_y
-                0x00000000c0035789                lv_obj_align_mid
-                0x00000000c003588c                lv_obj_align_mid_x
-                0x00000000c003594f                lv_obj_align_mid_y
-                0x00000000c0035a12                lv_obj_realign
-                0x00000000c0035ad9                lv_obj_set_auto_realign
-                0x00000000c0035b42                lv_obj_set_ext_click_area
-                0x00000000c0035bd6                lv_obj_add_style
-                0x00000000c0035c5b                lv_obj_remove_style
-                0x00000000c0035ce0                lv_obj_clean_style_list
-                0x00000000c0035d41                lv_obj_reset_style_list
-                0x00000000c0035d85                _lv_obj_set_style_local_int
-                0x00000000c0035e15                _lv_obj_set_style_local_color
-                0x00000000c0035e9c                _lv_obj_set_style_local_opa
-                0x00000000c0035f2b                _lv_obj_set_style_local_ptr
-                0x00000000c0035fb2                lv_obj_remove_style_local_prop
-                0x00000000c003603f                lv_obj_refresh_style
-                0x00000000c00361e4                lv_obj_report_style_mod
-                0x00000000c003626b                _lv_obj_disable_style_caching
-                0x00000000c0036328                lv_obj_set_hidden
-                0x00000000c003640c                lv_obj_set_adv_hittest
-                0x00000000c0036488                lv_obj_set_click
-                0x00000000c00364f1                lv_obj_set_top
-                0x00000000c003655d                lv_obj_set_drag
-                0x00000000c00365dd                lv_obj_set_drag_dir
-                0x00000000c003666e                lv_obj_set_drag_throw
-                0x00000000c00366dc                lv_obj_set_drag_parent
-                0x00000000c003674a                lv_obj_set_gesture_parent
-                0x00000000c003677b                lv_obj_set_focus_parent
-                0x00000000c003683b                lv_obj_set_parent_event
-                0x00000000c00368a7                lv_obj_set_base_dir
-                0x00000000c003691a                lv_obj_add_protect
-                0x00000000c003697d                lv_obj_clear_protect
-                0x00000000c00369e3                lv_obj_set_state
-                0x00000000c0036e3d                lv_obj_add_state
-                0x00000000c0036eba                lv_obj_clear_state
-                0x00000000c0036f3e                lv_obj_finish_transitions
-                0x00000000c0036fd7                lv_obj_set_event_cb
-                0x00000000c003702b                lv_event_send
-                0x00000000c00370a9                lv_event_send_refresh
-                0x00000000c00370cd                lv_event_send_refresh_recursive
-                0x00000000c00371d7                lv_event_send_func
-                0x00000000c0037326                lv_event_get_data
-                0x00000000c003733b                lv_obj_set_signal_cb
-                0x00000000c003738f                lv_signal_send
-                0x00000000c00373e2                lv_obj_set_design_cb
-                0x00000000c0037436                lv_obj_allocate_ext_attr
-                0x00000000c00374bd                lv_obj_refresh_ext_draw_pad
-                0x00000000c0037526                lv_obj_get_screen
-                0x00000000c0037596                lv_obj_get_disp
-                0x00000000c003767e                lv_obj_get_parent
-                0x00000000c00376cd                lv_obj_get_child
-                0x00000000c0037756                lv_obj_get_child_back
-                0x00000000c00377df                lv_obj_count_children
-                0x00000000c0037873                lv_obj_count_children_recursive
-                0x00000000c0037919                lv_obj_get_coords
-                0x00000000c0037979                lv_obj_get_inner_coords
-                0x00000000c0037a79                lv_obj_get_x
-                0x00000000c0037b03                lv_obj_get_y
-                0x00000000c0037b8d                lv_obj_get_width
-                0x00000000c0037be9                lv_obj_get_height
-                0x00000000c0037c45                lv_obj_get_width_fit
-                0x00000000c0037cd5                lv_obj_get_height_fit
-                0x00000000c0037d65                lv_obj_get_height_margin
-                0x00000000c0037dbb                lv_obj_get_width_margin
-                0x00000000c0037e11                lv_obj_get_width_grid
-                0x00000000c0037e9b                lv_obj_get_height_grid
-                0x00000000c0037f25                lv_obj_get_auto_realign
-                0x00000000c0037f81                lv_obj_get_ext_click_pad_left
-                0x00000000c0037fd5                lv_obj_get_ext_click_pad_right
-                0x00000000c0038029                lv_obj_get_ext_click_pad_top
-                0x00000000c003807d                lv_obj_get_ext_click_pad_bottom
-                0x00000000c00380d1                lv_obj_get_ext_draw_pad
-                0x00000000c0038122                lv_obj_get_style_list
-                0x00000000c003817d                _lv_obj_get_style_int
-                0x00000000c003858c                _lv_obj_get_style_color
-                0x00000000c00386bc                _lv_obj_get_style_opa
-                0x00000000c0038899                _lv_obj_get_style_ptr
-                0x00000000c0038a61                lv_obj_get_local_style
-                0x00000000c0038ad5                lv_obj_get_hidden
-                0x00000000c0038b2e                lv_obj_get_adv_hittest
-                0x00000000c0038b87                lv_obj_get_click
-                0x00000000c0038be0                lv_obj_get_top
-                0x00000000c0038c39                lv_obj_get_drag
-                0x00000000c0038c92                lv_obj_get_drag_dir
-                0x00000000c0038ce9                lv_obj_get_drag_throw
-                0x00000000c0038d42                lv_obj_get_drag_parent
-                0x00000000c0038d60                lv_obj_get_gesture_parent
-                0x00000000c0038d7e                lv_obj_get_focus_parent
-                0x00000000c0038d9c                lv_obj_get_parent_event
-                0x00000000c0038df5                lv_obj_get_base_dir
-                0x00000000c0038e44                lv_obj_get_protect
-                0x00000000c0038e95                lv_obj_is_protected
-                0x00000000c0038ef4                lv_obj_get_state
-                0x00000000c0038f76                lv_obj_get_signal_cb
-                0x00000000c0038fc6                lv_obj_get_design_cb
-                0x00000000c0039016                lv_obj_get_event_cb
-                0x00000000c0039066                lv_obj_get_ext_attr
-                0x00000000c00390b6                lv_obj_get_type
-                0x00000000c00391c7                lv_obj_get_group
-                0x00000000c0039217                lv_obj_is_focused
-                0x00000000c003928e                lv_obj_is_point_on_coords
-                0x00000000c0039335                lv_obj_hittest
-                0x00000000c003938d                lv_obj_handle_get_type_signal
-                0x00000000c00393d8                lv_obj_init_draw_rect_dsc
-                0x00000000c0039ac3                lv_obj_init_draw_label_dsc
-                0x00000000c0039c59                lv_obj_init_draw_img_dsc
-                0x00000000c0039da7                lv_obj_init_draw_line_dsc
-                0x00000000c0039f4d                lv_obj_get_draw_rect_ext_pad_size
-                0x00000000c003a326                lv_obj_fade_in
-                0x00000000c003a3d4                lv_obj_fade_out
-                0x00000000c003a46c                lv_debug_check_obj_type
-                0x00000000c003a4f2                lv_debug_check_obj_valid
-                0x00000000c003ac7a                lv_obj_get_focused_obj
- .text          0x00000000c003d7b9     0x14c8 include/gui/lvgl/liblvgl.a(lv_refr.o)
-                0x00000000c003d89a                _lv_refr_init
-                0x00000000c003d8aa                lv_refr_now
-                0x00000000c003d91c                _lv_inv_area
-                0x00000000c003db1a                _lv_refr_get_disp_refreshing
-                0x00000000c003db2f                _lv_refr_set_disp_refreshing
-                0x00000000c003db48                _lv_disp_refr_task
- .text          0x00000000c003ec81     0x1d8e include/gui/lvgl/liblvgl.a(lv_style.o)
-                0x00000000c003ed33                lv_style_init
-                0x00000000c003ed5c                lv_style_copy
-                0x00000000c003edcd                lv_style_remove_prop
-                0x00000000c003eed7                lv_style_list_init
-                0x00000000c003ef00                lv_style_list_copy
-                0x00000000c003f18e                _lv_style_list_add_style
-                0x00000000c003f30f                _lv_style_list_remove_style
-                0x00000000c003f4d8                _lv_style_list_reset
-                0x00000000c003f5da                lv_style_reset
-                0x00000000c003f60d                _lv_style_get_mem_size
-                0x00000000c003f66e                _lv_style_set_int
-                0x00000000c003f807                _lv_style_set_color
-                0x00000000c003f999                _lv_style_set_opa
-                0x00000000c003fb31                _lv_style_set_ptr
-                0x00000000c003fcc3                _lv_style_get_int
-                0x00000000c003fd72                _lv_style_get_opa
-                0x00000000c003fe21                _lv_style_get_color
-                0x00000000c003fed0                _lv_style_get_ptr
-                0x00000000c003ff7f                lv_style_list_get_local_style
-                0x00000000c003ffc2                _lv_style_list_get_transition_style
-                0x00000000c003ffed                _lv_style_list_add_trans_style
-                0x00000000c00400d5                _lv_style_list_set_local_int
-                0x00000000c004011f                _lv_style_list_set_local_opa
-                0x00000000c0040168                _lv_style_list_set_local_color
-                0x00000000c00401a9                _lv_style_list_set_local_ptr
-                0x00000000c00401ea                _lv_style_list_get_int
-                0x00000000c004032d                _lv_style_list_get_color
-                0x00000000c004046b                _lv_style_list_get_opa
-                0x00000000c00405a9                _lv_style_list_get_ptr
-                0x00000000c00406e0                lv_debug_check_style
-                0x00000000c0040701                lv_debug_check_style_list
- .text          0x00000000c0040a0f     0x16c4 include/gui/lvgl/liblvgl.a(lv_draw_img.o)
-                0x00000000c0040f5d                lv_draw_img_dsc_init
-                0x00000000c0040fbe                lv_draw_img
-                0x00000000c0041038                lv_img_cf_get_px_size
-                0x00000000c004109e                lv_img_cf_is_chroma_keyed
-                0x00000000c00410df                lv_img_cf_has_alpha
-                0x00000000c0041127                lv_img_src_get_type
- .text          0x00000000c00420d3     0x1bd3 include/gui/lvgl/liblvgl.a(lv_draw_label.o)
-                0x00000000c004219b                lv_draw_label_dsc_init
-                0x00000000c0042244                lv_draw_label
- .text          0x00000000c0043ca6     0x12a2 include/gui/lvgl/liblvgl.a(lv_draw_line.o)
-                0x00000000c0043ccb                lv_draw_line_dsc_init
-                0x00000000c0043d1f                lv_draw_line
- .text          0x00000000c0044f48     0x2bc7 include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
-                0x00000000c0044ff3                lv_draw_mask_add
-                0x00000000c0045066                lv_draw_mask_apply
-                0x00000000c004510d                lv_draw_mask_remove_id
-                0x00000000c004516a                lv_draw_mask_remove_custom
-                0x00000000c00451e2                lv_draw_mask_get_cnt
-                0x00000000c004522d                lv_draw_mask_line_points_init
-                0x00000000c0045524                lv_draw_mask_line_angle_init
-                0x00000000c00455dd                lv_draw_mask_angle_init
-                0x00000000c00457b1                lv_draw_mask_radius_init
-                0x00000000c004587e                lv_draw_mask_fade_init
-                0x00000000c0045907                lv_draw_mask_map_init
+ .text          0x00000000c00324fa      0x249 ./kernel/gui/libgui.a(ginit.o)
+                0x00000000c00325f8                InitScreen
+ .text          0x00000000c0032743       0x82 ./kernel/gui/libgui.a(plot.o)
+                0x00000000c003276c                PlotPixel
+ .text          0x00000000c00327c5      0xccd include/gui/lvgl/liblvgl.a(lv_disp.o)
+                0x00000000c0032916                lv_disp_get_scr_act
+                0x00000000c0032950                lv_disp_get_scr_prev
+                0x00000000c003298a                lv_disp_load_scr
+                0x00000000c00329d2                lv_disp_get_layer_top
+                0x00000000c0032a0c                lv_disp_get_layer_sys
+                0x00000000c0032a46                lv_disp_assign_screen
+                0x00000000c0032aa9                lv_disp_set_bg_color
+                0x00000000c0032b30                lv_disp_set_bg_image
+                0x00000000c0032bb7                lv_disp_set_bg_opa
+                0x00000000c0032c45                lv_scr_load_anim
+                0x00000000c0033238                lv_disp_get_inactive_time
+                0x00000000c00332c4                lv_disp_trig_activity
+                0x00000000c0033303                lv_disp_clean_dcache
+                0x00000000c003334e                _lv_disp_get_refr_task
+ .text          0x00000000c0033492     0xb113 include/gui/lvgl/liblvgl.a(lv_obj.o)
+                0x00000000c00349f3                lv_init
+                0x00000000c0034b1b                lv_deinit
+                0x00000000c0034b51                lv_obj_create
+                0x00000000c003530c                lv_obj_del
+                0x00000000c00353f1                lv_obj_del_anim_ready_cb
+                0x00000000c0035415                lv_obj_del_async
+                0x00000000c0035475                lv_obj_clean
+                0x00000000c00354fc                lv_obj_invalidate_area
+                0x00000000c0035594                lv_obj_invalidate
+                0x00000000c0035656                lv_obj_area_is_visible
+                0x00000000c00357ff                lv_obj_is_visible
+                0x00000000c00358c0                lv_obj_set_parent
+                0x00000000c0035a90                lv_obj_move_foreground
+                0x00000000c0035b52                lv_obj_move_background
+                0x00000000c0035c14                lv_obj_set_pos
+                0x00000000c0035dbc                lv_obj_set_x
+                0x00000000c0035e33                lv_obj_set_y
+                0x00000000c0035ea8                lv_obj_set_size
+                0x00000000c0036070                lv_obj_set_width
+                0x00000000c00360e7                lv_obj_set_height
+                0x00000000c003615c                lv_obj_set_width_fit
+                0x00000000c00361c0                lv_obj_set_height_fit
+                0x00000000c0036224                lv_obj_set_width_margin
+                0x00000000c0036288                lv_obj_set_height_margin
+                0x00000000c00362ec                lv_obj_align
+                0x00000000c00363ef                lv_obj_align_x
+                0x00000000c00364b2                lv_obj_align_y
+                0x00000000c0036575                lv_obj_align_mid
+                0x00000000c0036678                lv_obj_align_mid_x
+                0x00000000c003673b                lv_obj_align_mid_y
+                0x00000000c00367fe                lv_obj_realign
+                0x00000000c00368c5                lv_obj_set_auto_realign
+                0x00000000c003692e                lv_obj_set_ext_click_area
+                0x00000000c00369c2                lv_obj_add_style
+                0x00000000c0036a47                lv_obj_remove_style
+                0x00000000c0036acc                lv_obj_clean_style_list
+                0x00000000c0036b2d                lv_obj_reset_style_list
+                0x00000000c0036b71                _lv_obj_set_style_local_int
+                0x00000000c0036c01                _lv_obj_set_style_local_color
+                0x00000000c0036c88                _lv_obj_set_style_local_opa
+                0x00000000c0036d17                _lv_obj_set_style_local_ptr
+                0x00000000c0036d9e                lv_obj_remove_style_local_prop
+                0x00000000c0036e2b                lv_obj_refresh_style
+                0x00000000c0036fd0                lv_obj_report_style_mod
+                0x00000000c0037057                _lv_obj_disable_style_caching
+                0x00000000c0037114                lv_obj_set_hidden
+                0x00000000c00371f8                lv_obj_set_adv_hittest
+                0x00000000c0037274                lv_obj_set_click
+                0x00000000c00372dd                lv_obj_set_top
+                0x00000000c0037349                lv_obj_set_drag
+                0x00000000c00373c9                lv_obj_set_drag_dir
+                0x00000000c003745a                lv_obj_set_drag_throw
+                0x00000000c00374c8                lv_obj_set_drag_parent
+                0x00000000c0037536                lv_obj_set_gesture_parent
+                0x00000000c0037567                lv_obj_set_focus_parent
+                0x00000000c0037627                lv_obj_set_parent_event
+                0x00000000c0037693                lv_obj_set_base_dir
+                0x00000000c0037706                lv_obj_add_protect
+                0x00000000c0037769                lv_obj_clear_protect
+                0x00000000c00377cf                lv_obj_set_state
+                0x00000000c0037c29                lv_obj_add_state
+                0x00000000c0037ca6                lv_obj_clear_state
+                0x00000000c0037d2a                lv_obj_finish_transitions
+                0x00000000c0037dc3                lv_obj_set_event_cb
+                0x00000000c0037e17                lv_event_send
+                0x00000000c0037e95                lv_event_send_refresh
+                0x00000000c0037eb9                lv_event_send_refresh_recursive
+                0x00000000c0037fc3                lv_event_send_func
+                0x00000000c0038112                lv_event_get_data
+                0x00000000c0038127                lv_obj_set_signal_cb
+                0x00000000c003817b                lv_signal_send
+                0x00000000c00381ce                lv_obj_set_design_cb
+                0x00000000c0038222                lv_obj_allocate_ext_attr
+                0x00000000c00382a9                lv_obj_refresh_ext_draw_pad
+                0x00000000c0038312                lv_obj_get_screen
+                0x00000000c0038382                lv_obj_get_disp
+                0x00000000c003846a                lv_obj_get_parent
+                0x00000000c00384b9                lv_obj_get_child
+                0x00000000c0038542                lv_obj_get_child_back
+                0x00000000c00385cb                lv_obj_count_children
+                0x00000000c003865f                lv_obj_count_children_recursive
+                0x00000000c0038705                lv_obj_get_coords
+                0x00000000c0038765                lv_obj_get_inner_coords
+                0x00000000c0038865                lv_obj_get_x
+                0x00000000c00388ef                lv_obj_get_y
+                0x00000000c0038979                lv_obj_get_width
+                0x00000000c00389d5                lv_obj_get_height
+                0x00000000c0038a31                lv_obj_get_width_fit
+                0x00000000c0038ac1                lv_obj_get_height_fit
+                0x00000000c0038b51                lv_obj_get_height_margin
+                0x00000000c0038ba7                lv_obj_get_width_margin
+                0x00000000c0038bfd                lv_obj_get_width_grid
+                0x00000000c0038c87                lv_obj_get_height_grid
+                0x00000000c0038d11                lv_obj_get_auto_realign
+                0x00000000c0038d6d                lv_obj_get_ext_click_pad_left
+                0x00000000c0038dc1                lv_obj_get_ext_click_pad_right
+                0x00000000c0038e15                lv_obj_get_ext_click_pad_top
+                0x00000000c0038e69                lv_obj_get_ext_click_pad_bottom
+                0x00000000c0038ebd                lv_obj_get_ext_draw_pad
+                0x00000000c0038f0e                lv_obj_get_style_list
+                0x00000000c0038f69                _lv_obj_get_style_int
+                0x00000000c0039378                _lv_obj_get_style_color
+                0x00000000c00394a8                _lv_obj_get_style_opa
+                0x00000000c0039685                _lv_obj_get_style_ptr
+                0x00000000c003984d                lv_obj_get_local_style
+                0x00000000c00398c1                lv_obj_get_hidden
+                0x00000000c003991a                lv_obj_get_adv_hittest
+                0x00000000c0039973                lv_obj_get_click
+                0x00000000c00399cc                lv_obj_get_top
+                0x00000000c0039a25                lv_obj_get_drag
+                0x00000000c0039a7e                lv_obj_get_drag_dir
+                0x00000000c0039ad5                lv_obj_get_drag_throw
+                0x00000000c0039b2e                lv_obj_get_drag_parent
+                0x00000000c0039b4c                lv_obj_get_gesture_parent
+                0x00000000c0039b6a                lv_obj_get_focus_parent
+                0x00000000c0039b88                lv_obj_get_parent_event
+                0x00000000c0039be1                lv_obj_get_base_dir
+                0x00000000c0039c30                lv_obj_get_protect
+                0x00000000c0039c81                lv_obj_is_protected
+                0x00000000c0039ce0                lv_obj_get_state
+                0x00000000c0039d62                lv_obj_get_signal_cb
+                0x00000000c0039db2                lv_obj_get_design_cb
+                0x00000000c0039e02                lv_obj_get_event_cb
+                0x00000000c0039e52                lv_obj_get_ext_attr
+                0x00000000c0039ea2                lv_obj_get_type
+                0x00000000c0039fb3                lv_obj_get_group
+                0x00000000c003a003                lv_obj_is_focused
+                0x00000000c003a07a                lv_obj_is_point_on_coords
+                0x00000000c003a121                lv_obj_hittest
+                0x00000000c003a179                lv_obj_handle_get_type_signal
+                0x00000000c003a1c4                lv_obj_init_draw_rect_dsc
+                0x00000000c003a8af                lv_obj_init_draw_label_dsc
+                0x00000000c003aa45                lv_obj_init_draw_img_dsc
+                0x00000000c003ab93                lv_obj_init_draw_line_dsc
+                0x00000000c003ad39                lv_obj_get_draw_rect_ext_pad_size
+                0x00000000c003b112                lv_obj_fade_in
+                0x00000000c003b1c0                lv_obj_fade_out
+                0x00000000c003b258                lv_debug_check_obj_type
+                0x00000000c003b2de                lv_debug_check_obj_valid
+                0x00000000c003ba66                lv_obj_get_focused_obj
+ .text          0x00000000c003e5a5     0x14c8 include/gui/lvgl/liblvgl.a(lv_refr.o)
+                0x00000000c003e686                _lv_refr_init
+                0x00000000c003e696                lv_refr_now
+                0x00000000c003e708                _lv_inv_area
+                0x00000000c003e906                _lv_refr_get_disp_refreshing
+                0x00000000c003e91b                _lv_refr_set_disp_refreshing
+                0x00000000c003e934                _lv_disp_refr_task
+ .text          0x00000000c003fa6d     0x1d8e include/gui/lvgl/liblvgl.a(lv_style.o)
+                0x00000000c003fb1f                lv_style_init
+                0x00000000c003fb48                lv_style_copy
+                0x00000000c003fbb9                lv_style_remove_prop
+                0x00000000c003fcc3                lv_style_list_init
+                0x00000000c003fcec                lv_style_list_copy
+                0x00000000c003ff7a                _lv_style_list_add_style
+                0x00000000c00400fb                _lv_style_list_remove_style
+                0x00000000c00402c4                _lv_style_list_reset
+                0x00000000c00403c6                lv_style_reset
+                0x00000000c00403f9                _lv_style_get_mem_size
+                0x00000000c004045a                _lv_style_set_int
+                0x00000000c00405f3                _lv_style_set_color
+                0x00000000c0040785                _lv_style_set_opa
+                0x00000000c004091d                _lv_style_set_ptr
+                0x00000000c0040aaf                _lv_style_get_int
+                0x00000000c0040b5e                _lv_style_get_opa
+                0x00000000c0040c0d                _lv_style_get_color
+                0x00000000c0040cbc                _lv_style_get_ptr
+                0x00000000c0040d6b                lv_style_list_get_local_style
+                0x00000000c0040dae                _lv_style_list_get_transition_style
+                0x00000000c0040dd9                _lv_style_list_add_trans_style
+                0x00000000c0040ec1                _lv_style_list_set_local_int
+                0x00000000c0040f0b                _lv_style_list_set_local_opa
+                0x00000000c0040f54                _lv_style_list_set_local_color
+                0x00000000c0040f95                _lv_style_list_set_local_ptr
+                0x00000000c0040fd6                _lv_style_list_get_int
+                0x00000000c0041119                _lv_style_list_get_color
+                0x00000000c0041257                _lv_style_list_get_opa
+                0x00000000c0041395                _lv_style_list_get_ptr
+                0x00000000c00414cc                lv_debug_check_style
+                0x00000000c00414ed                lv_debug_check_style_list
+ .text          0x00000000c00417fb     0x16c4 include/gui/lvgl/liblvgl.a(lv_draw_img.o)
+                0x00000000c0041d49                lv_draw_img_dsc_init
+                0x00000000c0041daa                lv_draw_img
+                0x00000000c0041e24                lv_img_cf_get_px_size
+                0x00000000c0041e8a                lv_img_cf_is_chroma_keyed
+                0x00000000c0041ecb                lv_img_cf_has_alpha
+                0x00000000c0041f13                lv_img_src_get_type
+ .text          0x00000000c0042ebf     0x1bd3 include/gui/lvgl/liblvgl.a(lv_draw_label.o)
+                0x00000000c0042f87                lv_draw_label_dsc_init
+                0x00000000c0043030                lv_draw_label
+ .text          0x00000000c0044a92     0x12a2 include/gui/lvgl/liblvgl.a(lv_draw_line.o)
+                0x00000000c0044ab7                lv_draw_line_dsc_init
+                0x00000000c0044b0b                lv_draw_line
+ .text          0x00000000c0045d34     0x2bc7 include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
+                0x00000000c0045ddf                lv_draw_mask_add
+                0x00000000c0045e52                lv_draw_mask_apply
+                0x00000000c0045ef9                lv_draw_mask_remove_id
+                0x00000000c0045f56                lv_draw_mask_remove_custom
+                0x00000000c0045fce                lv_draw_mask_get_cnt
+                0x00000000c0046019                lv_draw_mask_line_points_init
+                0x00000000c0046310                lv_draw_mask_line_angle_init
+                0x00000000c00463c9                lv_draw_mask_angle_init
+                0x00000000c004659d                lv_draw_mask_radius_init
+                0x00000000c004666a                lv_draw_mask_fade_init
+                0x00000000c00466f3                lv_draw_mask_map_init
  .text.__x86.get_pc_thunk.si
-                0x00000000c0047b0f        0x4 include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
-                0x00000000c0047b0f                __x86.get_pc_thunk.si
- .text          0x00000000c0047b13     0x43c5 include/gui/lvgl/liblvgl.a(lv_draw_rect.o)
-                0x00000000c0047c85                lv_draw_rect_dsc_init
-                0x00000000c0047da9                lv_draw_rect
-                0x00000000c0047e5a                lv_draw_px
- .text          0x00000000c004bed8     0x1ebc include/gui/lvgl/liblvgl.a(lv_img_buf.o)
-                0x00000000c004bff1                lv_img_buf_get_px_color
-                0x00000000c004c2ef                lv_img_buf_get_px_alpha
-                0x00000000c004c5b2                lv_img_buf_set_px_alpha
-                0x00000000c004c8d0                lv_img_buf_set_px_color
-                0x00000000c004cc75                lv_img_buf_set_palette
-                0x00000000c004cd0c                lv_img_buf_alloc
-                0x00000000c004ce6f                lv_img_buf_free
-                0x00000000c004ceb7                lv_img_buf_get_img_size
-                0x00000000c004d02b                _lv_img_buf_transform_init
-                0x00000000c004d2ed                _lv_img_buf_get_transformed_area
-                0x00000000c004d788                _lv_img_buf_transform_anti_alias
- .text          0x00000000c004dd94      0x103 include/gui/lvgl/liblvgl.a(lv_img_cache.o)
-                0x00000000c004dd94                _lv_img_cache_open
-                0x00000000c004de6d                lv_img_cache_set_size
-                0x00000000c004de87                lv_img_cache_invalidate_src
- .text          0x00000000c004de97     0x165c include/gui/lvgl/liblvgl.a(lv_img_decoder.o)
-                0x00000000c004df24                _lv_img_decoder_init
-                0x00000000c004dfe7                lv_img_decoder_get_info
-                0x00000000c004e09b                lv_img_decoder_open
-                0x00000000c004e1ed                lv_img_decoder_read_line
-                0x00000000c004e25d                lv_img_decoder_close
-                0x00000000c004e2ca                lv_img_decoder_create
-                0x00000000c004e349                lv_img_decoder_delete
-                0x00000000c004e384                lv_img_decoder_set_info_cb
-                0x00000000c004e39c                lv_img_decoder_set_open_cb
-                0x00000000c004e3b5                lv_img_decoder_set_read_line_cb
-                0x00000000c004e3ce                lv_img_decoder_set_close_cb
-                0x00000000c004e3e7                lv_img_decoder_built_in_info
-                0x00000000c004e56e                lv_img_decoder_built_in_open
-                0x00000000c004eace                lv_img_decoder_built_in_read_line
-                0x00000000c004ec1f                lv_img_decoder_built_in_close
- .text          0x00000000c004f4f3       0x89 include/gui/lvgl/liblvgl.a(lv_font.o)
-                0x00000000c004f4f3                lv_font_get_glyph_bitmap
-                0x00000000c004f519                lv_font_get_glyph_dsc
-                0x00000000c004f541                lv_font_get_glyph_width
- .text          0x00000000c004f57c     0x1122 include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
-                0x00000000c004f57c                lv_font_get_bitmap_fmt_txt
-                0x00000000c004f7ab                lv_font_get_glyph_dsc_fmt_txt
-                0x00000000c004f914                _lv_font_clean_up_fmt_txt
- .text          0x00000000c005069e        0x0 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
- .text          0x00000000c005069e      0x84a include/gui/lvgl/liblvgl.a(lv_hal_disp.o)
-                0x00000000c005069e                lv_disp_drv_init
-                0x00000000c0050755                lv_disp_buf_init
-                0x00000000c00507a3                lv_disp_drv_register
-                0x00000000c0050a1a                lv_disp_drv_update
-                0x00000000c0050aae                lv_disp_remove
-                0x00000000c0050b5d                lv_disp_set_default
-                0x00000000c0050b76                lv_disp_get_default
-                0x00000000c0050b8b                lv_disp_get_hor_res
-                0x00000000c0050bd2                lv_disp_get_ver_res
-                0x00000000c0050c19                lv_disp_get_antialiasing
-                0x00000000c0050c55                lv_disp_get_dpi
-                0x00000000c0050c8e                lv_disp_get_size_category
-                0x00000000c0050d1e                lv_disp_flush_ready
-                0x00000000c0050d48                lv_disp_flush_is_last
-                0x00000000c0050d65                lv_disp_get_next
-                0x00000000c0050dae                lv_disp_get_buf
-                0x00000000c0050dc3                lv_disp_get_inv_buf_size
-                0x00000000c0050de0                _lv_disp_pop_from_inv_buf
-                0x00000000c0050e62                lv_disp_is_double_buf
-                0x00000000c0050e96                lv_disp_is_true_double_buf
- .text          0x00000000c0050ee8      0x288 include/gui/lvgl/liblvgl.a(lv_hal_indev.o)
-                0x00000000c0050ee8                lv_indev_drv_init
-                0x00000000c0050f45                lv_indev_drv_register
-                0x00000000c005104c                lv_indev_drv_update
-                0x00000000c0051079                lv_indev_get_next
-                0x00000000c00510c2                _lv_indev_read
- .text          0x00000000c0051170       0x91 include/gui/lvgl/liblvgl.a(lv_hal_tick.o)
-                0x00000000c0051170                lv_tick_inc
-                0x00000000c0051198                lv_tick_get
-                0x00000000c00511c8                lv_tick_elaps
- .text          0x00000000c0051201      0xd19 include/gui/lvgl/liblvgl.a(lv_anim.o)
-                0x00000000c0051241                _lv_anim_core_init
-                0x00000000c005129f                lv_anim_init
-                0x00000000c0051316                lv_anim_start
-                0x00000000c0051429                lv_anim_del
-                0x00000000c00514ca                lv_anim_get
-                0x00000000c0051535                lv_anim_count_running
-                0x00000000c0051596                lv_anim_speed_to_time
-                0x00000000c0051604                lv_anim_refr_now
-                0x00000000c0051624                lv_anim_path_linear
-                0x00000000c0051694                lv_anim_path_ease_in
-                0x00000000c0051728                lv_anim_path_ease_out
-                0x00000000c00517c2                lv_anim_path_ease_in_out
-                0x00000000c0051859                lv_anim_path_overshoot
-                0x00000000c00518f3                lv_anim_path_bounce
-                0x00000000c0051af9                lv_anim_path_step
- .text          0x00000000c0051f1a      0xe1b include/gui/lvgl/liblvgl.a(lv_area.o)
-                0x00000000c0051f65                lv_area_set
-                0x00000000c0051fc4                lv_area_set_width
-                0x00000000c0051ff8                lv_area_set_height
-                0x00000000c005202d                _lv_area_set_pos
-                0x00000000c00520a1                lv_area_get_size
-                0x00000000c00520ef                _lv_area_intersect
-                0x00000000c005219b                _lv_area_join
-                0x00000000c0052214                _lv_area_is_point_on
-                0x00000000c00524d6                _lv_area_is_on
-                0x00000000c005253b                _lv_area_is_in
-                0x00000000c00526a8                _lv_area_align
- .text          0x00000000c0052d35       0xda include/gui/lvgl/liblvgl.a(lv_async.o)
-                0x00000000c0052d35                lv_async_call
- .text          0x00000000c0052e0f      0x1fc include/gui/lvgl/liblvgl.a(lv_debug.o)
-                0x00000000c0052e0f                lv_debug_check_null
-                0x00000000c0052e30                lv_debug_check_mem_integrity
-                0x00000000c0052e53                lv_debug_check_str
-                0x00000000c0052f13                lv_debug_log_error
- .text          0x00000000c005300b      0xd5e include/gui/lvgl/liblvgl.a(lv_fs.o)
-                0x00000000c005300b                _lv_fs_init
-                0x00000000c0053038                lv_fs_is_ready
-                0x00000000c0053092                lv_fs_open
-                0x00000000c0053247                lv_fs_close
-                0x00000000c00532d5                lv_fs_remove
-                0x00000000c0053386                lv_fs_read
-                0x00000000c0053414                lv_fs_write
-                0x00000000c00534a2                lv_fs_seek
-                0x00000000c0053501                lv_fs_tell
-                0x00000000c005356e                lv_fs_trunc
-                0x00000000c00535ca                lv_fs_size
-                0x00000000c0053636                lv_fs_rename
-                0x00000000c0053701                lv_fs_dir_open
-                0x00000000c0053824                lv_fs_dir_read
-                0x00000000c0053892                lv_fs_dir_close
-                0x00000000c0053928                lv_fs_free_space
-                0x00000000c00539ba                lv_fs_drv_init
-                0x00000000c00539e3                lv_fs_drv_register
-                0x00000000c0053a5e                lv_fs_get_drv
-                0x00000000c0053ac5                lv_fs_get_letters
-                0x00000000c0053b3f                lv_fs_get_ext
-                0x00000000c0053bbb                lv_fs_up
-                0x00000000c0053c76                lv_fs_get_last
- .text          0x00000000c0053d69      0x186 include/gui/lvgl/liblvgl.a(lv_gc.o)
-                0x00000000c0053d69                _lv_gc_clear_roots
- .text          0x00000000c0053eef      0x795 include/gui/lvgl/liblvgl.a(lv_ll.o)
-                0x00000000c0053eef                _lv_ll_init
-                0x00000000c0053f27                _lv_ll_ins_head
-                0x00000000c0053fc8                _lv_ll_ins_prev
-                0x00000000c00540b8                _lv_ll_ins_tail
-                0x00000000c0054159                _lv_ll_remove
-                0x00000000c0054278                _lv_ll_clear
-                0x00000000c00542e9                _lv_ll_chg_list
-                0x00000000c00543ed                _lv_ll_get_head
-                0x00000000c0054418                _lv_ll_get_tail
-                0x00000000c0054443                _lv_ll_get_next
-                0x00000000c0054478                _lv_ll_get_prev
-                0x00000000c00544aa                _lv_ll_get_len
-                0x00000000c00544f1                _lv_ll_move_before
-                0x00000000c00545c7                _lv_ll_is_empty
- .text          0x00000000c0054684      0x473 include/gui/lvgl/liblvgl.a(lv_math.o)
-                0x00000000c0054684                _lv_trigo_sin
-                0x00000000c005478d                _lv_bezier3
-                0x00000000c0054840                _lv_sqrt
-                0x00000000c00548a2                _lv_atan2
-                0x00000000c0054a02                _lv_pow
-                0x00000000c0054aa4                _lv_map
- .text          0x00000000c0054af7     0x1244 include/gui/lvgl/liblvgl.a(lv_mem.o)
-                0x00000000c0054af7                _lv_mem_init
-                0x00000000c0054b6a                _lv_mem_deinit
-                0x00000000c0054bbd                lv_mem_alloc
-                0x00000000c0054c80                lv_mem_free
-                0x00000000c0054d58                lv_mem_realloc
-                0x00000000c0054e3b                lv_mem_defrag
-                0x00000000c0054f06                lv_mem_test
-                0x00000000c0054f8a                lv_mem_monitor
-                0x00000000c00550c5                _lv_mem_get_size
-                0x00000000c0055106                _lv_mem_buf_get
-                0x00000000c0055359                _lv_mem_buf_release
-                0x00000000c00553e9                _lv_mem_buf_free_all
-                0x00000000c00554a5                _lv_memcpy
-                0x00000000c00558b0                _lv_memset
-                0x00000000c00559d7                _lv_memset_00
-                0x00000000c0055ad9                _lv_memset_ff
- .text          0x00000000c0055d3b      0x962 include/gui/lvgl/liblvgl.a(lv_task.o)
-                0x00000000c0055d3b                _lv_task_core_init
-                0x00000000c0055d7b                lv_task_handler
-                0x00000000c00560cf                lv_task_create_basic
-                0x00000000c00562a2                lv_task_create
-                0x00000000c0056348                lv_task_set_cb
-                0x00000000c0056361                lv_task_del
-                0x00000000c00563b7                lv_task_set_prio
-                0x00000000c00564a0                lv_task_set_period
-                0x00000000c00564b8                lv_task_ready
-                0x00000000c00564eb                lv_task_set_repeat_count
-                0x00000000c0056504                lv_task_reset
-                0x00000000c005652b                lv_task_enable
-                0x00000000c005654e                lv_task_get_idle
-                0x00000000c0056564                lv_task_get_next
- .text          0x00000000c005669d     0x10cd include/gui/lvgl/liblvgl.a(lv_txt.o)
-                0x00000000c00566f3                _lv_txt_get_size
-                0x00000000c0056b19                _lv_txt_get_next_line
-                0x00000000c0056cf0                _lv_txt_get_width
-                0x00000000c0056e0d                _lv_txt_is_cmd
-                0x00000000c0056e8a                _lv_txt_ins
-                0x00000000c0056f3b                _lv_txt_cut
-                0x00000000c0056fc9                _lv_txt_set_text_vfmt
- .text          0x00000000c005776a      0x1d3 include/gui/lvgl/liblvgl.a(lv_utils.o)
-                0x00000000c005776a                _lv_utils_num_to_str
-                0x00000000c00578ad                _lv_utils_bsearch
- .text          0x00000000c005793d      0x8c1 include/gui/lvgl/liblvgl.a(lv_theme.o)
-                0x00000000c005793d                lv_theme_set_act
-                0x00000000c0057956                lv_theme_get_act
-                0x00000000c005796b                lv_theme_apply
-                0x00000000c00579ac                lv_theme_copy
-                0x00000000c0057a51                lv_theme_set_base
-                0x00000000c0057a6a                lv_theme_set_apply_cb
-                0x00000000c0057a82                lv_theme_get_font_small
-                0x00000000c0057a9a                lv_theme_get_font_normal
-                0x00000000c0057ab2                lv_theme_get_font_subtitle
-                0x00000000c0057aca                lv_theme_get_font_title
-                0x00000000c0057ae2                lv_theme_get_color_primary
-                0x00000000c0057b04                lv_theme_get_color_secondary
-                0x00000000c0057b26                lv_theme_get_flags
- .text          0x00000000c00581fe     0xa20a include/gui/lvgl/liblvgl.a(lv_theme_material.o)
-                0x00000000c0061235                lv_theme_material_init
- .text          0x00000000c0062408      0xccd include/gui/lvgl/liblvgl.a(lv_disp.o)
-                0x00000000c0062559                lv_disp_get_scr_act
-                0x00000000c0062593                lv_disp_get_scr_prev
-                0x00000000c00625cd                lv_disp_load_scr
-                0x00000000c0062615                lv_disp_get_layer_top
-                0x00000000c006264f                lv_disp_get_layer_sys
-                0x00000000c0062689                lv_disp_assign_screen
-                0x00000000c00626ec                lv_disp_set_bg_color
-                0x00000000c0062773                lv_disp_set_bg_image
-                0x00000000c00627fa                lv_disp_set_bg_opa
-                0x00000000c0062888                lv_scr_load_anim
-                0x00000000c0062e7b                lv_disp_get_inactive_time
-                0x00000000c0062f07                lv_disp_trig_activity
-                0x00000000c0062f46                lv_disp_clean_dcache
-                0x00000000c0062f91                _lv_disp_get_refr_task
- .text          0x00000000c00630d5      0xd2c include/gui/lvgl/liblvgl.a(lv_group.o)
-                0x00000000c00630d5                _lv_group_init
-                0x00000000c0063102                lv_group_create
-                0x00000000c00631d7                lv_group_del
-                0x00000000c006329a                lv_group_add_obj
-                0x00000000c00633ad                lv_group_remove_obj
-                0x00000000c00634e8                lv_group_remove_all_objs
-                0x00000000c0063592                lv_group_focus_obj
-                0x00000000c006375c                lv_group_focus_next
-                0x00000000c006378b                lv_group_focus_prev
-                0x00000000c00637ba                lv_group_focus_freeze
-                0x00000000c00637fa                lv_group_send_data
-                0x00000000c006387c                lv_group_set_focus_cb
-                0x00000000c0063895                lv_group_set_editing
-                0x00000000c0063956                lv_group_set_click_focus
-                0x00000000c006398c                lv_group_set_refocus_policy
-                0x00000000c00639c7                lv_group_set_wrap
-                0x00000000c00639fb                lv_group_get_focused
-                0x00000000c0063a30                lv_group_get_focus_cb
-                0x00000000c0063a52                lv_group_get_editing
-                0x00000000c0063a82                lv_group_get_click_focus
-                0x00000000c0063ab3                lv_group_get_wrap
- .text          0x00000000c0063e01     0x33ac include/gui/lvgl/liblvgl.a(lv_indev.o)
-                0x00000000c0063e01                _lv_indev_init
-                0x00000000c0063e23                _lv_indev_read_task
-                0x00000000c0063fd9                lv_indev_get_act
-                0x00000000c0063fee                lv_indev_get_type
-                0x00000000c0064010                lv_indev_reset
-                0x00000000c00640d3                lv_indev_reset_long_press
-                0x00000000c0064113                lv_indev_enable
-                0x00000000c0064156                lv_indev_set_cursor
-                0x00000000c00641e6                lv_indev_set_group
-                0x00000000c0064213                lv_indev_set_button_points
-                0x00000000c0064236                lv_indev_get_point
-                0x00000000c00642a0                lv_indev_get_gesture_dir
-                0x00000000c00642b6                lv_indev_get_key
-                0x00000000c00642dc                lv_indev_is_dragging
-                0x00000000c0064322                lv_indev_get_vect
-                0x00000000c006438c                lv_indev_finish_drag
-                0x00000000c0064469                lv_indev_wait_release
-                0x00000000c006448e                lv_indev_get_obj_act
-                0x00000000c00644a3                lv_indev_get_read_task
-                0x00000000c0066214                lv_indev_search_obj
- .text          0x00000000c00671ad     0x202d include/gui/lvgl/liblvgl.a(lv_draw_blend.o)
-                0x00000000c00673b8                _lv_blend_fill
-                0x00000000c00675a4                _lv_blend_map
- .text          0x00000000c00691da      0x6fb include/gui/lvgl/liblvgl.a(lv_color.o)
-                0x00000000c0069300                lv_color_fill
-                0x00000000c00693fb                lv_color_lighten
-                0x00000000c0069441                lv_color_darken
-                0x00000000c0069487                lv_color_hsv_to_rgb
-                0x00000000c00696a2                lv_color_rgb_to_hsv
-                0x00000000c0069888                lv_color_to_hsv
- .text          0x00000000c00698d5      0xcae include/gui/lvgl/liblvgl.a(lv_printf.o)
-                0x00000000c006a516                lv_snprintf
-                0x00000000c006a553                lv_vsnprintf
+                0x00000000c00488fb        0x4 include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
+                0x00000000c00488fb                __x86.get_pc_thunk.si
+ .text          0x00000000c00488ff     0x43c5 include/gui/lvgl/liblvgl.a(lv_draw_rect.o)
+                0x00000000c0048a71                lv_draw_rect_dsc_init
+                0x00000000c0048b95                lv_draw_rect
+                0x00000000c0048c46                lv_draw_px
+ .text          0x00000000c004ccc4     0x1ebc include/gui/lvgl/liblvgl.a(lv_img_buf.o)
+                0x00000000c004cddd                lv_img_buf_get_px_color
+                0x00000000c004d0db                lv_img_buf_get_px_alpha
+                0x00000000c004d39e                lv_img_buf_set_px_alpha
+                0x00000000c004d6bc                lv_img_buf_set_px_color
+                0x00000000c004da61                lv_img_buf_set_palette
+                0x00000000c004daf8                lv_img_buf_alloc
+                0x00000000c004dc5b                lv_img_buf_free
+                0x00000000c004dca3                lv_img_buf_get_img_size
+                0x00000000c004de17                _lv_img_buf_transform_init
+                0x00000000c004e0d9                _lv_img_buf_get_transformed_area
+                0x00000000c004e574                _lv_img_buf_transform_anti_alias
+ .text          0x00000000c004eb80      0x103 include/gui/lvgl/liblvgl.a(lv_img_cache.o)
+                0x00000000c004eb80                _lv_img_cache_open
+                0x00000000c004ec59                lv_img_cache_set_size
+                0x00000000c004ec73                lv_img_cache_invalidate_src
+ .text          0x00000000c004ec83     0x165c include/gui/lvgl/liblvgl.a(lv_img_decoder.o)
+                0x00000000c004ed10                _lv_img_decoder_init
+                0x00000000c004edd3                lv_img_decoder_get_info
+                0x00000000c004ee87                lv_img_decoder_open
+                0x00000000c004efd9                lv_img_decoder_read_line
+                0x00000000c004f049                lv_img_decoder_close
+                0x00000000c004f0b6                lv_img_decoder_create
+                0x00000000c004f135                lv_img_decoder_delete
+                0x00000000c004f170                lv_img_decoder_set_info_cb
+                0x00000000c004f188                lv_img_decoder_set_open_cb
+                0x00000000c004f1a1                lv_img_decoder_set_read_line_cb
+                0x00000000c004f1ba                lv_img_decoder_set_close_cb
+                0x00000000c004f1d3                lv_img_decoder_built_in_info
+                0x00000000c004f35a                lv_img_decoder_built_in_open
+                0x00000000c004f8ba                lv_img_decoder_built_in_read_line
+                0x00000000c004fa0b                lv_img_decoder_built_in_close
+ .text          0x00000000c00502df       0x89 include/gui/lvgl/liblvgl.a(lv_font.o)
+                0x00000000c00502df                lv_font_get_glyph_bitmap
+                0x00000000c0050305                lv_font_get_glyph_dsc
+                0x00000000c005032d                lv_font_get_glyph_width
+ .text          0x00000000c0050368     0x1122 include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
+                0x00000000c0050368                lv_font_get_bitmap_fmt_txt
+                0x00000000c0050597                lv_font_get_glyph_dsc_fmt_txt
+                0x00000000c0050700                _lv_font_clean_up_fmt_txt
+ .text          0x00000000c005148a       0xe6 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+                0x00000000c005148a                InitLvFontMontserrat_14
+ .text          0x00000000c0051570      0x84a include/gui/lvgl/liblvgl.a(lv_hal_disp.o)
+                0x00000000c0051570                lv_disp_drv_init
+                0x00000000c0051627                lv_disp_buf_init
+                0x00000000c0051675                lv_disp_drv_register
+                0x00000000c00518ec                lv_disp_drv_update
+                0x00000000c0051980                lv_disp_remove
+                0x00000000c0051a2f                lv_disp_set_default
+                0x00000000c0051a48                lv_disp_get_default
+                0x00000000c0051a5d                lv_disp_get_hor_res
+                0x00000000c0051aa4                lv_disp_get_ver_res
+                0x00000000c0051aeb                lv_disp_get_antialiasing
+                0x00000000c0051b27                lv_disp_get_dpi
+                0x00000000c0051b60                lv_disp_get_size_category
+                0x00000000c0051bf0                lv_disp_flush_ready
+                0x00000000c0051c1a                lv_disp_flush_is_last
+                0x00000000c0051c37                lv_disp_get_next
+                0x00000000c0051c80                lv_disp_get_buf
+                0x00000000c0051c95                lv_disp_get_inv_buf_size
+                0x00000000c0051cb2                _lv_disp_pop_from_inv_buf
+                0x00000000c0051d34                lv_disp_is_double_buf
+                0x00000000c0051d68                lv_disp_is_true_double_buf
+ .text          0x00000000c0051dba      0x288 include/gui/lvgl/liblvgl.a(lv_hal_indev.o)
+                0x00000000c0051dba                lv_indev_drv_init
+                0x00000000c0051e17                lv_indev_drv_register
+                0x00000000c0051f1e                lv_indev_drv_update
+                0x00000000c0051f4b                lv_indev_get_next
+                0x00000000c0051f94                _lv_indev_read
+ .text          0x00000000c0052042       0x91 include/gui/lvgl/liblvgl.a(lv_hal_tick.o)
+                0x00000000c0052042                lv_tick_inc
+                0x00000000c005206a                lv_tick_get
+                0x00000000c005209a                lv_tick_elaps
+ .text          0x00000000c00520d3      0xd19 include/gui/lvgl/liblvgl.a(lv_anim.o)
+                0x00000000c0052113                _lv_anim_core_init
+                0x00000000c0052171                lv_anim_init
+                0x00000000c00521e8                lv_anim_start
+                0x00000000c00522fb                lv_anim_del
+                0x00000000c005239c                lv_anim_get
+                0x00000000c0052407                lv_anim_count_running
+                0x00000000c0052468                lv_anim_speed_to_time
+                0x00000000c00524d6                lv_anim_refr_now
+                0x00000000c00524f6                lv_anim_path_linear
+                0x00000000c0052566                lv_anim_path_ease_in
+                0x00000000c00525fa                lv_anim_path_ease_out
+                0x00000000c0052694                lv_anim_path_ease_in_out
+                0x00000000c005272b                lv_anim_path_overshoot
+                0x00000000c00527c5                lv_anim_path_bounce
+                0x00000000c00529cb                lv_anim_path_step
+ .text          0x00000000c0052dec      0xe1b include/gui/lvgl/liblvgl.a(lv_area.o)
+                0x00000000c0052e37                lv_area_set
+                0x00000000c0052e96                lv_area_set_width
+                0x00000000c0052eca                lv_area_set_height
+                0x00000000c0052eff                _lv_area_set_pos
+                0x00000000c0052f73                lv_area_get_size
+                0x00000000c0052fc1                _lv_area_intersect
+                0x00000000c005306d                _lv_area_join
+                0x00000000c00530e6                _lv_area_is_point_on
+                0x00000000c00533a8                _lv_area_is_on
+                0x00000000c005340d                _lv_area_is_in
+                0x00000000c005357a                _lv_area_align
+ .text          0x00000000c0053c07       0xda include/gui/lvgl/liblvgl.a(lv_async.o)
+                0x00000000c0053c07                lv_async_call
+ .text          0x00000000c0053ce1      0x1fc include/gui/lvgl/liblvgl.a(lv_debug.o)
+                0x00000000c0053ce1                lv_debug_check_null
+                0x00000000c0053d02                lv_debug_check_mem_integrity
+                0x00000000c0053d25                lv_debug_check_str
+                0x00000000c0053de5                lv_debug_log_error
+ .text          0x00000000c0053edd      0xd5e include/gui/lvgl/liblvgl.a(lv_fs.o)
+                0x00000000c0053edd                _lv_fs_init
+                0x00000000c0053f0a                lv_fs_is_ready
+                0x00000000c0053f64                lv_fs_open
+                0x00000000c0054119                lv_fs_close
+                0x00000000c00541a7                lv_fs_remove
+                0x00000000c0054258                lv_fs_read
+                0x00000000c00542e6                lv_fs_write
+                0x00000000c0054374                lv_fs_seek
+                0x00000000c00543d3                lv_fs_tell
+                0x00000000c0054440                lv_fs_trunc
+                0x00000000c005449c                lv_fs_size
+                0x00000000c0054508                lv_fs_rename
+                0x00000000c00545d3                lv_fs_dir_open
+                0x00000000c00546f6                lv_fs_dir_read
+                0x00000000c0054764                lv_fs_dir_close
+                0x00000000c00547fa                lv_fs_free_space
+                0x00000000c005488c                lv_fs_drv_init
+                0x00000000c00548b5                lv_fs_drv_register
+                0x00000000c0054930                lv_fs_get_drv
+                0x00000000c0054997                lv_fs_get_letters
+                0x00000000c0054a11                lv_fs_get_ext
+                0x00000000c0054a8d                lv_fs_up
+                0x00000000c0054b48                lv_fs_get_last
+ .text          0x00000000c0054c3b      0x186 include/gui/lvgl/liblvgl.a(lv_gc.o)
+                0x00000000c0054c3b                _lv_gc_clear_roots
+ .text          0x00000000c0054dc1      0x795 include/gui/lvgl/liblvgl.a(lv_ll.o)
+                0x00000000c0054dc1                _lv_ll_init
+                0x00000000c0054df9                _lv_ll_ins_head
+                0x00000000c0054e9a                _lv_ll_ins_prev
+                0x00000000c0054f8a                _lv_ll_ins_tail
+                0x00000000c005502b                _lv_ll_remove
+                0x00000000c005514a                _lv_ll_clear
+                0x00000000c00551bb                _lv_ll_chg_list
+                0x00000000c00552bf                _lv_ll_get_head
+                0x00000000c00552ea                _lv_ll_get_tail
+                0x00000000c0055315                _lv_ll_get_next
+                0x00000000c005534a                _lv_ll_get_prev
+                0x00000000c005537c                _lv_ll_get_len
+                0x00000000c00553c3                _lv_ll_move_before
+                0x00000000c0055499                _lv_ll_is_empty
+ .text          0x00000000c0055556      0x473 include/gui/lvgl/liblvgl.a(lv_math.o)
+                0x00000000c0055556                _lv_trigo_sin
+                0x00000000c005565f                _lv_bezier3
+                0x00000000c0055712                _lv_sqrt
+                0x00000000c0055774                _lv_atan2
+                0x00000000c00558d4                _lv_pow
+                0x00000000c0055976                _lv_map
+ .text          0x00000000c00559c9     0x1244 include/gui/lvgl/liblvgl.a(lv_mem.o)
+                0x00000000c00559c9                _lv_mem_init
+                0x00000000c0055a3c                _lv_mem_deinit
+                0x00000000c0055a8f                lv_mem_alloc
+                0x00000000c0055b52                lv_mem_free
+                0x00000000c0055c2a                lv_mem_realloc
+                0x00000000c0055d0d                lv_mem_defrag
+                0x00000000c0055dd8                lv_mem_test
+                0x00000000c0055e5c                lv_mem_monitor
+                0x00000000c0055f97                _lv_mem_get_size
+                0x00000000c0055fd8                _lv_mem_buf_get
+                0x00000000c005622b                _lv_mem_buf_release
+                0x00000000c00562bb                _lv_mem_buf_free_all
+                0x00000000c0056377                _lv_memcpy
+                0x00000000c0056782                _lv_memset
+                0x00000000c00568a9                _lv_memset_00
+                0x00000000c00569ab                _lv_memset_ff
+ .text          0x00000000c0056c0d      0x962 include/gui/lvgl/liblvgl.a(lv_task.o)
+                0x00000000c0056c0d                _lv_task_core_init
+                0x00000000c0056c4d                lv_task_handler
+                0x00000000c0056fa1                lv_task_create_basic
+                0x00000000c0057174                lv_task_create
+                0x00000000c005721a                lv_task_set_cb
+                0x00000000c0057233                lv_task_del
+                0x00000000c0057289                lv_task_set_prio
+                0x00000000c0057372                lv_task_set_period
+                0x00000000c005738a                lv_task_ready
+                0x00000000c00573bd                lv_task_set_repeat_count
+                0x00000000c00573d6                lv_task_reset
+                0x00000000c00573fd                lv_task_enable
+                0x00000000c0057420                lv_task_get_idle
+                0x00000000c0057436                lv_task_get_next
+ .text          0x00000000c005756f     0x113d include/gui/lvgl/liblvgl.a(lv_txt.o)
+                0x00000000c00575c5                InitTxt
+                0x00000000c0057635                _lv_txt_get_size
+                0x00000000c0057a5b                _lv_txt_get_next_line
+                0x00000000c0057c32                _lv_txt_get_width
+                0x00000000c0057d4f                _lv_txt_is_cmd
+                0x00000000c0057dcc                _lv_txt_ins
+                0x00000000c0057e7d                _lv_txt_cut
+                0x00000000c0057f0b                _lv_txt_set_text_vfmt
+ .text          0x00000000c00586ac      0x1d3 include/gui/lvgl/liblvgl.a(lv_utils.o)
+                0x00000000c00586ac                _lv_utils_num_to_str
+                0x00000000c00587ef                _lv_utils_bsearch
+ .text          0x00000000c005887f      0x8c1 include/gui/lvgl/liblvgl.a(lv_theme.o)
+                0x00000000c005887f                lv_theme_set_act
+                0x00000000c0058898                lv_theme_get_act
+                0x00000000c00588ad                lv_theme_apply
+                0x00000000c00588ee                lv_theme_copy
+                0x00000000c0058993                lv_theme_set_base
+                0x00000000c00589ac                lv_theme_set_apply_cb
+                0x00000000c00589c4                lv_theme_get_font_small
+                0x00000000c00589dc                lv_theme_get_font_normal
+                0x00000000c00589f4                lv_theme_get_font_subtitle
+                0x00000000c0058a0c                lv_theme_get_font_title
+                0x00000000c0058a24                lv_theme_get_color_primary
+                0x00000000c0058a46                lv_theme_get_color_secondary
+                0x00000000c0058a68                lv_theme_get_flags
+ .text          0x00000000c0059140     0xa20a include/gui/lvgl/liblvgl.a(lv_theme_material.o)
+                0x00000000c0062177                lv_theme_material_init
+ .text          0x00000000c006334a     0x1a91 include/gui/lvgl/liblvgl.a(lv_bar.o)
+                0x00000000c00635cf                lv_bar_create
+                0x00000000c0063887                lv_bar_set_value
+                0x00000000c006397e                lv_bar_set_start_value
+                0x00000000c0063a6f                lv_bar_set_range
+                0x00000000c0063b96                lv_bar_set_type
+                0x00000000c0063c3f                lv_bar_set_anim_time
+                0x00000000c0063cad                lv_bar_get_value
+                0x00000000c0063d24                lv_bar_get_start_value
+                0x00000000c0063db3                lv_bar_get_min_value
+                0x00000000c0063e15                lv_bar_get_max_value
+                0x00000000c0063e77                lv_bar_get_type
+                0x00000000c0063edc                lv_bar_get_anim_time
+ .text          0x00000000c0064ddb      0x7d8 include/gui/lvgl/liblvgl.a(lv_btn.o)
+                0x00000000c0064e0d                lv_btn_create
+                0x00000000c0064ff1                lv_btn_set_checkable
+                0x00000000c006506b                lv_btn_set_state
+                0x00000000c0065198                lv_btn_toggle
+                0x00000000c006521f                lv_btn_get_state
+                0x00000000c00652db                lv_btn_get_checkable
+ .text          0x00000000c00655b3     0x1eb8 include/gui/lvgl/liblvgl.a(lv_cont.o)
+                0x00000000c0065829                lv_cont_create
+                0x00000000c0065a87                lv_cont_set_layout
+                0x00000000c0065b2f                lv_cont_set_fit4
+                0x00000000c0065ca5                lv_cont_get_layout
+                0x00000000c0065d09                lv_cont_get_fit_left
+                0x00000000c0065d70                lv_cont_get_fit_right
+                0x00000000c0065dd4                lv_cont_get_fit_top
+                0x00000000c0065e39                lv_cont_get_fit_bottom
+ .text          0x00000000c006746b     0x36e4 include/gui/lvgl/liblvgl.a(lv_label.o)
+                0x00000000c006781a                lv_label_create
+                0x00000000c0067c23                lv_label_set_text
+                0x00000000c0067e2d                lv_label_set_text_fmt
+                0x00000000c0067f4a                lv_label_set_text_static
+                0x00000000c0068000                lv_label_set_long_mode
+                0x00000000c006814a                lv_label_set_align
+                0x00000000c00681f4                lv_label_set_recolor
+                0x00000000c00682a6                lv_label_set_anim_speed
+                0x00000000c006834d                lv_label_set_text_sel_start
+                0x00000000c0068398                lv_label_set_text_sel_end
+                0x00000000c00683e3                lv_label_get_text
+                0x00000000c0068443                lv_label_get_long_mode
+                0x00000000c00684a8                lv_label_get_align
+                0x00000000c0068521                lv_label_get_recolor
+                0x00000000c006858b                lv_label_get_anim_speed
+                0x00000000c00685ed                lv_label_get_letter_pos
+                0x00000000c00689e4                lv_label_get_letter_on
+                0x00000000c0068e72                lv_label_get_text_sel_start
+                0x00000000c0068ec1                lv_label_get_text_sel_end
+                0x00000000c0068f10                lv_label_is_char_under_pos
+                0x00000000c0069323                lv_label_get_style
+                0x00000000c0069358                lv_label_ins_text
+                0x00000000c00694e5                lv_label_cut_text
+                0x00000000c0069592                lv_label_refr_text
+ .text          0x00000000c006ab4f      0xd2c include/gui/lvgl/liblvgl.a(lv_group.o)
+                0x00000000c006ab4f                _lv_group_init
+                0x00000000c006ab7c                lv_group_create
+                0x00000000c006ac51                lv_group_del
+                0x00000000c006ad14                lv_group_add_obj
+                0x00000000c006ae27                lv_group_remove_obj
+                0x00000000c006af62                lv_group_remove_all_objs
+                0x00000000c006b00c                lv_group_focus_obj
+                0x00000000c006b1d6                lv_group_focus_next
+                0x00000000c006b205                lv_group_focus_prev
+                0x00000000c006b234                lv_group_focus_freeze
+                0x00000000c006b274                lv_group_send_data
+                0x00000000c006b2f6                lv_group_set_focus_cb
+                0x00000000c006b30f                lv_group_set_editing
+                0x00000000c006b3d0                lv_group_set_click_focus
+                0x00000000c006b406                lv_group_set_refocus_policy
+                0x00000000c006b441                lv_group_set_wrap
+                0x00000000c006b475                lv_group_get_focused
+                0x00000000c006b4aa                lv_group_get_focus_cb
+                0x00000000c006b4cc                lv_group_get_editing
+                0x00000000c006b4fc                lv_group_get_click_focus
+                0x00000000c006b52d                lv_group_get_wrap
+ .text          0x00000000c006b87b     0x33ac include/gui/lvgl/liblvgl.a(lv_indev.o)
+                0x00000000c006b87b                _lv_indev_init
+                0x00000000c006b89d                _lv_indev_read_task
+                0x00000000c006ba53                lv_indev_get_act
+                0x00000000c006ba68                lv_indev_get_type
+                0x00000000c006ba8a                lv_indev_reset
+                0x00000000c006bb4d                lv_indev_reset_long_press
+                0x00000000c006bb8d                lv_indev_enable
+                0x00000000c006bbd0                lv_indev_set_cursor
+                0x00000000c006bc60                lv_indev_set_group
+                0x00000000c006bc8d                lv_indev_set_button_points
+                0x00000000c006bcb0                lv_indev_get_point
+                0x00000000c006bd1a                lv_indev_get_gesture_dir
+                0x00000000c006bd30                lv_indev_get_key
+                0x00000000c006bd56                lv_indev_is_dragging
+                0x00000000c006bd9c                lv_indev_get_vect
+                0x00000000c006be06                lv_indev_finish_drag
+                0x00000000c006bee3                lv_indev_wait_release
+                0x00000000c006bf08                lv_indev_get_obj_act
+                0x00000000c006bf1d                lv_indev_get_read_task
+                0x00000000c006dc8e                lv_indev_search_obj
+ .text          0x00000000c006ec27     0x202d include/gui/lvgl/liblvgl.a(lv_draw_blend.o)
+                0x00000000c006ee32                _lv_blend_fill
+                0x00000000c006f01e                _lv_blend_map
+ .text          0x00000000c0070c54      0x6fb include/gui/lvgl/liblvgl.a(lv_color.o)
+                0x00000000c0070d7a                lv_color_fill
+                0x00000000c0070e75                lv_color_lighten
+                0x00000000c0070ebb                lv_color_darken
+                0x00000000c0070f01                lv_color_hsv_to_rgb
+                0x00000000c007111c                lv_color_rgb_to_hsv
+                0x00000000c0071302                lv_color_to_hsv
+ .text          0x00000000c007134f      0xcae include/gui/lvgl/liblvgl.a(lv_printf.o)
+                0x00000000c0071f90                lv_snprintf
+                0x00000000c0071fcd                lv_vsnprintf
  *(.gnu.warning)
 
 .fini
@@ -2094,81 +2220,88 @@ LOAD include/gui/lvgl/liblvgl.a
                 [!provide]                        PROVIDE (__etext = .)
                 [!provide]                        PROVIDE (_etext = .)
                 [!provide]                        PROVIDE (etext = .)
-                0x00000000c006b000                . = ALIGN (CONSTANT (MAXPAGESIZE))
-                0x00000000c006b000                . = SEGMENT_START ("rodata-segment", (ALIGN (CONSTANT (MAXPAGESIZE)) + (. & (CONSTANT (MAXPAGESIZE) - 0x1))))
+                0x00000000c0072000                . = ALIGN (CONSTANT (MAXPAGESIZE))
+                0x00000000c0072000                . = SEGMENT_START ("rodata-segment", (ALIGN (CONSTANT (MAXPAGESIZE)) + (. & (CONSTANT (MAXPAGESIZE) - 0x1))))
 
-.rodata         0x00000000c006b000     0x4cb8
+.rodata         0x00000000c0072000     0x4d7c
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00000000c006b000       0x47 kernel/start.o
- *fill*         0x00000000c006b047        0x1 
- .rodata        0x00000000c006b048       0x9c kernel/main.o
- .rodata        0x00000000c006b0e4       0x11 kernel/i8259.o
- *fill*         0x00000000c006b0f5        0xb 
- .rodata        0x00000000c006b100      0x561 kernel/protect.o
- .rodata        0x00000000c006b661       0x24 kernel/memman.o
- *fill*         0x00000000c006b685        0x3 
- .rodata        0x00000000c006b688       0xcf kernel/pagetbl.o
- .rodata        0x00000000c006b757       0x1f kernel/elf.o
- *fill*         0x00000000c006b776        0x2 
- .rodata        0x00000000c006b778       0x4c kernel/exec.o
- .rodata        0x00000000c006b7c4       0x2b kernel/fork.o
- .rodata        0x00000000c006b7ef       0x34 kernel/pthread.o
- *fill*         0x00000000c006b823        0x1 
- .rodata        0x00000000c006b824       0xae kernel/ktest.o
- .rodata        0x00000000c006b8d2        0xb kernel/testfunc.o
- *fill*         0x00000000c006b8dd        0x3 
- .rodata        0x00000000c006b8e0      0x266 kernel/fs.o
- .rodata        0x00000000c006bb46       0xbe kernel/hd.o
- .rodata        0x00000000c006bc04      0x207 kernel/fat32.o
- .rodata        0x00000000c006be0b       0x17 kernel/base.o
- .rodata        0x00000000c006be22        0x5 kernel/assist.o
- *fill*         0x00000000c006be27        0x1 
- .rodata        0x00000000c006be28       0xc3 kernel/vfs.o
- *fill*         0x00000000c006beeb        0x1 
- .rodata        0x00000000c006beec       0x64 kernel/keyboard.o
- .rodata        0x00000000c006bf50       0x90 kernel/tty.o
- .rodata        0x00000000c006bfe0       0x6e kernel/shell.o
- *fill*         0x00000000c006c04e        0x2 
- .rodata        0x00000000c006c050       0x7c include/gui/lvgl/liblvgl.a(lv_obj.o)
- .rodata        0x00000000c006c0cc        0xe include/gui/lvgl/liblvgl.a(lv_style.o)
- *fill*         0x00000000c006c0da        0x2 
- .rodata        0x00000000c006c0dc       0x44 include/gui/lvgl/liblvgl.a(lv_draw_img.o)
- .rodata        0x00000000c006c120      0x138 include/gui/lvgl/liblvgl.a(lv_draw_label.o)
-                0x00000000c006c120                _lv_bpp1_opa_table
-                0x00000000c006c124                _lv_bpp2_opa_table
-                0x00000000c006c128                _lv_bpp3_opa_table
-                0x00000000c006c130                _lv_bpp4_opa_table
-                0x00000000c006c140                _lv_bpp8_opa_table
- *fill*         0x00000000c006c258        0x8 
- .rodata        0x00000000c006c260       0x21 include/gui/lvgl/liblvgl.a(lv_draw_line.o)
- .rodata        0x00000000c006c281       0x2c include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
- *fill*         0x00000000c006c2ad        0x3 
- .rodata        0x00000000c006c2b0       0x2c include/gui/lvgl/liblvgl.a(lv_img_buf.o)
- .rodata        0x00000000c006c2dc       0x12 include/gui/lvgl/liblvgl.a(lv_img_decoder.o)
- *fill*         0x00000000c006c2ee        0x2 
- .rodata        0x00000000c006c2f0       0x54 include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
- *fill*         0x00000000c006c344       0x1c 
- .rodata        0x00000000c006c360     0x33ed include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
- .rodata        0x00000000c006f74d        0xe include/gui/lvgl/liblvgl.a(lv_hal_disp.o)
- .rodata        0x00000000c006f75b        0xe include/gui/lvgl/liblvgl.a(lv_hal_indev.o)
- .rodata        0x00000000c006f769        0xe include/gui/lvgl/liblvgl.a(lv_anim.o)
- *fill*         0x00000000c006f777        0x1 
- .rodata        0x00000000c006f778       0x54 include/gui/lvgl/liblvgl.a(lv_area.o)
- .rodata        0x00000000c006f7cc        0xf include/gui/lvgl/liblvgl.a(lv_fs.o)
- *fill*         0x00000000c006f7db        0x5 
- .rodata        0x00000000c006f7e0       0xb6 include/gui/lvgl/liblvgl.a(lv_math.o)
- *fill*         0x00000000c006f896        0x2 
- .rodata        0x00000000c006f898       0x81 include/gui/lvgl/liblvgl.a(lv_mem.o)
- .rodata        0x00000000c006f919        0xe include/gui/lvgl/liblvgl.a(lv_task.o)
- .rodata        0x00000000c006f927       0x16 include/gui/lvgl/liblvgl.a(lv_txt.o)
- *fill*         0x00000000c006f93d        0x3 
- .rodata        0x00000000c006f940       0xa4 include/gui/lvgl/liblvgl.a(lv_theme.o)
- .rodata        0x00000000c006f9e4       0xa8 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
- .rodata        0x00000000c006fa8c       0x28 include/gui/lvgl/liblvgl.a(lv_disp.o)
- .rodata        0x00000000c006fab4        0xe include/gui/lvgl/liblvgl.a(lv_group.o)
- *fill*         0x00000000c006fac2        0x2 
- .rodata        0x00000000c006fac4       0x14 include/gui/lvgl/liblvgl.a(lv_color.o)
- .rodata        0x00000000c006fad8      0x1e0 include/gui/lvgl/liblvgl.a(lv_printf.o)
+ .rodata        0x00000000c0072000       0x47 kernel/start.o
+ *fill*         0x00000000c0072047        0x1 
+ .rodata        0x00000000c0072048       0x9c kernel/main.o
+ .rodata        0x00000000c00720e4       0x11 kernel/i8259.o
+ *fill*         0x00000000c00720f5        0xb 
+ .rodata        0x00000000c0072100      0x561 kernel/protect.o
+ .rodata        0x00000000c0072661       0x24 kernel/memman.o
+ *fill*         0x00000000c0072685        0x3 
+ .rodata        0x00000000c0072688       0xcf kernel/pagetbl.o
+ .rodata        0x00000000c0072757       0x1f kernel/elf.o
+ *fill*         0x00000000c0072776        0x2 
+ .rodata        0x00000000c0072778       0x4c kernel/exec.o
+ .rodata        0x00000000c00727c4       0x2b kernel/fork.o
+ .rodata        0x00000000c00727ef       0x34 kernel/pthread.o
+ *fill*         0x00000000c0072823        0x1 
+ .rodata        0x00000000c0072824       0xae kernel/ktest.o
+ .rodata        0x00000000c00728d2        0xb kernel/testfunc.o
+ *fill*         0x00000000c00728dd        0x3 
+ .rodata        0x00000000c00728e0      0x266 kernel/fs.o
+ .rodata        0x00000000c0072b46       0xbe kernel/hd.o
+ .rodata        0x00000000c0072c04      0x207 kernel/fat32.o
+ .rodata        0x00000000c0072e0b       0x17 kernel/base.o
+ .rodata        0x00000000c0072e22        0x5 kernel/assist.o
+ *fill*         0x00000000c0072e27        0x1 
+ .rodata        0x00000000c0072e28       0xc3 kernel/vfs.o
+ *fill*         0x00000000c0072eeb        0x1 
+ .rodata        0x00000000c0072eec       0x64 kernel/keyboard.o
+ .rodata        0x00000000c0072f50       0x90 kernel/tty.o
+ .rodata        0x00000000c0072fe0       0x6e kernel/shell.o
+ .rodata        0x00000000c007304e        0x7 ./kernel/gui/libgui.a(ginit.o)
+ *fill*         0x00000000c0073055        0x3 
+ .rodata        0x00000000c0073058       0x28 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .rodata        0x00000000c0073080       0x7c include/gui/lvgl/liblvgl.a(lv_obj.o)
+ .rodata        0x00000000c00730fc        0xe include/gui/lvgl/liblvgl.a(lv_style.o)
+ *fill*         0x00000000c007310a        0x2 
+ .rodata        0x00000000c007310c       0x44 include/gui/lvgl/liblvgl.a(lv_draw_img.o)
+ *fill*         0x00000000c0073150       0x10 
+ .rodata        0x00000000c0073160      0x138 include/gui/lvgl/liblvgl.a(lv_draw_label.o)
+                0x00000000c0073160                _lv_bpp1_opa_table
+                0x00000000c0073164                _lv_bpp2_opa_table
+                0x00000000c0073168                _lv_bpp3_opa_table
+                0x00000000c0073170                _lv_bpp4_opa_table
+                0x00000000c0073180                _lv_bpp8_opa_table
+ *fill*         0x00000000c0073298        0x8 
+ .rodata        0x00000000c00732a0       0x21 include/gui/lvgl/liblvgl.a(lv_draw_line.o)
+ .rodata        0x00000000c00732c1       0x2c include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
+ *fill*         0x00000000c00732ed        0x3 
+ .rodata        0x00000000c00732f0       0x2c include/gui/lvgl/liblvgl.a(lv_img_buf.o)
+ .rodata        0x00000000c007331c       0x12 include/gui/lvgl/liblvgl.a(lv_img_decoder.o)
+ *fill*         0x00000000c007332e        0x2 
+ .rodata        0x00000000c0073330       0x54 include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
+ *fill*         0x00000000c0073384       0x1c 
+ .rodata        0x00000000c00733a0     0x33ed include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+ .rodata        0x00000000c007678d        0xe include/gui/lvgl/liblvgl.a(lv_hal_disp.o)
+ .rodata        0x00000000c007679b        0xe include/gui/lvgl/liblvgl.a(lv_hal_indev.o)
+ .rodata        0x00000000c00767a9        0xe include/gui/lvgl/liblvgl.a(lv_anim.o)
+ *fill*         0x00000000c00767b7        0x1 
+ .rodata        0x00000000c00767b8       0x54 include/gui/lvgl/liblvgl.a(lv_area.o)
+ .rodata        0x00000000c007680c        0xf include/gui/lvgl/liblvgl.a(lv_fs.o)
+ *fill*         0x00000000c007681b        0x5 
+ .rodata        0x00000000c0076820       0xb6 include/gui/lvgl/liblvgl.a(lv_math.o)
+ *fill*         0x00000000c00768d6        0x2 
+ .rodata        0x00000000c00768d8       0x81 include/gui/lvgl/liblvgl.a(lv_mem.o)
+ .rodata        0x00000000c0076959        0xe include/gui/lvgl/liblvgl.a(lv_task.o)
+ .rodata        0x00000000c0076967       0x16 include/gui/lvgl/liblvgl.a(lv_txt.o)
+ *fill*         0x00000000c007697d        0x3 
+ .rodata        0x00000000c0076980       0xa4 include/gui/lvgl/liblvgl.a(lv_theme.o)
+ .rodata        0x00000000c0076a24       0xa8 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
+ .rodata        0x00000000c0076acc       0x22 include/gui/lvgl/liblvgl.a(lv_bar.o)
+ *fill*         0x00000000c0076aee        0x2 
+ .rodata        0x00000000c0076af0       0x3b include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .rodata        0x00000000c0076b2b       0x23 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .rodata        0x00000000c0076b4e       0x29 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .rodata        0x00000000c0076b77        0xe include/gui/lvgl/liblvgl.a(lv_group.o)
+ *fill*         0x00000000c0076b85        0x3 
+ .rodata        0x00000000c0076b88       0x14 include/gui/lvgl/liblvgl.a(lv_color.o)
+ .rodata        0x00000000c0076b9c      0x1e0 include/gui/lvgl/liblvgl.a(lv_printf.o)
 
 .rodata1
  *(.rodata1)
@@ -2177,144 +2310,154 @@ LOAD include/gui/lvgl/liblvgl.a
  *(.eh_frame_hdr)
  *(.eh_frame_entry .eh_frame_entry.*)
 
-.eh_frame       0x00000000c006fcb8     0x9dbc
+.eh_frame       0x00000000c0076d7c     0xb06c
  *(.eh_frame)
- .eh_frame      0x00000000c006fcb8       0x50 kernel/start.o
- .eh_frame      0x00000000c006fd08       0x7c kernel/main.o
+ .eh_frame      0x00000000c0076d7c       0x50 kernel/start.o
+ .eh_frame      0x00000000c0076dcc       0x7c kernel/main.o
                                          0xa8 (松开之前的大小)
- .eh_frame      0x00000000c006fd84       0x48 kernel/clock.o
+ .eh_frame      0x00000000c0076e48       0x48 kernel/clock.o
                                          0x88 (松开之前的大小)
- .eh_frame      0x00000000c006fdcc       0x6c kernel/i8259.o
+ .eh_frame      0x00000000c0076e90       0x6c kernel/i8259.o
                                          0x98 (松开之前的大小)
- .eh_frame      0x00000000c006fe38       0xd8 kernel/protect.o
+ .eh_frame      0x00000000c0076efc       0xd8 kernel/protect.o
                                         0x118 (松开之前的大小)
- .eh_frame      0x00000000c006ff10      0x108 kernel/proc.o
+ .eh_frame      0x00000000c0076fd4      0x108 kernel/proc.o
                                         0x148 (松开之前的大小)
- .eh_frame      0x00000000c0070018       0x64 lib/klib.o
+ .eh_frame      0x00000000c00770dc       0x64 lib/klib.o
                                          0xa4 (松开之前的大小)
- .eh_frame      0x00000000c007007c       0x20 lib/stringc.o
+ .eh_frame      0x00000000c0077140       0x20 lib/stringc.o
                                          0x4c (松开之前的大小)
- .eh_frame      0x00000000c007009c      0x160 kernel/syscallc.o
+ .eh_frame      0x00000000c0077160      0x160 kernel/syscallc.o
                                         0x1a0 (松开之前的大小)
- .eh_frame      0x00000000c00701fc      0x260 kernel/memman.o
+ .eh_frame      0x00000000c00772c0      0x260 kernel/memman.o
                                         0x2a0 (松开之前的大小)
- .eh_frame      0x00000000c007045c      0x1f8 kernel/pagetbl.o
+ .eh_frame      0x00000000c0077520      0x1f8 kernel/pagetbl.o
                                         0x238 (松开之前的大小)
- .eh_frame      0x00000000c0070654       0xb0 kernel/elf.o
+ .eh_frame      0x00000000c0077718       0xb0 kernel/elf.o
                                          0xf0 (松开之前的大小)
- .eh_frame      0x00000000c0070704       0x64 kernel/file.o
+ .eh_frame      0x00000000c00777c8       0x64 kernel/file.o
                                          0x90 (松开之前的大小)
- .eh_frame      0x00000000c0070768       0x90 kernel/exec.o
+ .eh_frame      0x00000000c007782c       0x90 kernel/exec.o
                                          0xbc (松开之前的大小)
- .eh_frame      0x00000000c00707f8       0x9c kernel/fork.o
+ .eh_frame      0x00000000c00778bc       0x9c kernel/fork.o
                                          0xdc (松开之前的大小)
- .eh_frame      0x00000000c0070894       0xc0 kernel/pthread.o
+ .eh_frame      0x00000000c0077958       0xc0 kernel/pthread.o
                                         0x100 (松开之前的大小)
- .eh_frame      0x00000000c0070954       0x4c kernel/ktest.o
+ .eh_frame      0x00000000c0077a18       0x4c kernel/ktest.o
                                          0x78 (松开之前的大小)
- .eh_frame      0x00000000c00709a0       0x48 kernel/testfunc.o
+ .eh_frame      0x00000000c0077a64       0x48 kernel/testfunc.o
                                          0x74 (松开之前的大小)
- .eh_frame      0x00000000c00709e8      0x4b4 kernel/fs.o
+ .eh_frame      0x00000000c0077aac      0x4b4 kernel/fs.o
                                         0x4f4 (松开之前的大小)
- .eh_frame      0x00000000c0070e9c      0x318 kernel/hd.o
+ .eh_frame      0x00000000c0077f60      0x318 kernel/hd.o
                                         0x36c (松开之前的大小)
- .eh_frame      0x00000000c00711b4       0x84 kernel/spinlock.o
+ .eh_frame      0x00000000c0078278       0x84 kernel/spinlock.o
                                          0xb0 (松开之前的大小)
- .eh_frame      0x00000000c0071238      0x43c kernel/fat32.o
+ .eh_frame      0x00000000c00782fc      0x43c kernel/fat32.o
                                         0x490 (松开之前的大小)
- .eh_frame      0x00000000c0071674      0x340 kernel/base.o
+ .eh_frame      0x00000000c0078738      0x340 kernel/base.o
                                         0x3a8 (松开之前的大小)
- .eh_frame      0x00000000c00719b4      0x140 kernel/assist.o
+ .eh_frame      0x00000000c0078a78      0x140 kernel/assist.o
                                         0x180 (松开之前的大小)
- .eh_frame      0x00000000c0071af4      0x430 kernel/vfs.o
+ .eh_frame      0x00000000c0078bb8      0x430 kernel/vfs.o
                                         0x470 (松开之前的大小)
- .eh_frame      0x00000000c0071f24      0x168 kernel/keyboard.o
+ .eh_frame      0x00000000c0078fe8      0x168 kernel/keyboard.o
                                         0x194 (松开之前的大小)
- .eh_frame      0x00000000c007208c      0x134 kernel/tty.o
+ .eh_frame      0x00000000c0079150      0x134 kernel/tty.o
                                         0x188 (松开之前的大小)
- .eh_frame      0x00000000c00721c0       0xb0 kernel/shell.o
+ .eh_frame      0x00000000c0079284       0xb0 kernel/shell.o
                                          0xf0 (松开之前的大小)
- .eh_frame      0x00000000c0072270      0x154 kernel/console.o
+ .eh_frame      0x00000000c0079334      0x154 kernel/console.o
                                         0x1bc (松开之前的大小)
- .eh_frame      0x00000000c00723c4       0x24 lib/ulib.a(printf.o)
+ .eh_frame      0x00000000c0079488       0x24 lib/ulib.a(printf.o)
                                          0x50 (松开之前的大小)
- .eh_frame      0x00000000c00723e8       0xec lib/ulib.a(vsprintf.o)
+ .eh_frame      0x00000000c00794ac       0xec lib/ulib.a(vsprintf.o)
                                         0x12c (松开之前的大小)
- .eh_frame      0x00000000c00724d4       0x40 ./kernel/gui/libgui.a(ginit.o)
-                                         0x80 (松开之前的大小)
- .eh_frame      0x00000000c0072514       0x48 ./kernel/gui/libgui.a(plot.o)
-                                         0x74 (松开之前的大小)
- .eh_frame      0x00000000c007255c     0x24e8 include/gui/lvgl/liblvgl.a(lv_obj.o)
-                                       0x2528 (松开之前的大小)
- .eh_frame      0x00000000c0074a44      0x2a4 include/gui/lvgl/liblvgl.a(lv_refr.o)
-                                        0x2e4 (松开之前的大小)
- .eh_frame      0x00000000c0074ce8      0x55c include/gui/lvgl/liblvgl.a(lv_style.o)
-                                        0x59c (松开之前的大小)
- .eh_frame      0x00000000c0075244      0x260 include/gui/lvgl/liblvgl.a(lv_draw_img.o)
-                                        0x2a0 (松开之前的大小)
- .eh_frame      0x00000000c00754a4      0x178 include/gui/lvgl/liblvgl.a(lv_draw_label.o)
-                                        0x1b8 (松开之前的大小)
- .eh_frame      0x00000000c007561c       0xf0 include/gui/lvgl/liblvgl.a(lv_draw_line.o)
-                                        0x130 (松开之前的大小)
- .eh_frame      0x00000000c007570c      0x398 include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
-                                        0x3d8 (松开之前的大小)
- .eh_frame      0x00000000c0075aa4      0x2a4 include/gui/lvgl/liblvgl.a(lv_draw_rect.o)
-                                        0x2e4 (松开之前的大小)
- .eh_frame      0x00000000c0075d48      0x204 include/gui/lvgl/liblvgl.a(lv_img_buf.o)
-                                        0x244 (松开之前的大小)
- .eh_frame      0x00000000c0075f4c       0x64 include/gui/lvgl/liblvgl.a(lv_img_cache.o)
-                                         0xa4 (松开之前的大小)
- .eh_frame      0x00000000c0075fb0      0x2d4 include/gui/lvgl/liblvgl.a(lv_img_decoder.o)
-                                        0x314 (松开之前的大小)
- .eh_frame      0x00000000c0076284       0x60 include/gui/lvgl/liblvgl.a(lv_font.o)
-                                         0x8c (松开之前的大小)
- .eh_frame      0x00000000c00762e4      0x1fc include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
-                                        0x250 (松开之前的大小)
- .eh_frame      0x00000000c00764e0      0x29c include/gui/lvgl/liblvgl.a(lv_hal_disp.o)
-                                        0x2dc (松开之前的大小)
- .eh_frame      0x00000000c007677c       0xb4 include/gui/lvgl/liblvgl.a(lv_hal_indev.o)
-                                         0xf4 (松开之前的大小)
- .eh_frame      0x00000000c0076830       0x60 include/gui/lvgl/liblvgl.a(lv_hal_tick.o)
-                                         0x8c (松开之前的大小)
- .eh_frame      0x00000000c0076890      0x29c include/gui/lvgl/liblvgl.a(lv_anim.o)
-                                        0x2f0 (松开之前的大小)
- .eh_frame      0x00000000c0076b2c      0x1c8 include/gui/lvgl/liblvgl.a(lv_area.o)
-                                        0x1f4 (松开之前的大小)
- .eh_frame      0x00000000c0076cf4       0x48 include/gui/lvgl/liblvgl.a(lv_async.o)
-                                         0x74 (松开之前的大小)
- .eh_frame      0x00000000c0076d3c       0x88 include/gui/lvgl/liblvgl.a(lv_debug.o)
+ .eh_frame      0x00000000c0079598       0x88 ./kernel/gui/libgui.a(ginit.o)
                                          0xc8 (松开之前的大小)
- .eh_frame      0x00000000c0076dc4      0x340 include/gui/lvgl/liblvgl.a(lv_fs.o)
-                                        0x380 (松开之前的大小)
- .eh_frame      0x00000000c0077104       0x24 include/gui/lvgl/liblvgl.a(lv_gc.o)
-                                         0x50 (松开之前的大小)
- .eh_frame      0x00000000c0077128      0x210 include/gui/lvgl/liblvgl.a(lv_ll.o)
-                                        0x250 (松开之前的大小)
- .eh_frame      0x00000000c0077338       0xc8 include/gui/lvgl/liblvgl.a(lv_math.o)
-                                         0xf4 (松开之前的大小)
- .eh_frame      0x00000000c0077400      0x280 include/gui/lvgl/liblvgl.a(lv_mem.o)
-                                        0x2c0 (松开之前的大小)
- .eh_frame      0x00000000c0077680      0x22c include/gui/lvgl/liblvgl.a(lv_task.o)
-                                        0x26c (松开之前的大小)
- .eh_frame      0x00000000c00778ac      0x2a8 include/gui/lvgl/liblvgl.a(lv_txt.o)
-                                        0x2e8 (松开之前的大小)
- .eh_frame      0x00000000c0077b54       0x40 include/gui/lvgl/liblvgl.a(lv_utils.o)
-                                         0x6c (松开之前的大小)
- .eh_frame      0x00000000c0077b94      0x1f0 include/gui/lvgl/liblvgl.a(lv_theme.o)
-                                        0x230 (松开之前的大小)
- .eh_frame      0x00000000c0077d84      0xcf0 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
-                                        0xd30 (松开之前的大小)
- .eh_frame      0x00000000c0078a74      0x394 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .eh_frame      0x00000000c0079620       0x48 ./kernel/gui/libgui.a(plot.o)
+                                         0x74 (松开之前的大小)
+ .eh_frame      0x00000000c0079668      0x394 include/gui/lvgl/liblvgl.a(lv_disp.o)
                                         0x3d4 (松开之前的大小)
- .eh_frame      0x00000000c0078e08      0x32c include/gui/lvgl/liblvgl.a(lv_group.o)
+ .eh_frame      0x00000000c00799fc     0x24e8 include/gui/lvgl/liblvgl.a(lv_obj.o)
+                                       0x2528 (松开之前的大小)
+ .eh_frame      0x00000000c007bee4      0x2a4 include/gui/lvgl/liblvgl.a(lv_refr.o)
+                                        0x2e4 (松开之前的大小)
+ .eh_frame      0x00000000c007c188      0x55c include/gui/lvgl/liblvgl.a(lv_style.o)
+                                        0x59c (松开之前的大小)
+ .eh_frame      0x00000000c007c6e4      0x260 include/gui/lvgl/liblvgl.a(lv_draw_img.o)
+                                        0x2a0 (松开之前的大小)
+ .eh_frame      0x00000000c007c944      0x178 include/gui/lvgl/liblvgl.a(lv_draw_label.o)
+                                        0x1b8 (松开之前的大小)
+ .eh_frame      0x00000000c007cabc       0xf0 include/gui/lvgl/liblvgl.a(lv_draw_line.o)
+                                        0x130 (松开之前的大小)
+ .eh_frame      0x00000000c007cbac      0x398 include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
+                                        0x3d8 (松开之前的大小)
+ .eh_frame      0x00000000c007cf44      0x2a4 include/gui/lvgl/liblvgl.a(lv_draw_rect.o)
+                                        0x2e4 (松开之前的大小)
+ .eh_frame      0x00000000c007d1e8      0x204 include/gui/lvgl/liblvgl.a(lv_img_buf.o)
+                                        0x244 (松开之前的大小)
+ .eh_frame      0x00000000c007d3ec       0x64 include/gui/lvgl/liblvgl.a(lv_img_cache.o)
+                                         0xa4 (松开之前的大小)
+ .eh_frame      0x00000000c007d450      0x2d4 include/gui/lvgl/liblvgl.a(lv_img_decoder.o)
+                                        0x314 (松开之前的大小)
+ .eh_frame      0x00000000c007d724       0x60 include/gui/lvgl/liblvgl.a(lv_font.o)
+                                         0x8c (松开之前的大小)
+ .eh_frame      0x00000000c007d784      0x1fc include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
+                                        0x250 (松开之前的大小)
+ .eh_frame      0x00000000c007d980       0x20 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+                                         0x4c (松开之前的大小)
+ .eh_frame      0x00000000c007d9a0      0x29c include/gui/lvgl/liblvgl.a(lv_hal_disp.o)
+                                        0x2dc (松开之前的大小)
+ .eh_frame      0x00000000c007dc3c       0xb4 include/gui/lvgl/liblvgl.a(lv_hal_indev.o)
+                                         0xf4 (松开之前的大小)
+ .eh_frame      0x00000000c007dcf0       0x60 include/gui/lvgl/liblvgl.a(lv_hal_tick.o)
+                                         0x8c (松开之前的大小)
+ .eh_frame      0x00000000c007dd50      0x29c include/gui/lvgl/liblvgl.a(lv_anim.o)
+                                        0x2f0 (松开之前的大小)
+ .eh_frame      0x00000000c007dfec      0x1c8 include/gui/lvgl/liblvgl.a(lv_area.o)
+                                        0x1f4 (松开之前的大小)
+ .eh_frame      0x00000000c007e1b4       0x48 include/gui/lvgl/liblvgl.a(lv_async.o)
+                                         0x74 (松开之前的大小)
+ .eh_frame      0x00000000c007e1fc       0x88 include/gui/lvgl/liblvgl.a(lv_debug.o)
+                                         0xc8 (松开之前的大小)
+ .eh_frame      0x00000000c007e284      0x340 include/gui/lvgl/liblvgl.a(lv_fs.o)
+                                        0x380 (松开之前的大小)
+ .eh_frame      0x00000000c007e5c4       0x24 include/gui/lvgl/liblvgl.a(lv_gc.o)
+                                         0x50 (松开之前的大小)
+ .eh_frame      0x00000000c007e5e8      0x210 include/gui/lvgl/liblvgl.a(lv_ll.o)
+                                        0x250 (松开之前的大小)
+ .eh_frame      0x00000000c007e7f8       0xc8 include/gui/lvgl/liblvgl.a(lv_math.o)
+                                         0xf4 (松开之前的大小)
+ .eh_frame      0x00000000c007e8c0      0x280 include/gui/lvgl/liblvgl.a(lv_mem.o)
+                                        0x2c0 (松开之前的大小)
+ .eh_frame      0x00000000c007eb40      0x22c include/gui/lvgl/liblvgl.a(lv_task.o)
+                                        0x26c (松开之前的大小)
+ .eh_frame      0x00000000c007ed6c      0x2c8 include/gui/lvgl/liblvgl.a(lv_txt.o)
+                                        0x308 (松开之前的大小)
+ .eh_frame      0x00000000c007f034       0x40 include/gui/lvgl/liblvgl.a(lv_utils.o)
+                                         0x6c (松开之前的大小)
+ .eh_frame      0x00000000c007f074      0x1f0 include/gui/lvgl/liblvgl.a(lv_theme.o)
+                                        0x230 (松开之前的大小)
+ .eh_frame      0x00000000c007f264      0xcf0 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
+                                        0xd30 (松开之前的大小)
+ .eh_frame      0x00000000c007ff54      0x4e8 include/gui/lvgl/liblvgl.a(lv_bar.o)
+                                        0x528 (松开之前的大小)
+ .eh_frame      0x00000000c008043c      0x140 include/gui/lvgl/liblvgl.a(lv_btn.o)
+                                        0x180 (松开之前的大小)
+ .eh_frame      0x00000000c008057c      0x440 include/gui/lvgl/liblvgl.a(lv_cont.o)
+                                        0x480 (松开之前的大小)
+ .eh_frame      0x00000000c00809bc      0x7c0 include/gui/lvgl/liblvgl.a(lv_label.o)
+                                        0x800 (松开之前的大小)
+ .eh_frame      0x00000000c008117c      0x32c include/gui/lvgl/liblvgl.a(lv_group.o)
                                         0x36c (松开之前的大小)
- .eh_frame      0x00000000c0079134      0x470 include/gui/lvgl/liblvgl.a(lv_indev.o)
+ .eh_frame      0x00000000c00814a8      0x470 include/gui/lvgl/liblvgl.a(lv_indev.o)
                                         0x4c4 (松开之前的大小)
- .eh_frame      0x00000000c00795a4      0x234 include/gui/lvgl/liblvgl.a(lv_draw_blend.o)
+ .eh_frame      0x00000000c0081918      0x234 include/gui/lvgl/liblvgl.a(lv_draw_blend.o)
                                         0x274 (松开之前的大小)
- .eh_frame      0x00000000c00797d8      0x134 include/gui/lvgl/liblvgl.a(lv_color.o)
+ .eh_frame      0x00000000c0081b4c      0x134 include/gui/lvgl/liblvgl.a(lv_color.o)
                                         0x188 (松开之前的大小)
- .eh_frame      0x00000000c007990c      0x168 include/gui/lvgl/liblvgl.a(lv_printf.o)
+ .eh_frame      0x00000000c0081c80      0x168 include/gui/lvgl/liblvgl.a(lv_printf.o)
                                         0x1a8 (松开之前的大小)
  *(.eh_frame.*)
 
@@ -2326,7 +2469,7 @@ LOAD include/gui/lvgl/liblvgl.a
 
 .exception_ranges
  *(.exception_ranges*)
-                0x00000000c007afc0                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+                0x00000000c0082fc0                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
 
 .eh_frame
  *(.eh_frame)
@@ -2341,7 +2484,7 @@ LOAD include/gui/lvgl/liblvgl.a
 .exception_ranges
  *(.exception_ranges*)
 
-.tdata          0x00000000c007afc0        0x0
+.tdata          0x00000000c0082fc0        0x0
                 [!provide]                        PROVIDE (__tdata_start = .)
  *(.tdata .tdata.* .gnu.linkonce.td.*)
 
@@ -2349,18 +2492,18 @@ LOAD include/gui/lvgl/liblvgl.a
  *(.tbss .tbss.* .gnu.linkonce.tb.*)
  *(.tcommon)
 
-.preinit_array  0x00000000c007afc0        0x0
+.preinit_array  0x00000000c0082fc0        0x0
                 [!provide]                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x00000000c007afc0        0x0
+.init_array     0x00000000c0082fc0        0x0
                 [!provide]                        PROVIDE (__init_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
  *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
                 [!provide]                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x00000000c007afc0        0x0
+.fini_array     0x00000000c0082fc0        0x0
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
  *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
@@ -2383,305 +2526,313 @@ LOAD include/gui/lvgl/liblvgl.a
 .jcr
  *(.jcr)
 
-.data.rel.ro    0x00000000c007afc0       0x40
+.data.rel.ro    0x00000000c0082fc0       0x40
  *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
  .data.rel.ro.local
-                0x00000000c007afc0       0x38 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+                0x00000000c0082fc0       0x38 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
  .data.rel.ro.local
-                0x00000000c007aff8        0x8 include/gui/lvgl/liblvgl.a(lv_anim.o)
-                0x00000000c007aff8                lv_anim_path_def
+                0x00000000c0082ff8        0x8 include/gui/lvgl/liblvgl.a(lv_anim.o)
+                0x00000000c0082ff8                lv_anim_path_def
  *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
 
 .dynamic
  *(.dynamic)
 
-.got            0x00000000c007b000        0x0
+.got            0x00000000c0083000        0x0
  *(.got)
- .got           0x00000000c007b000        0x0 kernel/kernel.o
+ .got           0x00000000c0083000        0x0 kernel/kernel.o
  *(.igot)
-                0x00000000c007bff4                . = DATA_SEGMENT_RELRO_END (., (SIZEOF (.got.plt) >= 0xc)?0xc:0x0)
+                0x00000000c0083ff4                . = DATA_SEGMENT_RELRO_END (., (SIZEOF (.got.plt) >= 0xc)?0xc:0x0)
 
-.got.plt        0x00000000c007b000        0xc
+.got.plt        0x00000000c0083000        0xc
  *(.got.plt)
- .got.plt       0x00000000c007b000        0xc kernel/kernel.o
-                0x00000000c007b000                _GLOBAL_OFFSET_TABLE_
+ .got.plt       0x00000000c0083000        0xc kernel/kernel.o
+                0x00000000c0083000                _GLOBAL_OFFSET_TABLE_
  *(.igot.plt)
- .igot.plt      0x00000000c007b00c        0x0 kernel/kernel.o
+ .igot.plt      0x00000000c008300c        0x0 kernel/kernel.o
 
-.data           0x00000000c007b020    0x11611
+.data           0x00000000c0083020     0x9631
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x00000000c007b020        0x2 kernel/kernel.o
- .data          0x00000000c007b022        0x0 kernel/start.o
- .data          0x00000000c007b022        0x0 kernel/main.o
- .data          0x00000000c007b022        0x0 kernel/clock.o
- .data          0x00000000c007b022        0x0 kernel/i8259.o
- *fill*         0x00000000c007b022       0x1e 
- .data          0x00000000c007b040      0xc40 kernel/global.o
-                0x00000000c007b040                disp_pos
-                0x00000000c007b044                gdt_ptr
-                0x00000000c007b060                gdt
-                0x00000000c007b460                idt_ptr
-                0x00000000c007b480                idt
- .data.rel      0x00000000c007bc80       0xd0 kernel/global.o
-                0x00000000c007bc80                task_table
-                0x00000000c007bce0                sys_call_table
- .data          0x00000000c007bd50        0x0 kernel/protect.o
- .data          0x00000000c007bd50        0x0 kernel/proc.o
- .data          0x00000000c007bd50        0x0 lib/klib.o
- .data          0x00000000c007bd50        0x0 lib/stringc.o
- .data          0x00000000c007bd50        0x0 kernel/syscallc.o
- *fill*         0x00000000c007bd50       0x10 
- .data          0x00000000c007bd60     0x7fe4 kernel/memman.o
-                0x00000000c007bd60                s_memman
-                0x00000000c0083d40                memman
- .data          0x00000000c0083d44        0x0 kernel/pagetbl.o
- .data          0x00000000c0083d44        0x0 kernel/elf.o
- .data          0x00000000c0083d44        0x0 kernel/file.o
- .data          0x00000000c0083d44        0x0 kernel/exec.o
- .data          0x00000000c0083d44        0x0 kernel/fork.o
- .data          0x00000000c0083d44        0x0 kernel/pthread.o
- .data          0x00000000c0083d44        0x0 kernel/ktest.o
- .data          0x00000000c0083d44        0x0 kernel/testfunc.o
- .data          0x00000000c0083d44        0x0 kernel/fs.o
- .data          0x00000000c0083d44        0x0 kernel/hd.o
- .data          0x00000000c0083d44        0x0 kernel/spinlock.o
- .data          0x00000000c0083d44        0x0 kernel/fat32.o
- .data          0x00000000c0083d44        0x8 kernel/base.o
-                0x00000000c0083d44                FAT_END
-                0x00000000c0083d48                globalSectorIndex
- .data          0x00000000c0083d4c        0x0 kernel/assist.o
- .data          0x00000000c0083d4c        0x0 kernel/vfs.o
- *fill*         0x00000000c0083d4c       0x14 
- .data          0x00000000c0083d60      0x600 kernel/keyboard.o
-                0x00000000c0083d60                keymap
- .data          0x00000000c0084360        0x0 kernel/tty.o
- .data          0x00000000c0084360        0x0 kernel/shell.o
- .data          0x00000000c0084360        0x0 kernel/console.o
- .data          0x00000000c0084360        0x0 lib/ulib.a(printf.o)
- .data          0x00000000c0084360        0x0 lib/ulib.a(vsprintf.o)
- .data          0x00000000c0084360        0x0 ./kernel/gui/libgui.a(ginit.o)
- .data          0x00000000c0084360        0x0 ./kernel/gui/libgui.a(plot.o)
- .data          0x00000000c0084360        0x1 include/gui/lvgl/liblvgl.a(lv_obj.o)
- *fill*         0x00000000c0084361        0x3 
- .data          0x00000000c0084364        0x8 include/gui/lvgl/liblvgl.a(lv_refr.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_style.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_draw_img.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_draw_label.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_draw_line.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_draw_rect.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_img_buf.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_img_cache.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_img_decoder.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_font.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
- .data          0x00000000c008436c        0x0 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
- *fill*         0x00000000c008436c       0x14 
+ .data          0x00000000c0083020        0x2 kernel/kernel.o
+ .data          0x00000000c0083022        0x0 kernel/start.o
+ .data          0x00000000c0083022        0x0 kernel/main.o
+ .data          0x00000000c0083022        0x0 kernel/clock.o
+ .data          0x00000000c0083022        0x0 kernel/i8259.o
+ *fill*         0x00000000c0083022       0x1e 
+ .data          0x00000000c0083040      0xc40 kernel/global.o
+                0x00000000c0083040                disp_pos
+                0x00000000c0083044                gdt_ptr
+                0x00000000c0083060                gdt
+                0x00000000c0083460                idt_ptr
+                0x00000000c0083480                idt
+ .data.rel      0x00000000c0083c80       0xd0 kernel/global.o
+                0x00000000c0083c80                task_table
+                0x00000000c0083ce0                sys_call_table
+ .data          0x00000000c0083d50        0x0 kernel/protect.o
+ .data          0x00000000c0083d50        0x0 kernel/proc.o
+ .data          0x00000000c0083d50        0x0 lib/klib.o
+ .data          0x00000000c0083d50        0x0 lib/stringc.o
+ .data          0x00000000c0083d50        0x0 kernel/syscallc.o
+ *fill*         0x00000000c0083d50       0x10 
+ .data          0x00000000c0083d60     0x7fe4 kernel/memman.o
+                0x00000000c0083d60                s_memman
+                0x00000000c008bd40                memman
+ .data          0x00000000c008bd44        0x0 kernel/pagetbl.o
+ .data          0x00000000c008bd44        0x0 kernel/elf.o
+ .data          0x00000000c008bd44        0x0 kernel/file.o
+ .data          0x00000000c008bd44        0x0 kernel/exec.o
+ .data          0x00000000c008bd44        0x0 kernel/fork.o
+ .data          0x00000000c008bd44        0x0 kernel/pthread.o
+ .data          0x00000000c008bd44        0x0 kernel/ktest.o
+ .data          0x00000000c008bd44        0x0 kernel/testfunc.o
+ .data          0x00000000c008bd44        0x0 kernel/fs.o
+ .data          0x00000000c008bd44        0x0 kernel/hd.o
+ .data          0x00000000c008bd44        0x0 kernel/spinlock.o
+ .data          0x00000000c008bd44        0x0 kernel/fat32.o
+ .data          0x00000000c008bd44        0x8 kernel/base.o
+                0x00000000c008bd44                FAT_END
+                0x00000000c008bd48                globalSectorIndex
+ .data          0x00000000c008bd4c        0x0 kernel/assist.o
+ .data          0x00000000c008bd4c        0x0 kernel/vfs.o
+ *fill*         0x00000000c008bd4c       0x14 
+ .data          0x00000000c008bd60      0x600 kernel/keyboard.o
+                0x00000000c008bd60                keymap
+ .data          0x00000000c008c360        0x0 kernel/tty.o
+ .data          0x00000000c008c360        0x0 kernel/shell.o
+ .data          0x00000000c008c360        0x0 kernel/console.o
+ .data          0x00000000c008c360        0x0 lib/ulib.a(printf.o)
+ .data          0x00000000c008c360        0x0 lib/ulib.a(vsprintf.o)
+ .data          0x00000000c008c360       0x24 ./kernel/gui/libgui.a(ginit.o)
+ .data          0x00000000c008c384        0x0 ./kernel/gui/libgui.a(plot.o)
+ .data          0x00000000c008c384        0x0 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .data          0x00000000c008c384        0x1 include/gui/lvgl/liblvgl.a(lv_obj.o)
+ *fill*         0x00000000c008c385        0x3 
+ .data          0x00000000c008c388        0x8 include/gui/lvgl/liblvgl.a(lv_refr.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_style.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_draw_img.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_draw_label.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_draw_line.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_draw_rect.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_img_buf.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_img_cache.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_img_decoder.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_font.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
+ .data          0x00000000c008c390        0x0 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+ *fill*         0x00000000c008c390       0x10 
  .data.rel.local
-                0x00000000c0084380       0x20 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
- .data.rel      0x00000000c00843a0       0x14 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
-                0x00000000c00843a0                lv_font_montserrat_14
- .data          0x00000000c00843b4        0x4 include/gui/lvgl/liblvgl.a(lv_hal_disp.o)
- .data          0x00000000c00843b8        0x0 include/gui/lvgl/liblvgl.a(lv_hal_indev.o)
- .data          0x00000000c00843b8        0x5 include/gui/lvgl/liblvgl.a(lv_hal_tick.o)
- .data          0x00000000c00843bd        0x0 include/gui/lvgl/liblvgl.a(lv_anim.o)
- .data          0x00000000c00843bd        0x0 include/gui/lvgl/liblvgl.a(lv_area.o)
- .data          0x00000000c00843bd        0x0 include/gui/lvgl/liblvgl.a(lv_async.o)
- *fill*         0x00000000c00843bd        0x3 
- .data          0x00000000c00843c0       0x11 include/gui/lvgl/liblvgl.a(lv_debug.o)
- .data          0x00000000c00843d1        0x0 include/gui/lvgl/liblvgl.a(lv_fs.o)
- *fill*         0x00000000c00843d1        0xf 
- .data          0x00000000c00843e0      0x194 include/gui/lvgl/liblvgl.a(lv_gc.o)
-                0x00000000c00843e0                _lv_task_ll
-                0x00000000c00843ec                _lv_disp_ll
-                0x00000000c00843f8                _lv_indev_ll
-                0x00000000c0084404                _lv_drv_ll
-                0x00000000c0084410                _lv_file_ll
-                0x00000000c008441c                _lv_anim_ll
-                0x00000000c0084428                _lv_group_ll
-                0x00000000c0084434                _lv_img_defoder_ll
-                0x00000000c0084440                _lv_obj_style_trans_ll
-                0x00000000c008444c                _lv_img_cache_array
-                0x00000000c0084450                _lv_task_act
-                0x00000000c0084460                _lv_mem_buf
-                0x00000000c00844e0                _lv_draw_mask_list
-                0x00000000c0084560                _lv_theme_material_styles
-                0x00000000c0084564                _lv_theme_template_styles
-                0x00000000c0084568                _lv_theme_mono_styles
-                0x00000000c008456c                _lv_theme_empty_styles
-                0x00000000c0084570                _lv_font_decompr_buf
- .data          0x00000000c0084574        0x0 include/gui/lvgl/liblvgl.a(lv_ll.o)
- .data          0x00000000c0084574        0x0 include/gui/lvgl/liblvgl.a(lv_math.o)
- *fill*         0x00000000c0084574        0xc 
- .data          0x00000000c0084580     0x8040 include/gui/lvgl/liblvgl.a(lv_mem.o)
- .data          0x00000000c008c5c0       0x18 include/gui/lvgl/liblvgl.a(lv_task.o)
- .data          0x00000000c008c5d8        0x0 include/gui/lvgl/liblvgl.a(lv_txt.o)
+                0x00000000c008c3a0       0x20 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+ .data.rel      0x00000000c008c3c0       0x14 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+                0x00000000c008c3c0                lv_font_montserrat_14
+ .data          0x00000000c008c3d4        0x4 include/gui/lvgl/liblvgl.a(lv_hal_disp.o)
+ .data          0x00000000c008c3d8        0x0 include/gui/lvgl/liblvgl.a(lv_hal_indev.o)
+ .data          0x00000000c008c3d8        0x5 include/gui/lvgl/liblvgl.a(lv_hal_tick.o)
+ .data          0x00000000c008c3dd        0x0 include/gui/lvgl/liblvgl.a(lv_anim.o)
+ .data          0x00000000c008c3dd        0x0 include/gui/lvgl/liblvgl.a(lv_area.o)
+ .data          0x00000000c008c3dd        0x0 include/gui/lvgl/liblvgl.a(lv_async.o)
+ *fill*         0x00000000c008c3dd        0x3 
+ .data          0x00000000c008c3e0       0x11 include/gui/lvgl/liblvgl.a(lv_debug.o)
+ .data          0x00000000c008c3f1        0x0 include/gui/lvgl/liblvgl.a(lv_fs.o)
+ *fill*         0x00000000c008c3f1        0xf 
+ .data          0x00000000c008c400      0x194 include/gui/lvgl/liblvgl.a(lv_gc.o)
+                0x00000000c008c400                _lv_task_ll
+                0x00000000c008c40c                _lv_disp_ll
+                0x00000000c008c418                _lv_indev_ll
+                0x00000000c008c424                _lv_drv_ll
+                0x00000000c008c430                _lv_file_ll
+                0x00000000c008c43c                _lv_anim_ll
+                0x00000000c008c448                _lv_group_ll
+                0x00000000c008c454                _lv_img_defoder_ll
+                0x00000000c008c460                _lv_obj_style_trans_ll
+                0x00000000c008c46c                _lv_img_cache_array
+                0x00000000c008c470                _lv_task_act
+                0x00000000c008c480                _lv_mem_buf
+                0x00000000c008c500                _lv_draw_mask_list
+                0x00000000c008c580                _lv_theme_material_styles
+                0x00000000c008c584                _lv_theme_template_styles
+                0x00000000c008c588                _lv_theme_mono_styles
+                0x00000000c008c58c                _lv_theme_empty_styles
+                0x00000000c008c590                _lv_font_decompr_buf
+ .data          0x00000000c008c594        0x0 include/gui/lvgl/liblvgl.a(lv_ll.o)
+ .data          0x00000000c008c594        0x0 include/gui/lvgl/liblvgl.a(lv_math.o)
+ .data          0x00000000c008c594       0x3c include/gui/lvgl/liblvgl.a(lv_mem.o)
+ .data          0x00000000c008c5d0       0x18 include/gui/lvgl/liblvgl.a(lv_task.o)
+ .data          0x00000000c008c5e8        0x0 include/gui/lvgl/liblvgl.a(lv_txt.o)
  .data.rel.local
-                0x00000000c008c5d8       0x20 include/gui/lvgl/liblvgl.a(lv_txt.o)
-                0x00000000c008c5d8                _lv_txt_encoded_size
-                0x00000000c008c5dc                _lv_txt_unicode_to_encoded
-                0x00000000c008c5e0                _lv_txt_encoded_conv_wc
-                0x00000000c008c5e4                _lv_txt_encoded_next
-                0x00000000c008c5e8                _lv_txt_encoded_prev
-                0x00000000c008c5ec                _lv_txt_encoded_get_byte_id
-                0x00000000c008c5f0                _lv_txt_encoded_get_char_id
-                0x00000000c008c5f4                _lv_txt_get_encoded_length
- .data          0x00000000c008c5f8        0x0 include/gui/lvgl/liblvgl.a(lv_utils.o)
- .data          0x00000000c008c5f8        0x4 include/gui/lvgl/liblvgl.a(lv_theme.o)
- *fill*         0x00000000c008c5fc        0x4 
- .data          0x00000000c008c600       0x31 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
- .data          0x00000000c008c631        0x0 include/gui/lvgl/liblvgl.a(lv_disp.o)
- .data          0x00000000c008c631        0x0 include/gui/lvgl/liblvgl.a(lv_group.o)
- .data          0x00000000c008c631        0x0 include/gui/lvgl/liblvgl.a(lv_indev.o)
- .data          0x00000000c008c631        0x0 include/gui/lvgl/liblvgl.a(lv_draw_blend.o)
- .data          0x00000000c008c631        0x0 include/gui/lvgl/liblvgl.a(lv_color.o)
- .data          0x00000000c008c631        0x0 include/gui/lvgl/liblvgl.a(lv_printf.o)
+                0x00000000c008c5e8       0x20 include/gui/lvgl/liblvgl.a(lv_txt.o)
+                0x00000000c008c5e8                _lv_txt_encoded_size
+                0x00000000c008c5ec                _lv_txt_unicode_to_encoded
+                0x00000000c008c5f0                _lv_txt_encoded_conv_wc
+                0x00000000c008c5f4                _lv_txt_encoded_next
+                0x00000000c008c5f8                _lv_txt_encoded_prev
+                0x00000000c008c5fc                _lv_txt_encoded_get_byte_id
+                0x00000000c008c600                _lv_txt_encoded_get_char_id
+                0x00000000c008c604                _lv_txt_get_encoded_length
+ .data          0x00000000c008c608        0x0 include/gui/lvgl/liblvgl.a(lv_utils.o)
+ .data          0x00000000c008c608        0x4 include/gui/lvgl/liblvgl.a(lv_theme.o)
+ *fill*         0x00000000c008c60c       0x14 
+ .data          0x00000000c008c620       0x31 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
+ .data          0x00000000c008c651        0x0 include/gui/lvgl/liblvgl.a(lv_bar.o)
+ .data          0x00000000c008c651        0x0 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .data          0x00000000c008c651        0x0 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .data          0x00000000c008c651        0x0 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .data          0x00000000c008c651        0x0 include/gui/lvgl/liblvgl.a(lv_group.o)
+ .data          0x00000000c008c651        0x0 include/gui/lvgl/liblvgl.a(lv_indev.o)
+ .data          0x00000000c008c651        0x0 include/gui/lvgl/liblvgl.a(lv_draw_blend.o)
+ .data          0x00000000c008c651        0x0 include/gui/lvgl/liblvgl.a(lv_color.o)
+ .data          0x00000000c008c651        0x0 include/gui/lvgl/liblvgl.a(lv_printf.o)
 
 .data1
  *(.data1)
-                0x00000000c008c631                _edata = .
+                0x00000000c008c651                _edata = .
                 [!provide]                        PROVIDE (edata = .)
-                0x00000000c008c631                . = .
-                0x00000000c008c631                __bss_start = .
+                0x00000000c008c651                . = .
+                0x00000000c008c651                __bss_start = .
 
-.bss            0x00000000c008c640    0x4e828
+.bss            0x00000000c0100000    0x56828
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x00000000c008c640     0x1000 kernel/kernel.o
- .bss           0x00000000c008d640        0x0 kernel/start.o
- .bss           0x00000000c008d640        0x0 kernel/main.o
- .bss           0x00000000c008d640        0x0 kernel/clock.o
- .bss           0x00000000c008d640        0x0 kernel/i8259.o
- .bss           0x00000000c008d640        0x0 kernel/global.o
- .bss           0x00000000c008d640        0x0 kernel/protect.o
- .bss           0x00000000c008d640        0x0 kernel/proc.o
- .bss           0x00000000c008d640        0x0 lib/klib.o
- .bss           0x00000000c008d640        0x0 lib/stringc.o
- .bss           0x00000000c008d640        0x4 kernel/syscallc.o
-                0x00000000c008d640                memarg
- *fill*         0x00000000c008d644       0x1c 
- .bss           0x00000000c008d660      0x400 kernel/memman.o
-                0x00000000c008d660                MemInfo
- .bss           0x00000000c008da60        0x4 kernel/pagetbl.o
-                0x00000000c008da60                cr2_count
- .bss           0x00000000c008da64        0x0 kernel/elf.o
- .bss           0x00000000c008da64        0x4 kernel/file.o
- .bss           0x00000000c008da68        0x0 kernel/exec.o
- .bss           0x00000000c008da68        0x0 kernel/fork.o
- .bss           0x00000000c008da68        0x0 kernel/pthread.o
- .bss           0x00000000c008da68        0x0 kernel/ktest.o
- .bss           0x00000000c008da68        0x0 kernel/testfunc.o
- *fill*         0x00000000c008da68       0x18 
- .bss           0x00000000c008da80      0xb20 kernel/fs.o
- .bss           0x00000000c008e5a0      0x420 kernel/hd.o
- .bss           0x00000000c008e9c0        0x0 kernel/spinlock.o
- .bss           0x00000000c008e9c0      0x200 kernel/fat32.o
-                0x00000000c008e9c0                VDiskPath
-                0x00000000c008eac0                cur_path
- .bss           0x00000000c008ebc0      0x420 kernel/base.o
-                0x00000000c008ebc0                TotalSectors
-                0x00000000c008ebc4                Bytes_Per_Sector
-                0x00000000c008ebc6                Sectors_Per_Cluster
-                0x00000000c008ebc8                Reserved_Sector
-                0x00000000c008ebcc                Sectors_Per_FAT
-                0x00000000c008ebd0                Position_Of_RootDir
-                0x00000000c008ebd4                Position_Of_FAT1
-                0x00000000c008ebd8                Position_Of_FAT2
-                0x00000000c008ebe0                FATBuf
- .bss           0x00000000c008efe0        0x0 kernel/assist.o
- .bss           0x00000000c008efe0      0x134 kernel/vfs.o
- *fill*         0x00000000c008f114        0xc 
- .bss           0x00000000c008f120      0x184 kernel/keyboard.o
- .bss           0x00000000c008f2a4        0x0 kernel/tty.o
- .bss           0x00000000c008f2a4        0x0 kernel/shell.o
- .bss           0x00000000c008f2a4        0x0 kernel/console.o
- .bss           0x00000000c008f2a4        0x0 lib/ulib.a(printf.o)
- .bss           0x00000000c008f2a4        0x0 lib/ulib.a(vsprintf.o)
- *fill*         0x00000000c008f2a4       0x1c 
- .bss           0x00000000c008f2c0    0x1e040 ./kernel/gui/libgui.a(ginit.o)
- .bss           0x00000000c00ad300        0x0 ./kernel/gui/libgui.a(plot.o)
- .bss           0x00000000c00ad300        0x8 include/gui/lvgl/liblvgl.a(lv_obj.o)
- .bss           0x00000000c00ad308        0x0 include/gui/lvgl/liblvgl.a(lv_refr.o)
- .bss           0x00000000c00ad308        0x0 include/gui/lvgl/liblvgl.a(lv_style.o)
- .bss           0x00000000c00ad308        0x0 include/gui/lvgl/liblvgl.a(lv_draw_img.o)
- *fill*         0x00000000c00ad308       0x18 
- .bss           0x00000000c00ad320      0x120 include/gui/lvgl/liblvgl.a(lv_draw_label.o)
- .bss           0x00000000c00ad440        0x0 include/gui/lvgl/liblvgl.a(lv_draw_line.o)
- .bss           0x00000000c00ad440        0x0 include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
- .bss           0x00000000c00ad440        0x0 include/gui/lvgl/liblvgl.a(lv_draw_rect.o)
- .bss           0x00000000c00ad440        0x0 include/gui/lvgl/liblvgl.a(lv_img_buf.o)
- .bss           0x00000000c00ad440       0x28 include/gui/lvgl/liblvgl.a(lv_img_cache.o)
- .bss           0x00000000c00ad468        0x0 include/gui/lvgl/liblvgl.a(lv_img_decoder.o)
- .bss           0x00000000c00ad468        0x0 include/gui/lvgl/liblvgl.a(lv_font.o)
- .bss           0x00000000c00ad468       0x10 include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
- .bss           0x00000000c00ad478        0x0 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
- .bss           0x00000000c00ad478        0x0 include/gui/lvgl/liblvgl.a(lv_hal_disp.o)
- .bss           0x00000000c00ad478        0x0 include/gui/lvgl/liblvgl.a(lv_hal_indev.o)
- .bss           0x00000000c00ad478        0x0 include/gui/lvgl/liblvgl.a(lv_hal_tick.o)
- .bss           0x00000000c00ad478        0xc include/gui/lvgl/liblvgl.a(lv_anim.o)
- .bss           0x00000000c00ad484        0x0 include/gui/lvgl/liblvgl.a(lv_area.o)
- .bss           0x00000000c00ad484        0x0 include/gui/lvgl/liblvgl.a(lv_async.o)
- .bss           0x00000000c00ad484        0x0 include/gui/lvgl/liblvgl.a(lv_debug.o)
- .bss           0x00000000c00ad484        0x0 include/gui/lvgl/liblvgl.a(lv_fs.o)
- .bss           0x00000000c00ad484        0x0 include/gui/lvgl/liblvgl.a(lv_gc.o)
- .bss           0x00000000c00ad484        0x0 include/gui/lvgl/liblvgl.a(lv_ll.o)
- .bss           0x00000000c00ad484        0x0 include/gui/lvgl/liblvgl.a(lv_math.o)
- .bss           0x00000000c00ad484        0x2 include/gui/lvgl/liblvgl.a(lv_mem.o)
- .bss           0x00000000c00ad486        0x0 include/gui/lvgl/liblvgl.a(lv_task.o)
- .bss           0x00000000c00ad486        0x0 include/gui/lvgl/liblvgl.a(lv_txt.o)
- .bss           0x00000000c00ad486        0x0 include/gui/lvgl/liblvgl.a(lv_utils.o)
- .bss           0x00000000c00ad486        0x0 include/gui/lvgl/liblvgl.a(lv_theme.o)
- .bss           0x00000000c00ad486        0x0 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
- .bss           0x00000000c00ad486        0x0 include/gui/lvgl/liblvgl.a(lv_disp.o)
- .bss           0x00000000c00ad486        0x0 include/gui/lvgl/liblvgl.a(lv_group.o)
- *fill*         0x00000000c00ad486        0x2 
- .bss           0x00000000c00ad488        0x8 include/gui/lvgl/liblvgl.a(lv_indev.o)
- *fill*         0x00000000c00ad490       0x10 
- .bss           0x00000000c00ad4a0      0xa00 include/gui/lvgl/liblvgl.a(lv_draw_blend.o)
- .bss           0x00000000c00adea0        0x0 include/gui/lvgl/liblvgl.a(lv_color.o)
- .bss           0x00000000c00adea0        0x0 include/gui/lvgl/liblvgl.a(lv_printf.o)
+ .bss           0x00000000c0100000     0x1000 kernel/kernel.o
+ .bss           0x00000000c0101000        0x0 kernel/start.o
+ .bss           0x00000000c0101000        0x0 kernel/main.o
+ .bss           0x00000000c0101000        0x0 kernel/clock.o
+ .bss           0x00000000c0101000        0x0 kernel/i8259.o
+ .bss           0x00000000c0101000        0x0 kernel/global.o
+ .bss           0x00000000c0101000        0x0 kernel/protect.o
+ .bss           0x00000000c0101000        0x0 kernel/proc.o
+ .bss           0x00000000c0101000        0x0 lib/klib.o
+ .bss           0x00000000c0101000        0x0 lib/stringc.o
+ .bss           0x00000000c0101000        0x4 kernel/syscallc.o
+                0x00000000c0101000                memarg
+ *fill*         0x00000000c0101004       0x1c 
+ .bss           0x00000000c0101020      0x400 kernel/memman.o
+                0x00000000c0101020                MemInfo
+ .bss           0x00000000c0101420        0x4 kernel/pagetbl.o
+                0x00000000c0101420                cr2_count
+ .bss           0x00000000c0101424        0x0 kernel/elf.o
+ .bss           0x00000000c0101424        0x4 kernel/file.o
+ .bss           0x00000000c0101428        0x0 kernel/exec.o
+ .bss           0x00000000c0101428        0x0 kernel/fork.o
+ .bss           0x00000000c0101428        0x0 kernel/pthread.o
+ .bss           0x00000000c0101428        0x0 kernel/ktest.o
+ .bss           0x00000000c0101428        0x0 kernel/testfunc.o
+ *fill*         0x00000000c0101428       0x18 
+ .bss           0x00000000c0101440      0xb20 kernel/fs.o
+ .bss           0x00000000c0101f60      0x420 kernel/hd.o
+ .bss           0x00000000c0102380        0x0 kernel/spinlock.o
+ .bss           0x00000000c0102380      0x200 kernel/fat32.o
+                0x00000000c0102380                VDiskPath
+                0x00000000c0102480                cur_path
+ .bss           0x00000000c0102580      0x420 kernel/base.o
+                0x00000000c0102580                TotalSectors
+                0x00000000c0102584                Bytes_Per_Sector
+                0x00000000c0102586                Sectors_Per_Cluster
+                0x00000000c0102588                Reserved_Sector
+                0x00000000c010258c                Sectors_Per_FAT
+                0x00000000c0102590                Position_Of_RootDir
+                0x00000000c0102594                Position_Of_FAT1
+                0x00000000c0102598                Position_Of_FAT2
+                0x00000000c01025a0                FATBuf
+ .bss           0x00000000c01029a0        0x0 kernel/assist.o
+ .bss           0x00000000c01029a0      0x134 kernel/vfs.o
+ *fill*         0x00000000c0102ad4        0xc 
+ .bss           0x00000000c0102ae0      0x184 kernel/keyboard.o
+ .bss           0x00000000c0102c64        0x0 kernel/tty.o
+ .bss           0x00000000c0102c64        0x0 kernel/shell.o
+ .bss           0x00000000c0102c64        0x0 kernel/console.o
+ .bss           0x00000000c0102c64        0x0 lib/ulib.a(printf.o)
+ .bss           0x00000000c0102c64        0x0 lib/ulib.a(vsprintf.o)
+ *fill*         0x00000000c0102c64       0x1c 
+ .bss           0x00000000c0102c80    0x1e000 ./kernel/gui/libgui.a(ginit.o)
+ .bss           0x00000000c0120c80        0x0 ./kernel/gui/libgui.a(plot.o)
+ .bss           0x00000000c0120c80        0x0 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .bss           0x00000000c0120c80        0x8 include/gui/lvgl/liblvgl.a(lv_obj.o)
+ .bss           0x00000000c0120c88        0x0 include/gui/lvgl/liblvgl.a(lv_refr.o)
+ .bss           0x00000000c0120c88        0x0 include/gui/lvgl/liblvgl.a(lv_style.o)
+ .bss           0x00000000c0120c88        0x0 include/gui/lvgl/liblvgl.a(lv_draw_img.o)
+ *fill*         0x00000000c0120c88       0x18 
+ .bss           0x00000000c0120ca0      0x120 include/gui/lvgl/liblvgl.a(lv_draw_label.o)
+ .bss           0x00000000c0120dc0        0x0 include/gui/lvgl/liblvgl.a(lv_draw_line.o)
+ .bss           0x00000000c0120dc0        0x0 include/gui/lvgl/liblvgl.a(lv_draw_mask.o)
+ .bss           0x00000000c0120dc0        0x0 include/gui/lvgl/liblvgl.a(lv_draw_rect.o)
+ .bss           0x00000000c0120dc0        0x0 include/gui/lvgl/liblvgl.a(lv_img_buf.o)
+ .bss           0x00000000c0120dc0       0x28 include/gui/lvgl/liblvgl.a(lv_img_cache.o)
+ .bss           0x00000000c0120de8        0x0 include/gui/lvgl/liblvgl.a(lv_img_decoder.o)
+ .bss           0x00000000c0120de8        0x0 include/gui/lvgl/liblvgl.a(lv_font.o)
+ .bss           0x00000000c0120de8       0x10 include/gui/lvgl/liblvgl.a(lv_font_fmt_txt.o)
+ .bss           0x00000000c0120df8        0x0 include/gui/lvgl/liblvgl.a(lv_font_montserrat_14.o)
+ .bss           0x00000000c0120df8        0x0 include/gui/lvgl/liblvgl.a(lv_hal_disp.o)
+ .bss           0x00000000c0120df8        0x0 include/gui/lvgl/liblvgl.a(lv_hal_indev.o)
+ .bss           0x00000000c0120df8        0x0 include/gui/lvgl/liblvgl.a(lv_hal_tick.o)
+ .bss           0x00000000c0120df8        0xc include/gui/lvgl/liblvgl.a(lv_anim.o)
+ .bss           0x00000000c0120e04        0x0 include/gui/lvgl/liblvgl.a(lv_area.o)
+ .bss           0x00000000c0120e04        0x0 include/gui/lvgl/liblvgl.a(lv_async.o)
+ .bss           0x00000000c0120e04        0x0 include/gui/lvgl/liblvgl.a(lv_debug.o)
+ .bss           0x00000000c0120e04        0x0 include/gui/lvgl/liblvgl.a(lv_fs.o)
+ .bss           0x00000000c0120e04        0x0 include/gui/lvgl/liblvgl.a(lv_gc.o)
+ .bss           0x00000000c0120e04        0x0 include/gui/lvgl/liblvgl.a(lv_ll.o)
+ .bss           0x00000000c0120e04        0x0 include/gui/lvgl/liblvgl.a(lv_math.o)
+ *fill*         0x00000000c0120e04       0x1c 
+ .bss           0x00000000c0120e20     0x8002 include/gui/lvgl/liblvgl.a(lv_mem.o)
+ .bss           0x00000000c0128e22        0x0 include/gui/lvgl/liblvgl.a(lv_task.o)
+ .bss           0x00000000c0128e22        0x0 include/gui/lvgl/liblvgl.a(lv_txt.o)
+ .bss           0x00000000c0128e22        0x0 include/gui/lvgl/liblvgl.a(lv_utils.o)
+ .bss           0x00000000c0128e22        0x0 include/gui/lvgl/liblvgl.a(lv_theme.o)
+ .bss           0x00000000c0128e22        0x0 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
+ *fill*         0x00000000c0128e22        0x2 
+ .bss           0x00000000c0128e24        0x8 include/gui/lvgl/liblvgl.a(lv_bar.o)
+ .bss           0x00000000c0128e2c        0x8 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .bss           0x00000000c0128e34        0x8 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .bss           0x00000000c0128e3c        0x4 include/gui/lvgl/liblvgl.a(lv_label.o)
+ .bss           0x00000000c0128e40        0x0 include/gui/lvgl/liblvgl.a(lv_group.o)
+ .bss           0x00000000c0128e40        0x8 include/gui/lvgl/liblvgl.a(lv_indev.o)
+ *fill*         0x00000000c0128e48       0x18 
+ .bss           0x00000000c0128e60      0xa00 include/gui/lvgl/liblvgl.a(lv_draw_blend.o)
+ .bss           0x00000000c0129860        0x0 include/gui/lvgl/liblvgl.a(lv_color.o)
+ .bss           0x00000000c0129860        0x0 include/gui/lvgl/liblvgl.a(lv_printf.o)
  *(COMMON)
- COMMON         0x00000000c00adea0    0x1ae00 kernel/global.o
-                0x00000000c00adea0                k_reenter
-                0x00000000c00adec0                tty_table
-                0x00000000c00aeb60                cpu_table
-                0x00000000c00b0b60                tss
-                0x00000000c00b0bc8                p_proc_current
-                0x00000000c00b0bcc                cr3_ready
-                0x00000000c00b0bd0                p_proc_next
-                0x00000000c00b0bd4                kernel_initial
-                0x00000000c00b0bd8                ticks
-                0x00000000c00b0be0                console_table
-                0x00000000c00b0c40                irq_table
-                0x00000000c00b0c80                u_proc_sum
-                0x00000000c00b0ca0                proc_table
- COMMON         0x00000000c00c8ca0        0x4 kernel/pagetbl.o
-                0x00000000c00c8ca0                cr2_save
- *fill*         0x00000000c00c8ca4       0x1c 
- COMMON         0x00000000c00c8cc0      0x340 kernel/hd.o
-                0x00000000c00c8cc0                hd_info
- COMMON         0x00000000c00c9000    0x10824 kernel/fat32.o
-                0x00000000c00c9000                state
-                0x00000000c00c9020                f_desc_table_fat
-                0x00000000c00d9820                buf
- *fill*         0x00000000c00d9824       0x1c 
- COMMON         0x00000000c00d9840      0xc00 kernel/vfs.o
-                0x00000000c00d9840                f_desc_table
-                0x00000000c00da240                super_block
- COMMON         0x00000000c00da440        0x4 kernel/tty.o
-                0x00000000c00da440                current_console
- *fill*         0x00000000c00da444       0x1c 
- COMMON         0x00000000c00da460      0xa08 kernel/shell.o
-                0x00000000c00da460                argv
-                0x00000000c00dae60                argc
-                0x00000000c00dae64                fd
-                0x00000000c00dae68                . = ALIGN ((. != 0x0)?0x4:0x1)
-                0x00000000c00dae68                . = ALIGN (0x4)
-                0x00000000c00dae68                . = SEGMENT_START ("ldata-segment", .)
-                0x00000000c00dae68                . = ALIGN (0x4)
-                0x00000000c00dae68                _end = .
+ COMMON         0x00000000c0129860    0x1ae00 kernel/global.o
+                0x00000000c0129860                k_reenter
+                0x00000000c0129880                tty_table
+                0x00000000c012a520                cpu_table
+                0x00000000c012c520                tss
+                0x00000000c012c588                p_proc_current
+                0x00000000c012c58c                cr3_ready
+                0x00000000c012c590                p_proc_next
+                0x00000000c012c594                kernel_initial
+                0x00000000c012c598                ticks
+                0x00000000c012c5a0                console_table
+                0x00000000c012c600                irq_table
+                0x00000000c012c640                u_proc_sum
+                0x00000000c012c660                proc_table
+ COMMON         0x00000000c0144660        0x4 kernel/pagetbl.o
+                0x00000000c0144660                cr2_save
+ *fill*         0x00000000c0144664       0x1c 
+ COMMON         0x00000000c0144680      0x340 kernel/hd.o
+                0x00000000c0144680                hd_info
+ COMMON         0x00000000c01449c0    0x10824 kernel/fat32.o
+                0x00000000c01449c0                state
+                0x00000000c01449e0                f_desc_table_fat
+                0x00000000c01551e0                buf
+ *fill*         0x00000000c01551e4       0x1c 
+ COMMON         0x00000000c0155200      0xc00 kernel/vfs.o
+                0x00000000c0155200                f_desc_table
+                0x00000000c0155c00                super_block
+ COMMON         0x00000000c0155e00        0x4 kernel/tty.o
+                0x00000000c0155e00                current_console
+ *fill*         0x00000000c0155e04       0x1c 
+ COMMON         0x00000000c0155e20      0xa08 kernel/shell.o
+                0x00000000c0155e20                argv
+                0x00000000c0156820                argc
+                0x00000000c0156824                fd
+                0x00000000c0156828                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00000000c0156828                . = ALIGN (0x4)
+                0x00000000c0156828                . = SEGMENT_START ("ldata-segment", .)
+                0x00000000c0156828                . = ALIGN (0x4)
+                0x00000000c0156828                _end = .
                 [!provide]                        PROVIDE (end = .)
-                0x00000000c00dae68                . = DATA_SEGMENT_END (.)
+                0x00000000c0156828                . = DATA_SEGMENT_END (.)
 
 .stab
  *(.stab)
@@ -2739,6 +2890,7 @@ LOAD include/gui/lvgl/liblvgl.a
  .comment       0x0000000000000011       0x12 ./kernel/gui/libgui.a(ginit.o)
                                          0x13 (松开之前的大小)
  .comment       0x0000000000000023       0x13 ./kernel/gui/libgui.a(plot.o)
+ .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_disp.o)
  .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_obj.o)
  .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_refr.o)
  .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_style.o)
@@ -2770,7 +2922,10 @@ LOAD include/gui/lvgl/liblvgl.a
  .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_utils.o)
  .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_theme.o)
  .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_theme_material.o)
- .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_disp.o)
+ .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_bar.o)
+ .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_btn.o)
+ .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_cont.o)
+ .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_label.o)
  .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_group.o)
  .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_indev.o)
  .comment       0x0000000000000023       0x12 include/gui/lvgl/liblvgl.a(lv_draw_blend.o)

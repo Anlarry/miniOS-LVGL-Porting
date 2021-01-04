@@ -1,1154 +1,2095 @@
 
-./user/shell_0.bin：     文件格式 elf32-i386
+kernel.gdb.bin：     文件格式 elf32-i386
+kernel.gdb.bin
+体系结构：i386，标志 0x00000112：
+EXEC_P, HAS_SYMS, D_PAGED
+起始地址 0xc0020400
 
-Contents of section .text:
- 8049000 8d4c2404 83e4f0ff 71fc5589 e5535181  .L$.....q.U..SQ.
- 8049010 ec100400 00e8bb00 000081c3 e62f0000  ............./..
- 8049020 83ec086a 028d8300 e0ffff50 e8ff0100  ...j.......P....
- 8049030 0083c410 8945f483 ec086a02 8d8300e0  .....E....j.....
- 8049040 ffff50e8 e8010000 83c41089 45f083ec  ..P.........E...
- 8049050 086a028d 8300e0ff ff50e8d1 01000083  .j.......P......
- 8049060 c4108945 ecc745e8 00000000 83ec0c8d  ...E..E.........
- 8049070 8309e0ff ff50e85f 02000083 c41083ec  .....P._........
- 8049080 0c8d85e8 fbffff50 e8db0500 0083c410  .......P........
- 8049090 85c074d8 83ec0c8d 85e8fbff ff50e8af  ..t..........P..
- 80490a0 00000083 c41085c0 74c283ec 0c8d85e8  ........t.......
- 80490b0 fbffff50 e83b0100 0083c410 85c074ac  ...P.;........t.
- 80490c0 83ec0c8d 8316e0ff ff50e80b 02000083  .........P......
- 80490d0 c41090eb 978b1c24 c3669066 90669090  .......$.f.f.f..
- 80490e0 5051e819 fffffff4 66906690 66906690  PQ......f.f.f.f.
- 80490f0 5589e556 57518b7d 088b750c 8b4d1083  U..VWQ.}..u..M..
- 8049100 f900740b 3e8a0646 26880747 49ebf08b  ..t.>..F&..GI...
- 8049110 4508595f 5e89ec5d c35589e5 5657518b  E.Y_^..].U..VWQ.
- 8049120 7d088b55 0c8b4d10 83f90074 06881747  }..U..M....t...G
- 8049130 49ebf559 5f5e89ec 5dc35589 e58b750c  I..Y_^..].U...u.
- 8049140 8b7d088a 06468807 473c0075 f68b4508  .}...F..G<.u..E.
- 8049150 5dc35589 e5b80000 00008b75 08803e00  ].U........u..>.
- 8049160 74044640 ebf75dc3 66906690 66906690  t.F@..].f.f.f.f.
- 8049170 b8000000 00cd90c3 b8010000 00cd90c3  ................
- 8049180 8b5c2404 b8020000 00cd90c3 8b5c2404  .\$..........\$.
- 8049190 b8030000 00cd90c3 8b5c2404 b8040000  .........\$.....
- 80491a0 00cd90c3 8b5c2404 b8050000 00cd90c3  .....\$.........
- 80491b0 8b5c2404 b8060000 00cd90c3 8b5c2404  .\$..........\$.
- 80491c0 b8070000 00cd90c3 b8080000 00cd90c3  ................
- 80491d0 8b5c2404 b8090000 00cd90c3 8b5c2404  .\$..........\$.
- 80491e0 b80a0000 00cd90c3 8b5c2404 b80b0000  .........\$.....
- 80491f0 00cd90c3 8b5c2404 b80c0000 00cd90c3  .....\$.........
- 8049200 8b5c2404 b80d0000 00cd90c3 8b5c2404  .\$..........\$.
- 8049210 b80e0000 00cd90c3 8b5c2404 b80f0000  .........\$.....
- 8049220 00cd90c3 8b5c2404 b8100000 00cd90c3  .....\$.........
- 8049230 536a0289 e383c304 b8110000 00cd9083  Sj..............
- 8049240 c4045bc3 6a0189e3 b8120000 00cd9083  ..[.j...........
- 8049250 c404c36a 0389e3b8 13000000 cd9083c4  ...j............
- 8049260 04c36a03 89e3b814 000000cd 9083c404  ..j.............
- 8049270 c36a0389 e3b81500 0000cd90 83c404c3  .j..............
- 8049280 6a0189e3 b8160000 00cd9083 c404c36a  j..............j
- 8049290 0189e3b8 17000000 cd9083c4 04c36a01  ..............j.
- 80492a0 89e3b818 000000cd 9083c404 c36a0189  .............j..
- 80492b0 e3b81900 0000cd90 83c404c3 6a0189e3  ............j...
- 80492c0 b81a0000 00cd9083 c404c36a 0189e3b8  ...........j....
- 80492d0 1b000000 cd9083c4 04c35589 e55381ec  ..........U..S..
- 80492e0 14010000 e8ecfdff ff81c317 2d00008d  ............-...
- 80492f0 450c8945 f48b4508 83ec04ff 75f4508d  E..E..E.....u.P.
- 8049300 85ecfeff ff50e8a7 00000083 c4108945  .....P.........E
- 8049310 f083ec04 ff75f08d 85ecfeff ff506a01  .....u.......Pj.
- 8049320 e83dffff ff83c410 8945ec8b 45ec3b45  .=.......E..E.;E
- 8049330 f075058b 45f0eb05 b8ffffff ff8b5dfc  .u..E.........].
- 8049340 c9c35589 e55383ec 14e83c05 000005b2  ..U..S....<.....
- 8049350 2c00008b 450899f7 7d0c8955 f48b4508  ,...E...}..U..E.
- 8049360 99f77d0c 8945f083 7df00074 1483ec04  ..}..E..}..t....
- 8049370 ff7510ff 750cff75 f0e8c4ff ffff83c4  .u..u..u........
- 8049380 10837df4 097f0a8b 45f483c0 3089c3eb  ..}.....E...0...
- 8049390 088b45f4 83c03789 c38b4510 8b008d48  ..E...7...E....H
- 80493a0 018b5510 890a8818 8b45108b 008b5dfc  ..U......E....].
- 80493b0 c9c35589 e55381ec 24010000 e814fdff  ..U..S..$.......
- 80493c0 ff81c33f 2c00008b 45108945 f08b4508  ...?,...E..E..E.
- 80493d0 8945f4e9 36020000 8b450c0f b6003c25  .E..6....E....<%
- 80493e0 74168b45 f48d5001 8955f48b 550c0fb6  t..E..P..U..U...
- 80493f0 128810e9 12020000 c745e800 00000083  .........E......
- 8049400 450c018b 450c0fb6 003c2575 168b45f4  E...E....<%u..E.
- 8049410 8d500189 55f48b55 0c0fb612 8810e9e7  .P..U..U........
- 8049420 0100008b 450c0fb6 003c3075 0ac645ef  ....E....<0u..E.
- 8049430 3083450c 01eb28c6 45ef20eb 228b55e8  0.E...(.E. .".U.
- 8049440 89d0c1e0 0201d001 c08945e8 8b450c0f  ..........E..E..
- 8049450 b6000fbe c083e830 0145e883 450c018b  .......0.E..E...
- 8049460 450c0fb6 003c2f76 0a8b450c 0fb6003c  E....</v..E....<
- 8049470 3976ca8d 85e0feff ff8985dc feffff8b  9v..............
- 8049480 85dcfeff ff83ec04 68000100 006a0050  ........h....j.P
- 8049490 e884fcff ff83c410 8b450c0f b6000fbe  .........E......
- 80494a0 c083f878 744a83f8 780f8fca 00000083  ...xtJ..x.......
- 80494b0 f8730f84 84000000 83f8730f 8fb80000  .s........s.....
- 80494c0 0083f863 740a83f8 64744be9 a9000000  ...ct...dtK.....
- 80494d0 8b85dcfe ffff8d50 018995dc feffff8b  .......P........
- 80494e0 55f00fb6 12881083 45f004e9 8a000000  U.......E.......
- 80494f0 8b45f08b 008945e0 8b45e083 ec048d95  .E....E..E......
- 8049500 dcfeffff 526a1050 e835feff ff83c410  ....Rj.P.5......
- 8049510 8345f004 eb648b45 f08b0089 45e08b45  .E...d.E....E..E
- 8049520 e083ec04 8d95dcfe ffff526a 0a50e80f  ..........Rj.P..
- 8049530 feffff83 c4108345 f004eb3e 8b45f08b  .......E...>.E..
- 8049540 108b85dc feffff83 ec085250 e8e9fbff  ..........RP....
- 8049550 ff83c410 8b45f08b 0083ec0c 50e8f0fb  .....E......P...
- 8049560 ffff83c4 108b95dc feffff01 d08985dc  ................
- 8049570 feffff83 45f004eb 0190c745 e4000000  ....E......E....
- 8049580 00eb138b 45f48d50 018955f4 0fb655ef  ....E..P..U...U.
- 8049590 88108345 e40183ec 0c8d85e0 feffff50  ...E...........P
- 80495a0 e8adfbff ff83c410 3945e87e 1b83ec0c  ........9E.~....
- 80495b0 8d85e0fe ffff50e8 96fbffff 83c41089  ......P.........
- 80495c0 c28b45e8 29d0eb05 b8000000 003b45e4  ..E.)........;E.
- 80495d0 7fb18d85 e0feffff 8985dcfe ffffeb1d  ................
- 80495e0 8b95dcfe ffff8d42 018985dc feffff8b  .......B........
- 80495f0 45f48d48 01894df4 0fb61288 108b85dc  E..H..M.........
- 8049600 feffff0f b60084c0 75d68345 0c018b45  ........u..E...E
- 8049610 0c0fb600 84c00f85 bcfdffff 8b45f4c6  .............E..
- 8049620 00008b45 f42b4508 8b5dfcc9 c35589e5  ...E.+E..]...U..
- 8049630 5383ec14 e8510200 0005c729 000083ec  S....Q.....)....
- 8049640 046a018d 55f7526a 0089c3e8 03fcffff  .j..U.Rj........
- 8049650 83c41083 f8017506 0fb645f7 eb05b8ff  ......u...E.....
- 8049660 ffffff8b 5dfcc9c3 5589e583 ec18e817  ....]...U.......
- 8049670 02000005 8d290000 8b450889 45f4eb1f  .....)...E..E...
- 8049680 8b45f40f b655f388 108b45f4 0fb6003c  .E...U....E....<
- 8049690 0a75088b 45f4c600 00eb1283 45f401e8  .u..E.......E...
- 80496a0 89ffffff 8845f380 7df3ff75 d38b4508  .....E..}..u..E.
- 80496b0 c9c35589 e583ec10 e8cd0100 00054329  ..U...........C)
- 80496c0 0000c745 fc000000 00837d10 000f858c  ...E......}.....
- 80496d0 000000c7 45100a00 00008b45 080fb600  ....E......E....
- 80496e0 3c300f85 b2000000 c7451008 00000083  <0.......E......
- 80496f0 4508018b 45080fb6 0083c820 3c780f85  E...E...... <x..
- 8049700 96000000 8b450883 c0010fb6 003c2f7e  .....E.......</~
- 8049710 0d8b4508 83c0010f b6003c39 7e348b45  ..E.......<9~4.E
- 8049720 0883c001 0fb6003c 607e0d8b 450883c0  .......<`~..E...
- 8049730 010fb600 3c667e1a 8b450883 c0010fb6  ....<f~..E......
- 8049740 003c407e 558b4508 83c0010f b6003c46  .<@~U.E.......<F
- 8049750 7f488345 0801c745 10100000 00eb3b83  .H.E...E......;.
- 8049760 7d101075 358b4508 0fb6003c 30752b8b  }..u5.E....<0u+.
- 8049770 450883c0 010fb600 83c8203c 78751b83  E......... <xu..
- 8049780 450802eb 158b45fc 0faf4510 89c28b45  E.....E...E....E
- 8049790 f801d089 45fc8345 08018b45 080fb600  ....E..E...E....
- 80497a0 3c2f7e0a 8b45080f b6003c39 7e288b45  </~..E....<9~(.E
- 80497b0 080fb600 3c607e0a 8b45080f b6003c66  ....<`~..E....<f
- 80497c0 7e148b45 080fb600 3c407e4a 8b45080f  ~..E....<@~J.E..
- 80497d0 b6003c46 7f408b45 080fb600 3c2f7e18  ..<F.@.E....</~.
- 80497e0 8b45080f b6003c39 7f0e8b45 080fb600  .E....<9...E....
- 80497f0 0fbec083 e830eb0f 8b45080f b60083c8  .....0...E......
- 8049800 200fbec0 83e85789 45f88b45 f83b4510   .....W.E..E.;E.
- 8049810 0f826fff ffff837d 0c007408 8b450c8b  ..o....}..t..E..
- 8049820 55088910 8b45fcc9 c35589e5 e8590000  U....E...U...Y..
- 8049830 0005cf27 00008b45 080fb600 3c2d7519  ...'...E....<-u.
- 8049840 8b450883 c001ff75 10ff750c 50e860fe  .E.....u..u.P.`.
- 8049850 ffff83c4 0cf7d8eb 11ff7510 ff750cff  ..........u..u..
- 8049860 7508e84b feffff83 c40cc9c3 5589e5e8  u..K........U...
- 8049870 16000000 058c2700 006a0a6a 00ff7508  ......'..j.j..u.
- 8049880 e8a4ffff ff83c40c c9c38b04 24c3      ............$.  
-Contents of section .rodata:
- 804a000 6465765f 74747930 000a6d69 6e694f53  dev_tty0..miniOS
- 804a010 3a2f2024 20006578 65632066 61696c65  :/ $ .exec faile
- 804a020 643a2066 696c6520 6e6f7420 666f756e  d: file not foun
- 804a030 64210a00                             d!..            
-Contents of section .eh_frame:
- 804a034 14000000 00000000 017a5200 017c0801  .........zR..|..
- 804a044 1b0c0404 88010000 24000000 1c000000  ........$.......
- 804a054 acefffff d5000000 00440c01 00471005  .........D...G..
- 804a064 02750044 0f037578 06100302 757c0000  .u.D..ux....u|..
- 804a074 10000000 44000000 59f0ffff 04000000  ....D...Y.......
- 804a084 00000000 20000000 58000000 4af2ffff  .... ...X...J...
- 804a094 68000000 00410e08 8502420d 05478303  h....A....B..G..
- 804a0a4 025dc5c3 0c040400 20000000 7c000000  .]...... ...|...
- 804a0b4 8ef2ffff 70000000 00410e08 8502420d  ....p....A....B.
- 804a0c4 05448303 0268c5c3 0c040400 20000000  .D...h...... ...
- 804a0d4 a0000000 daf2ffff 7b020000 00410e08  ........{....A..
- 804a0e4 8502420d 05478303 037002c5 c30c0404  ..B..G...p......
- 804a0f4 20000000 c4000000 31f5ffff 3b000000   .......1...;...
- 804a104 00410e08 8502420d 05448303 73c5c30c  .A....B..D..s...
- 804a114 04040000 1c000000 e8000000 48f5ffff  ............H...
- 804a124 4a000000 00410e08 8502420d 050246c5  J....A....B...F.
- 804a134 0c040400 1c000000 08010000 72f5ffff  ............r...
- 804a144 77010000 00410e08 8502420d 05037301  w....A....B...s.
- 804a154 c50c0404 1c000000 28010000 c9f6ffff  ........(.......
- 804a164 43000000 00410e08 8502420d 057fc50c  C....A....B.....
- 804a174 04040000 1c000000 48010000 ecf6ffff  ........H.......
- 804a184 1e000000 00410e08 8502420d 055ac50c  .....A....B..Z..
- 804a194 04040000 10000000 68010000 eaf6ffff  ........h.......
- 804a1a4 04000000 00000000                    ........        
-Contents of section .got.plt:
- 804c000 00000000 00000000 00000000           ............    
-Contents of section .comment:
- 0000 4743433a 2028474e 55292031 302e322e  GCC: (GNU) 10.2.
- 0010 3000                                 0.              
+程序头：
+    LOAD off    0x00000000 vaddr 0xc0020000 paddr 0xc001f000 align 2**12
+         filesz 0x00000114 memsz 0x00000114 flags r--
+    LOAD off    0x00000400 vaddr 0xc0020400 paddr 0xc0020400 align 2**12
+         filesz 0x00051b12 memsz 0x00051b12 flags r-x
+    LOAD off    0x00052000 vaddr 0xc0072000 paddr 0xc0072000 align 2**12
+         filesz 0x0000fdc8 memsz 0x0000fdc8 flags r--
+    LOAD off    0x00061fc0 vaddr 0xc0082fc0 paddr 0xc0082fc0 align 2**12
+         filesz 0x00009691 memsz 0x00009691 flags rw-
+    LOAD off    0x00000000 vaddr 0xc0100000 paddr 0xc0100000 align 2**12
+         filesz 0x00000000 memsz 0x00056828 flags rw-
+   STACK off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**4
+         filesz 0x00000000 memsz 0x00000000 flags rwx
+   RELRO off    0x00061fc0 vaddr 0xc0082fc0 paddr 0xc0082fc0 align 2**0
+         filesz 0x00000040 memsz 0x00000040 flags r--
 
-Disassembly of section .text:
+节：
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00051b12  c0020400  c0020400  00000400  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00056828  c0100000  c0100000  0006c000  2**5
+                  ALLOC
+  2 .rodata       00004d7c  c0072000  c0072000  00052000  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .eh_frame     0000b04c  c0076d7c  c0076d7c  00056d7c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .data.rel.ro  00000040  c0082fc0  c0082fc0  00061fc0  2**5
+                  CONTENTS, ALLOC, LOAD, DATA
+  5 .got.plt      0000000c  c0083000  c0083000  00062000  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .data         00009631  c0083020  c0083020  00062020  2**5
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .comment      00000023  00000000  00000000  0006b651  2**0
+                  CONTENTS, READONLY
+  8 .debug_aranges 000009d0  00000000  00000000  0006b674  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  9 .debug_info   0005583f  00000000  00000000  0006c044  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 10 .debug_abbrev 0000aae3  00000000  00000000  000c1883  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 11 .debug_line   0001be14  00000000  00000000  000cc366  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 12 .debug_str    0000e100  00000000  00000000  000e817a  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 13 .debug_ranges 00000470  00000000  00000000  000f627a  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+SYMBOL TABLE:
+c0020400 l    d  .text	00000000 .text
+c0100000 l    d  .bss	00000000 .bss
+c0072000 l    d  .rodata	00000000 .rodata
+c0076d7c l    d  .eh_frame	00000000 .eh_frame
+c0082fc0 l    d  .data.rel.ro	00000000 .data.rel.ro
+c0083000 l    d  .got.plt	00000000 .got.plt
+c0083020 l    d  .data	00000000 .data
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    df *ABS*	00000000 kernel/kernel.asm
+00000000 l       *ABS*	00000000 P_STACKBASE
+00000000 l       *ABS*	00000000 GSREG
+00000004 l       *ABS*	00000000 FSREG
+00000008 l       *ABS*	00000000 ESREG
+0000000c l       *ABS*	00000000 DSREG
+00000010 l       *ABS*	00000000 EDIREG
+00000014 l       *ABS*	00000000 ESIREG
+00000018 l       *ABS*	00000000 EBPREG
+0000001c l       *ABS*	00000000 KERNELESPREG
+00000020 l       *ABS*	00000000 EBXREG
+00000024 l       *ABS*	00000000 EDXREG
+00000028 l       *ABS*	00000000 ECXREG
+0000002c l       *ABS*	00000000 EAXREG
+00000030 l       *ABS*	00000000 RETADR
+00000034 l       *ABS*	00000000 EIPREG
+00000038 l       *ABS*	00000000 CSREG
+0000003c l       *ABS*	00000000 EFLAGSREG
+00000040 l       *ABS*	00000000 ESPREG
+00000044 l       *ABS*	00000000 SSREG
+00000048 l       *ABS*	00000000 P_STACKTOP
+00000048 l       *ABS*	00000000 P_LDT_SEL
+0000004c l       *ABS*	00000000 P_LDT
+00002000 l       *ABS*	00000000 INIT_STACK_SIZE
+0000005c l       *ABS*	00000000 ESP_SAVE_INT
+00000060 l       *ABS*	00000000 ESP_SAVE_SYSCALL
+00000064 l       *ABS*	00000000 ESP_SAVE_CONTEXT
+00000004 l       *ABS*	00000000 TSS3_S_SP0
+00000020 l       *ABS*	00000000 INT_M_CTL
+00000021 l       *ABS*	00000000 INT_M_CTLMASK
+000000a0 l       *ABS*	00000000 INT_S_CTL
+000000a1 l       *ABS*	00000000 INT_S_CTLMASK
+00000020 l       *ABS*	00000000 EOI
+00000008 l       *ABS*	00000000 SELECTOR_FLAT_C
+00000020 l       *ABS*	00000000 SELECTOR_TSS
+00000008 l       *ABS*	00000000 SELECTOR_KERNEL_CS
+0000001b l       *ABS*	00000000 SELECTOR_VIDEO
+c0083020 l     O .data	00000001 clock_int_msg
+c0100000 l     O .bss	00000001 StackSpace
+c0100800 l       .bss	00000000 StackTop
+c0100800 l     O .bss	00000001 KernelStackSpace
+c0101000 l       .bss	00000000 KernelStackTop
+c002043b l       .text	00000000 csinit
+c00209c4 l       .text	00000000 save_exception
+c00209e4 l       .text	00000000 restart_exception
+c00209f4 l       .text	00000000 save_int
+c0020a2b l       .text	00000000 instack
+c0020a34 l       .text	00000000 save_syscall
+c0020a8b l       .text	00000000 renew_env
+c0020ad0 l       .text	00000000 restart_int
+c0020ae8 l       .text	00000000 restart_syscall
+00000000 l    df *ABS*	00000000 kernel/syscall.asm
+00000000 l       *ABS*	00000000 P_STACKBASE
+00000000 l       *ABS*	00000000 GSREG
+00000004 l       *ABS*	00000000 FSREG
+00000008 l       *ABS*	00000000 ESREG
+0000000c l       *ABS*	00000000 DSREG
+00000010 l       *ABS*	00000000 EDIREG
+00000014 l       *ABS*	00000000 ESIREG
+00000018 l       *ABS*	00000000 EBPREG
+0000001c l       *ABS*	00000000 KERNELESPREG
+00000020 l       *ABS*	00000000 EBXREG
+00000024 l       *ABS*	00000000 EDXREG
+00000028 l       *ABS*	00000000 ECXREG
+0000002c l       *ABS*	00000000 EAXREG
+00000030 l       *ABS*	00000000 RETADR
+00000034 l       *ABS*	00000000 EIPREG
+00000038 l       *ABS*	00000000 CSREG
+0000003c l       *ABS*	00000000 EFLAGSREG
+00000040 l       *ABS*	00000000 ESPREG
+00000044 l       *ABS*	00000000 SSREG
+00000048 l       *ABS*	00000000 P_STACKTOP
+00000048 l       *ABS*	00000000 P_LDT_SEL
+0000004c l       *ABS*	00000000 P_LDT
+00002000 l       *ABS*	00000000 INIT_STACK_SIZE
+0000005c l       *ABS*	00000000 ESP_SAVE_INT
+00000060 l       *ABS*	00000000 ESP_SAVE_SYSCALL
+00000064 l       *ABS*	00000000 ESP_SAVE_CONTEXT
+00000004 l       *ABS*	00000000 TSS3_S_SP0
+00000020 l       *ABS*	00000000 INT_M_CTL
+00000021 l       *ABS*	00000000 INT_M_CTLMASK
+000000a0 l       *ABS*	00000000 INT_S_CTL
+000000a1 l       *ABS*	00000000 INT_S_CTLMASK
+00000020 l       *ABS*	00000000 EOI
+00000008 l       *ABS*	00000000 SELECTOR_FLAT_C
+00000020 l       *ABS*	00000000 SELECTOR_TSS
+00000008 l       *ABS*	00000000 SELECTOR_KERNEL_CS
+0000001b l       *ABS*	00000000 SELECTOR_VIDEO
+00000000 l       *ABS*	00000000 _NR_get_ticks
+00000001 l       *ABS*	00000000 _NR_get_pid
+00000002 l       *ABS*	00000000 _NR_kmalloc
+00000003 l       *ABS*	00000000 _NR_kmalloc_4k
+00000004 l       *ABS*	00000000 _NR_malloc
+00000005 l       *ABS*	00000000 _NR_malloc_4k
+00000006 l       *ABS*	00000000 _NR_free
+00000007 l       *ABS*	00000000 _NR_free_4k
+00000008 l       *ABS*	00000000 _NR_fork
+00000009 l       *ABS*	00000000 _NR_pthread
+0000000a l       *ABS*	00000000 _NR_udisp_int
+0000000b l       *ABS*	00000000 _NR_udisp_str
+0000000c l       *ABS*	00000000 _NR_exec
+0000000d l       *ABS*	00000000 _NR_yield
+0000000e l       *ABS*	00000000 _NR_sleep
+0000000f l       *ABS*	00000000 _NR_print_E
+00000010 l       *ABS*	00000000 _NR_print_F
+00000011 l       *ABS*	00000000 _NR_open
+00000012 l       *ABS*	00000000 _NR_close
+00000013 l       *ABS*	00000000 _NR_read
+00000014 l       *ABS*	00000000 _NR_write
+00000015 l       *ABS*	00000000 _NR_lseek
+00000016 l       *ABS*	00000000 _NR_unlink
+00000017 l       *ABS*	00000000 _NR_create
+00000018 l       *ABS*	00000000 _NR_delete
+00000019 l       *ABS*	00000000 _NR_opendir
+0000001a l       *ABS*	00000000 _NR_createdir
+0000001b l       *ABS*	00000000 _NR_deletedir
+00000090 l       *ABS*	00000000 INT_VECTOR_SYS_CALL
+00000000 l    df *ABS*	00000000 start.c
+00000000 l    df *ABS*	00000000 main.c
+c0020f3e l     F .text	00000941 initialize_processes
+c0020f2a l     F .text	00000014 initialize_cpus
+00000000 l    df *ABS*	00000000 clock.c
+00000000 l    df *ABS*	00000000 i8259.c
+00000000 l    df *ABS*	00000000 global.c
+00000000 l    df *ABS*	00000000 protect.c
+c0021ed0 l     F .text	00000083 init_idt_desc
+c0021faf l     F .text	00000077 init_descriptor
+00000000 l    df *ABS*	00000000 proc.c
+00000000 l    df *ABS*	00000000 lib/kliba.asm
+00000000 l       *ABS*	00000000 P_STACKBASE
+00000000 l       *ABS*	00000000 GSREG
+00000004 l       *ABS*	00000000 FSREG
+00000008 l       *ABS*	00000000 ESREG
+0000000c l       *ABS*	00000000 DSREG
+00000010 l       *ABS*	00000000 EDIREG
+00000014 l       *ABS*	00000000 ESIREG
+00000018 l       *ABS*	00000000 EBPREG
+0000001c l       *ABS*	00000000 KERNELESPREG
+00000020 l       *ABS*	00000000 EBXREG
+00000024 l       *ABS*	00000000 EDXREG
+00000028 l       *ABS*	00000000 ECXREG
+0000002c l       *ABS*	00000000 EAXREG
+00000030 l       *ABS*	00000000 RETADR
+00000034 l       *ABS*	00000000 EIPREG
+00000038 l       *ABS*	00000000 CSREG
+0000003c l       *ABS*	00000000 EFLAGSREG
+00000040 l       *ABS*	00000000 ESPREG
+00000044 l       *ABS*	00000000 SSREG
+00000048 l       *ABS*	00000000 P_STACKTOP
+00000048 l       *ABS*	00000000 P_LDT_SEL
+0000004c l       *ABS*	00000000 P_LDT
+00002000 l       *ABS*	00000000 INIT_STACK_SIZE
+0000005c l       *ABS*	00000000 ESP_SAVE_INT
+00000060 l       *ABS*	00000000 ESP_SAVE_SYSCALL
+00000064 l       *ABS*	00000000 ESP_SAVE_CONTEXT
+00000004 l       *ABS*	00000000 TSS3_S_SP0
+00000020 l       *ABS*	00000000 INT_M_CTL
+00000021 l       *ABS*	00000000 INT_M_CTLMASK
+000000a0 l       *ABS*	00000000 INT_S_CTL
+000000a1 l       *ABS*	00000000 INT_S_CTLMASK
+00000020 l       *ABS*	00000000 EOI
+00000008 l       *ABS*	00000000 SELECTOR_FLAT_C
+00000020 l       *ABS*	00000000 SELECTOR_TSS
+00000008 l       *ABS*	00000000 SELECTOR_KERNEL_CS
+0000001b l       *ABS*	00000000 SELECTOR_VIDEO
+c002253e l       .text	00000000 disp_str.1
+c002255f l       .text	00000000 disp_str.3
+c002256c l       .text	00000000 disp_str.4
+c0022575 l       .text	00000000 disp_str.2
+c002258c l       .text	00000000 disp_color_str.1
+c00225ad l       .text	00000000 disp_color_str.3
+c00225b6 l       .text	00000000 disp_color_str.2
+c00225e3 l       .text	00000000 disable_0
+c00225f4 l       .text	00000000 disable_8
+c0022605 l       .text	00000000 dis_already
+c0022618 l       .text	00000000 enable_0
+c0022620 l       .text	00000000 enable_8
+00000000 l    df *ABS*	00000000 klib.c
+00000000 l    df *ABS*	00000000 string.c
+00000000 l    df *ABS*	00000000 lib/string.asm
+c002281f l       .text	00000000 memcpy.1
+c002282f l       .text	00000000 memcpy.2
+c0022848 l       .text	00000000 memset.1
+c0022853 l       .text	00000000 memset.2
+c0022863 l       .text	00000000 strcpy.1
+c002287d l       .text	00000000 strlen.1
+c0022886 l       .text	00000000 strlen.2
+00000000 l    df *ABS*	00000000 syscallc.c
+00000000 l    df *ABS*	00000000 memman.c
+00000000 l    df *ABS*	00000000 pagetbl.c
+00000000 l    df *ABS*	00000000 elf.c
+00000000 l    df *ABS*	00000000 file.c
+c0101424 l     O .bss	00000004 position
+00000000 l    df *ABS*	00000000 exec.c
+c0024d81 l     F .text	000001d7 exec_load
+c0024f58 l     F .text	000001de exec_pcb_init
+c0024ccd l     F .text	000000b4 exec_elfcpy
+00000000 l    df *ABS*	00000000 fork.c
+c002563b l     F .text	0000010d fork_pcb_cpy
+c0025279 l     F .text	000003c2 fork_mem_cpy
+c0025748 l     F .text	000000db fork_update_info
+00000000 l    df *ABS*	00000000 pthread.c
+c00259b5 l     F .text	000000ec pthread_pcb_cpy
+c0025bb2 l     F .text	000000c7 pthread_stack_init
+c0025c79 l     F .text	0000003a pthread_heap_init
+c0025aa1 l     F .text	00000111 pthread_update_info
+00000000 l    df *ABS*	00000000 ktest.c
+c0025cb3 l     F .text	00000297 untar
+00000000 l    df *ABS*	00000000 testfunc.c
+00000000 l    df *ABS*	00000000 fs.c
+c0101440 l     O .bss	00000004 root_inode
+c0101460 l     O .bss	00000b00 inode_table
+c00262db l     F .text	000009c6 mkfs
+c0027635 l     F .text	00000195 get_inode
+c0026ca1 l     F .text	00000066 rw_sector
+c0026d07 l     F .text	00000058 rw_sector_sched
+c0026dc9 l     F .text	000002ff do_open
+c0027277 l     F .text	0000017f search_file
+c00270c8 l     F .text	000000b2 create_file
+c00273f6 l     F .text	0000009b strip_path
+c0027cd4 l     F .text	000001a9 alloc_imap_bit
+c0027e7d l     F .text	000001e2 alloc_smap_bit
+c0027abf l     F .text	00000079 new_inode
+c0027b38 l     F .text	0000019c new_dir_entry
+c002717a l     F .text	00000080 memcmp
+c00271fa l     F .text	0000007d strcmp
+c00277ca l     F .text	00000195 get_inode_sched
+c002795f l     F .text	0000001f put_inode
+c002797e l     F .text	00000141 sync_inode
+c002807f l     F .text	0000007b do_close
+c00281a4 l     F .text	0000042f do_rdwt
+c0028631 l     F .text	00000842 do_unlink
+c0028ea6 l     F .text	000000c3 do_lseek
+00000000 l    df *ABS*	00000000 hd.c
+c0101f60 l     O .bss	00000008 hdque
+c0101f68 l     O .bss	00000004 hd_int_waiting_flag
+c0101f6c l     O .bss	00000001 hd_status
+c0101f80 l     O .bss	00000400 hdbuf
+c002a4a5 l     F .text	0000003e hd_handler
+c0029791 l     F .text	00000025 init_hd_queue
+c0029fe2 l     F .text	000000c4 hd_identify
+c0029ab8 l     F .text	0000035d partition
+c0029e15 l     F .text	000001cd print_hdinfo
+c002a2fd l     F .text	00000113 hd_cmd_out
+c002a410 l     F .text	00000025 interrupt_wait
+c002a435 l     F .text	00000070 waitfor
+c00293eb l     F .text	00000275 hd_rdwt_real
+c0029805 l     F .text	00000062 out_hd_queue
+c00297b6 l     F .text	0000004f in_hd_queue
+c002997a l     F .text	0000009f get_part_table
+c0029a19 l     F .text	0000009f get_fs_flags
+c002a0a6 l     F .text	00000257 print_identify_info
+c002a4e3 l     F .text	0000001a inform_int
+00000000 l    df *ABS*	00000000 spinlock.c
+c002a4fd l     F .text	0000002d cmpxchg
+00000000 l    df *ABS*	00000000 fat32.c
+c002bdea l     F .text	000001b0 load_disk
+c002bf9a l     F .text	000004b2 mkfs_fat
+00000000 l    df *ABS*	00000000 base.c
+00000000 l    df *ABS*	00000000 assist.c
+00000000 l    df *ABS*	00000000 vfs.c
+c01029a0 l     O .bss	000000a0 vfs_table
+c0102a40 l     O .bss	00000084 f_op_table
+c0102ac4 l     O .bss	00000010 sb_op_table
+c002f01e l     F .text	00000115 init_vfs_table
+c002f133 l     F .text	00000114 get_index
+c002fc81 l     F .text	0000007d strcmp
+00000000 l    df *ABS*	00000000 keyboard.c
+c0102ae0 l     O .bss	0000014c kb_in
+c0102c2c l     O .bss	00000008 mouse_in
+c0102c34 l     O .bss	00000004 mouse_init
+c0102c38 l     O .bss	00000004 code_with_E0
+c0102c3c l     O .bss	00000004 shift_l
+c0102c40 l     O .bss	00000004 shift_r
+c0102c44 l     O .bss	00000004 alt_l
+c0102c48 l     O .bss	00000004 alt_r
+c0102c4c l     O .bss	00000004 ctrl_l
+c0102c50 l     O .bss	00000004 ctrl_r
+c0102c54 l     O .bss	00000004 caps_lock
+c0102c58 l     O .bss	00000004 num_lock
+c0102c5c l     O .bss	00000004 scroll_lock
+c0102c60 l     O .bss	00000004 column
+c0030617 l     F .text	00000040 set_leds
+c0030657 l     F .text	00000085 set_mouse_leds
+c003053f l     F .text	00000077 get_byte_from_kb_buf
+c00305b6 l     F .text	00000033 kb_wait
+c00305e9 l     F .text	0000002e kb_ack
+c0030468 l       .text	00000000 .L96
+c003026e l       .text	00000000 .L37
+c003027c l       .text	00000000 .L39
+c003028a l       .text	00000000 .L40
+c0030298 l       .text	00000000 .L41
+c00302a6 l       .text	00000000 .L42
+c00302b1 l       .text	00000000 .L43
+c00302bc l       .text	00000000 .L44
+c00302dd l       .text	00000000 .L45
+c00302fe l       .text	00000000 .L46
+c0030379 l       .text	00000000 .L52
+c0030385 l       .text	00000000 .L54
+c0030391 l       .text	00000000 .L55
+c003039d l       .text	00000000 .L56
+c00303a9 l       .text	00000000 .L57
+c003045f l       .text	00000000 .L63
+c0030432 l       .text	00000000 .L65
+c0030417 l       .text	00000000 .L66
+c0030444 l       .text	00000000 .L67
+c0030429 l       .text	00000000 .L68
+c003044d l       .text	00000000 .L69
+c0030456 l       .text	00000000 .L70
+c003040e l       .text	00000000 .L71
+c003043b l       .text	00000000 .L72
+c0030420 l       .text	00000000 .L73
+00000000 l    df *ABS*	00000000 tty.c
+c0030ff3 l     F .text	0000008f put_key
+c0030a5c l     F .text	000000ee init_tty
+c0030b4a l     F .text	000002d2 tty_mouse
+c0030e1c l     F .text	0000003f tty_dev_read
+c0030e5b l     F .text	00000198 tty_dev_write
+c0030926 l       .text	00000000 .L12
+c0030755 l       .text	00000000 .L4
+c0030781 l       .text	00000000 .L6
+c003090c l       .text	00000000 .L7
+c0030796 l       .text	00000000 .L8
+c0030853 l       .text	00000000 .L9
+00000000 l    df *ABS*	00000000 shell.c
+c00316dd l     F .text	0000007d strcmp
+00000000 l    df *ABS*	00000000 console.c
+c0031bc8 l     F .text	00000077 set_cursor
+c0031f0e l     F .text	00000044 w_copy
+c0031b52 l     F .text	00000044 clear_screen
+c0031ec9 l     F .text	00000045 flush
+c0031c3f l     F .text	00000077 set_video_start_addr
+00000000 l    df *ABS*	00000000 printf.c
+00000000 l    df *ABS*	00000000 vsprintf.c
+c0031fba l     F .text	00000070 i2a
+00000000 l    df *ABS*	00000000 ginit.c
+c00324fa l     F .text	00000028 lv_scr_act
+c0032522 l     F .text	00000040 lv_slider_set_value
+c0032562 l     F .text	00000096 my_disp_flush
+c008c360 l     O .data	00000024 disp_buf.1
+c0102c80 l     O .bss	0001e000 buf.0
+00000000 l    df *ABS*	00000000 plot.c
+c003273e l     F .text	00000029 Coor2Addr
+00000000 l    df *ABS*	00000000 lv_disp.c
+c00327c0 l     F .text	00000018 lv_anim_set_var
+c00327d8 l     F .text	00000019 lv_anim_set_exec_cb
+c00327f1 l     F .text	00000019 lv_anim_set_time
+c003280a l     F .text	0000001d lv_anim_set_delay
+c0032827 l     F .text	0000003f lv_anim_set_values
+c0032866 l     F .text	00000019 lv_anim_set_start_cb
+c003287f l     F .text	00000019 lv_anim_set_ready_cb
+c0032898 l     F .text	00000050 lv_obj_set_style_local_opa_scale
+c00328e8 l     F .text	00000029 lv_scr_act
+c0033383 l     F .text	0000004b scr_load_anim_start
+c00333ff l     F .text	0000008e scr_anim_ready
+c00333ce l     F .text	00000031 opa_scale_anim
+c0032ed4 l       .text	00000000 .L56
+c0032f02 l       .text	00000000 .L58
+c0032f3e l       .text	00000000 .L59
+c0032f7c l       .text	00000000 .L60
+c0032fb8 l       .text	00000000 .L61
+c0032ff6 l       .text	00000000 .L62
+c0033071 l       .text	00000000 .L63
+c00330ec l       .text	00000000 .L64
+c0033167 l       .text	00000000 .L65
+c00331df l       .text	00000000 .L66
+00000000 l    df *ABS*	00000000 lv_obj.c
+c003348d l     F .text	00000040 _lv_memcpy_small
+c00334cd l     F .text	00000020 lv_area_copy
+c00334ed l     F .text	00000025 lv_area_get_width
+c0033512 l     F .text	00000026 lv_area_get_height
+c0033538 l     F .text	000000c7 lv_color_mix
+c00335ff l     F .text	0000004d lv_color_make
+c003364c l     F .text	0000003f lv_color_hex
+c003368b l     F .text	00000018 lv_anim_set_var
+c00336a3 l     F .text	00000019 lv_anim_set_exec_cb
+c00336bc l     F .text	00000019 lv_anim_set_time
+c00336d5 l     F .text	0000001d lv_anim_set_delay
+c00336f2 l     F .text	0000003f lv_anim_set_values
+c0033731 l     F .text	00000024 lv_anim_set_path
+c0033755 l     F .text	00000019 lv_anim_set_start_cb
+c003376e l     F .text	00000019 lv_anim_set_ready_cb
+c0033787 l     F .text	00000072 lv_style_list_get_style
+c00337f9 l     F .text	0000002d lv_obj_get_style_radius
+c0033826 l     F .text	00000033 lv_obj_get_style_clip_corner
+c0033859 l     F .text	0000002d lv_obj_get_style_size
+c0033886 l     F .text	0000002d lv_obj_get_style_transform_width
+c00338b3 l     F .text	0000002d lv_obj_get_style_transform_height
+c00338e0 l     F .text	0000002d lv_obj_get_style_transform_angle
+c003390d l     F .text	0000002d lv_obj_get_style_transform_zoom
+c003393a l     F .text	00000030 lv_obj_get_style_opa_scale
+c003396a l     F .text	00000049 lv_obj_set_style_local_opa_scale
+c00339b3 l     F .text	0000002d lv_obj_get_style_pad_top
+c00339e0 l     F .text	0000002d lv_obj_get_style_pad_bottom
+c0033a0d l     F .text	0000002d lv_obj_get_style_pad_left
+c0033a3a l     F .text	0000002d lv_obj_get_style_pad_right
+c0033a67 l     F .text	0000002d lv_obj_get_style_pad_inner
+c0033a94 l     F .text	0000002d lv_obj_get_style_margin_top
+c0033ac1 l     F .text	0000002d lv_obj_get_style_margin_bottom
+c0033aee l     F .text	0000002d lv_obj_get_style_margin_left
+c0033b1b l     F .text	0000002d lv_obj_get_style_margin_right
+c0033b48 l     F .text	0000002d lv_obj_get_style_bg_blend_mode
+c0033b75 l     F .text	0000002d lv_obj_get_style_bg_main_stop
+c0033ba2 l     F .text	0000002d lv_obj_get_style_bg_grad_stop
+c0033bcf l     F .text	0000002d lv_obj_get_style_bg_grad_dir
+c0033bfc l     F .text	00000033 lv_obj_get_style_bg_color
+c0033c2f l     F .text	00000033 lv_obj_get_style_bg_grad_color
+c0033c62 l     F .text	0000002d lv_obj_get_style_bg_opa
+c0033c8f l     F .text	0000002d lv_obj_get_style_border_width
+c0033cbc l     F .text	0000002d lv_obj_get_style_border_side
+c0033ce9 l     F .text	0000002d lv_obj_get_style_border_blend_mode
+c0033d16 l     F .text	00000033 lv_obj_get_style_border_post
+c0033d49 l     F .text	00000033 lv_obj_get_style_border_color
+c0033d7c l     F .text	0000002d lv_obj_get_style_border_opa
+c0033da9 l     F .text	0000002d lv_obj_get_style_outline_width
+c0033dd6 l     F .text	0000002d lv_obj_get_style_outline_pad
+c0033e03 l     F .text	0000002d lv_obj_get_style_outline_blend_mode
+c0033e30 l     F .text	00000033 lv_obj_get_style_outline_color
+c0033e63 l     F .text	0000002d lv_obj_get_style_outline_opa
+c0033e90 l     F .text	0000002d lv_obj_get_style_shadow_width
+c0033ebd l     F .text	0000002d lv_obj_get_style_shadow_ofs_x
+c0033eea l     F .text	0000002d lv_obj_get_style_shadow_ofs_y
+c0033f17 l     F .text	0000002d lv_obj_get_style_shadow_spread
+c0033f44 l     F .text	0000002d lv_obj_get_style_shadow_blend_mode
+c0033f71 l     F .text	00000033 lv_obj_get_style_shadow_color
+c0033fa4 l     F .text	0000002d lv_obj_get_style_shadow_opa
+c0033fd1 l     F .text	00000033 lv_obj_get_style_pattern_repeat
+c0034004 l     F .text	0000002d lv_obj_get_style_pattern_blend_mode
+c0034031 l     F .text	00000033 lv_obj_get_style_pattern_recolor
+c0034064 l     F .text	0000002d lv_obj_get_style_pattern_opa
+c0034091 l     F .text	0000002d lv_obj_get_style_pattern_recolor_opa
+c00340be l     F .text	0000002d lv_obj_get_style_pattern_image
+c00340eb l     F .text	0000002d lv_obj_get_style_value_letter_space
+c0034118 l     F .text	0000002d lv_obj_get_style_value_line_space
+c0034145 l     F .text	0000002d lv_obj_get_style_value_blend_mode
+c0034172 l     F .text	0000002d lv_obj_get_style_value_ofs_x
+c003419f l     F .text	0000002d lv_obj_get_style_value_ofs_y
+c00341cc l     F .text	0000002d lv_obj_get_style_value_align
+c00341f9 l     F .text	00000033 lv_obj_get_style_value_color
+c003422c l     F .text	0000002d lv_obj_get_style_value_opa
+c0034259 l     F .text	0000002d lv_obj_get_style_value_font
+c0034286 l     F .text	0000002d lv_obj_get_style_value_str
+c00342b3 l     F .text	00000030 lv_obj_get_style_text_letter_space
+c00342e3 l     F .text	00000030 lv_obj_get_style_text_line_space
+c0034313 l     F .text	00000030 lv_obj_get_style_text_decor
+c0034343 l     F .text	00000030 lv_obj_get_style_text_blend_mode
+c0034373 l     F .text	00000036 lv_obj_get_style_text_color
+c00343a9 l     F .text	00000036 lv_obj_get_style_text_sel_color
+c00343df l     F .text	00000036 lv_obj_get_style_text_sel_bg_color
+c0034415 l     F .text	00000030 lv_obj_get_style_text_opa
+c0034445 l     F .text	00000030 lv_obj_get_style_text_font
+c0034475 l     F .text	00000030 lv_obj_get_style_line_width
+c00344a5 l     F .text	00000030 lv_obj_get_style_line_blend_mode
+c00344d5 l     F .text	00000030 lv_obj_get_style_line_dash_width
+c0034505 l     F .text	00000030 lv_obj_get_style_line_dash_gap
+c0034535 l     F .text	00000036 lv_obj_get_style_line_rounded
+c003456b l     F .text	00000036 lv_obj_get_style_line_color
+c00345a1 l     F .text	00000030 lv_obj_get_style_line_opa
+c00345d1 l     F .text	00000030 lv_obj_get_style_image_blend_mode
+c0034601 l     F .text	00000036 lv_obj_get_style_image_recolor
+c0034637 l     F .text	00000030 lv_obj_get_style_image_opa
+c0034667 l     F .text	00000030 lv_obj_get_style_image_recolor_opa
+c0034697 l     F .text	00000030 lv_obj_get_style_transition_time
+c00346c7 l     F .text	00000030 lv_obj_get_style_transition_delay
+c00346f7 l     F .text	00000030 lv_obj_get_style_transition_prop_1
+c0034727 l     F .text	00000030 lv_obj_get_style_transition_prop_2
+c0034757 l     F .text	00000030 lv_obj_get_style_transition_prop_3
+c0034787 l     F .text	00000030 lv_obj_get_style_transition_prop_4
+c00347b7 l     F .text	00000030 lv_obj_get_style_transition_prop_5
+c00347e7 l     F .text	00000030 lv_obj_get_style_transition_prop_6
+c0034817 l     F .text	00000030 lv_obj_get_style_transition_path
+c0034847 l     F .text	00000030 lv_obj_get_style_scale_width
+c0034877 l     F .text	00000030 lv_obj_get_style_scale_border_width
+c00348a7 l     F .text	00000030 lv_obj_get_style_scale_end_border_width
+c00348d7 l     F .text	00000030 lv_obj_get_style_scale_end_line_width
+c0034907 l     F .text	00000036 lv_obj_get_style_scale_grad_color
+c003493d l     F .text	00000036 lv_obj_get_style_scale_end_color
+c008c384 l     O .data	00000001 lv_initialized
+c0120c80 l     O .bss	00000004 event_temp_data_head
+c0120c84 l     O .bss	00000004 event_act_data
+c0034973 l     F .text	0000007b _memcmp
+c003bab4 l     F .text	0000022a lv_obj_signal
+c003b5be l     F .text	000004a3 lv_obj_design
+c003b3dc l     F .text	000001e2 obj_del_core
+c003b383 l     F .text	00000059 lv_obj_del_async_cb
+c003bcde l     F .text	000000da refresh_children_position
+c003bf95 l     F .text	00000133 obj_align_core
+c003c0c8 l     F .text	000005e5 obj_align_mid_core
+c003cd51 l     F .text	0000012b trans_del
+c003dd2e l     F .text	000000fb invalidate_style_cache
+c003bea4 l     F .text	00000081 refresh_children_style
+c003bdb8 l     F .text	000000ec report_style_mod_core
+c003bf25 l     F .text	00000070 base_dir_refr_children
+c003de29 l     F .text	00000446 style_snapshot
+c003e26f l     F .text	00000331 style_snapshot_compare
+c003c6ad l     F .text	000006a4 trans_create
+c003ce7c l     F .text	00000235 trans_anim_cb
+c003d0b1 l     F .text	00000136 trans_anim_start_cb
+c003d1e7 l     F .text	0000010f trans_anim_ready_cb
+c003d53c l     F .text	0000060e update_style_cache
+c003d2f6 l     F .text	00000031 opa_scale_anim
+c003d327 l     F .text	0000003c fade_in_anim_ready
+c003d3a1 l     F .text	00000081 obj_valid_child
+c003d363 l     F .text	0000003e lv_event_mark_deleted
+c003d422 l     F .text	0000011a style_prop_is_cacheble
+c003db4a l     F .text	000001e4 update_style_cache_children
+c003c180 l       .text	00000000 .L1139
+c003c1d3 l       .text	00000000 .L1141
+c003c1ec l       .text	00000000 .L1142
+c003c222 l       .text	00000000 .L1143
+c003c24d l       .text	00000000 .L1144
+c003c278 l       .text	00000000 .L1145
+c003c2c0 l       .text	00000000 .L1146
+c003c2fd l       .text	00000000 .L1147
+c003c333 l       .text	00000000 .L1148
+c003c37b l       .text	00000000 .L1149
+c003c394 l       .text	00000000 .L1150
+c003c3ca l       .text	00000000 .L1151
+c003c3f5 l       .text	00000000 .L1152
+c003c420 l       .text	00000000 .L1153
+c003c468 l       .text	00000000 .L1154
+c003c4a5 l       .text	00000000 .L1155
+c003c4be l       .text	00000000 .L1156
+c003c4f4 l       .text	00000000 .L1157
+c003c51f l       .text	00000000 .L1158
+c003c547 l       .text	00000000 .L1159
+c003c58c l       .text	00000000 .L1160
+00000000 l    df *ABS*	00000000 lv_refr.c
+c003e5a0 l     F .text	00000040 _lv_memcpy_small
+c003e5e0 l     F .text	00000020 lv_area_copy
+c003e600 l     F .text	00000025 lv_area_get_width
+c003e625 l     F .text	00000026 lv_area_get_height
+c003e64b l     F .text	00000036 lv_obj_get_style_opa_scale
+c008c388 l     O .data	00000004 px_num
+c008c38c l     O .data	00000004 disp_refr
+c003ec3c l     F .text	000001cb lv_refr_join_area
+c003ee07 l     F .text	00000172 lv_refr_areas
+c003f923 l     F .text	00000145 lv_refr_vdb_flush
+c003ef79 l     F .text	00000314 lv_refr_area
+c003f28d l     F .text	000002ad lv_refr_area_part
+c003f53a l     F .text	000000fd lv_refr_get_top_obj
+c003f637 l     F .text	000000f6 lv_refr_obj_and_children
+c003f72d l     F .text	000001f6 lv_refr_obj
+00000000 l    df *ABS*	00000000 lv_style.c
+c003fa68 l     F .text	00000040 _lv_memcpy_small
+c003faa8 l     F .text	00000072 lv_style_list_get_style
+c0041509 l     F .text	000000fc get_property_index
+c004175b l     F .text	00000021 get_style_prop_attr
+c004177c l     F .text	0000004e get_prop_size
+c00416c4 l     F .text	00000034 style_resize
+c0041605 l     F .text	000000bf get_alloc_local_style
+c00417ca l     F .text	0000002c get_next_prop_index
+c004173e l     F .text	0000001d get_style_prop_id
+c00416f8 l     F .text	00000046 get_style_prop
+00000000 l    df *ABS*	00000000 lv_draw_img.c
+c00417f6 l     F .text	0000005b lv_color_premult
+c0041851 l     F .text	0000009e lv_color_mix_premult
+c00418ef l     F .text	00000040 _lv_memcpy_small
+c004192f l     F .text	00000020 lv_area_copy
+c004194f l     F .text	00000025 lv_area_get_width
+c0041974 l     F .text	00000026 lv_area_get_height
+c004199a l     F .text	000003aa _lv_img_buf_transform
+c0042e14 l     F .text	0000007e show_error
+c0041f68 l     F .text	000003c9 lv_img_draw_core
+c0042e92 l     F .text	00000028 draw_cleanup
+c0042331 l     F .text	00000ae3 lv_draw_map
+c0041e7a l       .text	00000000 .L36
+c0041e50 l       .text	00000000 .L37
+c0041e56 l       .text	00000000 .L39
+c0041e5c l       .text	00000000 .L40
+c0041e62 l       .text	00000000 .L41
+c0041e68 l       .text	00000000 .L42
+c0041e6e l       .text	00000000 .L43
+c0041e74 l       .text	00000000 .L44
+00000000 l    df *ABS*	00000000 lv_draw_label.c
+c0042eba l     F .text	00000040 _lv_memcpy_small
+c0042efa l     F .text	00000025 lv_area_get_width
+c0042f1f l     F .text	00000016 lv_font_get_line_height
+c0042f35 l     F .text	0000004d lv_color_make
+c0044a02 l     F .text	0000008b hex_char_to_num
+c0043b2e l     F .text	000001b6 lv_draw_letter
+c0044232 l     F .text	000007d0 draw_letter_subpx
+c0043ce4 l     F .text	0000054e draw_letter_normal
+c0120ca0 l     O .bss	00000001 prev_opa.5683
+c0120ca4 l     O .bss	00000004 prev_bpp.5684
+c0120cc0 l     O .bss	00000100 opa_table.5682
+c0044a5e l       .text	00000000 .L162
+c0044a64 l       .text	00000000 .L164
+c0044a6a l       .text	00000000 .L165
+c0044a70 l       .text	00000000 .L166
+c0044a76 l       .text	00000000 .L167
+c0044a7c l       .text	00000000 .L168
+00000000 l    df *ABS*	00000000 lv_draw_line.c
+c0044a8d l     F .text	00000025 lv_area_get_width
+c0044e2c l     F .text	000003df draw_line_hor
+c004520b l     F .text	0000036b draw_line_ver
+c0045576 l     F .text	000007b9 draw_line_skew
+c00732a0 l     O .rodata	00000021 wcorr.5969
+00000000 l    df *ABS*	00000000 lv_draw_mask.c
+c0045d2f l     F .text	00000040 _lv_memcpy_small
+c0045d6f l     F .text	00000020 lv_area_copy
+c0045d8f l     F .text	00000025 lv_area_get_width
+c0045db4 l     F .text	00000026 lv_area_get_height
+c0046730 l     F .text	00000264 lv_draw_mask_line
+c0047285 l     F .text	00000723 lv_draw_mask_angle
+c00479a8 l     F .text	00000a8b lv_draw_mask_radius
+c0048433 l     F .text	00000260 lv_draw_mask_fade
+c0048693 l     F .text	00000198 lv_draw_mask_map
+c0046994 l     F .text	00000398 line_mask_flat
+c0046d2c l     F .text	00000559 line_mask_steep
+c004882b l     F .text	0000004b mask_mix
+c0048876 l     F .text	00000080 sqrt_approx
+00000000 l    df *ABS*	00000000 lv_draw_rect.c
+c00488fa l     F .text	00000040 _lv_memcpy_small
+c004893a l     F .text	00000020 lv_area_copy
+c004895a l     F .text	00000025 lv_area_get_width
+c004897f l     F .text	00000026 lv_area_get_height
+c00489a5 l     F .text	000000c7 lv_color_mix
+c0049c22 l     F .text	0000189f draw_shadow
+c0048c51 l     F .text	00000901 draw_bg
+c004bd4e l     F .text	00000495 draw_pattern
+c0049552 l     F .text	000005eb draw_border
+c004c1e3 l     F .text	00000181 draw_value_str
+c004bc0b l     F .text	00000143 draw_outline
+c0049b3d l     F .text	000000e5 grad_get
+c004c364 l     F .text	0000095b draw_full_border
+c004b4c1 l     F .text	000003a8 shadow_draw_corner_buf
+c004b869 l     F .text	000003a2 shadow_blur_corner
+00000000 l    df *ABS*	00000000 lv_img_buf.c
+c004ccbf l     F .text	00000012 lv_color_to32
+c004ccd1 l     F .text	000000c7 lv_color_mix
+c004cd98 l     F .text	00000040 _lv_memcpy_small
+c004dce1 l       .text	00000000 .L63
+c004dcf8 l       .text	00000000 .L65
+c004dd0f l       .text	00000000 .L66
+c004dd94 l       .text	00000000 .L67
+c004ddb5 l       .text	00000000 .L68
+c004ddd6 l       .text	00000000 .L69
+c004ddf5 l       .text	00000000 .L70
+c004dd26 l       .text	00000000 .L71
+c004dd47 l       .text	00000000 .L72
+c004dd68 l       .text	00000000 .L73
+c004dd87 l       .text	00000000 .L74
+00000000 l    df *ABS*	00000000 lv_img_cache.c
+c0120dc0 l     O .bss	00000028 cache_temp
+00000000 l    df *ABS*	00000000 lv_img_decoder.c
+c004ec7e l     F .text	0000004d lv_color_make
+c004eccb l     F .text	00000040 _lv_memcpy_small
+c004faa8 l     F .text	000000f3 lv_img_decoder_built_in_line_true_color
+c004fb9b l     F .text	000003e0 lv_img_decoder_built_in_line_alpha
+c004ff7b l     F .text	0000035f lv_img_decoder_built_in_line_indexed
+00000000 l    df *ABS*	00000000 lv_font.c
+00000000 l    df *ABS*	00000000 lv_font_fmt_txt.c
+c0120de8 l     O .bss	00000004 rle_rdp
+c0120dec l     O .bss	00000004 rle_in
+c0120df0 l     O .bss	00000001 rle_bpp
+c0120df1 l     O .bss	00000001 rle_prev_v
+c0120df2 l     O .bss	00000001 rle_cnt
+c0120df4 l     O .bss	00000004 rle_state
+c005073f l     F .text	00000378 get_glyph_dsc_id
+c0050d2d l     F .text	00000219 decompress
+c0050ab7 l     F .text	000001b1 get_kern_value
+c0051460 l     F .text	00000025 unicode_list_compare
+c0050c68 l     F .text	00000062 kern_pair_8_compare
+c0050cca l     F .text	00000063 kern_pair_16_compare
+c0051196 l     F .text	0000004e rle_init
+c0050f46 l     F .text	0000004d decompress_line
+c005108e l     F .text	00000108 bits_write
+c00511e4 l     F .text	0000027c rle_next
+c0050f93 l     F .text	000000fb get_bits
+c0050fde l       .text	00000000 .L71
+c0050fc0 l       .text	00000000 .L72
+c0050fc6 l       .text	00000000 .L74
+c0050fcc l       .text	00000000 .L75
+c0050fd2 l       .text	00000000 .L76
+c0050fd8 l       .text	00000000 .L77
+c00510cc l       .text	00000000 .L83
+c00510d2 l       .text	00000000 .L85
+c00510d8 l       .text	00000000 .L86
+c00510de l       .text	00000000 .L87
+c00510e4 l       .text	00000000 .L88
+c00510ea l       .text	00000000 .L89
+c00510f0 l       .text	00000000 .L90
+c00510f6 l       .text	00000000 .L91
+00000000 l    df *ABS*	00000000 lv_font_montserrat_14.c
+c00733a0 l     O .rodata	0000219a gylph_bitmap
+c0075540 l     O .rodata	000004d8 glyph_dsc
+c0075a20 l     O .rodata	00000076 unicode_list_1
+c0082fc0 l     O .data.rel.ro	00000028 cmaps
+c0075aa0 l     O .rodata	0000009b kern_left_class_mapping
+c0075b40 l     O .rodata	0000009b kern_right_class_mapping
+c0075be0 l     O .rodata	00000bad kern_class_values
+c0082fe8 l     O .data.rel.ro	00000010 kern_classes
+c008c3a0 l     O .data	00000020 font_dsc
+00000000 l    df *ABS*	00000000 lv_hal_disp.c
+c008c3d4 l     O .data	00000004 disp_def
+00000000 l    df *ABS*	00000000 lv_hal_indev.c
+00000000 l    df *ABS*	00000000 lv_hal_tick.c
+c008c3d8 l     O .data	00000004 sys_time
+c008c3dc l     O .data	00000001 tick_irq_flag
+00000000 l    df *ABS*	00000000 lv_anim.c
+c0051fe8 l     F .text	00000040 _lv_memcpy_small
+c0120df8 l     O .bss	00000004 last_task_run
+c0120dfc l     O .bss	00000001 anim_list_changed
+c0120e00 l     O .bss	00000004 _lv_anim_task
+c005290d l     F .text	00000210 anim_task
+c0052ca2 l     F .text	0000005f anim_mark_list_change
+c0052b1d l     F .text	00000185 anim_ready_handler
+00000000 l    df *ABS*	00000000 lv_area.c
+c0052d01 l     F .text	00000025 lv_area_get_width
+c0052d26 l     F .text	00000026 lv_area_get_height
+c0053a5d l     F .text	000000bf lv_point_within_circle
+c00534c1 l       .text	00000000 .L41
+c005353b l       .text	00000000 .L43
+c0053551 l       .text	00000000 .L44
+c0053599 l       .text	00000000 .L45
+c00535cb l       .text	00000000 .L46
+c00535fd l       .text	00000000 .L47
+c0053661 l       .text	00000000 .L48
+c00536af l       .text	00000000 .L49
+c00536f7 l       .text	00000000 .L50
+c005375b l       .text	00000000 .L51
+c005377e l       .text	00000000 .L52
+c00537d3 l       .text	00000000 .L53
+c0053812 l       .text	00000000 .L54
+c0053833 l       .text	00000000 .L55
+c0053886 l       .text	00000000 .L56
+c00538c3 l       .text	00000000 .L57
+c00538e6 l       .text	00000000 .L58
+c005393b l       .text	00000000 .L59
+c005397a l       .text	00000000 .L60
+c005399b l       .text	00000000 .L61
+c00539eb l       .text	00000000 .L62
+00000000 l    df *ABS*	00000000 lv_async.c
+c0053bb3 l     F .text	00000043 lv_async_task_cb
+00000000 l    df *ABS*	00000000 lv_debug.c
+c008c3e0 l     O .data	00000011 hex.1646
+00000000 l    df *ABS*	00000000 lv_fs.c
+c0054b0c l     F .text	00000044 lv_fs_get_real_path
+00000000 l    df *ABS*	00000000 lv_gc.c
+00000000 l    df *ABS*	00000000 lv_ll.c
+c00553ea l     F .text	0000003f node_set_prev
+c0055429 l     F .text	00000042 node_set_next
+00000000 l    df *ABS*	00000000 lv_math.c
+c0076820 l     O .rodata	000000b6 sin0_90_table
+00000000 l    df *ABS*	00000000 lv_mem.c
+c008c594 l     O .data	00000004 work_mem
+c008c598 l     O .data	00000004 zero_mem
+c008c59c l     O .data	00000004 mem_max_size
+c008c5a0 l     O .data	00000010 mem_buf1_32
+c008c5b0 l     O .data	00000010 mem_buf2_32
+c008c5c0 l     O .data	00000010 mem_buf_small
+c0120e20 l     O .bss	00008000 work_mem_int.3109
+c00569c2 l     F .text	00000063 ent_get_next
+c0056a25 l     F .text	0000005a ent_alloc
+c0128e20 l     O .bss	00000002 full_defrag_cnt.3130
+c0056a7f l     F .text	000000a3 ent_trunc
+00000000 l    df *ABS*	00000000 lv_task.c
+c008c5d0 l     O .data	00000001 lv_task_run
+c008c5d1 l     O .data	00000001 idle_last
+c008c5d2 l     O .data	00000001 task_deleted
+c008c5d3 l     O .data	00000001 task_list_changed
+c008c5d4 l     O .data	00000001 task_created
+c008c5d5 l     O .data	00000001 already_running.3101
+c008c5d8 l     O .data	00000004 idle_period_start.3102
+c008c5dc l     O .data	00000004 handler_start.3103
+c008c5e0 l     O .data	00000004 busy_time.3104
+c008c5e4 l     O .data	00000004 time_till_next.3105
+c0057394 l     F .text	000000aa lv_task_exec
+c005743e l     F .text	00000046 lv_task_time_remaining
+00000000 l    df *ABS*	00000000 lv_txt.c
+c0057484 l     F .text	00000040 _lv_memcpy_small
+c00574c4 l     F .text	00000016 lv_font_get_line_height
+c0057ed5 l     F .text	00000079 lv_txt_utf8_size
+c0057f4e l     F .text	000000d4 lv_txt_unicode_to_utf8
+c0058022 l     F .text	0000008d lv_txt_utf8_conv_wc
+c00580af l     F .text	00000314 lv_txt_utf8_next
+c00583c3 l     F .text	000000a9 lv_txt_utf8_prev
+c005846c l     F .text	00000064 lv_txt_utf8_get_byte_id
+c00584d0 l     F .text	0000004b lv_txt_utf8_get_char_id
+c005851b l     F .text	00000052 lv_txt_utf8_get_length
+c0057730 l     F .text	00000240 lv_txt_get_next_word
+c005856d l     F .text	00000054 is_break_char
+00000000 l    df *ABS*	00000000 lv_utils.c
+00000000 l    df *ABS*	00000000 lv_theme.c
+c008c608 l     O .data	00000004 act_theme
+c0058a12 l     F .text	00000643 clear_styles
+c0058995 l     F .text	0000007d apply_theme
+c005904e l       .text	00000000 .L75
+c0058a3f l       .text	00000000 .L33
+c0058a54 l       .text	00000000 .L34
+c0058ba0 l       .text	00000000 .L35
+c0058add l       .text	00000000 .L36
+c0058a7e l       .text	00000000 .L37
+c0058a93 l       .text	00000000 .L38
+c0058fa3 l       .text	00000000 .L39
+c0058b37 l       .text	00000000 .L40
+c0058c1f l       .text	00000000 .L41
+c0058e40 l       .text	00000000 .L42
+c0058a69 l       .text	00000000 .L43
+c0058fe5 l       .text	00000000 .L44
+c0058dfb l       .text	00000000 .L45
+c0059019 l       .text	00000000 .L46
+c0058b4c l       .text	00000000 .L47
+c0058b61 l       .text	00000000 .L48
+c0058ab8 l       .text	00000000 .L49
+c0058b76 l       .text	00000000 .L50
+c0058c7e l       .text	00000000 .L51
+c0058b8b l       .text	00000000 .L52
+c0058db1 l       .text	00000000 .L53
+c0058de6 l       .text	00000000 .L54
+c0059007 l       .text	00000000 .L55
+c0058c44 l       .text	00000000 .L56
+c0058c59 l       .text	00000000 .L57
+c0058d9c l       .text	00000000 .L58
+c0058c93 l       .text	00000000 .L59
+c0058d77 l       .text	00000000 .L60
+c0058bea l       .text	00000000 .L61
+c0058f69 l       .text	00000000 .L62
+c0058f8e l       .text	00000000 .L63
+c0058bc5 l       .text	00000000 .L64
+c0058b02 l       .text	00000000 .L65
+c0058e75 l       .text	00000000 .L66
+c0058cc8 l       .text	00000000 .L67
+c0058d1d l       .text	00000000 .L68
+c0058f24 l       .text	00000000 .L69
+c0058d42 l       .text	00000000 .L70
+c0058eca l       .text	00000000 .L71
+c0058f0f l       .text	00000000 .L72
+00000000 l    df *ABS*	00000000 lv_theme_material.c
+c0059055 l     F .text	000000c7 lv_color_mix
+c005911c l     F .text	0000004d lv_color_make
+c0059169 l     F .text	0000003f lv_color_hex
+c00591a8 l     F .text	00000069 lv_color_hex3
+c0059211 l     F .text	00000047 lv_style_set_radius
+c0059258 l     F .text	00000046 lv_style_set_clip_corner
+c005929e l     F .text	00000047 lv_style_set_size
+c00592e5 l     F .text	00000047 lv_style_set_transform_width
+c005932c l     F .text	00000047 lv_style_set_pad_top
+c0059373 l     F .text	00000047 lv_style_set_pad_bottom
+c00593ba l     F .text	00000047 lv_style_set_pad_left
+c0059401 l     F .text	00000047 lv_style_set_pad_right
+c0059448 l     F .text	00000047 lv_style_set_pad_inner
+c005948f l     F .text	00000047 lv_style_set_margin_top
+c00594d6 l     F .text	00000047 lv_style_set_margin_bottom
+c005951d l     F .text	00000047 lv_style_set_margin_left
+c0059564 l     F .text	00000047 lv_style_set_margin_right
+c00595ab l     F .text	0000003e lv_style_set_bg_color
+c00595e9 l     F .text	00000046 lv_style_set_bg_opa
+c005962f l     F .text	00000047 lv_style_set_border_width
+c0059676 l     F .text	00000046 lv_style_set_border_side
+c00596bc l     F .text	00000046 lv_style_set_border_post
+c0059702 l     F .text	0000003e lv_style_set_border_color
+c0059740 l     F .text	00000046 lv_style_set_border_opa
+c0059786 l     F .text	00000047 lv_style_set_outline_width
+c00597cd l     F .text	00000047 lv_style_set_outline_pad
+c0059814 l     F .text	0000003e lv_style_set_outline_color
+c0059852 l     F .text	00000046 lv_style_set_outline_opa
+c0059898 l     F .text	00000047 lv_style_set_shadow_width
+c00598df l     F .text	00000047 lv_style_set_shadow_spread
+c0059926 l     F .text	0000003e lv_style_set_shadow_color
+c0059964 l     F .text	0000003e lv_style_set_pattern_recolor
+c00599a2 l     F .text	00000046 lv_style_set_pattern_opa
+c00599e8 l     F .text	0000003e lv_style_set_pattern_image
+c0059a26 l     F .text	0000003e lv_style_set_value_color
+c0059a64 l     F .text	0000003e lv_style_set_value_font
+c0059aa2 l     F .text	00000049 lv_style_set_text_line_space
+c0059aeb l     F .text	00000040 lv_style_set_text_color
+c0059b2b l     F .text	00000040 lv_style_set_text_sel_color
+c0059b6b l     F .text	00000040 lv_style_set_text_sel_bg_color
+c0059bab l     F .text	00000040 lv_style_set_text_font
+c0059beb l     F .text	00000047 lv_style_set_line_width
+c0059c32 l     F .text	00000047 lv_style_set_line_dash_width
+c0059c79 l     F .text	00000047 lv_style_set_line_dash_gap
+c0059cc0 l     F .text	00000046 lv_style_set_line_rounded
+c0059d06 l     F .text	0000003e lv_style_set_line_color
+c0059d44 l     F .text	00000040 lv_style_set_image_recolor
+c0059d84 l     F .text	00000047 lv_style_set_transition_time
+c0059dcb l     F .text	00000047 lv_style_set_transition_delay
+c0059e12 l     F .text	00000047 lv_style_set_transition_prop_3
+c0059e59 l     F .text	00000047 lv_style_set_transition_prop_4
+c0059ea0 l     F .text	00000047 lv_style_set_transition_prop_5
+c0059ee7 l     F .text	00000047 lv_style_set_transition_prop_6
+c0059f2e l     F .text	00000047 lv_style_set_scale_width
+c0059f75 l     F .text	00000047 lv_style_set_scale_end_border_width
+c0059fbc l     F .text	00000047 lv_style_set_scale_end_line_width
+c005a003 l     F .text	0000003e lv_style_set_scale_grad_color
+c005a041 l     F .text	0000003e lv_style_set_scale_end_color
+c008c620 l     O .data	0000002c theme
+c008c64c l     O .data	00000004 styles
+c008c650 l     O .data	00000001 inited
+c005a07f l     F .text	00002277 basic_init
+c006321b l     F .text	00000044 style_init_reset
+c005c2f6 l     F .text	00000010 cont_init
+c005c306 l     F .text	00000010 btn_init
+c005c316 l     F .text	00000010 label_init
+c005c326 l     F .text	00000303 bar_init
+c005c629 l     F .text	00000010 img_init
+c005c639 l     F .text	00000010 line_init
+c005c649 l     F .text	000001e2 led_init
+c005c82b l     F .text	000004cb slider_init
+c005ccf6 l     F .text	00000256 switch_init
+c005cf4c l     F .text	000003dd linemeter_init
+c005d329 l     F .text	00000851 gauge_init
+c005db7a l     F .text	00000281 arc_init
+c005ddfb l     F .text	00000010 spinner_init
+c005de0b l     F .text	0000040b chart_init
+c005e216 l     F .text	00000c1b calendar_init
+c005ee31 l     F .text	00000485 cpicker_init
+c005f2b6 l     F .text	00000582 checkbox_init
+c005f838 l     F .text	00000010 btnmatrix_init
+c005f848 l     F .text	00000388 keyboard_init
+c005fbd0 l     F .text	000000de msgbox_init
+c005fcae l     F .text	00000282 page_init
+c005ff30 l     F .text	00000203 textarea_init
+c0060133 l     F .text	00000171 spinbox_init
+c00602a4 l     F .text	00000cb3 list_init
+c0060f57 l     F .text	0000020f ddlist_init
+c0061166 l     F .text	0000013f roller_init
+c00612a5 l     F .text	00000010 tabview_init
+c00612b5 l     F .text	00000010 tileview_init
+c00612c5 l     F .text	0000040a table_init
+c00616cf l     F .text	00000010 win_init
+c00616df l     F .text	000009ad tabview_win_shared_init
+c00621e8 l     F .text	00001033 theme_apply
+c00631fc l       .text	00000000 .L727
+c0062215 l       .text	00000000 .L683
+c0062242 l       .text	00000000 .L684
+c00624c8 l       .text	00000000 .L685
+c00623e5 l       .text	00000000 .L686
+c00622a2 l       .text	00000000 .L687
+c00622d2 l       .text	00000000 .L688
+c006300a l       .text	00000000 .L689
+c0062693 l       .text	00000000 .L691
+c0062c2a l       .text	00000000 .L692
+c0062272 l       .text	00000000 .L693
+c00630bb l       .text	00000000 .L694
+c0062b2f l       .text	00000000 .L695
+c006315e l       .text	00000000 .L696
+c006235d l       .text	00000000 .L699
+c00627a9 l       .text	00000000 .L701
+c0062a8a l       .text	00000000 .L703
+c0062aff l       .text	00000000 .L704
+c0063116 l       .text	00000000 .L705
+c0062706 l       .text	00000000 .L706
+c006274e l       .text	00000000 .L707
+c0062a72 l       .text	00000000 .L708
+c00627d9 l       .text	00000000 .L709
+c00629fb l       .text	00000000 .L710
+c00625f1 l       .text	00000000 .L711
+c0062f4d l       .text	00000000 .L712
+c0062fc2 l       .text	00000000 .L713
+c0062596 l       .text	00000000 .L714
+c0062440 l       .text	00000000 .L715
+c0062d23 l       .text	00000000 .L716
+c006288e l       .text	00000000 .L717
+c0062942 l       .text	00000000 .L718
+c0062e7e l       .text	00000000 .L719
+c0062974 l       .text	00000000 .L720
+c0062d98 l       .text	00000000 .L721
+c0062e4c l       .text	00000000 .L722
+00000000 l    df *ABS*	00000000 lv_bar.c
+c006325f l     F .text	00000040 _lv_memcpy_small
+c006329f l     F .text	00000020 lv_area_copy
+c00632bf l     F .text	00000025 lv_area_get_width
+c00632e4 l     F .text	00000026 lv_area_get_height
+c006330a l     F .text	00000018 lv_anim_set_var
+c0063322 l     F .text	00000019 lv_anim_set_exec_cb
+c006333b l     F .text	00000019 lv_anim_set_time
+c0063354 l     F .text	0000003f lv_anim_set_values
+c0063393 l     F .text	00000019 lv_anim_set_ready_cb
+c00633ac l     F .text	00000033 lv_obj_get_style_radius
+c00633df l     F .text	00000033 lv_obj_get_style_pad_top
+c0063412 l     F .text	00000033 lv_obj_get_style_pad_bottom
+c0063445 l     F .text	00000033 lv_obj_get_style_pad_left
+c0063478 l     F .text	00000033 lv_obj_get_style_pad_right
+c00634ab l     F .text	00000039 lv_obj_get_style_border_post
+c0128e24 l     O .bss	00000004 ancestor_design_f
+c0128e28 l     O .bss	00000004 ancestor_signal
+c0064cbd l     F .text	00000033 lv_bar_init_anim
+c00648e7 l     F .text	0000014c lv_bar_signal
+c0063e53 l     F .text	0000012d lv_bar_design
+c0064b80 l     F .text	0000013d lv_bar_set_value_with_anim
+c0063f80 l     F .text	00000070 draw_bg
+c0063ff0 l     F .text	000008f7 draw_indic
+c0064a33 l     F .text	00000090 lv_bar_get_style
+c0064ac3 l     F .text	0000003c lv_bar_anim
+c0064aff l     F .text	00000081 lv_bar_anim_ready
+00000000 l    df *ABS*	00000000 lv_btn.c
+c0064cf0 l     F .text	00000032 lv_btn_set_layout
+c0128e2c l     O .bss	00000004 ancestor_signal
+c0128e30 l     O .bss	00000004 ancestor_design
+c00652db l     F .text	000001ed lv_btn_signal
+c006525d l     F .text	0000007e lv_btn_design
+c0064fe6 l       .text	00000000 .L22
+c0064ffb l       .text	00000000 .L24
+c0065064 l       .text	00000000 .L25
+c0065020 l       .text	00000000 .L26
+c0065042 l       .text	00000000 .L27
+c0065086 l       .text	00000000 .L28
+00000000 l    df *ABS*	00000000 lv_cont.c
+c00654c8 l     F .text	00000040 _lv_memcpy_small
+c0065508 l     F .text	00000020 lv_area_copy
+c0065528 l     F .text	00000025 lv_area_get_width
+c006554d l     F .text	00000026 lv_area_get_height
+c0065573 l     F .text	00000033 lv_obj_get_style_pad_top
+c00655a6 l     F .text	00000033 lv_obj_get_style_pad_bottom
+c00655d9 l     F .text	00000033 lv_obj_get_style_pad_left
+c006560c l     F .text	00000033 lv_obj_get_style_pad_right
+c006563f l     F .text	00000033 lv_obj_get_style_pad_inner
+c0065672 l     F .text	00000033 lv_obj_get_style_margin_top
+c00656a5 l     F .text	00000033 lv_obj_get_style_margin_bottom
+c00656d8 l     F .text	00000033 lv_obj_get_style_margin_left
+c006570b l     F .text	00000033 lv_obj_get_style_margin_right
+c0128e34 l     O .bss	00000004 ancestor_design
+c0128e38 l     O .bss	00000004 ancestor_signal
+c0065db6 l     F .text	00000196 lv_cont_signal
+c0065f4c l     F .text	00000035 lv_cont_get_style
+c0065f81 l     F .text	000000fe lv_cont_refr_layout
+c0066db6 l     F .text	000005ca lv_cont_refr_autofit
+c006648d l     F .text	000001cf lv_cont_layout_center
+c006607f l     F .text	000001f3 lv_cont_layout_col
+c0066272 l     F .text	0000021b lv_cont_layout_row
+c006665c l     F .text	000005ce lv_cont_layout_pretty
+c0066c2a l     F .text	0000018c lv_cont_layout_grid
+00000000 l    df *ABS*	00000000 lv_label.c
+c0067380 l     F .text	00000040 _lv_memcpy_small
+c00673c0 l     F .text	00000020 lv_area_copy
+c00673e0 l     F .text	00000025 lv_area_get_width
+c0067405 l     F .text	00000026 lv_area_get_height
+c006742b l     F .text	00000016 lv_font_get_line_height
+c0067441 l     F .text	00000018 lv_anim_set_var
+c0067459 l     F .text	00000019 lv_anim_set_exec_cb
+c0067472 l     F .text	00000019 lv_anim_set_time
+c006748b l     F .text	0000003f lv_anim_set_values
+c00674ca l     F .text	00000024 lv_anim_set_playback_time
+c00674ee l     F .text	00000024 lv_anim_set_playback_delay
+c0067512 l     F .text	00000025 lv_anim_set_repeat_count
+c0067537 l     F .text	00000024 lv_anim_set_repeat_delay
+c006755b l     F .text	00000033 lv_obj_get_style_transform_width
+c006758e l     F .text	00000033 lv_obj_get_style_transform_height
+c00675c1 l     F .text	00000033 lv_obj_get_style_pad_top
+c00675f4 l     F .text	00000033 lv_obj_get_style_pad_bottom
+c0067627 l     F .text	00000033 lv_obj_get_style_pad_left
+c006765a l     F .text	00000033 lv_obj_get_style_pad_right
+c006768d l     F .text	00000036 lv_obj_get_style_text_letter_space
+c00676c3 l     F .text	00000036 lv_obj_get_style_text_line_space
+c00676f9 l     F .text	00000036 lv_obj_get_style_text_font
+c0128e3c l     O .bss	00000004 ancestor_signal
+c006a02b l     F .text	00000454 lv_label_design
+c006a47f l     F .text	000001fb lv_label_signal
+c006a813 l     F .text	000000c6 lv_label_set_dot_tmp
+c006a781 l     F .text	00000049 lv_label_set_offset_x
+c006a7ca l     F .text	00000049 lv_label_set_offset_y
+c006a67a l     F .text	00000107 lv_label_revert_dots
+c006a988 l     F .text	000000dc get_txt_coords
+c006a91e l     F .text	0000006a lv_label_dot_tmp_free
+c006a8d9 l     F .text	00000045 lv_label_get_dot_tmp
+00000000 l    df *ABS*	00000000 lv_group.c
+c006b473 l     F .text	0000008a lv_group_refocus
+c006b72a l     F .text	00000066 obj_to_foreground
+c006b4fd l     F .text	0000022d focus_next_core
+00000000 l    df *ABS*	00000000 lv_indev.c
+c0128e40 l     O .bss	00000004 indev_act
+c0128e44 l     O .bss	00000004 indev_obj_act
+c006dad4 l     F .text	000000cf indev_proc_reset_query_handler
+c006be54 l     F .text	000000d7 indev_pointer_proc
+c006bf2b l     F .text	0000069a indev_keypad_proc
+c006c5c5 l     F .text	000008f1 indev_encoder_proc
+c006ceb6 l     F .text	00000120 indev_button_proc
+c006e8b8 l     F .text	00000058 get_dragged_obj
+c006cfd6 l     F .text	000007aa indev_proc_press
+c006d780 l     F .text	00000354 indev_proc_release
+c006eb01 l     F .text	0000003b indev_reset_check
+c006e537 l     F .text	00000381 indev_drag_throw
+c006dca1 l     F .text	00000349 indev_click_focus
+c006dfea l     F .text	0000054d indev_drag
+c006e910 l     F .text	000001f1 indev_gesture
+00000000 l    df *ABS*	00000000 lv_draw_blend.c
+c006eb3c l     F .text	000000c7 lv_color_mix
+c006ec03 l     F .text	0000005b lv_color_premult
+c006ec5e l     F .text	0000009e lv_color_mix_premult
+c006ecfc l     F .text	00000025 lv_area_get_width
+c006ed21 l     F .text	00000026 lv_area_get_height
+c0128e60 l     O .bss	00000a00 blend_buf
+c006f125 l     F .text	0000017e fill_set_px
+c006f2a3 l     F .text	00000795 fill_normal
+c006fa38 l     F .text	000002c1 fill_blended
+c006fcf9 l     F .text	0000023e map_set_px
+c006ff37 l     F .text	000007f8 map_normal
+c007072f l     F .text	000002be map_blended
+c00709ed l     F .text	000000b6 color_blend_true_color_additive
+c0070aa3 l     F .text	000000c6 color_blend_true_color_subtractive
+00000000 l    df *ABS*	00000000 lv_color.c
+c0070b69 l     F .text	00000012 lv_color_to32
+c0070b7b l     F .text	000000c7 lv_color_mix
+c0070c42 l     F .text	0000004d lv_color_make
+c0070f79 l       .text	00000000 .L20
+c0070f90 l       .text	00000000 .L22
+c0070fa7 l       .text	00000000 .L23
+c0070fbe l       .text	00000000 .L24
+c0070fd5 l       .text	00000000 .L25
+00000000 l    df *ABS*	00000000 lv_printf.c
+c0071264 l     F .text	0000002f _out_buffer
+c0071293 l     F .text	00000019 _out_null
+c00712ac l     F .text	0000003f _strnlen_s
+c00712eb l     F .text	00000033 _is_digit
+c007131e l     F .text	00000063 _atoi
+c0071381 l     F .text	000000c1 _out_rev
+c0071442 l     F .text	000001d3 _ntoa_format
+c0071615 l     F .text	000000d3 _ntoa_long
+c00716e8 l     F .text	000007bd _vsnprintf
+c00717f0 l       .text	00000000 .L61
+c007199e l       .text	00000000 .L137
+c0071e3f l       .text	00000000 .L86
+c00717c4 l       .text	00000000 .L62
+c00717da l       .text	00000000 .L64
+c00717ae l       .text	00000000 .L65
+c0071798 l       .text	00000000 .L66
+c0071782 l       .text	00000000 .L67
+c007193f l       .text	00000000 .L77
+c007197a l       .text	00000000 .L79
+c0071913 l       .text	00000000 .L80
+c0071968 l       .text	00000000 .L81
+c007198c l       .text	00000000 .L82
+c0071e1a l       .text	00000000 .L87
+c00719c8 l       .text	00000000 .L89
+c0071c21 l       .text	00000000 .L90
+c0071dd1 l       .text	00000000 .L91
+c0071cc5 l       .text	00000000 .L92
+00000000 l    df *ABS*	00000000 
+c0083000 l     O .got.plt	00000000 _GLOBAL_OFFSET_TABLE_
+c0028f6d g     F .text	00000000 .hidden __x86.get_pc_thunk.cx
+c008c5f0 g     O .data	00000004 _lv_txt_encoded_conv_wc
+c002f940 g     F .text	000000a4 do_vdelete
+c0038b4c g     F .text	00000056 lv_obj_get_height_margin
+c002cdae g     F .text	0000015d GetFileOffset
+c0056b62 g     F .text	00000354 lv_task_handler
+c0022969 g     F .text	0000006d sys_malloc_4k
+c0057c64 g     F .text	0000007d _lv_txt_is_cmd
+c00377ca g     F .text	0000045a lv_obj_set_state
+c002f28d g     F .text	00000034 sys_close
+c002285a g       .text	00000000 strcpy
+c002e125 g     F .text	000000e8 AddCluster
+c0051bc7 g     F .text	00000082 _lv_disp_pop_from_inv_buf
+c0057ce1 g     F .text	000000b1 _lv_txt_ins
+c00228bc g     F .text	00000026 sys_kmalloc
+c0052ffb g     F .text	000002c2 _lv_area_is_point_on
+c004e56f g     F .text	0000060c _lv_img_buf_transform_anti_alias
+c0052086 g     F .text	00000077 lv_anim_init
+c0101420 g     O .bss	00000004 cr2_count
+c0020bc4 g       .text	00000000 yield
+c00275ee g     F .text	00000047 get_super_block
+c0053c17 g     F .text	00000023 lv_debug_check_mem_integrity
+c002425a g     F .text	00000043 write_page_pte
+c008c400 g     O .data	0000000c _lv_task_ll
+c0051ea9 g     F .text	000000ae _lv_indev_read
+c006bcb1 g     F .text	0000006a lv_indev_get_vect
+c00398bc g     F .text	00000059 lv_obj_get_hidden
+c0039bdc g     F .text	0000004f lv_obj_get_base_dir
+c0021a98 g     F .text	00000438 init_prot
+c0042f82 g     F .text	000000a9 lv_draw_label_dsc_init
+c00384b4 g     F .text	00000089 lv_obj_get_child
+c0032b2b g     F .text	00000087 lv_disp_set_bg_image
+c00325f8 g     F .text	00000146 InitScreen
+c0073160 g     O .rodata	00000002 _lv_bpp1_opa_table
+c00229d6 g     F .text	0000003f sys_free
+c00205d0 g       .text	00000000 hwint08
+c0037d25 g     F .text	00000099 lv_obj_finish_transitions
+c008c590 g     O .data	00000004 _lv_font_decompr_buf
+c0020c64 g       .text	00000000 delete
+c00688f9 g     F .text	0000048e lv_label_get_letter_on
+c0031f52 g     F .text	00000068 printf
+c0039cdb g     F .text	00000082 lv_obj_get_state
+c003202a g     F .text	00000273 vsprintf
+c0037c24 g     F .text	0000007d lv_obj_add_state
+c002e4d0 g     F .text	000000a5 ClearClusters
+c0022393 g     F .text	00000031 sys_yield
+c0045e4d g     F .text	000000a7 lv_draw_mask_apply
+c00488f6 g     F .text	00000000 .hidden __x86.get_pc_thunk.si
+c0037e12 g     F .text	0000007e lv_event_send
+c0083460 g     O .data	00000006 idt_ptr
+c00506fb g     F .text	00000044 _lv_font_clean_up_fmt_txt
+c00353ec g     F .text	00000024 lv_obj_del_anim_ready_cb
+c0083d60 g     O .data	00007fe0 s_memman
+c005895b g     F .text	00000022 lv_theme_get_color_secondary
+c005546b g     F .text	00000109 _lv_trigo_sin
+c002f443 g     F .text	00000034 sys_delete
+c00362e7 g     F .text	00000103 lv_obj_align
+c0036673 g     F .text	000000c3 lv_obj_align_mid_x
+c0023793 g     F .text	00000021 do_malloc
+c0020750 g       .text	00000000 divide_error
+c004efd4 g     F .text	00000070 lv_img_decoder_read_line
+c00520fd g     F .text	00000113 lv_anim_start
+c0020868 g       .text	00000000 copr_not_available
+c008c418 g     O .data	0000000c _lv_indev_ll
+c0039ad0 g     F .text	00000059 lv_obj_get_drag_throw
+c006b7b2 g     F .text	000001b6 _lv_indev_read_task
+c002f37d g     F .text	0000005e sys_lseek
+c004630b g     F .text	000000b9 lv_draw_mask_line_angle_init
+c00240c4 g     F .text	0000004a get_pde_phy_addr
+c0058803 g     F .text	000000a5 lv_theme_copy
+c0155e20 g     O .bss	00000a00 argv
+c0023be1 g     F .text	00000026 switch_pde
+c004302b g     F .text	00000b03 lv_draw_label
+c002bd34 g     F .text	000000b6 init_fs_fat
+c0022a81 g     F .text	00000027 sys_udisp_int
+c0039b29 g     F .text	0000001e lv_obj_get_drag_parent
+c005158a g     F .text	00000277 lv_disp_drv_register
+c006b97d g     F .text	00000022 lv_indev_get_type
+c005470f g     F .text	00000092 lv_fs_free_space
+c002e038 g     F .text	000000ed AllotClustersForEmptyFile
+c002f811 g     F .text	0000004d do_vlseek
+c0038f64 g     F .text	0000040f _lv_obj_get_style_int
+c006baa2 g     F .text	00000043 lv_indev_enable
+c0051944 g     F .text	00000019 lv_disp_set_default
+c0082ff8 g     O .data.rel.ro	00000008 lv_anim_path_def
+c0056eb6 g     F .text	000001d3 lv_task_create_basic
+c0051485 g     F .text	000000b7 lv_disp_drv_init
+c0020a5d g       .text	00000000 sched
+c00525a9 g     F .text	00000097 lv_anim_path_ease_in_out
+c002efe2 g     F .text	0000003c init_sb_op_table
+c006ab66 g     F .text	000000c3 lv_group_del
+c00532bd g     F .text	00000065 _lv_area_is_on
+c002cc6a g     F .text	00000144 FindClusterForDir
+c0073180 g     O .rodata	00000100 _lv_bpp8_opa_table
+c00588a8 g     F .text	00000019 lv_theme_set_base
+c004e0d4 g     F .text	0000049b _lv_img_buf_get_transformed_area
+c0052028 g     F .text	0000005e _lv_anim_core_init
+c0038c82 g     F .text	0000008a lv_obj_get_height_grid
+c0048c41 g     F .text	00000010 lv_draw_px
+c002fd79 g     F .text	0000019f mouse_handler
+c0053cfa g     F .text	000000f8 lv_debug_log_error
+c00547ca g     F .text	0000007b lv_fs_drv_register
+c006599c g     F .text	000000a8 lv_cont_set_layout
+c0025136 g     F .text	00000143 sys_fork
+c0037701 g     F .text	00000063 lv_obj_add_protect
+c006bc6b g     F .text	00000046 lv_indev_is_dragging
+c002e5f2 g     F .text	000000d1 MakeFullPath
+c002fba2 g     F .text	000000df do_vdeletedir
+c0102594 g     O .bss	00000004 Position_Of_FAT1
+c00245cb g     F .text	000000cc read_elf
+c0055ced g     F .text	00000084 lv_mem_test
+c0051e60 g     F .text	00000049 lv_indev_get_next
+c00567be g     F .text	00000102 _lv_memset_00
+c0055eed g     F .text	00000253 _lv_mem_buf_get
+c0038abc g     F .text	00000090 lv_obj_get_height_fit
+c00232a9 g     F .text	0000012d memman_alloc_4k
+c0067d42 g     F .text	0000011d lv_label_set_text_fmt
+c0022628 g       .text	00000000 port_read
+c0054289 g     F .text	0000005f lv_fs_seek
+c006b224 g     F .text	000000c1 lv_group_set_editing
+c0040ebc g     F .text	0000004a _lv_style_list_set_local_int
+c002ba97 g     F .text	0000016f DeleteFile
+c002c6f8 g     F .text	000000a5 sys_WriteFile
+c005734b g     F .text	00000049 lv_task_get_next
+c003768e g     F .text	00000073 lv_obj_set_base_dir
+c003ab8e g     F .text	000001a6 lv_obj_init_draw_line_dsc
+c006379c g     F .text	000000f7 lv_bar_set_value
+c0051b2f g     F .text	0000001d lv_disp_flush_is_last
+c0053df2 g     F .text	0000002d _lv_fs_init
+c006b3bf g     F .text	00000022 lv_group_get_focus_cb
+c00403f4 g     F .text	00000061 _lv_style_get_mem_size
+c0039b65 g     F .text	0000001e lv_obj_get_focus_parent
+c006b968 g     F .text	00000015 lv_indev_get_act
+c00322d8 g     F .text	0000004a gets
+c0036ac7 g     F .text	00000061 lv_obj_clean_style_list
+c003ba61 g     F .text	00000053 lv_obj_get_focused_obj
+c002f40f g     F .text	00000034 sys_create
+c0041e1f g     F .text	00000066 lv_img_cf_get_px_size
+c0036d99 g     F .text	0000008d lv_obj_remove_style_local_prop
+c0020690 g       .text	00000000 hwint12
+c0022376 g     F .text	0000001d free_PCB
+c003a174 g     F .text	0000004b lv_obj_handle_get_type_signal
+c0054b50 g     F .text	00000186 _lv_gc_clear_roots
+c002d200 g     F .text	000000ce GetNextCluster
+c00290b0 g     F .text	00000075 hd_close
+c008c600 g     O .data	00000004 _lv_txt_encoded_get_char_id
+c0023856 g     F .text	0000008f disp_free
+c002ef40 g     F .text	000000a2 init_super_block_table
+c004f183 g     F .text	00000019 lv_img_decoder_set_open_cb
+c0044ab2 g     F .text	00000054 lv_draw_line_dsc_init
+c00561d0 g     F .text	000000bc _lv_mem_buf_free_all
+c006af21 g     F .text	000001ca lv_group_focus_obj
+c0020950 g       .text	00000000 general_protection
+c0055b3f g     F .text	000000e3 lv_mem_realloc
+c002d49e g     F .text	00000163 ClearFATs
+c0039a79 g     F .text	00000057 lv_obj_get_drag_dir
+c00388ea g     F .text	0000008a lv_obj_get_y
+c0020840 g       .text	00000000 inval_opcode
+c0038f09 g     F .text	0000005b lv_obj_get_style_list
+c002f2c1 g     F .text	0000005e sys_read
+c0035470 g     F .text	00000087 lv_obj_clean
+c005712f g     F .text	00000019 lv_task_set_cb
+c00557e9 g     F .text	000000a2 _lv_pow
+c00363ea g     F .text	000000c3 lv_obj_align_x
+c00414c7 g     F .text	00000021 lv_debug_check_style
+c00572eb g     F .text	00000027 lv_task_reset
+c00311c0 g     F .text	000003e9 shell
+c0036c83 g     F .text	0000008f _lv_obj_set_style_local_opa
+c005628c g     F .text	0000040b _lv_memcpy
+c0054a5d g     F .text	000000af lv_fs_get_last
+c0022810 g       .text	00000000 memcpy
+c0036157 g     F .text	00000064 lv_obj_set_width_fit
+c00528e0 g     F .text	0000002d lv_anim_path_step
+c0031cb6 g     F .text	00000052 select_console
+c00315a9 g     F .text	000000e2 split
+c0102590 g     O .bss	00000004 Position_Of_RootDir
+c0041ec6 g     F .text	00000048 lv_img_cf_has_alpha
+c0129860 g     O .bss	00000004 k_reenter
+c0052210 g     F .text	000000a1 lv_anim_del
+c004ec6e g     F .text	00000010 lv_img_cache_invalidate_src
+c0045ef4 g     F .text	0000005d lv_draw_mask_remove_id
+c002a6f8 g     F .text	0000028e CreateDir
+c0102588 g     O .bss	00000002 Reserved_Sector
+c0022609 g       .text	00000000 enable_irq
+c00372d8 g     F .text	0000006c lv_obj_set_top
+c003810d g     F .text	00000015 lv_event_get_data
+c00540bc g     F .text	000000b1 lv_fs_remove
+c0022650 g       .text	00000000 enable_int
+c0037344 g     F .text	00000080 lv_obj_set_drag
+c002eaed g     F .text	00000084 TimeToBytes
+c0029660 g     F .text	00000131 hd_rdwt_sched
+c00228e2 g     F .text	0000001e sys_kmalloc_4k
+c0036bfc g     F .text	00000087 _lv_obj_set_style_local_color
+c00358bb g     F .text	000001d0 lv_obj_set_parent
+c0035410 g     F .text	00000060 lv_obj_del_async
+c003b253 g     F .text	00000086 lv_debug_check_obj_type
+c0023928 g     F .text	000002b9 memman_test
+c0051e33 g     F .text	0000002d lv_indev_drv_update
+c0020778 g       .text	00000000 single_step_exception
+c003a8aa g     F .text	00000196 lv_obj_init_draw_label_dsc
+c004edce g     F .text	000000b4 lv_img_decoder_get_info
+c0021883 g     F .text	00000064 clock_handler
+c006208c g     F .text	0000015c lv_theme_material_init
+c0020b58 g       .text	00000000 malloc
+c0083060 g     O .data	00000400 gdt
+c0068502 g     F .text	000003f7 lv_label_get_letter_pos
+c003294b g     F .text	0000003a lv_disp_get_scr_prev
+c002a52a g     F .text	0000002c initlock
+c0020bd0 g       .text	00000000 sleep
+c006ad3c g     F .text	0000013b lv_group_remove_obj
+c0039680 g     F .text	000001c8 _lv_obj_get_style_ptr
+c002bc06 g     F .text	0000012e IsFile
+c003fb1a g     F .text	00000029 lv_style_init
+c008c40c g     O .data	0000000c _lv_disp_ll
+c00206c0 g       .text	00000000 hwint13
+c002dcc5 g     F .text	00000156 CreateRecord
+c002900c g     F .text	000000a4 hd_open
+c00371f3 g     F .text	0000007c lv_obj_set_adv_hittest
+c0035307 g     F .text	000000e5 lv_obj_del
+c00221a1 g     F .text	00000084 divide_error_handler
+c0039c2b g     F .text	00000051 lv_obj_get_protect
+c0020600 g       .text	00000000 hwint09
+c00572d2 g     F .text	00000019 lv_task_set_repeat_count
+c002187f g     F .text	00000000 .hidden __x86.get_pc_thunk.ax
+c0144680 g     O .bss	00000340 hd_info
+c0051a3c g     F .text	00000039 lv_disp_get_dpi
+c0102598 g     O .bss	00000004 Position_Of_FAT2
+c00381c9 g     F .text	00000054 lv_obj_set_design_cb
+c0067b38 g     F .text	0000020a lv_label_set_text
+c004ee82 g     F .text	00000152 lv_img_decoder_open
+c002c66e g     F .text	00000010 sys_OpenFile
+c006bba2 g     F .text	00000023 lv_indev_set_button_points
+c002e20d g     F .text	00000132 NeedMoreCluster
+c0029125 g     F .text	00000272 hd_rdwt
+c0064f06 g     F .text	0000007a lv_btn_set_checkable
+c004fa06 g     F .text	000000a2 lv_img_decoder_built_in_close
+c008c454 g     O .data	0000000c _lv_img_defoder_ll
+c0032322 g     F .text	00000177 strtoul
+c002266a g     F .text	000000b5 itoa
+c0032bb2 g     F .text	0000008e lv_disp_set_bg_opa
+c0048a6c g     F .text	00000124 lv_draw_rect_dsc_init
+c006805f g     F .text	000000aa lv_label_set_align
+c0035c0f g     F .text	000001a8 lv_obj_set_pos
+c0037052 g     F .text	000000bd _lv_obj_disable_style_caching
+c00405ee g     F .text	00000192 _lv_style_set_color
+c006dba3 g     F .text	000000fe lv_indev_search_obj
+c00502da g     F .text	00000026 lv_font_get_glyph_bitmap
+c006573e g     F .text	0000025e lv_cont_create
+c0102586 g     O .bss	00000001 Sectors_Per_Cluster
+c0070dd0 g     F .text	00000046 lv_color_darken
+c0155e00 g     O .bss	00000004 current_console
+c0020ba0 g       .text	00000000 udisp_int
+c002b14c g     F .text	00000206 CloseFile
+c0036e26 g     F .text	000001a5 lv_obj_refresh_style
+c0054d0e g     F .text	000000a1 _lv_ll_ins_head
+c0037dbe g     F .text	00000054 lv_obj_set_event_cb
+c0055a67 g     F .text	000000d8 lv_mem_free
+c004f1b5 g     F .text	00000019 lv_img_decoder_set_close_cb
+c0023771 g     F .text	00000022 memman_free_4k
+c0063984 g     F .text	00000127 lv_bar_set_range
+c0054f40 g     F .text	0000011f _lv_ll_remove
+c004f8b5 g     F .text	00000151 lv_img_decoder_built_in_read_line
+c0020720 g       .text	00000000 hwint15
+c008c480 g     O .data	00000080 _lv_mem_buf
+c0048b90 g     F .text	000000b1 lv_draw_rect
+c0040f4f g     F .text	00000041 _lv_style_list_set_local_color
+c0038700 g     F .text	00000060 lv_obj_get_coords
+c0052dab g     F .text	00000034 lv_area_set_width
+c00544e8 g     F .text	00000123 lv_fs_dir_open
+c008c604 g     O .data	00000004 _lv_txt_get_encoded_length
+c003b10d g     F .text	000000ae lv_obj_fade_in
+c0039fae g     F .text	00000050 lv_obj_get_group
+c0156820 g     O .bss	00000004 argc
+c0024aa6 g     F .text	0000001e fake_open
+c00368c0 g     F .text	00000069 lv_obj_set_auto_realign
+c004eb7b g     F .text	000000d9 _lv_img_cache_open
+c0032911 g     F .text	0000003a lv_disp_get_scr_act
+c0028f71 g     F .text	0000009b init_hd
+c0051801 g     F .text	00000094 lv_disp_drv_update
+c00207f0 g       .text	00000000 overflow
+c0020bea g       .text	00000000 print_F
+c0023c07 g     F .text	000000ec init_page_pte
+c002c50a g     F .text	00000038 debug
+c005719e g     F .text	000000e9 lv_task_set_prio
+c002de1b g     F .text	0000008b WriteRecord
+c0023503 g     F .text	0000026e memman_free
+c003621f g     F .text	00000064 lv_obj_set_width_margin
+c0029397 g     F .text	00000054 hd_service
+c0020c37 g       .text	00000000 lseek
+c006be32 g     F .text	00000022 lv_indev_get_read_task
+c0156824 g     O .bss	00000004 fd
+c0020450 g       .text	00000000 hwint00
+c00329cd g     F .text	0000003a lv_disp_get_layer_top
+c002edb8 g     F .text	0000002c init_vfs
+c008c424 g     O .data	0000000c _lv_drv_ll
+c0052640 g     F .text	0000009a lv_anim_path_overshoot
+c005897d g     F .text	00000018 lv_theme_get_flags
+c002abf2 g     F .text	00000264 ReadFile
+c00523eb g     F .text	00000020 lv_anim_refr_now
+c0070c8f g     F .text	000000fb lv_color_fill
+c0024464 g     F .text	00000059 clear_kernel_pagepte_low
+c0022225 g     F .text	000000f6 schedule
+c0054e9f g     F .text	000000a1 _lv_ll_ins_tail
+c0037fbe g     F .text	0000014f lv_event_send_func
+c0051895 g     F .text	000000af lv_disp_remove
+c0129880 g     O .bss	00000c84 tty_table
+c0022888 g     F .text	00000017 sys_get_ticks
+c006ef33 g     F .text	000001f2 _lv_blend_map
+c0038e10 g     F .text	00000054 lv_obj_get_ext_click_pad_top
+c004daf3 g     F .text	00000163 lv_img_buf_alloc
+c00223c4 g     F .text	0000005e sys_sleep
+c0067e5f g     F .text	000000b6 lv_label_set_text_static
+c00552d8 g     F .text	000000d6 _lv_ll_move_before
+c0073170 g     O .rodata	00000010 _lv_bpp4_opa_table
+c002289f g     F .text	0000001d sys_get_pid
+c0028f69 g     F .text	00000000 .hidden __x86.get_pc_thunk.dx
+c008c460 g     O .data	0000000c _lv_obj_style_trans_ll
+c0040da9 g     F .text	0000002b _lv_style_list_get_transition_style
+c005348f g     F .text	000005ce _lv_area_align
+c002f76d g     F .text	000000a4 do_vunlink
+c002e9bd g     F .text	00000130 ToFullPath
+c002611d g     F .text	000000b0 get_fs_dev
+c00306dc g     F .text	00000250 in_process
+c00558de g     F .text	00000073 _lv_mem_init
+c0033233 g     F .text	0000008c lv_disp_get_inactive_time
+c0065a44 g     F .text	00000176 lv_cont_set_fit4
+c01449c0 g     O .bss	00000004 state
+c0058704 g     F .text	00000090 _lv_utils_bsearch
+c003175a g     F .text	0000019d init_screen
+c0055689 g     F .text	00000160 _lv_atan2
+c0032499 g     F .text	00000043 strtol
+c008c5fc g     O .data	00000004 _lv_txt_encoded_get_byte_id
+c003865a g     F .text	000000a6 lv_obj_count_children_recursive
+c002f4ab g     F .text	00000034 sys_createdir
+c0058939 g     F .text	00000022 lv_theme_get_color_primary
+c0040b59 g     F .text	000000af _lv_style_get_opa
+c00204e0 g       .text	00000000 hwint03
+c0040918 g     F .text	00000192 _lv_style_set_ptr
+c00466ee g     F .text	00000042 lv_draw_mask_map_init
+c00310cb g     F .text	000000cd tty_read
+c005460b g     F .text	0000006e lv_fs_dir_read
+c006ed47 g     F .text	000001ec _lv_blend_fill
+c0052ddf g     F .text	00000035 lv_area_set_height
+c008c580 g     O .data	00000004 _lv_theme_material_styles
+c0046598 g     F .text	000000cd lv_draw_mask_radius_init
+c0038dbc g     F .text	00000054 lv_obj_get_ext_click_pad_right
+c00693fa g     F .text	000000ad lv_label_cut_text
+c0026d5f g     F .text	0000006a real_open
+c00650ad g     F .text	00000087 lv_btn_toggle
+c003fcbe g     F .text	00000029 lv_style_list_init
+c0057b47 g     F .text	0000011d _lv_txt_get_width
+c0056b22 g     F .text	00000040 _lv_task_core_init
+c00651f0 g     F .text	0000006d lv_btn_get_checkable
+c0051a00 g     F .text	0000003c lv_disp_get_antialiasing
+c00551d4 g     F .text	0000002b _lv_ll_get_head
+c012a520 g     O .bss	00002000 cpu_table
+c0065134 g     F .text	000000bc lv_btn_get_state
+c012c520 g     O .bss	00000068 tss
+c006ac29 g     F .text	00000113 lv_group_add_obj
+c00261cd g     F .text	0000010e init_fs
+c00332fe g     F .text	0000004b lv_disp_clean_dcache
+c0036283 g     F .text	00000064 lv_obj_set_height_margin
+c010258c g     O .bss	00000004 Sectors_Per_FAT
+c0052e88 g     F .text	0000004e lv_area_get_size
+c0024197 g     F .text	00000040 pte_exist
+c0020904 g       .text	00000000 segment_not_present
+c0020d73 g     F .text	000001b7 kernel_main
+c0040f90 g     F .text	00000041 _lv_style_list_set_local_ptr
+c0051baa g     F .text	0000001d lv_disp_get_inv_buf_size
+c0025823 g     F .text	00000192 sys_pthread
+c0020b4c g       .text	00000000 kmalloc_4k
+c0051f57 g     F .text	00000028 lv_tick_inc
+c0020c28 g       .text	00000000 write
+c0051b4c g     F .text	00000049 lv_disp_get_next
+c002f247 g     F .text	00000046 sys_open
+c003fb43 g     F .text	00000071 lv_style_copy
+c0036b6c g     F .text	00000090 _lv_obj_set_style_local_int
+c0039848 g     F .text	00000074 lv_obj_get_local_style
+c0020bdc g       .text	00000000 print_E
+c0031d08 g     F .text	000001c1 scroll_screen
+c0063c39 g     F .text	0000008f lv_bar_get_start_value
+c005729f g     F .text	00000033 lv_task_ready
+c00587ad g     F .text	00000015 lv_theme_get_act
+c005588b g     F .text	00000053 _lv_map
+c00227a6 g     F .text	0000005d strcat
+c003092c g     F .text	00000130 task_tty
+c004f16b g     F .text	00000018 lv_img_decoder_set_info_cb
+c002fcfe g     F .text	0000007b kb_handler
+c0040cb7 g     F .text	000000af _lv_style_get_ptr
+c0101000 g     O .bss	00000004 memarg
+c0051c49 g     F .text	00000034 lv_disp_is_double_buf
+c0035a8b g     F .text	000000c2 lv_obj_move_foreground
+c004da5c g     F .text	00000097 lv_img_buf_set_palette
+c0057d92 g     F .text	0000008e _lv_txt_cut
+c006b31b g     F .text	0000003b lv_group_set_refocus_policy
+c006aa91 g     F .text	000000d5 lv_group_create
+c002dea6 g     F .text	00000192 WriteFAT
+c0067f15 g     F .text	0000014a lv_label_set_long_mode
+c00237f3 g     F .text	0000001e do_kmalloc_4k
+c0102380 g     O .bss	00000100 VDiskPath
+c0024217 g     F .text	00000043 write_page_pde
+c0055d71 g     F .text	0000013b lv_mem_monitor
+c00233d6 g     F .text	0000012d memman_kalloc_4k
+c0038860 g     F .text	0000008a lv_obj_get_x
+c0033349 g     F .text	0000003a _lv_disp_get_refr_task
+c0038bf8 g     F .text	0000008a lv_obj_get_width_grid
+c00364ad g     F .text	000000c3 lv_obj_align_y
+c012c588 g     O .bss	00000004 p_proc_current
+c0063bc2 g     F .text	00000077 lv_bar_get_value
+c012c58c g     O .bss	00000004 cr3_ready
+c002ff18 g     F .text	000000d4 init_kb
+c0155200 g     O .bss	00000a00 f_desc_table
+c002c7ed g     F .text	000000d9 DisErrorInfo
+c002f513 g     F .text	000000f3 do_vopen
+c0070e16 g     F .text	0000021b lv_color_hsv_to_rgb
+c0034b16 g     F .text	00000036 lv_deinit
+c01025a0 g     O .bss	00000400 FATBuf
+c0020bac g       .text	00000000 udisp_str
+c002ede4 g     F .text	00000050 init_file_desc_table
+c0024ac4 g     F .text	00000053 fake_read
+c00237b4 g     F .text	00000021 do_kmalloc
+c005441d g     F .text	000000cb lv_fs_rename
+c006b2e5 g     F .text	00000036 lv_group_set_click_focus
+c0024095 g     F .text	00000015 get_pde_index
+c0036b28 g     F .text	00000044 lv_obj_reset_style_list
+c0020ab1 g       .text	00000000 sys_call
+c0064f80 g     F .text	0000012d lv_btn_set_state
+c0050300 g     F .text	00000028 lv_font_get_glyph_dsc
+c00684a0 g     F .text	00000062 lv_label_get_anim_speed
+c00574da g     F .text	00000070 InitTxt
+c006b356 g     F .text	00000034 lv_group_set_wrap
+c0039dfd g     F .text	00000050 lv_obj_get_event_cb
+c0020bb8 g       .text	00000000 exec
+c002f31f g     F .text	0000005e sys_write
+c002a57c g     F .text	00000019 release
+c00208de g       .text	00000000 inval_tss
+c002099c g       .text	00000000 copr_error
+c0041e85 g     F .text	00000041 lv_img_cf_is_chroma_keyed
+c00224d2 g     F .text	00000053 va2la
+c004f355 g     F .text	00000560 lv_img_decoder_built_in_open
+c0023835 g     F .text	00000021 do_free_4k
+c0068436 g     F .text	0000006a lv_label_get_recolor
+c002c4b2 g     F .text	00000058 rw_sector_sched_fat
+c0065bba g     F .text	00000064 lv_cont_get_layout
+c0020630 g       .text	00000000 hwint10
+c0063aab g     F .text	000000a9 lv_bar_set_type
+c0053bf6 g     F .text	00000021 lv_debug_check_null
+c006ae77 g     F .text	000000aa lv_group_remove_all_objs
+c008c5e8 g     O .data	00000004 _lv_txt_encoded_size
+c002f85e g     F .text	000000e2 do_vcreate
+c00382a4 g     F .text	00000069 lv_obj_refresh_ext_draw_pad
+c0052e14 g     F .text	00000074 _lv_area_set_pos
+c003821d g     F .text	00000087 lv_obj_allocate_ext_attr
+c0020400 g       .text	00000000 _start
+c008c5f4 g     O .data	00000004 _lv_txt_encoded_next
+c0052d4c g     F .text	0000005f lv_area_set
+c0032767 g     F .text	00000059 PlotPixel
+c008c470 g     O .data	00000004 _lv_task_act
+c0054cd6 g     F .text	00000038 _lv_ll_init
+c0041f0e g     F .text	0000005a lv_img_src_get_type
+c0038465 g     F .text	0000004f lv_obj_get_parent
+c0046014 g     F .text	000002f7 lv_draw_mask_line_points_init
+c0035651 g     F .text	000001a9 lv_obj_area_is_visible
+c004de12 g     F .text	000002c2 _lv_img_buf_transform_init
+c0036736 g     F .text	000000c3 lv_obj_align_mid_y
+c00549a2 g     F .text	000000bb lv_fs_up
+c0037455 g     F .text	0000006e lv_obj_set_drag_throw
+c0037eb4 g     F .text	0000010a lv_event_send_refresh_recursive
+c0065c85 g     F .text	00000064 lv_cont_get_fit_right
+c0020c19 g       .text	00000000 read
+c00218e7 g     F .text	0000004a milli_delay
+c005505f g     F .text	00000071 _lv_ll_clear
+c002e6c3 g     F .text	0000019c ChangeCurrentPath
+c003e703 g     F .text	000001fe _lv_inv_area
+c0058921 g     F .text	00000018 lv_theme_get_font_title
+c0051a75 g     F .text	00000090 lv_disp_get_size_category
+c0071031 g     F .text	000001e6 lv_color_rgb_to_hsv
+c002c7ad g     F .text	00000010 sys_OpenDir
+c0054daf g     F .text	000000f0 _lv_ll_ins_prev
+c0055627 g     F .text	00000062 _lv_sqrt
+c0021a19 g     F .text	0000004a spurious_irq
+c0065d4e g     F .text	00000068 lv_cont_get_fit_bottom
+c012c590 g     O .bss	00000004 p_proc_next
+c00373c4 g     F .text	00000091 lv_obj_set_drag_dir
+c0036fcb g     F .text	00000087 lv_obj_report_style_mod
+c002264e g       .text	00000000 disable_int
+c0041390 g     F .text	00000137 _lv_style_list_get_ptr
+c002231b g     F .text	0000005b alloc_PCB
+c002ee34 g     F .text	0000010c init_fileop_table
+c0038974 g     F .text	0000005c lv_obj_get_width
+c0031082 g     F .text	00000049 tty_write
+c006bb75 g     F .text	0000002d lv_indev_set_group
+c0045f51 g     F .text	00000078 lv_draw_mask_remove_custom
+c003168b g     F .text	00000052 strncpy
+c0020c46 g       .text	00000000 unlink
+c00400f6 g     F .text	000001c9 _lv_style_list_remove_style
+c0057970 g     F .text	000001d7 _lv_txt_get_next_line
+c0021f53 g     F .text	0000005c seg2phys
+c0051b95 g     F .text	00000015 lv_disp_get_buf
+c008c588 g     O .data	00000004 _lv_theme_mono_styles
+c006b20b g     F .text	00000019 lv_group_set_focus_cb
+c006b0eb g     F .text	0000002f lv_group_focus_next
+c0020c55 g       .text	00000000 create
+c0052f82 g     F .text	00000079 _lv_area_join
+c0083040 g     O .data	00000004 disp_pos
+c01449e0 g     O .bss	00010800 f_desc_table_fat
+c0040dd4 g     F .text	000000e8 _lv_style_list_add_trans_style
+c002c7dd g     F .text	00000010 sys_ListDir
+c0038e64 g     F .text	00000054 lv_obj_get_ext_click_pad_bottom
+c0020480 g       .text	00000000 hwint01
+c00682ad g     F .text	0000004b lv_label_set_text_sel_end
+c0063d2a g     F .text	00000062 lv_bar_get_max_value
+c00550d0 g     F .text	00000104 _lv_ll_chg_list
+c0057e20 g     F .text	000000b5 _lv_txt_set_text_vfmt
+c002e33f g     F .text	00000191 FindClusterForFile
+c00225be g       .text	00000000 out_byte
+c002cf0b g     F .text	000002f5 GetNextSector
+c003e681 g     F .text	00000010 _lv_refr_init
+c0083ce0 g     O .data	00000070 sys_call_table
+c0040aaa g     F .text	000000af _lv_style_get_int
+c005522a g     F .text	00000035 _lv_ll_get_next
+c002257d g       .text	00000000 disp_color_str
+c00681bb g     F .text	000000a7 lv_label_set_anim_speed
+c00318f7 g     F .text	0000025b out_char
+c0058909 g     F .text	00000018 lv_theme_get_font_subtitle
+c00280fa g     F .text	00000055 real_read
+c0053e79 g     F .text	000001b5 lv_fs_open
+c00588f1 g     F .text	00000018 lv_theme_get_font_normal
+c0020d6f g     F .text	00000000 .hidden __x86.get_pc_thunk.bx
+c008c584 g     O .data	00000004 _lv_theme_template_styles
+c0071ea5 g     F .text	0000003d lv_snprintf
+c00241d7 g     F .text	00000040 phy_exist
+c0032a07 g     F .text	0000003a lv_disp_get_layer_sys
+c002e85f g     F .text	00000096 GetNameFromPath
+c00374c3 g     F .text	0000006e lv_obj_set_drag_parent
+c0020b8a g       .text	00000000 fork
+c0022acf g     F .text	00000557 init
+c003e901 g     F .text	00000015 _lv_refr_get_disp_refreshing
+c0024571 g     F .text	0000005a read_Shdr
+c003a1bf g     F .text	000006eb lv_obj_init_draw_rect_dsc
+c004d0d6 g     F .text	000002c3 lv_img_buf_get_px_alpha
+c0052ed6 g     F .text	000000ac _lv_area_intersect
+c0036a42 g     F .text	00000085 lv_obj_remove_style
+c0040780 g     F .text	00000198 _lv_style_set_opa
+c002a556 g     F .text	00000026 acquire
+c0037562 g     F .text	000000c0 lv_obj_set_focus_parent
+c006b149 g     F .text	00000040 lv_group_focus_freeze
+c0055c22 g     F .text	000000cb lv_mem_defrag
+c0020b66 g       .text	00000000 malloc_4k
+c00367f9 g     F .text	000000c7 lv_obj_realign
+c00403c1 g     F .text	00000033 lv_style_reset
+c0039d5d g     F .text	00000050 lv_obj_get_signal_cb
+c002ae56 g     F .text	000002f6 WriteFile
+c0068358 g     F .text	00000065 lv_label_get_long_mode
+c0039915 g     F .text	00000059 lv_obj_get_adv_hittest
+c0039e4d g     F .text	00000050 lv_obj_get_ext_attr
+c0023cf3 g     F .text	000003a2 page_fault_handler
+c0053322 g     F .text	0000016d _lv_area_is_in
+c0020ca0 g     F .text	000000cf cstart
+c0057089 g     F .text	000000a6 lv_task_create
+c005416d g     F .text	0000008e lv_fs_read
+c00349ee g     F .text	00000128 lv_init
+c0024332 g     F .text	00000132 lin_mapping_phy
+c002f64d g     F .text	0000004d do_vread
+c005195d g     F .text	00000015 lv_disp_get_default
+c008c651 g       .bss	00000000 __bss_start
+c004cdd8 g     F .text	000002fe lv_img_buf_get_px_color
+c002a595 g     F .text	00000163 DeleteDir
+c0022839 g       .text	00000000 memset
+c00588d9 g     F .text	00000018 lv_theme_get_font_small
+c0028e73 g     F .text	00000033 real_lseek
+c0020b92 g       .text	00000000 pthread
+c002c542 g     F .text	00000038 deint
+c0057335 g     F .text	00000016 lv_task_get_idle
+c00361bb g     F .text	00000064 lv_obj_set_height_fit
+c0039e9d g     F .text	00000111 lv_obj_get_type
+c008bd48 g     O .data	00000004 globalSectorIndex
+c0102580 g     O .bss	00000004 TotalSectors
+c00547a1 g     F .text	00000029 lv_fs_drv_init
+c006926d g     F .text	0000018d lv_label_ins_text
+c002f3db g     F .text	00000034 sys_unlink
+c00204b0 g       .text	00000000 hwint02
+c0032a41 g     F .text	00000063 lv_disp_assign_screen
+c0057312 g     F .text	00000023 lv_task_enable
+c004dc9e g     F .text	00000174 lv_img_buf_get_img_size
+c0073164 g     O .rodata	00000004 _lv_bpp2_opa_table
+c00414e8 g     F .text	00000021 lv_debug_check_style_list
+c0040d66 g     F .text	00000043 lv_style_list_get_local_style
+c0022900 g     F .text	00000069 sys_malloc
+c00588c1 g     F .text	00000018 lv_theme_set_apply_cb
+c003229d g     F .text	0000003b getchar
+c0020890 g       .text	00000000 double_fault
+c003fbb4 g     F .text	0000010a lv_style_remove_prop
+c00360e2 g     F .text	00000075 lv_obj_set_height
+c0051faf g     F .text	00000039 lv_tick_elaps
+c006bae5 g     F .text	00000090 lv_indev_set_cursor
+c0020c73 g       .text	00000000 opendir
+c0038d0c g     F .text	0000005c lv_obj_get_auto_realign
+c008c46c g     O .data	00000004 _lv_img_cache_array
+c002c92c g     F .text	0000008b WriteSector
+c0032c40 g     F .text	000005f3 lv_scr_load_anim
+c003a075 g     F .text	000000a7 lv_obj_is_point_on_coords
+c008c5f8 g     O .data	00000004 _lv_txt_encoded_prev
+c0040fd1 g     F .text	00000143 _lv_style_list_get_int
+c00553ae g     F .text	0000003c _lv_ll_is_empty
+c0036570 g     F .text	00000103 lv_obj_align_mid
+c0024697 g     F .text	0000040f disp_Elf
+c002410e g     F .text	00000043 get_pte_phy_addr
+c0038122 g     F .text	00000054 lv_obj_set_signal_cb
+c003aa40 g     F .text	0000014e lv_obj_init_draw_img_dsc
+c004f130 g     F .text	0000003b lv_img_decoder_delete
+c0037622 g     F .text	0000006c lv_obj_set_parent_event
+c00682f8 g     F .text	00000060 lv_label_get_text
+c0083044 g     O .data	00000006 gdt_ptr
+c002271f g     F .text	00000036 disp_int
+c004f19c g     F .text	00000019 lv_img_decoder_set_read_line_cb
+c002c57a g     F .text	0000007a sys_CreateFile
+c005525f g     F .text	00000032 _lv_ll_get_prev
+c0037531 g     F .text	00000031 lv_obj_set_gesture_parent
+c0045fc9 g     F .text	0000004b lv_draw_mask_get_cnt
+c0024517 g     F .text	0000005a read_Phdr
+c002814f g     F .text	00000055 real_write
+c003853d g     F .text	00000089 lv_obj_get_child_back
+c00543b1 g     F .text	0000006c lv_fs_size
+c0020540 g       .text	00000000 hwint05
+c002e575 g     F .text	0000007d strcmp
+c0051f7f g     F .text	00000030 lv_tick_get
+c0038760 g     F .text	00000100 lv_obj_get_inner_coords
+c002c7bd g     F .text	00000010 sys_CreateDir
+c003002f g     F .text	00000510 keyboard_read
+c0041252 g     F .text	0000013e _lv_style_list_get_opa
+c0083480 g     O .data	00000800 idt
+c0035ea3 g     F .text	000001c8 lv_obj_set_size
+c00369bd g     F .text	00000085 lv_obj_add_style
+c00559a4 g     F .text	000000c3 lv_mem_alloc
+c002e8f5 g     F .text	0000006e GetParentFromPath
+c012c594 g     O .bss	00000004 kernel_initial
+c0155c00 g     O .bss	00000200 super_block
+c006bc2f g     F .text	00000016 lv_indev_get_gesture_dir
+c0032aa4 g     F .text	00000087 lv_disp_set_bg_color
+c00207c8 g       .text	00000000 breakpoint_exception
+c002263b g       .text	00000000 port_write
+c0039c7c g     F .text	0000005f lv_obj_is_protected
+c0022755 g     F .text	00000051 delay
+c006b99f g     F .text	000000c3 lv_indev_reset
+c00389d0 g     F .text	0000005c lv_obj_get_height
+c002ece1 g     F .text	000000d7 FormatDirNameAndExt
+c00260bd g     F .text	00000060 sys_print_F
+c0065c1e g     F .text	00000067 lv_cont_get_fit_left
+c00402bf g     F .text	00000102 _lv_style_list_reset
+c0054926 g     F .text	0000007c lv_fs_get_ext
+c002f9e4 g     F .text	000000df do_vopendir
+c0044b06 g     F .text	00000326 lv_draw_line
+c006ba62 g     F .text	00000040 lv_indev_reset_long_press
+c0037ca1 g     F .text	00000084 lv_obj_clear_state
+c002b921 g     F .text	00000176 CreateFile
+c005153c g     F .text	0000004e lv_disp_buf_init
+c00541fb g     F .text	0000008e lv_fs_write
+c0020b1d g       .text	00000000 get_arg
+c0070d8a g     F .text	00000046 lv_color_lighten
+c0063b54 g     F .text	0000006e lv_bar_set_anim_time
+c0068dd6 g     F .text	0000004f lv_label_get_text_sel_end
+c002f69a g     F .text	000000d3 do_vwrite
+c00385c6 g     F .text	00000094 lv_obj_count_children
+c0068d87 g     F .text	0000004f lv_label_get_text_sel_start
+c0024b17 g     F .text	0000001d fake_seek
+c00526da g     F .text	00000206 lv_anim_path_bounce
+c002805f g     F .text	00000020 real_close
+c0063d8c g     F .text	00000065 lv_bar_get_type
+c0053b1c g     F .text	00000097 lv_async_call
+c002c79d g     F .text	00000010 sys_ReadFile
+c003fce7 g     F .text	0000028e lv_style_list_copy
+c005240b g     F .text	00000070 lv_anim_path_linear
+c012c598 g     O .bss	00000004 ticks
+c002d2ce g     F .text	000001d0 ReadRecord
+c0041da5 g     F .text	0000007a lv_draw_img
+c0053e1f g     F .text	0000005a lv_fs_is_ready
+c0039373 g     F .text	00000130 _lv_obj_get_style_color
+c0020b30 g       .text	00000000 get_ticks
+c0039ffe g     F .text	00000077 lv_obj_is_focused
+c006bd1b g     F .text	000000dd lv_indev_finish_drag
+c0046665 g     F .text	00000089 lv_draw_mask_fade_init
+c01551e0 g     O .bss	00000004 buf
+c00463c4 g     F .text	000001d4 lv_draw_mask_angle_init
+c00238e5 g     F .text	00000043 memman_total
+c0032985 g     F .text	00000048 lv_disp_load_scr
+c002d601 g     F .text	000000a6 ClearRecord
+c0041114 g     F .text	0000013e _lv_style_list_get_color
+c0063df1 g     F .text	00000062 lv_bar_get_anim_time
+c0051972 g     F .text	00000047 lv_disp_get_hor_res
+c002f606 g     F .text	00000047 do_vclose
+c008c3c0 g     O .data	00000014 lv_font_montserrat_14
+c0068262 g     F .text	0000004b lv_label_set_text_sel_start
+c002eb71 g     F .text	00000170 FormatFileNameAndExt
+c00206f0 g       .text	00000000 hwint14
+c0041d44 g     F .text	00000061 lv_draw_img_dsc_init
+c005754a g     F .text	000001e6 _lv_txt_get_size
+c0020b7e g       .text	00000000 free_4k
+c006aa64 g     F .text	0000002d _lv_group_init
+c0020c91 g       .text	00000000 deletedir
+c0029867 g     F .text	00000113 hd_ioctl
+c0050328 g     F .text	0000003b lv_font_get_glyph_width
+c00357fa g     F .text	000000c1 lv_obj_is_visible
+c0035b4d g     F .text	000000c2 lv_obj_move_background
+c0051d2c g     F .text	00000107 lv_indev_drv_register
+c0022422 g     F .text	0000005c sys_wakeup
+c00394a3 g     F .text	000001dd _lv_obj_get_style_opa
+c004d399 g     F .text	0000031e lv_img_buf_set_px_alpha
+c002f4df g     F .text	00000034 sys_deletedir
+c0073168 g     O .rodata	00000008 _lv_bpp3_opa_table
+c00694a7 g     F .text	00000b84 lv_label_refr_text
+c005231c g     F .text	00000061 lv_anim_count_running
+c00244bd g     F .text	0000005a read_Ehdr
+c0022a15 g     F .text	0000006c sys_free_4k
+c002c8c6 g     F .text	00000066 ReadSector
+c00225ca g       .text	00000000 in_byte
+c003b2d9 g     F .text	000000aa lv_debug_check_obj_valid
+c005402e g     F .text	0000008e lv_fs_close
+c0040455 g     F .text	00000199 _lv_style_set_int
+c002247e g     F .text	00000054 ldt_seg_linear
+c0051ccf g     F .text	0000005d lv_indev_drv_init
+c008c43c g     O .data	0000000c _lv_anim_ll
+c008c58c g     O .data	00000004 _lv_theme_empty_styles
+c0024b34 g     F .text	00000199 sys_exec
+c008c500 g     O .data	00000080 _lv_draw_mask_list
+c00634e4 g     F .text	000002b8 lv_bar_create
+c0039b83 g     F .text	00000059 lv_obj_get_parent_event
+c012c5a0 g     O .bss	00000048 console_table
+c0051b05 g     F .text	0000002a lv_disp_flush_ready
+c002c5f4 g     F .text	0000007a sys_DeleteFile
+c003996e g     F .text	00000059 lv_obj_get_click
+c008bd40 g     O .data	00000004 memman
+c002305d g     F .text	00000126 memman_alloc
+c00208b6 g       .text	00000000 copr_seg_overrun
+c003e916 g     F .text	00000019 _lv_refr_set_disp_refreshing
+c008c651 g       .data	00000000 _edata
+c002605d g     F .text	00000060 sys_print_E
+c002f477 g     F .text	00000034 sys_opendir
+c00332bf g     F .text	0000003f lv_disp_trig_activity
+c0020976 g       .text	00000000 page_fault
+c0156828 g       .bss	00000000 _end
+c0020818 g       .text	00000000 bounds_check
+c0036929 g     F .text	00000094 lv_obj_set_ext_click_area
+c0035db7 g     F .text	00000077 lv_obj_set_x
+c0038d68 g     F .text	00000054 lv_obj_get_ext_click_pad_left
+c0034b4c g     F .text	000007bb lv_obj_create
+c008c448 g     O .data	0000000c _lv_group_ll
+c00542e8 g     F .text	0000006d lv_fs_tell
+c0020b1c g       .text	00000000 halt
+c0035e2e g     F .text	00000075 lv_obj_set_y
+c0050363 g     F .text	0000022f lv_font_get_bitmap_fmt_txt
+c003830d g     F .text	00000070 lv_obj_get_screen
+c0039dad g     F .text	00000050 lv_obj_get_design_cb
+c0020570 g       .text	00000000 hwint06
+c0055291 g     F .text	00000047 _lv_ll_get_len
+c0031198 g     F .text	00000028 init_shell
+c0023183 g     F .text	00000126 memman_kalloc
+c0102584 g     O .bss	00000002 Bytes_Per_Sector
+c008c430 g     O .data	0000000c _lv_file_ll
+c0054679 g     F .text	00000096 lv_fs_dir_close
+c0050592 g     F .text	00000169 lv_font_get_glyph_dsc_fmt_txt
+c0021931 g     F .text	000000e8 init_8259A
+c0051c7d g     F .text	00000052 lv_disp_is_true_double_buf
+c003606b g     F .text	00000077 lv_obj_set_width
+c0020b40 g       .text	00000000 kmalloc
+c0071217 g     F .text	0000004d lv_color_to_hsv
+c012c600 g     O .bss	00000040 irq_table
+c0056697 g     F .text	00000127 _lv_memset
+c0068109 g     F .text	000000b2 lv_label_set_recolor
+c008bd44 g     O .data	00000004 FAT_END
+c005250f g     F .text	0000009a lv_anim_path_ease_out
+c003837d g     F .text	000000e8 lv_obj_get_disp
+c00399c7 g     F .text	00000059 lv_obj_get_top
+c0020b15 g       .text	00000000 refresh_page_cache
+c0037764 g     F .text	00000066 lv_obj_clear_protect
+c0102480 g     O .bss	00000100 cur_path
+c00354f7 g     F .text	00000098 lv_obj_invalidate_area
+c0040f06 g     F .text	00000049 _lv_style_list_set_local_opa
+c006be1d g     F .text	00000015 lv_indev_get_obj_act
+c0020510 g       .text	00000000 hwint04
+c006b411 g     F .text	00000031 lv_group_get_click_focus
+c0071ee2 g     F .text	00000030 lv_vsnprintf
+c00548ac g     F .text	0000007a lv_fs_get_letters
+c0053c3a g     F .text	000000c0 lv_debug_check_str
+c012c640 g     O .bss	00000004 u_proc_sum
+c006bdf8 g     F .text	00000025 lv_indev_wait_release
+c002ffec g     F .text	00000043 init_mouse
+c0020c82 g       .text	00000000 createdir
+c0038eb8 g     F .text	00000051 lv_obj_get_ext_draw_pad
+c00324dc g     F .text	0000001e atoi
+c00205a0 g       .text	00000000 hwint07
+c002c7cd g     F .text	00000010 sys_DeleteDir
+c002092a g       .text	00000000 stack_exception
+c004f044 g     F .text	0000006d lv_img_decoder_close
+c0025f4a g     F .text	00000113 initial
+c003e92f g     F .text	0000030d _lv_disp_refr_task
+c006b189 g     F .text	00000082 lv_group_send_data
+c002fac3 g     F .text	000000df do_vcreatedir
+c0036d12 g     F .text	00000087 _lv_obj_set_style_local_ptr
+c0069238 g     F .text	00000035 lv_label_get_style
+c0024151 g     F .text	00000046 get_page_phy_addr
+c006bbc5 g     F .text	0000006a lv_indev_get_point
+c0063cc8 g     F .text	00000062 lv_bar_get_min_value
+c0063893 g     F .text	000000f1 lv_bar_set_start_value
+c0020b11 g       .text	00000000 read_cr2
+c005247b g     F .text	00000094 lv_anim_path_ease_in
+c0039b47 g     F .text	0000001e lv_obj_get_gesture_parent
+c0022aa8 g     F .text	00000027 sys_udisp_str
+c004ec54 g     F .text	0000001a lv_img_cache_set_size
+c002a986 g     F .text	0000026c OpenDir
+c003558f g     F .text	000000c2 lv_obj_invalidate
+c0020660 g       .text	00000000 hwint11
+c008bd60 g     O .data	00000600 keymap
+c0039a20 g     F .text	00000059 lv_obj_get_drag
+c00551ff g     F .text	0000002b _lv_ll_get_tail
+c0022872 g       .text	00000000 strlen
+c006772f g     F .text	00000409 lv_label_create
+c002d6a7 g     F .text	000001ec PathToCluster
+c0083c80 g     O .data	00000050 task_table
+c0054355 g     F .text	0000005c lv_fs_trunc
+c0020bf6 g       .text	00000000 open
+c0038a2c g     F .text	00000090 lv_obj_get_width_fit
+c006b3e1 g     F .text	00000030 lv_group_get_editing
+c0055eac g     F .text	00000041 _lv_mem_get_size
+c00237d5 g     F .text	0000001e do_malloc_4k
+c005237d g     F .text	0000006e lv_anim_speed_to_time
+c0022530 g       .text	00000000 disp_str
+c0057287 g     F .text	00000018 lv_task_set_period
+c006b442 g     F .text	00000031 lv_group_get_wrap
+c002c44c g     F .text	00000066 rw_sector_fat
+c0038ba2 g     F .text	00000056 lv_obj_get_width_margin
+c002d893 g     F .text	000002c6 FindSpaceInDir
+c00240aa g     F .text	0000001a get_pte_index
+c0027491 g     F .text	0000015d read_super_block
+c012c660 g     O .bss	00018000 proc_table
+c0065ce9 g     F .text	00000065 lv_cont_get_fit_top
+c002c9b7 g     F .text	000002b3 DeleteAllRecord
+c002429d g     F .text	00000095 vmalloc
+c0022652 g       .text	00000000 write_char
+c0023026 g     F .text	00000037 memman_init
+c00683bd g     F .text	00000079 lv_label_get_align
+c00585c1 g     F .text	00000143 _lv_utils_num_to_str
+c004d6b7 g     F .text	000003a5 lv_img_buf_set_px_color
+c0064d22 g     F .text	000001e4 lv_btn_create
+c00285d3 g     F .text	0000005e real_unlink
+c0020af7 g       .text	00000000 restart_restore
+c0055574 g     F .text	000000b3 _lv_bezier3
+c002c67e g     F .text	0000007a sys_CloseFile
+c002db59 g     F .text	0000016c GetNameFromRecord
+c008c5ec g     O .data	00000004 _lv_txt_unicode_to_encoded
+c00207a0 g       .text	00000000 nmi
+c0058794 g     F .text	00000019 lv_theme_set_act
+c003e691 g     F .text	00000072 lv_refr_now
+c0021a63 g     F .text	00000035 put_irq_handler
+c003710f g     F .text	000000e4 lv_obj_set_hidden
+c00587c2 g     F .text	00000041 lv_theme_apply
+c0038176 g     F .text	00000053 lv_signal_send
+c004ed0b g     F .text	000000c3 _lv_img_decoder_init
+c0040c08 g     F .text	000000af _lv_style_get_color
+c003726f g     F .text	00000069 lv_obj_set_click
+c006bc45 g     F .text	00000026 lv_indev_get_key
+c0101020 g     O .bss	00000400 MemInfo
+c0056140 g     F .text	00000090 _lv_mem_buf_release
+c004f1ce g     F .text	00000187 lv_img_decoder_built_in_info
+c0057148 g     F .text	00000056 lv_task_del
+c006b11a g     F .text	0000002f lv_group_focus_prev
+c00568c0 g     F .text	00000102 _lv_memset_ff
+c003a11c g     F .text	00000058 lv_obj_hittest
+c0020c0a g       .text	00000000 close
+c006b38a g     F .text	00000035 lv_group_get_focused
+c003ad34 g     F .text	000003d9 lv_obj_get_draw_rect_ext_pad_size
+c0020b38 g       .text	00000000 get_pid
+c0055951 g     F .text	00000053 _lv_mem_deinit
+c004dc56 g     F .text	00000048 lv_img_buf_free
+c004f0b1 g     F .text	0000007f lv_img_decoder_create
+c0045dda g     F .text	00000073 lv_draw_mask_add
+c0144660 g     O .bss	00000004 cr2_save
+c0020b02 g       .text	00000000 restart_initial
+c006b790 g     F .text	00000022 _lv_indev_init
+c0023811 g     F .text	00000024 do_free
+c002b352 g     F .text	000005cf OpenFile
+c0068e25 g     F .text	00000413 lv_label_is_char_under_pos
+c0022026 g     F .text	0000017b exception_handler
+c002e963 g     F .text	0000005a IsFullPath
+c00225d4 g       .text	00000000 disable_irq
+c0020b72 g       .text	00000000 free
+c003ff75 g     F .text	00000181 _lv_style_list_add_style
+c003b1bb g     F .text	00000098 lv_obj_fade_out
+c0031b96 g     F .text	00000032 is_current_console
+c00519b9 g     F .text	00000047 lv_disp_get_ver_res
+c0037e90 g     F .text	00000024 lv_event_send_refresh
+c00522b1 g     F .text	0000006b lv_anim_get
+c0054845 g     F .text	00000067 lv_fs_get_drv
 
-08049000 <.text>:
- 8049000:	8d 4c 24 04          	lea    0x4(%esp),%ecx
- 8049004:	83 e4 f0             	and    $0xfffffff0,%esp
- 8049007:	ff 71 fc             	pushl  -0x4(%ecx)
- 804900a:	55                   	push   %ebp
- 804900b:	89 e5                	mov    %esp,%ebp
- 804900d:	53                   	push   %ebx
- 804900e:	51                   	push   %ecx
- 804900f:	81 ec 10 04 00 00    	sub    $0x410,%esp
- 8049015:	e8 bb 00 00 00       	call   0x80490d5
- 804901a:	81 c3 e6 2f 00 00    	add    $0x2fe6,%ebx
- 8049020:	83 ec 08             	sub    $0x8,%esp
- 8049023:	6a 02                	push   $0x2
- 8049025:	8d 83 00 e0 ff ff    	lea    -0x2000(%ebx),%eax
- 804902b:	50                   	push   %eax
- 804902c:	e8 ff 01 00 00       	call   0x8049230
- 8049031:	83 c4 10             	add    $0x10,%esp
- 8049034:	89 45 f4             	mov    %eax,-0xc(%ebp)
- 8049037:	83 ec 08             	sub    $0x8,%esp
- 804903a:	6a 02                	push   $0x2
- 804903c:	8d 83 00 e0 ff ff    	lea    -0x2000(%ebx),%eax
- 8049042:	50                   	push   %eax
- 8049043:	e8 e8 01 00 00       	call   0x8049230
- 8049048:	83 c4 10             	add    $0x10,%esp
- 804904b:	89 45 f0             	mov    %eax,-0x10(%ebp)
- 804904e:	83 ec 08             	sub    $0x8,%esp
- 8049051:	6a 02                	push   $0x2
- 8049053:	8d 83 00 e0 ff ff    	lea    -0x2000(%ebx),%eax
- 8049059:	50                   	push   %eax
- 804905a:	e8 d1 01 00 00       	call   0x8049230
- 804905f:	83 c4 10             	add    $0x10,%esp
- 8049062:	89 45 ec             	mov    %eax,-0x14(%ebp)
- 8049065:	c7 45 e8 00 00 00 00 	movl   $0x0,-0x18(%ebp)
- 804906c:	83 ec 0c             	sub    $0xc,%esp
- 804906f:	8d 83 09 e0 ff ff    	lea    -0x1ff7(%ebx),%eax
- 8049075:	50                   	push   %eax
- 8049076:	e8 5f 02 00 00       	call   0x80492da
- 804907b:	83 c4 10             	add    $0x10,%esp
- 804907e:	83 ec 0c             	sub    $0xc,%esp
- 8049081:	8d 85 e8 fb ff ff    	lea    -0x418(%ebp),%eax
- 8049087:	50                   	push   %eax
- 8049088:	e8 db 05 00 00       	call   0x8049668
- 804908d:	83 c4 10             	add    $0x10,%esp
- 8049090:	85 c0                	test   %eax,%eax
- 8049092:	74 d8                	je     0x804906c
- 8049094:	83 ec 0c             	sub    $0xc,%esp
- 8049097:	8d 85 e8 fb ff ff    	lea    -0x418(%ebp),%eax
- 804909d:	50                   	push   %eax
- 804909e:	e8 af 00 00 00       	call   0x8049152
- 80490a3:	83 c4 10             	add    $0x10,%esp
- 80490a6:	85 c0                	test   %eax,%eax
- 80490a8:	74 c2                	je     0x804906c
- 80490aa:	83 ec 0c             	sub    $0xc,%esp
- 80490ad:	8d 85 e8 fb ff ff    	lea    -0x418(%ebp),%eax
- 80490b3:	50                   	push   %eax
- 80490b4:	e8 3b 01 00 00       	call   0x80491f4
- 80490b9:	83 c4 10             	add    $0x10,%esp
- 80490bc:	85 c0                	test   %eax,%eax
- 80490be:	74 ac                	je     0x804906c
- 80490c0:	83 ec 0c             	sub    $0xc,%esp
- 80490c3:	8d 83 16 e0 ff ff    	lea    -0x1fea(%ebx),%eax
- 80490c9:	50                   	push   %eax
- 80490ca:	e8 0b 02 00 00       	call   0x80492da
- 80490cf:	83 c4 10             	add    $0x10,%esp
- 80490d2:	90                   	nop
- 80490d3:	eb 97                	jmp    0x804906c
- 80490d5:	8b 1c 24             	mov    (%esp),%ebx
- 80490d8:	c3                   	ret    
- 80490d9:	66 90                	xchg   %ax,%ax
- 80490db:	66 90                	xchg   %ax,%ax
- 80490dd:	66 90                	xchg   %ax,%ax
- 80490df:	90                   	nop
- 80490e0:	50                   	push   %eax
- 80490e1:	51                   	push   %ecx
- 80490e2:	e8 19 ff ff ff       	call   0x8049000
- 80490e7:	f4                   	hlt    
- 80490e8:	66 90                	xchg   %ax,%ax
- 80490ea:	66 90                	xchg   %ax,%ax
- 80490ec:	66 90                	xchg   %ax,%ax
- 80490ee:	66 90                	xchg   %ax,%ax
- 80490f0:	55                   	push   %ebp
- 80490f1:	89 e5                	mov    %esp,%ebp
- 80490f3:	56                   	push   %esi
- 80490f4:	57                   	push   %edi
- 80490f5:	51                   	push   %ecx
- 80490f6:	8b 7d 08             	mov    0x8(%ebp),%edi
- 80490f9:	8b 75 0c             	mov    0xc(%ebp),%esi
- 80490fc:	8b 4d 10             	mov    0x10(%ebp),%ecx
- 80490ff:	83 f9 00             	cmp    $0x0,%ecx
- 8049102:	74 0b                	je     0x804910f
- 8049104:	3e 8a 06             	mov    %ds:(%esi),%al
- 8049107:	46                   	inc    %esi
- 8049108:	26 88 07             	mov    %al,%es:(%edi)
- 804910b:	47                   	inc    %edi
- 804910c:	49                   	dec    %ecx
- 804910d:	eb f0                	jmp    0x80490ff
- 804910f:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049112:	59                   	pop    %ecx
- 8049113:	5f                   	pop    %edi
- 8049114:	5e                   	pop    %esi
- 8049115:	89 ec                	mov    %ebp,%esp
- 8049117:	5d                   	pop    %ebp
- 8049118:	c3                   	ret    
- 8049119:	55                   	push   %ebp
- 804911a:	89 e5                	mov    %esp,%ebp
- 804911c:	56                   	push   %esi
- 804911d:	57                   	push   %edi
- 804911e:	51                   	push   %ecx
- 804911f:	8b 7d 08             	mov    0x8(%ebp),%edi
- 8049122:	8b 55 0c             	mov    0xc(%ebp),%edx
- 8049125:	8b 4d 10             	mov    0x10(%ebp),%ecx
- 8049128:	83 f9 00             	cmp    $0x0,%ecx
- 804912b:	74 06                	je     0x8049133
- 804912d:	88 17                	mov    %dl,(%edi)
- 804912f:	47                   	inc    %edi
- 8049130:	49                   	dec    %ecx
- 8049131:	eb f5                	jmp    0x8049128
- 8049133:	59                   	pop    %ecx
- 8049134:	5f                   	pop    %edi
- 8049135:	5e                   	pop    %esi
- 8049136:	89 ec                	mov    %ebp,%esp
- 8049138:	5d                   	pop    %ebp
- 8049139:	c3                   	ret    
- 804913a:	55                   	push   %ebp
- 804913b:	89 e5                	mov    %esp,%ebp
- 804913d:	8b 75 0c             	mov    0xc(%ebp),%esi
- 8049140:	8b 7d 08             	mov    0x8(%ebp),%edi
- 8049143:	8a 06                	mov    (%esi),%al
- 8049145:	46                   	inc    %esi
- 8049146:	88 07                	mov    %al,(%edi)
- 8049148:	47                   	inc    %edi
- 8049149:	3c 00                	cmp    $0x0,%al
- 804914b:	75 f6                	jne    0x8049143
- 804914d:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049150:	5d                   	pop    %ebp
- 8049151:	c3                   	ret    
- 8049152:	55                   	push   %ebp
- 8049153:	89 e5                	mov    %esp,%ebp
- 8049155:	b8 00 00 00 00       	mov    $0x0,%eax
- 804915a:	8b 75 08             	mov    0x8(%ebp),%esi
- 804915d:	80 3e 00             	cmpb   $0x0,(%esi)
- 8049160:	74 04                	je     0x8049166
- 8049162:	46                   	inc    %esi
- 8049163:	40                   	inc    %eax
- 8049164:	eb f7                	jmp    0x804915d
- 8049166:	5d                   	pop    %ebp
- 8049167:	c3                   	ret    
- 8049168:	66 90                	xchg   %ax,%ax
- 804916a:	66 90                	xchg   %ax,%ax
- 804916c:	66 90                	xchg   %ax,%ax
- 804916e:	66 90                	xchg   %ax,%ax
- 8049170:	b8 00 00 00 00       	mov    $0x0,%eax
- 8049175:	cd 90                	int    $0x90
- 8049177:	c3                   	ret    
- 8049178:	b8 01 00 00 00       	mov    $0x1,%eax
- 804917d:	cd 90                	int    $0x90
- 804917f:	c3                   	ret    
- 8049180:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 8049184:	b8 02 00 00 00       	mov    $0x2,%eax
- 8049189:	cd 90                	int    $0x90
- 804918b:	c3                   	ret    
- 804918c:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 8049190:	b8 03 00 00 00       	mov    $0x3,%eax
- 8049195:	cd 90                	int    $0x90
- 8049197:	c3                   	ret    
- 8049198:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 804919c:	b8 04 00 00 00       	mov    $0x4,%eax
- 80491a1:	cd 90                	int    $0x90
- 80491a3:	c3                   	ret    
- 80491a4:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 80491a8:	b8 05 00 00 00       	mov    $0x5,%eax
- 80491ad:	cd 90                	int    $0x90
- 80491af:	c3                   	ret    
- 80491b0:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 80491b4:	b8 06 00 00 00       	mov    $0x6,%eax
- 80491b9:	cd 90                	int    $0x90
- 80491bb:	c3                   	ret    
- 80491bc:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 80491c0:	b8 07 00 00 00       	mov    $0x7,%eax
- 80491c5:	cd 90                	int    $0x90
- 80491c7:	c3                   	ret    
- 80491c8:	b8 08 00 00 00       	mov    $0x8,%eax
- 80491cd:	cd 90                	int    $0x90
- 80491cf:	c3                   	ret    
- 80491d0:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 80491d4:	b8 09 00 00 00       	mov    $0x9,%eax
- 80491d9:	cd 90                	int    $0x90
- 80491db:	c3                   	ret    
- 80491dc:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 80491e0:	b8 0a 00 00 00       	mov    $0xa,%eax
- 80491e5:	cd 90                	int    $0x90
- 80491e7:	c3                   	ret    
- 80491e8:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 80491ec:	b8 0b 00 00 00       	mov    $0xb,%eax
- 80491f1:	cd 90                	int    $0x90
- 80491f3:	c3                   	ret    
- 80491f4:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 80491f8:	b8 0c 00 00 00       	mov    $0xc,%eax
- 80491fd:	cd 90                	int    $0x90
- 80491ff:	c3                   	ret    
- 8049200:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 8049204:	b8 0d 00 00 00       	mov    $0xd,%eax
- 8049209:	cd 90                	int    $0x90
- 804920b:	c3                   	ret    
- 804920c:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 8049210:	b8 0e 00 00 00       	mov    $0xe,%eax
- 8049215:	cd 90                	int    $0x90
- 8049217:	c3                   	ret    
- 8049218:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 804921c:	b8 0f 00 00 00       	mov    $0xf,%eax
- 8049221:	cd 90                	int    $0x90
- 8049223:	c3                   	ret    
- 8049224:	8b 5c 24 04          	mov    0x4(%esp),%ebx
- 8049228:	b8 10 00 00 00       	mov    $0x10,%eax
- 804922d:	cd 90                	int    $0x90
- 804922f:	c3                   	ret    
- 8049230:	53                   	push   %ebx
- 8049231:	6a 02                	push   $0x2
- 8049233:	89 e3                	mov    %esp,%ebx
- 8049235:	83 c3 04             	add    $0x4,%ebx
- 8049238:	b8 11 00 00 00       	mov    $0x11,%eax
- 804923d:	cd 90                	int    $0x90
- 804923f:	83 c4 04             	add    $0x4,%esp
- 8049242:	5b                   	pop    %ebx
- 8049243:	c3                   	ret    
- 8049244:	6a 01                	push   $0x1
- 8049246:	89 e3                	mov    %esp,%ebx
- 8049248:	b8 12 00 00 00       	mov    $0x12,%eax
- 804924d:	cd 90                	int    $0x90
- 804924f:	83 c4 04             	add    $0x4,%esp
- 8049252:	c3                   	ret    
- 8049253:	6a 03                	push   $0x3
- 8049255:	89 e3                	mov    %esp,%ebx
- 8049257:	b8 13 00 00 00       	mov    $0x13,%eax
- 804925c:	cd 90                	int    $0x90
- 804925e:	83 c4 04             	add    $0x4,%esp
- 8049261:	c3                   	ret    
- 8049262:	6a 03                	push   $0x3
- 8049264:	89 e3                	mov    %esp,%ebx
- 8049266:	b8 14 00 00 00       	mov    $0x14,%eax
- 804926b:	cd 90                	int    $0x90
- 804926d:	83 c4 04             	add    $0x4,%esp
- 8049270:	c3                   	ret    
- 8049271:	6a 03                	push   $0x3
- 8049273:	89 e3                	mov    %esp,%ebx
- 8049275:	b8 15 00 00 00       	mov    $0x15,%eax
- 804927a:	cd 90                	int    $0x90
- 804927c:	83 c4 04             	add    $0x4,%esp
- 804927f:	c3                   	ret    
- 8049280:	6a 01                	push   $0x1
- 8049282:	89 e3                	mov    %esp,%ebx
- 8049284:	b8 16 00 00 00       	mov    $0x16,%eax
- 8049289:	cd 90                	int    $0x90
- 804928b:	83 c4 04             	add    $0x4,%esp
- 804928e:	c3                   	ret    
- 804928f:	6a 01                	push   $0x1
- 8049291:	89 e3                	mov    %esp,%ebx
- 8049293:	b8 17 00 00 00       	mov    $0x17,%eax
- 8049298:	cd 90                	int    $0x90
- 804929a:	83 c4 04             	add    $0x4,%esp
- 804929d:	c3                   	ret    
- 804929e:	6a 01                	push   $0x1
- 80492a0:	89 e3                	mov    %esp,%ebx
- 80492a2:	b8 18 00 00 00       	mov    $0x18,%eax
- 80492a7:	cd 90                	int    $0x90
- 80492a9:	83 c4 04             	add    $0x4,%esp
- 80492ac:	c3                   	ret    
- 80492ad:	6a 01                	push   $0x1
- 80492af:	89 e3                	mov    %esp,%ebx
- 80492b1:	b8 19 00 00 00       	mov    $0x19,%eax
- 80492b6:	cd 90                	int    $0x90
- 80492b8:	83 c4 04             	add    $0x4,%esp
- 80492bb:	c3                   	ret    
- 80492bc:	6a 01                	push   $0x1
- 80492be:	89 e3                	mov    %esp,%ebx
- 80492c0:	b8 1a 00 00 00       	mov    $0x1a,%eax
- 80492c5:	cd 90                	int    $0x90
- 80492c7:	83 c4 04             	add    $0x4,%esp
- 80492ca:	c3                   	ret    
- 80492cb:	6a 01                	push   $0x1
- 80492cd:	89 e3                	mov    %esp,%ebx
- 80492cf:	b8 1b 00 00 00       	mov    $0x1b,%eax
- 80492d4:	cd 90                	int    $0x90
- 80492d6:	83 c4 04             	add    $0x4,%esp
- 80492d9:	c3                   	ret    
- 80492da:	55                   	push   %ebp
- 80492db:	89 e5                	mov    %esp,%ebp
- 80492dd:	53                   	push   %ebx
- 80492de:	81 ec 14 01 00 00    	sub    $0x114,%esp
- 80492e4:	e8 ec fd ff ff       	call   0x80490d5
- 80492e9:	81 c3 17 2d 00 00    	add    $0x2d17,%ebx
- 80492ef:	8d 45 0c             	lea    0xc(%ebp),%eax
- 80492f2:	89 45 f4             	mov    %eax,-0xc(%ebp)
- 80492f5:	8b 45 08             	mov    0x8(%ebp),%eax
- 80492f8:	83 ec 04             	sub    $0x4,%esp
- 80492fb:	ff 75 f4             	pushl  -0xc(%ebp)
- 80492fe:	50                   	push   %eax
- 80492ff:	8d 85 ec fe ff ff    	lea    -0x114(%ebp),%eax
- 8049305:	50                   	push   %eax
- 8049306:	e8 a7 00 00 00       	call   0x80493b2
- 804930b:	83 c4 10             	add    $0x10,%esp
- 804930e:	89 45 f0             	mov    %eax,-0x10(%ebp)
- 8049311:	83 ec 04             	sub    $0x4,%esp
- 8049314:	ff 75 f0             	pushl  -0x10(%ebp)
- 8049317:	8d 85 ec fe ff ff    	lea    -0x114(%ebp),%eax
- 804931d:	50                   	push   %eax
- 804931e:	6a 01                	push   $0x1
- 8049320:	e8 3d ff ff ff       	call   0x8049262
- 8049325:	83 c4 10             	add    $0x10,%esp
- 8049328:	89 45 ec             	mov    %eax,-0x14(%ebp)
- 804932b:	8b 45 ec             	mov    -0x14(%ebp),%eax
- 804932e:	3b 45 f0             	cmp    -0x10(%ebp),%eax
- 8049331:	75 05                	jne    0x8049338
- 8049333:	8b 45 f0             	mov    -0x10(%ebp),%eax
- 8049336:	eb 05                	jmp    0x804933d
- 8049338:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
- 804933d:	8b 5d fc             	mov    -0x4(%ebp),%ebx
- 8049340:	c9                   	leave  
- 8049341:	c3                   	ret    
- 8049342:	55                   	push   %ebp
- 8049343:	89 e5                	mov    %esp,%ebp
- 8049345:	53                   	push   %ebx
- 8049346:	83 ec 14             	sub    $0x14,%esp
- 8049349:	e8 3c 05 00 00       	call   0x804988a
- 804934e:	05 b2 2c 00 00       	add    $0x2cb2,%eax
- 8049353:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049356:	99                   	cltd   
- 8049357:	f7 7d 0c             	idivl  0xc(%ebp)
- 804935a:	89 55 f4             	mov    %edx,-0xc(%ebp)
- 804935d:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049360:	99                   	cltd   
- 8049361:	f7 7d 0c             	idivl  0xc(%ebp)
- 8049364:	89 45 f0             	mov    %eax,-0x10(%ebp)
- 8049367:	83 7d f0 00          	cmpl   $0x0,-0x10(%ebp)
- 804936b:	74 14                	je     0x8049381
- 804936d:	83 ec 04             	sub    $0x4,%esp
- 8049370:	ff 75 10             	pushl  0x10(%ebp)
- 8049373:	ff 75 0c             	pushl  0xc(%ebp)
- 8049376:	ff 75 f0             	pushl  -0x10(%ebp)
- 8049379:	e8 c4 ff ff ff       	call   0x8049342
- 804937e:	83 c4 10             	add    $0x10,%esp
- 8049381:	83 7d f4 09          	cmpl   $0x9,-0xc(%ebp)
- 8049385:	7f 0a                	jg     0x8049391
- 8049387:	8b 45 f4             	mov    -0xc(%ebp),%eax
- 804938a:	83 c0 30             	add    $0x30,%eax
- 804938d:	89 c3                	mov    %eax,%ebx
- 804938f:	eb 08                	jmp    0x8049399
- 8049391:	8b 45 f4             	mov    -0xc(%ebp),%eax
- 8049394:	83 c0 37             	add    $0x37,%eax
- 8049397:	89 c3                	mov    %eax,%ebx
- 8049399:	8b 45 10             	mov    0x10(%ebp),%eax
- 804939c:	8b 00                	mov    (%eax),%eax
- 804939e:	8d 48 01             	lea    0x1(%eax),%ecx
- 80493a1:	8b 55 10             	mov    0x10(%ebp),%edx
- 80493a4:	89 0a                	mov    %ecx,(%edx)
- 80493a6:	88 18                	mov    %bl,(%eax)
- 80493a8:	8b 45 10             	mov    0x10(%ebp),%eax
- 80493ab:	8b 00                	mov    (%eax),%eax
- 80493ad:	8b 5d fc             	mov    -0x4(%ebp),%ebx
- 80493b0:	c9                   	leave  
- 80493b1:	c3                   	ret    
- 80493b2:	55                   	push   %ebp
- 80493b3:	89 e5                	mov    %esp,%ebp
- 80493b5:	53                   	push   %ebx
- 80493b6:	81 ec 24 01 00 00    	sub    $0x124,%esp
- 80493bc:	e8 14 fd ff ff       	call   0x80490d5
- 80493c1:	81 c3 3f 2c 00 00    	add    $0x2c3f,%ebx
- 80493c7:	8b 45 10             	mov    0x10(%ebp),%eax
- 80493ca:	89 45 f0             	mov    %eax,-0x10(%ebp)
- 80493cd:	8b 45 08             	mov    0x8(%ebp),%eax
- 80493d0:	89 45 f4             	mov    %eax,-0xc(%ebp)
- 80493d3:	e9 36 02 00 00       	jmp    0x804960e
- 80493d8:	8b 45 0c             	mov    0xc(%ebp),%eax
- 80493db:	0f b6 00             	movzbl (%eax),%eax
- 80493de:	3c 25                	cmp    $0x25,%al
- 80493e0:	74 16                	je     0x80493f8
- 80493e2:	8b 45 f4             	mov    -0xc(%ebp),%eax
- 80493e5:	8d 50 01             	lea    0x1(%eax),%edx
- 80493e8:	89 55 f4             	mov    %edx,-0xc(%ebp)
- 80493eb:	8b 55 0c             	mov    0xc(%ebp),%edx
- 80493ee:	0f b6 12             	movzbl (%edx),%edx
- 80493f1:	88 10                	mov    %dl,(%eax)
- 80493f3:	e9 12 02 00 00       	jmp    0x804960a
- 80493f8:	c7 45 e8 00 00 00 00 	movl   $0x0,-0x18(%ebp)
- 80493ff:	83 45 0c 01          	addl   $0x1,0xc(%ebp)
- 8049403:	8b 45 0c             	mov    0xc(%ebp),%eax
- 8049406:	0f b6 00             	movzbl (%eax),%eax
- 8049409:	3c 25                	cmp    $0x25,%al
- 804940b:	75 16                	jne    0x8049423
- 804940d:	8b 45 f4             	mov    -0xc(%ebp),%eax
- 8049410:	8d 50 01             	lea    0x1(%eax),%edx
- 8049413:	89 55 f4             	mov    %edx,-0xc(%ebp)
- 8049416:	8b 55 0c             	mov    0xc(%ebp),%edx
- 8049419:	0f b6 12             	movzbl (%edx),%edx
- 804941c:	88 10                	mov    %dl,(%eax)
- 804941e:	e9 e7 01 00 00       	jmp    0x804960a
- 8049423:	8b 45 0c             	mov    0xc(%ebp),%eax
- 8049426:	0f b6 00             	movzbl (%eax),%eax
- 8049429:	3c 30                	cmp    $0x30,%al
- 804942b:	75 0a                	jne    0x8049437
- 804942d:	c6 45 ef 30          	movb   $0x30,-0x11(%ebp)
- 8049431:	83 45 0c 01          	addl   $0x1,0xc(%ebp)
- 8049435:	eb 28                	jmp    0x804945f
- 8049437:	c6 45 ef 20          	movb   $0x20,-0x11(%ebp)
- 804943b:	eb 22                	jmp    0x804945f
- 804943d:	8b 55 e8             	mov    -0x18(%ebp),%edx
- 8049440:	89 d0                	mov    %edx,%eax
- 8049442:	c1 e0 02             	shl    $0x2,%eax
- 8049445:	01 d0                	add    %edx,%eax
- 8049447:	01 c0                	add    %eax,%eax
- 8049449:	89 45 e8             	mov    %eax,-0x18(%ebp)
- 804944c:	8b 45 0c             	mov    0xc(%ebp),%eax
- 804944f:	0f b6 00             	movzbl (%eax),%eax
- 8049452:	0f be c0             	movsbl %al,%eax
- 8049455:	83 e8 30             	sub    $0x30,%eax
- 8049458:	01 45 e8             	add    %eax,-0x18(%ebp)
- 804945b:	83 45 0c 01          	addl   $0x1,0xc(%ebp)
- 804945f:	8b 45 0c             	mov    0xc(%ebp),%eax
- 8049462:	0f b6 00             	movzbl (%eax),%eax
- 8049465:	3c 2f                	cmp    $0x2f,%al
- 8049467:	76 0a                	jbe    0x8049473
- 8049469:	8b 45 0c             	mov    0xc(%ebp),%eax
- 804946c:	0f b6 00             	movzbl (%eax),%eax
- 804946f:	3c 39                	cmp    $0x39,%al
- 8049471:	76 ca                	jbe    0x804943d
- 8049473:	8d 85 e0 fe ff ff    	lea    -0x120(%ebp),%eax
- 8049479:	89 85 dc fe ff ff    	mov    %eax,-0x124(%ebp)
- 804947f:	8b 85 dc fe ff ff    	mov    -0x124(%ebp),%eax
- 8049485:	83 ec 04             	sub    $0x4,%esp
- 8049488:	68 00 01 00 00       	push   $0x100
- 804948d:	6a 00                	push   $0x0
- 804948f:	50                   	push   %eax
- 8049490:	e8 84 fc ff ff       	call   0x8049119
- 8049495:	83 c4 10             	add    $0x10,%esp
- 8049498:	8b 45 0c             	mov    0xc(%ebp),%eax
- 804949b:	0f b6 00             	movzbl (%eax),%eax
- 804949e:	0f be c0             	movsbl %al,%eax
- 80494a1:	83 f8 78             	cmp    $0x78,%eax
- 80494a4:	74 4a                	je     0x80494f0
- 80494a6:	83 f8 78             	cmp    $0x78,%eax
- 80494a9:	0f 8f ca 00 00 00    	jg     0x8049579
- 80494af:	83 f8 73             	cmp    $0x73,%eax
- 80494b2:	0f 84 84 00 00 00    	je     0x804953c
- 80494b8:	83 f8 73             	cmp    $0x73,%eax
- 80494bb:	0f 8f b8 00 00 00    	jg     0x8049579
- 80494c1:	83 f8 63             	cmp    $0x63,%eax
- 80494c4:	74 0a                	je     0x80494d0
- 80494c6:	83 f8 64             	cmp    $0x64,%eax
- 80494c9:	74 4b                	je     0x8049516
- 80494cb:	e9 a9 00 00 00       	jmp    0x8049579
- 80494d0:	8b 85 dc fe ff ff    	mov    -0x124(%ebp),%eax
- 80494d6:	8d 50 01             	lea    0x1(%eax),%edx
- 80494d9:	89 95 dc fe ff ff    	mov    %edx,-0x124(%ebp)
- 80494df:	8b 55 f0             	mov    -0x10(%ebp),%edx
- 80494e2:	0f b6 12             	movzbl (%edx),%edx
- 80494e5:	88 10                	mov    %dl,(%eax)
- 80494e7:	83 45 f0 04          	addl   $0x4,-0x10(%ebp)
- 80494eb:	e9 8a 00 00 00       	jmp    0x804957a
- 80494f0:	8b 45 f0             	mov    -0x10(%ebp),%eax
- 80494f3:	8b 00                	mov    (%eax),%eax
- 80494f5:	89 45 e0             	mov    %eax,-0x20(%ebp)
- 80494f8:	8b 45 e0             	mov    -0x20(%ebp),%eax
- 80494fb:	83 ec 04             	sub    $0x4,%esp
- 80494fe:	8d 95 dc fe ff ff    	lea    -0x124(%ebp),%edx
- 8049504:	52                   	push   %edx
- 8049505:	6a 10                	push   $0x10
- 8049507:	50                   	push   %eax
- 8049508:	e8 35 fe ff ff       	call   0x8049342
- 804950d:	83 c4 10             	add    $0x10,%esp
- 8049510:	83 45 f0 04          	addl   $0x4,-0x10(%ebp)
- 8049514:	eb 64                	jmp    0x804957a
- 8049516:	8b 45 f0             	mov    -0x10(%ebp),%eax
- 8049519:	8b 00                	mov    (%eax),%eax
- 804951b:	89 45 e0             	mov    %eax,-0x20(%ebp)
- 804951e:	8b 45 e0             	mov    -0x20(%ebp),%eax
- 8049521:	83 ec 04             	sub    $0x4,%esp
- 8049524:	8d 95 dc fe ff ff    	lea    -0x124(%ebp),%edx
- 804952a:	52                   	push   %edx
- 804952b:	6a 0a                	push   $0xa
- 804952d:	50                   	push   %eax
- 804952e:	e8 0f fe ff ff       	call   0x8049342
- 8049533:	83 c4 10             	add    $0x10,%esp
- 8049536:	83 45 f0 04          	addl   $0x4,-0x10(%ebp)
- 804953a:	eb 3e                	jmp    0x804957a
- 804953c:	8b 45 f0             	mov    -0x10(%ebp),%eax
- 804953f:	8b 10                	mov    (%eax),%edx
- 8049541:	8b 85 dc fe ff ff    	mov    -0x124(%ebp),%eax
- 8049547:	83 ec 08             	sub    $0x8,%esp
- 804954a:	52                   	push   %edx
- 804954b:	50                   	push   %eax
- 804954c:	e8 e9 fb ff ff       	call   0x804913a
- 8049551:	83 c4 10             	add    $0x10,%esp
- 8049554:	8b 45 f0             	mov    -0x10(%ebp),%eax
- 8049557:	8b 00                	mov    (%eax),%eax
- 8049559:	83 ec 0c             	sub    $0xc,%esp
- 804955c:	50                   	push   %eax
- 804955d:	e8 f0 fb ff ff       	call   0x8049152
- 8049562:	83 c4 10             	add    $0x10,%esp
- 8049565:	8b 95 dc fe ff ff    	mov    -0x124(%ebp),%edx
- 804956b:	01 d0                	add    %edx,%eax
- 804956d:	89 85 dc fe ff ff    	mov    %eax,-0x124(%ebp)
- 8049573:	83 45 f0 04          	addl   $0x4,-0x10(%ebp)
- 8049577:	eb 01                	jmp    0x804957a
- 8049579:	90                   	nop
- 804957a:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%ebp)
- 8049581:	eb 13                	jmp    0x8049596
- 8049583:	8b 45 f4             	mov    -0xc(%ebp),%eax
- 8049586:	8d 50 01             	lea    0x1(%eax),%edx
- 8049589:	89 55 f4             	mov    %edx,-0xc(%ebp)
- 804958c:	0f b6 55 ef          	movzbl -0x11(%ebp),%edx
- 8049590:	88 10                	mov    %dl,(%eax)
- 8049592:	83 45 e4 01          	addl   $0x1,-0x1c(%ebp)
- 8049596:	83 ec 0c             	sub    $0xc,%esp
- 8049599:	8d 85 e0 fe ff ff    	lea    -0x120(%ebp),%eax
- 804959f:	50                   	push   %eax
- 80495a0:	e8 ad fb ff ff       	call   0x8049152
- 80495a5:	83 c4 10             	add    $0x10,%esp
- 80495a8:	39 45 e8             	cmp    %eax,-0x18(%ebp)
- 80495ab:	7e 1b                	jle    0x80495c8
- 80495ad:	83 ec 0c             	sub    $0xc,%esp
- 80495b0:	8d 85 e0 fe ff ff    	lea    -0x120(%ebp),%eax
- 80495b6:	50                   	push   %eax
- 80495b7:	e8 96 fb ff ff       	call   0x8049152
- 80495bc:	83 c4 10             	add    $0x10,%esp
- 80495bf:	89 c2                	mov    %eax,%edx
- 80495c1:	8b 45 e8             	mov    -0x18(%ebp),%eax
- 80495c4:	29 d0                	sub    %edx,%eax
- 80495c6:	eb 05                	jmp    0x80495cd
- 80495c8:	b8 00 00 00 00       	mov    $0x0,%eax
- 80495cd:	3b 45 e4             	cmp    -0x1c(%ebp),%eax
- 80495d0:	7f b1                	jg     0x8049583
- 80495d2:	8d 85 e0 fe ff ff    	lea    -0x120(%ebp),%eax
- 80495d8:	89 85 dc fe ff ff    	mov    %eax,-0x124(%ebp)
- 80495de:	eb 1d                	jmp    0x80495fd
- 80495e0:	8b 95 dc fe ff ff    	mov    -0x124(%ebp),%edx
- 80495e6:	8d 42 01             	lea    0x1(%edx),%eax
- 80495e9:	89 85 dc fe ff ff    	mov    %eax,-0x124(%ebp)
- 80495ef:	8b 45 f4             	mov    -0xc(%ebp),%eax
- 80495f2:	8d 48 01             	lea    0x1(%eax),%ecx
- 80495f5:	89 4d f4             	mov    %ecx,-0xc(%ebp)
- 80495f8:	0f b6 12             	movzbl (%edx),%edx
- 80495fb:	88 10                	mov    %dl,(%eax)
- 80495fd:	8b 85 dc fe ff ff    	mov    -0x124(%ebp),%eax
- 8049603:	0f b6 00             	movzbl (%eax),%eax
- 8049606:	84 c0                	test   %al,%al
- 8049608:	75 d6                	jne    0x80495e0
- 804960a:	83 45 0c 01          	addl   $0x1,0xc(%ebp)
- 804960e:	8b 45 0c             	mov    0xc(%ebp),%eax
- 8049611:	0f b6 00             	movzbl (%eax),%eax
- 8049614:	84 c0                	test   %al,%al
- 8049616:	0f 85 bc fd ff ff    	jne    0x80493d8
- 804961c:	8b 45 f4             	mov    -0xc(%ebp),%eax
- 804961f:	c6 00 00             	movb   $0x0,(%eax)
- 8049622:	8b 45 f4             	mov    -0xc(%ebp),%eax
- 8049625:	2b 45 08             	sub    0x8(%ebp),%eax
- 8049628:	8b 5d fc             	mov    -0x4(%ebp),%ebx
- 804962b:	c9                   	leave  
- 804962c:	c3                   	ret    
- 804962d:	55                   	push   %ebp
- 804962e:	89 e5                	mov    %esp,%ebp
- 8049630:	53                   	push   %ebx
- 8049631:	83 ec 14             	sub    $0x14,%esp
- 8049634:	e8 51 02 00 00       	call   0x804988a
- 8049639:	05 c7 29 00 00       	add    $0x29c7,%eax
- 804963e:	83 ec 04             	sub    $0x4,%esp
- 8049641:	6a 01                	push   $0x1
- 8049643:	8d 55 f7             	lea    -0x9(%ebp),%edx
- 8049646:	52                   	push   %edx
- 8049647:	6a 00                	push   $0x0
- 8049649:	89 c3                	mov    %eax,%ebx
- 804964b:	e8 03 fc ff ff       	call   0x8049253
- 8049650:	83 c4 10             	add    $0x10,%esp
- 8049653:	83 f8 01             	cmp    $0x1,%eax
- 8049656:	75 06                	jne    0x804965e
- 8049658:	0f b6 45 f7          	movzbl -0x9(%ebp),%eax
- 804965c:	eb 05                	jmp    0x8049663
- 804965e:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
- 8049663:	8b 5d fc             	mov    -0x4(%ebp),%ebx
- 8049666:	c9                   	leave  
- 8049667:	c3                   	ret    
- 8049668:	55                   	push   %ebp
- 8049669:	89 e5                	mov    %esp,%ebp
- 804966b:	83 ec 18             	sub    $0x18,%esp
- 804966e:	e8 17 02 00 00       	call   0x804988a
- 8049673:	05 8d 29 00 00       	add    $0x298d,%eax
- 8049678:	8b 45 08             	mov    0x8(%ebp),%eax
- 804967b:	89 45 f4             	mov    %eax,-0xc(%ebp)
- 804967e:	eb 1f                	jmp    0x804969f
- 8049680:	8b 45 f4             	mov    -0xc(%ebp),%eax
- 8049683:	0f b6 55 f3          	movzbl -0xd(%ebp),%edx
- 8049687:	88 10                	mov    %dl,(%eax)
- 8049689:	8b 45 f4             	mov    -0xc(%ebp),%eax
- 804968c:	0f b6 00             	movzbl (%eax),%eax
- 804968f:	3c 0a                	cmp    $0xa,%al
- 8049691:	75 08                	jne    0x804969b
- 8049693:	8b 45 f4             	mov    -0xc(%ebp),%eax
- 8049696:	c6 00 00             	movb   $0x0,(%eax)
- 8049699:	eb 12                	jmp    0x80496ad
- 804969b:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
- 804969f:	e8 89 ff ff ff       	call   0x804962d
- 80496a4:	88 45 f3             	mov    %al,-0xd(%ebp)
- 80496a7:	80 7d f3 ff          	cmpb   $0xff,-0xd(%ebp)
- 80496ab:	75 d3                	jne    0x8049680
- 80496ad:	8b 45 08             	mov    0x8(%ebp),%eax
- 80496b0:	c9                   	leave  
- 80496b1:	c3                   	ret    
- 80496b2:	55                   	push   %ebp
- 80496b3:	89 e5                	mov    %esp,%ebp
- 80496b5:	83 ec 10             	sub    $0x10,%esp
- 80496b8:	e8 cd 01 00 00       	call   0x804988a
- 80496bd:	05 43 29 00 00       	add    $0x2943,%eax
- 80496c2:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
- 80496c9:	83 7d 10 00          	cmpl   $0x0,0x10(%ebp)
- 80496cd:	0f 85 8c 00 00 00    	jne    0x804975f
- 80496d3:	c7 45 10 0a 00 00 00 	movl   $0xa,0x10(%ebp)
- 80496da:	8b 45 08             	mov    0x8(%ebp),%eax
- 80496dd:	0f b6 00             	movzbl (%eax),%eax
- 80496e0:	3c 30                	cmp    $0x30,%al
- 80496e2:	0f 85 b2 00 00 00    	jne    0x804979a
- 80496e8:	c7 45 10 08 00 00 00 	movl   $0x8,0x10(%ebp)
- 80496ef:	83 45 08 01          	addl   $0x1,0x8(%ebp)
- 80496f3:	8b 45 08             	mov    0x8(%ebp),%eax
- 80496f6:	0f b6 00             	movzbl (%eax),%eax
- 80496f9:	83 c8 20             	or     $0x20,%eax
- 80496fc:	3c 78                	cmp    $0x78,%al
- 80496fe:	0f 85 96 00 00 00    	jne    0x804979a
- 8049704:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049707:	83 c0 01             	add    $0x1,%eax
- 804970a:	0f b6 00             	movzbl (%eax),%eax
- 804970d:	3c 2f                	cmp    $0x2f,%al
- 804970f:	7e 0d                	jle    0x804971e
- 8049711:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049714:	83 c0 01             	add    $0x1,%eax
- 8049717:	0f b6 00             	movzbl (%eax),%eax
- 804971a:	3c 39                	cmp    $0x39,%al
- 804971c:	7e 34                	jle    0x8049752
- 804971e:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049721:	83 c0 01             	add    $0x1,%eax
- 8049724:	0f b6 00             	movzbl (%eax),%eax
- 8049727:	3c 60                	cmp    $0x60,%al
- 8049729:	7e 0d                	jle    0x8049738
- 804972b:	8b 45 08             	mov    0x8(%ebp),%eax
- 804972e:	83 c0 01             	add    $0x1,%eax
- 8049731:	0f b6 00             	movzbl (%eax),%eax
- 8049734:	3c 66                	cmp    $0x66,%al
- 8049736:	7e 1a                	jle    0x8049752
- 8049738:	8b 45 08             	mov    0x8(%ebp),%eax
- 804973b:	83 c0 01             	add    $0x1,%eax
- 804973e:	0f b6 00             	movzbl (%eax),%eax
- 8049741:	3c 40                	cmp    $0x40,%al
- 8049743:	7e 55                	jle    0x804979a
- 8049745:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049748:	83 c0 01             	add    $0x1,%eax
- 804974b:	0f b6 00             	movzbl (%eax),%eax
- 804974e:	3c 46                	cmp    $0x46,%al
- 8049750:	7f 48                	jg     0x804979a
- 8049752:	83 45 08 01          	addl   $0x1,0x8(%ebp)
- 8049756:	c7 45 10 10 00 00 00 	movl   $0x10,0x10(%ebp)
- 804975d:	eb 3b                	jmp    0x804979a
- 804975f:	83 7d 10 10          	cmpl   $0x10,0x10(%ebp)
- 8049763:	75 35                	jne    0x804979a
- 8049765:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049768:	0f b6 00             	movzbl (%eax),%eax
- 804976b:	3c 30                	cmp    $0x30,%al
- 804976d:	75 2b                	jne    0x804979a
- 804976f:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049772:	83 c0 01             	add    $0x1,%eax
- 8049775:	0f b6 00             	movzbl (%eax),%eax
- 8049778:	83 c8 20             	or     $0x20,%eax
- 804977b:	3c 78                	cmp    $0x78,%al
- 804977d:	75 1b                	jne    0x804979a
- 804977f:	83 45 08 02          	addl   $0x2,0x8(%ebp)
- 8049783:	eb 15                	jmp    0x804979a
- 8049785:	8b 45 fc             	mov    -0x4(%ebp),%eax
- 8049788:	0f af 45 10          	imul   0x10(%ebp),%eax
- 804978c:	89 c2                	mov    %eax,%edx
- 804978e:	8b 45 f8             	mov    -0x8(%ebp),%eax
- 8049791:	01 d0                	add    %edx,%eax
- 8049793:	89 45 fc             	mov    %eax,-0x4(%ebp)
- 8049796:	83 45 08 01          	addl   $0x1,0x8(%ebp)
- 804979a:	8b 45 08             	mov    0x8(%ebp),%eax
- 804979d:	0f b6 00             	movzbl (%eax),%eax
- 80497a0:	3c 2f                	cmp    $0x2f,%al
- 80497a2:	7e 0a                	jle    0x80497ae
- 80497a4:	8b 45 08             	mov    0x8(%ebp),%eax
- 80497a7:	0f b6 00             	movzbl (%eax),%eax
- 80497aa:	3c 39                	cmp    $0x39,%al
- 80497ac:	7e 28                	jle    0x80497d6
- 80497ae:	8b 45 08             	mov    0x8(%ebp),%eax
- 80497b1:	0f b6 00             	movzbl (%eax),%eax
- 80497b4:	3c 60                	cmp    $0x60,%al
- 80497b6:	7e 0a                	jle    0x80497c2
- 80497b8:	8b 45 08             	mov    0x8(%ebp),%eax
- 80497bb:	0f b6 00             	movzbl (%eax),%eax
- 80497be:	3c 66                	cmp    $0x66,%al
- 80497c0:	7e 14                	jle    0x80497d6
- 80497c2:	8b 45 08             	mov    0x8(%ebp),%eax
- 80497c5:	0f b6 00             	movzbl (%eax),%eax
- 80497c8:	3c 40                	cmp    $0x40,%al
- 80497ca:	7e 4a                	jle    0x8049816
- 80497cc:	8b 45 08             	mov    0x8(%ebp),%eax
- 80497cf:	0f b6 00             	movzbl (%eax),%eax
- 80497d2:	3c 46                	cmp    $0x46,%al
- 80497d4:	7f 40                	jg     0x8049816
- 80497d6:	8b 45 08             	mov    0x8(%ebp),%eax
- 80497d9:	0f b6 00             	movzbl (%eax),%eax
- 80497dc:	3c 2f                	cmp    $0x2f,%al
- 80497de:	7e 18                	jle    0x80497f8
- 80497e0:	8b 45 08             	mov    0x8(%ebp),%eax
- 80497e3:	0f b6 00             	movzbl (%eax),%eax
- 80497e6:	3c 39                	cmp    $0x39,%al
- 80497e8:	7f 0e                	jg     0x80497f8
- 80497ea:	8b 45 08             	mov    0x8(%ebp),%eax
- 80497ed:	0f b6 00             	movzbl (%eax),%eax
- 80497f0:	0f be c0             	movsbl %al,%eax
- 80497f3:	83 e8 30             	sub    $0x30,%eax
- 80497f6:	eb 0f                	jmp    0x8049807
- 80497f8:	8b 45 08             	mov    0x8(%ebp),%eax
- 80497fb:	0f b6 00             	movzbl (%eax),%eax
- 80497fe:	83 c8 20             	or     $0x20,%eax
- 8049801:	0f be c0             	movsbl %al,%eax
- 8049804:	83 e8 57             	sub    $0x57,%eax
- 8049807:	89 45 f8             	mov    %eax,-0x8(%ebp)
- 804980a:	8b 45 f8             	mov    -0x8(%ebp),%eax
- 804980d:	3b 45 10             	cmp    0x10(%ebp),%eax
- 8049810:	0f 82 6f ff ff ff    	jb     0x8049785
- 8049816:	83 7d 0c 00          	cmpl   $0x0,0xc(%ebp)
- 804981a:	74 08                	je     0x8049824
- 804981c:	8b 45 0c             	mov    0xc(%ebp),%eax
- 804981f:	8b 55 08             	mov    0x8(%ebp),%edx
- 8049822:	89 10                	mov    %edx,(%eax)
- 8049824:	8b 45 fc             	mov    -0x4(%ebp),%eax
- 8049827:	c9                   	leave  
- 8049828:	c3                   	ret    
- 8049829:	55                   	push   %ebp
- 804982a:	89 e5                	mov    %esp,%ebp
- 804982c:	e8 59 00 00 00       	call   0x804988a
- 8049831:	05 cf 27 00 00       	add    $0x27cf,%eax
- 8049836:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049839:	0f b6 00             	movzbl (%eax),%eax
- 804983c:	3c 2d                	cmp    $0x2d,%al
- 804983e:	75 19                	jne    0x8049859
- 8049840:	8b 45 08             	mov    0x8(%ebp),%eax
- 8049843:	83 c0 01             	add    $0x1,%eax
- 8049846:	ff 75 10             	pushl  0x10(%ebp)
- 8049849:	ff 75 0c             	pushl  0xc(%ebp)
- 804984c:	50                   	push   %eax
- 804984d:	e8 60 fe ff ff       	call   0x80496b2
- 8049852:	83 c4 0c             	add    $0xc,%esp
- 8049855:	f7 d8                	neg    %eax
- 8049857:	eb 11                	jmp    0x804986a
- 8049859:	ff 75 10             	pushl  0x10(%ebp)
- 804985c:	ff 75 0c             	pushl  0xc(%ebp)
- 804985f:	ff 75 08             	pushl  0x8(%ebp)
- 8049862:	e8 4b fe ff ff       	call   0x80496b2
- 8049867:	83 c4 0c             	add    $0xc,%esp
- 804986a:	c9                   	leave  
- 804986b:	c3                   	ret    
- 804986c:	55                   	push   %ebp
- 804986d:	89 e5                	mov    %esp,%ebp
- 804986f:	e8 16 00 00 00       	call   0x804988a
- 8049874:	05 8c 27 00 00       	add    $0x278c,%eax
- 8049879:	6a 0a                	push   $0xa
- 804987b:	6a 00                	push   $0x0
- 804987d:	ff 75 08             	pushl  0x8(%ebp)
- 8049880:	e8 a4 ff ff ff       	call   0x8049829
- 8049885:	83 c4 0c             	add    $0xc,%esp
- 8049888:	c9                   	leave  
- 8049889:	c3                   	ret    
- 804988a:	8b 04 24             	mov    (%esp),%eax
- 804988d:	c3                   	ret    
 
-Disassembly of section .rodata:
-
-0804a000 <.rodata>:
- 804a000:	64 65 76 5f          	fs gs jbe 0x804a063
- 804a004:	74 74                	je     0x804a07a
- 804a006:	79 30                	jns    0x804a038
- 804a008:	00 0a                	add    %cl,(%edx)
- 804a00a:	6d                   	insl   (%dx),%es:(%edi)
- 804a00b:	69 6e 69 4f 53 3a 2f 	imul   $0x2f3a534f,0x69(%esi),%ebp
- 804a012:	20 24 20             	and    %ah,(%eax,%eiz,1)
- 804a015:	00 65 78             	add    %ah,0x78(%ebp)
- 804a018:	65 63 20             	arpl   %sp,%gs:(%eax)
- 804a01b:	66 61                	popaw  
- 804a01d:	69 6c 65 64 3a 20 66 	imul   $0x6966203a,0x64(%ebp,%eiz,2),%ebp
- 804a024:	69 
- 804a025:	6c                   	insb   (%dx),%es:(%edi)
- 804a026:	65 20 6e 6f          	and    %ch,%gs:0x6f(%esi)
- 804a02a:	74 20                	je     0x804a04c
- 804a02c:	66 6f                	outsw  %ds:(%esi),(%dx)
- 804a02e:	75 6e                	jne    0x804a09e
- 804a030:	64 21 0a             	and    %ecx,%fs:(%edx)
-	...
-
-Disassembly of section .eh_frame:
-
-0804a034 <.eh_frame>:
- 804a034:	14 00                	adc    $0x0,%al
- 804a036:	00 00                	add    %al,(%eax)
- 804a038:	00 00                	add    %al,(%eax)
- 804a03a:	00 00                	add    %al,(%eax)
- 804a03c:	01 7a 52             	add    %edi,0x52(%edx)
- 804a03f:	00 01                	add    %al,(%ecx)
- 804a041:	7c 08                	jl     0x804a04b
- 804a043:	01 1b                	add    %ebx,(%ebx)
- 804a045:	0c 04                	or     $0x4,%al
- 804a047:	04 88                	add    $0x88,%al
- 804a049:	01 00                	add    %eax,(%eax)
- 804a04b:	00 24 00             	add    %ah,(%eax,%eax,1)
- 804a04e:	00 00                	add    %al,(%eax)
- 804a050:	1c 00                	sbb    $0x0,%al
- 804a052:	00 00                	add    %al,(%eax)
- 804a054:	ac                   	lods   %ds:(%esi),%al
- 804a055:	ef                   	out    %eax,(%dx)
- 804a056:	ff                   	(bad)  
- 804a057:	ff d5                	call   *%ebp
- 804a059:	00 00                	add    %al,(%eax)
- 804a05b:	00 00                	add    %al,(%eax)
- 804a05d:	44                   	inc    %esp
- 804a05e:	0c 01                	or     $0x1,%al
- 804a060:	00 47 10             	add    %al,0x10(%edi)
- 804a063:	05 02 75 00 44       	add    $0x44007502,%eax
- 804a068:	0f 03 75 78          	lsl    0x78(%ebp),%esi
- 804a06c:	06                   	push   %es
- 804a06d:	10 03                	adc    %al,(%ebx)
- 804a06f:	02 75 7c             	add    0x7c(%ebp),%dh
- 804a072:	00 00                	add    %al,(%eax)
- 804a074:	10 00                	adc    %al,(%eax)
- 804a076:	00 00                	add    %al,(%eax)
- 804a078:	44                   	inc    %esp
- 804a079:	00 00                	add    %al,(%eax)
- 804a07b:	00 59 f0             	add    %bl,-0x10(%ecx)
- 804a07e:	ff                   	(bad)  
- 804a07f:	ff 04 00             	incl   (%eax,%eax,1)
- 804a082:	00 00                	add    %al,(%eax)
- 804a084:	00 00                	add    %al,(%eax)
- 804a086:	00 00                	add    %al,(%eax)
- 804a088:	20 00                	and    %al,(%eax)
- 804a08a:	00 00                	add    %al,(%eax)
- 804a08c:	58                   	pop    %eax
- 804a08d:	00 00                	add    %al,(%eax)
- 804a08f:	00 4a f2             	add    %cl,-0xe(%edx)
- 804a092:	ff                   	(bad)  
- 804a093:	ff 68 00             	ljmp   *0x0(%eax)
- 804a096:	00 00                	add    %al,(%eax)
- 804a098:	00 41 0e             	add    %al,0xe(%ecx)
- 804a09b:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
- 804a0a1:	47                   	inc    %edi
- 804a0a2:	83 03 02             	addl   $0x2,(%ebx)
- 804a0a5:	5d                   	pop    %ebp
- 804a0a6:	c5 c3 0c             	(bad)
- 804a0a9:	04 04                	add    $0x4,%al
- 804a0ab:	00 20                	add    %ah,(%eax)
- 804a0ad:	00 00                	add    %al,(%eax)
- 804a0af:	00 7c 00 00          	add    %bh,0x0(%eax,%eax,1)
- 804a0b3:	00 8e f2 ff ff 70    	add    %cl,0x70fffff2(%esi)
- 804a0b9:	00 00                	add    %al,(%eax)
- 804a0bb:	00 00                	add    %al,(%eax)
- 804a0bd:	41                   	inc    %ecx
- 804a0be:	0e                   	push   %cs
- 804a0bf:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
- 804a0c5:	44                   	inc    %esp
- 804a0c6:	83 03 02             	addl   $0x2,(%ebx)
- 804a0c9:	68 c5 c3 0c 04       	push   $0x40cc3c5
- 804a0ce:	04 00                	add    $0x0,%al
- 804a0d0:	20 00                	and    %al,(%eax)
- 804a0d2:	00 00                	add    %al,(%eax)
- 804a0d4:	a0 00 00 00 da       	mov    0xda000000,%al
- 804a0d9:	f2 ff                	repnz (bad) 
- 804a0db:	ff                   	(bad)  
- 804a0dc:	7b 02                	jnp    0x804a0e0
- 804a0de:	00 00                	add    %al,(%eax)
- 804a0e0:	00 41 0e             	add    %al,0xe(%ecx)
- 804a0e3:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
- 804a0e9:	47                   	inc    %edi
- 804a0ea:	83 03 03             	addl   $0x3,(%ebx)
- 804a0ed:	70 02                	jo     0x804a0f1
- 804a0ef:	c5 c3 0c             	(bad)
- 804a0f2:	04 04                	add    $0x4,%al
- 804a0f4:	20 00                	and    %al,(%eax)
- 804a0f6:	00 00                	add    %al,(%eax)
- 804a0f8:	c4 00                	les    (%eax),%eax
- 804a0fa:	00 00                	add    %al,(%eax)
- 804a0fc:	31 f5                	xor    %esi,%ebp
- 804a0fe:	ff                   	(bad)  
- 804a0ff:	ff                   	(bad)  
- 804a100:	3b 00                	cmp    (%eax),%eax
- 804a102:	00 00                	add    %al,(%eax)
- 804a104:	00 41 0e             	add    %al,0xe(%ecx)
- 804a107:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
- 804a10d:	44                   	inc    %esp
- 804a10e:	83 03 73             	addl   $0x73,(%ebx)
- 804a111:	c5 c3 0c             	(bad)
- 804a114:	04 04                	add    $0x4,%al
- 804a116:	00 00                	add    %al,(%eax)
- 804a118:	1c 00                	sbb    $0x0,%al
- 804a11a:	00 00                	add    %al,(%eax)
- 804a11c:	e8 00 00 00 48       	call   0x5004a121
- 804a121:	f5                   	cmc    
- 804a122:	ff                   	(bad)  
- 804a123:	ff 4a 00             	decl   0x0(%edx)
- 804a126:	00 00                	add    %al,(%eax)
- 804a128:	00 41 0e             	add    %al,0xe(%ecx)
- 804a12b:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
- 804a131:	02 46 c5             	add    -0x3b(%esi),%al
- 804a134:	0c 04                	or     $0x4,%al
- 804a136:	04 00                	add    $0x0,%al
- 804a138:	1c 00                	sbb    $0x0,%al
- 804a13a:	00 00                	add    %al,(%eax)
- 804a13c:	08 01                	or     %al,(%ecx)
- 804a13e:	00 00                	add    %al,(%eax)
- 804a140:	72 f5                	jb     0x804a137
- 804a142:	ff                   	(bad)  
- 804a143:	ff 77 01             	pushl  0x1(%edi)
- 804a146:	00 00                	add    %al,(%eax)
- 804a148:	00 41 0e             	add    %al,0xe(%ecx)
- 804a14b:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
- 804a151:	03 73 01             	add    0x1(%ebx),%esi
- 804a154:	c5 0c 04             	lds    (%esp,%eax,1),%ecx
- 804a157:	04 1c                	add    $0x1c,%al
- 804a159:	00 00                	add    %al,(%eax)
- 804a15b:	00 28                	add    %ch,(%eax)
- 804a15d:	01 00                	add    %eax,(%eax)
- 804a15f:	00 c9                	add    %cl,%cl
- 804a161:	f6 ff                	idiv   %bh
- 804a163:	ff 43 00             	incl   0x0(%ebx)
- 804a166:	00 00                	add    %al,(%eax)
- 804a168:	00 41 0e             	add    %al,0xe(%ecx)
- 804a16b:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
- 804a171:	7f c5                	jg     0x804a138
- 804a173:	0c 04                	or     $0x4,%al
- 804a175:	04 00                	add    $0x0,%al
- 804a177:	00 1c 00             	add    %bl,(%eax,%eax,1)
- 804a17a:	00 00                	add    %al,(%eax)
- 804a17c:	48                   	dec    %eax
- 804a17d:	01 00                	add    %eax,(%eax)
- 804a17f:	00 ec                	add    %ch,%ah
- 804a181:	f6 ff                	idiv   %bh
- 804a183:	ff 1e                	lcall  *(%esi)
- 804a185:	00 00                	add    %al,(%eax)
- 804a187:	00 00                	add    %al,(%eax)
- 804a189:	41                   	inc    %ecx
- 804a18a:	0e                   	push   %cs
- 804a18b:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
- 804a191:	5a                   	pop    %edx
- 804a192:	c5 0c 04             	lds    (%esp,%eax,1),%ecx
- 804a195:	04 00                	add    $0x0,%al
- 804a197:	00 10                	add    %dl,(%eax)
- 804a199:	00 00                	add    %al,(%eax)
- 804a19b:	00 68 01             	add    %ch,0x1(%eax)
- 804a19e:	00 00                	add    %al,(%eax)
- 804a1a0:	ea f6 ff ff 04 00 00 	ljmp   $0x0,$0x4fffff6
- 804a1a7:	00 00                	add    %al,(%eax)
- 804a1a9:	00 00                	add    %al,(%eax)
-	...
-
-Disassembly of section .got.plt:
-
-0804c000 <.got.plt>:
-	...
-
-Disassembly of section .comment:
-
-00000000 <.comment>:
-   0:	47                   	inc    %edi
-   1:	43                   	inc    %ebx
-   2:	43                   	inc    %ebx
-   3:	3a 20                	cmp    (%eax),%ah
-   5:	28 47 4e             	sub    %al,0x4e(%edi)
-   8:	55                   	push   %ebp
-   9:	29 20                	sub    %esp,(%eax)
-   b:	31 30                	xor    %esi,(%eax)
-   d:	2e 32 2e             	xor    %cs:(%esi),%ch
-  10:	30 00                	xor    %al,(%eax)

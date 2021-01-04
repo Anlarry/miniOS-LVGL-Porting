@@ -3,15 +3,16 @@
 #include <gui/lvgl/lvgl.h>
 #include <gui/lvgl/src/lv_misc/lv_gc.h>
 
+
 static void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color_t * color_p)
 {
     int32_t x, y;
     for(y = area->y1; y <= area->y2; y++) {
         for(x = area->x1; x <= area->x2; x++) {
             // set_pixel(x, y, *color_p);  /* Put a pixel to the display.*/
-            // PlotPixel(x, y, 
-            //     color_p->ch.red, color_p->ch.green, color_p->ch.blue
-            // );
+            PlotPixel(x, y, 
+                color_p->ch.red, color_p->ch.green, color_p->ch.blue
+            );
             color_p++;
         }
     }
@@ -41,10 +42,11 @@ void InitScreen() {
         }
     }
 
+    InitLvFontMontserrat_14();
 
     lv_init();
-    static lv_disp_buf_t disp_buf;
-    static lv_color_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10];                     /*Declare a buffer for 1/10 screen size*/
+    static lv_disp_buf_t disp_buf __DATA__;
+    static lv_color_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10]; /*Declare a buffer for 1/10 screen size*/
     lv_disp_buf_init(&disp_buf, buf, NULL, LV_HOR_RES_MAX * LV_VER_RES_MAX / 10);    
 
     lv_disp_drv_t disp_drv;               /*Descriptor of a display driver*/
@@ -53,7 +55,19 @@ void InitScreen() {
     disp_drv.buffer = &disp_buf;          /*Assign the buffer to the display*/
     lv_disp_drv_register(&disp_drv);      /*Finally register the driver*/
 
-    
+    lv_obj_t * label;
+
+    lv_obj_t * btn1 = lv_btn_create(lv_scr_act(), NULL);
+    // label = lv_label_create(btn1, NULL);
+    // lv_label_set_text(label, "Button");
+
+    lv_obj_set_x(btn1, 30);
+    lv_obj_set_y(btn1, 10);
+    lv_obj_set_size(btn1, 200, 50);
+    lv_slider_set_value(btn1, 70, LV_ANIM_ON);
+
+    label = lv_label_create(btn1, NULL);
+    lv_label_set_text(label, "Button");
 
     while(1) {
         // for(int i = 0; i < 100000; i++);

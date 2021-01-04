@@ -115,7 +115,7 @@ _start:
 	;       90000h ┣━━━━━━━━━━━━━━━━━━┫
 	;              ┃■■■■■■■KERNEL.BIN■■■■■■┃
 	;       80000h ┣━━━━━━━━━━━━━━━━━━┫
-	;              ┃■■■■■■■■KERNEL■■■■■■■┃ 30400h ← KERNEL 入口 (KernelEntryPointPhyAddr)
+	;              ┃■■■■■■■■KERNEL■■■■■■■┃ 20400h ← KERNEL 入口 (KernelEntryPointPhyAddr)
 	;       30000h ┣━━━━━━━━━━━━━━━━━━┫
 	;              ┋                 ...                ┋
 	;              ┋                                    ┋

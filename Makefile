@@ -57,10 +57,10 @@ CFLAGS_app	= -I include/ -I ./kernel/ -m32 -c -fno-builtin -fno-stack-protector 
 # LDFLAGS		= -s -Ttext $(ENTRYPOINT)
 # LDFLAGS		= -m elf_i386 -s -Ttext $(ENTRYPOINT)
 #generate map file. added by xw
-LDFLAGS_kernel	= -melf_i386 -s -Ttext $(ENTRYPOINT) -Map misc/kernel.map
+LDFLAGS_kernel	= -melf_i386 -s -Ttext $(ENTRYPOINT) --section-start=.bss=0xc0100000  -Map misc/kernel.map
 LDFLAGS_init	= -melf_i386 -s -Map init/init.map
 #discard -s, so keep symbol information that gdb can use. added by xw
-LDFLAGS_kernel_gdb	= -m elf_i386 -Ttext $(ENTRYPOINT)
+LDFLAGS_kernel_gdb	= -m elf_i386 -Ttext $(ENTRYPOINT) --section-start=.bss=0xc0100000
 LDFLAGS_init_gdb	= -m elf_i386
 
 
