@@ -13,7 +13,7 @@
 #include "global.h"
 #include "proto.h"
 
-
+#include <gui/gui.h>
 /*======================================================================*
                             cstart
  *======================================================================*/
@@ -30,7 +30,7 @@ PUBLIC void cstart()
 	// gdt_ptr[6] 共 6 个字节：0~15:Limit  16~47:Base。用作 sgdt 以及 lgdt 的参数。
 	u16* p_gdt_limit = (u16*)(&gdt_ptr[0]);
 	u32* p_gdt_base  = (u32*)(&gdt_ptr[2]);
-	*p_gdt_limit = GDT_SIZE * sizeof(DESCRIPTOR) - 1;
+	*p_gdt_limit = GDT_SIZE * sizeof(DESCRIPTOR) - 	1;
 	*p_gdt_base  = (u32)&gdt;
 
 	// idt_ptr[6] 共 6 个字节：0~15:Limit  16~47:Base。用作 sidt 以及 lidt 的参数。

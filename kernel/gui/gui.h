@@ -9,8 +9,9 @@
 #define SCRNX LV_HOR_RES_MAX
 #define SCRNY LV_VER_RES_MAX
 
-                      
+#define __DATA__ __attribute__((section(".data")))
 
+                      
 void InitScreen();
 
 void PlotPixel(int x, int y, uint8_t r, uint8_t g, uint8_t b);

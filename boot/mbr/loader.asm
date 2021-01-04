@@ -55,7 +55,6 @@ LABEL_START:			; <--- 从这里开始 *************
 	;mov		dh, 1
 	;call 	DispStrRealMode
 	;jmp 	$
-
 	cld
 	mov		ax, cs
 	mov		ds, ax
@@ -241,18 +240,18 @@ _FOUND_KERNEL: ;modified by mingxuan 2020-9-16
 
 _NEXT_DATA_CLUSTER:
 	 ; 根据簇号计算扇区号
-	; xchg bx, bx
-; 	push ax
-; 	mov al, byte [read_cluster_times]
-; 	cmp al, 0feh
-; 	jb .skip
-; 	xchg bx,bx
-; .skip : 
-; 	inc byte [read_cluster_times]
-; 	mov byte [Col],0
-; 	mov byte [Row], 0
-; 	call MyDispAL
-; 	pop ax
+	xchg bx, bx
+	push ax
+	mov al, byte [read_cluster_times]
+	cmp al, 0feh
+	jb .skip
+	xchg bx,bx
+.skip : 
+	inc byte [read_cluster_times]
+	mov byte [Col],0
+	mov byte [Row], 0
+	call MyDispAL
+	pop ax
 	
 
 
@@ -780,7 +779,7 @@ LABEL_PM_START:
 	;       80000h ┃■■■■■■■KERNEL.BIN■■■■■■■■■■■■■■■■■■■┃
 	;              ┣━━━━━━━━━━━━━━━━━━┫
 	;              ┃■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■┃
-	;       30000h ┃■■■■■■■■KERNEL■■■■■■■■■■■■■■■■■■■■■■┃ 30400h ← KERNEL 入口 (KernelEntryPointPhyAddr)
+	;       30000h ┃■■■■■■■■KERNEL■■■■■■■■■■■■■■■■■■■■■■┃ 20400h ← KERNEL 入口 (KernelEntryPointPhyAddr)
 	;              ┣━━━━━━━━━━━━━━━━━━┫
 	;              ┃                                    ┃
 	;        7E00h ┃              F  R  E  E            ┃

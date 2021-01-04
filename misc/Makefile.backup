@@ -5,7 +5,7 @@
 # Entry point of Orange'S
 # It must have the same value with 'KernelEntryPointPhyAddr' in load.inc!
 #############edit by visual 2016.5.10####
-ENTRYPOINT	= 0xC0030400
+ENTRYPOINT	= 0xC0020400
 
 
 # Offset of entry point in kernel file

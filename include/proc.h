@@ -39,7 +39,7 @@
 
 /*总PCB表数和taskPCB表数*/	
 //modified by xw, 18/8/27
-//the memory space we put kernel is 0x30400~0x6ffff, so we should limit kernel size
+//the memory space we put kernel is 0x20400~0x6ffff, so we should limit kernel size
 // #define NR_PCBS	32		//add by visual 2016.4.5
 // #define NR_K_PCBS 10		//add by visual 2016.4.5
 #define NR_PCBS		12
