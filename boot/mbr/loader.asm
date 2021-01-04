@@ -22,6 +22,7 @@ LABEL_GDT:				Descriptor             0,                    0, 0						; 空描述
 LABEL_DESC_FLAT_C:		Descriptor             0,              0fffffh, DA_CR  | DA_32 | DA_LIMIT_4K			; 0 ~ 4G
 LABEL_DESC_FLAT_RW:		Descriptor             0,              0fffffh, DA_DRW | DA_32 | DA_LIMIT_4K			; 0 ~ 4G
 LABEL_DESC_VIDEO:		Descriptor		 0B8000h,               0ffffh, DA_DRW | DA_DPL3	; 显存首地址
+LABEL_DESC_GRAPH: 		Descriptor       0xfd000000, 		   0fffffh, DA_DRW | DA_DPL3    ; graph mode 
 ; GDT ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 GdtLen		equ	$ - LABEL_GDT
@@ -32,6 +33,7 @@ GdtPtr		dw	GdtLen - 1							; 段界限
 SelectorFlatC		equ	LABEL_DESC_FLAT_C	- LABEL_GDT
 SelectorFlatRW		equ	LABEL_DESC_FLAT_RW	- LABEL_GDT
 SelectorVideo		equ	LABEL_DESC_VIDEO	- LABEL_GDT + SA_RPL3
+SelectorGraph   	equ LABEL_DESC_GRAPH - LABEL_GDT + SA_RPL3
 ; GDT 选择子 ----------------------------------------------------------------------------------
 
 FAT_START_SECTOR 	DD 	0 ;FAT表的起始扇区号 ;added by mingxuan 2020-9-17
@@ -665,17 +667,41 @@ MyDispNum:
     ret
 
 InitVGA : 
+	mov ax, 0x4f01
+	mov cx, 0x4112
+	mov di, ModeInfo
+	int 10h
+
 	mov ax, 0x4F02
-	mov bx, 0x4111
+	mov bx, 0x4112
     ; mov ah, 0
     ; mov al, 13h
     int 10h
-    mov byte [VMODE], 8
-    mov word [SCRNX], 320
-    mov word [SCRNY], 200
-    mov word [VRAM], 0a0000h
-    ret 
+	ret
 
+; 	mov dx, 1
+; 	mov bx, 0
+
+; .t0 : 
+; 	mov edi, 0xfcf70000
+; 	mov ax, 640
+; .t1 :
+; 	mov cx, 480
+; .t2 : 
+; 	mov byte [edi], dl
+; 	add edi, 1
+; 	inc dl
+; 	mov byte [edi], bl
+; 	inc edi
+; 	mov byte [edi], dh
+; 	inc edi
+; 	dec dh
+; 	loop .t2
+; 	dec bx
+; 	dec ax
+; 	jne .t1
+
+; 	jmp $
 ; 从此以后的代码在保护模式下执行 ----------------------------------------------------
 ; 32 位代码段. 由实模式跳入 ---------------------------------------------------------
 [SECTION .s32]
@@ -698,11 +724,13 @@ LABEL_PM_START:
 	call	DispStr
 	add		esp, 4
 
+
 	call	DispMemInfo
 	call	getFreeMemInfo			;add by liang 2016.04.13
 	call	DispEchoSize			;add by liang 2016.04.21
 	call	SetupPaging
 
+	call	GraphTest
 	; added by mingxuan 2020-9-16
 	; for test
 	mov	ah, 0Fh				; 0000: 黑底    1111: 白字
@@ -788,6 +816,34 @@ LABEL_PM_START:
 ; ------------------------------------------------------------------------
 ; 显示 AL 中的数字
 ; ------------------------------------------------------------------------
+GraphTest:
+	push eax 
+	push ecx 
+	push edi
+	mov ax, SelectorGraph
+	mov fs, ax,
+
+	mov edi, 0
+
+	mov eax, 640
+.t1 :
+	mov cx, 480
+.t2 : 
+	mov byte [fs:edi], 0xff
+	add edi, 1
+	mov byte [fs:edi], 0xff
+	inc edi
+	mov byte [fs:edi], 0xff
+	inc edi
+	loop .t2
+	dec eax
+	jne .t1
+	
+	pop edi 
+	pop ecx
+	pop eax 
+	ret 
+
 DispAL:
 	push	ecx
 	push	edx
@@ -1141,6 +1197,17 @@ SetupPaging:
 	stosd
 	add	eax, 4096		; 为了简化, 所有页表在内存中是连续的.
 	loop	.1k
+
+; /*  Initial Graph page mapping  */
+	mov eax, 4048   ; 1012 * 4,  1012 = 0xfd000000 / 0x400000
+	add eax, PageDirBase 
+	mov edi, eax 
+
+	mov eax, 1012
+	mov ebx, 4096
+	mul ebx 
+	add  eax, PageTblBase | PG_P  | PG_USU | PG_RWW
+	stosd
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
 
 	; 再初始化所有页表（最开始处，一一映射的）
@@ -1176,6 +1243,23 @@ SetupPaging:
 	stosd
 	add	eax, 4096		; 每一页指向 4K 的空间
 	loop	.2k
+
+; /* Initial Graph page table */
+	mov eax, 1012
+	mov ebx, 1024
+	mul ebx 
+	mov ebx, 4
+	mul ebx 
+	add eax, PageTblBase
+	mov edi, eax 
+	mov eax, 0xfd000000
+	add eax, PG_P | PG_USU | PG_RWW
+	mov ecx, 1024
+.graph_table :
+	stosd 
+	add eax, 4096
+	loop .graph_table
+ 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
 	;mov	ah, 0Fh				; 0000: 黑底    1111: 白字
@@ -1241,6 +1325,7 @@ VMODE db 0
 SCRNX dw 0
 SCRNY dw 0
 VRAM  dd 0
+ModeInfo db 256 dup(0)
 read_cluster_times db 0
 _szMemChkTitle:			db	"BaseAddrL BaseAddrH LengthLow LengthHigh   Type", 0Ah, 0
 _szRAMSize:			db	"RAM size:", 0

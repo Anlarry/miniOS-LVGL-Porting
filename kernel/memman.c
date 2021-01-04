@@ -1,8 +1,8 @@
 #include "memman.h"
 
 u32 MemInfo[256] = {0};			//存放FMIBuff后1k内容
-struct MEMMAN s_memman;
-struct MEMMAN *memman = &s_memman;//(struct MEMMAN *) MEMMAN_ADDR;
+struct MEMMAN s_memman __attribute__((section(".data")));
+struct MEMMAN *memman __attribute__((section(".data"))) = &s_memman;//(struct MEMMAN *) MEMMAN_ADDR;
 
 
 void memman_init(struct MEMMAN *man);

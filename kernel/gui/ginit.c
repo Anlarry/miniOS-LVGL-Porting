@@ -10,7 +10,7 @@ static void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color
         for(x = area->x1; x <= area->x2; x++) {
             // set_pixel(x, y, *color_p);  /* Put a pixel to the display.*/
             // PlotPixel(x, y, 
-            //     (color_p->ch.red << 5) + (color_p->ch.green << 2) + (color_p->ch.blue)
+            //     color_p->ch.red, color_p->ch.green, color_p->ch.blue
             // );
             color_p++;
         }
@@ -21,17 +21,23 @@ static void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color
 
 void InitScreen() {
     // for(int i = )
-    for(int i = VRAM_START; i < VRAM_END; i++) {
-        PlotAddr(i, 15);
-    }
-    for(int x = 0; x < 100; x++) {
-        for(int y = 0; y < 50; y++) {
-            PlotPixel(x, y, 21);
-        }
-    }
-    for(int x = 50; x < 150; x++) {
-        for(int y = 25; y < 75; y++) {
-            PlotPixel(x, y, 105);
+    // for(int i = VRAM_START; i < VRAM_END; i++) {
+    //     PlotAddr(i, 15);
+    // }
+    // for(int x = 0; x < 100; x++) {
+    //     for(int y = 0; y < 50; y++) {
+    //         PlotPixel(x, y, 21);
+    //     }
+    // }
+    // for(int x = 50; x < 150; x++) {
+    //     for(int y = 25; y < 75; y++) {
+    //         PlotPixel(x, y, 105);
+    //     }
+    // }
+
+    for(int i = 0; i < SCRNX; i++) {
+        for(int j = 0; j < SCRNY; j++) {
+            PlotPixel(i, j, 0xff, 0xff, 0);
         }
     }
 
@@ -47,7 +53,7 @@ void InitScreen() {
     disp_drv.buffer = &disp_buf;          /*Assign the buffer to the display*/
     lv_disp_drv_register(&disp_drv);      /*Finally register the driver*/
 
-
+    
 
     while(1) {
         // for(int i = 0; i < 100000; i++);

@@ -17,7 +17,7 @@ str2                0x4               init/init.o
  .debug_aranges
                 0x0000000000000000       0x20 init/init.o
  .debug_line    0x0000000000000000       0xc8 init/init.o
- .debug_str     0x0000000000000000      0x16e init/init.o
+ .debug_str     0x0000000000000000      0x163 init/init.o
  .note.GNU-stack
                 0x0000000000000000        0x0 init/init.o
  .debug_aranges

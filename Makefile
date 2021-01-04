@@ -51,8 +51,8 @@ ARFLAGS		= rcs
 # CFLAGS		= -I include/ -c -fno-builtin -fno-stack-protector
 # CFLAGS		= -I include/ -m32 -c -fno-builtin -fno-stack-protector
 #modified by xw
-CFLAGS		= -std=gnu99 -I include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
-CFLAGS_app	= -std=gnu99 -I include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
+CFLAGS		= -I include/ -I ./kernel/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
+CFLAGS_app	= -I include/ -I ./kernel/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
 
 # LDFLAGS		= -s -Ttext $(ENTRYPOINT)
 # LDFLAGS		= -m elf_i386 -s -Ttext $(ENTRYPOINT)
@@ -473,5 +473,5 @@ bochsgdb :
 $(LIB_GUI) :
 	cd ./kernel/gui && make 
 
-$(LIB_LVGL) :
+$(LIB_LVGL) : include/gui/lv_conf.h
 	cd include/gui/lvgl && make

@@ -1,4 +1,4 @@
-CFLAGS		= -I ../../include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
+CFLAGS		= -I ../../kernel/ -I ../../include -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
 LIB := libgui.a
 
 SRC := $(wildcard *.c)
