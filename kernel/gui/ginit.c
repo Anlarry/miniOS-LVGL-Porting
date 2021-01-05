@@ -69,6 +69,9 @@ void InitScreen() {
     label = lv_label_create(btn1, NULL);
     lv_label_set_text(label, "Button");
 
+    lv_obj_t * win = lv_win_create(lv_scr_act(), NULL);
+    lv_win_set_title(win, "Window title");
+
     while(1) {
         // for(int i = 0; i < 100000; i++);
         // for(int i = 0; i < 5; i++)
