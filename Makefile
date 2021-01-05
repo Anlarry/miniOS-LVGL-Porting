@@ -5,7 +5,7 @@
 # Entry point of Orange'S
 # It must have the same value with 'KernelEntryPointPhyAddr' in load.inc!
 #############edit by visual 2016.5.10####
-ENTRYPOINT	= 0xC0020400
+ENTRYPOINT	= 0xC0100400
 
 # Offset of entry point in kernel file
 # It depends on ENTRYPOINT
@@ -57,15 +57,15 @@ CFLAGS_app	= -I include/ -I ./kernel/ -m32 -c -fno-builtin -fno-stack-protector 
 # LDFLAGS		= -s -Ttext $(ENTRYPOINT)
 # LDFLAGS		= -m elf_i386 -s -Ttext $(ENTRYPOINT)
 #generate map file. added by xw
-LDFLAGS_kernel	= -melf_i386 -s -Ttext $(ENTRYPOINT) --section-start=.bss=0xc0100000  -Map misc/kernel.map
+LDFLAGS_kernel	= -melf_i386 -s -Ttext $(ENTRYPOINT)  -Map misc/kernel.map
 LDFLAGS_init	= -melf_i386 -s -Map init/init.map
 #discard -s, so keep symbol information that gdb can use. added by xw
-LDFLAGS_kernel_gdb	= -m elf_i386 -Ttext $(ENTRYPOINT) --section-start=.bss=0xc0100000
+LDFLAGS_kernel_gdb	= -m elf_i386 -Ttext $(ENTRYPOINT)
 LDFLAGS_init_gdb	= -m elf_i386
 
 
 LIB_GUI := ./kernel/gui/libgui.a
-LIB_LVGL := include/gui/lvgl/liblvgl.a
+#LIB_LVGL := include/gui/lvgl/liblvgl.a
 
 # This Program
 # ORANGESBOOT	= boot/boot.bin boot/loader.bin	#deleted by mingxuan 2019-5-17
@@ -81,8 +81,9 @@ OBJS		= kernel/kernel.o kernel/syscall.o kernel/start.o kernel/main.o kernel/clo
 			kernel/ktest.o kernel/testfunc.o kernel/fs.o kernel/hd.o \
 			kernel/spinlock.o kernel/fat32.o kernel/base.o kernel/assist.o kernel/vfs.o \
 			kernel/keyboard.o kernel/tty.o kernel/shell.o kernel/console.o lib/ulib.a \
-			$(LIB_GUI) $(LIB_LVGL)
+			$(LIB_GUI)
 			#added by mingxuan 2019-5-19
+
 
 OBJSINIT	= init/init.o init/initstart.o lib/ulib.a
 #OBJSULIB 	= lib/string.o kernel/syscall.o	#deleted by mingxuan 2019-5-19
@@ -103,7 +104,8 @@ nop :
 	@echo "why not \`make image' huh? :)"
 
 # everything : $(ORANGESBOOT) $(ORANGESKERNEL) $(ORANGESINIT) $(GDBBIN)
-everything : $(ORANGESBOOT) $(ORANGESKERNEL) $(ORANGESINIT) $(GDBBIN) $(MKFS) # modified by mingxuan 2020-10-22
+everything : $(ORANGESBOOT) $(ORANGESKERNEL) $(ORANGESINIT) $(GDBBIN) $(MKFS)
+			 cd user && make # modified by mingxuan 2020-10-22
 
 all : realclean everything
 
@@ -141,7 +143,7 @@ install_user:
 
 clean :
 # 	rm -f $(OBJS) $(OBJSINIT) #modified by mingxuan 2019-5-23
-	rm -f $(OBJS) $(OBJSINIT) $(OBJSULIB) 
+	rm -f $(OBJS) $(OBJSINIT) $(OBJSULIB)
 
 realclean :
 #	rm -f $(OBJS) $(OBJSINIT) $(ORANGESBOOT) $(ORANGESKERNEL) $(ORANGESINIT) $(GDBBIN)
@@ -162,21 +164,21 @@ buildimg :
 #	sudo cp -fv command/echo.bin /mnt/floppy
 	sudo umount /mnt/floppy
 
-# added by mingxuan 2019-5-17
+# added by mingxuan 2019-5-17`
 buildimg_grub:
 	dd if=boot/grub/boot.bin of=c.img bs=1 count=512 seek=1048576 conv=notrunc
 	dd if=boot/grub/boot.bin of=c.img bs=1 count=512 seek=1051648 conv=notrunc
 	#sudo kpartx -av c.img
 	#sudo mount -o loop /dev/mapper/loop0p1 iso/
-	sudo losetup -P /dev/loop0 c.img
-	sudo mount /dev/loop0p1 iso/
+	sudo losetup -P /dev/loop99 c.img
+	sudo mount /dev/loop99p1 iso/
 	sudo cp -fv boot/grub/grub.cfg iso/grub
 	sudo cp -fv boot/grub/loader.bin iso/
 	sudo cp -fv kernel.bin iso/
 	sudo cp -fv init/init.bin iso/
 	sudo umount iso/
 	#sudo kpartx -d c.img
-	sudo losetup -d /dev/loop0
+	sudo losetup -d /dev/loop99
 
 # added by mingxuan 2019-5-17
 buildimg_mbr:
@@ -187,18 +189,18 @@ buildimg_mbr:
 	
 	# dd if=boot/mbr/boot.bin of=b.img bs=1 count=512 seek=1048576 conv=notrunc	# deleted by mingxuan 2020-10-5
 	# dd if=boot/mbr/boot.bin of=b.img bs=1 count=512 seek=1051648 conv=notrunc # deleted by mingxuan 2020-10-5
-	sudo losetup -P /dev/loop0 b.img
+	sudo losetup -P /dev/loop99 b.img
 
 	# sudo kpartx -av b.img	# deleted by mingxuan 2020-10-5
 
 	# sudo mkfs.vfat -F 32 /dev/mapper/loop0p1
-	sudo mkfs.vfat -F 32 /dev/loop0p1	# added by mingxuan 2020-10-5
+	sudo mkfs.vfat -F 32 /dev/loop99p1	# added by mingxuan 2020-10-5
 
 	dd if=boot/mbr/boot.bin of=b.img bs=1 count=420 seek=$(OSBOOT_START_OFFSET) conv=notrunc # FAT322规范规定第90~512个字节(共423个字节)是引导程序 # added by mingxuan 2020-10-5
 
 	# sudo mount -o loop /dev/mapper/loop0p1 iso/ # deleted by mingxuan 2020-10-5
 	# sudo losetup -P /dev/loop0 b.img
-	sudo mount /dev/loop0p1 iso/
+	sudo mount /dev/loop99p1 iso/
 
 	# sudo cp -fv boot/mbr/grub/grub.cfg iso/grub # deleted by mingxuan 2020-10-5
 	sudo cp -fv boot/mbr/loader.bin iso/
@@ -207,7 +209,7 @@ buildimg_mbr:
 	
 	sudo umount iso/
 	# sudo kpartx -d b.img # deleted by mingxuan 2020-10-5
-	sudo losetup -d /dev/loop0	# added by mingxuan 2020-10-5
+	sudo losetup -d /dev/loop99	# added by mingxuan 2020-10-5
 
 # added by mingxuan 2020-10-22
 build_fs:
@@ -473,5 +475,5 @@ bochsgdb :
 $(LIB_GUI) :
 	cd ./kernel/gui && make 
 
-$(LIB_LVGL) : include/gui/lv_conf.h
-	cd include/gui/lvgl && make
+#$(LIB_LVGL) : include/gui/lv_conf.h
+#	cd include/gui/lvgl && make

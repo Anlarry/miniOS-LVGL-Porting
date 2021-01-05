@@ -38,6 +38,8 @@ _NR_opendir 		equ 25 ;    //added by mingxuan 2019-5-17
 _NR_createdir  		equ 26 ;    //added by mingxuan 2019-5-17
 _NR_deletedir   	equ 27 ;    //added by mingxuan 2019-5-17
 
+_NR_flush           equ 28 ;
+
 INT_VECTOR_SYS_CALL equ 0x90
 
 ; 导出符号
@@ -71,6 +73,7 @@ global	delete		;		//added by mingxuan 2019-5-17
 global  opendir		;		//added by mingxuan 2019-5-17
 global	createdir	;		//added by mingxuan 2019-5-17
 global  deletedir	;		//added by mingxuan 2019-5-17
+global  flush;           // added by wangsssssss 2021-1-1
 
 bits 32
 [section .text]
@@ -344,3 +347,14 @@ deletedir:
 	int INT_VECTOR_SYS_CALL
 	add esp, 4
 	ret
+
+flush:
+    push ebx
+    push 5 ; x,y,x,y,color_addr
+    mov ebx, esp
+    add ebx, 4
+    mov eax, _NR_flush
+    int INT_VECTOR_SYS_CALL
+    add esp, 4
+    pop ebx
+    ret

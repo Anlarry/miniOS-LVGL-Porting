@@ -1,3 +1,0 @@
-/run/media/wind/Software/book/CS/OperatingSys/lab/exp8-2020/miniOS-v1.3.2/include/gui/lvgl/CMakeFiles/rebuild_cache.dir
-/run/media/wind/Software/book/CS/OperatingSys/lab/exp8-2020/miniOS-v1.3.2/include/gui/lvgl/CMakeFiles/edit_cache.dir
-/run/media/wind/Software/book/CS/OperatingSys/lab/exp8-2020/miniOS-v1.3.2/include/gui/lvgl/CMakeFiles/lvgl.dir

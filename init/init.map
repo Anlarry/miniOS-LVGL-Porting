@@ -17,36 +17,15 @@ str2                0x4               init/init.o
  .debug_aranges
                 0x0000000000000000       0x20 init/init.o
  .debug_line    0x0000000000000000       0xc8 init/init.o
- .debug_str     0x0000000000000000      0x163 init/init.o
+ .debug_str     0x0000000000000000      0x13c init/init.o
  .note.GNU-stack
                 0x0000000000000000        0x0 init/init.o
- .debug_aranges
-                0x0000000000000000       0x20 init/initstart.o
- .debug_pubnames
-                0x0000000000000000        0x0 init/initstart.o
- .debug_info    0x0000000000000000       0x44 init/initstart.o
- .debug_abbrev  0x0000000000000000       0x1b init/initstart.o
- .debug_line    0x0000000000000000       0x45 init/initstart.o
- .debug_frame   0x0000000000000000        0x0 init/initstart.o
- .debug_loc     0x0000000000000000        0x0 init/initstart.o
- .debug_aranges
-                0x0000000000000000       0x20 lib/ulib.a(string.o)
- .debug_pubnames
-                0x0000000000000000        0x0 lib/ulib.a(string.o)
- .debug_info    0x0000000000000000       0x40 lib/ulib.a(string.o)
- .debug_abbrev  0x0000000000000000       0x1b lib/ulib.a(string.o)
- .debug_line    0x0000000000000000       0x80 lib/ulib.a(string.o)
- .debug_frame   0x0000000000000000        0x0 lib/ulib.a(string.o)
- .debug_loc     0x0000000000000000        0x0 lib/ulib.a(string.o)
- .debug_aranges
-                0x0000000000000000       0x20 lib/ulib.a(syscall.o)
- .debug_pubnames
-                0x0000000000000000        0x0 lib/ulib.a(syscall.o)
- .debug_info    0x0000000000000000       0x44 lib/ulib.a(syscall.o)
- .debug_abbrev  0x0000000000000000       0x1b lib/ulib.a(syscall.o)
- .debug_line    0x0000000000000000       0xd2 lib/ulib.a(syscall.o)
- .debug_frame   0x0000000000000000        0x0 lib/ulib.a(syscall.o)
- .debug_loc     0x0000000000000000        0x0 lib/ulib.a(syscall.o)
+ .stab          0x0000000000000000       0x54 init/initstart.o
+ .stabstr       0x0000000000000000       0x14 init/initstart.o
+ .stab          0x0000000000000000      0x348 lib/ulib.a(string.o)
+ .stabstr       0x0000000000000000       0x10 lib/ulib.a(string.o)
+ .stab          0x0000000000000000      0x720 lib/ulib.a(syscall.o)
+ .stabstr       0x0000000000000000       0x14 lib/ulib.a(syscall.o)
 
 内存配置
 
@@ -59,7 +38,7 @@ LOAD init/init.o
 LOAD init/initstart.o
 LOAD lib/ulib.a
                 [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x8048000))
-                0x00000000080480d4                . = (SEGMENT_START ("text-segment", 0x8048000) + SIZEOF_HEADERS)
+                0x0000000008048094                . = (SEGMENT_START ("text-segment", 0x8048000) + SIZEOF_HEADERS)
 
 .interp
  *(.interp)
@@ -88,10 +67,10 @@ LOAD lib/ulib.a
 .gnu.version_r
  *(.gnu.version_r)
 
-.rel.dyn        0x00000000080480d4        0x0
+.rel.dyn        0x0000000008048094        0x0
  *(.rel.init)
  *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
- .rel.text      0x00000000080480d4        0x0 init/init.o
+ .rel.text      0x0000000008048094        0x0 init/init.o
  *(.rel.fini)
  *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
  *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
@@ -101,25 +80,24 @@ LOAD lib/ulib.a
  *(.rel.ctors)
  *(.rel.dtors)
  *(.rel.got)
- .rel.got       0x00000000080480d4        0x0 init/init.o
+ .rel.got       0x0000000008048094        0x0 init/init.o
  *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
  *(.rel.ifunc)
 
-.rel.plt        0x00000000080480d4        0x0
+.rel.plt        0x0000000008048094        0x0
  *(.rel.plt)
                 [!provide]                        PROVIDE (__rel_iplt_start = .)
  *(.rel.iplt)
- .rel.iplt      0x00000000080480d4        0x0 init/init.o
+ .rel.iplt      0x0000000008048094        0x0 init/init.o
                 [!provide]                        PROVIDE (__rel_iplt_end = .)
-                0x0000000008049000                . = ALIGN (CONSTANT (MAXPAGESIZE))
 
 .init
  *(SORT_NONE(.init))
 
-.plt            0x0000000008049000        0x0
+.plt            0x0000000008048098        0x0
  *(.plt)
  *(.iplt)
- .iplt          0x0000000008049000        0x0 init/init.o
+ .iplt          0x0000000008048098        0x0 init/init.o
 
 .plt.got
  *(.plt.got)
@@ -127,60 +105,60 @@ LOAD lib/ulib.a
 .plt.sec
  *(.plt.sec)
 
-.text           0x0000000008049000      0x6a0
+.text           0x00000000080480a0      0x6b4
  *(.text.unlikely .text.*_unlikely .text.unlikely.*)
  *(.text.exit .text.exit.*)
  *(.text.startup .text.startup.*)
  *(.text.hot .text.hot.*)
- *(SORT_BY_NAME(.text.sorted.*))
  *(.text .stub .text.* .gnu.linkonce.t.*)
- .text          0x0000000008049000      0x493 init/init.o
-                0x0000000008049000                pthread_test3
-                0x00000000080490c5                pthread_test2
-                0x000000000804919c                pthread_test1
-                0x0000000008049218                main
+ .text          0x00000000080480a0      0x493 init/init.o
+                0x00000000080480a0                pthread_test3
+                0x0000000008048165                pthread_test2
+                0x000000000804823c                pthread_test1
+                0x00000000080482b8                main
  .text.__x86.get_pc_thunk.bx
-                0x0000000008049493        0x4 init/init.o
-                0x0000000008049493                __x86.get_pc_thunk.bx
- *fill*         0x0000000008049497        0x9 
- .text          0x00000000080494a0        0x8 init/initstart.o
-                0x00000000080494a0                _start
- *fill*         0x00000000080494a8        0x8 
- .text          0x00000000080494b0       0x78 lib/ulib.a(string.o)
-                0x00000000080494b0                memcpy
-                0x00000000080494d9                memset
-                0x00000000080494fa                strcpy
-                0x0000000008049512                strlen
- *fill*         0x0000000008049528        0x8 
- .text          0x0000000008049530      0x170 lib/ulib.a(syscall.o)
-                0x0000000008049530                get_ticks
-                0x0000000008049538                get_pid
-                0x0000000008049540                kmalloc
-                0x000000000804954c                kmalloc_4k
-                0x0000000008049558                malloc
-                0x0000000008049566                malloc_4k
-                0x0000000008049572                free
-                0x000000000804957e                free_4k
-                0x000000000804958a                fork
-                0x0000000008049592                pthread
-                0x00000000080495a0                udisp_int
-                0x00000000080495ac                udisp_str
-                0x00000000080495b8                exec
-                0x00000000080495c4                yield
-                0x00000000080495d0                sleep
-                0x00000000080495dc                print_E
-                0x00000000080495ea                print_F
-                0x00000000080495f6                open
-                0x000000000804960a                close
-                0x0000000008049619                read
-                0x0000000008049628                write
-                0x0000000008049637                lseek
-                0x0000000008049646                unlink
-                0x0000000008049655                create
-                0x0000000008049664                delete
-                0x0000000008049673                opendir
-                0x0000000008049682                createdir
-                0x0000000008049691                deletedir
+                0x0000000008048533        0x4 init/init.o
+                0x0000000008048533                __x86.get_pc_thunk.bx
+ *fill*         0x0000000008048537        0x9 
+ .text          0x0000000008048540        0x8 init/initstart.o
+                0x0000000008048540                _start
+ *fill*         0x0000000008048548        0x8 
+ .text          0x0000000008048550       0x78 lib/ulib.a(string.o)
+                0x0000000008048550                memcpy
+                0x0000000008048579                memset
+                0x000000000804859a                strcpy
+                0x00000000080485b2                strlen
+ *fill*         0x00000000080485c8        0x8 
+ .text          0x00000000080485d0      0x184 lib/ulib.a(syscall.o)
+                0x00000000080485d0                get_ticks
+                0x00000000080485d8                get_pid
+                0x00000000080485e0                kmalloc
+                0x00000000080485ec                kmalloc_4k
+                0x00000000080485f8                malloc
+                0x0000000008048606                malloc_4k
+                0x0000000008048612                free
+                0x000000000804861e                free_4k
+                0x000000000804862a                fork
+                0x0000000008048632                pthread
+                0x0000000008048640                udisp_int
+                0x000000000804864c                udisp_str
+                0x0000000008048658                exec
+                0x0000000008048664                yield
+                0x0000000008048670                sleep
+                0x000000000804867c                print_E
+                0x000000000804868a                print_F
+                0x0000000008048696                open
+                0x00000000080486aa                close
+                0x00000000080486b9                read
+                0x00000000080486c8                write
+                0x00000000080486d7                lseek
+                0x00000000080486e6                unlink
+                0x00000000080486f5                create
+                0x0000000008048704                delete
+                0x0000000008048713                opendir
+                0x0000000008048722                createdir
+                0x0000000008048731                deletedir
+                0x0000000008048740                flush
  *(.gnu.warning)
 
 .fini
@@ -188,12 +166,10 @@ LOAD lib/ulib.a
                 [!provide]                        PROVIDE (__etext = .)
                 [!provide]                        PROVIDE (_etext = .)
                 [!provide]                        PROVIDE (etext = .)
-                0x000000000804a000                . = ALIGN (CONSTANT (MAXPAGESIZE))
-                0x000000000804a000                . = SEGMENT_START ("rodata-segment", (ALIGN (CONSTANT (MAXPAGESIZE)) + (. & (CONSTANT (MAXPAGESIZE) - 0x1))))
 
-.rodata         0x000000000804a000       0x8f
+.rodata         0x0000000008048754       0x8f
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x000000000804a000       0x8f init/init.o
+ .rodata        0x0000000008048754       0x8f init/init.o
 
 .rodata1
  *(.rodata1)
@@ -202,9 +178,9 @@ LOAD lib/ulib.a
  *(.eh_frame_hdr)
  *(.eh_frame_entry .eh_frame_entry.*)
 
-.eh_frame       0x000000000804a090       0xa8
+.eh_frame       0x00000000080487e4       0xa8
  *(.eh_frame)
- .eh_frame      0x000000000804a090       0xa8 init/init.o
+ .eh_frame      0x00000000080487e4       0xa8 init/init.o
  *(.eh_frame.*)
 
 .gcc_except_table
@@ -214,8 +190,8 @@ LOAD lib/ulib.a
  *(.gnu_extab*)
 
 .exception_ranges
- *(.exception_ranges*)
-                0x000000000804c000                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+ *(.exception_ranges .exception_ranges*)
+                0x000000000804a000                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
 
 .eh_frame
  *(.eh_frame)
@@ -228,28 +204,27 @@ LOAD lib/ulib.a
  *(.gcc_except_table .gcc_except_table.*)
 
 .exception_ranges
- *(.exception_ranges*)
+ *(.exception_ranges .exception_ranges*)
 
-.tdata          0x000000000804c000        0x0
-                [!provide]                        PROVIDE (__tdata_start = .)
+.tdata
  *(.tdata .tdata.* .gnu.linkonce.td.*)
 
 .tbss
  *(.tbss .tbss.* .gnu.linkonce.tb.*)
  *(.tcommon)
 
-.preinit_array  0x000000000804c000        0x0
+.preinit_array  0x000000000804a000        0x0
                 [!provide]                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x000000000804c000        0x0
+.init_array     0x000000000804a000        0x0
                 [!provide]                        PROVIDE (__init_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
  *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
                 [!provide]                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x000000000804c000        0x0
+.fini_array     0x000000000804a000        0x0
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
  *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
@@ -279,46 +254,46 @@ LOAD lib/ulib.a
 .dynamic
  *(.dynamic)
 
-.got            0x000000000804c000        0x0
+.got            0x000000000804a000        0x0
  *(.got)
- .got           0x000000000804c000        0x0 init/init.o
+ .got           0x000000000804a000        0x0 init/init.o
  *(.igot)
-                0x000000000804cff4                . = DATA_SEGMENT_RELRO_END (., (SIZEOF (.got.plt) >= 0xc)?0xc:0x0)
+                0x000000000804aff4                . = DATA_SEGMENT_RELRO_END (., (SIZEOF (.got.plt) >= 0xc)?0xc:0x0)
 
-.got.plt        0x000000000804c000        0xc
+.got.plt        0x000000000804a000        0xc
  *(.got.plt)
- .got.plt       0x000000000804c000        0xc init/init.o
-                0x000000000804c000                _GLOBAL_OFFSET_TABLE_
+ .got.plt       0x000000000804a000        0xc init/init.o
+                0x000000000804a000                _GLOBAL_OFFSET_TABLE_
  *(.igot.plt)
- .igot.plt      0x000000000804c00c        0x0 init/init.o
+ .igot.plt      0x000000000804a00c        0x0 init/init.o
 
-.data           0x000000000804c00c        0x0
+.data           0x000000000804a00c        0x0
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x000000000804c00c        0x0 init/init.o
+ .data          0x000000000804a00c        0x0 init/init.o
 
 .data1
  *(.data1)
-                0x000000000804c00c                _edata = .
+                0x000000000804a00c                _edata = .
                 [!provide]                        PROVIDE (edata = .)
-                0x000000000804c00c                . = .
-                0x000000000804c00c                __bss_start = .
+                0x000000000804a00c                . = .
+                0x000000000804a00c                __bss_start = .
 
-.bss            0x000000000804c00c        0xc
+.bss            0x000000000804a00c        0xc
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x000000000804c00c        0x4 init/init.o
-                0x000000000804c00c                global
+ .bss           0x000000000804a00c        0x4 init/init.o
+                0x000000000804a00c                global
  *(COMMON)
- COMMON         0x000000000804c010        0x8 init/init.o
-                0x000000000804c010                str3
-                0x000000000804c014                str2
-                0x000000000804c018                . = ALIGN ((. != 0x0)?0x4:0x1)
-                0x000000000804c018                . = ALIGN (0x4)
-                0x000000000804c018                . = SEGMENT_START ("ldata-segment", .)
-                0x000000000804c018                . = ALIGN (0x4)
-                0x000000000804c018                _end = .
+ COMMON         0x000000000804a010        0x8 init/init.o
+                0x000000000804a010                str3
+                0x000000000804a014                str2
+                0x000000000804a018                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x000000000804a018                . = ALIGN (0x4)
+                0x000000000804a018                . = SEGMENT_START ("ldata-segment", .)
+                0x000000000804a018                . = ALIGN (0x4)
+                0x000000000804a018                _end = .
                 [!provide]                        PROVIDE (end = .)
-                0x000000000804c018                . = DATA_SEGMENT_END (.)
+                0x000000000804a018                . = DATA_SEGMENT_END (.)
 
 .stab
  *(.stab)
@@ -338,13 +313,10 @@ LOAD lib/ulib.a
 .stab.indexstr
  *(.stab.indexstr)
 
-.comment        0x0000000000000000       0x11
+.comment        0x0000000000000000       0x29
  *(.comment)
- .comment       0x0000000000000000       0x11 init/init.o
-                                         0x12 (松开之前的大小)
-
-.gnu.build.attributes
- *(.gnu.build.attributes .gnu.build.attributes.*)
+ .comment       0x0000000000000000       0x29 init/init.o
+                                         0x2a (松开之前的大小)
 
 .debug
  *(.debug)

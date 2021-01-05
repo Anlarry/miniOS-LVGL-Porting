@@ -107,11 +107,13 @@ PRIVATE u32 exec_elfcpy(u32 fd,Elf32_Phdr Echo_Phdr,u32 attribute)  // 这部分
 	u32 lin_limit = Echo_Phdr.p_vaddr + Echo_Phdr.p_memsz;
 	u32 file_offset = Echo_Phdr.p_offset;
 	u32 file_limit = Echo_Phdr.p_offset + Echo_Phdr.p_filesz;
-	u8 ch;
+	u8 ch[4097];
 	//u32 pde_addr_phy = get_pde_phy_addr(p_proc_current->task.pid); //页目录物理地址			//delete by visual 2016.5.19
 	//u32 addr_phy = do_malloc(Echo_Phdr.p_memsz);//申请物理内存					//delete by visual 2016.5.19
-	for(  ; lin_addr<lin_limit ; lin_addr++,file_offset++ )
-	{	
+	//disp_int(lin_limit);
+	while(lin_addr<lin_limit)
+	{
+	   // disp_str("*");
 		lin_mapping_phy(lin_addr,MAX_UNSIGNED_INT,p_proc_current->task.pid,PG_P  | PG_USU | PG_RWW/*说明*/,attribute);//说明：PDE属性尽量为读写，因为它要映射1024个物理页，可能既有数据，又有代码	//edit by visual 2016.5.19
 		if( file_offset<file_limit )
 		{//文件中还有数据，正常拷贝
@@ -125,15 +127,35 @@ PRIVATE u32 exec_elfcpy(u32 fd,Elf32_Phdr Echo_Phdr,u32 attribute)  // 这部分
 			
 			//fake_read(fd,&ch,1); //deleted by mingxuan 2019-5-22
 			//real_read(fd, &ch, 1); //modified by mingxuan 2019-5-22
-			do_vread(fd, &ch, 1);	//modified by mingxuan 2019-5-24
+			if(file_limit - file_offset < 4096)
+            {
+                do_vread(fd, ch, (file_limit-file_offset));
+
+                memcpy((void*)lin_addr, ch, (file_limit-file_offset));
+
+                lin_addr+= (file_limit - file_offset);
+                file_offset+= (file_limit - file_offset);
+            }
+			else
+            {
+                do_vread(fd, ch, 4096);
+                memcpy((void*)lin_addr, ch, 4096);
+                lin_addr+=4096;
+                file_offset+=4096;
+            }
 			//~xw
 			
-			*((u8*)lin_addr) = ch;//memcpy((void*)lin_addr,&ch,1);
+			//*((u8*)lin_addr) = ch[0];//memcpy((void*)lin_addr,&ch,1);
+
+//            lin_addr++;
+//            file_offset++;
 		}
 		else
 		{
 			//已初始化数据段拷贝完毕，剩下的是未初始化的数据段，在内存中填0
 			*((u8*)lin_addr) = 0;//memset((void*)lin_addr,0,1);
+			lin_addr++;
+			file_offset++;
 		}
 	}
 	return 0;

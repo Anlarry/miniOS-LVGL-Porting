@@ -6,6 +6,7 @@ BIN := $(patsubst %.c, %.o,$(SRC))
 
 all : $(BIN)
 	ar rcs $(LIB) $(BIN)
+	#rm -f ./*.o ./*.a ./*.bin
 
 %.o : %.c
 	$(CC) $(CFLAGS) -o $@ $<

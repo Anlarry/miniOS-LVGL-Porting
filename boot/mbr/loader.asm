@@ -534,7 +534,7 @@ EXE_RUN_LOADER:
 
 ;;add end add by liang 2016.04.20	
 ; 下面准备跳入保护模式 -------------------------------------------
-	call InitVGA
+	;call InitVGA
 	;for test
 	;added by mingxuan 2020-9-11
 	;mov		dh, 1
@@ -557,7 +557,6 @@ EXE_RUN_LOADER:
 	mov	eax, cr0
 	or	eax, 1
 	mov	cr0, eax
-
 ; 真正进入保护模式
 	jmp	dword SelectorFlatC:(BaseOfLoaderPhyAddr+LABEL_PM_START)
 
@@ -666,10 +665,10 @@ MyDispNum:
     ret
 
 InitVGA : 
-	mov ax, 0x4f01
-	mov cx, 0x4112
-	mov di, ModeInfo
-	int 10h
+	;mov ax, 0x4f01
+	;mov cx, 0x4112
+	;mov di, ModeInfo
+	;int 10h
 
 	mov ax, 0x4F02
 	mov bx, 0x4112
@@ -723,13 +722,12 @@ LABEL_PM_START:
 	call	DispStr
 	add		esp, 4
 
-
 	call	DispMemInfo
 	call	getFreeMemInfo			;add by liang 2016.04.13
 	call	DispEchoSize			;add by liang 2016.04.21
 	call	SetupPaging
 
-	call	GraphTest
+	;call	GraphTest
 	; added by mingxuan 2020-9-16
 	; for test
 	mov	ah, 0Fh				; 0000: 黑底    1111: 白字
@@ -776,10 +774,10 @@ LABEL_PM_START:
 	;       90000h ┃■■■■■■■LOADER.BIN■■■■■■■■■■■■■■■■■■■┃ somewhere in LOADER ← esp
 	;              ┣━━━━━━━━━━━━━━━━━━┫
 	;              ┃■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■┃
-	;       80000h ┃■■■■■■■KERNEL.BIN■■■■■■■■■■■■■■■■■■■┃
+	;       20000h ┃■■■■■■■KERNEL.BIN■■■■■■■■■■■■■■■■■■■┃
 	;              ┣━━━━━━━━━━━━━━━━━━┫
 	;              ┃■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■┃
-	;       30000h ┃■■■■■■■■KERNEL■■■■■■■■■■■■■■■■■■■■■■┃ 20400h ← KERNEL 入口 (KernelEntryPointPhyAddr)
+	;       20000h ┃■■■■■■■■KERNEL■■■■■■■■■■■■■■■■■■■■■■┃ 20400h ← KERNEL 入口 (KernelEntryPointPhyAddr)
 	;              ┣━━━━━━━━━━━━━━━━━━┫
 	;              ┃                                    ┃
 	;        7E00h ┃              F  R  E  E            ┃
@@ -1197,7 +1195,7 @@ SetupPaging:
 	add	eax, 4096		; 为了简化, 所有页表在内存中是连续的.
 	loop	.1k
 
-; /*  Initial Graph page mapping  */
+; /*  Initial Graph e mapping  */
 	mov eax, 4048   ; 1012 * 4,  1012 = 0xfd000000 / 0x400000
 	add eax, PageDirBase 
 	mov edi, eax 
@@ -1243,7 +1241,7 @@ SetupPaging:
 	add	eax, 4096		; 每一页指向 4K 的空间
 	loop	.2k
 
-; /* Initial Graph page table */
+; /* Initial Graph e table */
 	mov eax, 1012
 	mov ebx, 1024
 	mul ebx 
@@ -1324,7 +1322,7 @@ VMODE db 0
 SCRNX dw 0
 SCRNY dw 0
 VRAM  dd 0
-ModeInfo db 256 dup(0)
+ModeInfo: times 256 db 0
 read_cluster_times db 0
 _szMemChkTitle:			db	"BaseAddrL BaseAddrH LengthLow LengthHigh   Type", 0Ah, 0
 _szRAMSize:			db	"RAM size:", 0

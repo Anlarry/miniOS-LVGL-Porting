@@ -1,5 +1,5 @@
 # INIT = init.bin
-INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin forkTest.bin yieldTest.bin sleepTest.bin Hello.bin
+INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin
 
 # you can add your elf in $(BIN) latter
 BIN = $(INIT)
@@ -59,10 +59,10 @@ all : realclean_user everything
 final : all clean
 
 clean_user :
-	rm -f *.o $(BIN)
+	rm -f *.o $(BIN) *.a
 
 realclean_user :
-	rm -f $(BIN) *.o *.tar
+	rm -f $(BIN) *.o *.tar *.a
 
 install : all 
 	@#将super block->magic 置0
@@ -137,3 +137,12 @@ sleepTest.bin : sleepTest.o $(START_O) $(OBJSULIB)
 
 Hello.bin : Hello.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS) -o $@ $^
+
+liblvgl.a : gui/lv_conf.h
+	cd gui/lvgl && make
+	mv gui/lvgl/liblvgl.a ./liblvgl.a
+gui_service.o : gui/gui_service.c gui/lvgl/lvgl.h
+	$(CC) $(CFLAGS) -o $@ $<
+gui_service.bin : gui_service.o liblvgl.a  $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS) -o $@ $^
+
