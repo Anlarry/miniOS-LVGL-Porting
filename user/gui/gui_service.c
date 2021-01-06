@@ -4,15 +4,22 @@
 // GUI service to help other process create avaliable graphics
 
 #include "stdio.h"
-#include "../include/gui/gui.h"
+#include <gui/gui.h>
 #include "./lvgl/lvgl.h"
 
-//static void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color_t * color_p)
-//{
-//    printf("()");
-//    flush(area->x1, area->y1, area->x2, area->y2, (char*)color_p);
-//    lv_disp_flush_ready(disp);         /* Indicate you are ready with the flushing*/
-//}
+static void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color_t * color_p)
+{
+    printf("()");
+    struct ROI roi = {
+        .x1 = area->x1,
+        .x2 = area->x2,
+        .y1 = area->y1,
+        .y2 = area->y2,
+        .color = (Color*) color_p
+    };
+    GraphFlush(&roi);
+    lv_disp_flush_ready(disp);         /* Indicate you are ready with the flushing*/
+}
 
 
 void main(int arg,char *argv[])
@@ -24,21 +31,12 @@ void main(int arg,char *argv[])
     //get_ticks();
     printf("o");
 
-    ROI roi;
-    roi.x1 = 0;
-    roi.y1 = 0;
-    roi.y2 = 50;
-    roi.x2 = 50;
-    roi.color = temp;
+    char buff[1024];
+    int pid;
+    int times = 0;
 
-
-   while(1)
-   {
-       //flush(&roi);
-   }
-//   {
-//
-//   }
+    char temp[2501] = {0};
+    // while(1)flush(0,0, 50,50, temp);
     InitLvFontMontserrat_14();
     lv_init();
 

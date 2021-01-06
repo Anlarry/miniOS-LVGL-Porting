@@ -73,7 +73,7 @@ global	delete		;		//added by mingxuan 2019-5-17
 global  opendir		;		//added by mingxuan 2019-5-17
 global	createdir	;		//added by mingxuan 2019-5-17
 global  deletedir	;		//added by mingxuan 2019-5-17
-global  flush;           // added by wangsssssss 2021-1-1
+global  GraphFlush;           // added by wangsssssss 2021-1-1
 
 bits 32
 [section .text]
@@ -352,7 +352,7 @@ deletedir:
 	add esp, 4
 	ret
 
-flush:
+GraphFlush:
     push ebx
     mov ebx, [esp+8]
     mov eax, _NR_flush

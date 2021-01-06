@@ -23,9 +23,11 @@
 #include "fs.h"
 #include "fat32.h"	//added by mingxuan 2019-5-17
 #include "vfs.h"	//added by mingxuan 2019-5-17
-#include "gui/gui.h"
+// #include "gui/gui.h"
 
 #include <stdint.h>
+
+#include "gui/plot.h"
 
 #define __DATA__ __attribute__((section(".data")))
 
