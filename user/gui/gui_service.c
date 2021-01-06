@@ -39,7 +39,7 @@ void main(int arg,char *argv[])
 
     lv_disp_drv_t disp_drv;               /*Descriptor of a display driver*/
     lv_disp_drv_init(&disp_drv);          /*Basic initialization*/
-    disp_drv.flush_cb = my_disp_flush;    /*Set your driver function*/
+    // disp_drv.flush_cb = my_disp_flush;    /*Set your driver function*/
     disp_drv.buffer = &disp_buf;          /*Assign the buffer to the display*/
     lv_disp_drv_register(&disp_drv);      /*Finally register the driver*/
 
@@ -64,4 +64,10 @@ void main(int arg,char *argv[])
     }
 
     return ;
+}
+
+static void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color_t * color_p)
+{
+    flush(area->x1, area->y1, area->x2, area->y2, (char*)color_p);
+    lv_disp_flush_ready(disp);         /* Indicate you are ready with the flushing*/
 }

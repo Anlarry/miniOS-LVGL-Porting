@@ -1,9 +1,11 @@
 # INIT = init.bin
-INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin gui_service_gdb.bin
+INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
+	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin \
+	# BigElf.bin
 
 # you can add your elf in $(BIN) latter
 BIN = $(INIT)
-GDB_BIN = shell_0.gdb.bin
+GDB_BIN = shell_0.gdb.bin gui_service.gdb.bin
 TAR_NAME = app.tar
 HD = ../b.img
 
@@ -150,3 +152,16 @@ gui_service.bin : gui_service.o liblvgl.a  $(START_O) $(OBJSULIB)
 gui_service_gdb.bin : gui_service.o liblvgl.a  $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
+gui_service.gdb.bin : gui_service.o liblvgl.a  $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
+
+.SUFFIXES : .c .o
+
+.c.o :
+	$(CC) $(CFLAGS) -o $@ $<
+
+
+BigElf.o : BigElf.c
+
+%.bin : %.o $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS) -o $@ $^

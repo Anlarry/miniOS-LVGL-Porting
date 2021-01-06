@@ -145,7 +145,7 @@ typedef struct s_proc {
     int priority;
 
 	u32 pid;                   /* process id passed in from MM */
-	char p_name[16];           /* name of the process */
+	char p_name[32];           /* name of the process */
 	
 	enum proc_stat stat;			//add by visual 2016.4.5
 	

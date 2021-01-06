@@ -83,8 +83,3 @@ PUBLIC	system_call		sys_call_table[NR_SYS_CALL] = {	sys_get_ticks, 									//1s
 PUBLIC TTY tty_table[NR_CONSOLES];			//added by mingxuan 2019-5-19
 PUBLIC CONSOLE console_table[NR_CONSOLES];	//added by mingxuan 2019-5-19
 
-int disp_pos = 1; 
-u8 gdt_ptr[6] __attribute__((section(".data")));
-DESCRIPTOR	gdt[GDT_SIZE] __attribute__((section(".data")));
-u8		idt_ptr[6] __attribute__((section(".data")));	// 0~15:Limit  16~47:Base
-GATE		idt[IDT_SIZE] __attribute__((section(".data")));

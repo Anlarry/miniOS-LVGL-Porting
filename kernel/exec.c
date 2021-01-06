@@ -224,7 +224,12 @@ PRIVATE int exec_pcb_init(char* path)
 	char* p_regs;	//point to registers in the new kernel stack, added by xw, 17/12/11
 	
 	//名称 状态 特权级 寄存器
-	strcpy(p_proc_current->task.p_name, path);		//名称
+	// ! p_name overflow 
+	int len = strlen(path);
+	memcpy(p_proc_current->task.p_name, path, min(32, len));
+	p_proc_current->task.p_name[31] = 0;
+
+	// strcpy(p_proc_current->task.p_name, path);		//名称
 	p_proc_current->task.stat = READY;  						//状态
 	p_proc_current->task.ldts[0].attr1 = DA_C | PRIVILEGE_USER << 5;//特权级修改为用户级
 	p_proc_current->task.ldts[1].attr1 = DA_DRW | PRIVILEGE_USER << 5;//特权级修改为用户级

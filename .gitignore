@@ -46,3 +46,13 @@ gdb.cfg
 include/gui/lvgl/library.properties
 /include/gui/lvgl/LICENCE.txt
 
+CMakeCache.txt
+
+CMakeFiles/*
+*.cmake
+/user/gui/lvgl/Makefile
+
+*.map
+
+*.tar
+
