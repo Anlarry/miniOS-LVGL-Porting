@@ -56,13 +56,13 @@ PUBLIC u32 sys_exec(char *path)
 		
 	/*************释放进程内存****************/
 	//目前还没有实现 思路是：数据、代码根据text_info和data_info属性决定释放深度，其余内存段可以完全释放
-	
+
 	/*************根据elf的program复制文件信息**************/
 	if(-1==exec_load(fd,&Echo_Ehdr,Echo_Phdr)) return -1;//使用了const指针传递
 
 	/*****************重新初始化该进程的进程表信息（包括LDT）、线性地址布局、进程树属性********************/	
-	exec_pcb_init(path);	
-	
+	//exec_pcb_init(path);
+
 	/***********************代码、数据、堆、栈***************************/
 	//代码、数据已经处理，将eip重置即可
 	p_proc_current->task.regs.eip = Echo_Ehdr.e_entry;//进程入口线性地址
@@ -153,9 +153,10 @@ PRIVATE u32 exec_elfcpy(u32 fd,Elf32_Phdr Echo_Phdr,u32 attribute)  // 这部分
 		else
 		{
 			//已初始化数据段拷贝完毕，剩下的是未初始化的数据段，在内存中填0
-			*((u8*)lin_addr) = 0;//memset((void*)lin_addr,0,1);
-			lin_addr++;
-			file_offset++;
+			//*((u8*)lin_addr) = 0;
+			memset((void*)lin_addr,0,(lin_limit-lin_addr));
+			lin_addr+=(lin_limit-lin_addr);
+			//file_offset++;
 		}
 	}
 	return 0;

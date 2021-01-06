@@ -1,5 +1,5 @@
 # INIT = init.bin
-INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin
+INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin gui_service_gdb.bin
 
 # you can add your elf in $(BIN) latter
 BIN = $(INIT)
@@ -16,7 +16,8 @@ CC			?= gcc-7
 LD			= ld
 CFLAGS		= -I ../include/ -m32 -c -fno-builtin -fno-stack-protector -Wall -Wextra -g
 LDFLAGS		= -m elf_i386 -Tlds -s 
-LDFLAGS_DEBUG		= -m elf_i386 -Tlds 
+LDFLAGS_DEBUG		= -m elf_i386 -Tlds
+
 DASMFLAGS	= -D
 OBJSULIB 	= ../lib/ulib.a
 START_O 	= initstart.o
@@ -145,4 +146,7 @@ gui_service.o : gui/gui_service.c gui/lvgl/lvgl.h
 	$(CC) $(CFLAGS) -o $@ $<
 gui_service.bin : gui_service.o liblvgl.a  $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS) -o $@ $^
+
+gui_service_gdb.bin : gui_service.o liblvgl.a  $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 

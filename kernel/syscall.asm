@@ -191,18 +191,22 @@ udisp_str:
 ;                              exec		//add by visual 2016.5.16
 ; ====================================================================	
 exec:
-	mov ebx,[esp+4]
+    push ebx
+	mov ebx,[esp+8]
 	mov	eax, _NR_exec
 	int	INT_VECTOR_SYS_CALL
+	pop ebx
 	ret
 
 ; ====================================================================
 ;                              yield	//added by xw
 ; ====================================================================	
 yield:
-	mov ebx,[esp+4]
+    push ebx
+	mov ebx,[esp+8]
 	mov	eax, _NR_yield
 	int	INT_VECTOR_SYS_CALL
+	pop ebx
 	ret
 
 ; ====================================================================
@@ -350,9 +354,8 @@ deletedir:
 
 flush:
     push ebx
-    push 5 ; x,y,x,y,color_addr
     mov ebx, esp
-    add ebx, 4
+    add ebx, 8
     mov eax, _NR_flush
     int INT_VECTOR_SYS_CALL
     add esp, 4

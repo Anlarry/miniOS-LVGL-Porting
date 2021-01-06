@@ -9,6 +9,7 @@
 
 static void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color_t * color_p)
 {
+    printf("()");
     flush(area->x1, area->y1, area->x2, area->y2, (char*)color_p);
     lv_disp_flush_ready(disp);         /* Indicate you are ready with the flushing*/
 }
@@ -20,26 +21,17 @@ void main(int arg,char *argv[])
     int stdout= open("dev_tty0",O_RDWR);
     int stderr= open("dev_tty0",O_RDWR);
 
+    //get_ticks();
+
     char buff[1024];
     int pid;
     int times = 0;
-    while(1)
-    {
-        printf("\nminiOS:/ $ ");
-        if(gets(buff) && strlen(buff)!=0 ){
-            if(exec(buff)!=0){
-                printf("exec failed: file not found!\n");
-                continue;
-            }
-        }
 
-    }
-    return ;
-
+    char temp[2501] = {255};
+    flush(0,0, 50,50, temp);
     InitLvFontMontserrat_14();
-
     lv_init();
-
+    printf("o");
 
     static lv_disp_buf_t disp_buf;
     static lv_color_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10]; /*Declare a buffer for 1/10 screen size*/
@@ -65,10 +57,11 @@ void main(int arg,char *argv[])
     label = lv_label_create(btn1, NULL);
     lv_label_set_text(label, "Button");
 
-//    while(1) {
-//        lv_tick_inc(10);
-//        lv_task_handler();
-//    }
+    while(1) {
+        lv_tick_inc(10);
+        printf("**==op");
+        lv_task_handler();
+    }
 
     return ;
 }

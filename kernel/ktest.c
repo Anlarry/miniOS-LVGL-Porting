@@ -569,8 +569,7 @@ void initial()
 	do_vclose(stdin);
 	do_vclose(stdout);
 	do_vclose(stderr);
-
-	exec("orange/shell_0.bin");
+	exec("orange/gui_service.bin");
 
 	while(1);
 	

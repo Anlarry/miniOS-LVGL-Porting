@@ -53,6 +53,8 @@
 #define LV_OBJ_DEF_WIDTH    (LV_DPX(100))
 #define LV_OBJ_DEF_HEIGHT   (LV_DPX(50))
 
+
+
 /**********************
  *      TYPEDEFS
  **********************/
@@ -194,6 +196,8 @@ void lv_init(void)
 
     /*Initialize the lv_misc modules*/
     _lv_mem_init();
+
+
     _lv_task_core_init();
 
 #if LV_USE_FILESYSTEM
@@ -221,10 +225,11 @@ void lv_init(void)
 #endif
 
     _lv_ll_init(&LV_GC_ROOT(_lv_obj_style_trans_ll), sizeof(lv_style_trans_t));
-
+//
     _lv_ll_init(&LV_GC_ROOT(_lv_disp_ll), sizeof(lv_disp_t));
-    _lv_ll_init(&LV_GC_ROOT(_lv_indev_ll), sizeof(lv_indev_t));
 
+    _lv_ll_init(&LV_GC_ROOT(_lv_indev_ll), sizeof(lv_indev_t));
+//
     lv_theme_t * th = LV_THEME_DEFAULT_INIT(LV_THEME_DEFAULT_COLOR_PRIMARY, LV_THEME_DEFAULT_COLOR_SECONDARY,
                                             LV_THEME_DEFAULT_FLAG,
                                             LV_THEME_DEFAULT_FONT_SMALL, LV_THEME_DEFAULT_FONT_NORMAL, LV_THEME_DEFAULT_FONT_SUBTITLE, LV_THEME_DEFAULT_FONT_TITLE);
@@ -3737,19 +3742,37 @@ void lv_obj_fade_out(lv_obj_t * obj, uint32_t time, uint32_t delay)
 }
 
 
-int strcmp(const char* str1, const char* str2)
+int strcmp(const char* s1, const char* s2)
 {
 
-    int i=0;
-    while(*(str1+i)!='\0' && *(str2+i)!='\0')
+//    int i=0;
+//    while(*(str1+i)!='\0' && *(str2+i)!='\0')
+//    {
+//        if(*(str1+i) < *(str2+i))return 1;
+//        if(*(str1+i) > *(str2+i))return -1;
+//        i++;
+//    }
+//    if(*(str1+i)=='\0' && *(str2+i)=='\0')return 0;
+//    if(*(str1+i)=='\0')return 1;
+//    return -1;
+
+    int strcmp(const char * s1, const char *s2)
     {
-        if(*(str1+i) > *(str2+i))return 1;
-        if(*(str1+i) < *(str2+i))return -1;
-        i++;
+        if ((s1 == 0) || (s2 == 0)) { /* for robustness */
+            return (s1 - s2);
+        }
+
+        const char * p1 = s1;
+        const char * p2 = s2;
+
+        for (; *p1 && *p2; p1++,p2++) {
+            if (*p1 != *p2) {
+                break;
+            }
+        }
+
+        return (*p1 - *p2);
     }
-    if(*(str1+i)=='\0' && *(str2+i)=='\0')return 0;
-    if(*(str1+i)=='\0')return 1;
-    return -1;
 }
 /**
  * Check if any object has a given type
