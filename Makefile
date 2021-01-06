@@ -65,7 +65,7 @@ LDFLAGS_init_gdb	= -m elf_i386
 
 
 LIB_GUI := ./kernel/gui/libgui.a
-LIB_LVGL := include/gui/lvgl/liblvgl.a
+#LIB_LVGL := include/gui/lvgl/liblvgl.a
 
 # This Program
 # ORANGESBOOT	= boot/boot.bin boot/loader.bin	#deleted by mingxuan 2019-5-17
@@ -81,7 +81,7 @@ OBJS		= kernel/kernel.o kernel/syscall.o kernel/start.o kernel/main.o kernel/clo
 			kernel/ktest.o kernel/testfunc.o kernel/fs.o kernel/hd.o \
 			kernel/spinlock.o kernel/fat32.o kernel/base.o kernel/assist.o kernel/vfs.o \
 			kernel/keyboard.o kernel/tty.o kernel/shell.o kernel/console.o lib/ulib.a \
-			$(LIB_GUI) $(LIB_LVGL)
+			$(LIB_GUI)
 			#added by mingxuan 2019-5-19
 
 
@@ -475,5 +475,5 @@ bochsgdb :
 $(LIB_GUI) :
 	cd ./kernel/gui && make 
 
-$(LIB_LVGL) : include/gui/lv_conf.h
-	cd include/gui/lvgl && make
+#$(LIB_LVGL) : include/gui/lv_conf.h
+#	cd include/gui/lvgl && make

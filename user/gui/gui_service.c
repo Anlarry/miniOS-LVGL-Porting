@@ -28,7 +28,7 @@ void main(int arg,char *argv[])
     int times = 0;
 
     char temp[2501] = {0};
-    while(1)flush(0,0, 50,50, temp);
+    // while(1)flush(0,0, 50,50, temp);
     InitLvFontMontserrat_14();
     lv_init();
     printf("o");
@@ -66,8 +66,3 @@ void main(int arg,char *argv[])
     return ;
 }
 
-static void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color_t * color_p)
-{
-    flush(area->x1, area->y1, area->x2, area->y2, (char*)color_p);
-    lv_disp_flush_ready(disp);         /* Indicate you are ready with the flushing*/
-}
