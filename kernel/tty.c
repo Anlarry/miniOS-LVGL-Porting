@@ -8,6 +8,7 @@
 #include "global.h"
 #include "proto.h"
 #include "keyboard.h"
+#include "../include/gui/gui.h"
 
 
 
@@ -102,15 +103,16 @@ PUBLIC void task_tty(){
     p_tty = tty_table;
 
     select_console(0);
-    
+    //char temp[2501] = {0};
+
+
     //设置第一个tty光标位置，第一个tty需要特殊处理
     disable_int( );
     out_byte(CRTC_ADDR_REG,CURSOR_H);
     out_byte(CRTC_DATA_REG,((disp_pos/2)>>8)&0xFF);
     out_byte(CRTC_ADDR_REG,CURSOR_L);
     out_byte(CRTC_DATA_REG,(disp_pos/2)&0xFF);
-    enable_int( );
-    
+    enable_int();
     //轮询
     while(1){
         for (p_tty = TTY_FIRST; p_tty < TTY_END; p_tty++) {

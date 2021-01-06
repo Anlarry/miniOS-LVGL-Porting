@@ -185,7 +185,8 @@ PUBLIC void hd_rdwt(MESSAGE * p)
 PUBLIC void hd_service()
 {
 	RWInfo *rwinfo;
-	
+
+
 	while(1)
 	{
 		//the hd queue is not empty when out_hd_queue return 1.
@@ -663,6 +664,7 @@ PRIVATE void hd_cmd_out(struct hd_cmd* cmd)
 PRIVATE void interrupt_wait()
 {
 	while(hd_int_waiting_flag) {
+	    //disp_str("uio");
 		// milli_delay invoke syscall get_ticks, so we can't use it here.
 		// for this scene, just do nothing is OK. modified by xw, 18/6/1
 		

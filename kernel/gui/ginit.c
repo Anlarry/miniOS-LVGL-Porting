@@ -16,19 +16,22 @@ void sys_flush(ROI* roi)
        disp_int(x2);
        disp_int(y2);
 //        disp_int(roi->color);
-//        for(int i=0xfd000000; i<0xfdffffff; i++)
-//        {
-//            char *ptr;
-//            ptr = i;
-//            *ptr = 0;
-//        }
+
+    __asm__ __volatile__("mov %cr3, %eax");
+    __asm__ __volatile__("push %eax");
+    __asm__ __volatile__("mov $0x200000, %eax");
+    __asm__ __volatile__("mov %eax, %cr3");
+    for(int i = 0; i < SCRNX; i++) {
+        for(int j = 0; j < SCRNY; j++) {
+            PlotPixel(i, j, 0xff, 0xff, 0);
+        }
+        }
+    __asm__ __volatile__("pop %eax");
+    __asm__ __volatile__("mov %eax, %cr3");
 
 
-//        for(int i = 0; i < SCRNX; i++) {
-//        for(int j = 0; j < SCRNY; j++) {
-//            PlotPixel(i, j, 0xff, 0xff, 0);
-//        }
-//        }
+
+//
 //    for(int i=x1; i<x2; i++)
 //    {
 //        for(int j=y1; j<y2; j++)

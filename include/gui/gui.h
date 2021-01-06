@@ -8,6 +8,11 @@
 #include "const.h"
 #include "type.h"
 
-void flush(int x1, int y1, int x2, int y2, char* color);
+typedef struct {
+    int x1,y1,x2,y2;
+    struct Color* color;
+}ROI;
+
+void flush(ROI*);
 
 #endif //MINIOS_LVGL_PORTING_GUI_H
