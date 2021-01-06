@@ -27,7 +27,6 @@ PRIVATE int initialize_cpus();		//added by xw, 18/6/2
 PUBLIC int kernel_main()
 {
 	int error;
-
 	//zcr added(清屏)
 	disp_pos = 0;
 	for (int i = 0; i < 25; i++) {
@@ -69,8 +68,8 @@ PUBLIC int kernel_main()
 	
 	/* initialize clock-irq */
     put_irq_handler(CLOCK_IRQ, clock_handler); /* 设定时钟中断处理程序 */
-    enable_irq(CLOCK_IRQ);                     /* 让8259A可以接收时钟中断 */	
-	
+    enable_irq(CLOCK_IRQ);                     /* 让8259A可以接收时钟中断 */
+
 	init_kb();	//added by mingxuan 2019-5-19
 	
 	/* initialize hd-irq and hd rdwt queue */
@@ -80,8 +79,7 @@ PUBLIC int kernel_main()
 	 * Note that you must have initialized all devices ready before you enable
 	 * interrupt. added by xw
 	 */
-    //enable_int();
-	
+    enable_int();
     /***********************************************************************
 	open hard disk and initialize file system
 	coded by zcr on 2017.6.10. added by xw, 18/5/31

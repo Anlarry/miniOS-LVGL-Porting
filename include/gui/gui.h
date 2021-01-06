@@ -8,11 +8,18 @@
 #include "const.h"
 #include "type.h"
 
+typedef struct
+{
+    char red;
+    char green;
+    char blue;
+    char alpha;
+}Color;
+
 typedef struct {
     int x1,y1,x2,y2;
     struct Color* color;
 }ROI;
-
 void flush(ROI*);
 
 #endif //MINIOS_LVGL_PORTING_GUI_H
