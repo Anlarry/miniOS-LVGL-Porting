@@ -12,7 +12,7 @@
 #define __DATA__ __attribute__((section(".data")))
 
                       
-void InitScreen();
+// void InitScreen();
 
 void PlotPixel(int x, int y, uint8_t r, uint8_t g, uint8_t b);
 void inline PlotAddr(int addr, uint8_t color);

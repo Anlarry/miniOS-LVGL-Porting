@@ -28,7 +28,7 @@ void main(int arg,char *argv[])
     int times = 0;
 
     char temp[2501] = {0};
-    while(1)flush(0,0, 50,50, temp);
+    // while(1)flush(0,0, 50,50, temp);
     InitLvFontMontserrat_14();
     lv_init();
     printf("o");
@@ -39,7 +39,7 @@ void main(int arg,char *argv[])
 
     lv_disp_drv_t disp_drv;               /*Descriptor of a display driver*/
     lv_disp_drv_init(&disp_drv);          /*Basic initialization*/
-    disp_drv.flush_cb = my_disp_flush;    /*Set your driver function*/
+    // disp_drv.flush_cb = my_disp_flush;    /*Set your driver function*/
     disp_drv.buffer = &disp_buf;          /*Assign the buffer to the display*/
     lv_disp_drv_register(&disp_drv);      /*Finally register the driver*/
 
@@ -65,3 +65,4 @@ void main(int arg,char *argv[])
 
     return ;
 }
+

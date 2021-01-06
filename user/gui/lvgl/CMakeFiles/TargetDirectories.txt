@@ -1,3 +1,0 @@
-/home/wang_shuai/miniOS-LVGL-Porting/user/gui/lvgl/CMakeFiles/rebuild_cache.dir
-/home/wang_shuai/miniOS-LVGL-Porting/user/gui/lvgl/CMakeFiles/lvgl.dir
-/home/wang_shuai/miniOS-LVGL-Porting/user/gui/lvgl/CMakeFiles/edit_cache.dir
