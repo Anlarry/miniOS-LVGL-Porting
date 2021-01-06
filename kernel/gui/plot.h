@@ -1,8 +1,9 @@
 #ifndef GUI_H
 #define GUI_H
 
-#include "gtype.h"
 #include <gui/lv_conf.h>
+#include <stdint.h>
+#include <gui/gui.h>
 
 #define VRAM_START 0
 // #define VRAM_END   0xB0000
@@ -16,8 +17,6 @@
 
 void PlotPixel(int x, int y, uint8_t r, uint8_t g, uint8_t b);
 void inline PlotAddr(int addr, uint8_t color);
-
-
 
 
 void sys_flush(ROI* roi);
