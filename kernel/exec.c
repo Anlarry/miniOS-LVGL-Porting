@@ -127,7 +127,7 @@ PRIVATE u32 exec_elfcpy(u32 fd,Elf32_Phdr Echo_Phdr,u32 attribute)  // 这部分
 			
 			//fake_read(fd,&ch,1); //deleted by mingxuan 2019-5-22
 			//real_read(fd, &ch, 1); //modified by mingxuan 2019-5-22
-			if(file_limit - file_offset < 4096)
+			if(file_limit - file_offset < 4096-lin_addr%4096)
             {
                 do_vread(fd, ch, (file_limit-file_offset));
 
@@ -138,10 +138,10 @@ PRIVATE u32 exec_elfcpy(u32 fd,Elf32_Phdr Echo_Phdr,u32 attribute)  // 这部分
             }
 			else
             {
-                do_vread(fd, ch, 4096);
-                memcpy((void*)lin_addr, ch, 4096);
-                lin_addr+=4096;
-                file_offset+=4096;
+                do_vread(fd, ch, 4096-lin_addr%4096);
+                memcpy((void*)lin_addr, ch, 4096-lin_addr%4096);
+                lin_addr+=4096-lin_addr%4096;
+                file_offset+=4096-lin_addr%4096;
             }
 			//~xw
 			
@@ -154,8 +154,8 @@ PRIVATE u32 exec_elfcpy(u32 fd,Elf32_Phdr Echo_Phdr,u32 attribute)  // 这部分
 		{
 			//已初始化数据段拷贝完毕，剩下的是未初始化的数据段，在内存中填0
 			//*((u8*)lin_addr) = 0;
-			memset((void*)lin_addr,0,(lin_limit-lin_addr));
-			lin_addr+=(lin_limit-lin_addr);
+			memset((void*)lin_addr,0,(4096-lin_addr%4096));
+			lin_addr+=(4096-lin_addr%4096);
 			//file_offset++;
 		}
 	}

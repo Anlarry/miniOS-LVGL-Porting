@@ -354,10 +354,8 @@ deletedir:
 
 flush:
     push ebx
-    mov ebx, esp
-    add ebx, 8
+    mov ebx, [esp+8]
     mov eax, _NR_flush
     int INT_VECTOR_SYS_CALL
-    add esp, 4
     pop ebx
     ret

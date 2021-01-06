@@ -144,6 +144,7 @@ PUBLIC void page_fault_handler(	u32 vec_no,//异常编号，此时应该是14，
 		disp_int(err_code);
 		disp_color_str("Cr2=",0x74);	//灰底红字 
 		disp_int(cr2);
+		__asm__ __volatile__("mov %cr3, %eax");
 		halt();
 	}
 
