@@ -1,64 +1,60 @@
 
-kernel.gdb.bin：     文件格式 elf32-i386
-kernel.gdb.bin
+user/gui_service.gdb.bin：     文件格式 elf32-i386
+user/gui_service.gdb.bin
 体系结构：i386，标志 0x00000112：
 EXEC_P, HAS_SYMS, D_PAGED
-起始地址 0xc0020400
+起始地址 0x08087bd0
 
 程序头：
-    LOAD off    0x00000000 vaddr 0xc0020000 paddr 0xc001f000 align 2**12
-         filesz 0x00000114 memsz 0x00000114 flags r--
-    LOAD off    0x00000400 vaddr 0xc0020400 paddr 0xc0020400 align 2**12
-         filesz 0x00051b12 memsz 0x00051b12 flags r-x
-    LOAD off    0x00052000 vaddr 0xc0072000 paddr 0xc0072000 align 2**12
-         filesz 0x0000fdc8 memsz 0x0000fdc8 flags r--
-    LOAD off    0x00061fc0 vaddr 0xc0082fc0 paddr 0xc0082fc0 align 2**12
-         filesz 0x00009691 memsz 0x00009691 flags rw-
-    LOAD off    0x00000000 vaddr 0xc0100000 paddr 0xc0100000 align 2**12
-         filesz 0x00000000 memsz 0x00056828 flags rw-
+    LOAD off    0x00000000 vaddr 0x08048000 paddr 0x08047000 align 2**12
+         filesz 0x000000d4 memsz 0x000000d4 flags r--
+    LOAD off    0x000000e0 vaddr 0x080480e0 paddr 0x080480e0 align 2**12
+         filesz 0x0004c9b0 memsz 0x0004c9b0 flags r-x
+    LOAD off    0x0004cfc0 vaddr 0x08095fc0 paddr 0x08095fc0 align 2**12
+         filesz 0x00000331 memsz 0x00026f60 flags rw-
    STACK off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**4
          filesz 0x00000000 memsz 0x00000000 flags rwx
-   RELRO off    0x00061fc0 vaddr 0xc0082fc0 paddr 0xc0082fc0 align 2**0
+   RELRO off    0x0004cfc0 vaddr 0x08095fc0 paddr 0x08095fc0 align 2**0
          filesz 0x00000040 memsz 0x00000040 flags r--
 
 节：
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00051b12  c0020400  c0020400  00000400  2**4
+  0 .text         000402ae  080480e0  080480e0  000000e0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .bss          00056828  c0100000  c0100000  0006c000  2**5
+  1 .rodata       00003d3c  080883a0  080883a0  000403a0  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .eh_frame     000089b4  0808c0dc  0808c0dc  000440dc  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .data.rel.ro  00000040  08095fc0  08095fc0  0004cfc0  2**5
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .got.plt      0000000c  08096000  08096000  0004d000  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  5 .data         000002d1  08096020  08096020  0004d020  2**5
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .bss          00026c20  08096300  08096300  0004d2f1  2**5
                   ALLOC
-  2 .rodata       00004d7c  c0072000  c0072000  00052000  2**5
-                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .eh_frame     0000b04c  c0076d7c  c0076d7c  00056d7c  2**2
-                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-  4 .data.rel.ro  00000040  c0082fc0  c0082fc0  00061fc0  2**5
-                  CONTENTS, ALLOC, LOAD, DATA
-  5 .got.plt      0000000c  c0083000  c0083000  00062000  2**2
-                  CONTENTS, ALLOC, LOAD, DATA
-  6 .data         00009631  c0083020  c0083020  00062020  2**5
-                  CONTENTS, ALLOC, LOAD, DATA
-  7 .comment      00000023  00000000  00000000  0006b651  2**0
+  7 .comment      00000023  00000000  00000000  0004d2f1  2**0
                   CONTENTS, READONLY
-  8 .debug_aranges 000009d0  00000000  00000000  0006b674  2**0
+  8 .debug_aranges 000005c0  00000000  00000000  0004d314  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
-  9 .debug_info   0005583f  00000000  00000000  0006c044  2**0
+  9 .debug_info   0003a7bd  00000000  00000000  0004d8d4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 10 .debug_abbrev 0000aae3  00000000  00000000  000c1883  2**0
+ 10 .debug_abbrev 000066c5  00000000  00000000  00088091  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 11 .debug_line   0001be14  00000000  00000000  000cc366  2**0
+ 11 .debug_line   00017ab5  00000000  00000000  0008e756  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 12 .debug_str    0000e100  00000000  00000000  000e817a  2**0
+ 12 .debug_str    0000c32a  00000000  00000000  000a620b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_ranges 00000470  00000000  00000000  000f627a  2**0
+ 13 .debug_ranges 000003f0  00000000  00000000  000b2535  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 SYMBOL TABLE:
-c0020400 l    d  .text	00000000 .text
-c0100000 l    d  .bss	00000000 .bss
-c0072000 l    d  .rodata	00000000 .rodata
-c0076d7c l    d  .eh_frame	00000000 .eh_frame
-c0082fc0 l    d  .data.rel.ro	00000000 .data.rel.ro
-c0083000 l    d  .got.plt	00000000 .got.plt
-c0083020 l    d  .data	00000000 .data
+080480e0 l    d  .text	00000000 .text
+080883a0 l    d  .rodata	00000000 .rodata
+0808c0dc l    d  .eh_frame	00000000 .eh_frame
+08095fc0 l    d  .data.rel.ro	00000000 .data.rel.ro
+08096000 l    d  .got.plt	00000000 .got.plt
+08096020 l    d  .data	00000000 .data
+08096300 l    d  .bss	00000000 .bss
 00000000 l    d  .comment	00000000 .comment
 00000000 l    d  .debug_aranges	00000000 .debug_aranges
 00000000 l    d  .debug_info	00000000 .debug_info
@@ -66,57 +62,808 @@ c0083020 l    d  .data	00000000 .data
 00000000 l    d  .debug_line	00000000 .debug_line
 00000000 l    d  .debug_str	00000000 .debug_str
 00000000 l    d  .debug_ranges	00000000 .debug_ranges
-00000000 l    df *ABS*	00000000 kernel/kernel.asm
-00000000 l       *ABS*	00000000 P_STACKBASE
-00000000 l       *ABS*	00000000 GSREG
-00000004 l       *ABS*	00000000 FSREG
-00000008 l       *ABS*	00000000 ESREG
-0000000c l       *ABS*	00000000 DSREG
-00000010 l       *ABS*	00000000 EDIREG
-00000014 l       *ABS*	00000000 ESIREG
-00000018 l       *ABS*	00000000 EBPREG
-0000001c l       *ABS*	00000000 KERNELESPREG
-00000020 l       *ABS*	00000000 EBXREG
-00000024 l       *ABS*	00000000 EDXREG
-00000028 l       *ABS*	00000000 ECXREG
-0000002c l       *ABS*	00000000 EAXREG
-00000030 l       *ABS*	00000000 RETADR
-00000034 l       *ABS*	00000000 EIPREG
-00000038 l       *ABS*	00000000 CSREG
-0000003c l       *ABS*	00000000 EFLAGSREG
-00000040 l       *ABS*	00000000 ESPREG
-00000044 l       *ABS*	00000000 SSREG
-00000048 l       *ABS*	00000000 P_STACKTOP
-00000048 l       *ABS*	00000000 P_LDT_SEL
-0000004c l       *ABS*	00000000 P_LDT
-00002000 l       *ABS*	00000000 INIT_STACK_SIZE
-0000005c l       *ABS*	00000000 ESP_SAVE_INT
-00000060 l       *ABS*	00000000 ESP_SAVE_SYSCALL
-00000064 l       *ABS*	00000000 ESP_SAVE_CONTEXT
-00000004 l       *ABS*	00000000 TSS3_S_SP0
-00000020 l       *ABS*	00000000 INT_M_CTL
-00000021 l       *ABS*	00000000 INT_M_CTLMASK
-000000a0 l       *ABS*	00000000 INT_S_CTL
-000000a1 l       *ABS*	00000000 INT_S_CTLMASK
-00000020 l       *ABS*	00000000 EOI
-00000008 l       *ABS*	00000000 SELECTOR_FLAT_C
-00000020 l       *ABS*	00000000 SELECTOR_TSS
-00000008 l       *ABS*	00000000 SELECTOR_KERNEL_CS
-0000001b l       *ABS*	00000000 SELECTOR_VIDEO
-c0083020 l     O .data	00000001 clock_int_msg
-c0100000 l     O .bss	00000001 StackSpace
-c0100800 l       .bss	00000000 StackTop
-c0100800 l     O .bss	00000001 KernelStackSpace
-c0101000 l       .bss	00000000 KernelStackTop
-c002043b l       .text	00000000 csinit
-c00209c4 l       .text	00000000 save_exception
-c00209e4 l       .text	00000000 restart_exception
-c00209f4 l       .text	00000000 save_int
-c0020a2b l       .text	00000000 instack
-c0020a34 l       .text	00000000 save_syscall
-c0020a8b l       .text	00000000 renew_env
-c0020ad0 l       .text	00000000 restart_int
-c0020ae8 l       .text	00000000 restart_syscall
+00000000 l    df *ABS*	00000000 gui_service.c
+080480e0 l     F .text	00000028 lv_scr_act
+08048108 l     F .text	00000040 lv_slider_set_value
+08048148 l     F .text	0000006f my_disp_flush
+08096340 l     O .bss	0001e000 buf.0
+08096300 l     O .bss	00000024 disp_buf.1
+00000000 l    df *ABS*	00000000 lv_disp.c
+0804837a l     F .text	00000018 lv_anim_set_var
+08048392 l     F .text	00000019 lv_anim_set_exec_cb
+080483ab l     F .text	00000019 lv_anim_set_time
+080483c4 l     F .text	0000001d lv_anim_set_delay
+080483e1 l     F .text	0000003f lv_anim_set_values
+08048420 l     F .text	00000019 lv_anim_set_start_cb
+08048439 l     F .text	00000019 lv_anim_set_ready_cb
+08048452 l     F .text	00000050 lv_obj_set_style_local_opa_scale
+080484a2 l     F .text	00000029 lv_scr_act
+08048f3d l     F .text	0000004b scr_load_anim_start
+08048fb9 l     F .text	0000008e scr_anim_ready
+08048f88 l     F .text	00000031 opa_scale_anim
+08048a8e l       .text	00000000 .L56
+08048abc l       .text	00000000 .L58
+08048af8 l       .text	00000000 .L59
+08048b36 l       .text	00000000 .L60
+08048b72 l       .text	00000000 .L61
+08048bb0 l       .text	00000000 .L62
+08048c2b l       .text	00000000 .L63
+08048ca6 l       .text	00000000 .L64
+08048d21 l       .text	00000000 .L65
+08048d99 l       .text	00000000 .L66
+00000000 l    df *ABS*	00000000 lv_obj.c
+08049047 l     F .text	00000040 _lv_memcpy_small
+08049087 l     F .text	00000020 lv_area_copy
+080490a7 l     F .text	00000025 lv_area_get_width
+080490cc l     F .text	00000026 lv_area_get_height
+080490f2 l     F .text	000000c7 lv_color_mix
+080491b9 l     F .text	0000004d lv_color_make
+08049206 l     F .text	0000003f lv_color_hex
+08049245 l     F .text	00000018 lv_anim_set_var
+0804925d l     F .text	00000019 lv_anim_set_exec_cb
+08049276 l     F .text	00000019 lv_anim_set_time
+0804928f l     F .text	0000001d lv_anim_set_delay
+080492ac l     F .text	0000003f lv_anim_set_values
+080492eb l     F .text	00000024 lv_anim_set_path
+0804930f l     F .text	00000019 lv_anim_set_start_cb
+08049328 l     F .text	00000019 lv_anim_set_ready_cb
+08049341 l     F .text	00000072 lv_style_list_get_style
+080493b3 l     F .text	0000002d lv_obj_get_style_radius
+080493e0 l     F .text	00000033 lv_obj_get_style_clip_corner
+08049413 l     F .text	0000002d lv_obj_get_style_size
+08049440 l     F .text	0000002d lv_obj_get_style_transform_width
+0804946d l     F .text	0000002d lv_obj_get_style_transform_height
+0804949a l     F .text	0000002d lv_obj_get_style_transform_angle
+080494c7 l     F .text	0000002d lv_obj_get_style_transform_zoom
+080494f4 l     F .text	00000030 lv_obj_get_style_opa_scale
+08049524 l     F .text	00000049 lv_obj_set_style_local_opa_scale
+0804956d l     F .text	0000002d lv_obj_get_style_pad_top
+0804959a l     F .text	0000002d lv_obj_get_style_pad_bottom
+080495c7 l     F .text	0000002d lv_obj_get_style_pad_left
+080495f4 l     F .text	0000002d lv_obj_get_style_pad_right
+08049621 l     F .text	0000002d lv_obj_get_style_pad_inner
+0804964e l     F .text	0000002d lv_obj_get_style_margin_top
+0804967b l     F .text	0000002d lv_obj_get_style_margin_bottom
+080496a8 l     F .text	0000002d lv_obj_get_style_margin_left
+080496d5 l     F .text	0000002d lv_obj_get_style_margin_right
+08049702 l     F .text	0000002d lv_obj_get_style_bg_blend_mode
+0804972f l     F .text	0000002d lv_obj_get_style_bg_main_stop
+0804975c l     F .text	0000002d lv_obj_get_style_bg_grad_stop
+08049789 l     F .text	0000002d lv_obj_get_style_bg_grad_dir
+080497b6 l     F .text	00000033 lv_obj_get_style_bg_color
+080497e9 l     F .text	00000033 lv_obj_get_style_bg_grad_color
+0804981c l     F .text	0000002d lv_obj_get_style_bg_opa
+08049849 l     F .text	0000002d lv_obj_get_style_border_width
+08049876 l     F .text	0000002d lv_obj_get_style_border_side
+080498a3 l     F .text	0000002d lv_obj_get_style_border_blend_mode
+080498d0 l     F .text	00000033 lv_obj_get_style_border_post
+08049903 l     F .text	00000033 lv_obj_get_style_border_color
+08049936 l     F .text	0000002d lv_obj_get_style_border_opa
+08049963 l     F .text	0000002d lv_obj_get_style_outline_width
+08049990 l     F .text	0000002d lv_obj_get_style_outline_pad
+080499bd l     F .text	0000002d lv_obj_get_style_outline_blend_mode
+080499ea l     F .text	00000033 lv_obj_get_style_outline_color
+08049a1d l     F .text	0000002d lv_obj_get_style_outline_opa
+08049a4a l     F .text	0000002d lv_obj_get_style_shadow_width
+08049a77 l     F .text	0000002d lv_obj_get_style_shadow_ofs_x
+08049aa4 l     F .text	0000002d lv_obj_get_style_shadow_ofs_y
+08049ad1 l     F .text	0000002d lv_obj_get_style_shadow_spread
+08049afe l     F .text	0000002d lv_obj_get_style_shadow_blend_mode
+08049b2b l     F .text	00000033 lv_obj_get_style_shadow_color
+08049b5e l     F .text	0000002d lv_obj_get_style_shadow_opa
+08049b8b l     F .text	00000033 lv_obj_get_style_pattern_repeat
+08049bbe l     F .text	0000002d lv_obj_get_style_pattern_blend_mode
+08049beb l     F .text	00000033 lv_obj_get_style_pattern_recolor
+08049c1e l     F .text	0000002d lv_obj_get_style_pattern_opa
+08049c4b l     F .text	0000002d lv_obj_get_style_pattern_recolor_opa
+08049c78 l     F .text	0000002d lv_obj_get_style_pattern_image
+08049ca5 l     F .text	0000002d lv_obj_get_style_value_letter_space
+08049cd2 l     F .text	0000002d lv_obj_get_style_value_line_space
+08049cff l     F .text	0000002d lv_obj_get_style_value_blend_mode
+08049d2c l     F .text	0000002d lv_obj_get_style_value_ofs_x
+08049d59 l     F .text	0000002d lv_obj_get_style_value_ofs_y
+08049d86 l     F .text	0000002d lv_obj_get_style_value_align
+08049db3 l     F .text	00000033 lv_obj_get_style_value_color
+08049de6 l     F .text	0000002d lv_obj_get_style_value_opa
+08049e13 l     F .text	0000002d lv_obj_get_style_value_font
+08049e40 l     F .text	0000002d lv_obj_get_style_value_str
+08049e6d l     F .text	00000030 lv_obj_get_style_text_letter_space
+08049e9d l     F .text	00000030 lv_obj_get_style_text_line_space
+08049ecd l     F .text	00000030 lv_obj_get_style_text_decor
+08049efd l     F .text	00000030 lv_obj_get_style_text_blend_mode
+08049f2d l     F .text	00000036 lv_obj_get_style_text_color
+08049f63 l     F .text	00000036 lv_obj_get_style_text_sel_color
+08049f99 l     F .text	00000036 lv_obj_get_style_text_sel_bg_color
+08049fcf l     F .text	00000030 lv_obj_get_style_text_opa
+08049fff l     F .text	00000030 lv_obj_get_style_text_font
+0804a02f l     F .text	00000030 lv_obj_get_style_line_width
+0804a05f l     F .text	00000030 lv_obj_get_style_line_blend_mode
+0804a08f l     F .text	00000030 lv_obj_get_style_line_dash_width
+0804a0bf l     F .text	00000030 lv_obj_get_style_line_dash_gap
+0804a0ef l     F .text	00000036 lv_obj_get_style_line_rounded
+0804a125 l     F .text	00000036 lv_obj_get_style_line_color
+0804a15b l     F .text	00000030 lv_obj_get_style_line_opa
+0804a18b l     F .text	00000030 lv_obj_get_style_image_blend_mode
+0804a1bb l     F .text	00000036 lv_obj_get_style_image_recolor
+0804a1f1 l     F .text	00000030 lv_obj_get_style_image_opa
+0804a221 l     F .text	00000030 lv_obj_get_style_image_recolor_opa
+0804a251 l     F .text	00000030 lv_obj_get_style_transition_time
+0804a281 l     F .text	00000030 lv_obj_get_style_transition_delay
+0804a2b1 l     F .text	00000030 lv_obj_get_style_transition_prop_1
+0804a2e1 l     F .text	00000030 lv_obj_get_style_transition_prop_2
+0804a311 l     F .text	00000030 lv_obj_get_style_transition_prop_3
+0804a341 l     F .text	00000030 lv_obj_get_style_transition_prop_4
+0804a371 l     F .text	00000030 lv_obj_get_style_transition_prop_5
+0804a3a1 l     F .text	00000030 lv_obj_get_style_transition_prop_6
+0804a3d1 l     F .text	00000030 lv_obj_get_style_transition_path
+0804a401 l     F .text	00000030 lv_obj_get_style_scale_width
+0804a431 l     F .text	00000030 lv_obj_get_style_scale_border_width
+0804a461 l     F .text	00000030 lv_obj_get_style_scale_end_border_width
+0804a491 l     F .text	00000030 lv_obj_get_style_scale_end_line_width
+0804a4c1 l     F .text	00000036 lv_obj_get_style_scale_grad_color
+0804a4f7 l     F .text	00000036 lv_obj_get_style_scale_end_color
+08096020 l     O .data	00000001 lv_initialized
+080b4340 l     O .bss	00000004 event_temp_data_head
+080b4344 l     O .bss	00000004 event_act_data
+0804a52d l     F .text	0000007b _memcmp
+08051682 l     F .text	0000022a lv_obj_signal
+0805118c l     F .text	000004a3 lv_obj_design
+08050faa l     F .text	000001e2 obj_del_core
+08050f51 l     F .text	00000059 lv_obj_del_async_cb
+080518ac l     F .text	000000da refresh_children_position
+08051b63 l     F .text	00000133 obj_align_core
+08051c96 l     F .text	000005e5 obj_align_mid_core
+0805291f l     F .text	0000012b trans_del
+080538fc l     F .text	000000fb invalidate_style_cache
+08051a72 l     F .text	00000081 refresh_children_style
+08051986 l     F .text	000000ec report_style_mod_core
+08051af3 l     F .text	00000070 base_dir_refr_children
+080539f7 l     F .text	00000446 style_snapshot
+08053e3d l     F .text	00000331 style_snapshot_compare
+0805227b l     F .text	000006a4 trans_create
+08052a4a l     F .text	00000235 trans_anim_cb
+08052c7f l     F .text	00000136 trans_anim_start_cb
+08052db5 l     F .text	0000010f trans_anim_ready_cb
+0805310a l     F .text	0000060e update_style_cache
+08052ec4 l     F .text	00000031 opa_scale_anim
+08052ef5 l     F .text	0000003c fade_in_anim_ready
+08052f6f l     F .text	00000081 obj_valid_child
+08052f31 l     F .text	0000003e lv_event_mark_deleted
+08052ff0 l     F .text	0000011a style_prop_is_cacheble
+08053718 l     F .text	000001e4 update_style_cache_children
+08051d4e l       .text	00000000 .L1140
+08051da1 l       .text	00000000 .L1142
+08051dba l       .text	00000000 .L1143
+08051df0 l       .text	00000000 .L1144
+08051e1b l       .text	00000000 .L1145
+08051e46 l       .text	00000000 .L1146
+08051e8e l       .text	00000000 .L1147
+08051ecb l       .text	00000000 .L1148
+08051f01 l       .text	00000000 .L1149
+08051f49 l       .text	00000000 .L1150
+08051f62 l       .text	00000000 .L1151
+08051f98 l       .text	00000000 .L1152
+08051fc3 l       .text	00000000 .L1153
+08051fee l       .text	00000000 .L1154
+08052036 l       .text	00000000 .L1155
+08052073 l       .text	00000000 .L1156
+0805208c l       .text	00000000 .L1157
+080520c2 l       .text	00000000 .L1158
+080520ed l       .text	00000000 .L1159
+08052115 l       .text	00000000 .L1160
+0805215a l       .text	00000000 .L1161
+00000000 l    df *ABS*	00000000 lv_refr.c
+0805416e l     F .text	00000040 _lv_memcpy_small
+080541ae l     F .text	00000020 lv_area_copy
+080541ce l     F .text	00000025 lv_area_get_width
+080541f3 l     F .text	00000026 lv_area_get_height
+08054219 l     F .text	00000036 lv_obj_get_style_opa_scale
+08096024 l     O .data	00000004 px_num
+08096028 l     O .data	00000004 disp_refr
+0805480a l     F .text	000001cb lv_refr_join_area
+080549d5 l     F .text	00000172 lv_refr_areas
+080554f1 l     F .text	00000145 lv_refr_vdb_flush
+08054b47 l     F .text	00000314 lv_refr_area
+08054e5b l     F .text	000002ad lv_refr_area_part
+08055108 l     F .text	000000fd lv_refr_get_top_obj
+08055205 l     F .text	000000f6 lv_refr_obj_and_children
+080552fb l     F .text	000001f6 lv_refr_obj
+00000000 l    df *ABS*	00000000 lv_style.c
+08055636 l     F .text	00000040 _lv_memcpy_small
+08055676 l     F .text	00000072 lv_style_list_get_style
+080570d7 l     F .text	000000fc get_property_index
+08057329 l     F .text	00000021 get_style_prop_attr
+0805734a l     F .text	0000004e get_prop_size
+08057292 l     F .text	00000034 style_resize
+080571d3 l     F .text	000000bf get_alloc_local_style
+08057398 l     F .text	0000002c get_next_prop_index
+0805730c l     F .text	0000001d get_style_prop_id
+080572c6 l     F .text	00000046 get_style_prop
+00000000 l    df *ABS*	00000000 lv_draw_img.c
+080573c4 l     F .text	0000005b lv_color_premult
+0805741f l     F .text	0000009e lv_color_mix_premult
+080574bd l     F .text	00000040 _lv_memcpy_small
+080574fd l     F .text	00000020 lv_area_copy
+0805751d l     F .text	00000025 lv_area_get_width
+08057542 l     F .text	00000026 lv_area_get_height
+08057568 l     F .text	000003aa _lv_img_buf_transform
+080589e2 l     F .text	0000007e show_error
+08057b36 l     F .text	000003c9 lv_img_draw_core
+08058a60 l     F .text	00000028 draw_cleanup
+08057eff l     F .text	00000ae3 lv_draw_map
+08057a48 l       .text	00000000 .L36
+08057a1e l       .text	00000000 .L37
+08057a24 l       .text	00000000 .L39
+08057a2a l       .text	00000000 .L40
+08057a30 l       .text	00000000 .L41
+08057a36 l       .text	00000000 .L42
+08057a3c l       .text	00000000 .L43
+08057a42 l       .text	00000000 .L44
+00000000 l    df *ABS*	00000000 lv_draw_label.c
+08058a88 l     F .text	00000040 _lv_memcpy_small
+08058ac8 l     F .text	00000025 lv_area_get_width
+08058aed l     F .text	00000016 lv_font_get_line_height
+08058b03 l     F .text	0000004d lv_color_make
+0805a5d0 l     F .text	0000008b hex_char_to_num
+080596fc l     F .text	000001b6 lv_draw_letter
+08059e00 l     F .text	000007d0 draw_letter_subpx
+080598b2 l     F .text	0000054e draw_letter_normal
+080b4360 l     O .bss	00000001 prev_opa.5683
+080b4364 l     O .bss	00000004 prev_bpp.5684
+080b4380 l     O .bss	00000100 opa_table.5682
+0805a62c l       .text	00000000 .L162
+0805a632 l       .text	00000000 .L164
+0805a638 l       .text	00000000 .L165
+0805a63e l       .text	00000000 .L166
+0805a644 l       .text	00000000 .L167
+0805a64a l       .text	00000000 .L168
+00000000 l    df *ABS*	00000000 lv_draw_line.c
+0805a65b l     F .text	00000025 lv_area_get_width
+0805a9fa l     F .text	000003df draw_line_hor
+0805add9 l     F .text	0000036b draw_line_ver
+0805b144 l     F .text	000007b9 draw_line_skew
+08088600 l     O .rodata	00000021 wcorr.5969
+00000000 l    df *ABS*	00000000 lv_draw_mask.c
+0805b8fd l     F .text	00000040 _lv_memcpy_small
+0805b93d l     F .text	00000020 lv_area_copy
+0805b95d l     F .text	00000025 lv_area_get_width
+0805b982 l     F .text	00000026 lv_area_get_height
+0805c2fe l     F .text	00000264 lv_draw_mask_line
+0805ce53 l     F .text	00000723 lv_draw_mask_angle
+0805d576 l     F .text	00000a8b lv_draw_mask_radius
+0805e001 l     F .text	00000260 lv_draw_mask_fade
+0805e261 l     F .text	00000198 lv_draw_mask_map
+0805c562 l     F .text	00000398 line_mask_flat
+0805c8fa l     F .text	00000559 line_mask_steep
+0805e3f9 l     F .text	0000004b mask_mix
+0805e444 l     F .text	00000080 sqrt_approx
+00000000 l    df *ABS*	00000000 lv_draw_rect.c
+0805e4c8 l     F .text	00000040 _lv_memcpy_small
+0805e508 l     F .text	00000020 lv_area_copy
+0805e528 l     F .text	00000025 lv_area_get_width
+0805e54d l     F .text	00000026 lv_area_get_height
+0805e573 l     F .text	000000c7 lv_color_mix
+0805f7f0 l     F .text	0000189f draw_shadow
+0805e81f l     F .text	00000901 draw_bg
+0806191c l     F .text	00000495 draw_pattern
+0805f120 l     F .text	000005eb draw_border
+08061db1 l     F .text	00000181 draw_value_str
+080617d9 l     F .text	00000143 draw_outline
+0805f70b l     F .text	000000e5 grad_get
+08061f32 l     F .text	0000095b draw_full_border
+0806108f l     F .text	000003a8 shadow_draw_corner_buf
+08061437 l     F .text	000003a2 shadow_blur_corner
+00000000 l    df *ABS*	00000000 lv_img_buf.c
+0806288d l     F .text	00000012 lv_color_to32
+0806289f l     F .text	000000c7 lv_color_mix
+08062966 l     F .text	00000040 _lv_memcpy_small
+080638af l       .text	00000000 .L63
+080638c6 l       .text	00000000 .L65
+080638dd l       .text	00000000 .L66
+08063962 l       .text	00000000 .L67
+08063983 l       .text	00000000 .L68
+080639a4 l       .text	00000000 .L69
+080639c3 l       .text	00000000 .L70
+080638f4 l       .text	00000000 .L71
+08063915 l       .text	00000000 .L72
+08063936 l       .text	00000000 .L73
+08063955 l       .text	00000000 .L74
+00000000 l    df *ABS*	00000000 lv_img_cache.c
+080b4480 l     O .bss	00000028 cache_temp
+00000000 l    df *ABS*	00000000 lv_img_decoder.c
+0806484c l     F .text	0000004d lv_color_make
+08064899 l     F .text	00000040 _lv_memcpy_small
+08065676 l     F .text	000000f3 lv_img_decoder_built_in_line_true_color
+08065769 l     F .text	000003e0 lv_img_decoder_built_in_line_alpha
+08065b49 l     F .text	0000035f lv_img_decoder_built_in_line_indexed
+00000000 l    df *ABS*	00000000 lv_font.c
+00000000 l    df *ABS*	00000000 lv_font_fmt_txt.c
+080b44a8 l     O .bss	00000004 rle_rdp
+080b44ac l     O .bss	00000004 rle_in
+080b44b0 l     O .bss	00000001 rle_bpp
+080b44b1 l     O .bss	00000001 rle_prev_v
+080b44b2 l     O .bss	00000001 rle_cnt
+080b44b4 l     O .bss	00000004 rle_state
+0806630d l     F .text	00000378 get_glyph_dsc_id
+080668fb l     F .text	00000219 decompress
+08066685 l     F .text	000001b1 get_kern_value
+0806702e l     F .text	00000025 unicode_list_compare
+08066836 l     F .text	00000062 kern_pair_8_compare
+08066898 l     F .text	00000063 kern_pair_16_compare
+08066d64 l     F .text	0000004e rle_init
+08066b14 l     F .text	0000004d decompress_line
+08066c5c l     F .text	00000108 bits_write
+08066db2 l     F .text	0000027c rle_next
+08066b61 l     F .text	000000fb get_bits
+08066bac l       .text	00000000 .L71
+08066b8e l       .text	00000000 .L72
+08066b94 l       .text	00000000 .L74
+08066b9a l       .text	00000000 .L75
+08066ba0 l       .text	00000000 .L76
+08066ba6 l       .text	00000000 .L77
+08066c9a l       .text	00000000 .L83
+08066ca0 l       .text	00000000 .L85
+08066ca6 l       .text	00000000 .L86
+08066cac l       .text	00000000 .L87
+08066cb2 l       .text	00000000 .L88
+08066cb8 l       .text	00000000 .L89
+08066cbe l       .text	00000000 .L90
+08066cc4 l       .text	00000000 .L91
+00000000 l    df *ABS*	00000000 lv_font_montserrat_14.c
+08088700 l     O .rodata	0000219a gylph_bitmap
+0808a8a0 l     O .rodata	000004d8 glyph_dsc
+0808ad80 l     O .rodata	00000076 unicode_list_1
+08095fc0 l     O .data.rel.ro	00000028 cmaps
+0808ae00 l     O .rodata	0000009b kern_left_class_mapping
+0808aea0 l     O .rodata	0000009b kern_right_class_mapping
+0808af40 l     O .rodata	00000bad kern_class_values
+08095fe8 l     O .data.rel.ro	00000010 kern_classes
+08096040 l     O .data	00000020 font_dsc
+00000000 l    df *ABS*	00000000 lv_hal_disp.c
+08096074 l     O .data	00000004 disp_def
+00000000 l    df *ABS*	00000000 lv_hal_indev.c
+00000000 l    df *ABS*	00000000 lv_hal_tick.c
+08096078 l     O .data	00000004 sys_time
+0809607c l     O .data	00000001 tick_irq_flag
+00000000 l    df *ABS*	00000000 lv_anim.c
+08067ca0 l     F .text	00000040 _lv_memcpy_small
+080b44b8 l     O .bss	00000004 last_task_run
+080b44bc l     O .bss	00000001 anim_list_changed
+080b44c0 l     O .bss	00000004 _lv_anim_task
+080685c5 l     F .text	00000210 anim_task
+0806895a l     F .text	0000005f anim_mark_list_change
+080687d5 l     F .text	00000185 anim_ready_handler
+00000000 l    df *ABS*	00000000 lv_area.c
+080689bd l     F .text	00000025 lv_area_get_width
+080689e2 l     F .text	00000026 lv_area_get_height
+08069719 l     F .text	000000bf lv_point_within_circle
+0806917d l       .text	00000000 .L41
+080691f7 l       .text	00000000 .L43
+0806920d l       .text	00000000 .L44
+08069255 l       .text	00000000 .L45
+08069287 l       .text	00000000 .L46
+080692b9 l       .text	00000000 .L47
+0806931d l       .text	00000000 .L48
+0806936b l       .text	00000000 .L49
+080693b3 l       .text	00000000 .L50
+08069417 l       .text	00000000 .L51
+0806943a l       .text	00000000 .L52
+0806948f l       .text	00000000 .L53
+080694ce l       .text	00000000 .L54
+080694ef l       .text	00000000 .L55
+08069542 l       .text	00000000 .L56
+0806957f l       .text	00000000 .L57
+080695a2 l       .text	00000000 .L58
+080695f7 l       .text	00000000 .L59
+08069636 l       .text	00000000 .L60
+08069657 l       .text	00000000 .L61
+080696a7 l       .text	00000000 .L62
+00000000 l    df *ABS*	00000000 lv_async.c
+0806986f l     F .text	00000043 lv_async_task_cb
+00000000 l    df *ABS*	00000000 lv_debug.c
+08096080 l     O .data	00000011 hex.1646
+00000000 l    df *ABS*	00000000 lv_fs.c
+0806a7c8 l     F .text	00000044 lv_fs_get_real_path
+00000000 l    df *ABS*	00000000 lv_gc.c
+00000000 l    df *ABS*	00000000 lv_ll.c
+0806b0a6 l     F .text	0000003f node_set_prev
+0806b0e5 l     F .text	00000042 node_set_next
+00000000 l    df *ABS*	00000000 lv_math.c
+0808bb80 l     O .rodata	000000b6 sin0_90_table
+00000000 l    df *ABS*	00000000 lv_mem.c
+08096234 l     O .data	00000004 work_mem
+08096238 l     O .data	00000004 zero_mem
+0809623c l     O .data	00000004 mem_max_size
+08096240 l     O .data	00000010 mem_buf1_32
+08096250 l     O .data	00000010 mem_buf2_32
+08096260 l     O .data	00000010 mem_buf_small
+080b44e0 l     O .bss	00008000 work_mem_int.3109
+0806c67e l     F .text	00000063 ent_get_next
+0806c6e1 l     F .text	0000005a ent_alloc
+080bc4e0 l     O .bss	00000002 full_defrag_cnt.3130
+0806c73b l     F .text	000000a3 ent_trunc
+00000000 l    df *ABS*	00000000 lv_task.c
+08096270 l     O .data	00000001 lv_task_run
+08096271 l     O .data	00000001 idle_last
+08096272 l     O .data	00000001 task_deleted
+08096273 l     O .data	00000001 task_list_changed
+08096274 l     O .data	00000001 task_created
+08096275 l     O .data	00000001 already_running.3101
+08096278 l     O .data	00000004 idle_period_start.3102
+0809627c l     O .data	00000004 handler_start.3103
+08096280 l     O .data	00000004 busy_time.3104
+08096284 l     O .data	00000004 time_till_next.3105
+0806d050 l     F .text	000000aa lv_task_exec
+0806d0fa l     F .text	00000046 lv_task_time_remaining
+00000000 l    df *ABS*	00000000 lv_txt.c
+0806d140 l     F .text	00000040 _lv_memcpy_small
+0806d180 l     F .text	00000016 lv_font_get_line_height
+0806db91 l     F .text	00000079 lv_txt_utf8_size
+0806dc0a l     F .text	000000d4 lv_txt_unicode_to_utf8
+0806dcde l     F .text	0000008d lv_txt_utf8_conv_wc
+0806dd6b l     F .text	00000314 lv_txt_utf8_next
+0806e07f l     F .text	000000a9 lv_txt_utf8_prev
+0806e128 l     F .text	00000064 lv_txt_utf8_get_byte_id
+0806e18c l     F .text	0000004b lv_txt_utf8_get_char_id
+0806e1d7 l     F .text	00000052 lv_txt_utf8_get_length
+0806d3ec l     F .text	00000240 lv_txt_get_next_word
+0806e229 l     F .text	00000054 is_break_char
+00000000 l    df *ABS*	00000000 lv_utils.c
+00000000 l    df *ABS*	00000000 lv_theme.c
+080962a8 l     O .data	00000004 act_theme
+0806e6ce l     F .text	00000643 clear_styles
+0806e651 l     F .text	0000007d apply_theme
+0806ed0a l       .text	00000000 .L75
+0806e6fb l       .text	00000000 .L33
+0806e710 l       .text	00000000 .L34
+0806e85c l       .text	00000000 .L35
+0806e799 l       .text	00000000 .L36
+0806e73a l       .text	00000000 .L37
+0806e74f l       .text	00000000 .L38
+0806ec5f l       .text	00000000 .L39
+0806e7f3 l       .text	00000000 .L40
+0806e8db l       .text	00000000 .L41
+0806eafc l       .text	00000000 .L42
+0806e725 l       .text	00000000 .L43
+0806eca1 l       .text	00000000 .L44
+0806eab7 l       .text	00000000 .L45
+0806ecd5 l       .text	00000000 .L46
+0806e808 l       .text	00000000 .L47
+0806e81d l       .text	00000000 .L48
+0806e774 l       .text	00000000 .L49
+0806e832 l       .text	00000000 .L50
+0806e93a l       .text	00000000 .L51
+0806e847 l       .text	00000000 .L52
+0806ea6d l       .text	00000000 .L53
+0806eaa2 l       .text	00000000 .L54
+0806ecc3 l       .text	00000000 .L55
+0806e900 l       .text	00000000 .L56
+0806e915 l       .text	00000000 .L57
+0806ea58 l       .text	00000000 .L58
+0806e94f l       .text	00000000 .L59
+0806ea33 l       .text	00000000 .L60
+0806e8a6 l       .text	00000000 .L61
+0806ec25 l       .text	00000000 .L62
+0806ec4a l       .text	00000000 .L63
+0806e881 l       .text	00000000 .L64
+0806e7be l       .text	00000000 .L65
+0806eb31 l       .text	00000000 .L66
+0806e984 l       .text	00000000 .L67
+0806e9d9 l       .text	00000000 .L68
+0806ebe0 l       .text	00000000 .L69
+0806e9fe l       .text	00000000 .L70
+0806eb86 l       .text	00000000 .L71
+0806ebcb l       .text	00000000 .L72
+00000000 l    df *ABS*	00000000 lv_theme_material.c
+0806ed11 l     F .text	000000c7 lv_color_mix
+0806edd8 l     F .text	0000004d lv_color_make
+0806ee25 l     F .text	0000003f lv_color_hex
+0806ee64 l     F .text	00000069 lv_color_hex3
+0806eecd l     F .text	00000047 lv_style_set_radius
+0806ef14 l     F .text	00000046 lv_style_set_clip_corner
+0806ef5a l     F .text	00000047 lv_style_set_size
+0806efa1 l     F .text	00000047 lv_style_set_transform_width
+0806efe8 l     F .text	00000047 lv_style_set_pad_top
+0806f02f l     F .text	00000047 lv_style_set_pad_bottom
+0806f076 l     F .text	00000047 lv_style_set_pad_left
+0806f0bd l     F .text	00000047 lv_style_set_pad_right
+0806f104 l     F .text	00000047 lv_style_set_pad_inner
+0806f14b l     F .text	00000047 lv_style_set_margin_top
+0806f192 l     F .text	00000047 lv_style_set_margin_bottom
+0806f1d9 l     F .text	00000047 lv_style_set_margin_left
+0806f220 l     F .text	00000047 lv_style_set_margin_right
+0806f267 l     F .text	0000003e lv_style_set_bg_color
+0806f2a5 l     F .text	00000046 lv_style_set_bg_opa
+0806f2eb l     F .text	00000047 lv_style_set_border_width
+0806f332 l     F .text	00000046 lv_style_set_border_side
+0806f378 l     F .text	00000046 lv_style_set_border_post
+0806f3be l     F .text	0000003e lv_style_set_border_color
+0806f3fc l     F .text	00000046 lv_style_set_border_opa
+0806f442 l     F .text	00000047 lv_style_set_outline_width
+0806f489 l     F .text	00000047 lv_style_set_outline_pad
+0806f4d0 l     F .text	0000003e lv_style_set_outline_color
+0806f50e l     F .text	00000046 lv_style_set_outline_opa
+0806f554 l     F .text	00000047 lv_style_set_shadow_width
+0806f59b l     F .text	00000047 lv_style_set_shadow_spread
+0806f5e2 l     F .text	0000003e lv_style_set_shadow_color
+0806f620 l     F .text	0000003e lv_style_set_pattern_recolor
+0806f65e l     F .text	00000046 lv_style_set_pattern_opa
+0806f6a4 l     F .text	0000003e lv_style_set_pattern_image
+0806f6e2 l     F .text	0000003e lv_style_set_value_color
+0806f720 l     F .text	0000003e lv_style_set_value_font
+0806f75e l     F .text	00000049 lv_style_set_text_line_space
+0806f7a7 l     F .text	00000040 lv_style_set_text_color
+0806f7e7 l     F .text	00000040 lv_style_set_text_sel_color
+0806f827 l     F .text	00000040 lv_style_set_text_sel_bg_color
+0806f867 l     F .text	00000040 lv_style_set_text_font
+0806f8a7 l     F .text	00000047 lv_style_set_line_width
+0806f8ee l     F .text	00000047 lv_style_set_line_dash_width
+0806f935 l     F .text	00000047 lv_style_set_line_dash_gap
+0806f97c l     F .text	00000046 lv_style_set_line_rounded
+0806f9c2 l     F .text	0000003e lv_style_set_line_color
+0806fa00 l     F .text	00000040 lv_style_set_image_recolor
+0806fa40 l     F .text	00000047 lv_style_set_transition_time
+0806fa87 l     F .text	00000047 lv_style_set_transition_delay
+0806face l     F .text	00000047 lv_style_set_transition_prop_3
+0806fb15 l     F .text	00000047 lv_style_set_transition_prop_4
+0806fb5c l     F .text	00000047 lv_style_set_transition_prop_5
+0806fba3 l     F .text	00000047 lv_style_set_transition_prop_6
+0806fbea l     F .text	00000047 lv_style_set_scale_width
+0806fc31 l     F .text	00000047 lv_style_set_scale_end_border_width
+0806fc78 l     F .text	00000047 lv_style_set_scale_end_line_width
+0806fcbf l     F .text	0000003e lv_style_set_scale_grad_color
+0806fcfd l     F .text	0000003e lv_style_set_scale_end_color
+080962c0 l     O .data	0000002c theme
+080962ec l     O .data	00000004 styles
+080962f0 l     O .data	00000001 inited
+0806fd3b l     F .text	00002277 basic_init
+08078ed7 l     F .text	00000044 style_init_reset
+08071fb2 l     F .text	00000010 cont_init
+08071fc2 l     F .text	00000010 btn_init
+08071fd2 l     F .text	00000010 label_init
+08071fe2 l     F .text	00000303 bar_init
+080722e5 l     F .text	00000010 img_init
+080722f5 l     F .text	00000010 line_init
+08072305 l     F .text	000001e2 led_init
+080724e7 l     F .text	000004cb slider_init
+080729b2 l     F .text	00000256 switch_init
+08072c08 l     F .text	000003dd linemeter_init
+08072fe5 l     F .text	00000851 gauge_init
+08073836 l     F .text	00000281 arc_init
+08073ab7 l     F .text	00000010 spinner_init
+08073ac7 l     F .text	0000040b chart_init
+08073ed2 l     F .text	00000c1b calendar_init
+08074aed l     F .text	00000485 cpicker_init
+08074f72 l     F .text	00000582 checkbox_init
+080754f4 l     F .text	00000010 btnmatrix_init
+08075504 l     F .text	00000388 keyboard_init
+0807588c l     F .text	000000de msgbox_init
+0807596a l     F .text	00000282 page_init
+08075bec l     F .text	00000203 textarea_init
+08075def l     F .text	00000171 spinbox_init
+08075f60 l     F .text	00000cb3 list_init
+08076c13 l     F .text	0000020f ddlist_init
+08076e22 l     F .text	0000013f roller_init
+08076f61 l     F .text	00000010 tabview_init
+08076f71 l     F .text	00000010 tileview_init
+08076f81 l     F .text	0000040a table_init
+0807738b l     F .text	00000010 win_init
+0807739b l     F .text	000009ad tabview_win_shared_init
+08077ea4 l     F .text	00001033 theme_apply
+08078eb8 l       .text	00000000 .L727
+08077ed1 l       .text	00000000 .L683
+08077efe l       .text	00000000 .L684
+08078184 l       .text	00000000 .L685
+080780a1 l       .text	00000000 .L686
+08077f5e l       .text	00000000 .L687
+08077f8e l       .text	00000000 .L688
+08078cc6 l       .text	00000000 .L689
+0807834f l       .text	00000000 .L691
+080788e6 l       .text	00000000 .L692
+08077f2e l       .text	00000000 .L693
+08078d77 l       .text	00000000 .L694
+080787eb l       .text	00000000 .L695
+08078e1a l       .text	00000000 .L696
+08078019 l       .text	00000000 .L699
+08078465 l       .text	00000000 .L701
+08078746 l       .text	00000000 .L703
+080787bb l       .text	00000000 .L704
+08078dd2 l       .text	00000000 .L705
+080783c2 l       .text	00000000 .L706
+0807840a l       .text	00000000 .L707
+0807872e l       .text	00000000 .L708
+08078495 l       .text	00000000 .L709
+080786b7 l       .text	00000000 .L710
+080782ad l       .text	00000000 .L711
+08078c09 l       .text	00000000 .L712
+08078c7e l       .text	00000000 .L713
+08078252 l       .text	00000000 .L714
+080780fc l       .text	00000000 .L715
+080789df l       .text	00000000 .L716
+0807854a l       .text	00000000 .L717
+080785fe l       .text	00000000 .L718
+08078b3a l       .text	00000000 .L719
+08078630 l       .text	00000000 .L720
+08078a54 l       .text	00000000 .L721
+08078b08 l       .text	00000000 .L722
+00000000 l    df *ABS*	00000000 lv_bar.c
+08078f1b l     F .text	00000040 _lv_memcpy_small
+08078f5b l     F .text	00000020 lv_area_copy
+08078f7b l     F .text	00000025 lv_area_get_width
+08078fa0 l     F .text	00000026 lv_area_get_height
+08078fc6 l     F .text	00000018 lv_anim_set_var
+08078fde l     F .text	00000019 lv_anim_set_exec_cb
+08078ff7 l     F .text	00000019 lv_anim_set_time
+08079010 l     F .text	0000003f lv_anim_set_values
+0807904f l     F .text	00000019 lv_anim_set_ready_cb
+08079068 l     F .text	00000033 lv_obj_get_style_radius
+0807909b l     F .text	00000033 lv_obj_get_style_pad_top
+080790ce l     F .text	00000033 lv_obj_get_style_pad_bottom
+08079101 l     F .text	00000033 lv_obj_get_style_pad_left
+08079134 l     F .text	00000033 lv_obj_get_style_pad_right
+08079167 l     F .text	00000039 lv_obj_get_style_border_post
+080bc4e4 l     O .bss	00000004 ancestor_design_f
+080bc4e8 l     O .bss	00000004 ancestor_signal
+0807a979 l     F .text	00000033 lv_bar_init_anim
+0807a5a3 l     F .text	0000014c lv_bar_signal
+08079b0f l     F .text	0000012d lv_bar_design
+0807a83c l     F .text	0000013d lv_bar_set_value_with_anim
+08079c3c l     F .text	00000070 draw_bg
+08079cac l     F .text	000008f7 draw_indic
+0807a6ef l     F .text	00000090 lv_bar_get_style
+0807a77f l     F .text	0000003c lv_bar_anim
+0807a7bb l     F .text	00000081 lv_bar_anim_ready
+00000000 l    df *ABS*	00000000 lv_btn.c
+0807a9ac l     F .text	00000032 lv_btn_set_layout
+080bc4ec l     O .bss	00000004 ancestor_signal
+080bc4f0 l     O .bss	00000004 ancestor_design
+0807af97 l     F .text	000001ed lv_btn_signal
+0807af19 l     F .text	0000007e lv_btn_design
+0807aca2 l       .text	00000000 .L22
+0807acb7 l       .text	00000000 .L24
+0807ad20 l       .text	00000000 .L25
+0807acdc l       .text	00000000 .L26
+0807acfe l       .text	00000000 .L27
+0807ad42 l       .text	00000000 .L28
+00000000 l    df *ABS*	00000000 lv_cont.c
+0807b184 l     F .text	00000040 _lv_memcpy_small
+0807b1c4 l     F .text	00000020 lv_area_copy
+0807b1e4 l     F .text	00000025 lv_area_get_width
+0807b209 l     F .text	00000026 lv_area_get_height
+0807b22f l     F .text	00000033 lv_obj_get_style_pad_top
+0807b262 l     F .text	00000033 lv_obj_get_style_pad_bottom
+0807b295 l     F .text	00000033 lv_obj_get_style_pad_left
+0807b2c8 l     F .text	00000033 lv_obj_get_style_pad_right
+0807b2fb l     F .text	00000033 lv_obj_get_style_pad_inner
+0807b32e l     F .text	00000033 lv_obj_get_style_margin_top
+0807b361 l     F .text	00000033 lv_obj_get_style_margin_bottom
+0807b394 l     F .text	00000033 lv_obj_get_style_margin_left
+0807b3c7 l     F .text	00000033 lv_obj_get_style_margin_right
+080bc4f4 l     O .bss	00000004 ancestor_design
+080bc4f8 l     O .bss	00000004 ancestor_signal
+0807ba72 l     F .text	00000196 lv_cont_signal
+0807bc08 l     F .text	00000035 lv_cont_get_style
+0807bc3d l     F .text	000000fe lv_cont_refr_layout
+0807ca72 l     F .text	000005ca lv_cont_refr_autofit
+0807c149 l     F .text	000001cf lv_cont_layout_center
+0807bd3b l     F .text	000001f3 lv_cont_layout_col
+0807bf2e l     F .text	0000021b lv_cont_layout_row
+0807c318 l     F .text	000005ce lv_cont_layout_pretty
+0807c8e6 l     F .text	0000018c lv_cont_layout_grid
+00000000 l    df *ABS*	00000000 lv_label.c
+0807d03c l     F .text	00000040 _lv_memcpy_small
+0807d07c l     F .text	00000020 lv_area_copy
+0807d09c l     F .text	00000025 lv_area_get_width
+0807d0c1 l     F .text	00000026 lv_area_get_height
+0807d0e7 l     F .text	00000016 lv_font_get_line_height
+0807d0fd l     F .text	00000018 lv_anim_set_var
+0807d115 l     F .text	00000019 lv_anim_set_exec_cb
+0807d12e l     F .text	00000019 lv_anim_set_time
+0807d147 l     F .text	0000003f lv_anim_set_values
+0807d186 l     F .text	00000024 lv_anim_set_playback_time
+0807d1aa l     F .text	00000024 lv_anim_set_playback_delay
+0807d1ce l     F .text	00000025 lv_anim_set_repeat_count
+0807d1f3 l     F .text	00000024 lv_anim_set_repeat_delay
+0807d217 l     F .text	00000033 lv_obj_get_style_transform_width
+0807d24a l     F .text	00000033 lv_obj_get_style_transform_height
+0807d27d l     F .text	00000033 lv_obj_get_style_pad_top
+0807d2b0 l     F .text	00000033 lv_obj_get_style_pad_bottom
+0807d2e3 l     F .text	00000033 lv_obj_get_style_pad_left
+0807d316 l     F .text	00000033 lv_obj_get_style_pad_right
+0807d349 l     F .text	00000036 lv_obj_get_style_text_letter_space
+0807d37f l     F .text	00000036 lv_obj_get_style_text_line_space
+0807d3b5 l     F .text	00000036 lv_obj_get_style_text_font
+080bc4fc l     O .bss	00000004 ancestor_signal
+0807fce7 l     F .text	00000454 lv_label_design
+0808013b l     F .text	000001fb lv_label_signal
+080804cf l     F .text	000000c6 lv_label_set_dot_tmp
+0808043d l     F .text	00000049 lv_label_set_offset_x
+08080486 l     F .text	00000049 lv_label_set_offset_y
+08080336 l     F .text	00000107 lv_label_revert_dots
+08080644 l     F .text	000000dc get_txt_coords
+080805da l     F .text	0000006a lv_label_dot_tmp_free
+08080595 l     F .text	00000045 lv_label_get_dot_tmp
+00000000 l    df *ABS*	00000000 lv_group.c
+0808112f l     F .text	0000008a lv_group_refocus
+080813e6 l     F .text	00000066 obj_to_foreground
+080811b9 l     F .text	0000022d focus_next_core
+00000000 l    df *ABS*	00000000 lv_indev.c
+080bc500 l     O .bss	00000004 indev_act
+080bc504 l     O .bss	00000004 indev_obj_act
+08083790 l     F .text	000000cf indev_proc_reset_query_handler
+08081b10 l     F .text	000000d7 indev_pointer_proc
+08081be7 l     F .text	0000069a indev_keypad_proc
+08082281 l     F .text	000008f1 indev_encoder_proc
+08082b72 l     F .text	00000120 indev_button_proc
+08084574 l     F .text	00000058 get_dragged_obj
+08082c92 l     F .text	000007aa indev_proc_press
+0808343c l     F .text	00000354 indev_proc_release
+080847bd l     F .text	0000003b indev_reset_check
+080841f3 l     F .text	00000381 indev_drag_throw
+0808395d l     F .text	00000349 indev_click_focus
+08083ca6 l     F .text	0000054d indev_drag
+080845cc l     F .text	000001f1 indev_gesture
+00000000 l    df *ABS*	00000000 lv_draw_blend.c
+080847f8 l     F .text	000000c7 lv_color_mix
+080848bf l     F .text	0000005b lv_color_premult
+0808491a l     F .text	0000009e lv_color_mix_premult
+080849b8 l     F .text	00000025 lv_area_get_width
+080849dd l     F .text	00000026 lv_area_get_height
+080bc520 l     O .bss	00000a00 blend_buf
+08084de1 l     F .text	0000017e fill_set_px
+08084f5f l     F .text	00000795 fill_normal
+080856f4 l     F .text	000002c1 fill_blended
+080859b5 l     F .text	0000023e map_set_px
+08085bf3 l     F .text	000007f8 map_normal
+080863eb l     F .text	000002be map_blended
+080866a9 l     F .text	000000b6 color_blend_true_color_additive
+0808675f l     F .text	000000c6 color_blend_true_color_subtractive
+00000000 l    df *ABS*	00000000 lv_color.c
+08086825 l     F .text	00000012 lv_color_to32
+08086837 l     F .text	000000c7 lv_color_mix
+080868fe l     F .text	0000004d lv_color_make
+08086c35 l       .text	00000000 .L20
+08086c4c l       .text	00000000 .L22
+08086c63 l       .text	00000000 .L23
+08086c7a l       .text	00000000 .L24
+08086c91 l       .text	00000000 .L25
+00000000 l    df *ABS*	00000000 lv_printf.c
+08086f20 l     F .text	0000002f _out_buffer
+08086f4f l     F .text	00000019 _out_null
+08086f68 l     F .text	0000003f _strnlen_s
+08086fa7 l     F .text	00000033 _is_digit
+08086fda l     F .text	00000063 _atoi
+0808703d l     F .text	000000c1 _out_rev
+080870fe l     F .text	000001d3 _ntoa_format
+080872d1 l     F .text	000000d3 _ntoa_long
+080873a4 l     F .text	000007bd _vsnprintf
+080874ac l       .text	00000000 .L61
+0808765a l       .text	00000000 .L137
+08087afb l       .text	00000000 .L86
+08087480 l       .text	00000000 .L62
+08087496 l       .text	00000000 .L64
+0808746a l       .text	00000000 .L65
+08087454 l       .text	00000000 .L66
+0808743e l       .text	00000000 .L67
+080875fb l       .text	00000000 .L77
+08087636 l       .text	00000000 .L79
+080875cf l       .text	00000000 .L80
+08087624 l       .text	00000000 .L81
+08087648 l       .text	00000000 .L82
+08087ad6 l       .text	00000000 .L87
+08087684 l       .text	00000000 .L89
+080878dd l       .text	00000000 .L90
+08087a8d l       .text	00000000 .L91
+08087981 l       .text	00000000 .L92
+00000000 l    df *ABS*	00000000 initstart.asm
+00000000 l    df *ABS*	00000000 lib/string.asm
+08087bef l       .text	00000000 memcpy.1
+08087bff l       .text	00000000 memcpy.2
+08087c18 l       .text	00000000 memset.1
+08087c23 l       .text	00000000 memset.2
+08087c33 l       .text	00000000 strcpy.1
+08087c4d l       .text	00000000 strlen.1
+08087c56 l       .text	00000000 strlen.2
 00000000 l    df *ABS*	00000000 kernel/syscall.asm
 00000000 l       *ABS*	00000000 P_STACKBASE
 00000000 l       *ABS*	00000000 GSREG
@@ -182,1914 +929,605 @@ c0020ae8 l       .text	00000000 restart_syscall
 00000019 l       *ABS*	00000000 _NR_opendir
 0000001a l       *ABS*	00000000 _NR_createdir
 0000001b l       *ABS*	00000000 _NR_deletedir
+0000001c l       *ABS*	00000000 _NR_flush
 00000090 l       *ABS*	00000000 INT_VECTOR_SYS_CALL
-00000000 l    df *ABS*	00000000 start.c
-00000000 l    df *ABS*	00000000 main.c
-c0020f3e l     F .text	00000941 initialize_processes
-c0020f2a l     F .text	00000014 initialize_cpus
-00000000 l    df *ABS*	00000000 clock.c
-00000000 l    df *ABS*	00000000 i8259.c
-00000000 l    df *ABS*	00000000 global.c
-00000000 l    df *ABS*	00000000 protect.c
-c0021ed0 l     F .text	00000083 init_idt_desc
-c0021faf l     F .text	00000077 init_descriptor
-00000000 l    df *ABS*	00000000 proc.c
-00000000 l    df *ABS*	00000000 lib/kliba.asm
-00000000 l       *ABS*	00000000 P_STACKBASE
-00000000 l       *ABS*	00000000 GSREG
-00000004 l       *ABS*	00000000 FSREG
-00000008 l       *ABS*	00000000 ESREG
-0000000c l       *ABS*	00000000 DSREG
-00000010 l       *ABS*	00000000 EDIREG
-00000014 l       *ABS*	00000000 ESIREG
-00000018 l       *ABS*	00000000 EBPREG
-0000001c l       *ABS*	00000000 KERNELESPREG
-00000020 l       *ABS*	00000000 EBXREG
-00000024 l       *ABS*	00000000 EDXREG
-00000028 l       *ABS*	00000000 ECXREG
-0000002c l       *ABS*	00000000 EAXREG
-00000030 l       *ABS*	00000000 RETADR
-00000034 l       *ABS*	00000000 EIPREG
-00000038 l       *ABS*	00000000 CSREG
-0000003c l       *ABS*	00000000 EFLAGSREG
-00000040 l       *ABS*	00000000 ESPREG
-00000044 l       *ABS*	00000000 SSREG
-00000048 l       *ABS*	00000000 P_STACKTOP
-00000048 l       *ABS*	00000000 P_LDT_SEL
-0000004c l       *ABS*	00000000 P_LDT
-00002000 l       *ABS*	00000000 INIT_STACK_SIZE
-0000005c l       *ABS*	00000000 ESP_SAVE_INT
-00000060 l       *ABS*	00000000 ESP_SAVE_SYSCALL
-00000064 l       *ABS*	00000000 ESP_SAVE_CONTEXT
-00000004 l       *ABS*	00000000 TSS3_S_SP0
-00000020 l       *ABS*	00000000 INT_M_CTL
-00000021 l       *ABS*	00000000 INT_M_CTLMASK
-000000a0 l       *ABS*	00000000 INT_S_CTL
-000000a1 l       *ABS*	00000000 INT_S_CTLMASK
-00000020 l       *ABS*	00000000 EOI
-00000008 l       *ABS*	00000000 SELECTOR_FLAT_C
-00000020 l       *ABS*	00000000 SELECTOR_TSS
-00000008 l       *ABS*	00000000 SELECTOR_KERNEL_CS
-0000001b l       *ABS*	00000000 SELECTOR_VIDEO
-c002253e l       .text	00000000 disp_str.1
-c002255f l       .text	00000000 disp_str.3
-c002256c l       .text	00000000 disp_str.4
-c0022575 l       .text	00000000 disp_str.2
-c002258c l       .text	00000000 disp_color_str.1
-c00225ad l       .text	00000000 disp_color_str.3
-c00225b6 l       .text	00000000 disp_color_str.2
-c00225e3 l       .text	00000000 disable_0
-c00225f4 l       .text	00000000 disable_8
-c0022605 l       .text	00000000 dis_already
-c0022618 l       .text	00000000 enable_0
-c0022620 l       .text	00000000 enable_8
-00000000 l    df *ABS*	00000000 klib.c
-00000000 l    df *ABS*	00000000 string.c
-00000000 l    df *ABS*	00000000 lib/string.asm
-c002281f l       .text	00000000 memcpy.1
-c002282f l       .text	00000000 memcpy.2
-c0022848 l       .text	00000000 memset.1
-c0022853 l       .text	00000000 memset.2
-c0022863 l       .text	00000000 strcpy.1
-c002287d l       .text	00000000 strlen.1
-c0022886 l       .text	00000000 strlen.2
-00000000 l    df *ABS*	00000000 syscallc.c
-00000000 l    df *ABS*	00000000 memman.c
-00000000 l    df *ABS*	00000000 pagetbl.c
-00000000 l    df *ABS*	00000000 elf.c
-00000000 l    df *ABS*	00000000 file.c
-c0101424 l     O .bss	00000004 position
-00000000 l    df *ABS*	00000000 exec.c
-c0024d81 l     F .text	000001d7 exec_load
-c0024f58 l     F .text	000001de exec_pcb_init
-c0024ccd l     F .text	000000b4 exec_elfcpy
-00000000 l    df *ABS*	00000000 fork.c
-c002563b l     F .text	0000010d fork_pcb_cpy
-c0025279 l     F .text	000003c2 fork_mem_cpy
-c0025748 l     F .text	000000db fork_update_info
-00000000 l    df *ABS*	00000000 pthread.c
-c00259b5 l     F .text	000000ec pthread_pcb_cpy
-c0025bb2 l     F .text	000000c7 pthread_stack_init
-c0025c79 l     F .text	0000003a pthread_heap_init
-c0025aa1 l     F .text	00000111 pthread_update_info
-00000000 l    df *ABS*	00000000 ktest.c
-c0025cb3 l     F .text	00000297 untar
-00000000 l    df *ABS*	00000000 testfunc.c
-00000000 l    df *ABS*	00000000 fs.c
-c0101440 l     O .bss	00000004 root_inode
-c0101460 l     O .bss	00000b00 inode_table
-c00262db l     F .text	000009c6 mkfs
-c0027635 l     F .text	00000195 get_inode
-c0026ca1 l     F .text	00000066 rw_sector
-c0026d07 l     F .text	00000058 rw_sector_sched
-c0026dc9 l     F .text	000002ff do_open
-c0027277 l     F .text	0000017f search_file
-c00270c8 l     F .text	000000b2 create_file
-c00273f6 l     F .text	0000009b strip_path
-c0027cd4 l     F .text	000001a9 alloc_imap_bit
-c0027e7d l     F .text	000001e2 alloc_smap_bit
-c0027abf l     F .text	00000079 new_inode
-c0027b38 l     F .text	0000019c new_dir_entry
-c002717a l     F .text	00000080 memcmp
-c00271fa l     F .text	0000007d strcmp
-c00277ca l     F .text	00000195 get_inode_sched
-c002795f l     F .text	0000001f put_inode
-c002797e l     F .text	00000141 sync_inode
-c002807f l     F .text	0000007b do_close
-c00281a4 l     F .text	0000042f do_rdwt
-c0028631 l     F .text	00000842 do_unlink
-c0028ea6 l     F .text	000000c3 do_lseek
-00000000 l    df *ABS*	00000000 hd.c
-c0101f60 l     O .bss	00000008 hdque
-c0101f68 l     O .bss	00000004 hd_int_waiting_flag
-c0101f6c l     O .bss	00000001 hd_status
-c0101f80 l     O .bss	00000400 hdbuf
-c002a4a5 l     F .text	0000003e hd_handler
-c0029791 l     F .text	00000025 init_hd_queue
-c0029fe2 l     F .text	000000c4 hd_identify
-c0029ab8 l     F .text	0000035d partition
-c0029e15 l     F .text	000001cd print_hdinfo
-c002a2fd l     F .text	00000113 hd_cmd_out
-c002a410 l     F .text	00000025 interrupt_wait
-c002a435 l     F .text	00000070 waitfor
-c00293eb l     F .text	00000275 hd_rdwt_real
-c0029805 l     F .text	00000062 out_hd_queue
-c00297b6 l     F .text	0000004f in_hd_queue
-c002997a l     F .text	0000009f get_part_table
-c0029a19 l     F .text	0000009f get_fs_flags
-c002a0a6 l     F .text	00000257 print_identify_info
-c002a4e3 l     F .text	0000001a inform_int
-00000000 l    df *ABS*	00000000 spinlock.c
-c002a4fd l     F .text	0000002d cmpxchg
-00000000 l    df *ABS*	00000000 fat32.c
-c002bdea l     F .text	000001b0 load_disk
-c002bf9a l     F .text	000004b2 mkfs_fat
-00000000 l    df *ABS*	00000000 base.c
-00000000 l    df *ABS*	00000000 assist.c
-00000000 l    df *ABS*	00000000 vfs.c
-c01029a0 l     O .bss	000000a0 vfs_table
-c0102a40 l     O .bss	00000084 f_op_table
-c0102ac4 l     O .bss	00000010 sb_op_table
-c002f01e l     F .text	00000115 init_vfs_table
-c002f133 l     F .text	00000114 get_index
-c002fc81 l     F .text	0000007d strcmp
-00000000 l    df *ABS*	00000000 keyboard.c
-c0102ae0 l     O .bss	0000014c kb_in
-c0102c2c l     O .bss	00000008 mouse_in
-c0102c34 l     O .bss	00000004 mouse_init
-c0102c38 l     O .bss	00000004 code_with_E0
-c0102c3c l     O .bss	00000004 shift_l
-c0102c40 l     O .bss	00000004 shift_r
-c0102c44 l     O .bss	00000004 alt_l
-c0102c48 l     O .bss	00000004 alt_r
-c0102c4c l     O .bss	00000004 ctrl_l
-c0102c50 l     O .bss	00000004 ctrl_r
-c0102c54 l     O .bss	00000004 caps_lock
-c0102c58 l     O .bss	00000004 num_lock
-c0102c5c l     O .bss	00000004 scroll_lock
-c0102c60 l     O .bss	00000004 column
-c0030617 l     F .text	00000040 set_leds
-c0030657 l     F .text	00000085 set_mouse_leds
-c003053f l     F .text	00000077 get_byte_from_kb_buf
-c00305b6 l     F .text	00000033 kb_wait
-c00305e9 l     F .text	0000002e kb_ack
-c0030468 l       .text	00000000 .L96
-c003026e l       .text	00000000 .L37
-c003027c l       .text	00000000 .L39
-c003028a l       .text	00000000 .L40
-c0030298 l       .text	00000000 .L41
-c00302a6 l       .text	00000000 .L42
-c00302b1 l       .text	00000000 .L43
-c00302bc l       .text	00000000 .L44
-c00302dd l       .text	00000000 .L45
-c00302fe l       .text	00000000 .L46
-c0030379 l       .text	00000000 .L52
-c0030385 l       .text	00000000 .L54
-c0030391 l       .text	00000000 .L55
-c003039d l       .text	00000000 .L56
-c00303a9 l       .text	00000000 .L57
-c003045f l       .text	00000000 .L63
-c0030432 l       .text	00000000 .L65
-c0030417 l       .text	00000000 .L66
-c0030444 l       .text	00000000 .L67
-c0030429 l       .text	00000000 .L68
-c003044d l       .text	00000000 .L69
-c0030456 l       .text	00000000 .L70
-c003040e l       .text	00000000 .L71
-c003043b l       .text	00000000 .L72
-c0030420 l       .text	00000000 .L73
-00000000 l    df *ABS*	00000000 tty.c
-c0030ff3 l     F .text	0000008f put_key
-c0030a5c l     F .text	000000ee init_tty
-c0030b4a l     F .text	000002d2 tty_mouse
-c0030e1c l     F .text	0000003f tty_dev_read
-c0030e5b l     F .text	00000198 tty_dev_write
-c0030926 l       .text	00000000 .L12
-c0030755 l       .text	00000000 .L4
-c0030781 l       .text	00000000 .L6
-c003090c l       .text	00000000 .L7
-c0030796 l       .text	00000000 .L8
-c0030853 l       .text	00000000 .L9
-00000000 l    df *ABS*	00000000 shell.c
-c00316dd l     F .text	0000007d strcmp
-00000000 l    df *ABS*	00000000 console.c
-c0031bc8 l     F .text	00000077 set_cursor
-c0031f0e l     F .text	00000044 w_copy
-c0031b52 l     F .text	00000044 clear_screen
-c0031ec9 l     F .text	00000045 flush
-c0031c3f l     F .text	00000077 set_video_start_addr
 00000000 l    df *ABS*	00000000 printf.c
 00000000 l    df *ABS*	00000000 vsprintf.c
-c0031fba l     F .text	00000070 i2a
-00000000 l    df *ABS*	00000000 ginit.c
-c00324fa l     F .text	00000028 lv_scr_act
-c0032522 l     F .text	00000040 lv_slider_set_value
-c0032562 l     F .text	00000096 my_disp_flush
-c008c360 l     O .data	00000024 disp_buf.1
-c0102c80 l     O .bss	0001e000 buf.0
-00000000 l    df *ABS*	00000000 plot.c
-c003273e l     F .text	00000029 Coor2Addr
-00000000 l    df *ABS*	00000000 lv_disp.c
-c00327c0 l     F .text	00000018 lv_anim_set_var
-c00327d8 l     F .text	00000019 lv_anim_set_exec_cb
-c00327f1 l     F .text	00000019 lv_anim_set_time
-c003280a l     F .text	0000001d lv_anim_set_delay
-c0032827 l     F .text	0000003f lv_anim_set_values
-c0032866 l     F .text	00000019 lv_anim_set_start_cb
-c003287f l     F .text	00000019 lv_anim_set_ready_cb
-c0032898 l     F .text	00000050 lv_obj_set_style_local_opa_scale
-c00328e8 l     F .text	00000029 lv_scr_act
-c0033383 l     F .text	0000004b scr_load_anim_start
-c00333ff l     F .text	0000008e scr_anim_ready
-c00333ce l     F .text	00000031 opa_scale_anim
-c0032ed4 l       .text	00000000 .L56
-c0032f02 l       .text	00000000 .L58
-c0032f3e l       .text	00000000 .L59
-c0032f7c l       .text	00000000 .L60
-c0032fb8 l       .text	00000000 .L61
-c0032ff6 l       .text	00000000 .L62
-c0033071 l       .text	00000000 .L63
-c00330ec l       .text	00000000 .L64
-c0033167 l       .text	00000000 .L65
-c00331df l       .text	00000000 .L66
-00000000 l    df *ABS*	00000000 lv_obj.c
-c003348d l     F .text	00000040 _lv_memcpy_small
-c00334cd l     F .text	00000020 lv_area_copy
-c00334ed l     F .text	00000025 lv_area_get_width
-c0033512 l     F .text	00000026 lv_area_get_height
-c0033538 l     F .text	000000c7 lv_color_mix
-c00335ff l     F .text	0000004d lv_color_make
-c003364c l     F .text	0000003f lv_color_hex
-c003368b l     F .text	00000018 lv_anim_set_var
-c00336a3 l     F .text	00000019 lv_anim_set_exec_cb
-c00336bc l     F .text	00000019 lv_anim_set_time
-c00336d5 l     F .text	0000001d lv_anim_set_delay
-c00336f2 l     F .text	0000003f lv_anim_set_values
-c0033731 l     F .text	00000024 lv_anim_set_path
-c0033755 l     F .text	00000019 lv_anim_set_start_cb
-c003376e l     F .text	00000019 lv_anim_set_ready_cb
-c0033787 l     F .text	00000072 lv_style_list_get_style
-c00337f9 l     F .text	0000002d lv_obj_get_style_radius
-c0033826 l     F .text	00000033 lv_obj_get_style_clip_corner
-c0033859 l     F .text	0000002d lv_obj_get_style_size
-c0033886 l     F .text	0000002d lv_obj_get_style_transform_width
-c00338b3 l     F .text	0000002d lv_obj_get_style_transform_height
-c00338e0 l     F .text	0000002d lv_obj_get_style_transform_angle
-c003390d l     F .text	0000002d lv_obj_get_style_transform_zoom
-c003393a l     F .text	00000030 lv_obj_get_style_opa_scale
-c003396a l     F .text	00000049 lv_obj_set_style_local_opa_scale
-c00339b3 l     F .text	0000002d lv_obj_get_style_pad_top
-c00339e0 l     F .text	0000002d lv_obj_get_style_pad_bottom
-c0033a0d l     F .text	0000002d lv_obj_get_style_pad_left
-c0033a3a l     F .text	0000002d lv_obj_get_style_pad_right
-c0033a67 l     F .text	0000002d lv_obj_get_style_pad_inner
-c0033a94 l     F .text	0000002d lv_obj_get_style_margin_top
-c0033ac1 l     F .text	0000002d lv_obj_get_style_margin_bottom
-c0033aee l     F .text	0000002d lv_obj_get_style_margin_left
-c0033b1b l     F .text	0000002d lv_obj_get_style_margin_right
-c0033b48 l     F .text	0000002d lv_obj_get_style_bg_blend_mode
-c0033b75 l     F .text	0000002d lv_obj_get_style_bg_main_stop
-c0033ba2 l     F .text	0000002d lv_obj_get_style_bg_grad_stop
-c0033bcf l     F .text	0000002d lv_obj_get_style_bg_grad_dir
-c0033bfc l     F .text	00000033 lv_obj_get_style_bg_color
-c0033c2f l     F .text	00000033 lv_obj_get_style_bg_grad_color
-c0033c62 l     F .text	0000002d lv_obj_get_style_bg_opa
-c0033c8f l     F .text	0000002d lv_obj_get_style_border_width
-c0033cbc l     F .text	0000002d lv_obj_get_style_border_side
-c0033ce9 l     F .text	0000002d lv_obj_get_style_border_blend_mode
-c0033d16 l     F .text	00000033 lv_obj_get_style_border_post
-c0033d49 l     F .text	00000033 lv_obj_get_style_border_color
-c0033d7c l     F .text	0000002d lv_obj_get_style_border_opa
-c0033da9 l     F .text	0000002d lv_obj_get_style_outline_width
-c0033dd6 l     F .text	0000002d lv_obj_get_style_outline_pad
-c0033e03 l     F .text	0000002d lv_obj_get_style_outline_blend_mode
-c0033e30 l     F .text	00000033 lv_obj_get_style_outline_color
-c0033e63 l     F .text	0000002d lv_obj_get_style_outline_opa
-c0033e90 l     F .text	0000002d lv_obj_get_style_shadow_width
-c0033ebd l     F .text	0000002d lv_obj_get_style_shadow_ofs_x
-c0033eea l     F .text	0000002d lv_obj_get_style_shadow_ofs_y
-c0033f17 l     F .text	0000002d lv_obj_get_style_shadow_spread
-c0033f44 l     F .text	0000002d lv_obj_get_style_shadow_blend_mode
-c0033f71 l     F .text	00000033 lv_obj_get_style_shadow_color
-c0033fa4 l     F .text	0000002d lv_obj_get_style_shadow_opa
-c0033fd1 l     F .text	00000033 lv_obj_get_style_pattern_repeat
-c0034004 l     F .text	0000002d lv_obj_get_style_pattern_blend_mode
-c0034031 l     F .text	00000033 lv_obj_get_style_pattern_recolor
-c0034064 l     F .text	0000002d lv_obj_get_style_pattern_opa
-c0034091 l     F .text	0000002d lv_obj_get_style_pattern_recolor_opa
-c00340be l     F .text	0000002d lv_obj_get_style_pattern_image
-c00340eb l     F .text	0000002d lv_obj_get_style_value_letter_space
-c0034118 l     F .text	0000002d lv_obj_get_style_value_line_space
-c0034145 l     F .text	0000002d lv_obj_get_style_value_blend_mode
-c0034172 l     F .text	0000002d lv_obj_get_style_value_ofs_x
-c003419f l     F .text	0000002d lv_obj_get_style_value_ofs_y
-c00341cc l     F .text	0000002d lv_obj_get_style_value_align
-c00341f9 l     F .text	00000033 lv_obj_get_style_value_color
-c003422c l     F .text	0000002d lv_obj_get_style_value_opa
-c0034259 l     F .text	0000002d lv_obj_get_style_value_font
-c0034286 l     F .text	0000002d lv_obj_get_style_value_str
-c00342b3 l     F .text	00000030 lv_obj_get_style_text_letter_space
-c00342e3 l     F .text	00000030 lv_obj_get_style_text_line_space
-c0034313 l     F .text	00000030 lv_obj_get_style_text_decor
-c0034343 l     F .text	00000030 lv_obj_get_style_text_blend_mode
-c0034373 l     F .text	00000036 lv_obj_get_style_text_color
-c00343a9 l     F .text	00000036 lv_obj_get_style_text_sel_color
-c00343df l     F .text	00000036 lv_obj_get_style_text_sel_bg_color
-c0034415 l     F .text	00000030 lv_obj_get_style_text_opa
-c0034445 l     F .text	00000030 lv_obj_get_style_text_font
-c0034475 l     F .text	00000030 lv_obj_get_style_line_width
-c00344a5 l     F .text	00000030 lv_obj_get_style_line_blend_mode
-c00344d5 l     F .text	00000030 lv_obj_get_style_line_dash_width
-c0034505 l     F .text	00000030 lv_obj_get_style_line_dash_gap
-c0034535 l     F .text	00000036 lv_obj_get_style_line_rounded
-c003456b l     F .text	00000036 lv_obj_get_style_line_color
-c00345a1 l     F .text	00000030 lv_obj_get_style_line_opa
-c00345d1 l     F .text	00000030 lv_obj_get_style_image_blend_mode
-c0034601 l     F .text	00000036 lv_obj_get_style_image_recolor
-c0034637 l     F .text	00000030 lv_obj_get_style_image_opa
-c0034667 l     F .text	00000030 lv_obj_get_style_image_recolor_opa
-c0034697 l     F .text	00000030 lv_obj_get_style_transition_time
-c00346c7 l     F .text	00000030 lv_obj_get_style_transition_delay
-c00346f7 l     F .text	00000030 lv_obj_get_style_transition_prop_1
-c0034727 l     F .text	00000030 lv_obj_get_style_transition_prop_2
-c0034757 l     F .text	00000030 lv_obj_get_style_transition_prop_3
-c0034787 l     F .text	00000030 lv_obj_get_style_transition_prop_4
-c00347b7 l     F .text	00000030 lv_obj_get_style_transition_prop_5
-c00347e7 l     F .text	00000030 lv_obj_get_style_transition_prop_6
-c0034817 l     F .text	00000030 lv_obj_get_style_transition_path
-c0034847 l     F .text	00000030 lv_obj_get_style_scale_width
-c0034877 l     F .text	00000030 lv_obj_get_style_scale_border_width
-c00348a7 l     F .text	00000030 lv_obj_get_style_scale_end_border_width
-c00348d7 l     F .text	00000030 lv_obj_get_style_scale_end_line_width
-c0034907 l     F .text	00000036 lv_obj_get_style_scale_grad_color
-c003493d l     F .text	00000036 lv_obj_get_style_scale_end_color
-c008c384 l     O .data	00000001 lv_initialized
-c0120c80 l     O .bss	00000004 event_temp_data_head
-c0120c84 l     O .bss	00000004 event_act_data
-c0034973 l     F .text	0000007b _memcmp
-c003bab4 l     F .text	0000022a lv_obj_signal
-c003b5be l     F .text	000004a3 lv_obj_design
-c003b3dc l     F .text	000001e2 obj_del_core
-c003b383 l     F .text	00000059 lv_obj_del_async_cb
-c003bcde l     F .text	000000da refresh_children_position
-c003bf95 l     F .text	00000133 obj_align_core
-c003c0c8 l     F .text	000005e5 obj_align_mid_core
-c003cd51 l     F .text	0000012b trans_del
-c003dd2e l     F .text	000000fb invalidate_style_cache
-c003bea4 l     F .text	00000081 refresh_children_style
-c003bdb8 l     F .text	000000ec report_style_mod_core
-c003bf25 l     F .text	00000070 base_dir_refr_children
-c003de29 l     F .text	00000446 style_snapshot
-c003e26f l     F .text	00000331 style_snapshot_compare
-c003c6ad l     F .text	000006a4 trans_create
-c003ce7c l     F .text	00000235 trans_anim_cb
-c003d0b1 l     F .text	00000136 trans_anim_start_cb
-c003d1e7 l     F .text	0000010f trans_anim_ready_cb
-c003d53c l     F .text	0000060e update_style_cache
-c003d2f6 l     F .text	00000031 opa_scale_anim
-c003d327 l     F .text	0000003c fade_in_anim_ready
-c003d3a1 l     F .text	00000081 obj_valid_child
-c003d363 l     F .text	0000003e lv_event_mark_deleted
-c003d422 l     F .text	0000011a style_prop_is_cacheble
-c003db4a l     F .text	000001e4 update_style_cache_children
-c003c180 l       .text	00000000 .L1139
-c003c1d3 l       .text	00000000 .L1141
-c003c1ec l       .text	00000000 .L1142
-c003c222 l       .text	00000000 .L1143
-c003c24d l       .text	00000000 .L1144
-c003c278 l       .text	00000000 .L1145
-c003c2c0 l       .text	00000000 .L1146
-c003c2fd l       .text	00000000 .L1147
-c003c333 l       .text	00000000 .L1148
-c003c37b l       .text	00000000 .L1149
-c003c394 l       .text	00000000 .L1150
-c003c3ca l       .text	00000000 .L1151
-c003c3f5 l       .text	00000000 .L1152
-c003c420 l       .text	00000000 .L1153
-c003c468 l       .text	00000000 .L1154
-c003c4a5 l       .text	00000000 .L1155
-c003c4be l       .text	00000000 .L1156
-c003c4f4 l       .text	00000000 .L1157
-c003c51f l       .text	00000000 .L1158
-c003c547 l       .text	00000000 .L1159
-c003c58c l       .text	00000000 .L1160
-00000000 l    df *ABS*	00000000 lv_refr.c
-c003e5a0 l     F .text	00000040 _lv_memcpy_small
-c003e5e0 l     F .text	00000020 lv_area_copy
-c003e600 l     F .text	00000025 lv_area_get_width
-c003e625 l     F .text	00000026 lv_area_get_height
-c003e64b l     F .text	00000036 lv_obj_get_style_opa_scale
-c008c388 l     O .data	00000004 px_num
-c008c38c l     O .data	00000004 disp_refr
-c003ec3c l     F .text	000001cb lv_refr_join_area
-c003ee07 l     F .text	00000172 lv_refr_areas
-c003f923 l     F .text	00000145 lv_refr_vdb_flush
-c003ef79 l     F .text	00000314 lv_refr_area
-c003f28d l     F .text	000002ad lv_refr_area_part
-c003f53a l     F .text	000000fd lv_refr_get_top_obj
-c003f637 l     F .text	000000f6 lv_refr_obj_and_children
-c003f72d l     F .text	000001f6 lv_refr_obj
-00000000 l    df *ABS*	00000000 lv_style.c
-c003fa68 l     F .text	00000040 _lv_memcpy_small
-c003faa8 l     F .text	00000072 lv_style_list_get_style
-c0041509 l     F .text	000000fc get_property_index
-c004175b l     F .text	00000021 get_style_prop_attr
-c004177c l     F .text	0000004e get_prop_size
-c00416c4 l     F .text	00000034 style_resize
-c0041605 l     F .text	000000bf get_alloc_local_style
-c00417ca l     F .text	0000002c get_next_prop_index
-c004173e l     F .text	0000001d get_style_prop_id
-c00416f8 l     F .text	00000046 get_style_prop
-00000000 l    df *ABS*	00000000 lv_draw_img.c
-c00417f6 l     F .text	0000005b lv_color_premult
-c0041851 l     F .text	0000009e lv_color_mix_premult
-c00418ef l     F .text	00000040 _lv_memcpy_small
-c004192f l     F .text	00000020 lv_area_copy
-c004194f l     F .text	00000025 lv_area_get_width
-c0041974 l     F .text	00000026 lv_area_get_height
-c004199a l     F .text	000003aa _lv_img_buf_transform
-c0042e14 l     F .text	0000007e show_error
-c0041f68 l     F .text	000003c9 lv_img_draw_core
-c0042e92 l     F .text	00000028 draw_cleanup
-c0042331 l     F .text	00000ae3 lv_draw_map
-c0041e7a l       .text	00000000 .L36
-c0041e50 l       .text	00000000 .L37
-c0041e56 l       .text	00000000 .L39
-c0041e5c l       .text	00000000 .L40
-c0041e62 l       .text	00000000 .L41
-c0041e68 l       .text	00000000 .L42
-c0041e6e l       .text	00000000 .L43
-c0041e74 l       .text	00000000 .L44
-00000000 l    df *ABS*	00000000 lv_draw_label.c
-c0042eba l     F .text	00000040 _lv_memcpy_small
-c0042efa l     F .text	00000025 lv_area_get_width
-c0042f1f l     F .text	00000016 lv_font_get_line_height
-c0042f35 l     F .text	0000004d lv_color_make
-c0044a02 l     F .text	0000008b hex_char_to_num
-c0043b2e l     F .text	000001b6 lv_draw_letter
-c0044232 l     F .text	000007d0 draw_letter_subpx
-c0043ce4 l     F .text	0000054e draw_letter_normal
-c0120ca0 l     O .bss	00000001 prev_opa.5683
-c0120ca4 l     O .bss	00000004 prev_bpp.5684
-c0120cc0 l     O .bss	00000100 opa_table.5682
-c0044a5e l       .text	00000000 .L162
-c0044a64 l       .text	00000000 .L164
-c0044a6a l       .text	00000000 .L165
-c0044a70 l       .text	00000000 .L166
-c0044a76 l       .text	00000000 .L167
-c0044a7c l       .text	00000000 .L168
-00000000 l    df *ABS*	00000000 lv_draw_line.c
-c0044a8d l     F .text	00000025 lv_area_get_width
-c0044e2c l     F .text	000003df draw_line_hor
-c004520b l     F .text	0000036b draw_line_ver
-c0045576 l     F .text	000007b9 draw_line_skew
-c00732a0 l     O .rodata	00000021 wcorr.5969
-00000000 l    df *ABS*	00000000 lv_draw_mask.c
-c0045d2f l     F .text	00000040 _lv_memcpy_small
-c0045d6f l     F .text	00000020 lv_area_copy
-c0045d8f l     F .text	00000025 lv_area_get_width
-c0045db4 l     F .text	00000026 lv_area_get_height
-c0046730 l     F .text	00000264 lv_draw_mask_line
-c0047285 l     F .text	00000723 lv_draw_mask_angle
-c00479a8 l     F .text	00000a8b lv_draw_mask_radius
-c0048433 l     F .text	00000260 lv_draw_mask_fade
-c0048693 l     F .text	00000198 lv_draw_mask_map
-c0046994 l     F .text	00000398 line_mask_flat
-c0046d2c l     F .text	00000559 line_mask_steep
-c004882b l     F .text	0000004b mask_mix
-c0048876 l     F .text	00000080 sqrt_approx
-00000000 l    df *ABS*	00000000 lv_draw_rect.c
-c00488fa l     F .text	00000040 _lv_memcpy_small
-c004893a l     F .text	00000020 lv_area_copy
-c004895a l     F .text	00000025 lv_area_get_width
-c004897f l     F .text	00000026 lv_area_get_height
-c00489a5 l     F .text	000000c7 lv_color_mix
-c0049c22 l     F .text	0000189f draw_shadow
-c0048c51 l     F .text	00000901 draw_bg
-c004bd4e l     F .text	00000495 draw_pattern
-c0049552 l     F .text	000005eb draw_border
-c004c1e3 l     F .text	00000181 draw_value_str
-c004bc0b l     F .text	00000143 draw_outline
-c0049b3d l     F .text	000000e5 grad_get
-c004c364 l     F .text	0000095b draw_full_border
-c004b4c1 l     F .text	000003a8 shadow_draw_corner_buf
-c004b869 l     F .text	000003a2 shadow_blur_corner
-00000000 l    df *ABS*	00000000 lv_img_buf.c
-c004ccbf l     F .text	00000012 lv_color_to32
-c004ccd1 l     F .text	000000c7 lv_color_mix
-c004cd98 l     F .text	00000040 _lv_memcpy_small
-c004dce1 l       .text	00000000 .L63
-c004dcf8 l       .text	00000000 .L65
-c004dd0f l       .text	00000000 .L66
-c004dd94 l       .text	00000000 .L67
-c004ddb5 l       .text	00000000 .L68
-c004ddd6 l       .text	00000000 .L69
-c004ddf5 l       .text	00000000 .L70
-c004dd26 l       .text	00000000 .L71
-c004dd47 l       .text	00000000 .L72
-c004dd68 l       .text	00000000 .L73
-c004dd87 l       .text	00000000 .L74
-00000000 l    df *ABS*	00000000 lv_img_cache.c
-c0120dc0 l     O .bss	00000028 cache_temp
-00000000 l    df *ABS*	00000000 lv_img_decoder.c
-c004ec7e l     F .text	0000004d lv_color_make
-c004eccb l     F .text	00000040 _lv_memcpy_small
-c004faa8 l     F .text	000000f3 lv_img_decoder_built_in_line_true_color
-c004fb9b l     F .text	000003e0 lv_img_decoder_built_in_line_alpha
-c004ff7b l     F .text	0000035f lv_img_decoder_built_in_line_indexed
-00000000 l    df *ABS*	00000000 lv_font.c
-00000000 l    df *ABS*	00000000 lv_font_fmt_txt.c
-c0120de8 l     O .bss	00000004 rle_rdp
-c0120dec l     O .bss	00000004 rle_in
-c0120df0 l     O .bss	00000001 rle_bpp
-c0120df1 l     O .bss	00000001 rle_prev_v
-c0120df2 l     O .bss	00000001 rle_cnt
-c0120df4 l     O .bss	00000004 rle_state
-c005073f l     F .text	00000378 get_glyph_dsc_id
-c0050d2d l     F .text	00000219 decompress
-c0050ab7 l     F .text	000001b1 get_kern_value
-c0051460 l     F .text	00000025 unicode_list_compare
-c0050c68 l     F .text	00000062 kern_pair_8_compare
-c0050cca l     F .text	00000063 kern_pair_16_compare
-c0051196 l     F .text	0000004e rle_init
-c0050f46 l     F .text	0000004d decompress_line
-c005108e l     F .text	00000108 bits_write
-c00511e4 l     F .text	0000027c rle_next
-c0050f93 l     F .text	000000fb get_bits
-c0050fde l       .text	00000000 .L71
-c0050fc0 l       .text	00000000 .L72
-c0050fc6 l       .text	00000000 .L74
-c0050fcc l       .text	00000000 .L75
-c0050fd2 l       .text	00000000 .L76
-c0050fd8 l       .text	00000000 .L77
-c00510cc l       .text	00000000 .L83
-c00510d2 l       .text	00000000 .L85
-c00510d8 l       .text	00000000 .L86
-c00510de l       .text	00000000 .L87
-c00510e4 l       .text	00000000 .L88
-c00510ea l       .text	00000000 .L89
-c00510f0 l       .text	00000000 .L90
-c00510f6 l       .text	00000000 .L91
-00000000 l    df *ABS*	00000000 lv_font_montserrat_14.c
-c00733a0 l     O .rodata	0000219a gylph_bitmap
-c0075540 l     O .rodata	000004d8 glyph_dsc
-c0075a20 l     O .rodata	00000076 unicode_list_1
-c0082fc0 l     O .data.rel.ro	00000028 cmaps
-c0075aa0 l     O .rodata	0000009b kern_left_class_mapping
-c0075b40 l     O .rodata	0000009b kern_right_class_mapping
-c0075be0 l     O .rodata	00000bad kern_class_values
-c0082fe8 l     O .data.rel.ro	00000010 kern_classes
-c008c3a0 l     O .data	00000020 font_dsc
-00000000 l    df *ABS*	00000000 lv_hal_disp.c
-c008c3d4 l     O .data	00000004 disp_def
-00000000 l    df *ABS*	00000000 lv_hal_indev.c
-00000000 l    df *ABS*	00000000 lv_hal_tick.c
-c008c3d8 l     O .data	00000004 sys_time
-c008c3dc l     O .data	00000001 tick_irq_flag
-00000000 l    df *ABS*	00000000 lv_anim.c
-c0051fe8 l     F .text	00000040 _lv_memcpy_small
-c0120df8 l     O .bss	00000004 last_task_run
-c0120dfc l     O .bss	00000001 anim_list_changed
-c0120e00 l     O .bss	00000004 _lv_anim_task
-c005290d l     F .text	00000210 anim_task
-c0052ca2 l     F .text	0000005f anim_mark_list_change
-c0052b1d l     F .text	00000185 anim_ready_handler
-00000000 l    df *ABS*	00000000 lv_area.c
-c0052d01 l     F .text	00000025 lv_area_get_width
-c0052d26 l     F .text	00000026 lv_area_get_height
-c0053a5d l     F .text	000000bf lv_point_within_circle
-c00534c1 l       .text	00000000 .L41
-c005353b l       .text	00000000 .L43
-c0053551 l       .text	00000000 .L44
-c0053599 l       .text	00000000 .L45
-c00535cb l       .text	00000000 .L46
-c00535fd l       .text	00000000 .L47
-c0053661 l       .text	00000000 .L48
-c00536af l       .text	00000000 .L49
-c00536f7 l       .text	00000000 .L50
-c005375b l       .text	00000000 .L51
-c005377e l       .text	00000000 .L52
-c00537d3 l       .text	00000000 .L53
-c0053812 l       .text	00000000 .L54
-c0053833 l       .text	00000000 .L55
-c0053886 l       .text	00000000 .L56
-c00538c3 l       .text	00000000 .L57
-c00538e6 l       .text	00000000 .L58
-c005393b l       .text	00000000 .L59
-c005397a l       .text	00000000 .L60
-c005399b l       .text	00000000 .L61
-c00539eb l       .text	00000000 .L62
-00000000 l    df *ABS*	00000000 lv_async.c
-c0053bb3 l     F .text	00000043 lv_async_task_cb
-00000000 l    df *ABS*	00000000 lv_debug.c
-c008c3e0 l     O .data	00000011 hex.1646
-00000000 l    df *ABS*	00000000 lv_fs.c
-c0054b0c l     F .text	00000044 lv_fs_get_real_path
-00000000 l    df *ABS*	00000000 lv_gc.c
-00000000 l    df *ABS*	00000000 lv_ll.c
-c00553ea l     F .text	0000003f node_set_prev
-c0055429 l     F .text	00000042 node_set_next
-00000000 l    df *ABS*	00000000 lv_math.c
-c0076820 l     O .rodata	000000b6 sin0_90_table
-00000000 l    df *ABS*	00000000 lv_mem.c
-c008c594 l     O .data	00000004 work_mem
-c008c598 l     O .data	00000004 zero_mem
-c008c59c l     O .data	00000004 mem_max_size
-c008c5a0 l     O .data	00000010 mem_buf1_32
-c008c5b0 l     O .data	00000010 mem_buf2_32
-c008c5c0 l     O .data	00000010 mem_buf_small
-c0120e20 l     O .bss	00008000 work_mem_int.3109
-c00569c2 l     F .text	00000063 ent_get_next
-c0056a25 l     F .text	0000005a ent_alloc
-c0128e20 l     O .bss	00000002 full_defrag_cnt.3130
-c0056a7f l     F .text	000000a3 ent_trunc
-00000000 l    df *ABS*	00000000 lv_task.c
-c008c5d0 l     O .data	00000001 lv_task_run
-c008c5d1 l     O .data	00000001 idle_last
-c008c5d2 l     O .data	00000001 task_deleted
-c008c5d3 l     O .data	00000001 task_list_changed
-c008c5d4 l     O .data	00000001 task_created
-c008c5d5 l     O .data	00000001 already_running.3101
-c008c5d8 l     O .data	00000004 idle_period_start.3102
-c008c5dc l     O .data	00000004 handler_start.3103
-c008c5e0 l     O .data	00000004 busy_time.3104
-c008c5e4 l     O .data	00000004 time_till_next.3105
-c0057394 l     F .text	000000aa lv_task_exec
-c005743e l     F .text	00000046 lv_task_time_remaining
-00000000 l    df *ABS*	00000000 lv_txt.c
-c0057484 l     F .text	00000040 _lv_memcpy_small
-c00574c4 l     F .text	00000016 lv_font_get_line_height
-c0057ed5 l     F .text	00000079 lv_txt_utf8_size
-c0057f4e l     F .text	000000d4 lv_txt_unicode_to_utf8
-c0058022 l     F .text	0000008d lv_txt_utf8_conv_wc
-c00580af l     F .text	00000314 lv_txt_utf8_next
-c00583c3 l     F .text	000000a9 lv_txt_utf8_prev
-c005846c l     F .text	00000064 lv_txt_utf8_get_byte_id
-c00584d0 l     F .text	0000004b lv_txt_utf8_get_char_id
-c005851b l     F .text	00000052 lv_txt_utf8_get_length
-c0057730 l     F .text	00000240 lv_txt_get_next_word
-c005856d l     F .text	00000054 is_break_char
-00000000 l    df *ABS*	00000000 lv_utils.c
-00000000 l    df *ABS*	00000000 lv_theme.c
-c008c608 l     O .data	00000004 act_theme
-c0058a12 l     F .text	00000643 clear_styles
-c0058995 l     F .text	0000007d apply_theme
-c005904e l       .text	00000000 .L75
-c0058a3f l       .text	00000000 .L33
-c0058a54 l       .text	00000000 .L34
-c0058ba0 l       .text	00000000 .L35
-c0058add l       .text	00000000 .L36
-c0058a7e l       .text	00000000 .L37
-c0058a93 l       .text	00000000 .L38
-c0058fa3 l       .text	00000000 .L39
-c0058b37 l       .text	00000000 .L40
-c0058c1f l       .text	00000000 .L41
-c0058e40 l       .text	00000000 .L42
-c0058a69 l       .text	00000000 .L43
-c0058fe5 l       .text	00000000 .L44
-c0058dfb l       .text	00000000 .L45
-c0059019 l       .text	00000000 .L46
-c0058b4c l       .text	00000000 .L47
-c0058b61 l       .text	00000000 .L48
-c0058ab8 l       .text	00000000 .L49
-c0058b76 l       .text	00000000 .L50
-c0058c7e l       .text	00000000 .L51
-c0058b8b l       .text	00000000 .L52
-c0058db1 l       .text	00000000 .L53
-c0058de6 l       .text	00000000 .L54
-c0059007 l       .text	00000000 .L55
-c0058c44 l       .text	00000000 .L56
-c0058c59 l       .text	00000000 .L57
-c0058d9c l       .text	00000000 .L58
-c0058c93 l       .text	00000000 .L59
-c0058d77 l       .text	00000000 .L60
-c0058bea l       .text	00000000 .L61
-c0058f69 l       .text	00000000 .L62
-c0058f8e l       .text	00000000 .L63
-c0058bc5 l       .text	00000000 .L64
-c0058b02 l       .text	00000000 .L65
-c0058e75 l       .text	00000000 .L66
-c0058cc8 l       .text	00000000 .L67
-c0058d1d l       .text	00000000 .L68
-c0058f24 l       .text	00000000 .L69
-c0058d42 l       .text	00000000 .L70
-c0058eca l       .text	00000000 .L71
-c0058f0f l       .text	00000000 .L72
-00000000 l    df *ABS*	00000000 lv_theme_material.c
-c0059055 l     F .text	000000c7 lv_color_mix
-c005911c l     F .text	0000004d lv_color_make
-c0059169 l     F .text	0000003f lv_color_hex
-c00591a8 l     F .text	00000069 lv_color_hex3
-c0059211 l     F .text	00000047 lv_style_set_radius
-c0059258 l     F .text	00000046 lv_style_set_clip_corner
-c005929e l     F .text	00000047 lv_style_set_size
-c00592e5 l     F .text	00000047 lv_style_set_transform_width
-c005932c l     F .text	00000047 lv_style_set_pad_top
-c0059373 l     F .text	00000047 lv_style_set_pad_bottom
-c00593ba l     F .text	00000047 lv_style_set_pad_left
-c0059401 l     F .text	00000047 lv_style_set_pad_right
-c0059448 l     F .text	00000047 lv_style_set_pad_inner
-c005948f l     F .text	00000047 lv_style_set_margin_top
-c00594d6 l     F .text	00000047 lv_style_set_margin_bottom
-c005951d l     F .text	00000047 lv_style_set_margin_left
-c0059564 l     F .text	00000047 lv_style_set_margin_right
-c00595ab l     F .text	0000003e lv_style_set_bg_color
-c00595e9 l     F .text	00000046 lv_style_set_bg_opa
-c005962f l     F .text	00000047 lv_style_set_border_width
-c0059676 l     F .text	00000046 lv_style_set_border_side
-c00596bc l     F .text	00000046 lv_style_set_border_post
-c0059702 l     F .text	0000003e lv_style_set_border_color
-c0059740 l     F .text	00000046 lv_style_set_border_opa
-c0059786 l     F .text	00000047 lv_style_set_outline_width
-c00597cd l     F .text	00000047 lv_style_set_outline_pad
-c0059814 l     F .text	0000003e lv_style_set_outline_color
-c0059852 l     F .text	00000046 lv_style_set_outline_opa
-c0059898 l     F .text	00000047 lv_style_set_shadow_width
-c00598df l     F .text	00000047 lv_style_set_shadow_spread
-c0059926 l     F .text	0000003e lv_style_set_shadow_color
-c0059964 l     F .text	0000003e lv_style_set_pattern_recolor
-c00599a2 l     F .text	00000046 lv_style_set_pattern_opa
-c00599e8 l     F .text	0000003e lv_style_set_pattern_image
-c0059a26 l     F .text	0000003e lv_style_set_value_color
-c0059a64 l     F .text	0000003e lv_style_set_value_font
-c0059aa2 l     F .text	00000049 lv_style_set_text_line_space
-c0059aeb l     F .text	00000040 lv_style_set_text_color
-c0059b2b l     F .text	00000040 lv_style_set_text_sel_color
-c0059b6b l     F .text	00000040 lv_style_set_text_sel_bg_color
-c0059bab l     F .text	00000040 lv_style_set_text_font
-c0059beb l     F .text	00000047 lv_style_set_line_width
-c0059c32 l     F .text	00000047 lv_style_set_line_dash_width
-c0059c79 l     F .text	00000047 lv_style_set_line_dash_gap
-c0059cc0 l     F .text	00000046 lv_style_set_line_rounded
-c0059d06 l     F .text	0000003e lv_style_set_line_color
-c0059d44 l     F .text	00000040 lv_style_set_image_recolor
-c0059d84 l     F .text	00000047 lv_style_set_transition_time
-c0059dcb l     F .text	00000047 lv_style_set_transition_delay
-c0059e12 l     F .text	00000047 lv_style_set_transition_prop_3
-c0059e59 l     F .text	00000047 lv_style_set_transition_prop_4
-c0059ea0 l     F .text	00000047 lv_style_set_transition_prop_5
-c0059ee7 l     F .text	00000047 lv_style_set_transition_prop_6
-c0059f2e l     F .text	00000047 lv_style_set_scale_width
-c0059f75 l     F .text	00000047 lv_style_set_scale_end_border_width
-c0059fbc l     F .text	00000047 lv_style_set_scale_end_line_width
-c005a003 l     F .text	0000003e lv_style_set_scale_grad_color
-c005a041 l     F .text	0000003e lv_style_set_scale_end_color
-c008c620 l     O .data	0000002c theme
-c008c64c l     O .data	00000004 styles
-c008c650 l     O .data	00000001 inited
-c005a07f l     F .text	00002277 basic_init
-c006321b l     F .text	00000044 style_init_reset
-c005c2f6 l     F .text	00000010 cont_init
-c005c306 l     F .text	00000010 btn_init
-c005c316 l     F .text	00000010 label_init
-c005c326 l     F .text	00000303 bar_init
-c005c629 l     F .text	00000010 img_init
-c005c639 l     F .text	00000010 line_init
-c005c649 l     F .text	000001e2 led_init
-c005c82b l     F .text	000004cb slider_init
-c005ccf6 l     F .text	00000256 switch_init
-c005cf4c l     F .text	000003dd linemeter_init
-c005d329 l     F .text	00000851 gauge_init
-c005db7a l     F .text	00000281 arc_init
-c005ddfb l     F .text	00000010 spinner_init
-c005de0b l     F .text	0000040b chart_init
-c005e216 l     F .text	00000c1b calendar_init
-c005ee31 l     F .text	00000485 cpicker_init
-c005f2b6 l     F .text	00000582 checkbox_init
-c005f838 l     F .text	00000010 btnmatrix_init
-c005f848 l     F .text	00000388 keyboard_init
-c005fbd0 l     F .text	000000de msgbox_init
-c005fcae l     F .text	00000282 page_init
-c005ff30 l     F .text	00000203 textarea_init
-c0060133 l     F .text	00000171 spinbox_init
-c00602a4 l     F .text	00000cb3 list_init
-c0060f57 l     F .text	0000020f ddlist_init
-c0061166 l     F .text	0000013f roller_init
-c00612a5 l     F .text	00000010 tabview_init
-c00612b5 l     F .text	00000010 tileview_init
-c00612c5 l     F .text	0000040a table_init
-c00616cf l     F .text	00000010 win_init
-c00616df l     F .text	000009ad tabview_win_shared_init
-c00621e8 l     F .text	00001033 theme_apply
-c00631fc l       .text	00000000 .L727
-c0062215 l       .text	00000000 .L683
-c0062242 l       .text	00000000 .L684
-c00624c8 l       .text	00000000 .L685
-c00623e5 l       .text	00000000 .L686
-c00622a2 l       .text	00000000 .L687
-c00622d2 l       .text	00000000 .L688
-c006300a l       .text	00000000 .L689
-c0062693 l       .text	00000000 .L691
-c0062c2a l       .text	00000000 .L692
-c0062272 l       .text	00000000 .L693
-c00630bb l       .text	00000000 .L694
-c0062b2f l       .text	00000000 .L695
-c006315e l       .text	00000000 .L696
-c006235d l       .text	00000000 .L699
-c00627a9 l       .text	00000000 .L701
-c0062a8a l       .text	00000000 .L703
-c0062aff l       .text	00000000 .L704
-c0063116 l       .text	00000000 .L705
-c0062706 l       .text	00000000 .L706
-c006274e l       .text	00000000 .L707
-c0062a72 l       .text	00000000 .L708
-c00627d9 l       .text	00000000 .L709
-c00629fb l       .text	00000000 .L710
-c00625f1 l       .text	00000000 .L711
-c0062f4d l       .text	00000000 .L712
-c0062fc2 l       .text	00000000 .L713
-c0062596 l       .text	00000000 .L714
-c0062440 l       .text	00000000 .L715
-c0062d23 l       .text	00000000 .L716
-c006288e l       .text	00000000 .L717
-c0062942 l       .text	00000000 .L718
-c0062e7e l       .text	00000000 .L719
-c0062974 l       .text	00000000 .L720
-c0062d98 l       .text	00000000 .L721
-c0062e4c l       .text	00000000 .L722
-00000000 l    df *ABS*	00000000 lv_bar.c
-c006325f l     F .text	00000040 _lv_memcpy_small
-c006329f l     F .text	00000020 lv_area_copy
-c00632bf l     F .text	00000025 lv_area_get_width
-c00632e4 l     F .text	00000026 lv_area_get_height
-c006330a l     F .text	00000018 lv_anim_set_var
-c0063322 l     F .text	00000019 lv_anim_set_exec_cb
-c006333b l     F .text	00000019 lv_anim_set_time
-c0063354 l     F .text	0000003f lv_anim_set_values
-c0063393 l     F .text	00000019 lv_anim_set_ready_cb
-c00633ac l     F .text	00000033 lv_obj_get_style_radius
-c00633df l     F .text	00000033 lv_obj_get_style_pad_top
-c0063412 l     F .text	00000033 lv_obj_get_style_pad_bottom
-c0063445 l     F .text	00000033 lv_obj_get_style_pad_left
-c0063478 l     F .text	00000033 lv_obj_get_style_pad_right
-c00634ab l     F .text	00000039 lv_obj_get_style_border_post
-c0128e24 l     O .bss	00000004 ancestor_design_f
-c0128e28 l     O .bss	00000004 ancestor_signal
-c0064cbd l     F .text	00000033 lv_bar_init_anim
-c00648e7 l     F .text	0000014c lv_bar_signal
-c0063e53 l     F .text	0000012d lv_bar_design
-c0064b80 l     F .text	0000013d lv_bar_set_value_with_anim
-c0063f80 l     F .text	00000070 draw_bg
-c0063ff0 l     F .text	000008f7 draw_indic
-c0064a33 l     F .text	00000090 lv_bar_get_style
-c0064ac3 l     F .text	0000003c lv_bar_anim
-c0064aff l     F .text	00000081 lv_bar_anim_ready
-00000000 l    df *ABS*	00000000 lv_btn.c
-c0064cf0 l     F .text	00000032 lv_btn_set_layout
-c0128e2c l     O .bss	00000004 ancestor_signal
-c0128e30 l     O .bss	00000004 ancestor_design
-c00652db l     F .text	000001ed lv_btn_signal
-c006525d l     F .text	0000007e lv_btn_design
-c0064fe6 l       .text	00000000 .L22
-c0064ffb l       .text	00000000 .L24
-c0065064 l       .text	00000000 .L25
-c0065020 l       .text	00000000 .L26
-c0065042 l       .text	00000000 .L27
-c0065086 l       .text	00000000 .L28
-00000000 l    df *ABS*	00000000 lv_cont.c
-c00654c8 l     F .text	00000040 _lv_memcpy_small
-c0065508 l     F .text	00000020 lv_area_copy
-c0065528 l     F .text	00000025 lv_area_get_width
-c006554d l     F .text	00000026 lv_area_get_height
-c0065573 l     F .text	00000033 lv_obj_get_style_pad_top
-c00655a6 l     F .text	00000033 lv_obj_get_style_pad_bottom
-c00655d9 l     F .text	00000033 lv_obj_get_style_pad_left
-c006560c l     F .text	00000033 lv_obj_get_style_pad_right
-c006563f l     F .text	00000033 lv_obj_get_style_pad_inner
-c0065672 l     F .text	00000033 lv_obj_get_style_margin_top
-c00656a5 l     F .text	00000033 lv_obj_get_style_margin_bottom
-c00656d8 l     F .text	00000033 lv_obj_get_style_margin_left
-c006570b l     F .text	00000033 lv_obj_get_style_margin_right
-c0128e34 l     O .bss	00000004 ancestor_design
-c0128e38 l     O .bss	00000004 ancestor_signal
-c0065db6 l     F .text	00000196 lv_cont_signal
-c0065f4c l     F .text	00000035 lv_cont_get_style
-c0065f81 l     F .text	000000fe lv_cont_refr_layout
-c0066db6 l     F .text	000005ca lv_cont_refr_autofit
-c006648d l     F .text	000001cf lv_cont_layout_center
-c006607f l     F .text	000001f3 lv_cont_layout_col
-c0066272 l     F .text	0000021b lv_cont_layout_row
-c006665c l     F .text	000005ce lv_cont_layout_pretty
-c0066c2a l     F .text	0000018c lv_cont_layout_grid
-00000000 l    df *ABS*	00000000 lv_label.c
-c0067380 l     F .text	00000040 _lv_memcpy_small
-c00673c0 l     F .text	00000020 lv_area_copy
-c00673e0 l     F .text	00000025 lv_area_get_width
-c0067405 l     F .text	00000026 lv_area_get_height
-c006742b l     F .text	00000016 lv_font_get_line_height
-c0067441 l     F .text	00000018 lv_anim_set_var
-c0067459 l     F .text	00000019 lv_anim_set_exec_cb
-c0067472 l     F .text	00000019 lv_anim_set_time
-c006748b l     F .text	0000003f lv_anim_set_values
-c00674ca l     F .text	00000024 lv_anim_set_playback_time
-c00674ee l     F .text	00000024 lv_anim_set_playback_delay
-c0067512 l     F .text	00000025 lv_anim_set_repeat_count
-c0067537 l     F .text	00000024 lv_anim_set_repeat_delay
-c006755b l     F .text	00000033 lv_obj_get_style_transform_width
-c006758e l     F .text	00000033 lv_obj_get_style_transform_height
-c00675c1 l     F .text	00000033 lv_obj_get_style_pad_top
-c00675f4 l     F .text	00000033 lv_obj_get_style_pad_bottom
-c0067627 l     F .text	00000033 lv_obj_get_style_pad_left
-c006765a l     F .text	00000033 lv_obj_get_style_pad_right
-c006768d l     F .text	00000036 lv_obj_get_style_text_letter_space
-c00676c3 l     F .text	00000036 lv_obj_get_style_text_line_space
-c00676f9 l     F .text	00000036 lv_obj_get_style_text_font
-c0128e3c l     O .bss	00000004 ancestor_signal
-c006a02b l     F .text	00000454 lv_label_design
-c006a47f l     F .text	000001fb lv_label_signal
-c006a813 l     F .text	000000c6 lv_label_set_dot_tmp
-c006a781 l     F .text	00000049 lv_label_set_offset_x
-c006a7ca l     F .text	00000049 lv_label_set_offset_y
-c006a67a l     F .text	00000107 lv_label_revert_dots
-c006a988 l     F .text	000000dc get_txt_coords
-c006a91e l     F .text	0000006a lv_label_dot_tmp_free
-c006a8d9 l     F .text	00000045 lv_label_get_dot_tmp
-00000000 l    df *ABS*	00000000 lv_group.c
-c006b473 l     F .text	0000008a lv_group_refocus
-c006b72a l     F .text	00000066 obj_to_foreground
-c006b4fd l     F .text	0000022d focus_next_core
-00000000 l    df *ABS*	00000000 lv_indev.c
-c0128e40 l     O .bss	00000004 indev_act
-c0128e44 l     O .bss	00000004 indev_obj_act
-c006dad4 l     F .text	000000cf indev_proc_reset_query_handler
-c006be54 l     F .text	000000d7 indev_pointer_proc
-c006bf2b l     F .text	0000069a indev_keypad_proc
-c006c5c5 l     F .text	000008f1 indev_encoder_proc
-c006ceb6 l     F .text	00000120 indev_button_proc
-c006e8b8 l     F .text	00000058 get_dragged_obj
-c006cfd6 l     F .text	000007aa indev_proc_press
-c006d780 l     F .text	00000354 indev_proc_release
-c006eb01 l     F .text	0000003b indev_reset_check
-c006e537 l     F .text	00000381 indev_drag_throw
-c006dca1 l     F .text	00000349 indev_click_focus
-c006dfea l     F .text	0000054d indev_drag
-c006e910 l     F .text	000001f1 indev_gesture
-00000000 l    df *ABS*	00000000 lv_draw_blend.c
-c006eb3c l     F .text	000000c7 lv_color_mix
-c006ec03 l     F .text	0000005b lv_color_premult
-c006ec5e l     F .text	0000009e lv_color_mix_premult
-c006ecfc l     F .text	00000025 lv_area_get_width
-c006ed21 l     F .text	00000026 lv_area_get_height
-c0128e60 l     O .bss	00000a00 blend_buf
-c006f125 l     F .text	0000017e fill_set_px
-c006f2a3 l     F .text	00000795 fill_normal
-c006fa38 l     F .text	000002c1 fill_blended
-c006fcf9 l     F .text	0000023e map_set_px
-c006ff37 l     F .text	000007f8 map_normal
-c007072f l     F .text	000002be map_blended
-c00709ed l     F .text	000000b6 color_blend_true_color_additive
-c0070aa3 l     F .text	000000c6 color_blend_true_color_subtractive
-00000000 l    df *ABS*	00000000 lv_color.c
-c0070b69 l     F .text	00000012 lv_color_to32
-c0070b7b l     F .text	000000c7 lv_color_mix
-c0070c42 l     F .text	0000004d lv_color_make
-c0070f79 l       .text	00000000 .L20
-c0070f90 l       .text	00000000 .L22
-c0070fa7 l       .text	00000000 .L23
-c0070fbe l       .text	00000000 .L24
-c0070fd5 l       .text	00000000 .L25
-00000000 l    df *ABS*	00000000 lv_printf.c
-c0071264 l     F .text	0000002f _out_buffer
-c0071293 l     F .text	00000019 _out_null
-c00712ac l     F .text	0000003f _strnlen_s
-c00712eb l     F .text	00000033 _is_digit
-c007131e l     F .text	00000063 _atoi
-c0071381 l     F .text	000000c1 _out_rev
-c0071442 l     F .text	000001d3 _ntoa_format
-c0071615 l     F .text	000000d3 _ntoa_long
-c00716e8 l     F .text	000007bd _vsnprintf
-c00717f0 l       .text	00000000 .L61
-c007199e l       .text	00000000 .L137
-c0071e3f l       .text	00000000 .L86
-c00717c4 l       .text	00000000 .L62
-c00717da l       .text	00000000 .L64
-c00717ae l       .text	00000000 .L65
-c0071798 l       .text	00000000 .L66
-c0071782 l       .text	00000000 .L67
-c007193f l       .text	00000000 .L77
-c007197a l       .text	00000000 .L79
-c0071913 l       .text	00000000 .L80
-c0071968 l       .text	00000000 .L81
-c007198c l       .text	00000000 .L82
-c0071e1a l       .text	00000000 .L87
-c00719c8 l       .text	00000000 .L89
-c0071c21 l       .text	00000000 .L90
-c0071dd1 l       .text	00000000 .L91
-c0071cc5 l       .text	00000000 .L92
+08087e4e l     F .text	00000070 i2a
 00000000 l    df *ABS*	00000000 
-c0083000 l     O .got.plt	00000000 _GLOBAL_OFFSET_TABLE_
-c0028f6d g     F .text	00000000 .hidden __x86.get_pc_thunk.cx
-c008c5f0 g     O .data	00000004 _lv_txt_encoded_conv_wc
-c002f940 g     F .text	000000a4 do_vdelete
-c0038b4c g     F .text	00000056 lv_obj_get_height_margin
-c002cdae g     F .text	0000015d GetFileOffset
-c0056b62 g     F .text	00000354 lv_task_handler
-c0022969 g     F .text	0000006d sys_malloc_4k
-c0057c64 g     F .text	0000007d _lv_txt_is_cmd
-c00377ca g     F .text	0000045a lv_obj_set_state
-c002f28d g     F .text	00000034 sys_close
-c002285a g       .text	00000000 strcpy
-c002e125 g     F .text	000000e8 AddCluster
-c0051bc7 g     F .text	00000082 _lv_disp_pop_from_inv_buf
-c0057ce1 g     F .text	000000b1 _lv_txt_ins
-c00228bc g     F .text	00000026 sys_kmalloc
-c0052ffb g     F .text	000002c2 _lv_area_is_point_on
-c004e56f g     F .text	0000060c _lv_img_buf_transform_anti_alias
-c0052086 g     F .text	00000077 lv_anim_init
-c0101420 g     O .bss	00000004 cr2_count
-c0020bc4 g       .text	00000000 yield
-c00275ee g     F .text	00000047 get_super_block
-c0053c17 g     F .text	00000023 lv_debug_check_mem_integrity
-c002425a g     F .text	00000043 write_page_pte
-c008c400 g     O .data	0000000c _lv_task_ll
-c0051ea9 g     F .text	000000ae _lv_indev_read
-c006bcb1 g     F .text	0000006a lv_indev_get_vect
-c00398bc g     F .text	00000059 lv_obj_get_hidden
-c0039bdc g     F .text	0000004f lv_obj_get_base_dir
-c0021a98 g     F .text	00000438 init_prot
-c0042f82 g     F .text	000000a9 lv_draw_label_dsc_init
-c00384b4 g     F .text	00000089 lv_obj_get_child
-c0032b2b g     F .text	00000087 lv_disp_set_bg_image
-c00325f8 g     F .text	00000146 InitScreen
-c0073160 g     O .rodata	00000002 _lv_bpp1_opa_table
-c00229d6 g     F .text	0000003f sys_free
-c00205d0 g       .text	00000000 hwint08
-c0037d25 g     F .text	00000099 lv_obj_finish_transitions
-c008c590 g     O .data	00000004 _lv_font_decompr_buf
-c0020c64 g       .text	00000000 delete
-c00688f9 g     F .text	0000048e lv_label_get_letter_on
-c0031f52 g     F .text	00000068 printf
-c0039cdb g     F .text	00000082 lv_obj_get_state
-c003202a g     F .text	00000273 vsprintf
-c0037c24 g     F .text	0000007d lv_obj_add_state
-c002e4d0 g     F .text	000000a5 ClearClusters
-c0022393 g     F .text	00000031 sys_yield
-c0045e4d g     F .text	000000a7 lv_draw_mask_apply
-c00488f6 g     F .text	00000000 .hidden __x86.get_pc_thunk.si
-c0037e12 g     F .text	0000007e lv_event_send
-c0083460 g     O .data	00000006 idt_ptr
-c00506fb g     F .text	00000044 _lv_font_clean_up_fmt_txt
-c00353ec g     F .text	00000024 lv_obj_del_anim_ready_cb
-c0083d60 g     O .data	00007fe0 s_memman
-c005895b g     F .text	00000022 lv_theme_get_color_secondary
-c005546b g     F .text	00000109 _lv_trigo_sin
-c002f443 g     F .text	00000034 sys_delete
-c00362e7 g     F .text	00000103 lv_obj_align
-c0036673 g     F .text	000000c3 lv_obj_align_mid_x
-c0023793 g     F .text	00000021 do_malloc
-c0020750 g       .text	00000000 divide_error
-c004efd4 g     F .text	00000070 lv_img_decoder_read_line
-c00520fd g     F .text	00000113 lv_anim_start
-c0020868 g       .text	00000000 copr_not_available
-c008c418 g     O .data	0000000c _lv_indev_ll
-c0039ad0 g     F .text	00000059 lv_obj_get_drag_throw
-c006b7b2 g     F .text	000001b6 _lv_indev_read_task
-c002f37d g     F .text	0000005e sys_lseek
-c004630b g     F .text	000000b9 lv_draw_mask_line_angle_init
-c00240c4 g     F .text	0000004a get_pde_phy_addr
-c0058803 g     F .text	000000a5 lv_theme_copy
-c0155e20 g     O .bss	00000a00 argv
-c0023be1 g     F .text	00000026 switch_pde
-c004302b g     F .text	00000b03 lv_draw_label
-c002bd34 g     F .text	000000b6 init_fs_fat
-c0022a81 g     F .text	00000027 sys_udisp_int
-c0039b29 g     F .text	0000001e lv_obj_get_drag_parent
-c005158a g     F .text	00000277 lv_disp_drv_register
-c006b97d g     F .text	00000022 lv_indev_get_type
-c005470f g     F .text	00000092 lv_fs_free_space
-c002e038 g     F .text	000000ed AllotClustersForEmptyFile
-c002f811 g     F .text	0000004d do_vlseek
-c0038f64 g     F .text	0000040f _lv_obj_get_style_int
-c006baa2 g     F .text	00000043 lv_indev_enable
-c0051944 g     F .text	00000019 lv_disp_set_default
-c0082ff8 g     O .data.rel.ro	00000008 lv_anim_path_def
-c0056eb6 g     F .text	000001d3 lv_task_create_basic
-c0051485 g     F .text	000000b7 lv_disp_drv_init
-c0020a5d g       .text	00000000 sched
-c00525a9 g     F .text	00000097 lv_anim_path_ease_in_out
-c002efe2 g     F .text	0000003c init_sb_op_table
-c006ab66 g     F .text	000000c3 lv_group_del
-c00532bd g     F .text	00000065 _lv_area_is_on
-c002cc6a g     F .text	00000144 FindClusterForDir
-c0073180 g     O .rodata	00000100 _lv_bpp8_opa_table
-c00588a8 g     F .text	00000019 lv_theme_set_base
-c004e0d4 g     F .text	0000049b _lv_img_buf_get_transformed_area
-c0052028 g     F .text	0000005e _lv_anim_core_init
-c0038c82 g     F .text	0000008a lv_obj_get_height_grid
-c0048c41 g     F .text	00000010 lv_draw_px
-c002fd79 g     F .text	0000019f mouse_handler
-c0053cfa g     F .text	000000f8 lv_debug_log_error
-c00547ca g     F .text	0000007b lv_fs_drv_register
-c006599c g     F .text	000000a8 lv_cont_set_layout
-c0025136 g     F .text	00000143 sys_fork
-c0037701 g     F .text	00000063 lv_obj_add_protect
-c006bc6b g     F .text	00000046 lv_indev_is_dragging
-c002e5f2 g     F .text	000000d1 MakeFullPath
-c002fba2 g     F .text	000000df do_vdeletedir
-c0102594 g     O .bss	00000004 Position_Of_FAT1
-c00245cb g     F .text	000000cc read_elf
-c0055ced g     F .text	00000084 lv_mem_test
-c0051e60 g     F .text	00000049 lv_indev_get_next
-c00567be g     F .text	00000102 _lv_memset_00
-c0055eed g     F .text	00000253 _lv_mem_buf_get
-c0038abc g     F .text	00000090 lv_obj_get_height_fit
-c00232a9 g     F .text	0000012d memman_alloc_4k
-c0067d42 g     F .text	0000011d lv_label_set_text_fmt
-c0022628 g       .text	00000000 port_read
-c0054289 g     F .text	0000005f lv_fs_seek
-c006b224 g     F .text	000000c1 lv_group_set_editing
-c0040ebc g     F .text	0000004a _lv_style_list_set_local_int
-c002ba97 g     F .text	0000016f DeleteFile
-c002c6f8 g     F .text	000000a5 sys_WriteFile
-c005734b g     F .text	00000049 lv_task_get_next
-c003768e g     F .text	00000073 lv_obj_set_base_dir
-c003ab8e g     F .text	000001a6 lv_obj_init_draw_line_dsc
-c006379c g     F .text	000000f7 lv_bar_set_value
-c0051b2f g     F .text	0000001d lv_disp_flush_is_last
-c0053df2 g     F .text	0000002d _lv_fs_init
-c006b3bf g     F .text	00000022 lv_group_get_focus_cb
-c00403f4 g     F .text	00000061 _lv_style_get_mem_size
-c0039b65 g     F .text	0000001e lv_obj_get_focus_parent
-c006b968 g     F .text	00000015 lv_indev_get_act
-c00322d8 g     F .text	0000004a gets
-c0036ac7 g     F .text	00000061 lv_obj_clean_style_list
-c003ba61 g     F .text	00000053 lv_obj_get_focused_obj
-c002f40f g     F .text	00000034 sys_create
-c0041e1f g     F .text	00000066 lv_img_cf_get_px_size
-c0036d99 g     F .text	0000008d lv_obj_remove_style_local_prop
-c0020690 g       .text	00000000 hwint12
-c0022376 g     F .text	0000001d free_PCB
-c003a174 g     F .text	0000004b lv_obj_handle_get_type_signal
-c0054b50 g     F .text	00000186 _lv_gc_clear_roots
-c002d200 g     F .text	000000ce GetNextCluster
-c00290b0 g     F .text	00000075 hd_close
-c008c600 g     O .data	00000004 _lv_txt_encoded_get_char_id
-c0023856 g     F .text	0000008f disp_free
-c002ef40 g     F .text	000000a2 init_super_block_table
-c004f183 g     F .text	00000019 lv_img_decoder_set_open_cb
-c0044ab2 g     F .text	00000054 lv_draw_line_dsc_init
-c00561d0 g     F .text	000000bc _lv_mem_buf_free_all
-c006af21 g     F .text	000001ca lv_group_focus_obj
-c0020950 g       .text	00000000 general_protection
-c0055b3f g     F .text	000000e3 lv_mem_realloc
-c002d49e g     F .text	00000163 ClearFATs
-c0039a79 g     F .text	00000057 lv_obj_get_drag_dir
-c00388ea g     F .text	0000008a lv_obj_get_y
-c0020840 g       .text	00000000 inval_opcode
-c0038f09 g     F .text	0000005b lv_obj_get_style_list
-c002f2c1 g     F .text	0000005e sys_read
-c0035470 g     F .text	00000087 lv_obj_clean
-c005712f g     F .text	00000019 lv_task_set_cb
-c00557e9 g     F .text	000000a2 _lv_pow
-c00363ea g     F .text	000000c3 lv_obj_align_x
-c00414c7 g     F .text	00000021 lv_debug_check_style
-c00572eb g     F .text	00000027 lv_task_reset
-c00311c0 g     F .text	000003e9 shell
-c0036c83 g     F .text	0000008f _lv_obj_set_style_local_opa
-c005628c g     F .text	0000040b _lv_memcpy
-c0054a5d g     F .text	000000af lv_fs_get_last
-c0022810 g       .text	00000000 memcpy
-c0036157 g     F .text	00000064 lv_obj_set_width_fit
-c00528e0 g     F .text	0000002d lv_anim_path_step
-c0031cb6 g     F .text	00000052 select_console
-c00315a9 g     F .text	000000e2 split
-c0102590 g     O .bss	00000004 Position_Of_RootDir
-c0041ec6 g     F .text	00000048 lv_img_cf_has_alpha
-c0129860 g     O .bss	00000004 k_reenter
-c0052210 g     F .text	000000a1 lv_anim_del
-c004ec6e g     F .text	00000010 lv_img_cache_invalidate_src
-c0045ef4 g     F .text	0000005d lv_draw_mask_remove_id
-c002a6f8 g     F .text	0000028e CreateDir
-c0102588 g     O .bss	00000002 Reserved_Sector
-c0022609 g       .text	00000000 enable_irq
-c00372d8 g     F .text	0000006c lv_obj_set_top
-c003810d g     F .text	00000015 lv_event_get_data
-c00540bc g     F .text	000000b1 lv_fs_remove
-c0022650 g       .text	00000000 enable_int
-c0037344 g     F .text	00000080 lv_obj_set_drag
-c002eaed g     F .text	00000084 TimeToBytes
-c0029660 g     F .text	00000131 hd_rdwt_sched
-c00228e2 g     F .text	0000001e sys_kmalloc_4k
-c0036bfc g     F .text	00000087 _lv_obj_set_style_local_color
-c00358bb g     F .text	000001d0 lv_obj_set_parent
-c0035410 g     F .text	00000060 lv_obj_del_async
-c003b253 g     F .text	00000086 lv_debug_check_obj_type
-c0023928 g     F .text	000002b9 memman_test
-c0051e33 g     F .text	0000002d lv_indev_drv_update
-c0020778 g       .text	00000000 single_step_exception
-c003a8aa g     F .text	00000196 lv_obj_init_draw_label_dsc
-c004edce g     F .text	000000b4 lv_img_decoder_get_info
-c0021883 g     F .text	00000064 clock_handler
-c006208c g     F .text	0000015c lv_theme_material_init
-c0020b58 g       .text	00000000 malloc
-c0083060 g     O .data	00000400 gdt
-c0068502 g     F .text	000003f7 lv_label_get_letter_pos
-c003294b g     F .text	0000003a lv_disp_get_scr_prev
-c002a52a g     F .text	0000002c initlock
-c0020bd0 g       .text	00000000 sleep
-c006ad3c g     F .text	0000013b lv_group_remove_obj
-c0039680 g     F .text	000001c8 _lv_obj_get_style_ptr
-c002bc06 g     F .text	0000012e IsFile
-c003fb1a g     F .text	00000029 lv_style_init
-c008c40c g     O .data	0000000c _lv_disp_ll
-c00206c0 g       .text	00000000 hwint13
-c002dcc5 g     F .text	00000156 CreateRecord
-c002900c g     F .text	000000a4 hd_open
-c00371f3 g     F .text	0000007c lv_obj_set_adv_hittest
-c0035307 g     F .text	000000e5 lv_obj_del
-c00221a1 g     F .text	00000084 divide_error_handler
-c0039c2b g     F .text	00000051 lv_obj_get_protect
-c0020600 g       .text	00000000 hwint09
-c00572d2 g     F .text	00000019 lv_task_set_repeat_count
-c002187f g     F .text	00000000 .hidden __x86.get_pc_thunk.ax
-c0144680 g     O .bss	00000340 hd_info
-c0051a3c g     F .text	00000039 lv_disp_get_dpi
-c0102598 g     O .bss	00000004 Position_Of_FAT2
-c00381c9 g     F .text	00000054 lv_obj_set_design_cb
-c0067b38 g     F .text	0000020a lv_label_set_text
-c004ee82 g     F .text	00000152 lv_img_decoder_open
-c002c66e g     F .text	00000010 sys_OpenFile
-c006bba2 g     F .text	00000023 lv_indev_set_button_points
-c002e20d g     F .text	00000132 NeedMoreCluster
-c0029125 g     F .text	00000272 hd_rdwt
-c0064f06 g     F .text	0000007a lv_btn_set_checkable
-c004fa06 g     F .text	000000a2 lv_img_decoder_built_in_close
-c008c454 g     O .data	0000000c _lv_img_defoder_ll
-c0032322 g     F .text	00000177 strtoul
-c002266a g     F .text	000000b5 itoa
-c0032bb2 g     F .text	0000008e lv_disp_set_bg_opa
-c0048a6c g     F .text	00000124 lv_draw_rect_dsc_init
-c006805f g     F .text	000000aa lv_label_set_align
-c0035c0f g     F .text	000001a8 lv_obj_set_pos
-c0037052 g     F .text	000000bd _lv_obj_disable_style_caching
-c00405ee g     F .text	00000192 _lv_style_set_color
-c006dba3 g     F .text	000000fe lv_indev_search_obj
-c00502da g     F .text	00000026 lv_font_get_glyph_bitmap
-c006573e g     F .text	0000025e lv_cont_create
-c0102586 g     O .bss	00000001 Sectors_Per_Cluster
-c0070dd0 g     F .text	00000046 lv_color_darken
-c0155e00 g     O .bss	00000004 current_console
-c0020ba0 g       .text	00000000 udisp_int
-c002b14c g     F .text	00000206 CloseFile
-c0036e26 g     F .text	000001a5 lv_obj_refresh_style
-c0054d0e g     F .text	000000a1 _lv_ll_ins_head
-c0037dbe g     F .text	00000054 lv_obj_set_event_cb
-c0055a67 g     F .text	000000d8 lv_mem_free
-c004f1b5 g     F .text	00000019 lv_img_decoder_set_close_cb
-c0023771 g     F .text	00000022 memman_free_4k
-c0063984 g     F .text	00000127 lv_bar_set_range
-c0054f40 g     F .text	0000011f _lv_ll_remove
-c004f8b5 g     F .text	00000151 lv_img_decoder_built_in_read_line
-c0020720 g       .text	00000000 hwint15
-c008c480 g     O .data	00000080 _lv_mem_buf
-c0048b90 g     F .text	000000b1 lv_draw_rect
-c0040f4f g     F .text	00000041 _lv_style_list_set_local_color
-c0038700 g     F .text	00000060 lv_obj_get_coords
-c0052dab g     F .text	00000034 lv_area_set_width
-c00544e8 g     F .text	00000123 lv_fs_dir_open
-c008c604 g     O .data	00000004 _lv_txt_get_encoded_length
-c003b10d g     F .text	000000ae lv_obj_fade_in
-c0039fae g     F .text	00000050 lv_obj_get_group
-c0156820 g     O .bss	00000004 argc
-c0024aa6 g     F .text	0000001e fake_open
-c00368c0 g     F .text	00000069 lv_obj_set_auto_realign
-c004eb7b g     F .text	000000d9 _lv_img_cache_open
-c0032911 g     F .text	0000003a lv_disp_get_scr_act
-c0028f71 g     F .text	0000009b init_hd
-c0051801 g     F .text	00000094 lv_disp_drv_update
-c00207f0 g       .text	00000000 overflow
-c0020bea g       .text	00000000 print_F
-c0023c07 g     F .text	000000ec init_page_pte
-c002c50a g     F .text	00000038 debug
-c005719e g     F .text	000000e9 lv_task_set_prio
-c002de1b g     F .text	0000008b WriteRecord
-c0023503 g     F .text	0000026e memman_free
-c003621f g     F .text	00000064 lv_obj_set_width_margin
-c0029397 g     F .text	00000054 hd_service
-c0020c37 g       .text	00000000 lseek
-c006be32 g     F .text	00000022 lv_indev_get_read_task
-c0156824 g     O .bss	00000004 fd
-c0020450 g       .text	00000000 hwint00
-c00329cd g     F .text	0000003a lv_disp_get_layer_top
-c002edb8 g     F .text	0000002c init_vfs
-c008c424 g     O .data	0000000c _lv_drv_ll
-c0052640 g     F .text	0000009a lv_anim_path_overshoot
-c005897d g     F .text	00000018 lv_theme_get_flags
-c002abf2 g     F .text	00000264 ReadFile
-c00523eb g     F .text	00000020 lv_anim_refr_now
-c0070c8f g     F .text	000000fb lv_color_fill
-c0024464 g     F .text	00000059 clear_kernel_pagepte_low
-c0022225 g     F .text	000000f6 schedule
-c0054e9f g     F .text	000000a1 _lv_ll_ins_tail
-c0037fbe g     F .text	0000014f lv_event_send_func
-c0051895 g     F .text	000000af lv_disp_remove
-c0129880 g     O .bss	00000c84 tty_table
-c0022888 g     F .text	00000017 sys_get_ticks
-c006ef33 g     F .text	000001f2 _lv_blend_map
-c0038e10 g     F .text	00000054 lv_obj_get_ext_click_pad_top
-c004daf3 g     F .text	00000163 lv_img_buf_alloc
-c00223c4 g     F .text	0000005e sys_sleep
-c0067e5f g     F .text	000000b6 lv_label_set_text_static
-c00552d8 g     F .text	000000d6 _lv_ll_move_before
-c0073170 g     O .rodata	00000010 _lv_bpp4_opa_table
-c002289f g     F .text	0000001d sys_get_pid
-c0028f69 g     F .text	00000000 .hidden __x86.get_pc_thunk.dx
-c008c460 g     O .data	0000000c _lv_obj_style_trans_ll
-c0040da9 g     F .text	0000002b _lv_style_list_get_transition_style
-c005348f g     F .text	000005ce _lv_area_align
-c002f76d g     F .text	000000a4 do_vunlink
-c002e9bd g     F .text	00000130 ToFullPath
-c002611d g     F .text	000000b0 get_fs_dev
-c00306dc g     F .text	00000250 in_process
-c00558de g     F .text	00000073 _lv_mem_init
-c0033233 g     F .text	0000008c lv_disp_get_inactive_time
-c0065a44 g     F .text	00000176 lv_cont_set_fit4
-c01449c0 g     O .bss	00000004 state
-c0058704 g     F .text	00000090 _lv_utils_bsearch
-c003175a g     F .text	0000019d init_screen
-c0055689 g     F .text	00000160 _lv_atan2
-c0032499 g     F .text	00000043 strtol
-c008c5fc g     O .data	00000004 _lv_txt_encoded_get_byte_id
-c003865a g     F .text	000000a6 lv_obj_count_children_recursive
-c002f4ab g     F .text	00000034 sys_createdir
-c0058939 g     F .text	00000022 lv_theme_get_color_primary
-c0040b59 g     F .text	000000af _lv_style_get_opa
-c00204e0 g       .text	00000000 hwint03
-c0040918 g     F .text	00000192 _lv_style_set_ptr
-c00466ee g     F .text	00000042 lv_draw_mask_map_init
-c00310cb g     F .text	000000cd tty_read
-c005460b g     F .text	0000006e lv_fs_dir_read
-c006ed47 g     F .text	000001ec _lv_blend_fill
-c0052ddf g     F .text	00000035 lv_area_set_height
-c008c580 g     O .data	00000004 _lv_theme_material_styles
-c0046598 g     F .text	000000cd lv_draw_mask_radius_init
-c0038dbc g     F .text	00000054 lv_obj_get_ext_click_pad_right
-c00693fa g     F .text	000000ad lv_label_cut_text
-c0026d5f g     F .text	0000006a real_open
-c00650ad g     F .text	00000087 lv_btn_toggle
-c003fcbe g     F .text	00000029 lv_style_list_init
-c0057b47 g     F .text	0000011d _lv_txt_get_width
-c0056b22 g     F .text	00000040 _lv_task_core_init
-c00651f0 g     F .text	0000006d lv_btn_get_checkable
-c0051a00 g     F .text	0000003c lv_disp_get_antialiasing
-c00551d4 g     F .text	0000002b _lv_ll_get_head
-c012a520 g     O .bss	00002000 cpu_table
-c0065134 g     F .text	000000bc lv_btn_get_state
-c012c520 g     O .bss	00000068 tss
-c006ac29 g     F .text	00000113 lv_group_add_obj
-c00261cd g     F .text	0000010e init_fs
-c00332fe g     F .text	0000004b lv_disp_clean_dcache
-c0036283 g     F .text	00000064 lv_obj_set_height_margin
-c010258c g     O .bss	00000004 Sectors_Per_FAT
-c0052e88 g     F .text	0000004e lv_area_get_size
-c0024197 g     F .text	00000040 pte_exist
-c0020904 g       .text	00000000 segment_not_present
-c0020d73 g     F .text	000001b7 kernel_main
-c0040f90 g     F .text	00000041 _lv_style_list_set_local_ptr
-c0051baa g     F .text	0000001d lv_disp_get_inv_buf_size
-c0025823 g     F .text	00000192 sys_pthread
-c0020b4c g       .text	00000000 kmalloc_4k
-c0051f57 g     F .text	00000028 lv_tick_inc
-c0020c28 g       .text	00000000 write
-c0051b4c g     F .text	00000049 lv_disp_get_next
-c002f247 g     F .text	00000046 sys_open
-c003fb43 g     F .text	00000071 lv_style_copy
-c0036b6c g     F .text	00000090 _lv_obj_set_style_local_int
-c0039848 g     F .text	00000074 lv_obj_get_local_style
-c0020bdc g       .text	00000000 print_E
-c0031d08 g     F .text	000001c1 scroll_screen
-c0063c39 g     F .text	0000008f lv_bar_get_start_value
-c005729f g     F .text	00000033 lv_task_ready
-c00587ad g     F .text	00000015 lv_theme_get_act
-c005588b g     F .text	00000053 _lv_map
-c00227a6 g     F .text	0000005d strcat
-c003092c g     F .text	00000130 task_tty
-c004f16b g     F .text	00000018 lv_img_decoder_set_info_cb
-c002fcfe g     F .text	0000007b kb_handler
-c0040cb7 g     F .text	000000af _lv_style_get_ptr
-c0101000 g     O .bss	00000004 memarg
-c0051c49 g     F .text	00000034 lv_disp_is_double_buf
-c0035a8b g     F .text	000000c2 lv_obj_move_foreground
-c004da5c g     F .text	00000097 lv_img_buf_set_palette
-c0057d92 g     F .text	0000008e _lv_txt_cut
-c006b31b g     F .text	0000003b lv_group_set_refocus_policy
-c006aa91 g     F .text	000000d5 lv_group_create
-c002dea6 g     F .text	00000192 WriteFAT
-c0067f15 g     F .text	0000014a lv_label_set_long_mode
-c00237f3 g     F .text	0000001e do_kmalloc_4k
-c0102380 g     O .bss	00000100 VDiskPath
-c0024217 g     F .text	00000043 write_page_pde
-c0055d71 g     F .text	0000013b lv_mem_monitor
-c00233d6 g     F .text	0000012d memman_kalloc_4k
-c0038860 g     F .text	0000008a lv_obj_get_x
-c0033349 g     F .text	0000003a _lv_disp_get_refr_task
-c0038bf8 g     F .text	0000008a lv_obj_get_width_grid
-c00364ad g     F .text	000000c3 lv_obj_align_y
-c012c588 g     O .bss	00000004 p_proc_current
-c0063bc2 g     F .text	00000077 lv_bar_get_value
-c012c58c g     O .bss	00000004 cr3_ready
-c002ff18 g     F .text	000000d4 init_kb
-c0155200 g     O .bss	00000a00 f_desc_table
-c002c7ed g     F .text	000000d9 DisErrorInfo
-c002f513 g     F .text	000000f3 do_vopen
-c0070e16 g     F .text	0000021b lv_color_hsv_to_rgb
-c0034b16 g     F .text	00000036 lv_deinit
-c01025a0 g     O .bss	00000400 FATBuf
-c0020bac g       .text	00000000 udisp_str
-c002ede4 g     F .text	00000050 init_file_desc_table
-c0024ac4 g     F .text	00000053 fake_read
-c00237b4 g     F .text	00000021 do_kmalloc
-c005441d g     F .text	000000cb lv_fs_rename
-c006b2e5 g     F .text	00000036 lv_group_set_click_focus
-c0024095 g     F .text	00000015 get_pde_index
-c0036b28 g     F .text	00000044 lv_obj_reset_style_list
-c0020ab1 g       .text	00000000 sys_call
-c0064f80 g     F .text	0000012d lv_btn_set_state
-c0050300 g     F .text	00000028 lv_font_get_glyph_dsc
-c00684a0 g     F .text	00000062 lv_label_get_anim_speed
-c00574da g     F .text	00000070 InitTxt
-c006b356 g     F .text	00000034 lv_group_set_wrap
-c0039dfd g     F .text	00000050 lv_obj_get_event_cb
-c0020bb8 g       .text	00000000 exec
-c002f31f g     F .text	0000005e sys_write
-c002a57c g     F .text	00000019 release
-c00208de g       .text	00000000 inval_tss
-c002099c g       .text	00000000 copr_error
-c0041e85 g     F .text	00000041 lv_img_cf_is_chroma_keyed
-c00224d2 g     F .text	00000053 va2la
-c004f355 g     F .text	00000560 lv_img_decoder_built_in_open
-c0023835 g     F .text	00000021 do_free_4k
-c0068436 g     F .text	0000006a lv_label_get_recolor
-c002c4b2 g     F .text	00000058 rw_sector_sched_fat
-c0065bba g     F .text	00000064 lv_cont_get_layout
-c0020630 g       .text	00000000 hwint10
-c0063aab g     F .text	000000a9 lv_bar_set_type
-c0053bf6 g     F .text	00000021 lv_debug_check_null
-c006ae77 g     F .text	000000aa lv_group_remove_all_objs
-c008c5e8 g     O .data	00000004 _lv_txt_encoded_size
-c002f85e g     F .text	000000e2 do_vcreate
-c00382a4 g     F .text	00000069 lv_obj_refresh_ext_draw_pad
-c0052e14 g     F .text	00000074 _lv_area_set_pos
-c003821d g     F .text	00000087 lv_obj_allocate_ext_attr
-c0020400 g       .text	00000000 _start
-c008c5f4 g     O .data	00000004 _lv_txt_encoded_next
-c0052d4c g     F .text	0000005f lv_area_set
-c0032767 g     F .text	00000059 PlotPixel
-c008c470 g     O .data	00000004 _lv_task_act
-c0054cd6 g     F .text	00000038 _lv_ll_init
-c0041f0e g     F .text	0000005a lv_img_src_get_type
-c0038465 g     F .text	0000004f lv_obj_get_parent
-c0046014 g     F .text	000002f7 lv_draw_mask_line_points_init
-c0035651 g     F .text	000001a9 lv_obj_area_is_visible
-c004de12 g     F .text	000002c2 _lv_img_buf_transform_init
-c0036736 g     F .text	000000c3 lv_obj_align_mid_y
-c00549a2 g     F .text	000000bb lv_fs_up
-c0037455 g     F .text	0000006e lv_obj_set_drag_throw
-c0037eb4 g     F .text	0000010a lv_event_send_refresh_recursive
-c0065c85 g     F .text	00000064 lv_cont_get_fit_right
-c0020c19 g       .text	00000000 read
-c00218e7 g     F .text	0000004a milli_delay
-c005505f g     F .text	00000071 _lv_ll_clear
-c002e6c3 g     F .text	0000019c ChangeCurrentPath
-c003e703 g     F .text	000001fe _lv_inv_area
-c0058921 g     F .text	00000018 lv_theme_get_font_title
-c0051a75 g     F .text	00000090 lv_disp_get_size_category
-c0071031 g     F .text	000001e6 lv_color_rgb_to_hsv
-c002c7ad g     F .text	00000010 sys_OpenDir
-c0054daf g     F .text	000000f0 _lv_ll_ins_prev
-c0055627 g     F .text	00000062 _lv_sqrt
-c0021a19 g     F .text	0000004a spurious_irq
-c0065d4e g     F .text	00000068 lv_cont_get_fit_bottom
-c012c590 g     O .bss	00000004 p_proc_next
-c00373c4 g     F .text	00000091 lv_obj_set_drag_dir
-c0036fcb g     F .text	00000087 lv_obj_report_style_mod
-c002264e g       .text	00000000 disable_int
-c0041390 g     F .text	00000137 _lv_style_list_get_ptr
-c002231b g     F .text	0000005b alloc_PCB
-c002ee34 g     F .text	0000010c init_fileop_table
-c0038974 g     F .text	0000005c lv_obj_get_width
-c0031082 g     F .text	00000049 tty_write
-c006bb75 g     F .text	0000002d lv_indev_set_group
-c0045f51 g     F .text	00000078 lv_draw_mask_remove_custom
-c003168b g     F .text	00000052 strncpy
-c0020c46 g       .text	00000000 unlink
-c00400f6 g     F .text	000001c9 _lv_style_list_remove_style
-c0057970 g     F .text	000001d7 _lv_txt_get_next_line
-c0021f53 g     F .text	0000005c seg2phys
-c0051b95 g     F .text	00000015 lv_disp_get_buf
-c008c588 g     O .data	00000004 _lv_theme_mono_styles
-c006b20b g     F .text	00000019 lv_group_set_focus_cb
-c006b0eb g     F .text	0000002f lv_group_focus_next
-c0020c55 g       .text	00000000 create
-c0052f82 g     F .text	00000079 _lv_area_join
-c0083040 g     O .data	00000004 disp_pos
-c01449e0 g     O .bss	00010800 f_desc_table_fat
-c0040dd4 g     F .text	000000e8 _lv_style_list_add_trans_style
-c002c7dd g     F .text	00000010 sys_ListDir
-c0038e64 g     F .text	00000054 lv_obj_get_ext_click_pad_bottom
-c0020480 g       .text	00000000 hwint01
-c00682ad g     F .text	0000004b lv_label_set_text_sel_end
-c0063d2a g     F .text	00000062 lv_bar_get_max_value
-c00550d0 g     F .text	00000104 _lv_ll_chg_list
-c0057e20 g     F .text	000000b5 _lv_txt_set_text_vfmt
-c002e33f g     F .text	00000191 FindClusterForFile
-c00225be g       .text	00000000 out_byte
-c002cf0b g     F .text	000002f5 GetNextSector
-c003e681 g     F .text	00000010 _lv_refr_init
-c0083ce0 g     O .data	00000070 sys_call_table
-c0040aaa g     F .text	000000af _lv_style_get_int
-c005522a g     F .text	00000035 _lv_ll_get_next
-c002257d g       .text	00000000 disp_color_str
-c00681bb g     F .text	000000a7 lv_label_set_anim_speed
-c00318f7 g     F .text	0000025b out_char
-c0058909 g     F .text	00000018 lv_theme_get_font_subtitle
-c00280fa g     F .text	00000055 real_read
-c0053e79 g     F .text	000001b5 lv_fs_open
-c00588f1 g     F .text	00000018 lv_theme_get_font_normal
-c0020d6f g     F .text	00000000 .hidden __x86.get_pc_thunk.bx
-c008c584 g     O .data	00000004 _lv_theme_template_styles
-c0071ea5 g     F .text	0000003d lv_snprintf
-c00241d7 g     F .text	00000040 phy_exist
-c0032a07 g     F .text	0000003a lv_disp_get_layer_sys
-c002e85f g     F .text	00000096 GetNameFromPath
-c00374c3 g     F .text	0000006e lv_obj_set_drag_parent
-c0020b8a g       .text	00000000 fork
-c0022acf g     F .text	00000557 init
-c003e901 g     F .text	00000015 _lv_refr_get_disp_refreshing
-c0024571 g     F .text	0000005a read_Shdr
-c003a1bf g     F .text	000006eb lv_obj_init_draw_rect_dsc
-c004d0d6 g     F .text	000002c3 lv_img_buf_get_px_alpha
-c0052ed6 g     F .text	000000ac _lv_area_intersect
-c0036a42 g     F .text	00000085 lv_obj_remove_style
-c0040780 g     F .text	00000198 _lv_style_set_opa
-c002a556 g     F .text	00000026 acquire
-c0037562 g     F .text	000000c0 lv_obj_set_focus_parent
-c006b149 g     F .text	00000040 lv_group_focus_freeze
-c0055c22 g     F .text	000000cb lv_mem_defrag
-c0020b66 g       .text	00000000 malloc_4k
-c00367f9 g     F .text	000000c7 lv_obj_realign
-c00403c1 g     F .text	00000033 lv_style_reset
-c0039d5d g     F .text	00000050 lv_obj_get_signal_cb
-c002ae56 g     F .text	000002f6 WriteFile
-c0068358 g     F .text	00000065 lv_label_get_long_mode
-c0039915 g     F .text	00000059 lv_obj_get_adv_hittest
-c0039e4d g     F .text	00000050 lv_obj_get_ext_attr
-c0023cf3 g     F .text	000003a2 page_fault_handler
-c0053322 g     F .text	0000016d _lv_area_is_in
-c0020ca0 g     F .text	000000cf cstart
-c0057089 g     F .text	000000a6 lv_task_create
-c005416d g     F .text	0000008e lv_fs_read
-c00349ee g     F .text	00000128 lv_init
-c0024332 g     F .text	00000132 lin_mapping_phy
-c002f64d g     F .text	0000004d do_vread
-c005195d g     F .text	00000015 lv_disp_get_default
-c008c651 g       .bss	00000000 __bss_start
-c004cdd8 g     F .text	000002fe lv_img_buf_get_px_color
-c002a595 g     F .text	00000163 DeleteDir
-c0022839 g       .text	00000000 memset
-c00588d9 g     F .text	00000018 lv_theme_get_font_small
-c0028e73 g     F .text	00000033 real_lseek
-c0020b92 g       .text	00000000 pthread
-c002c542 g     F .text	00000038 deint
-c0057335 g     F .text	00000016 lv_task_get_idle
-c00361bb g     F .text	00000064 lv_obj_set_height_fit
-c0039e9d g     F .text	00000111 lv_obj_get_type
-c008bd48 g     O .data	00000004 globalSectorIndex
-c0102580 g     O .bss	00000004 TotalSectors
-c00547a1 g     F .text	00000029 lv_fs_drv_init
-c006926d g     F .text	0000018d lv_label_ins_text
-c002f3db g     F .text	00000034 sys_unlink
-c00204b0 g       .text	00000000 hwint02
-c0032a41 g     F .text	00000063 lv_disp_assign_screen
-c0057312 g     F .text	00000023 lv_task_enable
-c004dc9e g     F .text	00000174 lv_img_buf_get_img_size
-c0073164 g     O .rodata	00000004 _lv_bpp2_opa_table
-c00414e8 g     F .text	00000021 lv_debug_check_style_list
-c0040d66 g     F .text	00000043 lv_style_list_get_local_style
-c0022900 g     F .text	00000069 sys_malloc
-c00588c1 g     F .text	00000018 lv_theme_set_apply_cb
-c003229d g     F .text	0000003b getchar
-c0020890 g       .text	00000000 double_fault
-c003fbb4 g     F .text	0000010a lv_style_remove_prop
-c00360e2 g     F .text	00000075 lv_obj_set_height
-c0051faf g     F .text	00000039 lv_tick_elaps
-c006bae5 g     F .text	00000090 lv_indev_set_cursor
-c0020c73 g       .text	00000000 opendir
-c0038d0c g     F .text	0000005c lv_obj_get_auto_realign
-c008c46c g     O .data	00000004 _lv_img_cache_array
-c002c92c g     F .text	0000008b WriteSector
-c0032c40 g     F .text	000005f3 lv_scr_load_anim
-c003a075 g     F .text	000000a7 lv_obj_is_point_on_coords
-c008c5f8 g     O .data	00000004 _lv_txt_encoded_prev
-c0040fd1 g     F .text	00000143 _lv_style_list_get_int
-c00553ae g     F .text	0000003c _lv_ll_is_empty
-c0036570 g     F .text	00000103 lv_obj_align_mid
-c0024697 g     F .text	0000040f disp_Elf
-c002410e g     F .text	00000043 get_pte_phy_addr
-c0038122 g     F .text	00000054 lv_obj_set_signal_cb
-c003aa40 g     F .text	0000014e lv_obj_init_draw_img_dsc
-c004f130 g     F .text	0000003b lv_img_decoder_delete
-c0037622 g     F .text	0000006c lv_obj_set_parent_event
-c00682f8 g     F .text	00000060 lv_label_get_text
-c0083044 g     O .data	00000006 gdt_ptr
-c002271f g     F .text	00000036 disp_int
-c004f19c g     F .text	00000019 lv_img_decoder_set_read_line_cb
-c002c57a g     F .text	0000007a sys_CreateFile
-c005525f g     F .text	00000032 _lv_ll_get_prev
-c0037531 g     F .text	00000031 lv_obj_set_gesture_parent
-c0045fc9 g     F .text	0000004b lv_draw_mask_get_cnt
-c0024517 g     F .text	0000005a read_Phdr
-c002814f g     F .text	00000055 real_write
-c003853d g     F .text	00000089 lv_obj_get_child_back
-c00543b1 g     F .text	0000006c lv_fs_size
-c0020540 g       .text	00000000 hwint05
-c002e575 g     F .text	0000007d strcmp
-c0051f7f g     F .text	00000030 lv_tick_get
-c0038760 g     F .text	00000100 lv_obj_get_inner_coords
-c002c7bd g     F .text	00000010 sys_CreateDir
-c003002f g     F .text	00000510 keyboard_read
-c0041252 g     F .text	0000013e _lv_style_list_get_opa
-c0083480 g     O .data	00000800 idt
-c0035ea3 g     F .text	000001c8 lv_obj_set_size
-c00369bd g     F .text	00000085 lv_obj_add_style
-c00559a4 g     F .text	000000c3 lv_mem_alloc
-c002e8f5 g     F .text	0000006e GetParentFromPath
-c012c594 g     O .bss	00000004 kernel_initial
-c0155c00 g     O .bss	00000200 super_block
-c006bc2f g     F .text	00000016 lv_indev_get_gesture_dir
-c0032aa4 g     F .text	00000087 lv_disp_set_bg_color
-c00207c8 g       .text	00000000 breakpoint_exception
-c002263b g       .text	00000000 port_write
-c0039c7c g     F .text	0000005f lv_obj_is_protected
-c0022755 g     F .text	00000051 delay
-c006b99f g     F .text	000000c3 lv_indev_reset
-c00389d0 g     F .text	0000005c lv_obj_get_height
-c002ece1 g     F .text	000000d7 FormatDirNameAndExt
-c00260bd g     F .text	00000060 sys_print_F
-c0065c1e g     F .text	00000067 lv_cont_get_fit_left
-c00402bf g     F .text	00000102 _lv_style_list_reset
-c0054926 g     F .text	0000007c lv_fs_get_ext
-c002f9e4 g     F .text	000000df do_vopendir
-c0044b06 g     F .text	00000326 lv_draw_line
-c006ba62 g     F .text	00000040 lv_indev_reset_long_press
-c0037ca1 g     F .text	00000084 lv_obj_clear_state
-c002b921 g     F .text	00000176 CreateFile
-c005153c g     F .text	0000004e lv_disp_buf_init
-c00541fb g     F .text	0000008e lv_fs_write
-c0020b1d g       .text	00000000 get_arg
-c0070d8a g     F .text	00000046 lv_color_lighten
-c0063b54 g     F .text	0000006e lv_bar_set_anim_time
-c0068dd6 g     F .text	0000004f lv_label_get_text_sel_end
-c002f69a g     F .text	000000d3 do_vwrite
-c00385c6 g     F .text	00000094 lv_obj_count_children
-c0068d87 g     F .text	0000004f lv_label_get_text_sel_start
-c0024b17 g     F .text	0000001d fake_seek
-c00526da g     F .text	00000206 lv_anim_path_bounce
-c002805f g     F .text	00000020 real_close
-c0063d8c g     F .text	00000065 lv_bar_get_type
-c0053b1c g     F .text	00000097 lv_async_call
-c002c79d g     F .text	00000010 sys_ReadFile
-c003fce7 g     F .text	0000028e lv_style_list_copy
-c005240b g     F .text	00000070 lv_anim_path_linear
-c012c598 g     O .bss	00000004 ticks
-c002d2ce g     F .text	000001d0 ReadRecord
-c0041da5 g     F .text	0000007a lv_draw_img
-c0053e1f g     F .text	0000005a lv_fs_is_ready
-c0039373 g     F .text	00000130 _lv_obj_get_style_color
-c0020b30 g       .text	00000000 get_ticks
-c0039ffe g     F .text	00000077 lv_obj_is_focused
-c006bd1b g     F .text	000000dd lv_indev_finish_drag
-c0046665 g     F .text	00000089 lv_draw_mask_fade_init
-c01551e0 g     O .bss	00000004 buf
-c00463c4 g     F .text	000001d4 lv_draw_mask_angle_init
-c00238e5 g     F .text	00000043 memman_total
-c0032985 g     F .text	00000048 lv_disp_load_scr
-c002d601 g     F .text	000000a6 ClearRecord
-c0041114 g     F .text	0000013e _lv_style_list_get_color
-c0063df1 g     F .text	00000062 lv_bar_get_anim_time
-c0051972 g     F .text	00000047 lv_disp_get_hor_res
-c002f606 g     F .text	00000047 do_vclose
-c008c3c0 g     O .data	00000014 lv_font_montserrat_14
-c0068262 g     F .text	0000004b lv_label_set_text_sel_start
-c002eb71 g     F .text	00000170 FormatFileNameAndExt
-c00206f0 g       .text	00000000 hwint14
-c0041d44 g     F .text	00000061 lv_draw_img_dsc_init
-c005754a g     F .text	000001e6 _lv_txt_get_size
-c0020b7e g       .text	00000000 free_4k
-c006aa64 g     F .text	0000002d _lv_group_init
-c0020c91 g       .text	00000000 deletedir
-c0029867 g     F .text	00000113 hd_ioctl
-c0050328 g     F .text	0000003b lv_font_get_glyph_width
-c00357fa g     F .text	000000c1 lv_obj_is_visible
-c0035b4d g     F .text	000000c2 lv_obj_move_background
-c0051d2c g     F .text	00000107 lv_indev_drv_register
-c0022422 g     F .text	0000005c sys_wakeup
-c00394a3 g     F .text	000001dd _lv_obj_get_style_opa
-c004d399 g     F .text	0000031e lv_img_buf_set_px_alpha
-c002f4df g     F .text	00000034 sys_deletedir
-c0073168 g     O .rodata	00000008 _lv_bpp3_opa_table
-c00694a7 g     F .text	00000b84 lv_label_refr_text
-c005231c g     F .text	00000061 lv_anim_count_running
-c00244bd g     F .text	0000005a read_Ehdr
-c0022a15 g     F .text	0000006c sys_free_4k
-c002c8c6 g     F .text	00000066 ReadSector
-c00225ca g       .text	00000000 in_byte
-c003b2d9 g     F .text	000000aa lv_debug_check_obj_valid
-c005402e g     F .text	0000008e lv_fs_close
-c0040455 g     F .text	00000199 _lv_style_set_int
-c002247e g     F .text	00000054 ldt_seg_linear
-c0051ccf g     F .text	0000005d lv_indev_drv_init
-c008c43c g     O .data	0000000c _lv_anim_ll
-c008c58c g     O .data	00000004 _lv_theme_empty_styles
-c0024b34 g     F .text	00000199 sys_exec
-c008c500 g     O .data	00000080 _lv_draw_mask_list
-c00634e4 g     F .text	000002b8 lv_bar_create
-c0039b83 g     F .text	00000059 lv_obj_get_parent_event
-c012c5a0 g     O .bss	00000048 console_table
-c0051b05 g     F .text	0000002a lv_disp_flush_ready
-c002c5f4 g     F .text	0000007a sys_DeleteFile
-c003996e g     F .text	00000059 lv_obj_get_click
-c008bd40 g     O .data	00000004 memman
-c002305d g     F .text	00000126 memman_alloc
-c00208b6 g       .text	00000000 copr_seg_overrun
-c003e916 g     F .text	00000019 _lv_refr_set_disp_refreshing
-c008c651 g       .data	00000000 _edata
-c002605d g     F .text	00000060 sys_print_E
-c002f477 g     F .text	00000034 sys_opendir
-c00332bf g     F .text	0000003f lv_disp_trig_activity
-c0020976 g       .text	00000000 page_fault
-c0156828 g       .bss	00000000 _end
-c0020818 g       .text	00000000 bounds_check
-c0036929 g     F .text	00000094 lv_obj_set_ext_click_area
-c0035db7 g     F .text	00000077 lv_obj_set_x
-c0038d68 g     F .text	00000054 lv_obj_get_ext_click_pad_left
-c0034b4c g     F .text	000007bb lv_obj_create
-c008c448 g     O .data	0000000c _lv_group_ll
-c00542e8 g     F .text	0000006d lv_fs_tell
-c0020b1c g       .text	00000000 halt
-c0035e2e g     F .text	00000075 lv_obj_set_y
-c0050363 g     F .text	0000022f lv_font_get_bitmap_fmt_txt
-c003830d g     F .text	00000070 lv_obj_get_screen
-c0039dad g     F .text	00000050 lv_obj_get_design_cb
-c0020570 g       .text	00000000 hwint06
-c0055291 g     F .text	00000047 _lv_ll_get_len
-c0031198 g     F .text	00000028 init_shell
-c0023183 g     F .text	00000126 memman_kalloc
-c0102584 g     O .bss	00000002 Bytes_Per_Sector
-c008c430 g     O .data	0000000c _lv_file_ll
-c0054679 g     F .text	00000096 lv_fs_dir_close
-c0050592 g     F .text	00000169 lv_font_get_glyph_dsc_fmt_txt
-c0021931 g     F .text	000000e8 init_8259A
-c0051c7d g     F .text	00000052 lv_disp_is_true_double_buf
-c003606b g     F .text	00000077 lv_obj_set_width
-c0020b40 g       .text	00000000 kmalloc
-c0071217 g     F .text	0000004d lv_color_to_hsv
-c012c600 g     O .bss	00000040 irq_table
-c0056697 g     F .text	00000127 _lv_memset
-c0068109 g     F .text	000000b2 lv_label_set_recolor
-c008bd44 g     O .data	00000004 FAT_END
-c005250f g     F .text	0000009a lv_anim_path_ease_out
-c003837d g     F .text	000000e8 lv_obj_get_disp
-c00399c7 g     F .text	00000059 lv_obj_get_top
-c0020b15 g       .text	00000000 refresh_page_cache
-c0037764 g     F .text	00000066 lv_obj_clear_protect
-c0102480 g     O .bss	00000100 cur_path
-c00354f7 g     F .text	00000098 lv_obj_invalidate_area
-c0040f06 g     F .text	00000049 _lv_style_list_set_local_opa
-c006be1d g     F .text	00000015 lv_indev_get_obj_act
-c0020510 g       .text	00000000 hwint04
-c006b411 g     F .text	00000031 lv_group_get_click_focus
-c0071ee2 g     F .text	00000030 lv_vsnprintf
-c00548ac g     F .text	0000007a lv_fs_get_letters
-c0053c3a g     F .text	000000c0 lv_debug_check_str
-c012c640 g     O .bss	00000004 u_proc_sum
-c006bdf8 g     F .text	00000025 lv_indev_wait_release
-c002ffec g     F .text	00000043 init_mouse
-c0020c82 g       .text	00000000 createdir
-c0038eb8 g     F .text	00000051 lv_obj_get_ext_draw_pad
-c00324dc g     F .text	0000001e atoi
-c00205a0 g       .text	00000000 hwint07
-c002c7cd g     F .text	00000010 sys_DeleteDir
-c002092a g       .text	00000000 stack_exception
-c004f044 g     F .text	0000006d lv_img_decoder_close
-c0025f4a g     F .text	00000113 initial
-c003e92f g     F .text	0000030d _lv_disp_refr_task
-c006b189 g     F .text	00000082 lv_group_send_data
-c002fac3 g     F .text	000000df do_vcreatedir
-c0036d12 g     F .text	00000087 _lv_obj_set_style_local_ptr
-c0069238 g     F .text	00000035 lv_label_get_style
-c0024151 g     F .text	00000046 get_page_phy_addr
-c006bbc5 g     F .text	0000006a lv_indev_get_point
-c0063cc8 g     F .text	00000062 lv_bar_get_min_value
-c0063893 g     F .text	000000f1 lv_bar_set_start_value
-c0020b11 g       .text	00000000 read_cr2
-c005247b g     F .text	00000094 lv_anim_path_ease_in
-c0039b47 g     F .text	0000001e lv_obj_get_gesture_parent
-c0022aa8 g     F .text	00000027 sys_udisp_str
-c004ec54 g     F .text	0000001a lv_img_cache_set_size
-c002a986 g     F .text	0000026c OpenDir
-c003558f g     F .text	000000c2 lv_obj_invalidate
-c0020660 g       .text	00000000 hwint11
-c008bd60 g     O .data	00000600 keymap
-c0039a20 g     F .text	00000059 lv_obj_get_drag
-c00551ff g     F .text	0000002b _lv_ll_get_tail
-c0022872 g       .text	00000000 strlen
-c006772f g     F .text	00000409 lv_label_create
-c002d6a7 g     F .text	000001ec PathToCluster
-c0083c80 g     O .data	00000050 task_table
-c0054355 g     F .text	0000005c lv_fs_trunc
-c0020bf6 g       .text	00000000 open
-c0038a2c g     F .text	00000090 lv_obj_get_width_fit
-c006b3e1 g     F .text	00000030 lv_group_get_editing
-c0055eac g     F .text	00000041 _lv_mem_get_size
-c00237d5 g     F .text	0000001e do_malloc_4k
-c005237d g     F .text	0000006e lv_anim_speed_to_time
-c0022530 g       .text	00000000 disp_str
-c0057287 g     F .text	00000018 lv_task_set_period
-c006b442 g     F .text	00000031 lv_group_get_wrap
-c002c44c g     F .text	00000066 rw_sector_fat
-c0038ba2 g     F .text	00000056 lv_obj_get_width_margin
-c002d893 g     F .text	000002c6 FindSpaceInDir
-c00240aa g     F .text	0000001a get_pte_index
-c0027491 g     F .text	0000015d read_super_block
-c012c660 g     O .bss	00018000 proc_table
-c0065ce9 g     F .text	00000065 lv_cont_get_fit_top
-c002c9b7 g     F .text	000002b3 DeleteAllRecord
-c002429d g     F .text	00000095 vmalloc
-c0022652 g       .text	00000000 write_char
-c0023026 g     F .text	00000037 memman_init
-c00683bd g     F .text	00000079 lv_label_get_align
-c00585c1 g     F .text	00000143 _lv_utils_num_to_str
-c004d6b7 g     F .text	000003a5 lv_img_buf_set_px_color
-c0064d22 g     F .text	000001e4 lv_btn_create
-c00285d3 g     F .text	0000005e real_unlink
-c0020af7 g       .text	00000000 restart_restore
-c0055574 g     F .text	000000b3 _lv_bezier3
-c002c67e g     F .text	0000007a sys_CloseFile
-c002db59 g     F .text	0000016c GetNameFromRecord
-c008c5ec g     O .data	00000004 _lv_txt_unicode_to_encoded
-c00207a0 g       .text	00000000 nmi
-c0058794 g     F .text	00000019 lv_theme_set_act
-c003e691 g     F .text	00000072 lv_refr_now
-c0021a63 g     F .text	00000035 put_irq_handler
-c003710f g     F .text	000000e4 lv_obj_set_hidden
-c00587c2 g     F .text	00000041 lv_theme_apply
-c0038176 g     F .text	00000053 lv_signal_send
-c004ed0b g     F .text	000000c3 _lv_img_decoder_init
-c0040c08 g     F .text	000000af _lv_style_get_color
-c003726f g     F .text	00000069 lv_obj_set_click
-c006bc45 g     F .text	00000026 lv_indev_get_key
-c0101020 g     O .bss	00000400 MemInfo
-c0056140 g     F .text	00000090 _lv_mem_buf_release
-c004f1ce g     F .text	00000187 lv_img_decoder_built_in_info
-c0057148 g     F .text	00000056 lv_task_del
-c006b11a g     F .text	0000002f lv_group_focus_prev
-c00568c0 g     F .text	00000102 _lv_memset_ff
-c003a11c g     F .text	00000058 lv_obj_hittest
-c0020c0a g       .text	00000000 close
-c006b38a g     F .text	00000035 lv_group_get_focused
-c003ad34 g     F .text	000003d9 lv_obj_get_draw_rect_ext_pad_size
-c0020b38 g       .text	00000000 get_pid
-c0055951 g     F .text	00000053 _lv_mem_deinit
-c004dc56 g     F .text	00000048 lv_img_buf_free
-c004f0b1 g     F .text	0000007f lv_img_decoder_create
-c0045dda g     F .text	00000073 lv_draw_mask_add
-c0144660 g     O .bss	00000004 cr2_save
-c0020b02 g       .text	00000000 restart_initial
-c006b790 g     F .text	00000022 _lv_indev_init
-c0023811 g     F .text	00000024 do_free
-c002b352 g     F .text	000005cf OpenFile
-c0068e25 g     F .text	00000413 lv_label_is_char_under_pos
-c0022026 g     F .text	0000017b exception_handler
-c002e963 g     F .text	0000005a IsFullPath
-c00225d4 g       .text	00000000 disable_irq
-c0020b72 g       .text	00000000 free
-c003ff75 g     F .text	00000181 _lv_style_list_add_style
-c003b1bb g     F .text	00000098 lv_obj_fade_out
-c0031b96 g     F .text	00000032 is_current_console
-c00519b9 g     F .text	00000047 lv_disp_get_ver_res
-c0037e90 g     F .text	00000024 lv_event_send_refresh
-c00522b1 g     F .text	0000006b lv_anim_get
-c0054845 g     F .text	00000067 lv_fs_get_drv
+08096000 l     O .got.plt	00000000 _GLOBAL_OFFSET_TABLE_
+080689b9 g     F .text	00000000 .hidden __x86.get_pc_thunk.cx
+08096290 g     O .data	00000004 _lv_txt_encoded_conv_wc
+0804e706 g     F .text	00000056 lv_obj_get_height_margin
+0806c81e g     F .text	00000354 lv_task_handler
+0806d920 g     F .text	0000007d _lv_txt_is_cmd
+0804d384 g     F .text	0000045a lv_obj_set_state
+08087c2a g       .text	00000000 strcpy
+0806787f g     F .text	00000082 _lv_disp_pop_from_inv_buf
+0806d99d g     F .text	000000b1 _lv_txt_ins
+08068cb7 g     F .text	000002c2 _lv_area_is_point_on
+0806413d g     F .text	0000060c _lv_img_buf_transform_anti_alias
+08067d3e g     F .text	00000077 lv_anim_init
+08087cf6 g       .text	00000000 yield
+080698d3 g     F .text	00000023 lv_debug_check_mem_integrity
+080960a0 g     O .data	0000000c _lv_task_ll
+08067b61 g     F .text	000000ae _lv_indev_read
+0808196d g     F .text	0000006a lv_indev_get_vect
+0804f476 g     F .text	00000059 lv_obj_get_hidden
+0804f796 g     F .text	0000004f lv_obj_get_base_dir
+08058b50 g     F .text	000000a9 lv_draw_label_dsc_init
+0804e06e g     F .text	00000089 lv_obj_get_child
+080486e5 g     F .text	00000087 lv_disp_set_bg_image
+080884c0 g     O .rodata	00000002 _lv_bpp1_opa_table
+0804d8df g     F .text	00000099 lv_obj_finish_transitions
+08096230 g     O .data	00000004 _lv_font_decompr_buf
+08087d98 g       .text	00000000 delete
+0807e5b5 g     F .text	0000048e lv_label_get_letter_on
+08087de6 g     F .text	00000068 printf
+0804f895 g     F .text	00000082 lv_obj_get_state
+08087ebe g     F .text	00000273 vsprintf
+0804d7de g     F .text	0000007d lv_obj_add_state
+0805ba1b g     F .text	000000a7 lv_draw_mask_apply
+0805e4c4 g     F .text	00000000 .hidden __x86.get_pc_thunk.si
+0804d9cc g     F .text	0000007e lv_event_send
+080662c9 g     F .text	00000044 _lv_font_clean_up_fmt_txt
+0804afa6 g     F .text	00000024 lv_obj_del_anim_ready_cb
+0806e617 g     F .text	00000022 lv_theme_get_color_secondary
+0806b127 g     F .text	00000109 _lv_trigo_sin
+0804bea1 g     F .text	00000103 lv_obj_align
+0804c22d g     F .text	000000c3 lv_obj_align_mid_x
+08064ba2 g     F .text	00000070 lv_img_decoder_read_line
+08067db5 g     F .text	00000113 lv_anim_start
+080960b8 g     O .data	0000000c _lv_indev_ll
+0804f68a g     F .text	00000059 lv_obj_get_drag_throw
+0808146e g     F .text	000001b6 _lv_indev_read_task
+0805bed9 g     F .text	000000b9 lv_draw_mask_line_angle_init
+0806e4bf g     F .text	000000a5 lv_theme_copy
+08058bf9 g     F .text	00000b03 lv_draw_label
+0804f6e3 g     F .text	0000001e lv_obj_get_drag_parent
+08067242 g     F .text	00000277 lv_disp_drv_register
+08081639 g     F .text	00000022 lv_indev_get_type
+0806a3cb g     F .text	00000092 lv_fs_free_space
+0804eb1e g     F .text	0000040f _lv_obj_get_style_int
+0808175e g     F .text	00000043 lv_indev_enable
+080675fc g     F .text	00000019 lv_disp_set_default
+08095ff8 g     O .data.rel.ro	00000008 lv_anim_path_def
+0806cb72 g     F .text	000001d3 lv_task_create_basic
+0806713d g     F .text	000000b7 lv_disp_drv_init
+08068261 g     F .text	00000097 lv_anim_path_ease_in_out
+08080822 g     F .text	000000c3 lv_group_del
+08068f79 g     F .text	00000065 _lv_area_is_on
+080884e0 g     O .rodata	00000100 _lv_bpp8_opa_table
+0806e564 g     F .text	00000019 lv_theme_set_base
+08063ca2 g     F .text	0000049b _lv_img_buf_get_transformed_area
+08067ce0 g     F .text	0000005e _lv_anim_core_init
+0804e83c g     F .text	0000008a lv_obj_get_height_grid
+0805e80f g     F .text	00000010 lv_draw_px
+080699b6 g     F .text	000000f8 lv_debug_log_error
+0806a486 g     F .text	0000007b lv_fs_drv_register
+0807b658 g     F .text	000000a8 lv_cont_set_layout
+0804d2bb g     F .text	00000063 lv_obj_add_protect
+08081927 g     F .text	00000046 lv_indev_is_dragging
+0806b9a9 g     F .text	00000084 lv_mem_test
+08067b18 g     F .text	00000049 lv_indev_get_next
+0806c47a g     F .text	00000102 _lv_memset_00
+0806bba9 g     F .text	00000253 _lv_mem_buf_get
+0804e676 g     F .text	00000090 lv_obj_get_height_fit
+0807d9fe g     F .text	0000011d lv_label_set_text_fmt
+08069f45 g     F .text	0000005f lv_fs_seek
+08080ee0 g     F .text	000000c1 lv_group_set_editing
+08056a8a g     F .text	0000004a _lv_style_list_set_local_int
+0806d007 g     F .text	00000049 lv_task_get_next
+0804d248 g     F .text	00000073 lv_obj_set_base_dir
+08050748 g     F .text	000001a6 lv_obj_init_draw_line_dsc
+08079458 g     F .text	000000f7 lv_bar_set_value
+080677e7 g     F .text	0000001d lv_disp_flush_is_last
+08069aae g     F .text	0000002d _lv_fs_init
+0808107b g     F .text	00000022 lv_group_get_focus_cb
+08055fc2 g     F .text	00000061 _lv_style_get_mem_size
+0804f71f g     F .text	0000001e lv_obj_get_focus_parent
+08081624 g     F .text	00000015 lv_indev_get_act
+0808816c g     F .text	0000004a gets
+08087dd4 g       .text	00000000 flush
+0804c681 g     F .text	00000061 lv_obj_clean_style_list
+0805162f g     F .text	00000053 lv_obj_get_focused_obj
+080579ed g     F .text	00000066 lv_img_cf_get_px_size
+0804c953 g     F .text	0000008d lv_obj_remove_style_local_prop
+0804fd2e g     F .text	0000004b lv_obj_handle_get_type_signal
+0806a80c g     F .text	00000186 _lv_gc_clear_roots
+080962a0 g     O .data	00000004 _lv_txt_encoded_get_char_id
+08064d51 g     F .text	00000019 lv_img_decoder_set_open_cb
+0805a680 g     F .text	00000054 lv_draw_line_dsc_init
+0806be8c g     F .text	000000bc _lv_mem_buf_free_all
+08080bdd g     F .text	000001ca lv_group_focus_obj
+0806b7fb g     F .text	000000e3 lv_mem_realloc
+0804f633 g     F .text	00000057 lv_obj_get_drag_dir
+0804e4a4 g     F .text	0000008a lv_obj_get_y
+0804eac3 g     F .text	0000005b lv_obj_get_style_list
+0804b02a g     F .text	00000087 lv_obj_clean
+0806cdeb g     F .text	00000019 lv_task_set_cb
+0806b4a5 g     F .text	000000a2 _lv_pow
+0804bfa4 g     F .text	000000c3 lv_obj_align_x
+08057095 g     F .text	00000021 lv_debug_check_style
+0806cfa7 g     F .text	00000027 lv_task_reset
+0804c83d g     F .text	0000008f _lv_obj_set_style_local_opa
+0806bf48 g     F .text	0000040b _lv_memcpy
+0806a719 g     F .text	000000af lv_fs_get_last
+08087be0 g       .text	00000000 memcpy
+0804bd11 g     F .text	00000064 lv_obj_set_width_fit
+08068598 g     F .text	0000002d lv_anim_path_step
+08057a94 g     F .text	00000048 lv_img_cf_has_alpha
+08067ec8 g     F .text	000000a1 lv_anim_del
+0806483c g     F .text	00000010 lv_img_cache_invalidate_src
+0805bac2 g     F .text	0000005d lv_draw_mask_remove_id
+0804ce92 g     F .text	0000006c lv_obj_set_top
+0804dcc7 g     F .text	00000015 lv_event_get_data
+08069d78 g     F .text	000000b1 lv_fs_remove
+0804cefe g     F .text	00000080 lv_obj_set_drag
+0804c7b6 g     F .text	00000087 _lv_obj_set_style_local_color
+0804b475 g     F .text	000001d0 lv_obj_set_parent
+0804afca g     F .text	00000060 lv_obj_del_async
+08050e26 g     F .text	00000081 lv_debug_check_obj_type
+08067aeb g     F .text	0000002d lv_indev_drv_update
+08050464 g     F .text	00000196 lv_obj_init_draw_label_dsc
+0806499c g     F .text	000000b4 lv_img_decoder_get_info
+08087c88 g       .text	00000000 malloc
+08077d48 g     F .text	0000015c lv_theme_material_init
+0807e1be g     F .text	000003f7 lv_label_get_letter_pos
+08048505 g     F .text	0000003a lv_disp_get_scr_prev
+08087d04 g       .text	00000000 sleep
+080809f8 g     F .text	0000013b lv_group_remove_obj
+0804f23a g     F .text	000001c8 _lv_obj_get_style_ptr
+080556e8 g     F .text	00000029 lv_style_init
+080960ac g     O .data	0000000c _lv_disp_ll
+0804cdad g     F .text	0000007c lv_obj_set_adv_hittest
+0804aec1 g     F .text	000000e5 lv_obj_del
+0804f7e5 g     F .text	00000051 lv_obj_get_protect
+0806cf8e g     F .text	00000019 lv_task_set_repeat_count
+08048372 g     F .text	00000000 .hidden __x86.get_pc_thunk.ax
+080676f4 g     F .text	00000039 lv_disp_get_dpi
+0804dd83 g     F .text	00000054 lv_obj_set_design_cb
+0807d7f4 g     F .text	0000020a lv_label_set_text
+08064a50 g     F .text	00000152 lv_img_decoder_open
+0808185e g     F .text	00000023 lv_indev_set_button_points
+0807abc2 g     F .text	0000007a lv_btn_set_checkable
+080655d4 g     F .text	000000a2 lv_img_decoder_built_in_close
+080960f4 g     O .data	0000000c _lv_img_defoder_ll
+080881b6 g     F .text	00000177 strtoul
+0804876c g     F .text	0000008e lv_disp_set_bg_opa
+0805e63a g     F .text	00000124 lv_draw_rect_dsc_init
+0807dd1b g     F .text	000000aa lv_label_set_align
+0804b7c9 g     F .text	000001a8 lv_obj_set_pos
+0804cc0c g     F .text	000000bd _lv_obj_disable_style_caching
+080561bc g     F .text	00000192 _lv_style_set_color
+0808385f g     F .text	000000fe lv_indev_search_obj
+08065ea8 g     F .text	00000026 lv_font_get_glyph_bitmap
+0807b3fa g     F .text	0000025e lv_cont_create
+08086a8c g     F .text	00000046 lv_color_darken
+08087cd0 g       .text	00000000 udisp_int
+0804c9e0 g     F .text	000001a5 lv_obj_refresh_style
+0806a9ca g     F .text	000000a1 _lv_ll_ins_head
+0804d978 g     F .text	00000054 lv_obj_set_event_cb
+0806b723 g     F .text	000000d8 lv_mem_free
+08064d83 g     F .text	00000019 lv_img_decoder_set_close_cb
+08079640 g     F .text	00000127 lv_bar_set_range
+0806abfc g     F .text	0000011f _lv_ll_remove
+08065483 g     F .text	00000151 lv_img_decoder_built_in_read_line
+08096120 g     O .data	00000080 _lv_mem_buf
+0805e75e g     F .text	000000b1 lv_draw_rect
+08056b1d g     F .text	00000041 _lv_style_list_set_local_color
+0804e2ba g     F .text	00000060 lv_obj_get_coords
+08068a67 g     F .text	00000034 lv_area_set_width
+0806a1a4 g     F .text	00000123 lv_fs_dir_open
+080962a4 g     O .data	00000004 _lv_txt_get_encoded_length
+08050cc7 g     F .text	000000ae lv_obj_fade_in
+0804fb68 g     F .text	00000050 lv_obj_get_group
+0804c47a g     F .text	00000069 lv_obj_set_auto_realign
+08064749 g     F .text	000000d9 _lv_img_cache_open
+080484cb g     F .text	0000003a lv_disp_get_scr_act
+080674b9 g     F .text	00000094 lv_disp_drv_update
+08087d1e g       .text	00000000 print_F
+0806ce5a g     F .text	000000e9 lv_task_set_prio
+0804bdd9 g     F .text	00000064 lv_obj_set_width_margin
+08087d6b g       .text	00000000 lseek
+08081aee g     F .text	00000022 lv_indev_get_read_task
+08048587 g     F .text	0000003a lv_disp_get_layer_top
+080960c4 g     O .data	0000000c _lv_drv_ll
+080682f8 g     F .text	0000009a lv_anim_path_overshoot
+0806e639 g     F .text	00000018 lv_theme_get_flags
+080680a3 g     F .text	00000020 lv_anim_refr_now
+0808694b g     F .text	000000fb lv_color_fill
+0806ab5b g     F .text	000000a1 _lv_ll_ins_tail
+0804db78 g     F .text	0000014f lv_event_send_func
+0806754d g     F .text	000000af lv_disp_remove
+08084bef g     F .text	000001f2 _lv_blend_map
+0804e9ca g     F .text	00000054 lv_obj_get_ext_click_pad_top
+080636c1 g     F .text	00000163 lv_img_buf_alloc
+0807db1b g     F .text	000000b6 lv_label_set_text_static
+0806af94 g     F .text	000000d6 _lv_ll_move_before
+080884d0 g     O .rodata	00000010 _lv_bpp4_opa_table
+08067053 g     F .text	00000000 .hidden __x86.get_pc_thunk.dx
+08096100 g     O .data	0000000c _lv_obj_style_trans_ll
+08056977 g     F .text	0000002b _lv_style_list_get_transition_style
+0806914b g     F .text	000005ce _lv_area_align
+0806b59a g     F .text	00000073 _lv_mem_init
+08048ded g     F .text	0000008c lv_disp_get_inactive_time
+0807b700 g     F .text	00000176 lv_cont_set_fit4
+0806e3c0 g     F .text	00000090 _lv_utils_bsearch
+0806b345 g     F .text	00000160 _lv_atan2
+0808832d g     F .text	00000043 strtol
+0809629c g     O .data	00000004 _lv_txt_encoded_get_byte_id
+0804e214 g     F .text	000000a6 lv_obj_count_children_recursive
+0806e5f5 g     F .text	00000022 lv_theme_get_color_primary
+08056727 g     F .text	000000af _lv_style_get_opa
+080564e6 g     F .text	00000192 _lv_style_set_ptr
+0805c2bc g     F .text	00000042 lv_draw_mask_map_init
+0806a2c7 g     F .text	0000006e lv_fs_dir_read
+08084a03 g     F .text	000001ec _lv_blend_fill
+08068a9b g     F .text	00000035 lv_area_set_height
+08096220 g     O .data	00000004 _lv_theme_material_styles
+0805c166 g     F .text	000000cd lv_draw_mask_radius_init
+0804e976 g     F .text	00000054 lv_obj_get_ext_click_pad_right
+0807f0b6 g     F .text	000000ad lv_label_cut_text
+0807ad69 g     F .text	00000087 lv_btn_toggle
+0805588c g     F .text	00000029 lv_style_list_init
+0806d803 g     F .text	0000011d _lv_txt_get_width
+0806c7de g     F .text	00000040 _lv_task_core_init
+0807aeac g     F .text	0000006d lv_btn_get_checkable
+080676b8 g     F .text	0000003c lv_disp_get_antialiasing
+0806ae90 g     F .text	0000002b _lv_ll_get_head
+0807adf0 g     F .text	000000bc lv_btn_get_state
+080808e5 g     F .text	00000113 lv_group_add_obj
+08048eb8 g     F .text	0000004b lv_disp_clean_dcache
+0804be3d g     F .text	00000064 lv_obj_set_height_margin
+08068b44 g     F .text	0000004e lv_area_get_size
+08056b5e g     F .text	00000041 _lv_style_list_set_local_ptr
+08067862 g     F .text	0000001d lv_disp_get_inv_buf_size
+08087c7c g       .text	00000000 kmalloc_4k
+08067c0f g     F .text	00000028 lv_tick_inc
+08087d5c g       .text	00000000 write
+08067804 g     F .text	00000049 lv_disp_get_next
+08055711 g     F .text	00000071 lv_style_copy
+0804c726 g     F .text	00000090 _lv_obj_set_style_local_int
+0804f402 g     F .text	00000074 lv_obj_get_local_style
+08087d10 g       .text	00000000 print_E
+080798f5 g     F .text	0000008f lv_bar_get_start_value
+0806cf5b g     F .text	00000033 lv_task_ready
+0806e469 g     F .text	00000015 lv_theme_get_act
+0806b547 g     F .text	00000053 _lv_map
+08064d39 g     F .text	00000018 lv_img_decoder_set_info_cb
+08056885 g     F .text	000000af _lv_style_get_ptr
+08067901 g     F .text	00000034 lv_disp_is_double_buf
+0804b645 g     F .text	000000c2 lv_obj_move_foreground
+0806362a g     F .text	00000097 lv_img_buf_set_palette
+0806da4e g     F .text	0000008e _lv_txt_cut
+08080fd7 g     F .text	0000003b lv_group_set_refocus_policy
+0808074d g     F .text	000000d5 lv_group_create
+0807dbd1 g     F .text	0000014a lv_label_set_long_mode
+0806ba2d g     F .text	0000013b lv_mem_monitor
+0804e41a g     F .text	0000008a lv_obj_get_x
+08048f03 g     F .text	0000003a _lv_disp_get_refr_task
+0804e7b2 g     F .text	0000008a lv_obj_get_width_grid
+0804c067 g     F .text	000000c3 lv_obj_align_y
+0807987e g     F .text	00000077 lv_bar_get_value
+08086ad2 g     F .text	0000021b lv_color_hsv_to_rgb
+0804a6d0 g     F .text	00000036 lv_deinit
+08087cdc g       .text	00000000 udisp_str
+0806a0d9 g     F .text	000000cb lv_fs_rename
+08080fa1 g     F .text	00000036 lv_group_set_click_focus
+0804c6e2 g     F .text	00000044 lv_obj_reset_style_list
+0807ac3c g     F .text	0000012d lv_btn_set_state
+08065ece g     F .text	00000028 lv_font_get_glyph_dsc
+0807e15c g     F .text	00000062 lv_label_get_anim_speed
+0806d196 g     F .text	00000070 InitTxt
+08081012 g     F .text	00000034 lv_group_set_wrap
+0804f9b7 g     F .text	00000050 lv_obj_get_event_cb
+08087ce8 g       .text	00000000 exec
+08057a53 g     F .text	00000041 lv_img_cf_is_chroma_keyed
+08064f23 g     F .text	00000560 lv_img_decoder_built_in_open
+0807e0f2 g     F .text	0000006a lv_label_get_recolor
+0807b876 g     F .text	00000064 lv_cont_get_layout
+08079767 g     F .text	000000a9 lv_bar_set_type
+080698b2 g     F .text	00000021 lv_debug_check_null
+08080b33 g     F .text	000000aa lv_group_remove_all_objs
+08096288 g     O .data	00000004 _lv_txt_encoded_size
+0804de5e g     F .text	00000069 lv_obj_refresh_ext_draw_pad
+08068ad0 g     F .text	00000074 _lv_area_set_pos
+0804ddd7 g     F .text	00000087 lv_obj_allocate_ext_attr
+08087bd0 g       .text	00000000 _start
+08096294 g     O .data	00000004 _lv_txt_encoded_next
+08068a08 g     F .text	0000005f lv_area_set
+08096110 g     O .data	00000004 _lv_task_act
+0806a992 g     F .text	00000038 _lv_ll_init
+08057adc g     F .text	0000005a lv_img_src_get_type
+0804e01f g     F .text	0000004f lv_obj_get_parent
+0805bbe2 g     F .text	000002f7 lv_draw_mask_line_points_init
+0804b20b g     F .text	000001a9 lv_obj_area_is_visible
+080639e0 g     F .text	000002c2 _lv_img_buf_transform_init
+0804c2f0 g     F .text	000000c3 lv_obj_align_mid_y
+0806a65e g     F .text	000000bb lv_fs_up
+0804d00f g     F .text	0000006e lv_obj_set_drag_throw
+0804da6e g     F .text	0000010a lv_event_send_refresh_recursive
+0807b941 g     F .text	00000064 lv_cont_get_fit_right
+08087d4d g       .text	00000000 read
+0806ad1b g     F .text	00000071 _lv_ll_clear
+080542d1 g     F .text	000001fe _lv_inv_area
+0806e5dd g     F .text	00000018 lv_theme_get_font_title
+0806772d g     F .text	00000090 lv_disp_get_size_category
+08086ced g     F .text	000001e6 lv_color_rgb_to_hsv
+0806aa6b g     F .text	000000f0 _lv_ll_ins_prev
+0806b2e3 g     F .text	00000062 _lv_sqrt
+0807ba0a g     F .text	00000068 lv_cont_get_fit_bottom
+0804cf7e g     F .text	00000091 lv_obj_set_drag_dir
+0804cb85 g     F .text	00000087 lv_obj_report_style_mod
+08056f5e g     F .text	00000137 _lv_style_list_get_ptr
+0804e52e g     F .text	0000005c lv_obj_get_width
+08081831 g     F .text	0000002d lv_indev_set_group
+0805bb1f g     F .text	00000078 lv_draw_mask_remove_custom
+08087d7a g       .text	00000000 unlink
+08055cc4 g     F .text	000001c9 _lv_style_list_remove_style
+0806d62c g     F .text	000001d7 _lv_txt_get_next_line
+0806784d g     F .text	00000015 lv_disp_get_buf
+08096228 g     O .data	00000004 _lv_theme_mono_styles
+08080ec7 g     F .text	00000019 lv_group_set_focus_cb
+08080da7 g     F .text	0000002f lv_group_focus_next
+08087d89 g       .text	00000000 create
+08068c3e g     F .text	00000079 _lv_area_join
+080569a2 g     F .text	000000e8 _lv_style_list_add_trans_style
+0804ea1e g     F .text	00000054 lv_obj_get_ext_click_pad_bottom
+0807df69 g     F .text	0000004b lv_label_set_text_sel_end
+080799e6 g     F .text	00000062 lv_bar_get_max_value
+0806ad8c g     F .text	00000104 _lv_ll_chg_list
+0806dadc g     F .text	000000b5 _lv_txt_set_text_vfmt
+0805424f g     F .text	00000010 _lv_refr_init
+08056678 g     F .text	000000af _lv_style_get_int
+0806aee6 g     F .text	00000035 _lv_ll_get_next
+0807de77 g     F .text	000000a7 lv_label_set_anim_speed
+0806e5c5 g     F .text	00000018 lv_theme_get_font_subtitle
+08069b35 g     F .text	000001b5 lv_fs_open
+0806e5ad g     F .text	00000018 lv_theme_get_font_normal
+08048376 g     F .text	00000000 .hidden __x86.get_pc_thunk.bx
+08096224 g     O .data	00000004 _lv_theme_template_styles
+08087b61 g     F .text	0000003d lv_snprintf
+080485c1 g     F .text	0000003a lv_disp_get_layer_sys
+0804d07d g     F .text	0000006e lv_obj_set_drag_parent
+08087cba g       .text	00000000 fork
+080544cf g     F .text	00000015 _lv_refr_get_disp_refreshing
+0804fd79 g     F .text	000006eb lv_obj_init_draw_rect_dsc
+08062ca4 g     F .text	000002c3 lv_img_buf_get_px_alpha
+08068b92 g     F .text	000000ac _lv_area_intersect
+0804c5fc g     F .text	00000085 lv_obj_remove_style
+0805634e g     F .text	00000198 _lv_style_set_opa
+0804d11c g     F .text	000000c0 lv_obj_set_focus_parent
+08080e05 g     F .text	00000040 lv_group_focus_freeze
+0806b8de g     F .text	000000cb lv_mem_defrag
+08087c96 g       .text	00000000 malloc_4k
+0804c3b3 g     F .text	000000c7 lv_obj_realign
+08055f8f g     F .text	00000033 lv_style_reset
+0804f917 g     F .text	00000050 lv_obj_get_signal_cb
+0807e014 g     F .text	00000065 lv_label_get_long_mode
+0804f4cf g     F .text	00000059 lv_obj_get_adv_hittest
+0804fa07 g     F .text	00000050 lv_obj_get_ext_attr
+08068fde g     F .text	0000016d _lv_area_is_in
+0806cd45 g     F .text	000000a6 lv_task_create
+08069e29 g     F .text	0000008e lv_fs_read
+0804a5a8 g     F .text	00000128 lv_init
+08067615 g     F .text	00000015 lv_disp_get_default
+080962f1 g       .bss	00000000 __bss_start
+080629a6 g     F .text	000002fe lv_img_buf_get_px_color
+08087c09 g       .text	00000000 memset
+0806e595 g     F .text	00000018 lv_theme_get_font_small
+08067057 g     F .text	000000e6 InitLvFontMontserrat_14
+080481b7 g     F .text	000001bb main
+08087cc2 g       .text	00000000 pthread
+0806cff1 g     F .text	00000016 lv_task_get_idle
+0804bd75 g     F .text	00000064 lv_obj_set_height_fit
+0804fa57 g     F .text	00000111 lv_obj_get_type
+0806a45d g     F .text	00000029 lv_fs_drv_init
+0807ef29 g     F .text	0000018d lv_label_ins_text
+080485fb g     F .text	00000063 lv_disp_assign_screen
+0806cfce g     F .text	00000023 lv_task_enable
+0806386c g     F .text	00000174 lv_img_buf_get_img_size
+080884c4 g     O .rodata	00000004 _lv_bpp2_opa_table
+080570b6 g     F .text	00000021 lv_debug_check_style_list
+08056934 g     F .text	00000043 lv_style_list_get_local_style
+0806e57d g     F .text	00000018 lv_theme_set_apply_cb
+08088131 g     F .text	0000003b getchar
+08055782 g     F .text	0000010a lv_style_remove_prop
+0804bc9c g     F .text	00000075 lv_obj_set_height
+08067c67 g     F .text	00000039 lv_tick_elaps
+08087da7 g       .text	00000000 opendir
+080817a1 g     F .text	00000090 lv_indev_set_cursor
+0804e8c6 g     F .text	0000005c lv_obj_get_auto_realign
+0809610c g     O .data	00000004 _lv_img_cache_array
+080487fa g     F .text	000005f3 lv_scr_load_anim
+0804fc2f g     F .text	000000a7 lv_obj_is_point_on_coords
+08096298 g     O .data	00000004 _lv_txt_encoded_prev
+08056b9f g     F .text	00000143 _lv_style_list_get_int
+0806b06a g     F .text	0000003c _lv_ll_is_empty
+0804c12a g     F .text	00000103 lv_obj_align_mid
+0804dcdc g     F .text	00000054 lv_obj_set_signal_cb
+080505fa g     F .text	0000014e lv_obj_init_draw_img_dsc
+08064cfe g     F .text	0000003b lv_img_decoder_delete
+0804d1dc g     F .text	0000006c lv_obj_set_parent_event
+0807dfb4 g     F .text	00000060 lv_label_get_text
+08064d6a g     F .text	00000019 lv_img_decoder_set_read_line_cb
+0806af1b g     F .text	00000032 _lv_ll_get_prev
+0804d0eb g     F .text	00000031 lv_obj_set_gesture_parent
+0805bb97 g     F .text	0000004b lv_draw_mask_get_cnt
+0804e0f7 g     F .text	00000089 lv_obj_get_child_back
+0806a06d g     F .text	0000006c lv_fs_size
+08050e0d g     F .text	00000019 strcmp
+08067c37 g     F .text	00000030 lv_tick_get
+0804e31a g     F .text	00000100 lv_obj_get_inner_coords
+08056e20 g     F .text	0000013e _lv_style_list_get_opa
+0804ba5d g     F .text	000001c8 lv_obj_set_size
+0804c577 g     F .text	00000085 lv_obj_add_style
+0806b660 g     F .text	000000c3 lv_mem_alloc
+080818eb g     F .text	00000016 lv_indev_get_gesture_dir
+0804865e g     F .text	00000087 lv_disp_set_bg_color
+0804f836 g     F .text	0000005f lv_obj_is_protected
+0808165b g     F .text	000000c3 lv_indev_reset
+0804e58a g     F .text	0000005c lv_obj_get_height
+0807b8da g     F .text	00000067 lv_cont_get_fit_left
+08055e8d g     F .text	00000102 _lv_style_list_reset
+0806a5e2 g     F .text	0000007c lv_fs_get_ext
+0805a6d4 g     F .text	00000326 lv_draw_line
+0808171e g     F .text	00000040 lv_indev_reset_long_press
+0804d85b g     F .text	00000084 lv_obj_clear_state
+080671f4 g     F .text	0000004e lv_disp_buf_init
+08069eb7 g     F .text	0000008e lv_fs_write
+08086a46 g     F .text	00000046 lv_color_lighten
+08079810 g     F .text	0000006e lv_bar_set_anim_time
+0807ea92 g     F .text	0000004f lv_label_get_text_sel_end
+0804e180 g     F .text	00000094 lv_obj_count_children
+0807ea43 g     F .text	0000004f lv_label_get_text_sel_start
+08068392 g     F .text	00000206 lv_anim_path_bounce
+08079a48 g     F .text	00000065 lv_bar_get_type
+080697d8 g     F .text	00000097 lv_async_call
+080558b5 g     F .text	0000028e lv_style_list_copy
+080680c3 g     F .text	00000070 lv_anim_path_linear
+08057973 g     F .text	0000007a lv_draw_img
+08069adb g     F .text	0000005a lv_fs_is_ready
+0804ef2d g     F .text	00000130 _lv_obj_get_style_color
+08087c60 g       .text	00000000 get_ticks
+0804fbb8 g     F .text	00000077 lv_obj_is_focused
+080819d7 g     F .text	000000dd lv_indev_finish_drag
+0805c233 g     F .text	00000089 lv_draw_mask_fade_init
+0805bf92 g     F .text	000001d4 lv_draw_mask_angle_init
+0804853f g     F .text	00000048 lv_disp_load_scr
+08056ce2 g     F .text	0000013e _lv_style_list_get_color
+08079aad g     F .text	00000062 lv_bar_get_anim_time
+0806762a g     F .text	00000047 lv_disp_get_hor_res
+08096060 g     O .data	00000014 lv_font_montserrat_14
+0807df1e g     F .text	0000004b lv_label_set_text_sel_start
+08057912 g     F .text	00000061 lv_draw_img_dsc_init
+0806d206 g     F .text	000001e6 _lv_txt_get_size
+08087cae g       .text	00000000 free_4k
+08080720 g     F .text	0000002d _lv_group_init
+08087dc5 g       .text	00000000 deletedir
+08065ef6 g     F .text	0000003b lv_font_get_glyph_width
+0804b3b4 g     F .text	000000c1 lv_obj_is_visible
+0804b707 g     F .text	000000c2 lv_obj_move_background
+080679e4 g     F .text	00000107 lv_indev_drv_register
+0804f05d g     F .text	000001dd _lv_obj_get_style_opa
+08062f67 g     F .text	0000031e lv_img_buf_set_px_alpha
+080884c8 g     O .rodata	00000008 _lv_bpp3_opa_table
+0807f163 g     F .text	00000b84 lv_label_refr_text
+08067fd4 g     F .text	00000061 lv_anim_count_running
+08050ea7 g     F .text	000000aa lv_debug_check_obj_valid
+08069cea g     F .text	0000008e lv_fs_close
+08056023 g     F .text	00000199 _lv_style_set_int
+08067987 g     F .text	0000005d lv_indev_drv_init
+080960dc g     O .data	0000000c _lv_anim_ll
+0809622c g     O .data	00000004 _lv_theme_empty_styles
+080961a0 g     O .data	00000080 _lv_draw_mask_list
+080791a0 g     F .text	000002b8 lv_bar_create
+0804f73d g     F .text	00000059 lv_obj_get_parent_event
+080677bd g     F .text	0000002a lv_disp_flush_ready
+0804f528 g     F .text	00000059 lv_obj_get_click
+080544e4 g     F .text	00000019 _lv_refr_set_disp_refreshing
+080962f1 g       .data	00000000 _edata
+08048e79 g     F .text	0000003f lv_disp_trig_activity
+080bcf20 g       .bss	00000000 _end
+0804c4e3 g     F .text	00000094 lv_obj_set_ext_click_area
+0804b971 g     F .text	00000077 lv_obj_set_x
+0804e922 g     F .text	00000054 lv_obj_get_ext_click_pad_left
+0804a706 g     F .text	000007bb lv_obj_create
+080960e8 g     O .data	0000000c _lv_group_ll
+08069fa4 g     F .text	0000006d lv_fs_tell
+0804b9e8 g     F .text	00000075 lv_obj_set_y
+08065f31 g     F .text	0000022f lv_font_get_bitmap_fmt_txt
+0804dec7 g     F .text	00000070 lv_obj_get_screen
+0804f967 g     F .text	00000050 lv_obj_get_design_cb
+0806af4d g     F .text	00000047 _lv_ll_get_len
+080960d0 g     O .data	0000000c _lv_file_ll
+0806a335 g     F .text	00000096 lv_fs_dir_close
+08066160 g     F .text	00000169 lv_font_get_glyph_dsc_fmt_txt
+08067935 g     F .text	00000052 lv_disp_is_true_double_buf
+0804bc25 g     F .text	00000077 lv_obj_set_width
+08087c70 g       .text	00000000 kmalloc
+08086ed3 g     F .text	0000004d lv_color_to_hsv
+0806c353 g     F .text	00000127 _lv_memset
+0807ddc5 g     F .text	000000b2 lv_label_set_recolor
+080681c7 g     F .text	0000009a lv_anim_path_ease_out
+0804df37 g     F .text	000000e8 lv_obj_get_disp
+0804f581 g     F .text	00000059 lv_obj_get_top
+0804d31e g     F .text	00000066 lv_obj_clear_protect
+0804b0b1 g     F .text	00000098 lv_obj_invalidate_area
+08056ad4 g     F .text	00000049 _lv_style_list_set_local_opa
+08081ad9 g     F .text	00000015 lv_indev_get_obj_act
+080810cd g     F .text	00000031 lv_group_get_click_focus
+08087b9e g     F .text	00000030 lv_vsnprintf
+0806a568 g     F .text	0000007a lv_fs_get_letters
+080698f6 g     F .text	000000c0 lv_debug_check_str
+08087db6 g       .text	00000000 createdir
+08081ab4 g     F .text	00000025 lv_indev_wait_release
+0804ea72 g     F .text	00000051 lv_obj_get_ext_draw_pad
+08088370 g     F .text	0000001e atoi
+08064c12 g     F .text	0000006d lv_img_decoder_close
+080544fd g     F .text	0000030d _lv_disp_refr_task
+08080e45 g     F .text	00000082 lv_group_send_data
+0804c8cc g     F .text	00000087 _lv_obj_set_style_local_ptr
+0807eef4 g     F .text	00000035 lv_label_get_style
+08081881 g     F .text	0000006a lv_indev_get_point
+08079984 g     F .text	00000062 lv_bar_get_min_value
+0807954f g     F .text	000000f1 lv_bar_set_start_value
+08068133 g     F .text	00000094 lv_anim_path_ease_in
+0804f701 g     F .text	0000001e lv_obj_get_gesture_parent
+08064822 g     F .text	0000001a lv_img_cache_set_size
+0804b149 g     F .text	000000c2 lv_obj_invalidate
+08087c42 g       .text	00000000 strlen
+0804f5da g     F .text	00000059 lv_obj_get_drag
+0806aebb g     F .text	0000002b _lv_ll_get_tail
+0807d3eb g     F .text	00000409 lv_label_create
+0806a011 g     F .text	0000005c lv_fs_trunc
+08087d2a g       .text	00000000 open
+0804e5e6 g     F .text	00000090 lv_obj_get_width_fit
+0808109d g     F .text	00000030 lv_group_get_editing
+0806bb68 g     F .text	00000041 _lv_mem_get_size
+08068035 g     F .text	0000006e lv_anim_speed_to_time
+0806cf43 g     F .text	00000018 lv_task_set_period
+080810fe g     F .text	00000031 lv_group_get_wrap
+0804e75c g     F .text	00000056 lv_obj_get_width_margin
+0807b9a5 g     F .text	00000065 lv_cont_get_fit_top
+0807e079 g     F .text	00000079 lv_label_get_align
+0806e27d g     F .text	00000143 _lv_utils_num_to_str
+08063285 g     F .text	000003a5 lv_img_buf_set_px_color
+0807a9de g     F .text	000001e4 lv_btn_create
+0806b230 g     F .text	000000b3 _lv_bezier3
+0809628c g     O .data	00000004 _lv_txt_unicode_to_encoded
+0806e450 g     F .text	00000019 lv_theme_set_act
+0805425f g     F .text	00000072 lv_refr_now
+0804ccc9 g     F .text	000000e4 lv_obj_set_hidden
+0806e47e g     F .text	00000041 lv_theme_apply
+0804dd30 g     F .text	00000053 lv_signal_send
+080648d9 g     F .text	000000c3 _lv_img_decoder_init
+080567d6 g     F .text	000000af _lv_style_get_color
+0804ce29 g     F .text	00000069 lv_obj_set_click
+08081901 g     F .text	00000026 lv_indev_get_key
+0806bdfc g     F .text	00000090 _lv_mem_buf_release
+08064d9c g     F .text	00000187 lv_img_decoder_built_in_info
+0806ce04 g     F .text	00000056 lv_task_del
+08080dd6 g     F .text	0000002f lv_group_focus_prev
+08087d3e g       .text	00000000 close
+0806c57c g     F .text	00000102 _lv_memset_ff
+0804fcd6 g     F .text	00000058 lv_obj_hittest
+08081046 g     F .text	00000035 lv_group_get_focused
+080508ee g     F .text	000003d9 lv_obj_get_draw_rect_ext_pad_size
+08087c68 g       .text	00000000 get_pid
+0806b60d g     F .text	00000053 _lv_mem_deinit
+08063824 g     F .text	00000048 lv_img_buf_free
+08064c7f g     F .text	0000007f lv_img_decoder_create
+0805b9a8 g     F .text	00000073 lv_draw_mask_add
+0808144c g     F .text	00000022 _lv_indev_init
+0807eae1 g     F .text	00000413 lv_label_is_char_under_pos
+08087ca2 g       .text	00000000 free
+08055b43 g     F .text	00000181 _lv_style_list_add_style
+08050d75 g     F .text	00000098 lv_obj_fade_out
+08067671 g     F .text	00000047 lv_disp_get_ver_res
+0804da4a g     F .text	00000024 lv_event_send_refresh
+08067f69 g     F .text	0000006b lv_anim_get
+0806a501 g     F .text	00000067 lv_fs_get_drv
 
 

@@ -550,6 +550,11 @@ void initial()
 	while(1);
 	*/
 	
+	// unsigned char * p = 0xfd000000;
+	// int addr = va2la(proc2pid(p_proc_current), p);
+	// *p = 0xff;
+
+
 	/***************************************
 	 * 		exec加载单shell_0.bin
 	 * added by mingxuan 2019-5-22

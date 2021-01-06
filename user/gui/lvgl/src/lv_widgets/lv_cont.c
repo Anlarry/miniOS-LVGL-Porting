@@ -122,6 +122,7 @@ lv_obj_t * lv_cont_create(lv_obj_t * par, const lv_obj_t * copy)
 
 /*=====================
  * Setter functions
+
  *====================*/
 
 /**

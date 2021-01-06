@@ -10,11 +10,11 @@ void sys_flush(ROI* roi)
         int x2 = roi->x2;
         int y2 = roi->y2;
 
-//        disp_str("in");
-//        disp_int(x1);
-//        disp_int(y1);
-//        disp_int(x2);
-//        disp_int(y2);
+       disp_str("in");
+       disp_int(x1);
+       disp_int(y1);
+       disp_int(x2);
+       disp_int(y2);
 //        disp_int(roi->color);
 //        for(int i=0xfd000000; i<0xfdffffff; i++)
 //        {

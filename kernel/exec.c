@@ -61,7 +61,7 @@ PUBLIC u32 sys_exec(char *path)
 	if(-1==exec_load(fd,&Echo_Ehdr,Echo_Phdr)) return -1;//使用了const指针传递
 
 	/*****************重新初始化该进程的进程表信息（包括LDT）、线性地址布局、进程树属性********************/	
-	//exec_pcb_init(path);
+	exec_pcb_init(path);
 
 	/***********************代码、数据、堆、栈***************************/
 	//代码、数据已经处理，将eip重置即可
@@ -114,6 +114,9 @@ PRIVATE u32 exec_elfcpy(u32 fd,Elf32_Phdr Echo_Phdr,u32 attribute)  // 这部分
 	while(lin_addr<lin_limit)
 	{
 	   // disp_str("*");
+	    int PageUp = ((lin_addr + 4095) >> 12) << 12; 
+		if(lin_addr == PageUp) PageUp += 4096;
+		int CopySize = min(lin_limit - lin_addr, PageUp - lin_addr);
 		lin_mapping_phy(lin_addr,MAX_UNSIGNED_INT,p_proc_current->task.pid,PG_P  | PG_USU | PG_RWW/*说明*/,attribute);//说明：PDE属性尽量为读写，因为它要映射1024个物理页，可能既有数据，又有代码	//edit by visual 2016.5.19
 		if( file_offset<file_limit )
 		{//文件中还有数据，正常拷贝
@@ -127,7 +130,7 @@ PRIVATE u32 exec_elfcpy(u32 fd,Elf32_Phdr Echo_Phdr,u32 attribute)  // 这部分
 			
 			//fake_read(fd,&ch,1); //deleted by mingxuan 2019-5-22
 			//real_read(fd, &ch, 1); //modified by mingxuan 2019-5-22
-			if(file_limit - file_offset < 4096)
+			if(file_limit - file_offset < CopySize)
             {
                 do_vread(fd, ch, (file_limit-file_offset));
 
@@ -138,10 +141,10 @@ PRIVATE u32 exec_elfcpy(u32 fd,Elf32_Phdr Echo_Phdr,u32 attribute)  // 这部分
             }
 			else
             {
-                do_vread(fd, ch, 4096);
-                memcpy((void*)lin_addr, ch, 4096);
-                lin_addr+=4096;
-                file_offset+=4096;
+                do_vread(fd, ch, CopySize);
+                memcpy((void*)lin_addr, ch, CopySize);
+                lin_addr += CopySize;
+                file_offset += CopySize;
             }
 			//~xw
 			
@@ -154,8 +157,8 @@ PRIVATE u32 exec_elfcpy(u32 fd,Elf32_Phdr Echo_Phdr,u32 attribute)  // 这部分
 		{
 			//已初始化数据段拷贝完毕，剩下的是未初始化的数据段，在内存中填0
 			//*((u8*)lin_addr) = 0;
-			memset((void*)lin_addr,0,(lin_limit-lin_addr));
-			lin_addr+=(lin_limit-lin_addr);
+			memset((void*)lin_addr,0,(CopySize));
+			lin_addr+=(CopySize);
 			//file_offset++;
 		}
 	}

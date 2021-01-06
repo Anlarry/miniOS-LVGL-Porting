@@ -130,6 +130,15 @@ PUBLIC void page_fault_handler(	u32 vec_no,//异常编号，此时应该是14，
 
 	cr2 = read_cr2();
 
+	u32 cr3;
+
+	__asm__ __volatile__ (
+		"mov %%cr3, %0"
+		: "=r"(cr3)
+		: 
+		:
+	);
+
 	//if page fault happens in kernel, it's an error.
 	if(kernel_initial == 1){
 		disp_str("\n");
@@ -168,6 +177,8 @@ PUBLIC void page_fault_handler(	u32 vec_no,//异常编号，此时应该是14，
 			disp_color_str("Cr2=",0x74);	//灰底红字 
 			disp_int(cr2);
 			disp_color_str("Cr3=",0x74);
+			disp_int(cr3);
+			disp_color_str("ProcCr3=",0x74);
 			disp_int(p_proc_current->task.cr3);
 			//获取页目录中填写的内容
 			disp_color_str("Pde=",0x74);
