@@ -27,8 +27,8 @@ void main(int arg,char *argv[])
     int pid;
     int times = 0;
 
-    char temp[2501] = {255};
-    flush(0,0, 50,50, temp);
+    char temp[2501] = {0};
+    while(1)flush(0,0, 50,50, temp);
     InitLvFontMontserrat_14();
     lv_init();
     printf("o");
@@ -43,19 +43,19 @@ void main(int arg,char *argv[])
     disp_drv.buffer = &disp_buf;          /*Assign the buffer to the display*/
     lv_disp_drv_register(&disp_drv);      /*Finally register the driver*/
 
-    lv_obj_t * label;
+//    lv_obj_t * label;
+//
+//    lv_obj_t * btn1 = lv_btn_create(lv_scr_act(), NULL);
+//    // label = lv_label_create(btn1, NULL);
+//    // lv_label_set_text(label, "Button");
+//
+//    lv_obj_set_x(btn1, 30);
+//    lv_obj_set_y(btn1, 10);
+//    lv_obj_set_size(btn1, 200, 50);
+//    lv_slider_set_value(btn1, 70, LV_ANIM_ON);
 
-    lv_obj_t * btn1 = lv_btn_create(lv_scr_act(), NULL);
-    // label = lv_label_create(btn1, NULL);
-    // lv_label_set_text(label, "Button");
-
-    lv_obj_set_x(btn1, 30);
-    lv_obj_set_y(btn1, 10);
-    lv_obj_set_size(btn1, 200, 50);
-    lv_slider_set_value(btn1, 70, LV_ANIM_ON);
-
-    label = lv_label_create(btn1, NULL);
-    lv_label_set_text(label, "Button");
+//    label = lv_label_create(btn1, NULL);
+//    lv_label_set_text(label, "Button");
 
     while(1) {
         lv_tick_inc(10);

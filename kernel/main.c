@@ -39,8 +39,7 @@ PUBLIC int kernel_main()
 	disp_str("-----Kernel Initialization Begins-----\n");
 	kernel_initial = 1;	//kernel is in initial state. added by xw, 18/5/31
 	
-	init();//内存管理模块的初始化  add by liang 
-
+	init();//内存管理模块的初始化  add by liang
 	//InitScreen();
 	
 	//initialize PCBs, added by xw, 18/5/26
