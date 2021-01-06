@@ -31,26 +31,28 @@ bochsrc-gdb
 
 gdb.cfg
 
-/include/gui/lvgl/.github/*
-/include/gui/lvgl/docs/*
-/include/gui/lvgl/examples/*
-/include/gui/lvgl/scripts/*
-/include/gui/lvgl/tests/*
+/user/gui/lvgl/.github/*
+/user/gui/lvgl/docs/*
+/user/gui/lvgl/examples/*
+/user/gui/lvgl/scripts/*
+/user/gui/lvgl/tests/*
 
-/include/gui/lvgl/*.md
-/include/gui/lvgl/*.mk
-/include/gui/lvgl/.*
-/include/gui/lvgl/Kconfig
-/include/gui/lvgl/*.json
-/include/gui/lvgl/Makefile
-include/gui/lvgl/library.properties
-/include/gui/lvgl/LICENCE.txt
+/user/gui/lvgl/*.md
+/user/gui/lvgl/*.mk
+/user/gui/lvgl/.*
+/user/gui/lvgl/Kconfig
+/user/gui/lvgl/*.json
+/user/gui/lvgl/Makefile
+user/gui/lvgl/library.properties
+/user/gui/lvgl/LICENCE.txt
 
 CMakeCache.txt
 
 CMakeFiles/*
 *.cmake
 /user/gui/lvgl/Makefile
+/user/gui/lvgl/CMakeFiles/*
+/user/gui/lvgl/.github/*
 
 *.map
 
