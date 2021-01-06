@@ -23,19 +23,7 @@ void main(int arg,char *argv[])
 
     //get_ticks();
     printf("o");
-
-    ROI roi;
-    roi.x1 = 0;
-    roi.y1 = 0;
-    roi.y2 = 50;
-    roi.x2 = 50;
-    roi.color = temp;
-
-
-   while(1)
-   {
-       //flush(&roi);
-   }
+    
 //   {
 //
 //   }
