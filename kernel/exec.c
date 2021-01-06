@@ -61,7 +61,7 @@ PUBLIC u32 sys_exec(char *path)
 	if(-1==exec_load(fd,&Echo_Ehdr,Echo_Phdr)) return -1;//使用了const指针传递
 
 	/*****************重新初始化该进程的进程表信息（包括LDT）、线性地址布局、进程树属性********************/	
-	//exec_pcb_init(path);
+	exec_pcb_init(path);
 
 	/***********************代码、数据、堆、栈***************************/
 	//代码、数据已经处理，将eip重置即可
