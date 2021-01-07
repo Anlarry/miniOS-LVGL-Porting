@@ -7,9 +7,9 @@
 #include <gui/gui.h>
 #include "./lvgl/lvgl.h"
 
-static void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color_t * color_p)
+void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color_t * color_p)
 {
-    printf("()");
+    printf("(%d, %d, %d, %d) \n", area->x1, area->x2, area->y1, area->y2);
     struct ROI roi = {
         .x1 = area->x1,
         .x2 = area->x2,
@@ -38,8 +38,9 @@ void main(int arg,char *argv[])
     lv_init();
 
     static lv_disp_buf_t disp_buf;
-    static lv_color_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10]; /*Declare a buffer for 1/10 screen size*/
-    lv_disp_buf_init(&disp_buf, buf, NULL, LV_HOR_RES_MAX * LV_VER_RES_MAX / 10);
+    static lv_color_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX/10]; /*Declare a buffer for 1/10 screen size*/
+
+    lv_disp_buf_init(&disp_buf, buf, NULL, LV_HOR_RES_MAX * LV_VER_RES_MAX/10);
 
     lv_disp_drv_t disp_drv;               /*Descriptor of a display driver*/
     lv_disp_drv_init(&disp_drv);          /*Basic initialization*/
@@ -49,23 +50,22 @@ void main(int arg,char *argv[])
 
 
 
-   lv_obj_t * label;
+//   lv_obj_t * label;
 
-   lv_obj_t * btn1 = lv_btn_create(lv_scr_act(), NULL);
+    lv_obj_t * btn1 = lv_btn_create(lv_scr_act(), NULL);
    // label = lv_label_create(btn1, NULL);
    // lv_label_set_text(label, "Button");
-
+//
    lv_obj_set_x(btn1, 30);
    lv_obj_set_y(btn1, 10);
-
+//
    lv_obj_set_size(btn1, 200, 50);
-
-//    lv_slider_set_value(btn1, 70, LV_ANIM_ON);
+   //lv_slider_set_value(btn1, 70, LV_ANIM_ON);
 
      
 
-   label = lv_label_create(btn1, NULL);
-   lv_label_set_text(label, "Button");
+//   label = lv_label_create(btn1, NULL);
+//   lv_label_set_text(label, "Button");
 
     // while(1) {
     //     lv_tick_inc(10);
@@ -74,21 +74,21 @@ void main(int arg,char *argv[])
     // }
     // flush(1, 2, 3, 4, 5);
 
-    printf("o");
+//    printf("o");
 //    static uint32_t col[640*480] = {0};
 //
 //    for(int i=0; i<640*480; i++)
 //    {
 //        col[i] = 0xffff;
 //    }
-//
-//
-//    //uint32_t col = 0x0000ffff;
+////
+////
+////    //uint32_t col = 0x0000ffff;
 //    struct ROI roi = {
-//        .x1 = 100,
-//        .x2 = 150,
-//        .y1 = 100,
-//        .y2 = 150,
+//        .x1 = 600,
+//        .x2 = 640,
+//        .y1 = 440,
+//        .y2 = 480,
 //        .color = (Color*) col
 //    };
 //    GraphFlush(&roi);
@@ -96,7 +96,7 @@ void main(int arg,char *argv[])
     while (1)
     {
         /* code */
-        lv_tick_inc(10);
+        lv_tick_inc(1);
         lv_task_handler();
     }
     

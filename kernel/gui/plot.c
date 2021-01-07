@@ -19,7 +19,7 @@
 //     );
 // }
 
- void PlotAddr(int addr, uint8_t color) {
+ void inline PlotAddr(int addr, uint8_t color) {
      __asm__ (
          "mov %1, %%fs:(%%edi)\n"
          :
@@ -42,19 +42,20 @@ void sys_flush(ROI* roi)
        disp_int(x2);
        disp_int(y2);
        disp_int(roi->color->blue);
-    Color color = *(roi->color);
+    Color *color = (roi->color);
     uint16_t fs = SELECTOR_GRAPH;
     uint16_t fs_old;
-
-    static Color kernel_buffer[SCRNY*SCRNX];
+    disable_int();
+    static Color kernel_buffer[SCRNY*SCRNX/10];
 
     uint8_t *p = (uint8_t*)kernel_buffer;
-    for(int i = y1; i < y2; i++) {
-        for(int j = x1; j < x2; j++) {
-            *p++ = color.blue;
-            *p++ = color.green;
-            *p++ = color.red;
+    for(int i = y1; i <=y2; i++) {
+        for(int j = x1; j <=x2; j++) {
+            *p++ = color->blue;
+            *p++ = color->green;
+            *p++ = color->red;
             p++;
+            color++;
         }
     }
 
@@ -78,8 +79,8 @@ void sys_flush(ROI* roi)
     //uint8_t *p = 0;
     Color *ptr = kernel_buffer;
 
-    for(int i = y1; i < y2; i++) {
-        for(int j = x1; j < x2; j++) {
+    for(int i = y1; i <=y2; i++) {
+        for(int j = x1; j <=x2; j++) {
             int p = Coor2Addr(j,i);
             //p = Coor2Addr(j,i);
             //*p++ = 0xff;//ptr->blue;
@@ -131,7 +132,7 @@ void sys_flush(ROI* roi)
         : "a"(fs_old)
         :
     );
-
+    enable_int();
 
 
 //
