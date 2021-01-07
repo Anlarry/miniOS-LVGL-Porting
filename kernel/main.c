@@ -65,7 +65,7 @@ PUBLIC int kernel_main()
     out_byte(TIMER_MODE, RATE_GENERATOR);
     out_byte(TIMER0, (u8) (TIMER_FREQ/HZ) );
     out_byte(TIMER0, (u8) ((TIMER_FREQ/HZ) >> 8));
-	
+
 	/* initialize clock-irq */
     put_irq_handler(CLOCK_IRQ, clock_handler); /* 设定时钟中断处理程序 */
     enable_irq(CLOCK_IRQ);                     /* 让8259A可以接收时钟中断 */
@@ -79,6 +79,7 @@ PUBLIC int kernel_main()
 	 * Note that you must have initialized all devices ready before you enable
 	 * interrupt. added by xw
 	 */
+
     enable_int();
     /***********************************************************************
 	open hard disk and initialize file system
@@ -87,10 +88,11 @@ PUBLIC int kernel_main()
 	init_fileop_table();	//added by mingxuan 2019-5-17
 
 	//hd_open(MINOR(ROOT_DEV));
+
 	hd_open(PRIMARY_MASTER);	//modified by mingxuan 2020-10-27
 
 	init_vfs();		//added by mingxuan 2020-10-30
-	//init_fs();
+	init_fs();
 	init_fs_fat();	//added by mingxuan 2019-5-17
 	//init_vfs();	//added by mingxuan 2019-5-17	//deleted by mingxuan 2020-10-30
 
@@ -124,6 +126,7 @@ PRIVATE int initialize_cpus()
 {
 	//just use the fields of struct PCB in cpu_table, we needn't initialize
 	//something at present.
+
 	
 	return 0;
 }
