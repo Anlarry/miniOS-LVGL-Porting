@@ -5,6 +5,8 @@
 
 #define MSG_SIZE 10
 
+#define MSG_BUF_SIZE 100
+
 typedef struct IPC_MSG
 {
     uint16_t src;
@@ -15,7 +17,7 @@ typedef struct IPC_MSG
 
 
 /* type */
-enum {
+enum Type{
     /* gui type */
     Button,
     Window 
@@ -25,7 +27,7 @@ enum {
 
 
 /* return */
-enum {
+enum MsgReturn{
     SUCCESS,
     FULL,
     EMPTY ,

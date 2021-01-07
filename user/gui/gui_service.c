@@ -6,6 +6,7 @@
 #include "stdio.h"
 #include <gui/gui.h>
 #include "./lvgl/lvgl.h"
+#include <ipc/ipc.h>
 
 static uint32_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10]; /*Declare a buffer for 1/10 screen size*/
 
@@ -107,10 +108,25 @@ lv_obj_t * win = lv_win_create(lv_scr_act(), NULL);
 //    };
 //    GraphFlush(&roi);
 
+    IPC_MSG msg; 
     while (1)
     {
         /* code */
-        // lv_tick_inc(10);
+        lv_tick_inc(1);
+
+        int recv_code = recv(&msg);
+        if(recv_code != SUCCESS) {
+
+        }
+        else {
+            switch (msg.type) {
+                case Button :
+
+                    break;
+                case Window :
+                    break;
+            }
+        }
         lv_task_handler();
     }
     

@@ -1,23 +1,28 @@
 #include <ipc/ipc.h>
+#include "kipc.h"
 
-typedef struct MsgNode {
-    IPC_MSG msg;
-    IPC_MSG* next;
-}MsgNode;
-
-static MsgNode MsgBuf[100];
+static MsgNode MsgBuf[MSG_BUF_SIZE];
+static int isFree[MSG_BUF_SIZE];
 
 static MsgNode* MsgList[12];
 
 #define NULL 0
 
-
-struct MsgNode* msg_malloc() {
-
+MsgNode* msg_malloc() {
+    for(int i = 0; i < 100; i++) {
+        if(isFree[i] == NULL) {
+            return i;
+        }
+    }
+    return NULL ; 
 }
 
-void msg_free(struct MsgNode* msgNode) {
-
+int msg_free(MsgNode* msgNode) {
+    int idx = msgNode - MsgBuf;
+    if(idx < 0 || idx >= MSG_BUF_SIZE) 
+        return -1;
+    isFree[idx] = 0;
+    return 0;
 }
 
 int sys_send(IPC_MSG* msg) {
