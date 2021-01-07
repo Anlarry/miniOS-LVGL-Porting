@@ -26,9 +26,11 @@ static void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color
         .y2 = area->y2,
         .color = (Color*) color_p
     };
-    GraphFlush(&roi);
+    //GraphFlush(&roi);
     lv_disp_flush_ready(disp);         /* Indicate you are ready with the flushing*/
 }
+
+
 
 
 void main(int arg,char *argv[])
@@ -38,6 +40,7 @@ void main(int arg,char *argv[])
     int stderr= open("dev_tty0",O_RDWR);
 
     //get_ticks();
+
     printf("o");
     
 //   {
