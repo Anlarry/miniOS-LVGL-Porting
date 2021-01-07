@@ -29,6 +29,8 @@
 
 #include "gui/plot.h"
 
+#include "ipc/kipc.h"
+
 #define __DATA__ __attribute__((section(".data")))
 
 /* save the execution environment of each cpu, which doesn't belong to any process.
@@ -79,7 +81,9 @@ PUBLIC	system_call		sys_call_table[NR_SYS_CALL] = {	sys_get_ticks, 									//1s
 														sys_createdir,		//added by mingxuan 2019-5-17
 														sys_deletedir,		//added by mingxuan 2019-5-17
 
-														sys_flush
+														sys_flush,
+														sys_send,
+														sys_recv
 														};
 
 PUBLIC TTY tty_table[NR_CONSOLES];			//added by mingxuan 2019-5-19

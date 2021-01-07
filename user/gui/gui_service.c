@@ -58,20 +58,23 @@ void main(int arg,char *argv[])
 
 
 //   lv_obj_t * label;
+lv_obj_t * win = lv_win_create(lv_scr_act(), NULL);
+   lv_win_set_title(win, "Window title");     
+   
+
 
    lv_obj_t * btn1 = lv_btn_create(lv_scr_act(), NULL);
 //    label = lv_label_create(btn1, NULL);
 //    lv_label_set_text(label, "Button");
 
-   lv_obj_set_x(btn1, 0);
-   lv_obj_set_y(btn1, 0);
+   lv_obj_set_x(btn1, 50);
+   lv_obj_set_y(btn1, 50);
 
-   lv_obj_set_size(btn1, 400, 50);
+   lv_obj_set_size(btn1, 100, 50);
 
 //    lv_slider_set_value(btn1, 70, LV_ANIM_ON);
 
-     
-
+    
 //   label = lv_label_create(btn1, NULL);
 //   lv_label_set_text(label, "Button");
 

@@ -39,6 +39,8 @@ _NR_createdir  		equ 26 ;    //added by mingxuan 2019-5-17
 _NR_deletedir   	equ 27 ;    //added by mingxuan 2019-5-17
 
 _NR_flush           equ 28 ;
+_NR_send 			equ _NR_flush + 1
+_NR_recv			equ _NR_send + 1
 
 INT_VECTOR_SYS_CALL equ 0x90
 
@@ -352,6 +354,19 @@ deletedir:
 	add esp, 4
 	ret
 
+
+; ============================================================================
+
+
+%macro	SYS_CALL 1
+	push ebx
+    mov ebx, [esp+8]
+    mov eax, %1
+    int INT_VECTOR_SYS_CALL
+    pop ebx
+    ret
+%endmacro
+
 GraphFlush:
     push ebx
     mov ebx, [esp+8]
@@ -359,3 +374,9 @@ GraphFlush:
     int INT_VECTOR_SYS_CALL
     pop ebx
     ret
+
+send : 
+	SYS_CALL _NR_send
+
+recv : 
+	SYS_CALL _NR_recv
