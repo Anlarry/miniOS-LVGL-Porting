@@ -1,31 +1,32 @@
 #include "plot.h"
+#include <protect.h>
 
-int static inline Coor2Addr(int x, int y){
-    return (x + y * SCRNX) * 3;
-}
+// int static inline Coor2Addr(int x, int y){
+//     return (x + y * SCRNX) * 3;
+// }
 
-void inline PlotPixel(int x, int y, uint8_t r, uint8_t g, uint8_t b) {
-    uint8_t *p = Coor2Addr(x, y);
-    __asm__ (
-        "mov %1, %%fs:(%%edi)\n"
-        "inc %0\n"
-        "mov %2, %%fs:(%%edi)\n"
-        "inc %0\n"
-        "mov %3, %%fs:(%%edi)\n"
-        : 
-        : "D"(p), "r"(r), "r"(g), "r"(b)
-        : 
-    );
-}
+// void inline PlotPixel(int x, int y, uint8_t r, uint8_t g, uint8_t b) {
+//     uint8_t *p = Coor2Addr(x, y);
+//     __asm__ (
+//         "mov %1, %%fs:(%%edi)\n"
+//         "inc %0\n"
+//         "mov %2, %%fs:(%%edi)\n"
+//         "inc %0\n"
+//         "mov %3, %%fs:(%%edi)\n"
+//         : 
+//         : "D"(p), "r"(r), "r"(g), "r"(b)
+//         : 
+//     );
+// }
 
-void inline PlotAddr(int addr, uint8_t color) {
-    __asm__ (
-        "mov %1, %%fs:(%%edi)\n"
-        : 
-        : "D"(addr), "r"(color)
-        : 
-    );
-}
+// void inline PlotAddr(int addr, uint8_t color) {
+//     __asm__ (
+//         "mov %1, %%fs:(%%edi)\n"
+//         : 
+//         : "D"(addr), "r"(color)
+//         : 
+//     );
+// }
 
 
 void sys_flush(ROI* roi)
@@ -41,18 +42,73 @@ void sys_flush(ROI* roi)
        disp_int(x2);
        disp_int(y2);
 //        disp_int(roi->color);
-
+    uint16_t ds = SELECTOR_GRAPH;
+    uint16_t ds_old; 
+    __asm__ __volatile__ (
+        "mov %%ds, %0\n"
+        : "=r"(ds_old)
+        :
+        :
+    );
+    __asm__ __volatile__ (
+        "mov %%ax, %%ds\n"
+        : 
+        : "a"(ds)
+        :
+    );
     __asm__ __volatile__("mov %cr3, %eax");
     __asm__ __volatile__("push %eax");
     __asm__ __volatile__("mov $0x200000, %eax");
     __asm__ __volatile__("mov %eax, %cr3");
+
+    uint8_t *p = 0;
     for(int i = 0; i < SCRNX; i++) {
         for(int j = 0; j < SCRNY; j++) {
-            PlotPixel(i, j, 0xff, 0xff, 0);
+            *p++ = 0xff;
+            *p++ = 0xff;
+            *p++ = 0;
         }
-        }
+    }
+
+    // for(int i = 0; i < SCRNX; i++) {
+    //     for(int j = 0; j < SCRNY; j++) {
+    //         uint8_t *p = Coor2Addr(j, i);
+    //         __asm__ (
+    //             "mov %1, %%fs:(%%edi)\n"
+    //             "inc %0\n"
+    //             "mov %2, %%fs:(%%edi)\n"
+    //             "inc %0\n"
+    //             "mov %3, %%fs:(%%edi)\n"
+    //             : 
+    //             : "D"(p), "r"(0xff), "r"(0xff), "r"(0)
+    //             : 
+    //         );
+    //     }
+    // }
+    // __asm__ __volatile__ ("movl $0, %edi");
+    // for(int i = 0; i < 0xffffff; i++) {
+    //     __asm__ (
+    //         "mov %0, %%fs:(%%edi)\n"
+    //         "inc %%edi\n"
+    //         "mov %1, %%fs:(%%edi)\n"
+    //         "inc %%edi\n"
+    //         "mov %2, %%fs:(%%edi)\n"
+    //         "inc %%edi"
+    //         : 
+    //         : "r"(0xff), "r"(0xff), "r"(0)
+    //         : 
+    //     );
+    // }
+
     __asm__ __volatile__("pop %eax");
     __asm__ __volatile__("mov %eax, %cr3");
+
+    __asm__ __volatile__ (
+        "mov %%ax, %%ds"
+        : 
+        : "a"(ds_old)
+        :
+    );
 
 
 

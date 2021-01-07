@@ -534,7 +534,7 @@ EXE_RUN_LOADER:
 
 ;;add end add by liang 2016.04.20	
 ; 下面准备跳入保护模式 -------------------------------------------
-	; call InitVGA
+	call InitVGA
 	;for test
 	;added by mingxuan 2020-9-11
 	;mov		dh, 1
@@ -817,11 +817,12 @@ GraphTest:
 	push eax 
 	push ecx 
 	push edi
+	push fs
+
 	mov ax, SelectorGraph
 	mov fs, ax
 
 	mov edi, 0
-
 	mov eax, 640
 .t1 :
 	mov cx, 480
@@ -836,6 +837,7 @@ GraphTest:
 	dec eax
 	jne .t1
 	
+	pop fs
 	pop edi 
 	pop ecx
 	pop eax 

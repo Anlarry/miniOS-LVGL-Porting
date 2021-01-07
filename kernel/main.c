@@ -16,8 +16,6 @@
 #include "hd.h"
 #include "fs.h"
 
-#include <gui/gui.h>
-
 PRIVATE int initialize_processes();	//added by xw, 18/5/26
 PRIVATE int initialize_cpus();		//added by xw, 18/6/2
 
@@ -36,12 +34,12 @@ PUBLIC int kernel_main()
 		}
 	}
 	disp_pos = 0;
+
 	disp_str("-----Kernel Initialization Begins-----\n");
 	kernel_initial = 1;	//kernel is in initial state. added by xw, 18/5/31
 	
-	init();//内存管理模块的初始化  add by liang
-	//InitScreen();
-//	sys_flush();
+	init();//内存管理模块的初始化  add by liang 
+	
 	//initialize PCBs, added by xw, 18/5/26
 	error = initialize_processes();
 	if(error != 0)
@@ -80,7 +78,7 @@ PUBLIC int kernel_main()
 	 * Note that you must have initialized all devices ready before you enable
 	 * interrupt. added by xw
 	 */
-    //enable_int();
+	enable_int();
 	
     /***********************************************************************
 	open hard disk and initialize file system
@@ -92,7 +90,7 @@ PUBLIC int kernel_main()
 	hd_open(PRIMARY_MASTER);	//modified by mingxuan 2020-10-27
 
 	init_vfs();		//added by mingxuan 2020-10-30
-	//init_fs();
+	init_fs();
 	init_fs_fat();	//added by mingxuan 2019-5-17
 	//init_vfs();	//added by mingxuan 2019-5-17	//deleted by mingxuan 2020-10-30
 
@@ -102,7 +100,8 @@ PUBLIC int kernel_main()
 	/* we don't want interrupt happens before processes run.
 	 * added by xw, 18/5/31
 	 */
-    disable_int();
+	disable_int();
+	
 	disp_str("-----Processes Begin-----\n");
 	
 	/* linear address 0~8M will no longer be mapped to physical address 0~8M.
@@ -113,7 +112,6 @@ PUBLIC int kernel_main()
 	
 	p_proc_current = proc_table;
 	kernel_initial = 0;	//kernel initialization is done. added by xw, 18/5/31
-
 	restart_initial();	//modified by xw, 18/4/19
 	while(1){}
 }
