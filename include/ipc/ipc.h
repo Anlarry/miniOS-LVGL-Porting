@@ -20,9 +20,10 @@ typedef struct IPC_MSG
 enum Type{
     /* gui type */
     Button,
-    Window 
+    Window,
 
-
+    Keyboard,
+    Mouse
 };
 
 

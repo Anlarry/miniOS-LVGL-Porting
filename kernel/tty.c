@@ -10,6 +10,7 @@
 #include "keyboard.h"
 #include "../include/gui/gui.h"
 
+#include <ipc/ipc.h>
 
 
 PUBLIC  int current_console;  //当前显示在屏幕上的console
@@ -25,70 +26,78 @@ PRIVATE void	put_key		(TTY* tty, u32 key);
 
 
 PUBLIC void in_process(TTY* p_tty , u32 key){
-    int real_line = p_tty->console->orig / SCR_WIDTH;
+    IPC_MSG msg = {
+        .src = 1,
+        .dst = 4,
+        .type = Keyboard,
+        .data = {key}
+    };
+    send(&msg);
+
+    // int real_line = p_tty->console->orig / SCR_WIDTH;
     
 	
-	if(!(key&FLAG_EXT)){
-		put_key(p_tty,key);
+	// if(!(key&FLAG_EXT)){
+	// 	put_key(p_tty,key);
         
-		/*
-        disp_str(output);
-        disable_int( );
-        out_byte(CRTC_ADDR_REG,CURSOR_H);
-        out_byte(CRTC_DATA_REG,((disp_pos/2)>>8)&0xFF);
-        out_byte(CRTC_ADDR_REG,CURSOR_L);
-        out_byte(CRTC_DATA_REG,(disp_pos/2)&0xFF);
-        enable_int( );
-        */
-	}else{
-        int raw_code = key & MASK_RAW;
-        switch(raw_code){
-		    case ENTER:
-			    put_key(p_tty, '\n');
-                p_tty->status = p_tty->status & 3; //&3'b011
-			    break;
-		    case BACKSPACE:
-			    put_key(p_tty, '\b');
-			    break;
-            case UP:
-                if(p_tty->console->current_line < 43){
-                    disable_int( );
-                    p_tty->console->current_line ++;
-                    out_byte(CRTC_ADDR_REG, START_ADDR_H);
-                    out_byte(CRTC_DATA_REG, ( (80*(p_tty->console->current_line+real_line)) >> 8) & 0xFF);
-                    out_byte(CRTC_ADDR_REG, START_ADDR_L);
-                    out_byte(CRTC_DATA_REG, (80*(p_tty->console->current_line+real_line))  & 0xFF);
-                    enable_int( );
-                }
-                break;
-            case DOWN:
-                if(p_tty->console->current_line > 0){
-                    disable_int( );
-                    p_tty->console->current_line --;
-                    out_byte(CRTC_ADDR_REG, START_ADDR_H);
-                    out_byte(CRTC_DATA_REG, ( (80*(p_tty->console->current_line+real_line)) >> 8) & 0xFF);
-                    out_byte(CRTC_ADDR_REG, START_ADDR_L);
-                    out_byte(CRTC_DATA_REG, (80*(p_tty->console->current_line+real_line)) & 0xFF);
-                    enable_int( );
-                }
-                break;
-            case F1:
-		    case F2:
-		    case F3:
-            case F4:
-            case F5:
-            case F6:
-            case F7:
-            case F8:
-            case F9:
-            case F10:
-            case F11:
-            case F12:
-                //disp_int(raw_code-F1);
-                select_console(raw_code - F1);
-			    break;
-        }
-    }
+	// 	/*
+    //     disp_str(output);
+    //     disable_int( );
+    //     out_byte(CRTC_ADDR_REG,CURSOR_H);
+    //     out_byte(CRTC_DATA_REG,((disp_pos/2)>>8)&0xFF);
+    //     out_byte(CRTC_ADDR_REG,CURSOR_L);
+    //     out_byte(CRTC_DATA_REG,(disp_pos/2)&0xFF);
+    //     enable_int( );
+    //     */
+	// }else{
+    //     int raw_code = key & MASK_RAW;
+    //     switch(raw_code){
+	// 	    case ENTER:
+	// 		    put_key(p_tty, '\n');
+    //             p_tty->status = p_tty->status & 3; //&3'b011
+	// 		    break;
+	// 	    case BACKSPACE:
+	// 		    put_key(p_tty, '\b');
+	// 		    break;
+    //         case UP:
+    //             if(p_tty->console->current_line < 43){
+    //                 disable_int( );
+    //                 p_tty->console->current_line ++;
+    //                 out_byte(CRTC_ADDR_REG, START_ADDR_H);
+    //                 out_byte(CRTC_DATA_REG, ( (80*(p_tty->console->current_line+real_line)) >> 8) & 0xFF);
+    //                 out_byte(CRTC_ADDR_REG, START_ADDR_L);
+    //                 out_byte(CRTC_DATA_REG, (80*(p_tty->console->current_line+real_line))  & 0xFF);
+    //                 enable_int( );
+    //             }
+    //             break;
+    //         case DOWN:
+    //             if(p_tty->console->current_line > 0){
+    //                 disable_int( );
+    //                 p_tty->console->current_line --;
+    //                 out_byte(CRTC_ADDR_REG, START_ADDR_H);
+    //                 out_byte(CRTC_DATA_REG, ( (80*(p_tty->console->current_line+real_line)) >> 8) & 0xFF);
+    //                 out_byte(CRTC_ADDR_REG, START_ADDR_L);
+    //                 out_byte(CRTC_DATA_REG, (80*(p_tty->console->current_line+real_line)) & 0xFF);
+    //                 enable_int( );
+    //             }
+    //             break;
+    //         case F1:
+	// 	    case F2:
+	// 	    case F3:
+    //         case F4:
+    //         case F5:
+    //         case F6:
+    //         case F7:
+    //         case F8:
+    //         case F9:
+    //         case F10:
+    //         case F11:
+    //         case F12:
+    //             //disp_int(raw_code-F1);
+    //             select_console(raw_code - F1);
+	// 		    break;
+    //     }
+    // }
 
 }
 
@@ -119,7 +128,7 @@ PUBLIC void task_tty(){
 			do {
                 tty_mouse(p_tty);   /* tty判断鼠标操作 */
 				tty_dev_read(p_tty); /* 从键盘输入缓冲区读到这个tty自己的缓冲区 */
-                tty_dev_write(p_tty); /* 把tty缓存区的数据写到这个tty占有的显存 */
+                // tty_dev_write(p_tty); /* 把tty缓存区的数据写到这个tty占有的显存 */
 
 			} while (p_tty->ibuf_cnt);
 		}

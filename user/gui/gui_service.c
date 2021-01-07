@@ -125,6 +125,12 @@ lv_obj_t * win = lv_win_create(lv_scr_act(), NULL);
                     break;
                 case Window :
                     break;
+                case Keyboard : 
+                    printf("%c", msg.data[0]);
+                    break;
+                case Mouse :
+                    printf("%d %d %d %d", msg.data[0], msg.data[1], msg.data[2], msg.data[3]);
+                    break;;
             }
         }
         lv_task_handler();
