@@ -1,6 +1,14 @@
 #include <ipc/ipc.h>
 #include "kipc.h"
 
+#include "type.h"
+#include "const.h"
+#include "protect.h"
+#include "string.h"
+#include "proc.h"
+#include "global.h"
+#include "proto.h"
+
 static MsgNode MsgBuf[MSG_BUF_SIZE];
 static int isFree[MSG_BUF_SIZE];
 
@@ -9,9 +17,9 @@ static MsgNode* MsgList[12];
 #define NULL 0
 
 MsgNode* msg_malloc() {
-    for(int i = 0; i < 100; i++) {
+    for(int i = 0; i < MSG_BUF_SIZE; i++) {
         if(isFree[i] == NULL) {
-            return i;
+            return &MsgBuf[i];
         }
     }
     return NULL ; 
@@ -26,11 +34,12 @@ int msg_free(MsgNode* msgNode) {
 }
 
 int sys_send(IPC_MSG* msg) {
+    
+    struct MsgNode* Node = msg_malloc();
 
-    struct MsgNode* send_msg = msg_malloc();
-
-    if(send_msg == NULL) return FULL;
-    memcpy(&(send_msg->msg), msg, sizeof(IPC_MSG));
+    if(Node == NULL) return FULL;
+    msg->src = p_proc_current - proc_table;
+    memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
 
     //int src_id = msg->msg.src;
     int dst_id = msg->dst;
@@ -42,19 +51,20 @@ int sys_send(IPC_MSG* msg) {
     }
     if(NodePtr == NULL)
     {
-        MsgList[dst_id] = send_msg;
+        MsgList[dst_id] = Node;
     }
     else
     {
-        NodePtr->next = send_msg;
-        send_msg->next = NULL;
+        NodePtr->next = Node;
+        Node->next = NULL;
     }
 
     return SUCCESS;
 }
 
 int sys_recv(IPC_MSG* msg) {
-    int dst_id = msg->dst;
+    int dst_id = p_proc_current - proc_table;
+    // int dst_id = msg->dst;
     struct MsgNode* NodePtr = MsgList[dst_id];
 
     if(NodePtr == NULL)
@@ -65,5 +75,6 @@ int sys_recv(IPC_MSG* msg) {
 
     memcpy(msg, &(NodePtr->msg), sizeof(IPC_MSG));
 
+    msg_free(NodePtr);
     return SUCCESS;
 }

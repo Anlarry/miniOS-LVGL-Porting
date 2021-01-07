@@ -10,6 +10,7 @@
 #include "keyboard.h"
 #include "keymap.h"
 
+#include <ipc/ipc.h>
 
 PRIVATE KB_INPUT kb_in;
 PRIVATE MOUSE_INPUT mouse_in;
@@ -87,6 +88,14 @@ void mouse_handler(int irq){
 						p_tty->mouse_X += 1;
 					}
 				}
+
+				IPC_MSG msg = {
+					.src = 1,
+					.dst = 4,
+					.type = Mouse,
+					.data = {p_tty->mouse_left_button, p_tty->mouse_mid_button, p_tty->mouse_X, p_tty->mouse_Y}
+				};
+				send(&msg);
 			}
 		}
 		

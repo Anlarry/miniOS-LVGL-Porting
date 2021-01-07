@@ -77,6 +77,9 @@ global	createdir	;		//added by mingxuan 2019-5-17
 global  deletedir	;		//added by mingxuan 2019-5-17
 global  GraphFlush;           // added by wangsssssss 2021-1-1
 
+global send 
+global recv
+
 bits 32
 [section .text]
 ; ====================================================================
