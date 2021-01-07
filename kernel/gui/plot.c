@@ -31,31 +31,28 @@
 
 void sys_flush(ROI* roi)
 {
-        int x1 = roi->x1;
-        int y1 = roi->y1;
-        int x2 = roi->x2;
-        int y2 = roi->y2;
+    disable_int();
+    int x1 = roi->x1;
+    int y1 = roi->y1;
+    int x2 = roi->x2;
+    int y2 = roi->y2;
 
-       disp_str("in");
-       disp_int(x1);
-       disp_int(y1);
-       disp_int(x2);
-       disp_int(y2);
-       disp_int(roi->color->blue);
-    Color *color = (roi->color);
+    disp_str("in");
+    disp_int(x1);
+    disp_int(y1);
+    disp_int(x2);
+    disp_int(y2);
+    disp_int(roi->color->blue);
+    uint32_t* color = roi->color;
     uint16_t fs = SELECTOR_GRAPH;
     uint16_t fs_old;
-    disable_int();
-    static Color kernel_buffer[SCRNY*SCRNX/10];
 
-    uint8_t *p = (uint8_t*)kernel_buffer;
-    for(int i = y1; i <=y2; i++) {
-        for(int j = x1; j <=x2; j++) {
-            *p++ = color->blue;
-            *p++ = color->green;
-            *p++ = color->red;
-            p++;
-            color++;
+    static uint32_t kernel_buffer[SCRNY*SCRNX / 10];
+
+    uint32_t *p = (uint32_t*)kernel_buffer;
+    for(int i = y1; i <= y2; i++) {
+        for(int j = x1; j <= x2; j++) {
+            *p++ = *color++;
         }
     }
 
@@ -79,8 +76,8 @@ void sys_flush(ROI* roi)
     //uint8_t *p = 0;
     Color *ptr = kernel_buffer;
 
-    for(int i = y1; i <=y2; i++) {
-        for(int j = x1; j <=x2; j++) {
+    for(int i = y1; i <= y2; i++) {
+        for(int j = x1; j <= x2; j++) {
             int p = Coor2Addr(j,i);
             //p = Coor2Addr(j,i);
             //*p++ = 0xff;//ptr->blue;
@@ -132,10 +129,9 @@ void sys_flush(ROI* roi)
         : "a"(fs_old)
         :
     );
+
     enable_int();
-
-
-//
+    
 //    for(int i=x1; i<x2; i++)
 //    {
 //        for(int j=y1; j<y2; j++)

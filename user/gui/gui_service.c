@@ -7,9 +7,18 @@
 #include <gui/gui.h>
 #include "./lvgl/lvgl.h"
 
-void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color_t * color_p)
+static uint32_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10]; /*Declare a buffer for 1/10 screen size*/
+
+
+static void my_disp_flush(lv_disp_drv_t * disp, const lv_area_t * area, lv_color_t * color_p)
 {
-    printf("(%d, %d, %d, %d) \n", area->x1, area->x2, area->y1, area->y2);
+    printf("()");
+    // static uint32_t flush_buf[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10];
+    // for(int i = area->x1 , k = 0;i <= area->x2; i++) {
+    //     for(int j = - area->y1; j <= area->y2; j++) {
+    //         flush_buf[k++] = color_p->full;
+    //     }
+    // }
     struct ROI roi = {
         .x1 = area->x1,
         .x2 = area->x2,
@@ -38,9 +47,7 @@ void main(int arg,char *argv[])
     lv_init();
 
     static lv_disp_buf_t disp_buf;
-    static lv_color_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX/10]; /*Declare a buffer for 1/10 screen size*/
-
-    lv_disp_buf_init(&disp_buf, buf, NULL, LV_HOR_RES_MAX * LV_VER_RES_MAX/10);
+    lv_disp_buf_init(&disp_buf, buf, NULL, LV_HOR_RES_MAX * LV_VER_RES_MAX / 10);
 
     lv_disp_drv_t disp_drv;               /*Descriptor of a display driver*/
     lv_disp_drv_init(&disp_drv);          /*Basic initialization*/
@@ -52,15 +59,16 @@ void main(int arg,char *argv[])
 
 //   lv_obj_t * label;
 
-    lv_obj_t * btn1 = lv_btn_create(lv_scr_act(), NULL);
-   // label = lv_label_create(btn1, NULL);
-   // lv_label_set_text(label, "Button");
-//
-   lv_obj_set_x(btn1, 30);
-   lv_obj_set_y(btn1, 10);
-//
-   lv_obj_set_size(btn1, 200, 50);
-   //lv_slider_set_value(btn1, 70, LV_ANIM_ON);
+   lv_obj_t * btn1 = lv_btn_create(lv_scr_act(), NULL);
+//    label = lv_label_create(btn1, NULL);
+//    lv_label_set_text(label, "Button");
+
+   lv_obj_set_x(btn1, 0);
+   lv_obj_set_y(btn1, 0);
+
+   lv_obj_set_size(btn1, 400, 50);
+
+//    lv_slider_set_value(btn1, 70, LV_ANIM_ON);
 
      
 
@@ -96,7 +104,7 @@ void main(int arg,char *argv[])
     while (1)
     {
         /* code */
-        lv_tick_inc(1);
+        // lv_tick_inc(10);
         lv_task_handler();
     }
     
