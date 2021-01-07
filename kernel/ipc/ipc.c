@@ -9,9 +9,9 @@ static MsgNode* MsgList[12];
 #define NULL 0
 
 MsgNode* msg_malloc() {
-    for(int i = 0; i < 100; i++) {
+    for(int i = 0; i < MSG_BUF_SIZE; i++) {
         if(isFree[i] == NULL) {
-            return i;
+            return &MsgBuf[i];
         }
     }
     return NULL ; 
