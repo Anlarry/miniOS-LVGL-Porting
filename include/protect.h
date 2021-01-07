@@ -69,15 +69,18 @@ typedef struct s_tss {
 #define	INDEX_FLAT_C		1	// ┣ LOADER 里面已经确定了的.
 #define	INDEX_FLAT_RW		2	// ┃
 #define	INDEX_VIDEO		3	// ┛
-#define	INDEX_TSS		4
-#define	INDEX_LDT_FIRST		5
+#define INDEX_GRAPH     (INDEX_VIDEO+1)
+#define	INDEX_TSS		(INDEX_GRAPH+1)
+#define	INDEX_LDT_FIRST		(INDEX_TSS+1)
 /* 选择子 */
 #define	SELECTOR_DUMMY		   0		// ┓
 #define	SELECTOR_FLAT_C		0x08		// ┣ LOADER 里面已经确定了的.
 #define	SELECTOR_FLAT_RW	0x10		// ┃
 #define	SELECTOR_VIDEO		(0x18+3)	// ┛<-- RPL=3
-#define	SELECTOR_TSS		0x20		// TSS. 从外层跳到内存时 SS 和 ESP 的值从里面获得.
-#define SELECTOR_LDT_FIRST	0x28
+#define SELECTOR_GRAPH 		(SELECTOR_VIDEO+8)
+
+#define	SELECTOR_TSS		0x28		// TSS. 从外层跳到内存时 SS 和 ESP 的值从里面获得.
+#define SELECTOR_LDT_FIRST	(SELECTOR_TSS+8)
 
 #define	SELECTOR_KERNEL_CS	SELECTOR_FLAT_C
 #define	SELECTOR_KERNEL_DS	SELECTOR_FLAT_RW

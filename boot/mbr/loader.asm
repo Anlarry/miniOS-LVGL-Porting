@@ -821,11 +821,12 @@ GraphTest:
 	push eax 
 	push ecx 
 	push edi
+	push fs
+
 	mov ax, SelectorGraph
 	mov fs, ax
 
 	mov edi, 0
-
 	mov eax, 640
 .t1 :
 	mov cx, 480
@@ -840,6 +841,7 @@ GraphTest:
 	dec eax
 	jne .t1
 	
+	pop fs
 	pop edi 
 	pop ecx
 	pop eax 

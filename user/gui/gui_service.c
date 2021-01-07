@@ -62,7 +62,7 @@ void main(int arg,char *argv[])
 
 //    lv_slider_set_value(btn1, 70, LV_ANIM_ON);
 
-
+     
 
    label = lv_label_create(btn1, NULL);
    lv_label_set_text(label, "Button");
@@ -76,6 +76,15 @@ void main(int arg,char *argv[])
 
     printf("o");
 
+    uint32_t col = 0xffff0000;
+    struct ROI roi = {
+        .x1 = 0,
+        .x2 = 640,
+        .y1 = 0,
+        .y2 = 480,
+        .color = (Color*) &col
+    };
+    GraphFlush(&roi);
 
     while (1)
     {
