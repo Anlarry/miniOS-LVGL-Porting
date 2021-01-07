@@ -730,7 +730,7 @@ LABEL_PM_START:
 	call	SetupPaging
 
 
-	call	GraphTest
+	;call	GraphTest
 
 	; added by mingxuan 2020-9-16
 	; for test

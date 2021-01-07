@@ -1,9 +1,9 @@
 #include "plot.h"
 #include <protect.h>
 
-// int static inline Coor2Addr(int x, int y){
-//     return (x + y * SCRNX) * 3;
-// }
+ int Coor2Addr(int x, int y){
+     return (x + y * SCRNX) * 3;
+ }
 
 // void inline PlotPixel(int x, int y, uint8_t r, uint8_t g, uint8_t b) {
 //     uint8_t *p = Coor2Addr(x, y);
@@ -19,14 +19,14 @@
 //     );
 // }
 
-// void inline PlotAddr(int addr, uint8_t color) {
-//     __asm__ (
-//         "mov %1, %%fs:(%%edi)\n"
-//         : 
-//         : "D"(addr), "r"(color)
-//         : 
-//     );
-// }
+ void PlotAddr(int addr, uint8_t color) {
+     __asm__ (
+         "mov %1, %%fs:(%%edi)\n"
+         :
+         : "D"(addr), "r"(color)
+         :
+     );
+ }
 
 
 void sys_flush(ROI* roi)
@@ -41,19 +41,33 @@ void sys_flush(ROI* roi)
        disp_int(y1);
        disp_int(x2);
        disp_int(y2);
-//        disp_int(roi->color);
-    uint16_t ds = SELECTOR_GRAPH;
-    uint16_t ds_old; 
+       disp_int(roi->color->blue);
+    Color color = *(roi->color);
+    uint16_t fs = SELECTOR_GRAPH;
+    uint16_t fs_old;
+
+    static Color kernel_buffer[SCRNY*SCRNX];
+
+    uint8_t *p = (uint8_t*)kernel_buffer;
+    for(int i = y1; i < y2; i++) {
+        for(int j = x1; j < x2; j++) {
+            *p++ = color.blue;
+            *p++ = color.green;
+            *p++ = color.red;
+            p++;
+        }
+    }
+
     __asm__ __volatile__ (
-        "mov %%ds, %0\n"
-        : "=r"(ds_old)
+        "mov %%fs, %0\n"
+        : "=r"(fs_old)
         :
         :
     );
     __asm__ __volatile__ (
-        "mov %%ax, %%ds\n"
+        "mov %%ax, %%fs\n"
         : 
-        : "a"(ds)
+        : "a"(fs)
         :
     );
     __asm__ __volatile__("mov %cr3, %eax");
@@ -61,12 +75,20 @@ void sys_flush(ROI* roi)
     __asm__ __volatile__("mov $0x200000, %eax");
     __asm__ __volatile__("mov %eax, %cr3");
 
-    uint8_t *p = 0;
-    for(int i = 0; i < SCRNX; i++) {
-        for(int j = 0; j < SCRNY; j++) {
-            *p++ = 0xff;
-            *p++ = 0xff;
-            *p++ = 0;
+    //uint8_t *p = 0;
+    Color *ptr = kernel_buffer;
+
+    for(int i = y1; i < y2; i++) {
+        for(int j = x1; j < x2; j++) {
+            int p = Coor2Addr(j,i);
+            //p = Coor2Addr(j,i);
+            //*p++ = 0xff;//ptr->blue;
+            PlotAddr(p++,ptr->blue);
+            //*p++ = 0xff;//ptr->green;
+            PlotAddr(p++, ptr->green);
+            //*p++ = 0;//ptr->red;
+            PlotAddr(p, ptr->red);
+            ptr++;
         }
     }
 
@@ -104,9 +126,9 @@ void sys_flush(ROI* roi)
     __asm__ __volatile__("mov %eax, %cr3");
 
     __asm__ __volatile__ (
-        "mov %%ax, %%ds"
+        "mov %%ax, %%fs"
         : 
-        : "a"(ds_old)
+        : "a"(fs_old)
         :
     );
 

@@ -16,7 +16,7 @@
 // void InitScreen();
 
 // void PlotPixel(int x, int y, uint8_t r, uint8_t g, uint8_t b);
-// void inline PlotAddr(int addr, uint8_t color);
+void PlotAddr(int addr, uint8_t color);
 
 
 void sys_flush(ROI* roi);

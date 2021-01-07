@@ -43,7 +43,7 @@ void main(int arg,char *argv[])
 
     lv_disp_drv_t disp_drv;               /*Descriptor of a display driver*/
     lv_disp_drv_init(&disp_drv);          /*Basic initialization*/
-    // disp_drv.flush_cb = my_disp_flush;    /*Set your driver function*/
+    disp_drv.flush_cb = my_disp_flush;    /*Set your driver function*/
     disp_drv.buffer = &disp_buf;          /*Assign the buffer to the display*/
     lv_disp_drv_register(&disp_drv);      /*Finally register the driver*/
 
@@ -75,20 +75,29 @@ void main(int arg,char *argv[])
     // flush(1, 2, 3, 4, 5);
 
     printf("o");
-
-    uint32_t col = 0xffff0000;
-    struct ROI roi = {
-        .x1 = 0,
-        .x2 = 640,
-        .y1 = 0,
-        .y2 = 480,
-        .color = (Color*) &col
-    };
-    GraphFlush(&roi);
+//    static uint32_t col[640*480] = {0};
+//
+//    for(int i=0; i<640*480; i++)
+//    {
+//        col[i] = 0xffff;
+//    }
+//
+//
+//    //uint32_t col = 0x0000ffff;
+//    struct ROI roi = {
+//        .x1 = 100,
+//        .x2 = 150,
+//        .y1 = 100,
+//        .y2 = 150,
+//        .color = (Color*) col
+//    };
+//    GraphFlush(&roi);
 
     while (1)
     {
         /* code */
+        lv_tick_inc(10);
+        lv_task_handler();
     }
     
     return ;
