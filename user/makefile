@@ -146,13 +146,13 @@ liblvgl.a : gui/lv_conf.h
 	mv gui/lvgl/liblvgl.a ./liblvgl.a
 gui_service.o : gui/gui_service.c gui/lvgl/lvgl.h
 	$(CC) $(CFLAGS) -o $@ $<
-gui_service.bin : gui_service.o liblvgl.a  $(START_O) $(OBJSULIB)
+gui_service.bin : gui_service.o gui/icon.o liblvgl.a $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS) -o $@ $^
 
-gui_service_gdb.bin : gui_service.o liblvgl.a  $(START_O) $(OBJSULIB)
+gui_service_gdb.bin : gui_service.o gui/icon.o liblvgl.a  $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
-gui_service.gdb.bin : gui_service.o liblvgl.a  $(START_O) $(OBJSULIB)
+gui_service.gdb.bin : gui_service.o gui/icon.o liblvgl.a  $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 .SUFFIXES : .c .o
