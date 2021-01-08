@@ -165,7 +165,7 @@ PRIVATE void tty_mouse(TTY* tty){
                     out_byte(CRTC_ADDR_REG, START_ADDR_L);
                     out_byte(CRTC_DATA_REG, (80*(tty->console->current_line+real_line))  & 0xFF);
                     enable_int( );
-                    tty->mouse_Y=0;
+                    //tty->mouse_Y=0;
                 }
             }
             else if(tty->mouse_Y<-MOUSE_UPDOWN_BOUND){//按住鼠标左键向下滚动
@@ -177,7 +177,7 @@ PRIVATE void tty_mouse(TTY* tty){
                     out_byte(CRTC_ADDR_REG, START_ADDR_L);
                     out_byte(CRTC_DATA_REG, (80*(tty->console->current_line+real_line)) & 0xFF);
                     enable_int( );
-                    tty->mouse_Y=0;
+                    //tty->mouse_Y=0;
                 }
             }
         }

@@ -86,13 +86,13 @@ static test_button()
     lv_obj_t * btn5 = lv_btn_create(lv_scr_act(), NULL);
     lv_obj_align(btn5, NULL, LV_ALIGN_CENTER, 0, 0);
     lv_obj_add_style(btn5, LV_BTN_PART_MAIN, &style_halo);
-    lv_obj_set_style_local_value_str(btn5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, "Halo");
+    lv_obj_set_style_local_value_str(btn5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, "MiniX");
 
     lv_obj_set_x(btn4, 200);
-    lv_obj_set_y(btn4, 50);
+    lv_obj_set_y(btn4, 70);
 
     lv_obj_set_x(btn5, 200);
-    lv_obj_set_y(btn5, 100);
+    lv_obj_set_y(btn5, 140);
     /*Ripple on press*/
     static lv_style_t style_ripple;
     lv_style_init(&style_ripple);
@@ -196,15 +196,12 @@ void main(int arg, char *argv[])
     lv_indev_set_cursor(mouse_indev, cursor_obj);          
 
 
-
-    
- 
     //  ----------------------------------------------------------------------------
 
     lv_obj_t * label;
     lv_obj_t * label2;
     lv_obj_t *win = lv_win_create(lv_scr_act(), NULL);
-    lv_win_set_title(win, "Window title");
+    lv_win_set_title(win, "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tThe OS powered by LVGL");
 
     test_button();
 
@@ -217,10 +214,10 @@ void main(int arg, char *argv[])
     lv_label_set_text(label2, "Button2");
 
     lv_obj_set_x(btn1, 50);
-    lv_obj_set_y(btn1, 50);
+    lv_obj_set_y(btn1, 70);
 
     lv_obj_set_x(btn2, 50);
-    lv_obj_set_y(btn2, 100);
+    lv_obj_set_y(btn2, 140);
 
 
     char buf_X[10];
@@ -229,7 +226,7 @@ void main(int arg, char *argv[])
     while (1)
     {
         /* code */
-        lv_tick_inc(1);
+        lv_tick_inc(10);
 
         int recv_code = recv(&msg);
         if (recv_code != SUCCESS)

@@ -18,10 +18,11 @@ typedef struct IPC_MSG
 
 /* type */
 enum Type{
-    /* gui type */
+    /* gui support type */
     Button,
     Window,
 
+    /*gui input required mass*/
     Keyboard,
     Mouse
 };
@@ -32,7 +33,6 @@ enum MsgReturn{
     SUCCESS,
     FULL,
     EMPTY ,
-    
 };
 
 
