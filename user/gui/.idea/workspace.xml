@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c30e1273-72b0-4158-a2ba-e9e3e8ce8383" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/gui_service.c" beforeDir="false" afterPath="$PROJECT_DIR$/gui_service.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/Kconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/LICENCE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/docs/CODE_OF_CONDUCT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/docs/CODING_STYLE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/docs/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/docs/ROADMAP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/examples/LVGL_Arduino.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/examples/porting/lv_port_disp_template.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/examples/porting/lv_port_disp_template.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/examples/porting/lv_port_fs_template.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/examples/porting/lv_port_fs_template.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/examples/porting/lv_port_indev_template.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/examples/porting/lv_port_indev_template.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/library.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/library.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/lv_conf_template.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/lvgl.h" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/lvgl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/lvgl.mk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/Doxyfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/built_in_font/DejaVuSans.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/built_in_font/FontAwesome5-Solid+Brands+Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/built_in_font/Montserrat-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/built_in_font/SimSun.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/built_in_font/built_in_font_gen.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/built_in_font/generate_all.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/code-format.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/code-format.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/cppcheck_run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/infer_run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/lv_conf_checker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/release/com.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/release/dev.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/release/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/release/proj.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/scripts/release/release.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_core/lv_obj.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_core/lv_obj.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_core/lv_refr.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_core/lv_refr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_draw/lv_img_cache.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_draw/lv_img_cache.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_draw/lv_img_decoder.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_draw/lv_img_decoder.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_font/lv_font_montserrat_14.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_font/lv_font_montserrat_14.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_hal/lv_hal_disp.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_hal/lv_hal_disp.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_hal/lv_hal_tick.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_hal/lv_hal_tick.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_debug.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_debug.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_gc.h" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_gc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_ll.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_ll.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_mem.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_mem.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_printf.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_printf.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_task.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_task.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_txt.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_txt.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_txt.h" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_misc/lv_txt.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_themes/lv_theme.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_themes/lv_theme.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_themes/lv_theme_material.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_themes/lv_theme_material.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/src/lv_widgets/lv_cont.c" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/src/lv_widgets/lv_cont.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/build.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/font_1.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/font_2.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/font_3.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_assert.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_assert.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_core/lv_test_core.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_core/lv_test_core.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_core/lv_test_font_loader.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_core/lv_test_font_loader.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_core/lv_test_obj.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_core/lv_test_obj.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_core/lv_test_style.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_core/lv_test_style.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_fonts/font_1.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_fonts/font_2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_fonts/font_3.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_ref_imgs/lv_test_img32_label_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_widgets/lv_test_label.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lvgl/tests/lv_test_widgets/lv_test_label.h" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1mmjpQLHo7awIZO6cnfAiKRpx2X" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c30e1273-72b0-4158-a2ba-e9e3e8ce8383" name="Default Changelist" comment="" />
+      <created>1610105842458</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610105842458</updated>
+      <workItem from="1610105843631" duration="64000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
