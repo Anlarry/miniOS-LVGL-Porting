@@ -62,8 +62,8 @@ void main(int arg,char *argv[])
 
 
 //   lv_obj_t * label;
-lv_obj_t * win = lv_win_create(lv_scr_act(), NULL);
-   lv_win_set_title(win, "Window title");     
+    lv_obj_t * win = lv_win_create(lv_scr_act(), NULL);
+    lv_win_set_title(win, "Window title");
    
 
 
