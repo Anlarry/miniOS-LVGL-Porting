@@ -118,14 +118,25 @@ void main(int arg, char *argv[])
     lv_obj_set_x(btn2, 50);
     lv_obj_set_y(btn2, 100);
 
+    lv_obj_t * ta1;
+    ta1 = lv_textarea_create(lv_scr_act(), NULL);
+    lv_obj_set_size(ta1, 200, 100);
+    lv_obj_align(ta1, NULL, LV_ALIGN_CENTER, 0, 0);
+    lv_textarea_set_text(ta1, "A text in a Text Area");    /*Set an initial text*/
+
 
     char buf_X[10];
     char buf_Y[10];
     IPC_MSG msg;
+    
+    int tick_T = 0;
     while (1)
     {
         /* code */
-        lv_tick_inc(1);
+        if(tick_T == 0) {
+            lv_tick_inc(1);
+        }
+        tick_T = (tick_T + 1) % 20;
 
         int recv_code = recv(&msg);
         if (recv_code != SUCCESS)
@@ -141,6 +152,7 @@ void main(int arg, char *argv[])
                 break;
             case Keyboard:
                 printf("%c", msg.data[0]);
+                lv_textarea_add_char(ta1, msg.data[0]);
                 break;
             case Mouse:
                 touchpad_x = msg.data[2];

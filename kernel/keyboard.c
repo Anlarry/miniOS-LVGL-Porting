@@ -77,15 +77,15 @@ void mouse_handler(int irq){
 					u8 dir_Y = mouse_in.buf[0]&0x20;
 					u8 dir_X = mouse_in.buf[0]&0x10;
 					if(dir_Y==0x20){//down
-						p_tty->mouse_Y -= 1;
+						p_tty->mouse_Y += 5;
 					}else{//up
-						p_tty->mouse_Y += 1;
+						p_tty->mouse_Y -= 5;
 					}
 
 					if(dir_X==0x10){//left
-						p_tty->mouse_X -= 1;
+						p_tty->mouse_X -= 5;
 					}else{//right
-						p_tty->mouse_X += 1;
+						p_tty->mouse_X += 5;
 					}
 				// }
 
