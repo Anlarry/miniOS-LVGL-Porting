@@ -88,6 +88,7 @@ void mouse_handler(int irq){
 						p_tty->mouse_X -= 2;
 					}else{//right
 						p_tty->mouse_X += 2;
+
 					}
 				// }
 
