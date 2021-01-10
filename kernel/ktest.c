@@ -580,7 +580,7 @@ void initial()
 	IPC_MSG msg = {
 		.src = -1,
 		.dst = 2,
-		.type = Untar,
+		.type = P2P,
 		.data = {0}
 	};
 	send(&msg);

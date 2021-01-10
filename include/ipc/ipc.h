@@ -18,24 +18,9 @@ typedef struct IPC_MSG
 
 /* type */
 enum Type{
-    /* gui support widget type */
-    Button,
-    Window,
-
-    /* signal relevant  functions type*/
-    Signal_Send,
-    Signal_Return,
-
-
-    /*gui input required mass*/
-    Keyboard,
-    Mouse,
-
-
-    /* Request */
-
-    Untar,
-
+    Boardcast,
+    P2P,
+    Signal
 };
 
 

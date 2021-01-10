@@ -63,18 +63,13 @@ int sys_send(IPC_MSG* msg) {
     struct MsgNode* NodePtr  = MsgList[dst_id];
     switch(msg->type)
     {
-        Signal_Send :
+        case Signal :
         {
             PROCESS* proc = proc_table+dst_id;
             //sys_signal_send(proc, );
             break;
         }
-        Signal_Return :
-        {
-            //sys_signal_return();
-            break;
-        };
-        default :
+        case P2P :
         {
             while(NodePtr != NULL && NodePtr->next != NULL)
             {
@@ -92,6 +87,29 @@ int sys_send(IPC_MSG* msg) {
             memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
             break;
 
+        }
+        case Boardcast :
+        {
+            //sys_signal_return();
+            break;
+        };
+        default:
+        {
+            while(NodePtr != NULL && NodePtr->next != NULL)
+            {
+                NodePtr = NodePtr->next;
+            }
+            if(NodePtr == NULL)
+            {
+                MsgList[dst_id] = Node;
+            }
+            else
+            {
+                NodePtr->next = Node;
+                Node->next = NULL;
+            }
+            memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
+            break;
         }
     }
 

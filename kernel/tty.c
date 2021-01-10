@@ -8,7 +8,7 @@
 #include "global.h"
 #include "proto.h"
 #include "keyboard.h"
-#include "../include/gui/gui.h"
+#include <gui/gui.h>
 
 #include <ipc/ipc.h>
 
@@ -29,9 +29,13 @@ PUBLIC void in_process(TTY* p_tty , u32 key){
     IPC_MSG msg = {
         .src = 1,
         .dst = 4,
-        .type = Keyboard,
-        .data = {key}
+        .type = P2P,
+        .data = {0}
     };
+     GUI* msgdata = (GUI*)msg.data;
+
+    msgdata->type = Keyboard;
+    msgdata->data[0] = key;
     send(&msg);
 
     // int real_line = p_tty->console->orig / SCR_WIDTH;

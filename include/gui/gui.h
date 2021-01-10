@@ -27,5 +27,17 @@ typedef struct ROI{
 
 void GraphFlush(ROI*);
 
+enum GUI_Type{
+    Keyboard,
+    Mouse,
+    Button,
+    Window
+};
+
+typedef struct {
+    int type;
+    int data[5];
+}GUI;
+
 
 #endif //MINIOS_LVGL_PORTING_GUI_H

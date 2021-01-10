@@ -253,34 +253,35 @@ void main(int arg, char *argv[])
         }
         else
         {
-            switch (msg.type)
+            GUI *usr_data = (GUI*)(&msg.data);
+            switch (usr_data->type)
             {
             case Button:
                 cur_btn = lv_btn_create(lv_scr_act(), NULL);
-                lv_obj_set_x(cur_btn, msg.data[0]);
-                lv_obj_set_y(cur_btn, msg.data[1]);
+                lv_obj_set_x(cur_btn, usr_data->data[0]);
+                lv_obj_set_y(cur_btn, usr_data->data[1]);
                 break;
             case Window:
                 break;
             case Keyboard:
-                printf("%c", msg.data[0]);
-                lv_textarea_add_char(ta1, msg.data[0]);
+                printf("%c", usr_data->data[0]);
+                lv_textarea_add_char(ta1, usr_data->data[0]);
                 break;
             case Mouse:
-                touchpad_x = msg.data[2];
-                touchpad_y = msg.data[3];
+                touchpad_x = usr_data->data[2];
+                touchpad_y = usr_data->data[3];
 
-                left_pressed = msg.data[0];
+                left_pressed = usr_data->data[0];
 
                 int pos = 0;
-                itoa(buf_X,msg.data[2]);
-                itoa(buf_Y,msg.data[3]);
+                itoa(buf_X,usr_data->data[2]);
+                itoa(buf_Y,usr_data->data[3]);
                 lv_label_set_text(label, buf_X);
                 lv_label_set_text(label2, buf_Y);
 
                 // lv_obj_set_x(btn1, touchpad_x);
                 // lv_obj_set_y(btn1, touchpad_y);
-                printf("(%d %d %d %d)", msg.data[0], msg.data[1], msg.data[2], msg.data[3]);
+                printf("(%d %d %d %d)", usr_data->data[0], usr_data->data[1], usr_data->data[2], usr_data->data[3]);
                 break;
                 
             }

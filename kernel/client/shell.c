@@ -11,7 +11,7 @@
 void Shell() {
     IPC_MSG msg ;
     int res = recv(&msg);
-    while(res == EMPTY || msg.type != Untar) {
+    while(res == EMPTY) {
         res = recv(&msg);
     }
     for(int i=0; i<50000000; i++);
