@@ -66,12 +66,12 @@ int sys_send(IPC_MSG* msg) {
         Signal_Send :
         {
             PROCESS* proc = proc_table+dst_id;
-            sys_signal_send(proc, );
+            //sys_signal_send(proc, );
             break;
         }
         Signal_Return :
         {
-            sys_signal_return();
+            //sys_signal_return();
             break;
         };
         default :
