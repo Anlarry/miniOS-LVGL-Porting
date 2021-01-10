@@ -82,7 +82,8 @@ OBJS		= kernel/kernel.o kernel/syscall.o kernel/start.o kernel/main.o kernel/clo
 			kernel/ktest.o kernel/testfunc.o kernel/fs.o kernel/hd.o \
 			kernel/spinlock.o kernel/fat32.o kernel/base.o kernel/assist.o kernel/vfs.o \
 			kernel/keyboard.o kernel/tty.o kernel/shell.o kernel/console.o lib/ulib.a \
-			$(LIB_GUI) $(LIB_IPC)
+			$(LIB_GUI) $(LIB_IPC) \
+			kernel/client/shell.o
 			#added by mingxuan 2019-5-19
 
 
@@ -478,6 +479,11 @@ $(LIB_GUI) :
 
 $(LIB_IPC) :
 	cd ./kernel/ipc && make 
+
+.SUFFIXES : .c .o
+
+.c.o :
+	$(CC) $(CFLAGS) -o $@ $<
 
 #$(LIB_LVGL) : include/gui/lv_conf.h
 #	cd include/gui/lvgl && make

@@ -237,6 +237,7 @@ void main(int arg, char *argv[])
     IPC_MSG msg;
     
     int tick_T = 0;
+    lv_obj_t *cur_btn;
     while (1)
     {
         /* code */
@@ -255,6 +256,9 @@ void main(int arg, char *argv[])
             switch (msg.type)
             {
             case Button:
+                cur_btn = lv_btn_create(lv_scr_act(), NULL);
+                lv_obj_set_x(cur_btn, msg.data[0]);
+                lv_obj_set_y(cur_btn, msg.data[1]);
                 break;
             case Window:
                 break;

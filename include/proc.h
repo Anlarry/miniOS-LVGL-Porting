@@ -44,7 +44,7 @@
 // #define NR_K_PCBS 10		//add by visual 2016.4.5
 #define NR_PCBS		12
 //#define NR_TASKS	4	//TestA~TestC + hd_service //deleted by mingxuan 2019-5-19
-#define NR_TASKS	2	//task_tty + hd_service	//modified by mingxuan 2019-5-19
+#define NR_TASKS	3	//task_tty + hd_service	//modified by mingxuan 2019-5-19
 #define NR_K_PCBS	4	//no K_PCB is empty now
 
 //~xw
