@@ -24,7 +24,9 @@ enum Type{
 
     /*gui input required mass*/
     Keyboard,
-    Mouse
+    Mouse,
+
+    Untar,
 };
 
 

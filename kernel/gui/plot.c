@@ -28,7 +28,7 @@
      );
  }
 
-
+static Timer = 100;
 void sys_flush(ROI* roi)
 {
     disable_int();

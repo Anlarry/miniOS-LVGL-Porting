@@ -12,7 +12,7 @@
 static MsgNode MsgBuf[MSG_BUF_SIZE];
 static int isFree[MSG_BUF_SIZE];
 
-static MsgNode* MsgList[12];
+static MsgNode* MsgList[12] __attribute__((section(".data"))); 
 
 #define NULL 0
 

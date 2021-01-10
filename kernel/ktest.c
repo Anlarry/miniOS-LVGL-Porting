@@ -12,6 +12,8 @@
 #include "proto.h"
 #include "fs.h"
 
+#include <ipc/ipc.h>
+
 /*======================================================================*
                          Interrupt Handling Test
 added by xw, 18/4/27
@@ -574,6 +576,14 @@ void initial()
 	do_vclose(stdin);
 	do_vclose(stdout);
 	do_vclose(stderr);
+
+	IPC_MSG msg = {
+		.src = -1,
+		.dst = 2,
+		.type = Untar,
+		.data = {0}
+	};
+	send(&msg);
 
 	exec("orange/gui_service.bin");
 
