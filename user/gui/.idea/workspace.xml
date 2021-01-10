@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c30e1273-72b0-4158-a2ba-e9e3e8ce8383" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../kernel/gui/plot.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../kernel/gui/plot.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui_service.c" beforeDir="false" afterPath="$PROJECT_DIR$/gui_service.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lvgl/CHANGELOG.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lvgl/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lvgl/CMakeLists.txt" afterDir="false" />
@@ -114,13 +115,6 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -130,6 +124,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610105842458</updated>
       <workItem from="1610105843631" duration="64000" />
+      <workItem from="1610175636094" duration="32000" />
     </task>
     <servers />
   </component>
@@ -146,5 +141,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

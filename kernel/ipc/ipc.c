@@ -33,31 +33,61 @@ int msg_free(MsgNode* msgNode) {
     return 0;
 }
 
+void sys_signal_send(PROCESS* proc...)
+{
+
+}
+
+void sys_signal_return()
+{
+
+}
+
 int sys_send(IPC_MSG* msg) {
     
     struct MsgNode* Node = msg_malloc();
 
     if(Node == NULL) return FULL;
     msg->src = p_proc_current - proc_table;
-    memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
+
 
     //int src_id = msg->msg.src;
     int dst_id = msg->dst;
     struct MsgNode* NodePtr  = MsgList[dst_id];
+    switch(msg->type)
+    {
+        Signal_Send :
+        {
+            PROCESS* proc = proc_table+dst_id;
+            sys_signal_send(proc, );
+            break;
+        }
+        Signal_Return :
+        {
+            sys_signal_return();
+            break;
+        };
+        default :
+        {
+            while(NodePtr != NULL && NodePtr->next != NULL)
+            {
+                NodePtr = NodePtr->next;
+            }
+            if(NodePtr == NULL)
+            {
+                MsgList[dst_id] = Node;
+            }
+            else
+            {
+                NodePtr->next = Node;
+                Node->next = NULL;
+            }
+            memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
+            break;
 
-    while(NodePtr != NULL && NodePtr->next != NULL)
-    {
-        NodePtr = NodePtr->next;
+        }
     }
-    if(NodePtr == NULL)
-    {
-        MsgList[dst_id] = Node;
-    }
-    else
-    {
-        NodePtr->next = Node;
-        Node->next = NULL;
-    }
+
 
     return SUCCESS;
 }

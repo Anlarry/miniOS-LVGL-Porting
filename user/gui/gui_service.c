@@ -8,6 +8,7 @@
 #include "./lvgl/lvgl.h"
 #include <ipc/ipc.h>
 
+
 static uint32_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10]; /*Declare a buffer for 1/10 screen size*/
 static uint32_t touchpad_x;
 static uint32_t touchpad_y;
@@ -202,14 +203,19 @@ void main(int arg, char *argv[])
     lv_obj_t * label2;
     lv_obj_t *win = lv_win_create(lv_scr_act(), NULL);
     lv_win_set_title(win, "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tThe OS powered by LVGL");
+    lv_win_set_drag(win, true);
+    lv_obj_set_x(win, 100);
+    lv_obj_set_y(win, 100);
 
+    //lv_win_set_content_size(win, 480, 480);
     test_button();
 
-    lv_obj_t *btn1 = lv_btn_create(lv_scr_act(), NULL);
+
+    lv_obj_t *btn1 = lv_btn_create(win, NULL);
     label = lv_label_create(btn1, NULL);
     lv_label_set_text(label, "Button");
 
-    lv_obj_t *btn2 = lv_btn_create(lv_scr_act(), NULL);
+    lv_obj_t *btn2 = lv_btn_create(win, NULL);
     label2 = lv_label_create(btn2, NULL);
     lv_label_set_text(label2, "Button2");
 

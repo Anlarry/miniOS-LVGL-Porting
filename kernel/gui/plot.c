@@ -47,7 +47,7 @@ void sys_flush(ROI* roi)
     uint16_t fs = SELECTOR_GRAPH;
     uint16_t fs_old;
 
-    static uint32_t kernel_buffer[SCRNY*SCRNX / 10];
+    static uint32_t kernel_buffer[SCRNY*SCRNX];
 
     uint32_t *p = (uint32_t*)kernel_buffer;
     for(int i = y1; i <= y2; i++) {
