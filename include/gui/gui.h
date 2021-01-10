@@ -10,6 +10,7 @@
 
 
 #include <stdint.h>
+#include <gui/gui.h>
 
 typedef struct Color{
     uint8_t blue;
@@ -30,8 +31,11 @@ void GraphFlush(ROI*);
 enum GUI_Type{
     Keyboard,
     Mouse,
+
     Button,
-    Window
+    Window,
+
+    Function,
 };
 
 typedef struct {

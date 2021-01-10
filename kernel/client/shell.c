@@ -14,6 +14,5 @@ void Shell() {
     while(res == EMPTY) {
         res = recv(&msg);
     }
-    for(int i=0; i<50000000; i++);
     exec("orange/client.bin");
 }

@@ -7,6 +7,7 @@
 #include <gui/gui.h>
 #include "./lvgl/lvgl.h"
 #include <ipc/ipc.h>
+#include "function_table.h"
 
 
 static uint32_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10]; /*Declare a buffer for 1/10 screen size*/
@@ -31,6 +32,17 @@ void static itoa(char str[], int num)/* 数字前面的 0 不被显示出来, �
         str[j] = buf[i] + '0';
     }
     str[j] = 0;
+
+}
+
+void Broadcast() {
+    IPC_MSG msg = {
+        .src = -1,
+        .dst = 2,
+        .type = P2P,
+        .data = {0}
+	};
+	send(&msg);
 
 }
 
@@ -199,6 +211,7 @@ void main(int arg, char *argv[])
 
     //  ----------------------------------------------------------------------------
 
+
     lv_obj_t * label;
     lv_obj_t * label2;
     lv_obj_t *win = lv_win_create(lv_scr_act(), NULL);
@@ -231,13 +244,20 @@ void main(int arg, char *argv[])
     lv_obj_align(ta1, NULL, LV_ALIGN_CENTER, 0, 0);
     lv_textarea_set_text(ta1, "A text in a Text Area");    /*Set an initial text*/
 
-
     char buf_X[10];
     char buf_Y[10];
     IPC_MSG msg;
+
+    Broadcast();
     
     int tick_T = 0;
     lv_obj_t *cur_btn;
+
+    void* _func;
+    int args;
+    int (*_func_1)(int);
+    int (*_func_2)(int, int);
+    int (*_func_3)(int, int, int);
     while (1)
     {
         /* code */
@@ -283,7 +303,27 @@ void main(int arg, char *argv[])
                 // lv_obj_set_y(btn1, touchpad_y);
                 printf("(%d %d %d %d)", usr_data->data[0], usr_data->data[1], usr_data->data[2], usr_data->data[3]);
                 break;
-                
+            case Function :
+                _func = FunctionTable[msg.data[1]];
+                args = msg.data[2];
+                switch (args) {
+                    case 0 : break;
+                    case 1 : 
+                        _func_1 = _func;
+                        _func_1(msg.data[3]);
+                        break;
+                    case 2 :
+                        _func_2 = _func;
+                        _func_2(msg.data[3], msg.data[4]);
+                        break;
+                    case 3 :
+                        _func_3 = _func;
+                        _func_3(msg.data[3], msg.data[4], msg.data[5]);
+                        break;
+                        
+                }
+                break;
+
             }
         }
         lv_task_handler();

@@ -577,13 +577,6 @@ void initial()
 	do_vclose(stdout);
 	do_vclose(stderr);
 
-	IPC_MSG msg = {
-		.src = -1,
-		.dst = 2,
-		.type = P2P,
-		.data = {0}
-	};
-	send(&msg);
 
 	exec("orange/gui_service.bin");
 
