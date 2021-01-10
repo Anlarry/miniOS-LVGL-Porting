@@ -36,7 +36,7 @@ int msg_free(MsgNode* msgNode) {
 void sys_signal_send(PROCESS* proc)
 {
     STACK_FRAME regs;
-    memcpy(&regs, proc->regs, sizeof(STACK_FRAME));
+    memcpy(&regs, &proc->task.regs, sizeof(STACK_FRAME));
 
     // change this proc(B)'s eip to warper function
     // warp function includes { handler, signal_return }
