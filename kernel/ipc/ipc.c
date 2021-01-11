@@ -50,65 +50,91 @@ void sys_signal_return()
 
 }
 
-int sys_send(IPC_MSG* msg) {
-    
+
+int boardcast(IPC_MSG* msg)
+{
+    PROCESS *proc;
+    for(int i=0; i<NR_PCBS; i++)
+    {
+        struct MsgNode* Node = msg_malloc();
+        if(Node == NULL) return FULL;
+
+        proc = proc_table+i;
+        struct MsgNode* NodePtr  = MsgList[i];
+        if(proc->task.stat == READY || proc->task.stat == SLEEPING )
+        {
+            while(NodePtr != NULL && NodePtr->next != NULL)
+            {
+                NodePtr = NodePtr->next;
+            }
+            if(NodePtr == NULL)
+            {
+                MsgList[i] = Node;
+            }
+            else
+            {
+                NodePtr->next = Node;
+                Node->next = NULL;
+            }
+            memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
+        }
+    }
+
+    return SUCCESS;
+}
+
+int p2p(IPC_MSG* msg)
+{
+
     struct MsgNode* Node = msg_malloc();
-
     if(Node == NULL) return FULL;
+
     msg->src = p_proc_current - proc_table;
+    int id = msg->dst;
 
+    struct MsgNode* NodePtr  = MsgList[id];
+    while(NodePtr != NULL && NodePtr->next != NULL)
+    {
+        NodePtr = NodePtr->next;
+    }
+    if(NodePtr == NULL)
+    {
+        MsgList[id] = Node;
+    }
+    else
+    {
+        NodePtr->next = Node;
+        Node->next = NULL;
+    }
+    memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
+    return SUCCESS;
+}
 
-    //int src_id = msg->msg.src;
+int sys_send(IPC_MSG* msg) {
+
+    msg->src = p_proc_current - proc_table;
     int dst_id = msg->dst;
-    struct MsgNode* NodePtr  = MsgList[dst_id];
+
     switch(msg->type)
     {
         case Signal :
         {
-            PROCESS* proc = proc_table+dst_id;
+            //PROCESS* proc = proc_table+dst_id;
             //sys_signal_send(proc, );
             break;
         }
         case P2P :
         {
-            while(NodePtr != NULL && NodePtr->next != NULL)
-            {
-                NodePtr = NodePtr->next;
-            }
-            if(NodePtr == NULL)
-            {
-                MsgList[dst_id] = Node;
-            }
-            else
-            {
-                NodePtr->next = Node;
-                Node->next = NULL;
-            }
-            memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
+            return p2p(msg);
             break;
-
         }
         case Boardcast :
         {
-            //sys_signal_return();
+            return boardcast(msg);
             break;
         };
-        default:
+        default :
         {
-            while(NodePtr != NULL && NodePtr->next != NULL)
-            {
-                NodePtr = NodePtr->next;
-            }
-            if(NodePtr == NULL)
-            {
-                MsgList[dst_id] = Node;
-            }
-            else
-            {
-                NodePtr->next = Node;
-                Node->next = NULL;
-            }
-            memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
             break;
         }
     }
