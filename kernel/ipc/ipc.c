@@ -83,7 +83,7 @@ int boardcast(IPC_MSG* msg)
     return SUCCESS;
 }
 
-int p2p(IPC_MSG* msg)
+int p2p_a(IPC_MSG* msg)
 {
 
     struct MsgNode* Node = msg_malloc();
@@ -110,6 +110,47 @@ int p2p(IPC_MSG* msg)
     return SUCCESS;
 }
 
+int p2p_s(IPC_MSG* msg) {
+    struct MsgNode* Node = msg_malloc();
+    if(Node == NULL) return FULL;
+
+    msg->src = p_proc_current - proc_table;
+    int id = msg->dst;
+
+    struct MsgNode* NodePtr  = MsgList[id];
+    while(NodePtr != NULL && NodePtr->next != NULL)
+    {
+        NodePtr = NodePtr->next;
+    }
+    if(NodePtr == NULL)
+    {
+        MsgList[id] = Node;
+    }
+    else
+    {
+        NodePtr->next = Node;
+        Node->next = NULL;
+    }
+    memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
+    p_proc_current->task.stat = SLEEPING;
+    return SUCCESS;
+}
+
+int ack(IPC_MSG* msg) {
+    struct MsgNode* Node = msg_malloc();
+    if(Node == NULL) return FULL;
+
+    msg->src = p_proc_current - proc_table;
+    int id = msg->dst;
+
+    Node->next = MsgList[id];
+    MsgList[id] = &Node;
+    
+    memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
+    proc_table[msg->dst].task.stat = READY;
+    return SUCCESS;
+}
+
 int sys_send(IPC_MSG* msg) {
 
     msg->src = p_proc_current - proc_table;
@@ -123,9 +164,19 @@ int sys_send(IPC_MSG* msg) {
             //sys_signal_send(proc, );
             break;
         }
-        case P2P :
+        case P2P_A :
         {
-            return p2p(msg);
+            return p2p_a(msg);
+            break;
+        }
+        case P2P_S :
+        {
+            return p2p_s(msg);
+            break;
+        }
+        case ACK :
+        {
+            return ack(msg);
             break;
         }
         case Boardcast :

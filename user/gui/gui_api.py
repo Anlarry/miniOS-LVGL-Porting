@@ -1,11 +1,15 @@
-API = {
-    ('lv_obj_set_x', 2),
-    ('lv_obj_set_y', 2),
+P2P_S = True
+P2P_A = False
 
-    ('lv_btn_create',2),
-    ('lv_textarea_create', 2),
-    ('lv_label_create', 2),
-    ('lv_win_create', 2)
+API = {
+    # func         arg  P2P_x
+    ('lv_obj_set_x', 2, P2P_A),
+    ('lv_obj_set_y', 2, P2P_A),
+
+    ('lv_btn_create',2, P2P_S),
+    ('lv_textarea_create', 2, P2P_S),
+    ('lv_label_create', 2, P2P_S),
+    ('lv_win_create', 2, P2P_S)
 }
 
 Body = '''
@@ -27,7 +31,7 @@ int {fun}({arg})
     IPC_MSG msg = {{
         .src  = -1,
         .dst  = 4,
-        .type = P2P, /* point 2 point */
+        .type = {type}, /* point 2 point */
         .data = {data}
     }};
     return send(&msg);
@@ -65,6 +69,7 @@ if __name__ == "__main__":
         codes += Code.format(
             fun = API[i][0] + "_c",
             arg = Args(API[i][1], "int"),
+            type = "P2P_S" if API[i][2] else "P2P_A",
             data = "{" + "{} /* type of data */, ".format("Function") 
                 +"{} /* index of func */,".format(i) 
                 + "{} /* # of Args */,".format(API[i][1]) 

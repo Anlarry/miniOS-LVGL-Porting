@@ -39,7 +39,7 @@ void Broadcast() {
     IPC_MSG msg = {
         .src = -1,
         .dst = 2,
-        .type = P2P,
+        .type = P2P_A,
         .data = {0}
 	};
 	send(&msg);
@@ -258,6 +258,8 @@ void main(int arg, char *argv[])
     int (*_func_1)(int);
     int (*_func_2)(int, int);
     int (*_func_3)(int, int, int);
+
+    uint32_t ack_data;
     while (1)
     {
         /* code */
@@ -280,6 +282,7 @@ void main(int arg, char *argv[])
                 cur_btn = lv_btn_create(lv_scr_act(), NULL);
                 lv_obj_set_x(cur_btn, usr_data->data[0]);
                 lv_obj_set_y(cur_btn, usr_data->data[1]);
+                ack_data = cur_btn;
                 break;
             case Window:
                 break;
@@ -310,21 +313,28 @@ void main(int arg, char *argv[])
                     case 0 : break;
                     case 1 : 
                         _func_1 = _func;
-                        _func_1(msg.data[3]);
+                        ack_data =  _func_1(msg.data[3]);
                         break;
                     case 2 :
                         _func_2 = _func;
-                        _func_2(msg.data[3], msg.data[4]);
+                        ack_data = _func_2(msg.data[3], msg.data[4]);
                         break;
                     case 3 :
                         _func_3 = _func;
-                        _func_3(msg.data[3], msg.data[4], msg.data[5]);
+                        ack_data = _func_3(msg.data[3], msg.data[4], msg.data[5]);
                         break;
-                        
                 }
                 break;
-
             }
+        }
+        if(msg.type == P2P_S) {
+            IPC_MSG ack_msg = {
+                .src = -1,
+                .dst = msg.src,
+                .type = ACK,
+                .data = {ack_data}
+            };
+            send(&ack_msg);
         }
         lv_task_handler();
     }

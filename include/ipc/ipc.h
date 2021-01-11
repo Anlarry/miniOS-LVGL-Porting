@@ -19,8 +19,10 @@ typedef struct IPC_MSG
 /* type */
 enum Type{
     Boardcast,
-    P2P,
-    Signal
+    P2P_A,
+    P2P_S,
+    Signal,
+    ACK
 };
 
 

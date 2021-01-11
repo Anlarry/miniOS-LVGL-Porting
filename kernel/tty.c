@@ -29,7 +29,7 @@ PUBLIC void in_process(TTY* p_tty , u32 key){
     IPC_MSG msg = {
         .src = 1,
         .dst = 4,
-        .type = P2P,
+        .type = P2P_A,
         .data = {0}
     };
      GUI* msgdata = (GUI*)msg.data;

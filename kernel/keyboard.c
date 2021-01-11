@@ -96,7 +96,7 @@ void mouse_handler(int irq){
 				IPC_MSG msg = {
 					.src = 1,
 					.dst = 4,
-					.type = P2P,
+					.type = P2P_A,
 					.data = {Mouse, p_tty->mouse_left_button, p_tty->mouse_mid_button, p_tty->mouse_X, p_tty->mouse_Y}
 				};
 				sys_send(&msg);
