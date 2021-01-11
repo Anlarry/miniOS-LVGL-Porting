@@ -263,7 +263,6 @@ void main(int arg, char *argv[])
     while (1)
     {
         /* code */
-
         if(tick_T == 0) {
             lv_tick_inc(1);
         }
@@ -334,7 +333,7 @@ void main(int arg, char *argv[])
                 .type = ACK,
                 .data = {ack_data}
             };
-            // send(&ack_msg);
+            send(&ack_msg);
         }
         lv_task_handler();
     }

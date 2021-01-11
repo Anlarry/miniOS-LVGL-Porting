@@ -16,11 +16,11 @@ void main(int arg, char *argv[]) {
     gui_data->data[1] = 50;
     send(&msg);
 
-    // recv(&msg);
-    // int btn = msg.data[0];
+    recv(&msg);
+    int btn = msg.data[0];
 
-    // lv_obj_set_x_c(btn, 400);
-    // lv_obj_set_y_c(btn, 400);
+    lv_obj_set_x_c(btn, 400);
+    lv_obj_set_y_c(btn, 400);
 
     while(1) {
         

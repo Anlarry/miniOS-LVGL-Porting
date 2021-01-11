@@ -5,10 +5,10 @@
 
 typedef struct MsgNode {
     IPC_MSG msg;
-    IPC_MSG* next;
+    struct MsgNode* next;
 }MsgNode;
-
-
+ 
+  
 int sys_send(IPC_MSG* msg) ;
 
 

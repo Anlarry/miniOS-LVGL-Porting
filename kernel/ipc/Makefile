@@ -4,9 +4,10 @@ LIB := libipc.a
 SRC := $(wildcard *.c)
 BIN := $(patsubst %.c, %.o,$(SRC))
 
-all : $(BIN)
+all : $(BIN) kipc.h
 	ar rcs $(LIB) $(BIN)
 	#rm -f ./*.o ./*.a ./*.bin
 
 %.o : %.c
 	$(CC) $(CFLAGS) -o $@ $<
+
