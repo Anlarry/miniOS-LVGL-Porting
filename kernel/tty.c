@@ -194,6 +194,7 @@ PRIVATE void tty_mouse(TTY* tty){
 //            out_byte(CRTC_DATA_REG, (80*(tty->console->current_line+real_line))  & 0xFF);
 //            enable_int( );
 //            tty->mouse_Y=0;
+
         }
     }
 }
