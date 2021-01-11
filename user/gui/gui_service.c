@@ -325,8 +325,7 @@ void main(int arg, char *argv[])
                 }
                 break;
             }
-        }
-        if(msg.type == P2P_S) {
+            if(msg.type == P2P_S) {
             IPC_MSG ack_msg = {
                 .src = -1,
                 .dst = msg.src,
@@ -335,6 +334,8 @@ void main(int arg, char *argv[])
             };
             send(&ack_msg);
         }
+        }
+        
         lv_task_handler();
     }
 

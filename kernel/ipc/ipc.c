@@ -20,6 +20,7 @@ MsgNode* msg_malloc() {
     for(int i = 0; i < MSG_BUF_SIZE; i++) {
         if(isFree[i] == NULL) {
             isFree[i] = 1;
+            memset(&MsgBuf[i], 0, sizeof(MsgNode));
             return &MsgBuf[i];
         }
     }
