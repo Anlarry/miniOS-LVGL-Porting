@@ -74,7 +74,7 @@ void mouse_handler(int irq){
 					p_tty->mouse_mid_button = 0;
 				}
 
-				// if(p_tty->mouse_left_button){
+				 //if(p_tty->mouse_left_button){
 					u8 dir_Y = mouse_in.buf[0]&0x20;
 					u8 dir_X = mouse_in.buf[0]&0x10;
 

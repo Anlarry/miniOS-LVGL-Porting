@@ -164,13 +164,13 @@ client.gdb.bin : client.o $(START_O) $(OBJSULIB)
 gui/icon.o : gui/icon.c 
 
 gui/icon.c : gui/icon.py 
-	cd gui && python icon.py
+	cd gui && python3 icon.py
 
 ../include/gui/api.h : gui/gui_api.py
-	cd ./gui && python gui_api.py
+	cd ./gui && python3 gui_api.py
 
 gui/function_table.h : gui/gui_api.py
-	cd ./gui && python gui_api.py
+	cd ./gui && python3 gui_api.py
 	
 
 .SUFFIXES : .c .o

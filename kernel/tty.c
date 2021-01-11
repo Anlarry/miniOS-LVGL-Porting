@@ -159,42 +159,41 @@ PRIVATE void tty_mouse(TTY* tty){
     if (is_current_console(tty->console)){
         int real_line = tty->console->orig / SCR_WIDTH;
         if(tty->mouse_left_button){
-            
-            if(tty->mouse_Y>MOUSE_UPDOWN_BOUND){//按住鼠标左键向上滚动
-                if(tty->console->current_line < 43){
-                    disable_int( );
-                    tty->console->current_line ++;
-                    out_byte(CRTC_ADDR_REG, START_ADDR_H);
-                    out_byte(CRTC_DATA_REG, ( (80*(tty->console->current_line+real_line)) >> 8) & 0xFF);
-                    out_byte(CRTC_ADDR_REG, START_ADDR_L);
-                    out_byte(CRTC_DATA_REG, (80*(tty->console->current_line+real_line))  & 0xFF);
-                    enable_int( );
-                    //tty->mouse_Y=0;
-                }
-            }
-            else if(tty->mouse_Y<-MOUSE_UPDOWN_BOUND){//按住鼠标左键向下滚动
-                if(tty->console->current_line > 0){
-                    disable_int( );
-                    tty->console->current_line --;
-                    out_byte(CRTC_ADDR_REG, START_ADDR_H);
-                    out_byte(CRTC_DATA_REG, ( (80*(tty->console->current_line+real_line)) >> 8) & 0xFF);
-                    out_byte(CRTC_ADDR_REG, START_ADDR_L);
-                    out_byte(CRTC_DATA_REG, (80*(tty->console->current_line+real_line)) & 0xFF);
-                    enable_int( );
-                    //tty->mouse_Y=0;
-                }
-            }
+//            if(tty->mouse_Y>MOUSE_UPDOWN_BOUND){//按住鼠标左键向上滚动
+//                if(tty->console->current_line < 43){
+//                    disable_int( );
+//                    tty->console->current_line ++;
+//                    out_byte(CRTC_ADDR_REG, START_ADDR_H);
+//                    out_byte(CRTC_DATA_REG, ( (80*(tty->console->current_line+real_line)) >> 8) & 0xFF);
+//                    out_byte(CRTC_ADDR_REG, START_ADDR_L);
+//                    out_byte(CRTC_DATA_REG, (80*(tty->console->current_line+real_line))  & 0xFF);
+//                    enable_int( );
+//                    //tty->mouse_Y=0;
+//                }
+//            }
+//            else if(tty->mouse_Y<-MOUSE_UPDOWN_BOUND){//按住鼠标左键向下滚动
+//                if(tty->console->current_line > 0){
+//                    disable_int( );
+//                    tty->console->current_line --;
+//                    out_byte(CRTC_ADDR_REG, START_ADDR_H);
+//                    out_byte(CRTC_DATA_REG, ( (80*(tty->console->current_line+real_line)) >> 8) & 0xFF);
+//                    out_byte(CRTC_ADDR_REG, START_ADDR_L);
+//                    out_byte(CRTC_DATA_REG, (80*(tty->console->current_line+real_line)) & 0xFF);
+//                    enable_int( );
+//                    //tty->mouse_Y=0;
+//                }
+//            }
         }
 
         if(tty->mouse_mid_button){//点击中键复原
-            disable_int( );
-            tty->console->current_line = 0;
-            out_byte(CRTC_ADDR_REG, START_ADDR_H);
-            out_byte(CRTC_DATA_REG, ( (80*(tty->console->current_line+real_line)) >> 8) & 0xFF);
-            out_byte(CRTC_ADDR_REG, START_ADDR_L);
-            out_byte(CRTC_DATA_REG, (80*(tty->console->current_line+real_line))  & 0xFF);
-            enable_int( );
-            tty->mouse_Y=0;
+//            disable_int( );
+//            tty->console->current_line = 0;
+//            out_byte(CRTC_ADDR_REG, START_ADDR_H);
+//            out_byte(CRTC_DATA_REG, ( (80*(tty->console->current_line+real_line)) >> 8) & 0xFF);
+//            out_byte(CRTC_ADDR_REG, START_ADDR_L);
+//            out_byte(CRTC_DATA_REG, (80*(tty->console->current_line+real_line))  & 0xFF);
+//            enable_int( );
+//            tty->mouse_Y=0;
         }
     }
 }

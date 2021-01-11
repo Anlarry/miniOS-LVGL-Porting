@@ -7,6 +7,8 @@ typedef struct MsgNode {
     IPC_MSG msg;
     struct MsgNode* next;
 }MsgNode;
+
+
  
   
 int sys_send(IPC_MSG* msg) ;

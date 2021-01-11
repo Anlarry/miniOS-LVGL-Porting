@@ -35,7 +35,9 @@ int msg_free(MsgNode* msgNode) {
     return 0;
 }
 
-void sys_signal_send(PROCESS* proc)
+
+
+void sys_signal_send(PROCESS* proc, IPC_MSG* msg)
 {
     STACK_FRAME regs;
     memcpy(&regs, &proc->task.regs, sizeof(STACK_FRAME));
@@ -47,8 +49,18 @@ void sys_signal_send(PROCESS* proc)
 
 }
 
-void sys_signal_return()
+void sys_signal_return(IPC_MSG* msg)
 {
+    STACK_FRAME regs;
+    // copy saved regs from stack to  this regs
+    // to some operation to compute true address
+
+    int esp =  proc->task.regs.esp;
+    esp += 4; //TODO
+    memcpy(&regs, esp, sizeof(STACK_FRAME));
+
+    memcpy(&proc->task.regs, regs, sizeof(STACK_FRAME));
+    //
 
 }
 
@@ -58,6 +70,11 @@ int boardcast(IPC_MSG* msg)
     PROCESS *proc;
     for(int i=0; i<NR_PCBS; i++)
     {
+        if(i == p_proc_current - proc_table)
+        {
+            continue;
+        }
+
         struct MsgNode* Node = msg_malloc();
         if(Node == NULL) return FULL;
 
@@ -152,6 +169,8 @@ int ack(IPC_MSG* msg) {
     proc_table[msg->dst].task.stat = READY;
     return SUCCESS;
 }
+
+
 
 int sys_send(IPC_MSG* msg) {
     msg->src = p_proc_current - proc_table;
