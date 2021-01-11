@@ -334,7 +334,7 @@ void main(int arg, char *argv[])
                 .type = ACK,
                 .data = {ack_data}
             };
-            send(&ack_msg);
+            // send(&ack_msg);
         }
         lv_task_handler();
     }

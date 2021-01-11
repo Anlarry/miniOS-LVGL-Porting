@@ -144,15 +144,14 @@ int ack(IPC_MSG* msg) {
     int id = msg->dst;
 
     Node->next = MsgList[id];
-    MsgList[id] = &Node;
-    
+    MsgList[id] = Node;
+
     memcpy(&(Node->msg), msg, sizeof(IPC_MSG));
     proc_table[msg->dst].task.stat = READY;
     return SUCCESS;
 }
 
 int sys_send(IPC_MSG* msg) {
-
     msg->src = p_proc_current - proc_table;
     int dst_id = msg->dst;
 
@@ -189,7 +188,6 @@ int sys_send(IPC_MSG* msg) {
             break;
         }
     }
-
 
     return SUCCESS;
 }

@@ -6,7 +6,7 @@ INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 
 # you can add your elf in $(BIN) latter
 BIN = $(INIT)
-GDB_BIN = shell_0.gdb.bin gui_service.gdb.bin
+GDB_BIN = shell_0.gdb.bin gui_service.gdb.bin client.gdb.bin
 TAR_NAME = app.tar
 HD = ../b.img
 
@@ -157,6 +157,9 @@ gui_service.gdb.bin : gui_service.o gui/icon.o liblvgl.a  $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 client.o : ../include/gui/api.h 
+
+client.gdb.bin : client.o $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 gui/icon.o : gui/icon.c 
 
