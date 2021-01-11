@@ -34,6 +34,11 @@ enum MsgReturn{
 };
 
 
+enum SIG_TYPE {
+    SIG_SEND,
+    SIG_RETURN,
+};
+
 int send(IPC_MSG *) ;
 int recv(IPC_MSG *) ;
 

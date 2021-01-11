@@ -156,9 +156,12 @@ gui_service_gdb.bin : gui_service.o gui/icon.o liblvgl.a  $(START_O) $(OBJSULIB)
 gui_service.gdb.bin : gui_service.o gui/icon.o liblvgl.a  $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
-client.o : ../include/gui/api.h 
+client.o : ../include/gui/api.h ../include/ipc/signal.h
 
-client.gdb.bin : client.o $(START_O) $(OBJSULIB)
+client.bin : client.o ipc/signal.o $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS) -o $@ $^
+
+client.gdb.bin : client.o ipc/signal.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 gui/icon.o : gui/icon.c 

@@ -36,6 +36,8 @@ enum GUI_Type{
     Window,
 
     Function,
+
+    RegisterCallback,
 };
 
 typedef struct {

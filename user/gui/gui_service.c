@@ -8,7 +8,7 @@
 #include "./lvgl/lvgl.h"
 #include <ipc/ipc.h>
 #include "function_table.h"
-
+#include <ipc/signal.h>
 
 static uint32_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10]; /*Declare a buffer for 1/10 screen size*/
 static uint32_t touchpad_x;
@@ -249,6 +249,14 @@ void main(int arg, char *argv[])
     IPC_MSG msg;
 
     Broadcast();
+
+    IPC_MSG sig_msg = {
+        .src = -1,
+        .dst = 2,
+        .type = Signal,
+        .data = {0}
+    };
+    send(&sig_msg);
     
     int tick_T = 0;
     lv_obj_t *cur_btn;
@@ -260,6 +268,7 @@ void main(int arg, char *argv[])
     int (*_func_3)(int, int, int);
 
     uint32_t ack_data;
+    IPC_MSG sig_test ;
     while (1)
     {
         /* code */
@@ -294,7 +303,8 @@ void main(int arg, char *argv[])
                 touchpad_y = usr_data->data[3];
 
                 left_pressed = usr_data->data[0];
-
+                if(left_pressed) 
+                    lv_textarea_add_char(ta1, '*');
                 int pos = 0;
                 itoa(buf_X,usr_data->data[2]);
                 itoa(buf_Y,usr_data->data[3]);
@@ -323,6 +333,14 @@ void main(int arg, char *argv[])
                         ack_data = _func_3(msg.data[3], msg.data[4], msg.data[5]);
                         break;
                 }
+                break;
+            case RegisterCallback :
+                sig_test.dst = msg.src;
+                sig_test.type = Signal;
+                sig_test.data[0] = SIG_SEND; 
+                sig_test.data[1] = msg.data[1];
+                sig_test.data[2] = msg.data[2];
+                send(&msg);
                 break;
             }
             if(msg.type == P2P_S) {

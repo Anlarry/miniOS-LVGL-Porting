@@ -1,5 +1,6 @@
 #include <ipc/ipc.h>
 #include "kipc.h"
+#include <ipc/signal.h>
 
 #include "type.h"
 #include "const.h"
@@ -35,7 +36,7 @@ int msg_free(MsgNode* msgNode) {
     return 0;
 }
 
-void sys_signal_send(PROCESS* proc)
+void sys_signal_send(PROCESS* proc, IPC_MSG *msg)
 {
     STACK_FRAME regs;
     memcpy(&regs, &proc->task.regs, sizeof(STACK_FRAME));
@@ -44,7 +45,76 @@ void sys_signal_send(PROCESS* proc)
     // warp function includes { handler, signal_return }
     // then first execuate handler function
     // then second call signal_return to kernel
+    // TODO
+    disable_int();
 
+    int B_cr3 = proc->task.cr3;
+    int A_cr3;
+    /* change cr3 to B_cr3 */
+    __asm__ __volatile__ (
+        "mov %%cr3, %%eax\n"
+        "mov %%ebx, %%cr3\n"
+        : "=a"(A_cr3)
+        : "b"(B_cr3)
+        :
+    );
+    
+    int B_ss = regs.ss;
+    int A_es ;
+    
+    /* change es to B_ss */
+    __asm__ __volatile__ (
+        "mov %%es, %%ax\n"
+        "mov %%ebx, %%es\n"
+        : "=a"(A_es)
+        : "b"(B_ss)
+        :
+    );
+    
+    /* save context */ 
+    int start = regs.esp - sizeof(STACK_FRAME);
+    for(uint8_t* p = start, *sf = &regs; p < regs.esp; p++, sf++) {
+        __asm__ __volatile__( 
+            "mov %%ax, %%es:(%%edi)"
+            : 
+            : "a"(*sf), "D"(p)
+            :
+        );
+    }
+
+    /* push para */
+    start -= sizeof(Sigaction);
+    Sigaction sigaction = {
+        .handler = msg->data[2]
+    };
+    for(uint8_t* p = start, *sf = &sigaction, i = 0; i < sizeof(Sigaction);i++, p++, sf++) {
+        __asm__ __volatile__( 
+            "mov %%ax, %%es:(%%edi)"
+            : 
+            : "a"(*sf), "D"(p)
+            :
+        );
+    }
+
+
+    /* switch to Handler */
+    proc->task.regs.eip = msg->data[1];
+
+    /*  reverse  */
+    __asm__ __volatile__ (
+        "mov %0, %%es\n"
+        : 
+        : "r"(A_es)
+        :
+    );
+    __asm__ __volatile__ (
+        "mov %0, %%cr3\n"
+        :
+        : "r"(A_cr3)
+        :
+    );
+
+    enable_int();
 }
 
 void sys_signal_return()
@@ -157,13 +227,20 @@ int sys_send(IPC_MSG* msg) {
     msg->src = p_proc_current - proc_table;
     int dst_id = msg->dst;
 
+    PROCESS* proc;
     switch(msg->type)
     {
         case Signal :
         {
-            //PROCESS* proc = proc_table+dst_id;
-            //sys_signal_send(proc, );
-            break;
+            switch(msg->data[0]) 
+            {
+                case SIG_SEND:
+                    proc = proc_table+dst_id;
+                    sys_signal_send(proc, msg);
+                    break;
+                case SIG_RETURN :
+                    break;
+            }
         }
         case P2P_A :
         {
