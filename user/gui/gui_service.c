@@ -46,8 +46,21 @@ void Broadcast() {
 
 }
 
-void CallBack(){
-    
+uint32_t _Handler, _Test;
+void CallBack(lv_obj_t * obj, lv_event_t event){
+    IPC_MSG sig_test ;
+    memset(sig_test.data, 0, sizeof(sig_test.data));
+    sig_test.dst = 2;
+    sig_test.type = Signal;
+    sig_test.data[0] = SIG_SEND; 
+    sig_test.data[1] = _Handler;
+    sig_test.data[2] = _Test;
+    send(&sig_test);
+    switch(event) {
+        case LV_EVENT_CLICKED : 
+
+            break;
+    }
 }
 
 static test_button()
@@ -153,7 +166,7 @@ static void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t
         .y1 = area->y1,
         .y2 = area->y2,
         .color = (Color *)color_p};
-    //GraphFlush(&roi);
+    GraphFlush(&roi);
     lv_disp_flush_ready(disp); /* Indicate you are ready with the flushing*/
 }
 
@@ -272,7 +285,6 @@ void main(int arg, char *argv[])
     int (*_func_3)(int, int, int);
 
     uint32_t ack_data;
-    IPC_MSG sig_test ;
     while (1)
     {
         /* code */
@@ -339,13 +351,11 @@ void main(int arg, char *argv[])
                 }
                 break;
             case RegisterCallback :
-                sig_test.dst = msg.src;
-                sig_test.type = Signal;
-                memset(sig_test.data, 0, sizeof(sig_test.data));
-                sig_test.data[0] = SIG_SEND; 
-                sig_test.data[1] = msg.data[2];
-                sig_test.data[2] = msg.data[3];
-                send(&sig_test);
+                lv_obj_set_event_cb(msg.data[1], CallBack);
+                
+                _Handler = msg.data[2];
+                _Test = msg.data[3];
+                // send(&sig_test);
                 break;
             }
             if(msg.type == P2P_S) {

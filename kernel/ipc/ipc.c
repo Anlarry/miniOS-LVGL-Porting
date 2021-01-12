@@ -80,7 +80,7 @@ void sys_signal_send(PROCESS* proc, IPC_MSG *msg_p)
     
     /* save context */
     int start = *(uint32_t*)(proc->task.esp_save_syscall + 16*4) - sizeof(regs);
-    for(uint32_t* p = start, *sf = proc->task.esp_save_syscall, i=0; i<sizeof(regs)/4; i++,p++, sf++) {
+    for(uint32_t* p = start, *sf = proc->task.esp_save_syscall, i=0; i<sizeof(regs) / sizeof(uint32_t) ; i++,p++, sf++) {
         __asm__ ( 
             "mov %%eax, %%es:(%%edi)"
             : 
@@ -94,7 +94,7 @@ void sys_signal_send(PROCESS* proc, IPC_MSG *msg_p)
     Sigaction sigaction = {
         .handler = msg.data[2]
     };
-    for(uint32_t* p = start, *sf = &sigaction, i = 0; i < sizeof(Sigaction)/4;i++, p++, sf++) {
+    for(uint32_t* p = start, *sf = &sigaction, i = 0; i < sizeof(Sigaction) / sizeof(uint32_t) ;i++, p++, sf++) {
         __asm__ (
             "mov %%eax, %%es:(%%edi)"
             :
