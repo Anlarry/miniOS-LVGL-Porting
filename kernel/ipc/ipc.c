@@ -78,12 +78,11 @@ void sys_signal_send(PROCESS* proc, IPC_MSG *msg_p)
         :
     );
     
-    /* save context */ 
-    int context_size = 8 + 4 + 6; // 18
-    int start = regs.esp - context_size;
-    for(uint8_t* p = start, *sf = proc->task.esp_save_syscall; p < regs.esp; p++, sf++) {
+    /* save context */
+    int start = *(uint32_t*)(proc->task.esp_save_syscall + 16*4) - sizeof(regs);
+    for(uint32_t* p = start, *sf = proc->task.esp_save_syscall, i=0; i<sizeof(regs)/4; i++,p++, sf++) {
         __asm__ ( 
-            "mov %%ax, %%es:(%%edi)"
+            "mov %%eax, %%es:(%%edi)"
             : 
             : "a"(*sf), "D"(p)
             :
@@ -95,9 +94,9 @@ void sys_signal_send(PROCESS* proc, IPC_MSG *msg_p)
     Sigaction sigaction = {
         .handler = msg.data[2]
     };
-    for(uint8_t* p = start, *sf = &sigaction, i = 0; i < sizeof(Sigaction);i++, p++, sf++) {
+    for(uint32_t* p = start, *sf = &sigaction, i = 0; i < sizeof(Sigaction)/4;i++, p++, sf++) {
         __asm__ (
-            "mov %%ax, %%es:(%%edi)"
+            "mov %%eax, %%es:(%%edi)"
             :
             : "a"(*sf), "D"(p)
             :
@@ -138,11 +137,39 @@ void sys_signal_return(IPC_MSG* msg)
 
     // copy saved regs from stack to  this regs
     // to some operation to compute true address
-    int ebp = msg.data[1];
+    int ebp = msg->data[1];
     int esp_syscall = p_proc_current->task.esp_save_syscall;
-    int last_esp = ebp+ sizeof(Sigaction);    //int save esp
-    memcpy(&regs, last_esp, sizeof(STACK_FRAME));
-    memcpy(&esp_syscall, &regs, sizeof(STACK_FRAME));
+    int last_esp = ebp + sizeof(Sigaction) + 8;    //int save esp
+
+    uint16_t user_ss = p_proc_current->task.regs.ss;
+    uint16_t kernel_es ;
+
+    /* change es to B_ss */
+    __asm__  (
+    "mov %%es, %%ax\n"
+    "mov %%ebx, %%es\n"
+    : "=a"(kernel_es)
+    : "b"(user_ss)
+    :
+    );
+
+    for(uint32_t* p = &regs, *q = last_esp, i = 0; i < sizeof(regs)/4;i++, p++, q++)
+    {
+        __asm__ (
+        "mov %%eax, %%es:(%%edi)"
+        :
+        : "a"(*q), "D"(p)
+        :
+        );
+    }
+
+    __asm__ (
+            "mov %%eax, %%es\n"
+            :
+            : "a"(kernel_es)
+    );
+    memcpy(esp_syscall, &regs, sizeof(STACK_FRAME));
+
     //
 }
 
@@ -270,6 +297,7 @@ int sys_send(IPC_MSG* msg) {
                     sys_signal_send(proc, msg);
                     break;
                 case SIG_RETURN :
+                    sys_signal_return(msg);
                     break;
             }
             break;

@@ -69,8 +69,13 @@ void main(int arg, char *argv[]) {
 
     send(&msg);
 
+
+
+    int j=0;
+    j++;
     while(1) {
-        for(int i = 0; i < 100000; i++) 
+        for(int i = 0; i < 100000; i++)
+            j++
             ;
 
     }

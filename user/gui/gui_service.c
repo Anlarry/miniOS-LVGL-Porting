@@ -317,7 +317,7 @@ void main(int arg, char *argv[])
 
                 // lv_obj_set_x(btn1, touchpad_x);
                 // lv_obj_set_y(btn1, touchpad_y);
-                printf("(%d %d %d %d)", usr_data->data[0], usr_data->data[1], usr_data->data[2], usr_data->data[3]);
+                //printf("(%d %d %d %d)", usr_data->data[0], usr_data->data[1], usr_data->data[2], usr_data->data[3]);
                 break;
             case Function :
                 _func = FunctionTable[msg.data[1]];
