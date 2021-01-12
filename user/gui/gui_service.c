@@ -136,7 +136,7 @@ static test_button()
 
 static void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p)
 {
-    printf("()");
+    //printf("()");
     // static uint32_t flush_buf[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10];
     // for(int i = area->x1 , k = 0;i <= area->x2; i++) {
     //     for(int j = - area->y1; j <= area->y2; j++) {
@@ -149,7 +149,7 @@ static void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t
         .y1 = area->y1,
         .y2 = area->y2,
         .color = (Color *)color_p};
-    GraphFlush(&roi);
+    //GraphFlush(&roi);
     lv_disp_flush_ready(disp); /* Indicate you are ready with the flushing*/
 }
 

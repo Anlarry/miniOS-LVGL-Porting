@@ -123,16 +123,15 @@ void sys_signal_send(PROCESS* proc, IPC_MSG *msg)
 void sys_signal_return(IPC_MSG* msg)
 {
     STACK_FRAME regs;
+
     // copy saved regs from stack to  this regs
     // to some operation to compute true address
-
-//    int esp =  proc->task.regs.esp;
-//    esp += 4; //TODO
-//    memcpy(&regs, esp, sizeof(STACK_FRAME));
-//
-//    memcpy(&proc->task.regs, &regs, sizeof(STACK_FRAME));
+    int ebp = msg.data[1];
+    int esp_syscall = p_proc_current->task.esp_save_syscall;
+    int last_esp = ebp+ sizeof(sig);    //int save esp
+    memcpy(&regs, last_esp, sizeof(STACK_FRAME));
+    memcpy(&esp_syscall, &regs, sizeof(STACK_FRAME));
     //
-
 }
 
 

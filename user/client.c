@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <ipc/ipc.h>
 #include <stddef.h>
 #include <gui/gui.h>
@@ -5,6 +6,9 @@
 #include <ipc/signal.h>
 
 void Test() {
+    printf("***");
+    int i =0;
+    i++;
     for(int i = 0; i < 5; i++) ;
     return ;
 }
@@ -33,7 +37,7 @@ void main(int arg, char *argv[]) {
     msg.dst = 4;
     msg.type = P2P_A;
     msg.data[0] = RegisterCallback;
-    msg.data[1] = Handler;
+    msg.data[1] = Test;
     msg.data[2] = Test;
     send(&msg);
 
