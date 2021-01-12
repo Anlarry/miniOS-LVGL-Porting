@@ -1,1533 +1,1073 @@
 
-user/gui_service.gdb.bin：     文件格式 elf32-i386
-user/gui_service.gdb.bin
-体系结构：i386，标志 0x00000112：
-EXEC_P, HAS_SYMS, D_PAGED
-起始地址 0x08087bd0
+user/client.gdb.bin：     文件格式 elf32-i386
 
-程序头：
-    LOAD off    0x00000000 vaddr 0x08048000 paddr 0x08047000 align 2**12
-         filesz 0x000000d4 memsz 0x000000d4 flags r--
-    LOAD off    0x000000e0 vaddr 0x080480e0 paddr 0x080480e0 align 2**12
-         filesz 0x0004c9b0 memsz 0x0004c9b0 flags r-x
-    LOAD off    0x0004cfc0 vaddr 0x08095fc0 paddr 0x08095fc0 align 2**12
-         filesz 0x00000331 memsz 0x00026f60 flags rw-
-   STACK off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**4
-         filesz 0x00000000 memsz 0x00000000 flags rwx
-   RELRO off    0x0004cfc0 vaddr 0x08095fc0 paddr 0x08095fc0 align 2**0
-         filesz 0x00000040 memsz 0x00000040 flags r--
+Contents of section .text:
+ 80480c0 5589e557 5383ec30 e8f80300 0081c333  U..WS..0.......3
+ 80480d0 1f00008d 55c8b800 000000b9 0c000000  ....U...........
+ 80480e0 89d7f3ab 66c745c8 ffff66c7 45ca0400  ....f.E...f.E...
+ 80480f0 c745cc02 000000c7 45d00400 0000c745  .E......E......E
+ 8048100 d8020000 008b4508 8945dc8b 450c8945  ......E..E..E..E
+ 8048110 e083ec0c 8d45c850 e8250600 0083c410  .....E.P.%......
+ 8048120 8d65f85b 5f5dc355 89e55753 83ec30e8  .e.[_].U..WS..0.
+ 8048130 91030000 81c3cc1e 00008d55 c8b80000  ...........U....
+ 8048140 0000b90c 00000089 d7f3ab66 c745c8ff  ...........f.E..
+ 8048150 ff66c745 ca0400c7 45cc0100 0000c745  .f.E....E......E
+ 8048160 d0040000 00c745d4 01000000 c745d802  ......E......E..
+ 8048170 0000008b 45088945 dc8b450c 8945e083  ....E..E..E..E..
+ 8048180 ec0c8d45 c850e8b7 05000083 c4108d65  ...E.P.........e
+ 8048190 f85b5f5d c35589e5 575383ec 30e82303  .[_].U..WS..0.#.
+ 80481a0 000081c3 5e1e0000 8d55c8b8 00000000  ....^....U......
+ 80481b0 b90c0000 0089d7f3 ab66c745 c8ffff66  .........f.E...f
+ 80481c0 c745ca04 00c745cc 02000000 c745d004  .E....E......E..
+ 80481d0 000000c7 45d40200 0000c745 d8020000  ....E......E....
+ 80481e0 008b4508 8945dc8b 450c8945 e083ec0c  ..E..E..E..E....
+ 80481f0 8d45c850 e8490500 0083c410 8d65f85b  .E.P.I.......e.[
+ 8048200 5f5dc355 89e55753 83ec30e8 b5020000  _].U..WS..0.....
+ 8048210 81c3f01d 00008d55 c8b80000 0000b90c  .......U........
+ 8048220 00000089 d7f3ab66 c745c8ff ff66c745  .......f.E...f.E
+ 8048230 ca0400c7 45cc0100 0000c745 d0040000  ....E......E....
+ 8048240 00c745d4 03000000 c745d802 0000008b  ..E......E......
+ 8048250 45088945 dc8b450c 8945e083 ec0c8d45  E..E..E..E.....E
+ 8048260 c850e8db 04000083 c4108d65 f85b5f5d  .P.........e.[_]
+ 8048270 c35589e5 575383ec 30e84702 000081c3  .U..WS..0.G.....
+ 8048280 821d0000 8d55c8b8 00000000 b90c0000  .....U..........
+ 8048290 0089d7f3 ab66c745 c8ffff66 c745ca04  .....f.E...f.E..
+ 80482a0 00c745cc 02000000 c745d004 000000c7  ..E......E......
+ 80482b0 45d40400 0000c745 d8020000 008b4508  E......E......E.
+ 80482c0 8945dc8b 450c8945 e083ec0c 8d45c850  .E..E..E.....E.P
+ 80482d0 e86d0400 0083c410 8d65f85b 5f5dc355  .m.......e.[_].U
+ 80482e0 89e55753 83ec30e8 d9010000 81c3141d  ..WS..0.........
+ 80482f0 00008d55 c8b80000 0000b90c 00000089  ...U............
+ 8048300 d7f3ab66 c745c8ff ff66c745 ca0400c7  ...f.E...f.E....
+ 8048310 45cc0200 0000c745 d0040000 00c745d4  E......E......E.
+ 8048320 05000000 c745d802 0000008b 45088945  .....E......E..E
+ 8048330 dc8b450c 8945e083 ec0c8d45 c850e8ff  ..E..E.....E.P..
+ 8048340 03000083 c4108d65 f85b5f5d c35589e5  .......e.[_].U..
+ 8048350 5783ec40 e8680100 0005a71c 00008d55  W..@.h.........U
+ 8048360 c8b80000 0000b90c 00000089 d7f3ab66  ...............f
+ 8048370 c745c8ff ff66c745 ca0400c7 45cc0100  .E...f.E....E...
+ 8048380 00008d45 c883c008 8945f88b 45f8c700  ...E.....E..E...
+ 8048390 02000000 8b45f8c7 4004fa00 00008b45  .....E..@......E
+ 80483a0 f8c74008 fa000000 9083c440 5f5dc38d  ..@........@_]..
+ 80483b0 4c240483 e4f0ff71 fc5589e5 57535183  L$.....q.U..WSQ.
+ 80483c0 ec4ce8fe 00000081 c3391c00 008d55ac  .L.......9....U.
+ 80483d0 b8000000 00b90c00 000089d7 f3ab66c7  ..............f.
+ 80483e0 45acffff 66c745ae 0400c745 b0020000  E...f.E....E....
+ 80483f0 008d45ac 83c00889 45e08b45 e0c70002  ..E.....E..E....
+ 8048400 0000008b 45e0c740 04320000 008b45e0  ....E..@.2....E.
+ 8048410 c7400832 00000083 ec0c8d45 ac50e81f  .@.2.......E.P..
+ 8048420 03000083 c41083ec 0c8d45ac 50e81e03  ..........E.P...
+ 8048430 000083c4 108b45b4 8945dc83 ec086890  ......E..E....h.
+ 8048440 010000ff 75dce8b8 fdffff83 c41083ec  ....u...........
+ 8048450 08689001 0000ff75 dce8c9fc ffff83c4  .h.....u........
+ 8048460 1083ec04 6a306a00 8d45ac50 e8f80000  ....j0j..E.P....
+ 8048470 0083c410 66c745ae 0400c745 b0010000  ....f.E....E....
+ 8048480 00c745b4 05000000 c7c0c984 04088945  ..E............E
+ 8048490 b88d834d e3ffff89 45bc83ec 0c8d45ac  ...M....E.....E.
+ 80484a0 50e89c02 000083c4 10c745e4 00000000  P.........E.....
+ 80484b0 eb048345 e401817d e49f8601 007ef3eb  ...E...}.....~..
+ 80484c0 e88b0424 c38b1c24 c35589e5 575383ec  ...$...$.U..WS..
+ 80484d0 40e8efff ffff81c3 2a1b0000 8b450889  @.......*....E..
+ 80484e0 45f48b45 f4ffd08d 55c4b800 000000b9  E..E....U.......
+ 80484f0 0c000000 89d7f3ab 66c745c4 ffff66c7  ........f.E...f.
+ 8048500 45c6ffff c745c803 000000c7 45cc0100  E....E......E...
+ 8048510 000083ec 0c8d45c4 50e82402 000083c4  ......E.P.$.....
+ 8048520 10908d65 f85b5f5d c3669066 90669090  ...e.[_].f.f.f..
+ 8048530 5051e878 fefffff4 66906690 66906690  PQ.x....f.f.f.f.
+ 8048540 5589e556 57518b7d 088b750c 8b4d1083  U..VWQ.}..u..M..
+ 8048550 f900740b 3e8a0646 26880747 49ebf08b  ..t.>..F&..GI...
+ 8048560 4508595f 5e89ec5d c35589e5 5657518b  E.Y_^..].U..VWQ.
+ 8048570 7d088b55 0c8b4d10 83f90074 06881747  }..U..M....t...G
+ 8048580 49ebf559 5f5e89ec 5dc35589 e58b750c  I..Y_^..].U...u.
+ 8048590 8b7d088a 06468807 473c0075 f68b4508  .}...F..G<.u..E.
+ 80485a0 5dc35589 e5b80000 00008b75 08803e00  ].U........u..>.
+ 80485b0 74044640 ebf75dc3 66906690 66906690  t.F@..].f.f.f.f.
+ 80485c0 b8000000 00cd90c3 b8010000 00cd90c3  ................
+ 80485d0 8b5c2404 b8020000 00cd90c3 8b5c2404  .\$..........\$.
+ 80485e0 b8030000 00cd90c3 538b5c24 08b80400  ........S.\$....
+ 80485f0 0000cd90 5bc38b5c 2404b805 000000cd  ....[..\$.......
+ 8048600 90c38b5c 2404b806 000000cd 90c38b5c  ...\$..........\
+ 8048610 2404b807 000000cd 90c3b808 000000cd  $...............
+ 8048620 90c3538b 5c2408b8 09000000 cd905bc3  ..S.\$........[.
+ 8048630 8b5c2404 b80a0000 00cd90c3 8b5c2404  .\$..........\$.
+ 8048640 b80b0000 00cd90c3 538b5c24 08b80c00  ........S.\$....
+ 8048650 0000cd90 5bc3538b 5c2408b8 0d000000  ....[.S.\$......
+ 8048660 cd905bc3 8b5c2404 b80e0000 00cd90c3  ..[..\$.........
+ 8048670 538b5c24 08b80f00 0000cd90 5bc38b5c  S.\$........[..\
+ 8048680 2404b810 000000cd 90c3536a 0289e383  $.........Sj....
+ 8048690 c304b811 000000cd 9083c404 5bc36a01  ............[.j.
+ 80486a0 89e3b812 000000cd 9083c404 c36a0389  .............j..
+ 80486b0 e3b81300 0000cd90 83c404c3 6a0389e3  ............j...
+ 80486c0 b8140000 00cd9083 c404c36a 0389e3b8  ...........j....
+ 80486d0 15000000 cd9083c4 04c36a01 89e3b816  ..........j.....
+ 80486e0 000000cd 9083c404 c36a0189 e3b81700  .........j......
+ 80486f0 0000cd90 83c404c3 6a0189e3 b8180000  ........j.......
+ 8048700 00cd9083 c404c36a 0189e3b8 19000000  .......j........
+ 8048710 cd9083c4 04c36a01 89e3b81a 000000cd  ......j.........
+ 8048720 9083c404 c36a0189 e3b81b00 0000cd90  .....j..........
+ 8048730 83c404c3 538b5c24 08b81c00 0000cd90  ....S.\$........
+ 8048740 5bc3538b 5c2408b8 1d000000 cd905bc3  [.S.\$........[.
+ 8048750 538b5c24 08b81e00 0000cd90 5bc3      S.\$........[.  
+Contents of section .eh_frame:
+ 8048760 14000000 00000000 017a5200 017c0801  .........zR..|..
+ 8048770 1b0c0404 88010000 24000000 1c000000  ........$.......
+ 8048780 40f9ffff 67000000 00410e08 8502420d  @...g....A....B.
+ 8048790 05458703 8304025c c341c741 c50c0404  .E.....\.A.A....
+ 80487a0 24000000 44000000 7ff9ffff 6e000000  $...D.......n...
+ 80487b0 00410e08 8502420d 05458703 83040263  .A....B..E.....c
+ 80487c0 c341c741 c50c0404 24000000 6c000000  .A.A....$...l...
+ 80487d0 c5f9ffff 6e000000 00410e08 8502420d  ....n....A....B.
+ 80487e0 05458703 83040263 c341c741 c50c0404  .E.....c.A.A....
+ 80487f0 24000000 94000000 0bfaffff 6e000000  $...........n...
+ 8048800 00410e08 8502420d 05458703 83040263  .A....B..E.....c
+ 8048810 c341c741 c50c0404 24000000 bc000000  .A.A....$.......
+ 8048820 51faffff 6e000000 00410e08 8502420d  Q...n....A....B.
+ 8048830 05458703 83040263 c341c741 c50c0404  .E.....c.A.A....
+ 8048840 24000000 e4000000 97faffff 6e000000  $...........n...
+ 8048850 00410e08 8502420d 05458703 83040263  .A....B..E.....c
+ 8048860 c341c741 c50c0404 20000000 0c010000  .A.A.... .......
+ 8048870 ddfaffff 62000000 00410e08 8502420d  ....b....A....B.
+ 8048880 05448703 0259c741 c50c0404 28000000  .D...Y.A....(...
+ 8048890 30010000 1bfbffff 12010000 00440c01  0............D..
+ 80488a0 00471005 02750045 0f037574 06100702  .G...u.E..ut....
+ 80488b0 757c1003 02757800 10000000 5c010000  u|...ux.....\...
+ 80488c0 01fcffff 04000000 00000000 10000000  ................
+ 80488d0 70010000 f1fbffff 04000000 00000000  p...............
+ 80488e0 24000000 84010000 e1fbffff 60000000  $...........`...
+ 80488f0 00410e08 8502420d 05458703 83040255  .A....B..E.....U
+ 8048900 c341c741 c50c0404                    .A.A....        
+Contents of section .got.plt:
+ 804a000 00000000 00000000 00000000           ............    
+Contents of section .comment:
+ 0000 4743433a 2028474e 55292037 2e352e30  GCC: (GNU) 7.5.0
+ 0010 00                                   .               
+Contents of section .debug_aranges:
+ 0000 1c000000 02000000 00000400 00000000  ................
+ 0010 c0800408 01040000 00000000 00000000  ................
+ 0020 1c000000 02000304 00000400 00000000  ................
+ 0030 c9840408 60000000 00000000 00000000  ....`...........
+ 0040 1c000000 0200bc05 00000400 00000000  ................
+ 0050 40850408 78000000 00000000 00000000  @...x...........
+ 0060 1c000000 0200fc05 00000400 00000000  ................
+ 0070 c0850408 9e010000 00000000 00000000  ................
+Contents of section .debug_info:
+ 0000 ff030000 04000000 00000401 22000000  ............"...
+ 0010 0c8d0100 009a0000 00c08004 08010400  ................
+ 0020 00000000 00020108 09010000 02020781  ................
+ 0030 00000002 04075b01 00000204 07560100  ......[......V..
+ 0040 00020106 0b010000 0202059b 01000003  ................
+ 0050 1e010000 03282c00 00000404 05696e74  .....(,......int
+ 0060 00033201 0000032a 33000000 0208057f  ..2....*3.......
+ 0070 01000002 08075101 00000204 05840100  ......Q.........
+ 0080 00050487 00000002 01061201 00000320  ............... 
+ 0090 01000004 194f0000 00033401 0000041a  .....O....4.....
+ 00a0 61000000 06680100 0030050a e1000000  a....h...0......
+ 00b0 07737263 00050c8e 00000000 07647374  .src.........dst
+ 00c0 00050d8e 00000002 08960100 00050e99  ................
+ 00d0 00000004 08470100 00050fe1 00000008  .....G..........
+ 00e0 00099900 0000f100 00000a33 00000009  ...........3....
+ 00f0 00036801 00000510 a4000000 0bfe0000  ..h.............
+ 0100 00070433 00000005 142c0100 000cf501  ...3.....,......
+ 0110 0000000c 03010000 010c3d01 0000020c  ..........=.....
+ 0120 e2010000 030d4143 4b000400 020c04e9  ......ACK.......
+ 0130 01000002 10047700 00000bfa 00000007  ......w.........
+ 0140 04330000 00061f70 0100000c 29010000  .3.....p....)...
+ 0150 000c9400 0000010c a5010000 020cac01  ................
+ 0160 0000030c ff010000 040ce900 00000500  ................
+ 0170 0e18062b 91010000 08960100 00062c5a  ...+..........,Z
+ 0180 00000000 08470100 00062d91 01000004  .....G....-.....
+ 0190 00095a00 0000a101 00000a33 00000004  ..Z........3....
+ 01a0 000f4755 4900062e 70010000 104c0100  ..GUI...p....L..
+ 01b0 000226af 83040812 01000001 9c300200  ..&..........0..
+ 01c0 00116172 67000226 5a000000 02910012  ..arg..&Z.......
+ 01d0 b3010000 02263002 00000291 04136d73  .....&0.......ms
+ 01e0 67000227 f1000000 0375ac7f 14430100  g..'.....u...C..
+ 01f0 00022d36 02000002 75601362 746e0002  ..-6....u`.btn..
+ 0200 355a0000 0002755c 15170100 00023a5a  5Z....u\......:Z
+ 0210 00000019 02000016 0017a984 04081600  ................
+ 0220 00001369 0002435a 00000002 75640000  ...i..CZ....ud..
+ 0230 05048100 00000504 a1010000 18dd0100  ................
+ 0240 0002174d 83040862 00000001 9c6e0200  ...M...b.....n..
+ 0250 00136d73 67000218 f1000000 02914014  ..msg.........@.
+ 0260 43010000 021e3602 00000291 70001912  C.....6.....p...
+ 0270 00000001 4b5a0000 00df8204 086e0000  ....KZ.......n..
+ 0280 00019cb2 02000012 08020000 014b5a00  .............KZ.
+ 0290 00000291 00120e02 0000014b 5a000000  ...........KZ...
+ 02a0 02910413 6d736700 014df100 00000291  ....msg..M......
+ 02b0 40001900 00000001 3e5a0000 00718204  @.......>Z...q..
+ 02c0 086e0000 00019cf6 02000012 08020000  .n..............
+ 02d0 013e5a00 00000291 00120e02 0000013e  .>Z............>
+ 02e0 5a000000 02910413 6d736700 0140f100  Z.......msg..@..
+ 02f0 00000291 40001914 02000001 315a0000  ....@.......1Z..
+ 0300 00038204 086e0000 00019c3a 03000012  .....n.....:....
+ 0310 08020000 01315a00 00000291 00120e02  .....1Z.........
+ 0320 00000131 5a000000 02910413 6d736700  ...1Z.......msg.
+ 0330 0133f100 00000291 400019c8 01000001  .3......@.......
+ 0340 245a0000 00958104 086e0000 00019c7e  $Z.......n.....~
+ 0350 03000012 08020000 01245a00 00000291  .........$Z.....
+ 0360 00120e02 00000124 5a000000 02910413  .......$Z.......
+ 0370 6d736700 0126f100 00000291 40001970  msg..&......@..p
+ 0380 01000001 175a0000 00278104 086e0000  .....Z...'...n..
+ 0390 00019cc2 03000012 08020000 01175a00  ..............Z.
+ 03a0 00000291 00120e02 00000117 5a000000  ............Z...
+ 03b0 02910413 6d736700 0119f100 00000291  ....msg.........
+ 03c0 40001ab8 01000001 0a5a0000 00c08004  @........Z......
+ 03d0 08670000 00019c12 08020000 010a5a00  .g............Z.
+ 03e0 00000291 00120e02 0000010a 5a000000  ............Z...
+ 03f0 02910413 6d736700 010cf100 00000291  ....msg.........
+ 0400 400000b5 01000004 00830100 00040122  @.............."
+ 0410 0000000c 30020000 9a000000 c9840408  ....0...........
+ 0420 60000000 fd000000 02010809 01000002  `...............
+ 0430 02078100 00000204 075b0100 00020407  .........[......
+ 0440 56010000 0201060b 01000002 02059b01  V...............
+ 0450 0000031e 01000002 282c0000 00040405  ........(,......
+ 0460 696e7400 03320100 00022a33 00000002  int..2....*3....
+ 0470 08057f01 00000208 07510100 00020405  .........Q......
+ 0480 84010000 05040201 06120100 00032001  .............. .
+ 0490 00000319 4f000000 03340100 00031a61  ....O....4.....a
+ 04a0 00000006 68010000 30040add 00000007  ....h...0.......
+ 04b0 73726300 040c8a00 00000007 64737400  src.........dst.
+ 04c0 040d8a00 00000208 96010000 040e9500  ................
+ 04d0 00000408 47010000 040fdd00 00000800  ....G...........
+ 04e0 09950000 00ed0000 000a3300 00000900  ..........3.....
+ 04f0 03680100 000410a0 0000000b fe000000  .h..............
+ 0500 07043300 00000414 28010000 0cf50100  ..3.....(.......
+ 0510 00000c03 01000001 0c3d0100 00020ce2  .........=......
+ 0520 01000003 0d41434b 0004000b 3d020000  .....ACK....=...
+ 0530 07043300 00000425 46010000 0c650200  ..3....%F....e..
+ 0540 00000c76 02000001 00064602 00000405  ...v......F.....
+ 0550 065f0100 00082802 00000507 81000000  ._....(.........
+ 0560 00000346 02000005 08460100 000e6e02  ...F.....F....n.
+ 0570 00000103 c9840408 60000000 019cab01  ........`.......
+ 0580 00000f5b 02000001 035f0100 00029100  ...[....._......
+ 0590 10230200 000104b2 01000002 916c1050  .#...........l.P
+ 05a0 02000001 07ed0000 000391bc 7f0011b2  ................
+ 05b0 01000012 001304ab 01000000 3c000000  ............<...
+ 05c0 02007202 00000401 40850408 b8850408  ..r.....@.......
+ 05d0 92010000 6c69622f 73747269 6e672e61  ....lib/string.a
+ 05e0 736d004e 41534d20 322e3135 2e303500  sm.NASM 2.15.05.
+ 05f0 01800240 85040800 00000000 40000000  ...@........@...
+ 0600 02008d02 00000401 c0850408 5e870408  ............^...
+ 0610 12020000 6b65726e 656c2f73 79736361  ....kernel/sysca
+ 0620 6c6c2e61 736d004e 41534d20 322e3135  ll.asm.NASM 2.15
+ 0630 2e303500 018002c0 85040800 00000000  .05.............
+Contents of section .debug_abbrev:
+ 0000 01110125 0e130b03 0e1b0e11 01120610  ...%............
+ 0010 17000002 24000b0b 3e0b030e 00000316  ....$...>.......
+ 0020 00030e3a 0b3b0b49 13000004 24000b0b  ...:.;.I....$...
+ 0030 3e0b0308 0000050f 000b0b49 13000006  >..........I....
+ 0040 1301030e 0b0b3a0b 3b0b0113 0000070d  ......:.;.......
+ 0050 0003083a 0b3b0b49 13380b00 00080d00  ...:.;.I.8......
+ 0060 030e3a0b 3b0b4913 380b0000 09010149  ..:.;.I.8......I
+ 0070 13011300 000a2100 49132f0b 00000b04  ......!.I./.....
+ 0080 01030e3e 0b0b0b49 133a0b3b 0b011300  ...>...I.:.;....
+ 0090 000c2800 030e1c0b 00000d28 0003081c  ..(........(....
+ 00a0 0b00000e 13010b0b 3a0b3b0b 01130000  ........:.;.....
+ 00b0 0f160003 083a0b3b 0b491300 00102e01  .....:.;.I......
+ 00c0 3f19030e 3a0b3b0b 27191101 12064018  ?...:.;.'.....@.
+ 00d0 96421901 13000011 05000308 3a0b3b0b  .B..........:.;.
+ 00e0 49130218 00001205 00030e3a 0b3b0b49  I..........:.;.I
+ 00f0 13021800 00133400 03083a0b 3b0b4913  ......4...:.;.I.
+ 0100 02180000 14340003 0e3a0b3b 0b491302  .....4...:.;.I..
+ 0110 18000015 2e013f19 030e3a0b 3b0b4913  ......?...:.;.I.
+ 0120 3c190113 00001618 00000017 0b011101  <...............
+ 0130 12060000 182e013f 19030e3a 0b3b0b11  .......?...:.;..
+ 0140 01120640 18974219 01130000 192e013f  ...@..B........?
+ 0150 19030e3a 0b3b0b27 19491311 01120640  ...:.;.'.I.....@
+ 0160 18964219 01130000 1a2e013f 19030e3a  ..B........?...:
+ 0170 0b3b0b27 19491311 01120640 18964219  .;.'.I.....@..B.
+ 0180 00000001 1101250e 130b030e 1b0e1101  ......%.........
+ 0190 12061017 00000224 000b0b3e 0b030e00  .......$...>....
+ 01a0 00031600 030e3a0b 3b0b4913 00000424  ......:.;.I....$
+ 01b0 000b0b3e 0b030800 00050f00 0b0b0000  ...>............
+ 01c0 06130103 0e0b0b3a 0b3b0b01 13000007  .......:.;......
+ 01d0 0d000308 3a0b3b0b 4913380b 0000080d  ....:.;.I.8.....
+ 01e0 00030e3a 0b3b0b49 13380b00 00090101  ...:.;.I.8......
+ 01f0 49130113 00000a21 0049132f 0b00000b  I......!.I./....
+ 0200 0401030e 3e0b0b0b 49133a0b 3b0b0113  ....>...I.:.;...
+ 0210 00000c28 00030e1c 0b00000d 28000308  ...(........(...
+ 0220 1c0b0000 0e2e013f 19030e3a 0b3b0b27  .......?...:.;.'
+ 0230 19110112 06401896 42190113 00000f05  .....@..B.......
+ 0240 00030e3a 0b3b0b49 13021800 00103400  ...:.;.I......4.
+ 0250 030e3a0b 3b0b4913 02180000 11150101  ..:.;.I.........
+ 0260 13000012 18000000 130f000b 0b491300  .............I..
+ 0270 00000111 01110112 01100603 08250813  .............%..
+ 0280 05000002 2e001101 40060000 00011101  ........@.......
+ 0290 11011201 10060308 25081305 0000022e  ........%.......
+ 02a0 00110140 06000000                    ...@....        
+Contents of section .debug_line:
+ 0000 f9000000 03008700 00000101 fb0e0d00  ................
+ 0010 01010101 00000001 0000012e 2e2f696e  ............./in
+ 0020 636c7564 652f6775 69002f75 73722f69  clude/gui./usr/i
+ 0030 6e636c75 64652f62 69747300 2e2e2f69  nclude/bits.../i
+ 0040 6e636c75 64652f69 70630000 6170692e  nclude/ipc..api.
+ 0050 68000100 00636c69 656e742e 63000000  h....client.c...
+ 0060 00747970 65732e68 00020000 73746469  .types.h....stdi
+ 0070 6e742d75 696e746e 2e680002 00006970  nt-uintn.h....ip
+ 0080 632e6800 03000067 75692e68 00010000  c.h....gui.h....
+ 0090 00000502 c0800408 030a0108 2f023e18  ............/.>.
+ 00a0 e579082f 024518e5 79082f02 4518e579  .y./.E..y./.E..y
+ 00b0 082f0245 18e57908 2f024518 e579082f  ./.E..y./.E..y./
+ 00c0 024518e5 04020343 74081302 24189191  .E.....Ct...$...
+ 00d0 9fa02168 08c90224 1891919f 9fe6e668  ..!h...$.......h
+ 00e0 082f0830 082f6775 759191e7 00020403  ./.0./guu.......
+ 00f0 06900002 04014a90 02020001 01910000  ......J.........
+ 0100 00030076 00000001 01fb0e0d 00010101  ...v............
+ 0110 01000000 01000001 69706300 2f757372  ........ipc./usr
+ 0120 2f696e63 6c756465 2f626974 73002e2e  /include/bits...
+ 0130 2f696e63 6c756465 2f697063 00007369  /include/ipc..si
+ 0140 676e616c 2e630001 00007479 7065732e  gnal.c....types.
+ 0150 68000200 00737464 696e742d 75696e74  h....stdint-uint
+ 0160 6e2e6800 02000069 70632e68 00030000  n.h....ipc.h....
+ 0170 7369676e 616c2e68 00030000 00000502  signal.h........
+ 0180 c9840408 14083067 59022b18 e5020800  ......0gY.+.....
+ 0190 01017c00 00000200 25000000 0101fb0e  ..|.....%.......
+ 01a0 0d000101 01010000 00010000 01006c69  ..............li
+ 01b0 622f7374 72696e67 2e61736d 00000000  b/string.asm....
+ 01c0 00000502 40850408 03130121 30212122  ....@......!0!!"
+ 01d0 3d3d3e3d 303d223d 2221303e 2121212f  ==>=0="="!0>!!!/
+ 01e0 22282130 2121223d 3d3e3d30 2f222131  "(!0!!"==>=0/"!1
+ 01f0 2121212f 22282130 3d3f2f22 2f222f30  !!!/"(!0=?/"/"/0
+ 0200 3e212821 30593f3d 2f212131 21020100  >!(!0Y?=/!!1!...
+ 0210 0101ec00 00000200 29000000 0101fb0e  ........).......
+ 0220 0d000101 01010000 00010000 01006b65  ..............ke
+ 0230 726e656c 2f737973 63616c6c 2e61736d  rnel/syscall.asm
+ 0240 00000000 00000502 c0850408 03d80001  ................
+ 0250 592f2659 2f264b59 2f264b59 2f26214b  Y/&Y/&KY/&KY/&!K
+ 0260 592f2126 4b592f26 4b592f26 4b592f27  Y/!&KY/&KY/&KY/'
+ 0270 592f2621 4b592f21 264b592f 264b592f  Y/&!KY/!&KY/&KY/
+ 0280 26214b59 2f212621 4b592f21 264b592f  &!KY/!&!KY/!&KY/
+ 0290 26214b59 2f21264b 592f0309 02010121  &!KY/!&KY/.....!
+ 02a0 2f2f3d59 2f3d2127 2f2f592f 3d262f2f  //=Y/=!'//Y/=&//
+ 02b0 592f3d26 2f2f592f 3d262f2f 592f3d26  Y/=&//Y/=&//Y/=&
+ 02c0 2f2f592f 3d242f2f 592f3d23 2f2f592f  //Y/=$//Y/=#//Y/
+ 02d0 3d232f2f 592f3d23 2f2f592f 3d232f2f  =#//Y/=#//Y/=#//
+ 02e0 592f3d03 10020101 214b592f 21037202  Y/=.....!KY/!.r.
+ 02f0 0101214b 592f211b 214b592f 21020100  ..!KY/!.!KY/!...
+ 0300 0101                                 ..              
+Contents of section .debug_str:
+ 0000 6c765f6c 6162656c 5f637265 6174655f  lv_label_create_
+ 0010 63006c76 5f77696e 5f637265 6174655f  c.lv_win_create_
+ 0020 6300474e 55204331 3120372e 352e3020  c.GNU C11 7.5.0 
+ 0030 2d6d3332 202d6d74 756e653d 67656e65  -m32 -mtune=gene
+ 0040 72696320 2d6d6172 63683d78 38362d36  ric -march=x86-6
+ 0050 34202d67 202d666e 6f2d6275 696c7469  4 -g -fno-builti
+ 0060 6e202d66 6e6f2d73 7461636b 2d70726f  n -fno-stack-pro
+ 0070 74656374 6f72005f 466c6f61 74313238  tector._Float128
+ 0080 0073686f 72742075 6e736967 6e656420  .short unsigned 
+ 0090 696e7400 4d6f7573 65002f72 756e2f6d  int.Mouse./run/m
+ 00a0 65646961 2f77696e 642f536f 66747761  edia/wind/Softwa
+ 00b0 72652f62 6f6f6b2f 43532f4f 70657261  re/book/CS/Opera
+ 00c0 74696e67 5379732f 6c61622f 65787038  tingSys/lab/exp8
+ 00d0 2d323032 302f6d69 6e694f53 2d76312e  -2020/miniOS-v1.
+ 00e0 332e322f 75736572 00526567 69737465  3.2/user.Registe
+ 00f0 7243616c 6c626163 6b004755 495f5479  rCallback.GUI_Ty
+ 0100 70650050 32505f41 00756e73 69676e65  pe.P2P_A.unsigne
+ 0110 64206368 6172006d 656d7365 74005f5f  d char.memset.__
+ 0120 75696e74 31365f74 004b6579 626f6172  uint16_t.Keyboar
+ 0130 64005f5f 75696e74 33325f74 00503250  d.__uint32_t.P2P
+ 0140 5f530067 75695f64 61746100 6d61696e  _S.gui_data.main
+ 0150 006c6f6e 67206c6f 6e672075 6e736967  .long long unsig
+ 0160 6e656420 696e7400 4950435f 4d534700  ned int.IPC_MSG.
+ 0170 6c765f6f 626a5f73 65745f79 5f63006c  lv_obj_set_y_c.l
+ 0180 6f6e6720 6c6f6e67 20696e74 00636c69  ong long int.cli
+ 0190 656e742e 63007479 70650073 686f7274  ent.c.type.short
+ 01a0 20696e74 00427574 746f6e00 57696e64   int.Button.Wind
+ 01b0 6f770061 72677600 6c765f62 746e5f63  ow.argv.lv_btn_c
+ 01c0 72656174 655f6300 6c765f74 65787461  reate_c.lv_texta
+ 01d0 7265615f 63726561 74655f63 00546573  rea_create_c.Tes
+ 01e0 74005369 676e616c 006c6f6e 6720646f  t.Signal.long do
+ 01f0 75626c65 00426f61 72646361 73740046  uble.Boardcast.F
+ 0200 756e6374 696f6e00 6172675f 30006172  unction.arg_0.ar
+ 0210 675f3100 6c765f6f 626a5f73 65745f78  g_1.lv_obj_set_x
+ 0220 5f63005f 66756e00 68616e64 6c657200  _c._fun.handler.
+ 0230 6970632f 7369676e 616c2e63 00534947  ipc/signal.c.SIG
+ 0240 5f545950 45005369 67616374 696f6e00  _TYPE.Sigaction.
+ 0250 7369675f 72657475 726e0073 69676163  sig_return.sigac
+ 0260 74696f6e 00534947 5f53454e 44004861  tion.SIG_SEND.Ha
+ 0270 6e646c65 72005349 475f5245 5455524e  ndler.SIG_RETURN
+ 0280 00                                   .               
 
-节：
-Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000402ae  080480e0  080480e0  000000e0  2**4
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .rodata       00003d3c  080883a0  080883a0  000403a0  2**5
-                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-  2 .eh_frame     000089b4  0808c0dc  0808c0dc  000440dc  2**2
-                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .data.rel.ro  00000040  08095fc0  08095fc0  0004cfc0  2**5
-                  CONTENTS, ALLOC, LOAD, DATA
-  4 .got.plt      0000000c  08096000  08096000  0004d000  2**2
-                  CONTENTS, ALLOC, LOAD, DATA
-  5 .data         000002d1  08096020  08096020  0004d020  2**5
-                  CONTENTS, ALLOC, LOAD, DATA
-  6 .bss          00026c20  08096300  08096300  0004d2f1  2**5
-                  ALLOC
-  7 .comment      00000023  00000000  00000000  0004d2f1  2**0
-                  CONTENTS, READONLY
-  8 .debug_aranges 000005c0  00000000  00000000  0004d314  2**0
-                  CONTENTS, READONLY, DEBUGGING, OCTETS
-  9 .debug_info   0003a7bd  00000000  00000000  0004d8d4  2**0
-                  CONTENTS, READONLY, DEBUGGING, OCTETS
- 10 .debug_abbrev 000066c5  00000000  00000000  00088091  2**0
-                  CONTENTS, READONLY, DEBUGGING, OCTETS
- 11 .debug_line   00017ab5  00000000  00000000  0008e756  2**0
-                  CONTENTS, READONLY, DEBUGGING, OCTETS
- 12 .debug_str    0000c32a  00000000  00000000  000a620b  2**0
-                  CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_ranges 000003f0  00000000  00000000  000b2535  2**0
-                  CONTENTS, READONLY, DEBUGGING, OCTETS
-SYMBOL TABLE:
-080480e0 l    d  .text	00000000 .text
-080883a0 l    d  .rodata	00000000 .rodata
-0808c0dc l    d  .eh_frame	00000000 .eh_frame
-08095fc0 l    d  .data.rel.ro	00000000 .data.rel.ro
-08096000 l    d  .got.plt	00000000 .got.plt
-08096020 l    d  .data	00000000 .data
-08096300 l    d  .bss	00000000 .bss
-00000000 l    d  .comment	00000000 .comment
-00000000 l    d  .debug_aranges	00000000 .debug_aranges
-00000000 l    d  .debug_info	00000000 .debug_info
-00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
-00000000 l    d  .debug_line	00000000 .debug_line
-00000000 l    d  .debug_str	00000000 .debug_str
-00000000 l    d  .debug_ranges	00000000 .debug_ranges
-00000000 l    df *ABS*	00000000 gui_service.c
-080480e0 l     F .text	00000028 lv_scr_act
-08048108 l     F .text	00000040 lv_slider_set_value
-08048148 l     F .text	0000006f my_disp_flush
-08096340 l     O .bss	0001e000 buf.0
-08096300 l     O .bss	00000024 disp_buf.1
-00000000 l    df *ABS*	00000000 lv_disp.c
-0804837a l     F .text	00000018 lv_anim_set_var
-08048392 l     F .text	00000019 lv_anim_set_exec_cb
-080483ab l     F .text	00000019 lv_anim_set_time
-080483c4 l     F .text	0000001d lv_anim_set_delay
-080483e1 l     F .text	0000003f lv_anim_set_values
-08048420 l     F .text	00000019 lv_anim_set_start_cb
-08048439 l     F .text	00000019 lv_anim_set_ready_cb
-08048452 l     F .text	00000050 lv_obj_set_style_local_opa_scale
-080484a2 l     F .text	00000029 lv_scr_act
-08048f3d l     F .text	0000004b scr_load_anim_start
-08048fb9 l     F .text	0000008e scr_anim_ready
-08048f88 l     F .text	00000031 opa_scale_anim
-08048a8e l       .text	00000000 .L56
-08048abc l       .text	00000000 .L58
-08048af8 l       .text	00000000 .L59
-08048b36 l       .text	00000000 .L60
-08048b72 l       .text	00000000 .L61
-08048bb0 l       .text	00000000 .L62
-08048c2b l       .text	00000000 .L63
-08048ca6 l       .text	00000000 .L64
-08048d21 l       .text	00000000 .L65
-08048d99 l       .text	00000000 .L66
-00000000 l    df *ABS*	00000000 lv_obj.c
-08049047 l     F .text	00000040 _lv_memcpy_small
-08049087 l     F .text	00000020 lv_area_copy
-080490a7 l     F .text	00000025 lv_area_get_width
-080490cc l     F .text	00000026 lv_area_get_height
-080490f2 l     F .text	000000c7 lv_color_mix
-080491b9 l     F .text	0000004d lv_color_make
-08049206 l     F .text	0000003f lv_color_hex
-08049245 l     F .text	00000018 lv_anim_set_var
-0804925d l     F .text	00000019 lv_anim_set_exec_cb
-08049276 l     F .text	00000019 lv_anim_set_time
-0804928f l     F .text	0000001d lv_anim_set_delay
-080492ac l     F .text	0000003f lv_anim_set_values
-080492eb l     F .text	00000024 lv_anim_set_path
-0804930f l     F .text	00000019 lv_anim_set_start_cb
-08049328 l     F .text	00000019 lv_anim_set_ready_cb
-08049341 l     F .text	00000072 lv_style_list_get_style
-080493b3 l     F .text	0000002d lv_obj_get_style_radius
-080493e0 l     F .text	00000033 lv_obj_get_style_clip_corner
-08049413 l     F .text	0000002d lv_obj_get_style_size
-08049440 l     F .text	0000002d lv_obj_get_style_transform_width
-0804946d l     F .text	0000002d lv_obj_get_style_transform_height
-0804949a l     F .text	0000002d lv_obj_get_style_transform_angle
-080494c7 l     F .text	0000002d lv_obj_get_style_transform_zoom
-080494f4 l     F .text	00000030 lv_obj_get_style_opa_scale
-08049524 l     F .text	00000049 lv_obj_set_style_local_opa_scale
-0804956d l     F .text	0000002d lv_obj_get_style_pad_top
-0804959a l     F .text	0000002d lv_obj_get_style_pad_bottom
-080495c7 l     F .text	0000002d lv_obj_get_style_pad_left
-080495f4 l     F .text	0000002d lv_obj_get_style_pad_right
-08049621 l     F .text	0000002d lv_obj_get_style_pad_inner
-0804964e l     F .text	0000002d lv_obj_get_style_margin_top
-0804967b l     F .text	0000002d lv_obj_get_style_margin_bottom
-080496a8 l     F .text	0000002d lv_obj_get_style_margin_left
-080496d5 l     F .text	0000002d lv_obj_get_style_margin_right
-08049702 l     F .text	0000002d lv_obj_get_style_bg_blend_mode
-0804972f l     F .text	0000002d lv_obj_get_style_bg_main_stop
-0804975c l     F .text	0000002d lv_obj_get_style_bg_grad_stop
-08049789 l     F .text	0000002d lv_obj_get_style_bg_grad_dir
-080497b6 l     F .text	00000033 lv_obj_get_style_bg_color
-080497e9 l     F .text	00000033 lv_obj_get_style_bg_grad_color
-0804981c l     F .text	0000002d lv_obj_get_style_bg_opa
-08049849 l     F .text	0000002d lv_obj_get_style_border_width
-08049876 l     F .text	0000002d lv_obj_get_style_border_side
-080498a3 l     F .text	0000002d lv_obj_get_style_border_blend_mode
-080498d0 l     F .text	00000033 lv_obj_get_style_border_post
-08049903 l     F .text	00000033 lv_obj_get_style_border_color
-08049936 l     F .text	0000002d lv_obj_get_style_border_opa
-08049963 l     F .text	0000002d lv_obj_get_style_outline_width
-08049990 l     F .text	0000002d lv_obj_get_style_outline_pad
-080499bd l     F .text	0000002d lv_obj_get_style_outline_blend_mode
-080499ea l     F .text	00000033 lv_obj_get_style_outline_color
-08049a1d l     F .text	0000002d lv_obj_get_style_outline_opa
-08049a4a l     F .text	0000002d lv_obj_get_style_shadow_width
-08049a77 l     F .text	0000002d lv_obj_get_style_shadow_ofs_x
-08049aa4 l     F .text	0000002d lv_obj_get_style_shadow_ofs_y
-08049ad1 l     F .text	0000002d lv_obj_get_style_shadow_spread
-08049afe l     F .text	0000002d lv_obj_get_style_shadow_blend_mode
-08049b2b l     F .text	00000033 lv_obj_get_style_shadow_color
-08049b5e l     F .text	0000002d lv_obj_get_style_shadow_opa
-08049b8b l     F .text	00000033 lv_obj_get_style_pattern_repeat
-08049bbe l     F .text	0000002d lv_obj_get_style_pattern_blend_mode
-08049beb l     F .text	00000033 lv_obj_get_style_pattern_recolor
-08049c1e l     F .text	0000002d lv_obj_get_style_pattern_opa
-08049c4b l     F .text	0000002d lv_obj_get_style_pattern_recolor_opa
-08049c78 l     F .text	0000002d lv_obj_get_style_pattern_image
-08049ca5 l     F .text	0000002d lv_obj_get_style_value_letter_space
-08049cd2 l     F .text	0000002d lv_obj_get_style_value_line_space
-08049cff l     F .text	0000002d lv_obj_get_style_value_blend_mode
-08049d2c l     F .text	0000002d lv_obj_get_style_value_ofs_x
-08049d59 l     F .text	0000002d lv_obj_get_style_value_ofs_y
-08049d86 l     F .text	0000002d lv_obj_get_style_value_align
-08049db3 l     F .text	00000033 lv_obj_get_style_value_color
-08049de6 l     F .text	0000002d lv_obj_get_style_value_opa
-08049e13 l     F .text	0000002d lv_obj_get_style_value_font
-08049e40 l     F .text	0000002d lv_obj_get_style_value_str
-08049e6d l     F .text	00000030 lv_obj_get_style_text_letter_space
-08049e9d l     F .text	00000030 lv_obj_get_style_text_line_space
-08049ecd l     F .text	00000030 lv_obj_get_style_text_decor
-08049efd l     F .text	00000030 lv_obj_get_style_text_blend_mode
-08049f2d l     F .text	00000036 lv_obj_get_style_text_color
-08049f63 l     F .text	00000036 lv_obj_get_style_text_sel_color
-08049f99 l     F .text	00000036 lv_obj_get_style_text_sel_bg_color
-08049fcf l     F .text	00000030 lv_obj_get_style_text_opa
-08049fff l     F .text	00000030 lv_obj_get_style_text_font
-0804a02f l     F .text	00000030 lv_obj_get_style_line_width
-0804a05f l     F .text	00000030 lv_obj_get_style_line_blend_mode
-0804a08f l     F .text	00000030 lv_obj_get_style_line_dash_width
-0804a0bf l     F .text	00000030 lv_obj_get_style_line_dash_gap
-0804a0ef l     F .text	00000036 lv_obj_get_style_line_rounded
-0804a125 l     F .text	00000036 lv_obj_get_style_line_color
-0804a15b l     F .text	00000030 lv_obj_get_style_line_opa
-0804a18b l     F .text	00000030 lv_obj_get_style_image_blend_mode
-0804a1bb l     F .text	00000036 lv_obj_get_style_image_recolor
-0804a1f1 l     F .text	00000030 lv_obj_get_style_image_opa
-0804a221 l     F .text	00000030 lv_obj_get_style_image_recolor_opa
-0804a251 l     F .text	00000030 lv_obj_get_style_transition_time
-0804a281 l     F .text	00000030 lv_obj_get_style_transition_delay
-0804a2b1 l     F .text	00000030 lv_obj_get_style_transition_prop_1
-0804a2e1 l     F .text	00000030 lv_obj_get_style_transition_prop_2
-0804a311 l     F .text	00000030 lv_obj_get_style_transition_prop_3
-0804a341 l     F .text	00000030 lv_obj_get_style_transition_prop_4
-0804a371 l     F .text	00000030 lv_obj_get_style_transition_prop_5
-0804a3a1 l     F .text	00000030 lv_obj_get_style_transition_prop_6
-0804a3d1 l     F .text	00000030 lv_obj_get_style_transition_path
-0804a401 l     F .text	00000030 lv_obj_get_style_scale_width
-0804a431 l     F .text	00000030 lv_obj_get_style_scale_border_width
-0804a461 l     F .text	00000030 lv_obj_get_style_scale_end_border_width
-0804a491 l     F .text	00000030 lv_obj_get_style_scale_end_line_width
-0804a4c1 l     F .text	00000036 lv_obj_get_style_scale_grad_color
-0804a4f7 l     F .text	00000036 lv_obj_get_style_scale_end_color
-08096020 l     O .data	00000001 lv_initialized
-080b4340 l     O .bss	00000004 event_temp_data_head
-080b4344 l     O .bss	00000004 event_act_data
-0804a52d l     F .text	0000007b _memcmp
-08051682 l     F .text	0000022a lv_obj_signal
-0805118c l     F .text	000004a3 lv_obj_design
-08050faa l     F .text	000001e2 obj_del_core
-08050f51 l     F .text	00000059 lv_obj_del_async_cb
-080518ac l     F .text	000000da refresh_children_position
-08051b63 l     F .text	00000133 obj_align_core
-08051c96 l     F .text	000005e5 obj_align_mid_core
-0805291f l     F .text	0000012b trans_del
-080538fc l     F .text	000000fb invalidate_style_cache
-08051a72 l     F .text	00000081 refresh_children_style
-08051986 l     F .text	000000ec report_style_mod_core
-08051af3 l     F .text	00000070 base_dir_refr_children
-080539f7 l     F .text	00000446 style_snapshot
-08053e3d l     F .text	00000331 style_snapshot_compare
-0805227b l     F .text	000006a4 trans_create
-08052a4a l     F .text	00000235 trans_anim_cb
-08052c7f l     F .text	00000136 trans_anim_start_cb
-08052db5 l     F .text	0000010f trans_anim_ready_cb
-0805310a l     F .text	0000060e update_style_cache
-08052ec4 l     F .text	00000031 opa_scale_anim
-08052ef5 l     F .text	0000003c fade_in_anim_ready
-08052f6f l     F .text	00000081 obj_valid_child
-08052f31 l     F .text	0000003e lv_event_mark_deleted
-08052ff0 l     F .text	0000011a style_prop_is_cacheble
-08053718 l     F .text	000001e4 update_style_cache_children
-08051d4e l       .text	00000000 .L1140
-08051da1 l       .text	00000000 .L1142
-08051dba l       .text	00000000 .L1143
-08051df0 l       .text	00000000 .L1144
-08051e1b l       .text	00000000 .L1145
-08051e46 l       .text	00000000 .L1146
-08051e8e l       .text	00000000 .L1147
-08051ecb l       .text	00000000 .L1148
-08051f01 l       .text	00000000 .L1149
-08051f49 l       .text	00000000 .L1150
-08051f62 l       .text	00000000 .L1151
-08051f98 l       .text	00000000 .L1152
-08051fc3 l       .text	00000000 .L1153
-08051fee l       .text	00000000 .L1154
-08052036 l       .text	00000000 .L1155
-08052073 l       .text	00000000 .L1156
-0805208c l       .text	00000000 .L1157
-080520c2 l       .text	00000000 .L1158
-080520ed l       .text	00000000 .L1159
-08052115 l       .text	00000000 .L1160
-0805215a l       .text	00000000 .L1161
-00000000 l    df *ABS*	00000000 lv_refr.c
-0805416e l     F .text	00000040 _lv_memcpy_small
-080541ae l     F .text	00000020 lv_area_copy
-080541ce l     F .text	00000025 lv_area_get_width
-080541f3 l     F .text	00000026 lv_area_get_height
-08054219 l     F .text	00000036 lv_obj_get_style_opa_scale
-08096024 l     O .data	00000004 px_num
-08096028 l     O .data	00000004 disp_refr
-0805480a l     F .text	000001cb lv_refr_join_area
-080549d5 l     F .text	00000172 lv_refr_areas
-080554f1 l     F .text	00000145 lv_refr_vdb_flush
-08054b47 l     F .text	00000314 lv_refr_area
-08054e5b l     F .text	000002ad lv_refr_area_part
-08055108 l     F .text	000000fd lv_refr_get_top_obj
-08055205 l     F .text	000000f6 lv_refr_obj_and_children
-080552fb l     F .text	000001f6 lv_refr_obj
-00000000 l    df *ABS*	00000000 lv_style.c
-08055636 l     F .text	00000040 _lv_memcpy_small
-08055676 l     F .text	00000072 lv_style_list_get_style
-080570d7 l     F .text	000000fc get_property_index
-08057329 l     F .text	00000021 get_style_prop_attr
-0805734a l     F .text	0000004e get_prop_size
-08057292 l     F .text	00000034 style_resize
-080571d3 l     F .text	000000bf get_alloc_local_style
-08057398 l     F .text	0000002c get_next_prop_index
-0805730c l     F .text	0000001d get_style_prop_id
-080572c6 l     F .text	00000046 get_style_prop
-00000000 l    df *ABS*	00000000 lv_draw_img.c
-080573c4 l     F .text	0000005b lv_color_premult
-0805741f l     F .text	0000009e lv_color_mix_premult
-080574bd l     F .text	00000040 _lv_memcpy_small
-080574fd l     F .text	00000020 lv_area_copy
-0805751d l     F .text	00000025 lv_area_get_width
-08057542 l     F .text	00000026 lv_area_get_height
-08057568 l     F .text	000003aa _lv_img_buf_transform
-080589e2 l     F .text	0000007e show_error
-08057b36 l     F .text	000003c9 lv_img_draw_core
-08058a60 l     F .text	00000028 draw_cleanup
-08057eff l     F .text	00000ae3 lv_draw_map
-08057a48 l       .text	00000000 .L36
-08057a1e l       .text	00000000 .L37
-08057a24 l       .text	00000000 .L39
-08057a2a l       .text	00000000 .L40
-08057a30 l       .text	00000000 .L41
-08057a36 l       .text	00000000 .L42
-08057a3c l       .text	00000000 .L43
-08057a42 l       .text	00000000 .L44
-00000000 l    df *ABS*	00000000 lv_draw_label.c
-08058a88 l     F .text	00000040 _lv_memcpy_small
-08058ac8 l     F .text	00000025 lv_area_get_width
-08058aed l     F .text	00000016 lv_font_get_line_height
-08058b03 l     F .text	0000004d lv_color_make
-0805a5d0 l     F .text	0000008b hex_char_to_num
-080596fc l     F .text	000001b6 lv_draw_letter
-08059e00 l     F .text	000007d0 draw_letter_subpx
-080598b2 l     F .text	0000054e draw_letter_normal
-080b4360 l     O .bss	00000001 prev_opa.5683
-080b4364 l     O .bss	00000004 prev_bpp.5684
-080b4380 l     O .bss	00000100 opa_table.5682
-0805a62c l       .text	00000000 .L162
-0805a632 l       .text	00000000 .L164
-0805a638 l       .text	00000000 .L165
-0805a63e l       .text	00000000 .L166
-0805a644 l       .text	00000000 .L167
-0805a64a l       .text	00000000 .L168
-00000000 l    df *ABS*	00000000 lv_draw_line.c
-0805a65b l     F .text	00000025 lv_area_get_width
-0805a9fa l     F .text	000003df draw_line_hor
-0805add9 l     F .text	0000036b draw_line_ver
-0805b144 l     F .text	000007b9 draw_line_skew
-08088600 l     O .rodata	00000021 wcorr.5969
-00000000 l    df *ABS*	00000000 lv_draw_mask.c
-0805b8fd l     F .text	00000040 _lv_memcpy_small
-0805b93d l     F .text	00000020 lv_area_copy
-0805b95d l     F .text	00000025 lv_area_get_width
-0805b982 l     F .text	00000026 lv_area_get_height
-0805c2fe l     F .text	00000264 lv_draw_mask_line
-0805ce53 l     F .text	00000723 lv_draw_mask_angle
-0805d576 l     F .text	00000a8b lv_draw_mask_radius
-0805e001 l     F .text	00000260 lv_draw_mask_fade
-0805e261 l     F .text	00000198 lv_draw_mask_map
-0805c562 l     F .text	00000398 line_mask_flat
-0805c8fa l     F .text	00000559 line_mask_steep
-0805e3f9 l     F .text	0000004b mask_mix
-0805e444 l     F .text	00000080 sqrt_approx
-00000000 l    df *ABS*	00000000 lv_draw_rect.c
-0805e4c8 l     F .text	00000040 _lv_memcpy_small
-0805e508 l     F .text	00000020 lv_area_copy
-0805e528 l     F .text	00000025 lv_area_get_width
-0805e54d l     F .text	00000026 lv_area_get_height
-0805e573 l     F .text	000000c7 lv_color_mix
-0805f7f0 l     F .text	0000189f draw_shadow
-0805e81f l     F .text	00000901 draw_bg
-0806191c l     F .text	00000495 draw_pattern
-0805f120 l     F .text	000005eb draw_border
-08061db1 l     F .text	00000181 draw_value_str
-080617d9 l     F .text	00000143 draw_outline
-0805f70b l     F .text	000000e5 grad_get
-08061f32 l     F .text	0000095b draw_full_border
-0806108f l     F .text	000003a8 shadow_draw_corner_buf
-08061437 l     F .text	000003a2 shadow_blur_corner
-00000000 l    df *ABS*	00000000 lv_img_buf.c
-0806288d l     F .text	00000012 lv_color_to32
-0806289f l     F .text	000000c7 lv_color_mix
-08062966 l     F .text	00000040 _lv_memcpy_small
-080638af l       .text	00000000 .L63
-080638c6 l       .text	00000000 .L65
-080638dd l       .text	00000000 .L66
-08063962 l       .text	00000000 .L67
-08063983 l       .text	00000000 .L68
-080639a4 l       .text	00000000 .L69
-080639c3 l       .text	00000000 .L70
-080638f4 l       .text	00000000 .L71
-08063915 l       .text	00000000 .L72
-08063936 l       .text	00000000 .L73
-08063955 l       .text	00000000 .L74
-00000000 l    df *ABS*	00000000 lv_img_cache.c
-080b4480 l     O .bss	00000028 cache_temp
-00000000 l    df *ABS*	00000000 lv_img_decoder.c
-0806484c l     F .text	0000004d lv_color_make
-08064899 l     F .text	00000040 _lv_memcpy_small
-08065676 l     F .text	000000f3 lv_img_decoder_built_in_line_true_color
-08065769 l     F .text	000003e0 lv_img_decoder_built_in_line_alpha
-08065b49 l     F .text	0000035f lv_img_decoder_built_in_line_indexed
-00000000 l    df *ABS*	00000000 lv_font.c
-00000000 l    df *ABS*	00000000 lv_font_fmt_txt.c
-080b44a8 l     O .bss	00000004 rle_rdp
-080b44ac l     O .bss	00000004 rle_in
-080b44b0 l     O .bss	00000001 rle_bpp
-080b44b1 l     O .bss	00000001 rle_prev_v
-080b44b2 l     O .bss	00000001 rle_cnt
-080b44b4 l     O .bss	00000004 rle_state
-0806630d l     F .text	00000378 get_glyph_dsc_id
-080668fb l     F .text	00000219 decompress
-08066685 l     F .text	000001b1 get_kern_value
-0806702e l     F .text	00000025 unicode_list_compare
-08066836 l     F .text	00000062 kern_pair_8_compare
-08066898 l     F .text	00000063 kern_pair_16_compare
-08066d64 l     F .text	0000004e rle_init
-08066b14 l     F .text	0000004d decompress_line
-08066c5c l     F .text	00000108 bits_write
-08066db2 l     F .text	0000027c rle_next
-08066b61 l     F .text	000000fb get_bits
-08066bac l       .text	00000000 .L71
-08066b8e l       .text	00000000 .L72
-08066b94 l       .text	00000000 .L74
-08066b9a l       .text	00000000 .L75
-08066ba0 l       .text	00000000 .L76
-08066ba6 l       .text	00000000 .L77
-08066c9a l       .text	00000000 .L83
-08066ca0 l       .text	00000000 .L85
-08066ca6 l       .text	00000000 .L86
-08066cac l       .text	00000000 .L87
-08066cb2 l       .text	00000000 .L88
-08066cb8 l       .text	00000000 .L89
-08066cbe l       .text	00000000 .L90
-08066cc4 l       .text	00000000 .L91
-00000000 l    df *ABS*	00000000 lv_font_montserrat_14.c
-08088700 l     O .rodata	0000219a gylph_bitmap
-0808a8a0 l     O .rodata	000004d8 glyph_dsc
-0808ad80 l     O .rodata	00000076 unicode_list_1
-08095fc0 l     O .data.rel.ro	00000028 cmaps
-0808ae00 l     O .rodata	0000009b kern_left_class_mapping
-0808aea0 l     O .rodata	0000009b kern_right_class_mapping
-0808af40 l     O .rodata	00000bad kern_class_values
-08095fe8 l     O .data.rel.ro	00000010 kern_classes
-08096040 l     O .data	00000020 font_dsc
-00000000 l    df *ABS*	00000000 lv_hal_disp.c
-08096074 l     O .data	00000004 disp_def
-00000000 l    df *ABS*	00000000 lv_hal_indev.c
-00000000 l    df *ABS*	00000000 lv_hal_tick.c
-08096078 l     O .data	00000004 sys_time
-0809607c l     O .data	00000001 tick_irq_flag
-00000000 l    df *ABS*	00000000 lv_anim.c
-08067ca0 l     F .text	00000040 _lv_memcpy_small
-080b44b8 l     O .bss	00000004 last_task_run
-080b44bc l     O .bss	00000001 anim_list_changed
-080b44c0 l     O .bss	00000004 _lv_anim_task
-080685c5 l     F .text	00000210 anim_task
-0806895a l     F .text	0000005f anim_mark_list_change
-080687d5 l     F .text	00000185 anim_ready_handler
-00000000 l    df *ABS*	00000000 lv_area.c
-080689bd l     F .text	00000025 lv_area_get_width
-080689e2 l     F .text	00000026 lv_area_get_height
-08069719 l     F .text	000000bf lv_point_within_circle
-0806917d l       .text	00000000 .L41
-080691f7 l       .text	00000000 .L43
-0806920d l       .text	00000000 .L44
-08069255 l       .text	00000000 .L45
-08069287 l       .text	00000000 .L46
-080692b9 l       .text	00000000 .L47
-0806931d l       .text	00000000 .L48
-0806936b l       .text	00000000 .L49
-080693b3 l       .text	00000000 .L50
-08069417 l       .text	00000000 .L51
-0806943a l       .text	00000000 .L52
-0806948f l       .text	00000000 .L53
-080694ce l       .text	00000000 .L54
-080694ef l       .text	00000000 .L55
-08069542 l       .text	00000000 .L56
-0806957f l       .text	00000000 .L57
-080695a2 l       .text	00000000 .L58
-080695f7 l       .text	00000000 .L59
-08069636 l       .text	00000000 .L60
-08069657 l       .text	00000000 .L61
-080696a7 l       .text	00000000 .L62
-00000000 l    df *ABS*	00000000 lv_async.c
-0806986f l     F .text	00000043 lv_async_task_cb
-00000000 l    df *ABS*	00000000 lv_debug.c
-08096080 l     O .data	00000011 hex.1646
-00000000 l    df *ABS*	00000000 lv_fs.c
-0806a7c8 l     F .text	00000044 lv_fs_get_real_path
-00000000 l    df *ABS*	00000000 lv_gc.c
-00000000 l    df *ABS*	00000000 lv_ll.c
-0806b0a6 l     F .text	0000003f node_set_prev
-0806b0e5 l     F .text	00000042 node_set_next
-00000000 l    df *ABS*	00000000 lv_math.c
-0808bb80 l     O .rodata	000000b6 sin0_90_table
-00000000 l    df *ABS*	00000000 lv_mem.c
-08096234 l     O .data	00000004 work_mem
-08096238 l     O .data	00000004 zero_mem
-0809623c l     O .data	00000004 mem_max_size
-08096240 l     O .data	00000010 mem_buf1_32
-08096250 l     O .data	00000010 mem_buf2_32
-08096260 l     O .data	00000010 mem_buf_small
-080b44e0 l     O .bss	00008000 work_mem_int.3109
-0806c67e l     F .text	00000063 ent_get_next
-0806c6e1 l     F .text	0000005a ent_alloc
-080bc4e0 l     O .bss	00000002 full_defrag_cnt.3130
-0806c73b l     F .text	000000a3 ent_trunc
-00000000 l    df *ABS*	00000000 lv_task.c
-08096270 l     O .data	00000001 lv_task_run
-08096271 l     O .data	00000001 idle_last
-08096272 l     O .data	00000001 task_deleted
-08096273 l     O .data	00000001 task_list_changed
-08096274 l     O .data	00000001 task_created
-08096275 l     O .data	00000001 already_running.3101
-08096278 l     O .data	00000004 idle_period_start.3102
-0809627c l     O .data	00000004 handler_start.3103
-08096280 l     O .data	00000004 busy_time.3104
-08096284 l     O .data	00000004 time_till_next.3105
-0806d050 l     F .text	000000aa lv_task_exec
-0806d0fa l     F .text	00000046 lv_task_time_remaining
-00000000 l    df *ABS*	00000000 lv_txt.c
-0806d140 l     F .text	00000040 _lv_memcpy_small
-0806d180 l     F .text	00000016 lv_font_get_line_height
-0806db91 l     F .text	00000079 lv_txt_utf8_size
-0806dc0a l     F .text	000000d4 lv_txt_unicode_to_utf8
-0806dcde l     F .text	0000008d lv_txt_utf8_conv_wc
-0806dd6b l     F .text	00000314 lv_txt_utf8_next
-0806e07f l     F .text	000000a9 lv_txt_utf8_prev
-0806e128 l     F .text	00000064 lv_txt_utf8_get_byte_id
-0806e18c l     F .text	0000004b lv_txt_utf8_get_char_id
-0806e1d7 l     F .text	00000052 lv_txt_utf8_get_length
-0806d3ec l     F .text	00000240 lv_txt_get_next_word
-0806e229 l     F .text	00000054 is_break_char
-00000000 l    df *ABS*	00000000 lv_utils.c
-00000000 l    df *ABS*	00000000 lv_theme.c
-080962a8 l     O .data	00000004 act_theme
-0806e6ce l     F .text	00000643 clear_styles
-0806e651 l     F .text	0000007d apply_theme
-0806ed0a l       .text	00000000 .L75
-0806e6fb l       .text	00000000 .L33
-0806e710 l       .text	00000000 .L34
-0806e85c l       .text	00000000 .L35
-0806e799 l       .text	00000000 .L36
-0806e73a l       .text	00000000 .L37
-0806e74f l       .text	00000000 .L38
-0806ec5f l       .text	00000000 .L39
-0806e7f3 l       .text	00000000 .L40
-0806e8db l       .text	00000000 .L41
-0806eafc l       .text	00000000 .L42
-0806e725 l       .text	00000000 .L43
-0806eca1 l       .text	00000000 .L44
-0806eab7 l       .text	00000000 .L45
-0806ecd5 l       .text	00000000 .L46
-0806e808 l       .text	00000000 .L47
-0806e81d l       .text	00000000 .L48
-0806e774 l       .text	00000000 .L49
-0806e832 l       .text	00000000 .L50
-0806e93a l       .text	00000000 .L51
-0806e847 l       .text	00000000 .L52
-0806ea6d l       .text	00000000 .L53
-0806eaa2 l       .text	00000000 .L54
-0806ecc3 l       .text	00000000 .L55
-0806e900 l       .text	00000000 .L56
-0806e915 l       .text	00000000 .L57
-0806ea58 l       .text	00000000 .L58
-0806e94f l       .text	00000000 .L59
-0806ea33 l       .text	00000000 .L60
-0806e8a6 l       .text	00000000 .L61
-0806ec25 l       .text	00000000 .L62
-0806ec4a l       .text	00000000 .L63
-0806e881 l       .text	00000000 .L64
-0806e7be l       .text	00000000 .L65
-0806eb31 l       .text	00000000 .L66
-0806e984 l       .text	00000000 .L67
-0806e9d9 l       .text	00000000 .L68
-0806ebe0 l       .text	00000000 .L69
-0806e9fe l       .text	00000000 .L70
-0806eb86 l       .text	00000000 .L71
-0806ebcb l       .text	00000000 .L72
-00000000 l    df *ABS*	00000000 lv_theme_material.c
-0806ed11 l     F .text	000000c7 lv_color_mix
-0806edd8 l     F .text	0000004d lv_color_make
-0806ee25 l     F .text	0000003f lv_color_hex
-0806ee64 l     F .text	00000069 lv_color_hex3
-0806eecd l     F .text	00000047 lv_style_set_radius
-0806ef14 l     F .text	00000046 lv_style_set_clip_corner
-0806ef5a l     F .text	00000047 lv_style_set_size
-0806efa1 l     F .text	00000047 lv_style_set_transform_width
-0806efe8 l     F .text	00000047 lv_style_set_pad_top
-0806f02f l     F .text	00000047 lv_style_set_pad_bottom
-0806f076 l     F .text	00000047 lv_style_set_pad_left
-0806f0bd l     F .text	00000047 lv_style_set_pad_right
-0806f104 l     F .text	00000047 lv_style_set_pad_inner
-0806f14b l     F .text	00000047 lv_style_set_margin_top
-0806f192 l     F .text	00000047 lv_style_set_margin_bottom
-0806f1d9 l     F .text	00000047 lv_style_set_margin_left
-0806f220 l     F .text	00000047 lv_style_set_margin_right
-0806f267 l     F .text	0000003e lv_style_set_bg_color
-0806f2a5 l     F .text	00000046 lv_style_set_bg_opa
-0806f2eb l     F .text	00000047 lv_style_set_border_width
-0806f332 l     F .text	00000046 lv_style_set_border_side
-0806f378 l     F .text	00000046 lv_style_set_border_post
-0806f3be l     F .text	0000003e lv_style_set_border_color
-0806f3fc l     F .text	00000046 lv_style_set_border_opa
-0806f442 l     F .text	00000047 lv_style_set_outline_width
-0806f489 l     F .text	00000047 lv_style_set_outline_pad
-0806f4d0 l     F .text	0000003e lv_style_set_outline_color
-0806f50e l     F .text	00000046 lv_style_set_outline_opa
-0806f554 l     F .text	00000047 lv_style_set_shadow_width
-0806f59b l     F .text	00000047 lv_style_set_shadow_spread
-0806f5e2 l     F .text	0000003e lv_style_set_shadow_color
-0806f620 l     F .text	0000003e lv_style_set_pattern_recolor
-0806f65e l     F .text	00000046 lv_style_set_pattern_opa
-0806f6a4 l     F .text	0000003e lv_style_set_pattern_image
-0806f6e2 l     F .text	0000003e lv_style_set_value_color
-0806f720 l     F .text	0000003e lv_style_set_value_font
-0806f75e l     F .text	00000049 lv_style_set_text_line_space
-0806f7a7 l     F .text	00000040 lv_style_set_text_color
-0806f7e7 l     F .text	00000040 lv_style_set_text_sel_color
-0806f827 l     F .text	00000040 lv_style_set_text_sel_bg_color
-0806f867 l     F .text	00000040 lv_style_set_text_font
-0806f8a7 l     F .text	00000047 lv_style_set_line_width
-0806f8ee l     F .text	00000047 lv_style_set_line_dash_width
-0806f935 l     F .text	00000047 lv_style_set_line_dash_gap
-0806f97c l     F .text	00000046 lv_style_set_line_rounded
-0806f9c2 l     F .text	0000003e lv_style_set_line_color
-0806fa00 l     F .text	00000040 lv_style_set_image_recolor
-0806fa40 l     F .text	00000047 lv_style_set_transition_time
-0806fa87 l     F .text	00000047 lv_style_set_transition_delay
-0806face l     F .text	00000047 lv_style_set_transition_prop_3
-0806fb15 l     F .text	00000047 lv_style_set_transition_prop_4
-0806fb5c l     F .text	00000047 lv_style_set_transition_prop_5
-0806fba3 l     F .text	00000047 lv_style_set_transition_prop_6
-0806fbea l     F .text	00000047 lv_style_set_scale_width
-0806fc31 l     F .text	00000047 lv_style_set_scale_end_border_width
-0806fc78 l     F .text	00000047 lv_style_set_scale_end_line_width
-0806fcbf l     F .text	0000003e lv_style_set_scale_grad_color
-0806fcfd l     F .text	0000003e lv_style_set_scale_end_color
-080962c0 l     O .data	0000002c theme
-080962ec l     O .data	00000004 styles
-080962f0 l     O .data	00000001 inited
-0806fd3b l     F .text	00002277 basic_init
-08078ed7 l     F .text	00000044 style_init_reset
-08071fb2 l     F .text	00000010 cont_init
-08071fc2 l     F .text	00000010 btn_init
-08071fd2 l     F .text	00000010 label_init
-08071fe2 l     F .text	00000303 bar_init
-080722e5 l     F .text	00000010 img_init
-080722f5 l     F .text	00000010 line_init
-08072305 l     F .text	000001e2 led_init
-080724e7 l     F .text	000004cb slider_init
-080729b2 l     F .text	00000256 switch_init
-08072c08 l     F .text	000003dd linemeter_init
-08072fe5 l     F .text	00000851 gauge_init
-08073836 l     F .text	00000281 arc_init
-08073ab7 l     F .text	00000010 spinner_init
-08073ac7 l     F .text	0000040b chart_init
-08073ed2 l     F .text	00000c1b calendar_init
-08074aed l     F .text	00000485 cpicker_init
-08074f72 l     F .text	00000582 checkbox_init
-080754f4 l     F .text	00000010 btnmatrix_init
-08075504 l     F .text	00000388 keyboard_init
-0807588c l     F .text	000000de msgbox_init
-0807596a l     F .text	00000282 page_init
-08075bec l     F .text	00000203 textarea_init
-08075def l     F .text	00000171 spinbox_init
-08075f60 l     F .text	00000cb3 list_init
-08076c13 l     F .text	0000020f ddlist_init
-08076e22 l     F .text	0000013f roller_init
-08076f61 l     F .text	00000010 tabview_init
-08076f71 l     F .text	00000010 tileview_init
-08076f81 l     F .text	0000040a table_init
-0807738b l     F .text	00000010 win_init
-0807739b l     F .text	000009ad tabview_win_shared_init
-08077ea4 l     F .text	00001033 theme_apply
-08078eb8 l       .text	00000000 .L727
-08077ed1 l       .text	00000000 .L683
-08077efe l       .text	00000000 .L684
-08078184 l       .text	00000000 .L685
-080780a1 l       .text	00000000 .L686
-08077f5e l       .text	00000000 .L687
-08077f8e l       .text	00000000 .L688
-08078cc6 l       .text	00000000 .L689
-0807834f l       .text	00000000 .L691
-080788e6 l       .text	00000000 .L692
-08077f2e l       .text	00000000 .L693
-08078d77 l       .text	00000000 .L694
-080787eb l       .text	00000000 .L695
-08078e1a l       .text	00000000 .L696
-08078019 l       .text	00000000 .L699
-08078465 l       .text	00000000 .L701
-08078746 l       .text	00000000 .L703
-080787bb l       .text	00000000 .L704
-08078dd2 l       .text	00000000 .L705
-080783c2 l       .text	00000000 .L706
-0807840a l       .text	00000000 .L707
-0807872e l       .text	00000000 .L708
-08078495 l       .text	00000000 .L709
-080786b7 l       .text	00000000 .L710
-080782ad l       .text	00000000 .L711
-08078c09 l       .text	00000000 .L712
-08078c7e l       .text	00000000 .L713
-08078252 l       .text	00000000 .L714
-080780fc l       .text	00000000 .L715
-080789df l       .text	00000000 .L716
-0807854a l       .text	00000000 .L717
-080785fe l       .text	00000000 .L718
-08078b3a l       .text	00000000 .L719
-08078630 l       .text	00000000 .L720
-08078a54 l       .text	00000000 .L721
-08078b08 l       .text	00000000 .L722
-00000000 l    df *ABS*	00000000 lv_bar.c
-08078f1b l     F .text	00000040 _lv_memcpy_small
-08078f5b l     F .text	00000020 lv_area_copy
-08078f7b l     F .text	00000025 lv_area_get_width
-08078fa0 l     F .text	00000026 lv_area_get_height
-08078fc6 l     F .text	00000018 lv_anim_set_var
-08078fde l     F .text	00000019 lv_anim_set_exec_cb
-08078ff7 l     F .text	00000019 lv_anim_set_time
-08079010 l     F .text	0000003f lv_anim_set_values
-0807904f l     F .text	00000019 lv_anim_set_ready_cb
-08079068 l     F .text	00000033 lv_obj_get_style_radius
-0807909b l     F .text	00000033 lv_obj_get_style_pad_top
-080790ce l     F .text	00000033 lv_obj_get_style_pad_bottom
-08079101 l     F .text	00000033 lv_obj_get_style_pad_left
-08079134 l     F .text	00000033 lv_obj_get_style_pad_right
-08079167 l     F .text	00000039 lv_obj_get_style_border_post
-080bc4e4 l     O .bss	00000004 ancestor_design_f
-080bc4e8 l     O .bss	00000004 ancestor_signal
-0807a979 l     F .text	00000033 lv_bar_init_anim
-0807a5a3 l     F .text	0000014c lv_bar_signal
-08079b0f l     F .text	0000012d lv_bar_design
-0807a83c l     F .text	0000013d lv_bar_set_value_with_anim
-08079c3c l     F .text	00000070 draw_bg
-08079cac l     F .text	000008f7 draw_indic
-0807a6ef l     F .text	00000090 lv_bar_get_style
-0807a77f l     F .text	0000003c lv_bar_anim
-0807a7bb l     F .text	00000081 lv_bar_anim_ready
-00000000 l    df *ABS*	00000000 lv_btn.c
-0807a9ac l     F .text	00000032 lv_btn_set_layout
-080bc4ec l     O .bss	00000004 ancestor_signal
-080bc4f0 l     O .bss	00000004 ancestor_design
-0807af97 l     F .text	000001ed lv_btn_signal
-0807af19 l     F .text	0000007e lv_btn_design
-0807aca2 l       .text	00000000 .L22
-0807acb7 l       .text	00000000 .L24
-0807ad20 l       .text	00000000 .L25
-0807acdc l       .text	00000000 .L26
-0807acfe l       .text	00000000 .L27
-0807ad42 l       .text	00000000 .L28
-00000000 l    df *ABS*	00000000 lv_cont.c
-0807b184 l     F .text	00000040 _lv_memcpy_small
-0807b1c4 l     F .text	00000020 lv_area_copy
-0807b1e4 l     F .text	00000025 lv_area_get_width
-0807b209 l     F .text	00000026 lv_area_get_height
-0807b22f l     F .text	00000033 lv_obj_get_style_pad_top
-0807b262 l     F .text	00000033 lv_obj_get_style_pad_bottom
-0807b295 l     F .text	00000033 lv_obj_get_style_pad_left
-0807b2c8 l     F .text	00000033 lv_obj_get_style_pad_right
-0807b2fb l     F .text	00000033 lv_obj_get_style_pad_inner
-0807b32e l     F .text	00000033 lv_obj_get_style_margin_top
-0807b361 l     F .text	00000033 lv_obj_get_style_margin_bottom
-0807b394 l     F .text	00000033 lv_obj_get_style_margin_left
-0807b3c7 l     F .text	00000033 lv_obj_get_style_margin_right
-080bc4f4 l     O .bss	00000004 ancestor_design
-080bc4f8 l     O .bss	00000004 ancestor_signal
-0807ba72 l     F .text	00000196 lv_cont_signal
-0807bc08 l     F .text	00000035 lv_cont_get_style
-0807bc3d l     F .text	000000fe lv_cont_refr_layout
-0807ca72 l     F .text	000005ca lv_cont_refr_autofit
-0807c149 l     F .text	000001cf lv_cont_layout_center
-0807bd3b l     F .text	000001f3 lv_cont_layout_col
-0807bf2e l     F .text	0000021b lv_cont_layout_row
-0807c318 l     F .text	000005ce lv_cont_layout_pretty
-0807c8e6 l     F .text	0000018c lv_cont_layout_grid
-00000000 l    df *ABS*	00000000 lv_label.c
-0807d03c l     F .text	00000040 _lv_memcpy_small
-0807d07c l     F .text	00000020 lv_area_copy
-0807d09c l     F .text	00000025 lv_area_get_width
-0807d0c1 l     F .text	00000026 lv_area_get_height
-0807d0e7 l     F .text	00000016 lv_font_get_line_height
-0807d0fd l     F .text	00000018 lv_anim_set_var
-0807d115 l     F .text	00000019 lv_anim_set_exec_cb
-0807d12e l     F .text	00000019 lv_anim_set_time
-0807d147 l     F .text	0000003f lv_anim_set_values
-0807d186 l     F .text	00000024 lv_anim_set_playback_time
-0807d1aa l     F .text	00000024 lv_anim_set_playback_delay
-0807d1ce l     F .text	00000025 lv_anim_set_repeat_count
-0807d1f3 l     F .text	00000024 lv_anim_set_repeat_delay
-0807d217 l     F .text	00000033 lv_obj_get_style_transform_width
-0807d24a l     F .text	00000033 lv_obj_get_style_transform_height
-0807d27d l     F .text	00000033 lv_obj_get_style_pad_top
-0807d2b0 l     F .text	00000033 lv_obj_get_style_pad_bottom
-0807d2e3 l     F .text	00000033 lv_obj_get_style_pad_left
-0807d316 l     F .text	00000033 lv_obj_get_style_pad_right
-0807d349 l     F .text	00000036 lv_obj_get_style_text_letter_space
-0807d37f l     F .text	00000036 lv_obj_get_style_text_line_space
-0807d3b5 l     F .text	00000036 lv_obj_get_style_text_font
-080bc4fc l     O .bss	00000004 ancestor_signal
-0807fce7 l     F .text	00000454 lv_label_design
-0808013b l     F .text	000001fb lv_label_signal
-080804cf l     F .text	000000c6 lv_label_set_dot_tmp
-0808043d l     F .text	00000049 lv_label_set_offset_x
-08080486 l     F .text	00000049 lv_label_set_offset_y
-08080336 l     F .text	00000107 lv_label_revert_dots
-08080644 l     F .text	000000dc get_txt_coords
-080805da l     F .text	0000006a lv_label_dot_tmp_free
-08080595 l     F .text	00000045 lv_label_get_dot_tmp
-00000000 l    df *ABS*	00000000 lv_group.c
-0808112f l     F .text	0000008a lv_group_refocus
-080813e6 l     F .text	00000066 obj_to_foreground
-080811b9 l     F .text	0000022d focus_next_core
-00000000 l    df *ABS*	00000000 lv_indev.c
-080bc500 l     O .bss	00000004 indev_act
-080bc504 l     O .bss	00000004 indev_obj_act
-08083790 l     F .text	000000cf indev_proc_reset_query_handler
-08081b10 l     F .text	000000d7 indev_pointer_proc
-08081be7 l     F .text	0000069a indev_keypad_proc
-08082281 l     F .text	000008f1 indev_encoder_proc
-08082b72 l     F .text	00000120 indev_button_proc
-08084574 l     F .text	00000058 get_dragged_obj
-08082c92 l     F .text	000007aa indev_proc_press
-0808343c l     F .text	00000354 indev_proc_release
-080847bd l     F .text	0000003b indev_reset_check
-080841f3 l     F .text	00000381 indev_drag_throw
-0808395d l     F .text	00000349 indev_click_focus
-08083ca6 l     F .text	0000054d indev_drag
-080845cc l     F .text	000001f1 indev_gesture
-00000000 l    df *ABS*	00000000 lv_draw_blend.c
-080847f8 l     F .text	000000c7 lv_color_mix
-080848bf l     F .text	0000005b lv_color_premult
-0808491a l     F .text	0000009e lv_color_mix_premult
-080849b8 l     F .text	00000025 lv_area_get_width
-080849dd l     F .text	00000026 lv_area_get_height
-080bc520 l     O .bss	00000a00 blend_buf
-08084de1 l     F .text	0000017e fill_set_px
-08084f5f l     F .text	00000795 fill_normal
-080856f4 l     F .text	000002c1 fill_blended
-080859b5 l     F .text	0000023e map_set_px
-08085bf3 l     F .text	000007f8 map_normal
-080863eb l     F .text	000002be map_blended
-080866a9 l     F .text	000000b6 color_blend_true_color_additive
-0808675f l     F .text	000000c6 color_blend_true_color_subtractive
-00000000 l    df *ABS*	00000000 lv_color.c
-08086825 l     F .text	00000012 lv_color_to32
-08086837 l     F .text	000000c7 lv_color_mix
-080868fe l     F .text	0000004d lv_color_make
-08086c35 l       .text	00000000 .L20
-08086c4c l       .text	00000000 .L22
-08086c63 l       .text	00000000 .L23
-08086c7a l       .text	00000000 .L24
-08086c91 l       .text	00000000 .L25
-00000000 l    df *ABS*	00000000 lv_printf.c
-08086f20 l     F .text	0000002f _out_buffer
-08086f4f l     F .text	00000019 _out_null
-08086f68 l     F .text	0000003f _strnlen_s
-08086fa7 l     F .text	00000033 _is_digit
-08086fda l     F .text	00000063 _atoi
-0808703d l     F .text	000000c1 _out_rev
-080870fe l     F .text	000001d3 _ntoa_format
-080872d1 l     F .text	000000d3 _ntoa_long
-080873a4 l     F .text	000007bd _vsnprintf
-080874ac l       .text	00000000 .L61
-0808765a l       .text	00000000 .L137
-08087afb l       .text	00000000 .L86
-08087480 l       .text	00000000 .L62
-08087496 l       .text	00000000 .L64
-0808746a l       .text	00000000 .L65
-08087454 l       .text	00000000 .L66
-0808743e l       .text	00000000 .L67
-080875fb l       .text	00000000 .L77
-08087636 l       .text	00000000 .L79
-080875cf l       .text	00000000 .L80
-08087624 l       .text	00000000 .L81
-08087648 l       .text	00000000 .L82
-08087ad6 l       .text	00000000 .L87
-08087684 l       .text	00000000 .L89
-080878dd l       .text	00000000 .L90
-08087a8d l       .text	00000000 .L91
-08087981 l       .text	00000000 .L92
-00000000 l    df *ABS*	00000000 initstart.asm
-00000000 l    df *ABS*	00000000 lib/string.asm
-08087bef l       .text	00000000 memcpy.1
-08087bff l       .text	00000000 memcpy.2
-08087c18 l       .text	00000000 memset.1
-08087c23 l       .text	00000000 memset.2
-08087c33 l       .text	00000000 strcpy.1
-08087c4d l       .text	00000000 strlen.1
-08087c56 l       .text	00000000 strlen.2
-00000000 l    df *ABS*	00000000 kernel/syscall.asm
-00000000 l       *ABS*	00000000 P_STACKBASE
-00000000 l       *ABS*	00000000 GSREG
-00000004 l       *ABS*	00000000 FSREG
-00000008 l       *ABS*	00000000 ESREG
-0000000c l       *ABS*	00000000 DSREG
-00000010 l       *ABS*	00000000 EDIREG
-00000014 l       *ABS*	00000000 ESIREG
-00000018 l       *ABS*	00000000 EBPREG
-0000001c l       *ABS*	00000000 KERNELESPREG
-00000020 l       *ABS*	00000000 EBXREG
-00000024 l       *ABS*	00000000 EDXREG
-00000028 l       *ABS*	00000000 ECXREG
-0000002c l       *ABS*	00000000 EAXREG
-00000030 l       *ABS*	00000000 RETADR
-00000034 l       *ABS*	00000000 EIPREG
-00000038 l       *ABS*	00000000 CSREG
-0000003c l       *ABS*	00000000 EFLAGSREG
-00000040 l       *ABS*	00000000 ESPREG
-00000044 l       *ABS*	00000000 SSREG
-00000048 l       *ABS*	00000000 P_STACKTOP
-00000048 l       *ABS*	00000000 P_LDT_SEL
-0000004c l       *ABS*	00000000 P_LDT
-00002000 l       *ABS*	00000000 INIT_STACK_SIZE
-0000005c l       *ABS*	00000000 ESP_SAVE_INT
-00000060 l       *ABS*	00000000 ESP_SAVE_SYSCALL
-00000064 l       *ABS*	00000000 ESP_SAVE_CONTEXT
-00000004 l       *ABS*	00000000 TSS3_S_SP0
-00000020 l       *ABS*	00000000 INT_M_CTL
-00000021 l       *ABS*	00000000 INT_M_CTLMASK
-000000a0 l       *ABS*	00000000 INT_S_CTL
-000000a1 l       *ABS*	00000000 INT_S_CTLMASK
-00000020 l       *ABS*	00000000 EOI
-00000008 l       *ABS*	00000000 SELECTOR_FLAT_C
-00000020 l       *ABS*	00000000 SELECTOR_TSS
-00000008 l       *ABS*	00000000 SELECTOR_KERNEL_CS
-0000001b l       *ABS*	00000000 SELECTOR_VIDEO
-00000000 l       *ABS*	00000000 _NR_get_ticks
-00000001 l       *ABS*	00000000 _NR_get_pid
-00000002 l       *ABS*	00000000 _NR_kmalloc
-00000003 l       *ABS*	00000000 _NR_kmalloc_4k
-00000004 l       *ABS*	00000000 _NR_malloc
-00000005 l       *ABS*	00000000 _NR_malloc_4k
-00000006 l       *ABS*	00000000 _NR_free
-00000007 l       *ABS*	00000000 _NR_free_4k
-00000008 l       *ABS*	00000000 _NR_fork
-00000009 l       *ABS*	00000000 _NR_pthread
-0000000a l       *ABS*	00000000 _NR_udisp_int
-0000000b l       *ABS*	00000000 _NR_udisp_str
-0000000c l       *ABS*	00000000 _NR_exec
-0000000d l       *ABS*	00000000 _NR_yield
-0000000e l       *ABS*	00000000 _NR_sleep
-0000000f l       *ABS*	00000000 _NR_print_E
-00000010 l       *ABS*	00000000 _NR_print_F
-00000011 l       *ABS*	00000000 _NR_open
-00000012 l       *ABS*	00000000 _NR_close
-00000013 l       *ABS*	00000000 _NR_read
-00000014 l       *ABS*	00000000 _NR_write
-00000015 l       *ABS*	00000000 _NR_lseek
-00000016 l       *ABS*	00000000 _NR_unlink
-00000017 l       *ABS*	00000000 _NR_create
-00000018 l       *ABS*	00000000 _NR_delete
-00000019 l       *ABS*	00000000 _NR_opendir
-0000001a l       *ABS*	00000000 _NR_createdir
-0000001b l       *ABS*	00000000 _NR_deletedir
-0000001c l       *ABS*	00000000 _NR_flush
-00000090 l       *ABS*	00000000 INT_VECTOR_SYS_CALL
-00000000 l    df *ABS*	00000000 printf.c
-00000000 l    df *ABS*	00000000 vsprintf.c
-08087e4e l     F .text	00000070 i2a
-00000000 l    df *ABS*	00000000 
-08096000 l     O .got.plt	00000000 _GLOBAL_OFFSET_TABLE_
-080689b9 g     F .text	00000000 .hidden __x86.get_pc_thunk.cx
-08096290 g     O .data	00000004 _lv_txt_encoded_conv_wc
-0804e706 g     F .text	00000056 lv_obj_get_height_margin
-0806c81e g     F .text	00000354 lv_task_handler
-0806d920 g     F .text	0000007d _lv_txt_is_cmd
-0804d384 g     F .text	0000045a lv_obj_set_state
-08087c2a g       .text	00000000 strcpy
-0806787f g     F .text	00000082 _lv_disp_pop_from_inv_buf
-0806d99d g     F .text	000000b1 _lv_txt_ins
-08068cb7 g     F .text	000002c2 _lv_area_is_point_on
-0806413d g     F .text	0000060c _lv_img_buf_transform_anti_alias
-08067d3e g     F .text	00000077 lv_anim_init
-08087cf6 g       .text	00000000 yield
-080698d3 g     F .text	00000023 lv_debug_check_mem_integrity
-080960a0 g     O .data	0000000c _lv_task_ll
-08067b61 g     F .text	000000ae _lv_indev_read
-0808196d g     F .text	0000006a lv_indev_get_vect
-0804f476 g     F .text	00000059 lv_obj_get_hidden
-0804f796 g     F .text	0000004f lv_obj_get_base_dir
-08058b50 g     F .text	000000a9 lv_draw_label_dsc_init
-0804e06e g     F .text	00000089 lv_obj_get_child
-080486e5 g     F .text	00000087 lv_disp_set_bg_image
-080884c0 g     O .rodata	00000002 _lv_bpp1_opa_table
-0804d8df g     F .text	00000099 lv_obj_finish_transitions
-08096230 g     O .data	00000004 _lv_font_decompr_buf
-08087d98 g       .text	00000000 delete
-0807e5b5 g     F .text	0000048e lv_label_get_letter_on
-08087de6 g     F .text	00000068 printf
-0804f895 g     F .text	00000082 lv_obj_get_state
-08087ebe g     F .text	00000273 vsprintf
-0804d7de g     F .text	0000007d lv_obj_add_state
-0805ba1b g     F .text	000000a7 lv_draw_mask_apply
-0805e4c4 g     F .text	00000000 .hidden __x86.get_pc_thunk.si
-0804d9cc g     F .text	0000007e lv_event_send
-080662c9 g     F .text	00000044 _lv_font_clean_up_fmt_txt
-0804afa6 g     F .text	00000024 lv_obj_del_anim_ready_cb
-0806e617 g     F .text	00000022 lv_theme_get_color_secondary
-0806b127 g     F .text	00000109 _lv_trigo_sin
-0804bea1 g     F .text	00000103 lv_obj_align
-0804c22d g     F .text	000000c3 lv_obj_align_mid_x
-08064ba2 g     F .text	00000070 lv_img_decoder_read_line
-08067db5 g     F .text	00000113 lv_anim_start
-080960b8 g     O .data	0000000c _lv_indev_ll
-0804f68a g     F .text	00000059 lv_obj_get_drag_throw
-0808146e g     F .text	000001b6 _lv_indev_read_task
-0805bed9 g     F .text	000000b9 lv_draw_mask_line_angle_init
-0806e4bf g     F .text	000000a5 lv_theme_copy
-08058bf9 g     F .text	00000b03 lv_draw_label
-0804f6e3 g     F .text	0000001e lv_obj_get_drag_parent
-08067242 g     F .text	00000277 lv_disp_drv_register
-08081639 g     F .text	00000022 lv_indev_get_type
-0806a3cb g     F .text	00000092 lv_fs_free_space
-0804eb1e g     F .text	0000040f _lv_obj_get_style_int
-0808175e g     F .text	00000043 lv_indev_enable
-080675fc g     F .text	00000019 lv_disp_set_default
-08095ff8 g     O .data.rel.ro	00000008 lv_anim_path_def
-0806cb72 g     F .text	000001d3 lv_task_create_basic
-0806713d g     F .text	000000b7 lv_disp_drv_init
-08068261 g     F .text	00000097 lv_anim_path_ease_in_out
-08080822 g     F .text	000000c3 lv_group_del
-08068f79 g     F .text	00000065 _lv_area_is_on
-080884e0 g     O .rodata	00000100 _lv_bpp8_opa_table
-0806e564 g     F .text	00000019 lv_theme_set_base
-08063ca2 g     F .text	0000049b _lv_img_buf_get_transformed_area
-08067ce0 g     F .text	0000005e _lv_anim_core_init
-0804e83c g     F .text	0000008a lv_obj_get_height_grid
-0805e80f g     F .text	00000010 lv_draw_px
-080699b6 g     F .text	000000f8 lv_debug_log_error
-0806a486 g     F .text	0000007b lv_fs_drv_register
-0807b658 g     F .text	000000a8 lv_cont_set_layout
-0804d2bb g     F .text	00000063 lv_obj_add_protect
-08081927 g     F .text	00000046 lv_indev_is_dragging
-0806b9a9 g     F .text	00000084 lv_mem_test
-08067b18 g     F .text	00000049 lv_indev_get_next
-0806c47a g     F .text	00000102 _lv_memset_00
-0806bba9 g     F .text	00000253 _lv_mem_buf_get
-0804e676 g     F .text	00000090 lv_obj_get_height_fit
-0807d9fe g     F .text	0000011d lv_label_set_text_fmt
-08069f45 g     F .text	0000005f lv_fs_seek
-08080ee0 g     F .text	000000c1 lv_group_set_editing
-08056a8a g     F .text	0000004a _lv_style_list_set_local_int
-0806d007 g     F .text	00000049 lv_task_get_next
-0804d248 g     F .text	00000073 lv_obj_set_base_dir
-08050748 g     F .text	000001a6 lv_obj_init_draw_line_dsc
-08079458 g     F .text	000000f7 lv_bar_set_value
-080677e7 g     F .text	0000001d lv_disp_flush_is_last
-08069aae g     F .text	0000002d _lv_fs_init
-0808107b g     F .text	00000022 lv_group_get_focus_cb
-08055fc2 g     F .text	00000061 _lv_style_get_mem_size
-0804f71f g     F .text	0000001e lv_obj_get_focus_parent
-08081624 g     F .text	00000015 lv_indev_get_act
-0808816c g     F .text	0000004a gets
-08087dd4 g       .text	00000000 flush
-0804c681 g     F .text	00000061 lv_obj_clean_style_list
-0805162f g     F .text	00000053 lv_obj_get_focused_obj
-080579ed g     F .text	00000066 lv_img_cf_get_px_size
-0804c953 g     F .text	0000008d lv_obj_remove_style_local_prop
-0804fd2e g     F .text	0000004b lv_obj_handle_get_type_signal
-0806a80c g     F .text	00000186 _lv_gc_clear_roots
-080962a0 g     O .data	00000004 _lv_txt_encoded_get_char_id
-08064d51 g     F .text	00000019 lv_img_decoder_set_open_cb
-0805a680 g     F .text	00000054 lv_draw_line_dsc_init
-0806be8c g     F .text	000000bc _lv_mem_buf_free_all
-08080bdd g     F .text	000001ca lv_group_focus_obj
-0806b7fb g     F .text	000000e3 lv_mem_realloc
-0804f633 g     F .text	00000057 lv_obj_get_drag_dir
-0804e4a4 g     F .text	0000008a lv_obj_get_y
-0804eac3 g     F .text	0000005b lv_obj_get_style_list
-0804b02a g     F .text	00000087 lv_obj_clean
-0806cdeb g     F .text	00000019 lv_task_set_cb
-0806b4a5 g     F .text	000000a2 _lv_pow
-0804bfa4 g     F .text	000000c3 lv_obj_align_x
-08057095 g     F .text	00000021 lv_debug_check_style
-0806cfa7 g     F .text	00000027 lv_task_reset
-0804c83d g     F .text	0000008f _lv_obj_set_style_local_opa
-0806bf48 g     F .text	0000040b _lv_memcpy
-0806a719 g     F .text	000000af lv_fs_get_last
-08087be0 g       .text	00000000 memcpy
-0804bd11 g     F .text	00000064 lv_obj_set_width_fit
-08068598 g     F .text	0000002d lv_anim_path_step
-08057a94 g     F .text	00000048 lv_img_cf_has_alpha
-08067ec8 g     F .text	000000a1 lv_anim_del
-0806483c g     F .text	00000010 lv_img_cache_invalidate_src
-0805bac2 g     F .text	0000005d lv_draw_mask_remove_id
-0804ce92 g     F .text	0000006c lv_obj_set_top
-0804dcc7 g     F .text	00000015 lv_event_get_data
-08069d78 g     F .text	000000b1 lv_fs_remove
-0804cefe g     F .text	00000080 lv_obj_set_drag
-0804c7b6 g     F .text	00000087 _lv_obj_set_style_local_color
-0804b475 g     F .text	000001d0 lv_obj_set_parent
-0804afca g     F .text	00000060 lv_obj_del_async
-08050e26 g     F .text	00000081 lv_debug_check_obj_type
-08067aeb g     F .text	0000002d lv_indev_drv_update
-08050464 g     F .text	00000196 lv_obj_init_draw_label_dsc
-0806499c g     F .text	000000b4 lv_img_decoder_get_info
-08087c88 g       .text	00000000 malloc
-08077d48 g     F .text	0000015c lv_theme_material_init
-0807e1be g     F .text	000003f7 lv_label_get_letter_pos
-08048505 g     F .text	0000003a lv_disp_get_scr_prev
-08087d04 g       .text	00000000 sleep
-080809f8 g     F .text	0000013b lv_group_remove_obj
-0804f23a g     F .text	000001c8 _lv_obj_get_style_ptr
-080556e8 g     F .text	00000029 lv_style_init
-080960ac g     O .data	0000000c _lv_disp_ll
-0804cdad g     F .text	0000007c lv_obj_set_adv_hittest
-0804aec1 g     F .text	000000e5 lv_obj_del
-0804f7e5 g     F .text	00000051 lv_obj_get_protect
-0806cf8e g     F .text	00000019 lv_task_set_repeat_count
-08048372 g     F .text	00000000 .hidden __x86.get_pc_thunk.ax
-080676f4 g     F .text	00000039 lv_disp_get_dpi
-0804dd83 g     F .text	00000054 lv_obj_set_design_cb
-0807d7f4 g     F .text	0000020a lv_label_set_text
-08064a50 g     F .text	00000152 lv_img_decoder_open
-0808185e g     F .text	00000023 lv_indev_set_button_points
-0807abc2 g     F .text	0000007a lv_btn_set_checkable
-080655d4 g     F .text	000000a2 lv_img_decoder_built_in_close
-080960f4 g     O .data	0000000c _lv_img_defoder_ll
-080881b6 g     F .text	00000177 strtoul
-0804876c g     F .text	0000008e lv_disp_set_bg_opa
-0805e63a g     F .text	00000124 lv_draw_rect_dsc_init
-0807dd1b g     F .text	000000aa lv_label_set_align
-0804b7c9 g     F .text	000001a8 lv_obj_set_pos
-0804cc0c g     F .text	000000bd _lv_obj_disable_style_caching
-080561bc g     F .text	00000192 _lv_style_set_color
-0808385f g     F .text	000000fe lv_indev_search_obj
-08065ea8 g     F .text	00000026 lv_font_get_glyph_bitmap
-0807b3fa g     F .text	0000025e lv_cont_create
-08086a8c g     F .text	00000046 lv_color_darken
-08087cd0 g       .text	00000000 udisp_int
-0804c9e0 g     F .text	000001a5 lv_obj_refresh_style
-0806a9ca g     F .text	000000a1 _lv_ll_ins_head
-0804d978 g     F .text	00000054 lv_obj_set_event_cb
-0806b723 g     F .text	000000d8 lv_mem_free
-08064d83 g     F .text	00000019 lv_img_decoder_set_close_cb
-08079640 g     F .text	00000127 lv_bar_set_range
-0806abfc g     F .text	0000011f _lv_ll_remove
-08065483 g     F .text	00000151 lv_img_decoder_built_in_read_line
-08096120 g     O .data	00000080 _lv_mem_buf
-0805e75e g     F .text	000000b1 lv_draw_rect
-08056b1d g     F .text	00000041 _lv_style_list_set_local_color
-0804e2ba g     F .text	00000060 lv_obj_get_coords
-08068a67 g     F .text	00000034 lv_area_set_width
-0806a1a4 g     F .text	00000123 lv_fs_dir_open
-080962a4 g     O .data	00000004 _lv_txt_get_encoded_length
-08050cc7 g     F .text	000000ae lv_obj_fade_in
-0804fb68 g     F .text	00000050 lv_obj_get_group
-0804c47a g     F .text	00000069 lv_obj_set_auto_realign
-08064749 g     F .text	000000d9 _lv_img_cache_open
-080484cb g     F .text	0000003a lv_disp_get_scr_act
-080674b9 g     F .text	00000094 lv_disp_drv_update
-08087d1e g       .text	00000000 print_F
-0806ce5a g     F .text	000000e9 lv_task_set_prio
-0804bdd9 g     F .text	00000064 lv_obj_set_width_margin
-08087d6b g       .text	00000000 lseek
-08081aee g     F .text	00000022 lv_indev_get_read_task
-08048587 g     F .text	0000003a lv_disp_get_layer_top
-080960c4 g     O .data	0000000c _lv_drv_ll
-080682f8 g     F .text	0000009a lv_anim_path_overshoot
-0806e639 g     F .text	00000018 lv_theme_get_flags
-080680a3 g     F .text	00000020 lv_anim_refr_now
-0808694b g     F .text	000000fb lv_color_fill
-0806ab5b g     F .text	000000a1 _lv_ll_ins_tail
-0804db78 g     F .text	0000014f lv_event_send_func
-0806754d g     F .text	000000af lv_disp_remove
-08084bef g     F .text	000001f2 _lv_blend_map
-0804e9ca g     F .text	00000054 lv_obj_get_ext_click_pad_top
-080636c1 g     F .text	00000163 lv_img_buf_alloc
-0807db1b g     F .text	000000b6 lv_label_set_text_static
-0806af94 g     F .text	000000d6 _lv_ll_move_before
-080884d0 g     O .rodata	00000010 _lv_bpp4_opa_table
-08067053 g     F .text	00000000 .hidden __x86.get_pc_thunk.dx
-08096100 g     O .data	0000000c _lv_obj_style_trans_ll
-08056977 g     F .text	0000002b _lv_style_list_get_transition_style
-0806914b g     F .text	000005ce _lv_area_align
-0806b59a g     F .text	00000073 _lv_mem_init
-08048ded g     F .text	0000008c lv_disp_get_inactive_time
-0807b700 g     F .text	00000176 lv_cont_set_fit4
-0806e3c0 g     F .text	00000090 _lv_utils_bsearch
-0806b345 g     F .text	00000160 _lv_atan2
-0808832d g     F .text	00000043 strtol
-0809629c g     O .data	00000004 _lv_txt_encoded_get_byte_id
-0804e214 g     F .text	000000a6 lv_obj_count_children_recursive
-0806e5f5 g     F .text	00000022 lv_theme_get_color_primary
-08056727 g     F .text	000000af _lv_style_get_opa
-080564e6 g     F .text	00000192 _lv_style_set_ptr
-0805c2bc g     F .text	00000042 lv_draw_mask_map_init
-0806a2c7 g     F .text	0000006e lv_fs_dir_read
-08084a03 g     F .text	000001ec _lv_blend_fill
-08068a9b g     F .text	00000035 lv_area_set_height
-08096220 g     O .data	00000004 _lv_theme_material_styles
-0805c166 g     F .text	000000cd lv_draw_mask_radius_init
-0804e976 g     F .text	00000054 lv_obj_get_ext_click_pad_right
-0807f0b6 g     F .text	000000ad lv_label_cut_text
-0807ad69 g     F .text	00000087 lv_btn_toggle
-0805588c g     F .text	00000029 lv_style_list_init
-0806d803 g     F .text	0000011d _lv_txt_get_width
-0806c7de g     F .text	00000040 _lv_task_core_init
-0807aeac g     F .text	0000006d lv_btn_get_checkable
-080676b8 g     F .text	0000003c lv_disp_get_antialiasing
-0806ae90 g     F .text	0000002b _lv_ll_get_head
-0807adf0 g     F .text	000000bc lv_btn_get_state
-080808e5 g     F .text	00000113 lv_group_add_obj
-08048eb8 g     F .text	0000004b lv_disp_clean_dcache
-0804be3d g     F .text	00000064 lv_obj_set_height_margin
-08068b44 g     F .text	0000004e lv_area_get_size
-08056b5e g     F .text	00000041 _lv_style_list_set_local_ptr
-08067862 g     F .text	0000001d lv_disp_get_inv_buf_size
-08087c7c g       .text	00000000 kmalloc_4k
-08067c0f g     F .text	00000028 lv_tick_inc
-08087d5c g       .text	00000000 write
-08067804 g     F .text	00000049 lv_disp_get_next
-08055711 g     F .text	00000071 lv_style_copy
-0804c726 g     F .text	00000090 _lv_obj_set_style_local_int
-0804f402 g     F .text	00000074 lv_obj_get_local_style
-08087d10 g       .text	00000000 print_E
-080798f5 g     F .text	0000008f lv_bar_get_start_value
-0806cf5b g     F .text	00000033 lv_task_ready
-0806e469 g     F .text	00000015 lv_theme_get_act
-0806b547 g     F .text	00000053 _lv_map
-08064d39 g     F .text	00000018 lv_img_decoder_set_info_cb
-08056885 g     F .text	000000af _lv_style_get_ptr
-08067901 g     F .text	00000034 lv_disp_is_double_buf
-0804b645 g     F .text	000000c2 lv_obj_move_foreground
-0806362a g     F .text	00000097 lv_img_buf_set_palette
-0806da4e g     F .text	0000008e _lv_txt_cut
-08080fd7 g     F .text	0000003b lv_group_set_refocus_policy
-0808074d g     F .text	000000d5 lv_group_create
-0807dbd1 g     F .text	0000014a lv_label_set_long_mode
-0806ba2d g     F .text	0000013b lv_mem_monitor
-0804e41a g     F .text	0000008a lv_obj_get_x
-08048f03 g     F .text	0000003a _lv_disp_get_refr_task
-0804e7b2 g     F .text	0000008a lv_obj_get_width_grid
-0804c067 g     F .text	000000c3 lv_obj_align_y
-0807987e g     F .text	00000077 lv_bar_get_value
-08086ad2 g     F .text	0000021b lv_color_hsv_to_rgb
-0804a6d0 g     F .text	00000036 lv_deinit
-08087cdc g       .text	00000000 udisp_str
-0806a0d9 g     F .text	000000cb lv_fs_rename
-08080fa1 g     F .text	00000036 lv_group_set_click_focus
-0804c6e2 g     F .text	00000044 lv_obj_reset_style_list
-0807ac3c g     F .text	0000012d lv_btn_set_state
-08065ece g     F .text	00000028 lv_font_get_glyph_dsc
-0807e15c g     F .text	00000062 lv_label_get_anim_speed
-0806d196 g     F .text	00000070 InitTxt
-08081012 g     F .text	00000034 lv_group_set_wrap
-0804f9b7 g     F .text	00000050 lv_obj_get_event_cb
-08087ce8 g       .text	00000000 exec
-08057a53 g     F .text	00000041 lv_img_cf_is_chroma_keyed
-08064f23 g     F .text	00000560 lv_img_decoder_built_in_open
-0807e0f2 g     F .text	0000006a lv_label_get_recolor
-0807b876 g     F .text	00000064 lv_cont_get_layout
-08079767 g     F .text	000000a9 lv_bar_set_type
-080698b2 g     F .text	00000021 lv_debug_check_null
-08080b33 g     F .text	000000aa lv_group_remove_all_objs
-08096288 g     O .data	00000004 _lv_txt_encoded_size
-0804de5e g     F .text	00000069 lv_obj_refresh_ext_draw_pad
-08068ad0 g     F .text	00000074 _lv_area_set_pos
-0804ddd7 g     F .text	00000087 lv_obj_allocate_ext_attr
-08087bd0 g       .text	00000000 _start
-08096294 g     O .data	00000004 _lv_txt_encoded_next
-08068a08 g     F .text	0000005f lv_area_set
-08096110 g     O .data	00000004 _lv_task_act
-0806a992 g     F .text	00000038 _lv_ll_init
-08057adc g     F .text	0000005a lv_img_src_get_type
-0804e01f g     F .text	0000004f lv_obj_get_parent
-0805bbe2 g     F .text	000002f7 lv_draw_mask_line_points_init
-0804b20b g     F .text	000001a9 lv_obj_area_is_visible
-080639e0 g     F .text	000002c2 _lv_img_buf_transform_init
-0804c2f0 g     F .text	000000c3 lv_obj_align_mid_y
-0806a65e g     F .text	000000bb lv_fs_up
-0804d00f g     F .text	0000006e lv_obj_set_drag_throw
-0804da6e g     F .text	0000010a lv_event_send_refresh_recursive
-0807b941 g     F .text	00000064 lv_cont_get_fit_right
-08087d4d g       .text	00000000 read
-0806ad1b g     F .text	00000071 _lv_ll_clear
-080542d1 g     F .text	000001fe _lv_inv_area
-0806e5dd g     F .text	00000018 lv_theme_get_font_title
-0806772d g     F .text	00000090 lv_disp_get_size_category
-08086ced g     F .text	000001e6 lv_color_rgb_to_hsv
-0806aa6b g     F .text	000000f0 _lv_ll_ins_prev
-0806b2e3 g     F .text	00000062 _lv_sqrt
-0807ba0a g     F .text	00000068 lv_cont_get_fit_bottom
-0804cf7e g     F .text	00000091 lv_obj_set_drag_dir
-0804cb85 g     F .text	00000087 lv_obj_report_style_mod
-08056f5e g     F .text	00000137 _lv_style_list_get_ptr
-0804e52e g     F .text	0000005c lv_obj_get_width
-08081831 g     F .text	0000002d lv_indev_set_group
-0805bb1f g     F .text	00000078 lv_draw_mask_remove_custom
-08087d7a g       .text	00000000 unlink
-08055cc4 g     F .text	000001c9 _lv_style_list_remove_style
-0806d62c g     F .text	000001d7 _lv_txt_get_next_line
-0806784d g     F .text	00000015 lv_disp_get_buf
-08096228 g     O .data	00000004 _lv_theme_mono_styles
-08080ec7 g     F .text	00000019 lv_group_set_focus_cb
-08080da7 g     F .text	0000002f lv_group_focus_next
-08087d89 g       .text	00000000 create
-08068c3e g     F .text	00000079 _lv_area_join
-080569a2 g     F .text	000000e8 _lv_style_list_add_trans_style
-0804ea1e g     F .text	00000054 lv_obj_get_ext_click_pad_bottom
-0807df69 g     F .text	0000004b lv_label_set_text_sel_end
-080799e6 g     F .text	00000062 lv_bar_get_max_value
-0806ad8c g     F .text	00000104 _lv_ll_chg_list
-0806dadc g     F .text	000000b5 _lv_txt_set_text_vfmt
-0805424f g     F .text	00000010 _lv_refr_init
-08056678 g     F .text	000000af _lv_style_get_int
-0806aee6 g     F .text	00000035 _lv_ll_get_next
-0807de77 g     F .text	000000a7 lv_label_set_anim_speed
-0806e5c5 g     F .text	00000018 lv_theme_get_font_subtitle
-08069b35 g     F .text	000001b5 lv_fs_open
-0806e5ad g     F .text	00000018 lv_theme_get_font_normal
-08048376 g     F .text	00000000 .hidden __x86.get_pc_thunk.bx
-08096224 g     O .data	00000004 _lv_theme_template_styles
-08087b61 g     F .text	0000003d lv_snprintf
-080485c1 g     F .text	0000003a lv_disp_get_layer_sys
-0804d07d g     F .text	0000006e lv_obj_set_drag_parent
-08087cba g       .text	00000000 fork
-080544cf g     F .text	00000015 _lv_refr_get_disp_refreshing
-0804fd79 g     F .text	000006eb lv_obj_init_draw_rect_dsc
-08062ca4 g     F .text	000002c3 lv_img_buf_get_px_alpha
-08068b92 g     F .text	000000ac _lv_area_intersect
-0804c5fc g     F .text	00000085 lv_obj_remove_style
-0805634e g     F .text	00000198 _lv_style_set_opa
-0804d11c g     F .text	000000c0 lv_obj_set_focus_parent
-08080e05 g     F .text	00000040 lv_group_focus_freeze
-0806b8de g     F .text	000000cb lv_mem_defrag
-08087c96 g       .text	00000000 malloc_4k
-0804c3b3 g     F .text	000000c7 lv_obj_realign
-08055f8f g     F .text	00000033 lv_style_reset
-0804f917 g     F .text	00000050 lv_obj_get_signal_cb
-0807e014 g     F .text	00000065 lv_label_get_long_mode
-0804f4cf g     F .text	00000059 lv_obj_get_adv_hittest
-0804fa07 g     F .text	00000050 lv_obj_get_ext_attr
-08068fde g     F .text	0000016d _lv_area_is_in
-0806cd45 g     F .text	000000a6 lv_task_create
-08069e29 g     F .text	0000008e lv_fs_read
-0804a5a8 g     F .text	00000128 lv_init
-08067615 g     F .text	00000015 lv_disp_get_default
-080962f1 g       .bss	00000000 __bss_start
-080629a6 g     F .text	000002fe lv_img_buf_get_px_color
-08087c09 g       .text	00000000 memset
-0806e595 g     F .text	00000018 lv_theme_get_font_small
-08067057 g     F .text	000000e6 InitLvFontMontserrat_14
-080481b7 g     F .text	000001bb main
-08087cc2 g       .text	00000000 pthread
-0806cff1 g     F .text	00000016 lv_task_get_idle
-0804bd75 g     F .text	00000064 lv_obj_set_height_fit
-0804fa57 g     F .text	00000111 lv_obj_get_type
-0806a45d g     F .text	00000029 lv_fs_drv_init
-0807ef29 g     F .text	0000018d lv_label_ins_text
-080485fb g     F .text	00000063 lv_disp_assign_screen
-0806cfce g     F .text	00000023 lv_task_enable
-0806386c g     F .text	00000174 lv_img_buf_get_img_size
-080884c4 g     O .rodata	00000004 _lv_bpp2_opa_table
-080570b6 g     F .text	00000021 lv_debug_check_style_list
-08056934 g     F .text	00000043 lv_style_list_get_local_style
-0806e57d g     F .text	00000018 lv_theme_set_apply_cb
-08088131 g     F .text	0000003b getchar
-08055782 g     F .text	0000010a lv_style_remove_prop
-0804bc9c g     F .text	00000075 lv_obj_set_height
-08067c67 g     F .text	00000039 lv_tick_elaps
-08087da7 g       .text	00000000 opendir
-080817a1 g     F .text	00000090 lv_indev_set_cursor
-0804e8c6 g     F .text	0000005c lv_obj_get_auto_realign
-0809610c g     O .data	00000004 _lv_img_cache_array
-080487fa g     F .text	000005f3 lv_scr_load_anim
-0804fc2f g     F .text	000000a7 lv_obj_is_point_on_coords
-08096298 g     O .data	00000004 _lv_txt_encoded_prev
-08056b9f g     F .text	00000143 _lv_style_list_get_int
-0806b06a g     F .text	0000003c _lv_ll_is_empty
-0804c12a g     F .text	00000103 lv_obj_align_mid
-0804dcdc g     F .text	00000054 lv_obj_set_signal_cb
-080505fa g     F .text	0000014e lv_obj_init_draw_img_dsc
-08064cfe g     F .text	0000003b lv_img_decoder_delete
-0804d1dc g     F .text	0000006c lv_obj_set_parent_event
-0807dfb4 g     F .text	00000060 lv_label_get_text
-08064d6a g     F .text	00000019 lv_img_decoder_set_read_line_cb
-0806af1b g     F .text	00000032 _lv_ll_get_prev
-0804d0eb g     F .text	00000031 lv_obj_set_gesture_parent
-0805bb97 g     F .text	0000004b lv_draw_mask_get_cnt
-0804e0f7 g     F .text	00000089 lv_obj_get_child_back
-0806a06d g     F .text	0000006c lv_fs_size
-08050e0d g     F .text	00000019 strcmp
-08067c37 g     F .text	00000030 lv_tick_get
-0804e31a g     F .text	00000100 lv_obj_get_inner_coords
-08056e20 g     F .text	0000013e _lv_style_list_get_opa
-0804ba5d g     F .text	000001c8 lv_obj_set_size
-0804c577 g     F .text	00000085 lv_obj_add_style
-0806b660 g     F .text	000000c3 lv_mem_alloc
-080818eb g     F .text	00000016 lv_indev_get_gesture_dir
-0804865e g     F .text	00000087 lv_disp_set_bg_color
-0804f836 g     F .text	0000005f lv_obj_is_protected
-0808165b g     F .text	000000c3 lv_indev_reset
-0804e58a g     F .text	0000005c lv_obj_get_height
-0807b8da g     F .text	00000067 lv_cont_get_fit_left
-08055e8d g     F .text	00000102 _lv_style_list_reset
-0806a5e2 g     F .text	0000007c lv_fs_get_ext
-0805a6d4 g     F .text	00000326 lv_draw_line
-0808171e g     F .text	00000040 lv_indev_reset_long_press
-0804d85b g     F .text	00000084 lv_obj_clear_state
-080671f4 g     F .text	0000004e lv_disp_buf_init
-08069eb7 g     F .text	0000008e lv_fs_write
-08086a46 g     F .text	00000046 lv_color_lighten
-08079810 g     F .text	0000006e lv_bar_set_anim_time
-0807ea92 g     F .text	0000004f lv_label_get_text_sel_end
-0804e180 g     F .text	00000094 lv_obj_count_children
-0807ea43 g     F .text	0000004f lv_label_get_text_sel_start
-08068392 g     F .text	00000206 lv_anim_path_bounce
-08079a48 g     F .text	00000065 lv_bar_get_type
-080697d8 g     F .text	00000097 lv_async_call
-080558b5 g     F .text	0000028e lv_style_list_copy
-080680c3 g     F .text	00000070 lv_anim_path_linear
-08057973 g     F .text	0000007a lv_draw_img
-08069adb g     F .text	0000005a lv_fs_is_ready
-0804ef2d g     F .text	00000130 _lv_obj_get_style_color
-08087c60 g       .text	00000000 get_ticks
-0804fbb8 g     F .text	00000077 lv_obj_is_focused
-080819d7 g     F .text	000000dd lv_indev_finish_drag
-0805c233 g     F .text	00000089 lv_draw_mask_fade_init
-0805bf92 g     F .text	000001d4 lv_draw_mask_angle_init
-0804853f g     F .text	00000048 lv_disp_load_scr
-08056ce2 g     F .text	0000013e _lv_style_list_get_color
-08079aad g     F .text	00000062 lv_bar_get_anim_time
-0806762a g     F .text	00000047 lv_disp_get_hor_res
-08096060 g     O .data	00000014 lv_font_montserrat_14
-0807df1e g     F .text	0000004b lv_label_set_text_sel_start
-08057912 g     F .text	00000061 lv_draw_img_dsc_init
-0806d206 g     F .text	000001e6 _lv_txt_get_size
-08087cae g       .text	00000000 free_4k
-08080720 g     F .text	0000002d _lv_group_init
-08087dc5 g       .text	00000000 deletedir
-08065ef6 g     F .text	0000003b lv_font_get_glyph_width
-0804b3b4 g     F .text	000000c1 lv_obj_is_visible
-0804b707 g     F .text	000000c2 lv_obj_move_background
-080679e4 g     F .text	00000107 lv_indev_drv_register
-0804f05d g     F .text	000001dd _lv_obj_get_style_opa
-08062f67 g     F .text	0000031e lv_img_buf_set_px_alpha
-080884c8 g     O .rodata	00000008 _lv_bpp3_opa_table
-0807f163 g     F .text	00000b84 lv_label_refr_text
-08067fd4 g     F .text	00000061 lv_anim_count_running
-08050ea7 g     F .text	000000aa lv_debug_check_obj_valid
-08069cea g     F .text	0000008e lv_fs_close
-08056023 g     F .text	00000199 _lv_style_set_int
-08067987 g     F .text	0000005d lv_indev_drv_init
-080960dc g     O .data	0000000c _lv_anim_ll
-0809622c g     O .data	00000004 _lv_theme_empty_styles
-080961a0 g     O .data	00000080 _lv_draw_mask_list
-080791a0 g     F .text	000002b8 lv_bar_create
-0804f73d g     F .text	00000059 lv_obj_get_parent_event
-080677bd g     F .text	0000002a lv_disp_flush_ready
-0804f528 g     F .text	00000059 lv_obj_get_click
-080544e4 g     F .text	00000019 _lv_refr_set_disp_refreshing
-080962f1 g       .data	00000000 _edata
-08048e79 g     F .text	0000003f lv_disp_trig_activity
-080bcf20 g       .bss	00000000 _end
-0804c4e3 g     F .text	00000094 lv_obj_set_ext_click_area
-0804b971 g     F .text	00000077 lv_obj_set_x
-0804e922 g     F .text	00000054 lv_obj_get_ext_click_pad_left
-0804a706 g     F .text	000007bb lv_obj_create
-080960e8 g     O .data	0000000c _lv_group_ll
-08069fa4 g     F .text	0000006d lv_fs_tell
-0804b9e8 g     F .text	00000075 lv_obj_set_y
-08065f31 g     F .text	0000022f lv_font_get_bitmap_fmt_txt
-0804dec7 g     F .text	00000070 lv_obj_get_screen
-0804f967 g     F .text	00000050 lv_obj_get_design_cb
-0806af4d g     F .text	00000047 _lv_ll_get_len
-080960d0 g     O .data	0000000c _lv_file_ll
-0806a335 g     F .text	00000096 lv_fs_dir_close
-08066160 g     F .text	00000169 lv_font_get_glyph_dsc_fmt_txt
-08067935 g     F .text	00000052 lv_disp_is_true_double_buf
-0804bc25 g     F .text	00000077 lv_obj_set_width
-08087c70 g       .text	00000000 kmalloc
-08086ed3 g     F .text	0000004d lv_color_to_hsv
-0806c353 g     F .text	00000127 _lv_memset
-0807ddc5 g     F .text	000000b2 lv_label_set_recolor
-080681c7 g     F .text	0000009a lv_anim_path_ease_out
-0804df37 g     F .text	000000e8 lv_obj_get_disp
-0804f581 g     F .text	00000059 lv_obj_get_top
-0804d31e g     F .text	00000066 lv_obj_clear_protect
-0804b0b1 g     F .text	00000098 lv_obj_invalidate_area
-08056ad4 g     F .text	00000049 _lv_style_list_set_local_opa
-08081ad9 g     F .text	00000015 lv_indev_get_obj_act
-080810cd g     F .text	00000031 lv_group_get_click_focus
-08087b9e g     F .text	00000030 lv_vsnprintf
-0806a568 g     F .text	0000007a lv_fs_get_letters
-080698f6 g     F .text	000000c0 lv_debug_check_str
-08087db6 g       .text	00000000 createdir
-08081ab4 g     F .text	00000025 lv_indev_wait_release
-0804ea72 g     F .text	00000051 lv_obj_get_ext_draw_pad
-08088370 g     F .text	0000001e atoi
-08064c12 g     F .text	0000006d lv_img_decoder_close
-080544fd g     F .text	0000030d _lv_disp_refr_task
-08080e45 g     F .text	00000082 lv_group_send_data
-0804c8cc g     F .text	00000087 _lv_obj_set_style_local_ptr
-0807eef4 g     F .text	00000035 lv_label_get_style
-08081881 g     F .text	0000006a lv_indev_get_point
-08079984 g     F .text	00000062 lv_bar_get_min_value
-0807954f g     F .text	000000f1 lv_bar_set_start_value
-08068133 g     F .text	00000094 lv_anim_path_ease_in
-0804f701 g     F .text	0000001e lv_obj_get_gesture_parent
-08064822 g     F .text	0000001a lv_img_cache_set_size
-0804b149 g     F .text	000000c2 lv_obj_invalidate
-08087c42 g       .text	00000000 strlen
-0804f5da g     F .text	00000059 lv_obj_get_drag
-0806aebb g     F .text	0000002b _lv_ll_get_tail
-0807d3eb g     F .text	00000409 lv_label_create
-0806a011 g     F .text	0000005c lv_fs_trunc
-08087d2a g       .text	00000000 open
-0804e5e6 g     F .text	00000090 lv_obj_get_width_fit
-0808109d g     F .text	00000030 lv_group_get_editing
-0806bb68 g     F .text	00000041 _lv_mem_get_size
-08068035 g     F .text	0000006e lv_anim_speed_to_time
-0806cf43 g     F .text	00000018 lv_task_set_period
-080810fe g     F .text	00000031 lv_group_get_wrap
-0804e75c g     F .text	00000056 lv_obj_get_width_margin
-0807b9a5 g     F .text	00000065 lv_cont_get_fit_top
-0807e079 g     F .text	00000079 lv_label_get_align
-0806e27d g     F .text	00000143 _lv_utils_num_to_str
-08063285 g     F .text	000003a5 lv_img_buf_set_px_color
-0807a9de g     F .text	000001e4 lv_btn_create
-0806b230 g     F .text	000000b3 _lv_bezier3
-0809628c g     O .data	00000004 _lv_txt_unicode_to_encoded
-0806e450 g     F .text	00000019 lv_theme_set_act
-0805425f g     F .text	00000072 lv_refr_now
-0804ccc9 g     F .text	000000e4 lv_obj_set_hidden
-0806e47e g     F .text	00000041 lv_theme_apply
-0804dd30 g     F .text	00000053 lv_signal_send
-080648d9 g     F .text	000000c3 _lv_img_decoder_init
-080567d6 g     F .text	000000af _lv_style_get_color
-0804ce29 g     F .text	00000069 lv_obj_set_click
-08081901 g     F .text	00000026 lv_indev_get_key
-0806bdfc g     F .text	00000090 _lv_mem_buf_release
-08064d9c g     F .text	00000187 lv_img_decoder_built_in_info
-0806ce04 g     F .text	00000056 lv_task_del
-08080dd6 g     F .text	0000002f lv_group_focus_prev
-08087d3e g       .text	00000000 close
-0806c57c g     F .text	00000102 _lv_memset_ff
-0804fcd6 g     F .text	00000058 lv_obj_hittest
-08081046 g     F .text	00000035 lv_group_get_focused
-080508ee g     F .text	000003d9 lv_obj_get_draw_rect_ext_pad_size
-08087c68 g       .text	00000000 get_pid
-0806b60d g     F .text	00000053 _lv_mem_deinit
-08063824 g     F .text	00000048 lv_img_buf_free
-08064c7f g     F .text	0000007f lv_img_decoder_create
-0805b9a8 g     F .text	00000073 lv_draw_mask_add
-0808144c g     F .text	00000022 _lv_indev_init
-0807eae1 g     F .text	00000413 lv_label_is_char_under_pos
-08087ca2 g       .text	00000000 free
-08055b43 g     F .text	00000181 _lv_style_list_add_style
-08050d75 g     F .text	00000098 lv_obj_fade_out
-08067671 g     F .text	00000047 lv_disp_get_ver_res
-0804da4a g     F .text	00000024 lv_event_send_refresh
-08067f69 g     F .text	0000006b lv_anim_get
-0806a501 g     F .text	00000067 lv_fs_get_drv
+Disassembly of section .text:
 
+080480c0 <lv_btn_create_c>:
+ 80480c0:	55                   	push   %ebp
+ 80480c1:	89 e5                	mov    %esp,%ebp
+ 80480c3:	57                   	push   %edi
+ 80480c4:	53                   	push   %ebx
+ 80480c5:	83 ec 30             	sub    $0x30,%esp
+ 80480c8:	e8 f8 03 00 00       	call   80484c5 <__x86.get_pc_thunk.bx>
+ 80480cd:	81 c3 33 1f 00 00    	add    $0x1f33,%ebx
+ 80480d3:	8d 55 c8             	lea    -0x38(%ebp),%edx
+ 80480d6:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80480db:	b9 0c 00 00 00       	mov    $0xc,%ecx
+ 80480e0:	89 d7                	mov    %edx,%edi
+ 80480e2:	f3 ab                	rep stos %eax,%es:(%edi)
+ 80480e4:	66 c7 45 c8 ff ff    	movw   $0xffff,-0x38(%ebp)
+ 80480ea:	66 c7 45 ca 04 00    	movw   $0x4,-0x36(%ebp)
+ 80480f0:	c7 45 cc 02 00 00 00 	movl   $0x2,-0x34(%ebp)
+ 80480f7:	c7 45 d0 04 00 00 00 	movl   $0x4,-0x30(%ebp)
+ 80480fe:	c7 45 d8 02 00 00 00 	movl   $0x2,-0x28(%ebp)
+ 8048105:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048108:	89 45 dc             	mov    %eax,-0x24(%ebp)
+ 804810b:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 804810e:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 8048111:	83 ec 0c             	sub    $0xc,%esp
+ 8048114:	8d 45 c8             	lea    -0x38(%ebp),%eax
+ 8048117:	50                   	push   %eax
+ 8048118:	e8 25 06 00 00       	call   8048742 <send>
+ 804811d:	83 c4 10             	add    $0x10,%esp
+ 8048120:	8d 65 f8             	lea    -0x8(%ebp),%esp
+ 8048123:	5b                   	pop    %ebx
+ 8048124:	5f                   	pop    %edi
+ 8048125:	5d                   	pop    %ebp
+ 8048126:	c3                   	ret    
 
+08048127 <lv_obj_set_y_c>:
+ 8048127:	55                   	push   %ebp
+ 8048128:	89 e5                	mov    %esp,%ebp
+ 804812a:	57                   	push   %edi
+ 804812b:	53                   	push   %ebx
+ 804812c:	83 ec 30             	sub    $0x30,%esp
+ 804812f:	e8 91 03 00 00       	call   80484c5 <__x86.get_pc_thunk.bx>
+ 8048134:	81 c3 cc 1e 00 00    	add    $0x1ecc,%ebx
+ 804813a:	8d 55 c8             	lea    -0x38(%ebp),%edx
+ 804813d:	b8 00 00 00 00       	mov    $0x0,%eax
+ 8048142:	b9 0c 00 00 00       	mov    $0xc,%ecx
+ 8048147:	89 d7                	mov    %edx,%edi
+ 8048149:	f3 ab                	rep stos %eax,%es:(%edi)
+ 804814b:	66 c7 45 c8 ff ff    	movw   $0xffff,-0x38(%ebp)
+ 8048151:	66 c7 45 ca 04 00    	movw   $0x4,-0x36(%ebp)
+ 8048157:	c7 45 cc 01 00 00 00 	movl   $0x1,-0x34(%ebp)
+ 804815e:	c7 45 d0 04 00 00 00 	movl   $0x4,-0x30(%ebp)
+ 8048165:	c7 45 d4 01 00 00 00 	movl   $0x1,-0x2c(%ebp)
+ 804816c:	c7 45 d8 02 00 00 00 	movl   $0x2,-0x28(%ebp)
+ 8048173:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048176:	89 45 dc             	mov    %eax,-0x24(%ebp)
+ 8048179:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 804817c:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 804817f:	83 ec 0c             	sub    $0xc,%esp
+ 8048182:	8d 45 c8             	lea    -0x38(%ebp),%eax
+ 8048185:	50                   	push   %eax
+ 8048186:	e8 b7 05 00 00       	call   8048742 <send>
+ 804818b:	83 c4 10             	add    $0x10,%esp
+ 804818e:	8d 65 f8             	lea    -0x8(%ebp),%esp
+ 8048191:	5b                   	pop    %ebx
+ 8048192:	5f                   	pop    %edi
+ 8048193:	5d                   	pop    %ebp
+ 8048194:	c3                   	ret    
+
+08048195 <lv_textarea_create_c>:
+ 8048195:	55                   	push   %ebp
+ 8048196:	89 e5                	mov    %esp,%ebp
+ 8048198:	57                   	push   %edi
+ 8048199:	53                   	push   %ebx
+ 804819a:	83 ec 30             	sub    $0x30,%esp
+ 804819d:	e8 23 03 00 00       	call   80484c5 <__x86.get_pc_thunk.bx>
+ 80481a2:	81 c3 5e 1e 00 00    	add    $0x1e5e,%ebx
+ 80481a8:	8d 55 c8             	lea    -0x38(%ebp),%edx
+ 80481ab:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80481b0:	b9 0c 00 00 00       	mov    $0xc,%ecx
+ 80481b5:	89 d7                	mov    %edx,%edi
+ 80481b7:	f3 ab                	rep stos %eax,%es:(%edi)
+ 80481b9:	66 c7 45 c8 ff ff    	movw   $0xffff,-0x38(%ebp)
+ 80481bf:	66 c7 45 ca 04 00    	movw   $0x4,-0x36(%ebp)
+ 80481c5:	c7 45 cc 02 00 00 00 	movl   $0x2,-0x34(%ebp)
+ 80481cc:	c7 45 d0 04 00 00 00 	movl   $0x4,-0x30(%ebp)
+ 80481d3:	c7 45 d4 02 00 00 00 	movl   $0x2,-0x2c(%ebp)
+ 80481da:	c7 45 d8 02 00 00 00 	movl   $0x2,-0x28(%ebp)
+ 80481e1:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80481e4:	89 45 dc             	mov    %eax,-0x24(%ebp)
+ 80481e7:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 80481ea:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 80481ed:	83 ec 0c             	sub    $0xc,%esp
+ 80481f0:	8d 45 c8             	lea    -0x38(%ebp),%eax
+ 80481f3:	50                   	push   %eax
+ 80481f4:	e8 49 05 00 00       	call   8048742 <send>
+ 80481f9:	83 c4 10             	add    $0x10,%esp
+ 80481fc:	8d 65 f8             	lea    -0x8(%ebp),%esp
+ 80481ff:	5b                   	pop    %ebx
+ 8048200:	5f                   	pop    %edi
+ 8048201:	5d                   	pop    %ebp
+ 8048202:	c3                   	ret    
+
+08048203 <lv_obj_set_x_c>:
+ 8048203:	55                   	push   %ebp
+ 8048204:	89 e5                	mov    %esp,%ebp
+ 8048206:	57                   	push   %edi
+ 8048207:	53                   	push   %ebx
+ 8048208:	83 ec 30             	sub    $0x30,%esp
+ 804820b:	e8 b5 02 00 00       	call   80484c5 <__x86.get_pc_thunk.bx>
+ 8048210:	81 c3 f0 1d 00 00    	add    $0x1df0,%ebx
+ 8048216:	8d 55 c8             	lea    -0x38(%ebp),%edx
+ 8048219:	b8 00 00 00 00       	mov    $0x0,%eax
+ 804821e:	b9 0c 00 00 00       	mov    $0xc,%ecx
+ 8048223:	89 d7                	mov    %edx,%edi
+ 8048225:	f3 ab                	rep stos %eax,%es:(%edi)
+ 8048227:	66 c7 45 c8 ff ff    	movw   $0xffff,-0x38(%ebp)
+ 804822d:	66 c7 45 ca 04 00    	movw   $0x4,-0x36(%ebp)
+ 8048233:	c7 45 cc 01 00 00 00 	movl   $0x1,-0x34(%ebp)
+ 804823a:	c7 45 d0 04 00 00 00 	movl   $0x4,-0x30(%ebp)
+ 8048241:	c7 45 d4 03 00 00 00 	movl   $0x3,-0x2c(%ebp)
+ 8048248:	c7 45 d8 02 00 00 00 	movl   $0x2,-0x28(%ebp)
+ 804824f:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048252:	89 45 dc             	mov    %eax,-0x24(%ebp)
+ 8048255:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 8048258:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 804825b:	83 ec 0c             	sub    $0xc,%esp
+ 804825e:	8d 45 c8             	lea    -0x38(%ebp),%eax
+ 8048261:	50                   	push   %eax
+ 8048262:	e8 db 04 00 00       	call   8048742 <send>
+ 8048267:	83 c4 10             	add    $0x10,%esp
+ 804826a:	8d 65 f8             	lea    -0x8(%ebp),%esp
+ 804826d:	5b                   	pop    %ebx
+ 804826e:	5f                   	pop    %edi
+ 804826f:	5d                   	pop    %ebp
+ 8048270:	c3                   	ret    
+
+08048271 <lv_label_create_c>:
+ 8048271:	55                   	push   %ebp
+ 8048272:	89 e5                	mov    %esp,%ebp
+ 8048274:	57                   	push   %edi
+ 8048275:	53                   	push   %ebx
+ 8048276:	83 ec 30             	sub    $0x30,%esp
+ 8048279:	e8 47 02 00 00       	call   80484c5 <__x86.get_pc_thunk.bx>
+ 804827e:	81 c3 82 1d 00 00    	add    $0x1d82,%ebx
+ 8048284:	8d 55 c8             	lea    -0x38(%ebp),%edx
+ 8048287:	b8 00 00 00 00       	mov    $0x0,%eax
+ 804828c:	b9 0c 00 00 00       	mov    $0xc,%ecx
+ 8048291:	89 d7                	mov    %edx,%edi
+ 8048293:	f3 ab                	rep stos %eax,%es:(%edi)
+ 8048295:	66 c7 45 c8 ff ff    	movw   $0xffff,-0x38(%ebp)
+ 804829b:	66 c7 45 ca 04 00    	movw   $0x4,-0x36(%ebp)
+ 80482a1:	c7 45 cc 02 00 00 00 	movl   $0x2,-0x34(%ebp)
+ 80482a8:	c7 45 d0 04 00 00 00 	movl   $0x4,-0x30(%ebp)
+ 80482af:	c7 45 d4 04 00 00 00 	movl   $0x4,-0x2c(%ebp)
+ 80482b6:	c7 45 d8 02 00 00 00 	movl   $0x2,-0x28(%ebp)
+ 80482bd:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80482c0:	89 45 dc             	mov    %eax,-0x24(%ebp)
+ 80482c3:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 80482c6:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 80482c9:	83 ec 0c             	sub    $0xc,%esp
+ 80482cc:	8d 45 c8             	lea    -0x38(%ebp),%eax
+ 80482cf:	50                   	push   %eax
+ 80482d0:	e8 6d 04 00 00       	call   8048742 <send>
+ 80482d5:	83 c4 10             	add    $0x10,%esp
+ 80482d8:	8d 65 f8             	lea    -0x8(%ebp),%esp
+ 80482db:	5b                   	pop    %ebx
+ 80482dc:	5f                   	pop    %edi
+ 80482dd:	5d                   	pop    %ebp
+ 80482de:	c3                   	ret    
+
+080482df <lv_win_create_c>:
+ 80482df:	55                   	push   %ebp
+ 80482e0:	89 e5                	mov    %esp,%ebp
+ 80482e2:	57                   	push   %edi
+ 80482e3:	53                   	push   %ebx
+ 80482e4:	83 ec 30             	sub    $0x30,%esp
+ 80482e7:	e8 d9 01 00 00       	call   80484c5 <__x86.get_pc_thunk.bx>
+ 80482ec:	81 c3 14 1d 00 00    	add    $0x1d14,%ebx
+ 80482f2:	8d 55 c8             	lea    -0x38(%ebp),%edx
+ 80482f5:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80482fa:	b9 0c 00 00 00       	mov    $0xc,%ecx
+ 80482ff:	89 d7                	mov    %edx,%edi
+ 8048301:	f3 ab                	rep stos %eax,%es:(%edi)
+ 8048303:	66 c7 45 c8 ff ff    	movw   $0xffff,-0x38(%ebp)
+ 8048309:	66 c7 45 ca 04 00    	movw   $0x4,-0x36(%ebp)
+ 804830f:	c7 45 cc 02 00 00 00 	movl   $0x2,-0x34(%ebp)
+ 8048316:	c7 45 d0 04 00 00 00 	movl   $0x4,-0x30(%ebp)
+ 804831d:	c7 45 d4 05 00 00 00 	movl   $0x5,-0x2c(%ebp)
+ 8048324:	c7 45 d8 02 00 00 00 	movl   $0x2,-0x28(%ebp)
+ 804832b:	8b 45 08             	mov    0x8(%ebp),%eax
+ 804832e:	89 45 dc             	mov    %eax,-0x24(%ebp)
+ 8048331:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 8048334:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 8048337:	83 ec 0c             	sub    $0xc,%esp
+ 804833a:	8d 45 c8             	lea    -0x38(%ebp),%eax
+ 804833d:	50                   	push   %eax
+ 804833e:	e8 ff 03 00 00       	call   8048742 <send>
+ 8048343:	83 c4 10             	add    $0x10,%esp
+ 8048346:	8d 65 f8             	lea    -0x8(%ebp),%esp
+ 8048349:	5b                   	pop    %ebx
+ 804834a:	5f                   	pop    %edi
+ 804834b:	5d                   	pop    %ebp
+ 804834c:	c3                   	ret    
+
+0804834d <Test>:
+ 804834d:	55                   	push   %ebp
+ 804834e:	89 e5                	mov    %esp,%ebp
+ 8048350:	57                   	push   %edi
+ 8048351:	83 ec 40             	sub    $0x40,%esp
+ 8048354:	e8 68 01 00 00       	call   80484c1 <__x86.get_pc_thunk.ax>
+ 8048359:	05 a7 1c 00 00       	add    $0x1ca7,%eax
+ 804835e:	8d 55 c8             	lea    -0x38(%ebp),%edx
+ 8048361:	b8 00 00 00 00       	mov    $0x0,%eax
+ 8048366:	b9 0c 00 00 00       	mov    $0xc,%ecx
+ 804836b:	89 d7                	mov    %edx,%edi
+ 804836d:	f3 ab                	rep stos %eax,%es:(%edi)
+ 804836f:	66 c7 45 c8 ff ff    	movw   $0xffff,-0x38(%ebp)
+ 8048375:	66 c7 45 ca 04 00    	movw   $0x4,-0x36(%ebp)
+ 804837b:	c7 45 cc 01 00 00 00 	movl   $0x1,-0x34(%ebp)
+ 8048382:	8d 45 c8             	lea    -0x38(%ebp),%eax
+ 8048385:	83 c0 08             	add    $0x8,%eax
+ 8048388:	89 45 f8             	mov    %eax,-0x8(%ebp)
+ 804838b:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 804838e:	c7 00 02 00 00 00    	movl   $0x2,(%eax)
+ 8048394:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 8048397:	c7 40 04 fa 00 00 00 	movl   $0xfa,0x4(%eax)
+ 804839e:	8b 45 f8             	mov    -0x8(%ebp),%eax
+ 80483a1:	c7 40 08 fa 00 00 00 	movl   $0xfa,0x8(%eax)
+ 80483a8:	90                   	nop
+ 80483a9:	83 c4 40             	add    $0x40,%esp
+ 80483ac:	5f                   	pop    %edi
+ 80483ad:	5d                   	pop    %ebp
+ 80483ae:	c3                   	ret    
+
+080483af <main>:
+ 80483af:	8d 4c 24 04          	lea    0x4(%esp),%ecx
+ 80483b3:	83 e4 f0             	and    $0xfffffff0,%esp
+ 80483b6:	ff 71 fc             	pushl  -0x4(%ecx)
+ 80483b9:	55                   	push   %ebp
+ 80483ba:	89 e5                	mov    %esp,%ebp
+ 80483bc:	57                   	push   %edi
+ 80483bd:	53                   	push   %ebx
+ 80483be:	51                   	push   %ecx
+ 80483bf:	83 ec 4c             	sub    $0x4c,%esp
+ 80483c2:	e8 fe 00 00 00       	call   80484c5 <__x86.get_pc_thunk.bx>
+ 80483c7:	81 c3 39 1c 00 00    	add    $0x1c39,%ebx
+ 80483cd:	8d 55 ac             	lea    -0x54(%ebp),%edx
+ 80483d0:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80483d5:	b9 0c 00 00 00       	mov    $0xc,%ecx
+ 80483da:	89 d7                	mov    %edx,%edi
+ 80483dc:	f3 ab                	rep stos %eax,%es:(%edi)
+ 80483de:	66 c7 45 ac ff ff    	movw   $0xffff,-0x54(%ebp)
+ 80483e4:	66 c7 45 ae 04 00    	movw   $0x4,-0x52(%ebp)
+ 80483ea:	c7 45 b0 02 00 00 00 	movl   $0x2,-0x50(%ebp)
+ 80483f1:	8d 45 ac             	lea    -0x54(%ebp),%eax
+ 80483f4:	83 c0 08             	add    $0x8,%eax
+ 80483f7:	89 45 e0             	mov    %eax,-0x20(%ebp)
+ 80483fa:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 80483fd:	c7 00 02 00 00 00    	movl   $0x2,(%eax)
+ 8048403:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 8048406:	c7 40 04 32 00 00 00 	movl   $0x32,0x4(%eax)
+ 804840d:	8b 45 e0             	mov    -0x20(%ebp),%eax
+ 8048410:	c7 40 08 32 00 00 00 	movl   $0x32,0x8(%eax)
+ 8048417:	83 ec 0c             	sub    $0xc,%esp
+ 804841a:	8d 45 ac             	lea    -0x54(%ebp),%eax
+ 804841d:	50                   	push   %eax
+ 804841e:	e8 1f 03 00 00       	call   8048742 <send>
+ 8048423:	83 c4 10             	add    $0x10,%esp
+ 8048426:	83 ec 0c             	sub    $0xc,%esp
+ 8048429:	8d 45 ac             	lea    -0x54(%ebp),%eax
+ 804842c:	50                   	push   %eax
+ 804842d:	e8 1e 03 00 00       	call   8048750 <recv>
+ 8048432:	83 c4 10             	add    $0x10,%esp
+ 8048435:	8b 45 b4             	mov    -0x4c(%ebp),%eax
+ 8048438:	89 45 dc             	mov    %eax,-0x24(%ebp)
+ 804843b:	83 ec 08             	sub    $0x8,%esp
+ 804843e:	68 90 01 00 00       	push   $0x190
+ 8048443:	ff 75 dc             	pushl  -0x24(%ebp)
+ 8048446:	e8 b8 fd ff ff       	call   8048203 <lv_obj_set_x_c>
+ 804844b:	83 c4 10             	add    $0x10,%esp
+ 804844e:	83 ec 08             	sub    $0x8,%esp
+ 8048451:	68 90 01 00 00       	push   $0x190
+ 8048456:	ff 75 dc             	pushl  -0x24(%ebp)
+ 8048459:	e8 c9 fc ff ff       	call   8048127 <lv_obj_set_y_c>
+ 804845e:	83 c4 10             	add    $0x10,%esp
+ 8048461:	83 ec 04             	sub    $0x4,%esp
+ 8048464:	6a 30                	push   $0x30
+ 8048466:	6a 00                	push   $0x0
+ 8048468:	8d 45 ac             	lea    -0x54(%ebp),%eax
+ 804846b:	50                   	push   %eax
+ 804846c:	e8 f8 00 00 00       	call   8048569 <memset>
+ 8048471:	83 c4 10             	add    $0x10,%esp
+ 8048474:	66 c7 45 ae 04 00    	movw   $0x4,-0x52(%ebp)
+ 804847a:	c7 45 b0 01 00 00 00 	movl   $0x1,-0x50(%ebp)
+ 8048481:	c7 45 b4 05 00 00 00 	movl   $0x5,-0x4c(%ebp)
+ 8048488:	c7 c0 c9 84 04 08    	mov    $0x80484c9,%eax
+ 804848e:	89 45 b8             	mov    %eax,-0x48(%ebp)
+ 8048491:	8d 83 4d e3 ff ff    	lea    -0x1cb3(%ebx),%eax
+ 8048497:	89 45 bc             	mov    %eax,-0x44(%ebp)
+ 804849a:	83 ec 0c             	sub    $0xc,%esp
+ 804849d:	8d 45 ac             	lea    -0x54(%ebp),%eax
+ 80484a0:	50                   	push   %eax
+ 80484a1:	e8 9c 02 00 00       	call   8048742 <send>
+ 80484a6:	83 c4 10             	add    $0x10,%esp
+ 80484a9:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%ebp)
+ 80484b0:	eb 04                	jmp    80484b6 <main+0x107>
+ 80484b2:	83 45 e4 01          	addl   $0x1,-0x1c(%ebp)
+ 80484b6:	81 7d e4 9f 86 01 00 	cmpl   $0x1869f,-0x1c(%ebp)
+ 80484bd:	7e f3                	jle    80484b2 <main+0x103>
+ 80484bf:	eb e8                	jmp    80484a9 <main+0xfa>
+
+080484c1 <__x86.get_pc_thunk.ax>:
+ 80484c1:	8b 04 24             	mov    (%esp),%eax
+ 80484c4:	c3                   	ret    
+
+080484c5 <__x86.get_pc_thunk.bx>:
+ 80484c5:	8b 1c 24             	mov    (%esp),%ebx
+ 80484c8:	c3                   	ret    
+
+080484c9 <Handler>:
+ 80484c9:	55                   	push   %ebp
+ 80484ca:	89 e5                	mov    %esp,%ebp
+ 80484cc:	57                   	push   %edi
+ 80484cd:	53                   	push   %ebx
+ 80484ce:	83 ec 40             	sub    $0x40,%esp
+ 80484d1:	e8 ef ff ff ff       	call   80484c5 <__x86.get_pc_thunk.bx>
+ 80484d6:	81 c3 2a 1b 00 00    	add    $0x1b2a,%ebx
+ 80484dc:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80484df:	89 45 f4             	mov    %eax,-0xc(%ebp)
+ 80484e2:	8b 45 f4             	mov    -0xc(%ebp),%eax
+ 80484e5:	ff d0                	call   *%eax
+ 80484e7:	8d 55 c4             	lea    -0x3c(%ebp),%edx
+ 80484ea:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80484ef:	b9 0c 00 00 00       	mov    $0xc,%ecx
+ 80484f4:	89 d7                	mov    %edx,%edi
+ 80484f6:	f3 ab                	rep stos %eax,%es:(%edi)
+ 80484f8:	66 c7 45 c4 ff ff    	movw   $0xffff,-0x3c(%ebp)
+ 80484fe:	66 c7 45 c6 ff ff    	movw   $0xffff,-0x3a(%ebp)
+ 8048504:	c7 45 c8 03 00 00 00 	movl   $0x3,-0x38(%ebp)
+ 804850b:	c7 45 cc 01 00 00 00 	movl   $0x1,-0x34(%ebp)
+ 8048512:	83 ec 0c             	sub    $0xc,%esp
+ 8048515:	8d 45 c4             	lea    -0x3c(%ebp),%eax
+ 8048518:	50                   	push   %eax
+ 8048519:	e8 24 02 00 00       	call   8048742 <send>
+ 804851e:	83 c4 10             	add    $0x10,%esp
+ 8048521:	90                   	nop
+ 8048522:	8d 65 f8             	lea    -0x8(%ebp),%esp
+ 8048525:	5b                   	pop    %ebx
+ 8048526:	5f                   	pop    %edi
+ 8048527:	5d                   	pop    %ebp
+ 8048528:	c3                   	ret    
+ 8048529:	66 90                	xchg   %ax,%ax
+ 804852b:	66 90                	xchg   %ax,%ax
+ 804852d:	66 90                	xchg   %ax,%ax
+ 804852f:	90                   	nop
+
+08048530 <_start>:
+ 8048530:	50                   	push   %eax
+ 8048531:	51                   	push   %ecx
+ 8048532:	e8 78 fe ff ff       	call   80483af <main>
+ 8048537:	f4                   	hlt    
+ 8048538:	66 90                	xchg   %ax,%ax
+ 804853a:	66 90                	xchg   %ax,%ax
+ 804853c:	66 90                	xchg   %ax,%ax
+ 804853e:	66 90                	xchg   %ax,%ax
+
+08048540 <memcpy>:
+ 8048540:	55                   	push   %ebp
+ 8048541:	89 e5                	mov    %esp,%ebp
+ 8048543:	56                   	push   %esi
+ 8048544:	57                   	push   %edi
+ 8048545:	51                   	push   %ecx
+ 8048546:	8b 7d 08             	mov    0x8(%ebp),%edi
+ 8048549:	8b 75 0c             	mov    0xc(%ebp),%esi
+ 804854c:	8b 4d 10             	mov    0x10(%ebp),%ecx
+
+0804854f <memcpy.1>:
+ 804854f:	83 f9 00             	cmp    $0x0,%ecx
+ 8048552:	74 0b                	je     804855f <memcpy.2>
+ 8048554:	3e 8a 06             	mov    %ds:(%esi),%al
+ 8048557:	46                   	inc    %esi
+ 8048558:	26 88 07             	mov    %al,%es:(%edi)
+ 804855b:	47                   	inc    %edi
+ 804855c:	49                   	dec    %ecx
+ 804855d:	eb f0                	jmp    804854f <memcpy.1>
+
+0804855f <memcpy.2>:
+ 804855f:	8b 45 08             	mov    0x8(%ebp),%eax
+ 8048562:	59                   	pop    %ecx
+ 8048563:	5f                   	pop    %edi
+ 8048564:	5e                   	pop    %esi
+ 8048565:	89 ec                	mov    %ebp,%esp
+ 8048567:	5d                   	pop    %ebp
+ 8048568:	c3                   	ret    
+
+08048569 <memset>:
+ 8048569:	55                   	push   %ebp
+ 804856a:	89 e5                	mov    %esp,%ebp
+ 804856c:	56                   	push   %esi
+ 804856d:	57                   	push   %edi
+ 804856e:	51                   	push   %ecx
+ 804856f:	8b 7d 08             	mov    0x8(%ebp),%edi
+ 8048572:	8b 55 0c             	mov    0xc(%ebp),%edx
+ 8048575:	8b 4d 10             	mov    0x10(%ebp),%ecx
+
+08048578 <memset.1>:
+ 8048578:	83 f9 00             	cmp    $0x0,%ecx
+ 804857b:	74 06                	je     8048583 <memset.2>
+ 804857d:	88 17                	mov    %dl,(%edi)
+ 804857f:	47                   	inc    %edi
+ 8048580:	49                   	dec    %ecx
+ 8048581:	eb f5                	jmp    8048578 <memset.1>
+
+08048583 <memset.2>:
+ 8048583:	59                   	pop    %ecx
+ 8048584:	5f                   	pop    %edi
+ 8048585:	5e                   	pop    %esi
+ 8048586:	89 ec                	mov    %ebp,%esp
+ 8048588:	5d                   	pop    %ebp
+ 8048589:	c3                   	ret    
+
+0804858a <strcpy>:
+ 804858a:	55                   	push   %ebp
+ 804858b:	89 e5                	mov    %esp,%ebp
+ 804858d:	8b 75 0c             	mov    0xc(%ebp),%esi
+ 8048590:	8b 7d 08             	mov    0x8(%ebp),%edi
+
+08048593 <strcpy.1>:
+ 8048593:	8a 06                	mov    (%esi),%al
+ 8048595:	46                   	inc    %esi
+ 8048596:	88 07                	mov    %al,(%edi)
+ 8048598:	47                   	inc    %edi
+ 8048599:	3c 00                	cmp    $0x0,%al
+ 804859b:	75 f6                	jne    8048593 <strcpy.1>
+ 804859d:	8b 45 08             	mov    0x8(%ebp),%eax
+ 80485a0:	5d                   	pop    %ebp
+ 80485a1:	c3                   	ret    
+
+080485a2 <strlen>:
+ 80485a2:	55                   	push   %ebp
+ 80485a3:	89 e5                	mov    %esp,%ebp
+ 80485a5:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80485aa:	8b 75 08             	mov    0x8(%ebp),%esi
+
+080485ad <strlen.1>:
+ 80485ad:	80 3e 00             	cmpb   $0x0,(%esi)
+ 80485b0:	74 04                	je     80485b6 <strlen.2>
+ 80485b2:	46                   	inc    %esi
+ 80485b3:	40                   	inc    %eax
+ 80485b4:	eb f7                	jmp    80485ad <strlen.1>
+
+080485b6 <strlen.2>:
+ 80485b6:	5d                   	pop    %ebp
+ 80485b7:	c3                   	ret    
+ 80485b8:	66 90                	xchg   %ax,%ax
+ 80485ba:	66 90                	xchg   %ax,%ax
+ 80485bc:	66 90                	xchg   %ax,%ax
+ 80485be:	66 90                	xchg   %ax,%ax
+
+080485c0 <get_ticks>:
+ 80485c0:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80485c5:	cd 90                	int    $0x90
+ 80485c7:	c3                   	ret    
+
+080485c8 <get_pid>:
+ 80485c8:	b8 01 00 00 00       	mov    $0x1,%eax
+ 80485cd:	cd 90                	int    $0x90
+ 80485cf:	c3                   	ret    
+
+080485d0 <kmalloc>:
+ 80485d0:	8b 5c 24 04          	mov    0x4(%esp),%ebx
+ 80485d4:	b8 02 00 00 00       	mov    $0x2,%eax
+ 80485d9:	cd 90                	int    $0x90
+ 80485db:	c3                   	ret    
+
+080485dc <kmalloc_4k>:
+ 80485dc:	8b 5c 24 04          	mov    0x4(%esp),%ebx
+ 80485e0:	b8 03 00 00 00       	mov    $0x3,%eax
+ 80485e5:	cd 90                	int    $0x90
+ 80485e7:	c3                   	ret    
+
+080485e8 <malloc>:
+ 80485e8:	53                   	push   %ebx
+ 80485e9:	8b 5c 24 08          	mov    0x8(%esp),%ebx
+ 80485ed:	b8 04 00 00 00       	mov    $0x4,%eax
+ 80485f2:	cd 90                	int    $0x90
+ 80485f4:	5b                   	pop    %ebx
+ 80485f5:	c3                   	ret    
+
+080485f6 <malloc_4k>:
+ 80485f6:	8b 5c 24 04          	mov    0x4(%esp),%ebx
+ 80485fa:	b8 05 00 00 00       	mov    $0x5,%eax
+ 80485ff:	cd 90                	int    $0x90
+ 8048601:	c3                   	ret    
+
+08048602 <free>:
+ 8048602:	8b 5c 24 04          	mov    0x4(%esp),%ebx
+ 8048606:	b8 06 00 00 00       	mov    $0x6,%eax
+ 804860b:	cd 90                	int    $0x90
+ 804860d:	c3                   	ret    
+
+0804860e <free_4k>:
+ 804860e:	8b 5c 24 04          	mov    0x4(%esp),%ebx
+ 8048612:	b8 07 00 00 00       	mov    $0x7,%eax
+ 8048617:	cd 90                	int    $0x90
+ 8048619:	c3                   	ret    
+
+0804861a <fork>:
+ 804861a:	b8 08 00 00 00       	mov    $0x8,%eax
+ 804861f:	cd 90                	int    $0x90
+ 8048621:	c3                   	ret    
+
+08048622 <pthread>:
+ 8048622:	53                   	push   %ebx
+ 8048623:	8b 5c 24 08          	mov    0x8(%esp),%ebx
+ 8048627:	b8 09 00 00 00       	mov    $0x9,%eax
+ 804862c:	cd 90                	int    $0x90
+ 804862e:	5b                   	pop    %ebx
+ 804862f:	c3                   	ret    
+
+08048630 <udisp_int>:
+ 8048630:	8b 5c 24 04          	mov    0x4(%esp),%ebx
+ 8048634:	b8 0a 00 00 00       	mov    $0xa,%eax
+ 8048639:	cd 90                	int    $0x90
+ 804863b:	c3                   	ret    
+
+0804863c <udisp_str>:
+ 804863c:	8b 5c 24 04          	mov    0x4(%esp),%ebx
+ 8048640:	b8 0b 00 00 00       	mov    $0xb,%eax
+ 8048645:	cd 90                	int    $0x90
+ 8048647:	c3                   	ret    
+
+08048648 <exec>:
+ 8048648:	53                   	push   %ebx
+ 8048649:	8b 5c 24 08          	mov    0x8(%esp),%ebx
+ 804864d:	b8 0c 00 00 00       	mov    $0xc,%eax
+ 8048652:	cd 90                	int    $0x90
+ 8048654:	5b                   	pop    %ebx
+ 8048655:	c3                   	ret    
+
+08048656 <yield>:
+ 8048656:	53                   	push   %ebx
+ 8048657:	8b 5c 24 08          	mov    0x8(%esp),%ebx
+ 804865b:	b8 0d 00 00 00       	mov    $0xd,%eax
+ 8048660:	cd 90                	int    $0x90
+ 8048662:	5b                   	pop    %ebx
+ 8048663:	c3                   	ret    
+
+08048664 <sleep>:
+ 8048664:	8b 5c 24 04          	mov    0x4(%esp),%ebx
+ 8048668:	b8 0e 00 00 00       	mov    $0xe,%eax
+ 804866d:	cd 90                	int    $0x90
+ 804866f:	c3                   	ret    
+
+08048670 <print_E>:
+ 8048670:	53                   	push   %ebx
+ 8048671:	8b 5c 24 08          	mov    0x8(%esp),%ebx
+ 8048675:	b8 0f 00 00 00       	mov    $0xf,%eax
+ 804867a:	cd 90                	int    $0x90
+ 804867c:	5b                   	pop    %ebx
+ 804867d:	c3                   	ret    
+
+0804867e <print_F>:
+ 804867e:	8b 5c 24 04          	mov    0x4(%esp),%ebx
+ 8048682:	b8 10 00 00 00       	mov    $0x10,%eax
+ 8048687:	cd 90                	int    $0x90
+ 8048689:	c3                   	ret    
+
+0804868a <open>:
+ 804868a:	53                   	push   %ebx
+ 804868b:	6a 02                	push   $0x2
+ 804868d:	89 e3                	mov    %esp,%ebx
+ 804868f:	83 c3 04             	add    $0x4,%ebx
+ 8048692:	b8 11 00 00 00       	mov    $0x11,%eax
+ 8048697:	cd 90                	int    $0x90
+ 8048699:	83 c4 04             	add    $0x4,%esp
+ 804869c:	5b                   	pop    %ebx
+ 804869d:	c3                   	ret    
+
+0804869e <close>:
+ 804869e:	6a 01                	push   $0x1
+ 80486a0:	89 e3                	mov    %esp,%ebx
+ 80486a2:	b8 12 00 00 00       	mov    $0x12,%eax
+ 80486a7:	cd 90                	int    $0x90
+ 80486a9:	83 c4 04             	add    $0x4,%esp
+ 80486ac:	c3                   	ret    
+
+080486ad <read>:
+ 80486ad:	6a 03                	push   $0x3
+ 80486af:	89 e3                	mov    %esp,%ebx
+ 80486b1:	b8 13 00 00 00       	mov    $0x13,%eax
+ 80486b6:	cd 90                	int    $0x90
+ 80486b8:	83 c4 04             	add    $0x4,%esp
+ 80486bb:	c3                   	ret    
+
+080486bc <write>:
+ 80486bc:	6a 03                	push   $0x3
+ 80486be:	89 e3                	mov    %esp,%ebx
+ 80486c0:	b8 14 00 00 00       	mov    $0x14,%eax
+ 80486c5:	cd 90                	int    $0x90
+ 80486c7:	83 c4 04             	add    $0x4,%esp
+ 80486ca:	c3                   	ret    
+
+080486cb <lseek>:
+ 80486cb:	6a 03                	push   $0x3
+ 80486cd:	89 e3                	mov    %esp,%ebx
+ 80486cf:	b8 15 00 00 00       	mov    $0x15,%eax
+ 80486d4:	cd 90                	int    $0x90
+ 80486d6:	83 c4 04             	add    $0x4,%esp
+ 80486d9:	c3                   	ret    
+
+080486da <unlink>:
+ 80486da:	6a 01                	push   $0x1
+ 80486dc:	89 e3                	mov    %esp,%ebx
+ 80486de:	b8 16 00 00 00       	mov    $0x16,%eax
+ 80486e3:	cd 90                	int    $0x90
+ 80486e5:	83 c4 04             	add    $0x4,%esp
+ 80486e8:	c3                   	ret    
+
+080486e9 <create>:
+ 80486e9:	6a 01                	push   $0x1
+ 80486eb:	89 e3                	mov    %esp,%ebx
+ 80486ed:	b8 17 00 00 00       	mov    $0x17,%eax
+ 80486f2:	cd 90                	int    $0x90
+ 80486f4:	83 c4 04             	add    $0x4,%esp
+ 80486f7:	c3                   	ret    
+
+080486f8 <delete>:
+ 80486f8:	6a 01                	push   $0x1
+ 80486fa:	89 e3                	mov    %esp,%ebx
+ 80486fc:	b8 18 00 00 00       	mov    $0x18,%eax
+ 8048701:	cd 90                	int    $0x90
+ 8048703:	83 c4 04             	add    $0x4,%esp
+ 8048706:	c3                   	ret    
+
+08048707 <opendir>:
+ 8048707:	6a 01                	push   $0x1
+ 8048709:	89 e3                	mov    %esp,%ebx
+ 804870b:	b8 19 00 00 00       	mov    $0x19,%eax
+ 8048710:	cd 90                	int    $0x90
+ 8048712:	83 c4 04             	add    $0x4,%esp
+ 8048715:	c3                   	ret    
+
+08048716 <createdir>:
+ 8048716:	6a 01                	push   $0x1
+ 8048718:	89 e3                	mov    %esp,%ebx
+ 804871a:	b8 1a 00 00 00       	mov    $0x1a,%eax
+ 804871f:	cd 90                	int    $0x90
+ 8048721:	83 c4 04             	add    $0x4,%esp
+ 8048724:	c3                   	ret    
+
+08048725 <deletedir>:
+ 8048725:	6a 01                	push   $0x1
+ 8048727:	89 e3                	mov    %esp,%ebx
+ 8048729:	b8 1b 00 00 00       	mov    $0x1b,%eax
+ 804872e:	cd 90                	int    $0x90
+ 8048730:	83 c4 04             	add    $0x4,%esp
+ 8048733:	c3                   	ret    
+
+08048734 <GraphFlush>:
+ 8048734:	53                   	push   %ebx
+ 8048735:	8b 5c 24 08          	mov    0x8(%esp),%ebx
+ 8048739:	b8 1c 00 00 00       	mov    $0x1c,%eax
+ 804873e:	cd 90                	int    $0x90
+ 8048740:	5b                   	pop    %ebx
+ 8048741:	c3                   	ret    
+
+08048742 <send>:
+ 8048742:	53                   	push   %ebx
+ 8048743:	8b 5c 24 08          	mov    0x8(%esp),%ebx
+ 8048747:	b8 1d 00 00 00       	mov    $0x1d,%eax
+ 804874c:	cd 90                	int    $0x90
+ 804874e:	5b                   	pop    %ebx
+ 804874f:	c3                   	ret    
+
+08048750 <recv>:
+ 8048750:	53                   	push   %ebx
+ 8048751:	8b 5c 24 08          	mov    0x8(%esp),%ebx
+ 8048755:	b8 1e 00 00 00       	mov    $0x1e,%eax
+ 804875a:	cd 90                	int    $0x90
+ 804875c:	5b                   	pop    %ebx
+ 804875d:	c3                   	ret    
