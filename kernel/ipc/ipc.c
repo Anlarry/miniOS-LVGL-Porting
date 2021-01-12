@@ -128,7 +128,7 @@ void sys_signal_return(IPC_MSG* msg)
     // to some operation to compute true address
     int ebp = msg.data[1];
     int esp_syscall = p_proc_current->task.esp_save_syscall;
-    int last_esp = ebp+ sizeof(sig);    //int save esp
+    int last_esp = ebp+ sizeof(Sigaction);    //int save esp
     memcpy(&regs, last_esp, sizeof(STACK_FRAME));
     memcpy(&esp_syscall, &regs, sizeof(STACK_FRAME));
     //
