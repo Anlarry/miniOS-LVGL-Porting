@@ -39,10 +39,14 @@ int msg_free(MsgNode* msgNode) {
 
 
 
-void sys_signal_send(PROCESS* proc, IPC_MSG *msg)
+
+
+void sys_signal_send(PROCESS* proc, IPC_MSG *msg_p)
 {
     STACK_FRAME regs;
     memcpy(&regs, &proc->task.regs, sizeof(STACK_FRAME));
+    IPC_MSG msg ;
+    memcpy(&msg, msg_p, sizeof(IPC_MSG));
 
     // change this proc(B)'s eip to warper function
     // warp function includes { handler, signal_return }
@@ -54,7 +58,7 @@ void sys_signal_send(PROCESS* proc, IPC_MSG *msg)
     int B_cr3 = proc->task.cr3;
     int A_cr3;
     /* change cr3 to B_cr3 */
-    __asm__ __volatile__ (
+    __asm__  (
         "mov %%cr3, %%eax\n"
         "mov %%ebx, %%cr3\n"
         : "=a"(A_cr3)
@@ -62,11 +66,11 @@ void sys_signal_send(PROCESS* proc, IPC_MSG *msg)
         :
     );
     
-    int B_ss = regs.ss;
-    int A_es ;
+    uint16_t B_ss = regs.ss;
+    uint16_t A_es ;
     
     /* change es to B_ss */
-    __asm__ __volatile__ (
+    __asm__  (
         "mov %%es, %%ax\n"
         "mov %%ebx, %%es\n"
         : "=a"(A_es)
@@ -75,9 +79,10 @@ void sys_signal_send(PROCESS* proc, IPC_MSG *msg)
     );
     
     /* save context */ 
-    int start = regs.esp - sizeof(STACK_FRAME);
-    for(uint8_t* p = start, *sf = &regs; p < regs.esp; p++, sf++) {
-        __asm__ __volatile__( 
+    int context_size = 8 + 4 + 6; // 18
+    int start = regs.esp - context_size;
+    for(uint8_t* p = start, *sf = proc->task.esp_save_syscall; p < regs.esp; p++, sf++) {
+        __asm__ ( 
             "mov %%ax, %%es:(%%edi)"
             : 
             : "a"(*sf), "D"(p)
@@ -88,20 +93,27 @@ void sys_signal_send(PROCESS* proc, IPC_MSG *msg)
     /* push para */
     start -= sizeof(Sigaction);
     Sigaction sigaction = {
-        .handler = msg->data[2]
+        .handler = msg.data[2]
     };
     for(uint8_t* p = start, *sf = &sigaction, i = 0; i < sizeof(Sigaction);i++, p++, sf++) {
-        __asm__ __volatile__( 
+        __asm__ (
             "mov %%ax, %%es:(%%edi)"
-            : 
+            :
             : "a"(*sf), "D"(p)
             :
         );
     }
 
+    /* Handler return address */
+    start -= sizeof(uint32_t);
+
 
     /* switch to Handler */
-    proc->task.regs.eip = msg->data[1];
+    // proc->task.regs.esp = start;
+    // proc->task.regs.eip = msg.data[1];
+    uint32_t *context_p = proc->task.esp_save_syscall;
+    *(context_p + 13) =  msg.data[1];
+    *(context_p + 16) = start;
 
     /*  reverse  */
     __asm__ __volatile__ (
@@ -260,6 +272,7 @@ int sys_send(IPC_MSG* msg) {
                 case SIG_RETURN :
                     break;
             }
+            break;
         }
         case P2P_A :
         {

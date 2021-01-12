@@ -5,11 +5,36 @@
 #include <gui/api.h>
 #include <ipc/signal.h>
 
+// void _Handler(Sigaction sigaction) {
+//     while(1) {
+//         ;
+//     }
+//     void (*_fun)();
+//     _fun = (void (*)())sigaction.handler;
+//     _fun();
+//     IPC_MSG sig_return = {
+//         .src = -1,
+//         .dst = -1,
+//         .type = Signal,
+//         .data = {SIG_RETURN}
+//     };
+//     send(&sig_return);
+// }
+
 void Test() {
-    printf("***");
-    int i =0;
-    i++;
-    for(int i = 0; i < 5; i++) ;
+
+    IPC_MSG msg = {
+        .src = -1,
+        .dst = 4,
+        .type = P2P_A,
+        .data = {0}
+    };
+    GUI *gui_data = msg.data;
+    gui_data->type = Button;
+    gui_data->data[0] = 250;
+    gui_data->data[1] = 250;
+    send(&msg);
+
     return ;
 }
 
@@ -37,11 +62,16 @@ void main(int arg, char *argv[]) {
     msg.dst = 4;
     msg.type = P2P_A;
     msg.data[0] = RegisterCallback;
-    msg.data[1] = Test;
-    msg.data[2] = Test;
+
+    msg.data[1] = btn;
+    msg.data[2] = Handler;
+    msg.data[3] = Test;
+
     send(&msg);
 
     while(1) {
-        
+        for(int i = 0; i < 100000; i++) 
+            ;
+
     }
 }

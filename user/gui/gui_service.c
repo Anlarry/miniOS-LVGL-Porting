@@ -46,6 +46,10 @@ void Broadcast() {
 
 }
 
+void CallBack(){
+    
+}
+
 static test_button()
 {
     /////
@@ -250,13 +254,13 @@ void main(int arg, char *argv[])
 
     Broadcast();
 
-    IPC_MSG sig_msg = {
-        .src = -1,
-        .dst = 2,
-        .type = Signal,
-        .data = {0}
-    };
-    send(&sig_msg);
+    // IPC_MSG sig_msg = {
+    //     .src = -1,
+    //     .dst = 2,
+    //     .type = Signal,
+    //     .data = {0}
+    // };
+    // send(&sig_msg);
     
     int tick_T = 0;
     lv_obj_t *cur_btn;
@@ -337,10 +341,11 @@ void main(int arg, char *argv[])
             case RegisterCallback :
                 sig_test.dst = msg.src;
                 sig_test.type = Signal;
+                memset(sig_test.data, 0, sizeof(sig_test.data));
                 sig_test.data[0] = SIG_SEND; 
-                sig_test.data[1] = msg.data[1];
-                sig_test.data[2] = msg.data[2];
-                send(&msg);
+                sig_test.data[1] = msg.data[2];
+                sig_test.data[2] = msg.data[3];
+                send(&sig_test);
                 break;
             }
             if(msg.type == P2P_S) {
