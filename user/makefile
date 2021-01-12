@@ -145,15 +145,15 @@ Hello.bin : Hello.o $(START_O) $(OBJSULIB)
 liblvgl.a : gui/lv_conf.h
 	cd gui/lvgl && make
 	mv gui/lvgl/liblvgl.a ./liblvgl.a
-gui_service.o : gui/gui_service.c gui/lvgl/lvgl.h gui/function_table.h
+gui_service.o : gui/gui_service.c gui/lvgl/lvgl.h gui/function_table.h gui/callbacks.h
 	$(CC) $(CFLAGS) -o $@ $<
-gui_service.bin : gui_service.o gui/icon.o liblvgl.a $(START_O) $(OBJSULIB) 
+gui_service.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a $(START_O) $(OBJSULIB) 
 	$(LD) $(LDFLAGS) -o $@ $^
 
-gui_service_gdb.bin : gui_service.o gui/icon.o liblvgl.a  $(START_O) $(OBJSULIB) 
+gui_service_gdb.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a  $(START_O) $(OBJSULIB) 
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
-gui_service.gdb.bin : gui_service.o gui/icon.o liblvgl.a  $(START_O) $(OBJSULIB)
+gui_service.gdb.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a  $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 client.o : ../include/gui/api.h ../include/ipc/signal.h
@@ -174,6 +174,12 @@ gui/icon.c : gui/icon.py
 
 gui/function_table.h : gui/gui_api.py
 	cd ./gui && python3 gui_api.py
+
+gui/callbacks.h : gui/callbacks.py
+	cd ./gui && python3 callbacks.py
+	
+gui/callbacks.c : gui/callbacks.py
+	cd ./gui && python3 callbacks.py
 	
 
 .SUFFIXES : .c .o
