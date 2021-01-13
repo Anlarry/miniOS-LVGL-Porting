@@ -14,7 +14,7 @@ INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 
 # you can add your elf in $(BIN) latter
 BIN = $(INIT)
-GDB_BIN = shell_0.gdb.bin gui_service.gdb.bin client.gdb.bin demo.gdb.bin
+GDB_BIN = shell_0.gdb.bin gui_service.gdb.bin client.gdb.bin
 TAR_NAME = app.tar
 HD = ../b.img
 
