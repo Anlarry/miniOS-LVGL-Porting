@@ -17,7 +17,7 @@ static uint32_t touchpad_y;
 static uint32_t left_pressed;
 static uint32_t right_pressed;
 
-// int big_buf[50000] = {1};
+int big_buf[50000] = {1};
 
 void static itoa(char str[], int num)/* 数字前面的 0 不被显示出来, 比如 0000B800 被显示成 B800 */
 {
