@@ -1,8 +1,10 @@
 # INIT = init.bin
-INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
-	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin \
-	client.bin
+# INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
+# 	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin \
+# 	client.bin  
 	# BigElf.bin
+
+INIT = demo.bin
 
 # you can add your elf in $(BIN) latter
 BIN = $(INIT)
@@ -155,6 +157,14 @@ gui_service_gdb.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a  $(STAR
 
 gui_service.gdb.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a  $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
+
+demo.o : gui/demo.c gui/lvgl/lvgl.h
+	$(CC) $(CFLAGS) -o $@ $<
+demo.bin : demo.o gui/icon.o liblvgl.a mylib.o $(START_O) $(OBJSULIB) 
+	$(LD) $(LDFLAGS) -o $@ $^
+
+mylib.o : gui/mylib.c
+	$(CC) $(CFLAGS) -o $@ $<
 
 client.o : ../include/gui/api.h ../include/ipc/signal.h
 

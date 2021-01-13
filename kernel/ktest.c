@@ -578,7 +578,8 @@ void initial()
 	do_vclose(stderr);
 
 
-	exec("orange/gui_service.bin");
+	// exec("orange/gui_service.bin");
+	exec("orange/demo.bin");
 
 	while(1);
 	
