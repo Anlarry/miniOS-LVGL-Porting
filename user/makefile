@@ -1,12 +1,12 @@
 # INIT = init.bin
 INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
-	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin \
-	client.bin
+	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin \
+	client.bin demo.bin
 	# BigElf.bin
 
 # you can add your elf in $(BIN) latter
 BIN = $(INIT)
-GDB_BIN = shell_0.gdb.bin gui_service.gdb.bin client.gdb.bin
+GDB_BIN = shell_0.gdb.bin gui_service.gdb.bin client.gdb.bin demo.gdb.bin
 TAR_NAME = app.tar
 HD = ../b.img
 
@@ -145,15 +145,21 @@ Hello.bin : Hello.o $(START_O) $(OBJSULIB)
 liblvgl.a : gui/lv_conf.h
 	cd gui/lvgl && make
 	mv gui/lvgl/liblvgl.a ./liblvgl.a
-gui_service.o : gui/gui_service.c gui/lvgl/lvgl.h gui/function_table.h
-	$(CC) $(CFLAGS) -o $@ $<
-gui_service.bin : gui_service.o gui/icon.o liblvgl.a $(START_O) $(OBJSULIB) 
-	$(LD) $(LDFLAGS) -o $@ $^
 
-gui_service_gdb.bin : gui_service.o gui/icon.o liblvgl.a  $(START_O) $(OBJSULIB) 
+
+
+gui_service.o : gui/gui_service.c gui/lvgl/lvgl.h gui/function_table.h #gui/demo/lv_demo_widgets.h
+	$(CC) $(CFLAGS) -o $@ $<
+gui_service.bin : gui_service.o gui/icon.o liblvgl.a $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS) -o $@ $^
+gui_service.gdb.bin : gui_service.o gui/icon.o liblvgl.a $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
-gui_service.gdb.bin : gui_service.o gui/icon.o liblvgl.a  $(START_O) $(OBJSULIB)
+demo.o : gui/demo/lv_demo_widgets.c gui/lvgl/lvgl.h gui/function_table.h #gui/demo/lv_demo_widgets.h
+	$(CC) $(CFLAGS) -o $@ $<
+demo.bin : demo.o liblvgl.a gui/icon.o $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS) -o $@ $^
+demo.gdb.bin : demo.o liblvgl.a gui/icon.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 client.o : ../include/gui/api.h ../include/ipc/signal.h

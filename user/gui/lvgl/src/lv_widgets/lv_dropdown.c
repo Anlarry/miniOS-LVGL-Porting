@@ -281,6 +281,21 @@ void lv_dropdown_set_options_static(lv_obj_t * ddlist, const char * options)
  * @param option a string without '\n'. E.g. "Four"
  * @param pos the insert position, indexed from 0, LV_DROPDOWN_POS_LAST = end of string
  */
+
+
+void _strcat(char* str1, char* str2)
+{
+    while(*str1 != 0)
+    {
+        str1++;
+    }
+    while (*str2 !=0)
+    {
+        *(str1++) = *(str2++);
+    }
+    *str1 = 0;
+}
+
 void lv_dropdown_add_option(lv_obj_t * ddlist, const char * option, uint32_t pos)
 {
     LV_ASSERT_OBJ(ddlist, LV_OBJX_NAME);
@@ -341,7 +356,7 @@ void lv_dropdown_add_option(lv_obj_t * ddlist, const char * option, uint32_t pos
 #else
     _lv_txt_ap_proc(option, ins_buf);
 #endif
-    if(pos < ext->option_cnt) strcat(ins_buf, "\n");
+    if(pos < ext->option_cnt) _strcat(ins_buf, "\n");
 
     _lv_txt_ins(ext->options, _lv_txt_encoded_get_char_id(ext->options, insert_pos), ins_buf);
     _lv_mem_buf_release(ins_buf);

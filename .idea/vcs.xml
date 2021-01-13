@@ -4,6 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/include/gui/lvgl" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lvgl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/user/gui/lv_examples" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/user/gui/lvgl" vcs="Git" />
   </component>
 </project>

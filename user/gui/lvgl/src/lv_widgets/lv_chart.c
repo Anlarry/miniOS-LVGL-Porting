@@ -1466,6 +1466,14 @@ static lv_chart_label_iterator_t create_axis_label_iter(const char * list, uint8
  * @param iterator iterator to get label from
  * @param[out] buf buffer to point next label to
  */
+
+void _strncpy(char* dest, const char* src, uint32_t n)
+{
+    for(int i=0; i<n ;i++)
+    {
+        *(dest+i) = *(src+i);
+    }
+}
 static void get_next_axis_label(lv_chart_label_iterator_t * iterator, char * buf)
 {
     uint32_t label_len = 0;
@@ -1496,7 +1504,7 @@ static void get_next_axis_label(lv_chart_label_iterator_t * iterator, char * buf
             label_len = LV_CHART_AXIS_TICK_LABEL_MAX_LEN;
         }
 
-        strncpy(buf, label_start, label_len);
+        _strncpy(buf, label_start, label_len);
     }
     else {
         /* search for tick string */

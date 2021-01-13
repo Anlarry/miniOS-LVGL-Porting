@@ -83,15 +83,16 @@ void mouse_handler(int irq){
 						p_tty->mouse_Y += 2;
 					}else{//up
 						p_tty->mouse_Y -= 2;
-					}
-
-					if(dir_X&0x10){//left
-						p_tty->mouse_X -= 2;
-					}else{//right
-						p_tty->mouse_X += 2;
 
 					}
-				// }
+
+                    if(dir_X&0x10){//left
+                        p_tty->mouse_X -= 2;
+                    }else{//right
+                        p_tty->mouse_X += 2;
+
+                    }
+
 
 				IPC_MSG msg = {
 					.src = 1,

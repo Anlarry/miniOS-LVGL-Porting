@@ -576,9 +576,10 @@ void initial()
 	do_vclose(stdin);
 	do_vclose(stdout);
 	do_vclose(stderr);
+    //printf("%d", p_proc_current);
 
-
-	exec("orange/gui_service.bin");
+    //exec("orange/gui_service.bin");
+	exec("orange/demo.bin");
 
 	while(1);
 	

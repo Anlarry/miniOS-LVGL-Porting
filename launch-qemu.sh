@@ -6,5 +6,5 @@
 # -monitor stdio
 
 # modified by mingxuan 2019-5-17
-qemu-system-i386 -hda b.img -boot order=a -ctrl-grab \
+qemu-system-i386 -hda b.img -boot order=a -m 100M -ctrl-grab \
 -monitor stdio
