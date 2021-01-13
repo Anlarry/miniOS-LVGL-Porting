@@ -9,7 +9,9 @@
 #include <ipc/ipc.h>
 #include "function_table.h"
 #include <ipc/signal.h>
+
 //#include "./demo/lv_demo_widgets.h"
+#include "callbacks.h"
 
 
 static uint32_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX  / 10]; /*Declare a buffer for 1/10 screen size*/
@@ -21,6 +23,8 @@ static int  touchpad_y = 200;
 
 static uint32_t left_pressed __attribute__((section(".data")));
 static uint32_t right_pressed __attribute__((section(".data"))) ;
+
+int big_buf[500000] = {1};
 
 void static itoa(char str[], int num)/* 数字前面的 0 不被显示出来, 比如 0000B800 被显示成 B800 */
 {
@@ -51,22 +55,22 @@ void Broadcast() {
 	send(&msg);
 }
 
-uint32_t _Handler, _Test;
-void CallBack(lv_obj_t * obj, lv_event_t event){
-    IPC_MSG sig_test ;
-    memset(sig_test.data, 0, sizeof(sig_test.data));
-    sig_test.dst = 2;
-    sig_test.type = Signal;
-    sig_test.data[0] = SIG_SEND; 
-    sig_test.data[1] = _Handler;
-    sig_test.data[2] = _Test;
-    send(&sig_test);
-    switch(event) {
-        case LV_EVENT_CLICKED : 
+// uint32_t _Handler_t, _Test_t;
+// void CallBack(lv_obj_t * obj, lv_event_t event){
+//     IPC_MSG sig_test ;
+//     memset(sig_test.data, 0, sizeof(sig_test.data));
+//     sig_test.dst = 2;
+//     sig_test.type = Signal;
+//     sig_test.data[0] = SIG_SEND; 
+//     sig_test.data[1] = _Handler_t;
+//     sig_test.data[2] = _Test_t;
+//     send(&sig_test);
+//     switch(event) {
+//         case LV_EVENT_CLICKED : 
 
-            break;
-    }
-}
+//             break;
+//     }
+// }
 
 //static void test_button()
 //{
@@ -155,13 +159,14 @@ void CallBack(lv_obj_t * obj, lv_event_t event){
 
 static void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p)
 {
+
     struct ROI roi = {
         .x1 = area->x1,
         .x2 = area->x2,
         .y1 = area->y1,
         .y2 = area->y2,
         .color = (Color *)color_p};
-    GraphFlush(&roi);
+    // GraphFlush(&roi);
     lv_disp_flush_ready(disp); /* Indicate you are ready with the flushing*/
 }
 
@@ -181,9 +186,10 @@ int  main(int arg, char *argv[])
     int stderr = open("dev_tty0", O_RDWR);
 
     printf("o");
-//
+
     InitLvFontMontserrat_14();
     lv_init();
+
 
     static lv_disp_buf_t disp_buf;
     lv_disp_buf_init(&disp_buf, buf, NULL, LV_HOR_RES_MAX * LV_VER_RES_MAX /10);
@@ -207,7 +213,7 @@ int  main(int arg, char *argv[])
     lv_img_set_src(cursor_obj, &my_img_dsc);             /*Set the image source*/
     lv_indev_set_cursor(mouse_indev, cursor_obj);
 
-
+    
     //  ----------------------------------------------------------------------------
     //lv_demo_widgets();
     //while (1);
@@ -259,6 +265,7 @@ int  main(int arg, char *argv[])
     IPC_MSG msg;
 
     Broadcast();
+
 
     int tick_T = 0;
     lv_obj_t *cur_btn;
@@ -338,10 +345,17 @@ int  main(int arg, char *argv[])
                 }
                 break;
             case RegisterCallback :
-                lv_obj_set_event_cb(msg.data[1], CallBack);
 
-                _Handler = msg.data[2];
-                _Test = msg.data[3];
+                if(_call_back_num < _max_call_back) {
+                    _Handler[_call_back_num] = msg.data[2];
+                    _Test[_call_back_num] = msg.data[3];
+                    _dst[_call_back_num] = msg.src;
+                    lv_obj_set_event_cb(msg.data[1], CallBackTable[_call_back_num]);
+                    _call_back_num++;
+                }
+                // lv_obj_set_event_cb(msg.data[1], CallBack);
+                // _Handler_t = msg.data[2];
+                // _Test_t = msg.data[3];
                 // send(&sig_test);
                 break;
             }

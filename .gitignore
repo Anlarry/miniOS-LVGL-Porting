@@ -2,7 +2,6 @@
 *.[oa]
 
 # ignore all files in the ** directory
-/.vscode/*
 /.idea/*
 /tmp/*
 

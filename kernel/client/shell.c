@@ -9,6 +9,7 @@
 #include <ipc/ipc.h>
 
 void Shell() {
+    // while(1){}
     IPC_MSG msg ;
     int res = recv(&msg);
     while(res == EMPTY) {

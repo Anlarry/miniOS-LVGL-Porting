@@ -1,8 +1,16 @@
 # INIT = init.bin
+
 INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin \
 	client.bin demo.bin
+
+# INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
+# 	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin \
+# 	client.bin  
+
 	# BigElf.bin
+
+
 
 # you can add your elf in $(BIN) latter
 BIN = $(INIT)
@@ -146,21 +154,24 @@ liblvgl.a : gui/lv_conf.h
 	cd gui/lvgl && make
 	mv gui/lvgl/liblvgl.a ./liblvgl.a
 
-
-
-gui_service.o : gui/gui_service.c gui/lvgl/lvgl.h gui/function_table.h #gui/demo/lv_demo_widgets.h
+gui_service.o : gui/gui_service.c gui/lvgl/lvgl.h gui/function_table.h gui/callbacks.h
 	$(CC) $(CFLAGS) -o $@ $<
-gui_service.bin : gui_service.o gui/icon.o liblvgl.a $(START_O) $(OBJSULIB)
+gui_service.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a $(START_O) $(OBJSULIB) 
 	$(LD) $(LDFLAGS) -o $@ $^
-gui_service.gdb.bin : gui_service.o gui/icon.o liblvgl.a $(START_O) $(OBJSULIB)
+
+gui_service_gdb.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a  $(START_O) $(OBJSULIB) 
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
-demo.o : gui/demo/lv_demo_widgets.c gui/lvgl/lvgl.h gui/function_table.h #gui/demo/lv_demo_widgets.h
-	$(CC) $(CFLAGS) -o $@ $<
-demo.bin : demo.o liblvgl.a gui/icon.o $(START_O) $(OBJSULIB)
-	$(LD) $(LDFLAGS) -o $@ $^
-demo.gdb.bin : demo.o liblvgl.a gui/icon.o $(START_O) $(OBJSULIB)
+gui_service.gdb.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a  $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
+
+demo.o : gui/demo.c gui/lvgl/lvgl.h
+	$(CC) $(CFLAGS) -o $@ $<
+demo.bin : demo.o gui/icon.o liblvgl.a mylib.o $(START_O) $(OBJSULIB) 
+	$(LD) $(LDFLAGS) -o $@ $^
+
+mylib.o : gui/mylib.c
+	$(CC) $(CFLAGS) -o $@ $<
 
 client.o : ../include/gui/api.h ../include/ipc/signal.h
 
@@ -180,6 +191,12 @@ gui/icon.c : gui/icon.py
 
 gui/function_table.h : gui/gui_api.py
 	cd ./gui && python3 gui_api.py
+
+gui/callbacks.h : gui/callbacks.py
+	cd ./gui && python3 callbacks.py
+	
+gui/callbacks.c : gui/callbacks.py
+	cd ./gui && python3 callbacks.py
 	
 
 .SUFFIXES : .c .o
