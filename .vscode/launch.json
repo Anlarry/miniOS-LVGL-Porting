@@ -67,6 +67,27 @@
                     "ignoreFailures": true
                 }
             ]
+        },
+        {
+            "name": "demo",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/user/demo.gdb.bin",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerArgs": "-ix gdb.cfg",
+            "miDebuggerServerAddress": "127.0.0.1:1234",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
         }
     ]
 }

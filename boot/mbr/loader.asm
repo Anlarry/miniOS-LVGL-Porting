@@ -667,11 +667,11 @@ MyDispNum:
     ret
 
 InitVGA : 
-	;mov ax, 0x4f01
-	;mov cx, 0x4112
-	;mov di, ModeInfo
-	;int 10h
-
+	; mov ax, 0x4f01
+	; mov cx, 0x4112
+	; mov di, ModeInfo
+	; int 10h
+	; jmp $
 	mov ax, 0x4F02
 	mov bx, 0x4112
     ; mov ah, 0
@@ -679,9 +679,12 @@ InitVGA :
     int 10h
 	ret
 
+; 	mov byte[ctl1], 5
+; 	mov byte[ctl2], 5
+; 	mov byte[ctl3], 3
+
 ; 	mov dx, 1
 ; 	mov bx, 0
-
 ; .t0 : 
 ; 	mov edi, 0xfcf70000
 ; 	mov ax, 640
@@ -690,14 +693,29 @@ InitVGA :
 ; .t2 : 
 ; 	mov byte [edi], dl
 ; 	add edi, 1
+; 	dec byte [ctl1]
+; 	jne .not1
+; 	mov byte [ctl1], 5
 ; 	inc dl
+; .not1:
+
 ; 	mov byte [edi], bl
 ; 	inc edi
 ; 	mov byte [edi], dh
 ; 	inc edi
+; 	dec byte [ctl2]
+; 	jne .not3
+; 	mov byte [ctl2], 5
 ; 	dec dh
+; .not3:
 ; 	loop .t2
+
+; 	dec byte [ctl3]
+; 	jne .not2
+; 	mov byte [ctl3], 3
 ; 	dec bx
+; .not2:
+
 ; 	dec ax
 ; 	jne .t1
 
@@ -1321,6 +1339,9 @@ ALIGN	32
 LABEL_DATA:
 ; 实模式下使用这些符号
 ; 字符串
+ctl1 db 0
+ctl2 db 0
+ctl3 db 0
 Col db 0
 Row db 0
 num db "0123456789ABCDEF" 

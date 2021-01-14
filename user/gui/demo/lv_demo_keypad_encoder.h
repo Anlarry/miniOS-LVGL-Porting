@@ -29,6 +29,8 @@ extern "C" {
  **********************/
 void lv_demo_keypad_encoder(void);
 
+bool keyboard_read(lv_indev_drv_t * drv, lv_indev_data_t*data);
+
 /**********************
  *      MACROS
  **********************/

@@ -183,6 +183,23 @@ bool my_input_read(lv_indev_drv_t *drv, lv_indev_data_t *data)
     return false; /*No buffering now so no more data read*/
 }
 
+static int kb_buf_head, kb_buf_tail;
+static char kb_buf[256];
+static char last_key() {
+    if((kb_buf_tail + 256 - kb_buf_head) % 256 > 0) {
+        return kb_buf[kb_buf_head++];
+    }
+    return 0;
+}
+bool keyboard_read(lv_indev_drv_t * drv, lv_indev_data_t*data){
+    data->key = last_key();            /*Get the last pressed or released key*/
+    data->state = LV_INDEV_STATE_PR;
+//   if(key_pressed()) data->state = LV_INDEV_STATE_PR;
+//   else data->state = LV_INDEV_STATE_REL;
+
+  return false; /*No buffering now so no more data read*/
+}
+
 int  main(int arg, char *argv[])
 {
     int stdin = open("dev_tty0", O_RDWR);
@@ -216,7 +233,11 @@ int  main(int arg, char *argv[])
     lv_img_set_src(cursor_obj, &my_img_dsc);             /*Set the image source*/
     lv_indev_set_cursor(mouse_indev, cursor_obj);
 
-    
+    lv_indev_drv_t indev_drv2;
+    lv_indev_drv_init(&indev_drv2);      
+    indev_drv2.type = LV_INDEV_TYPE_KEYPAD;
+    indev_drv2.read_cb = keyboard_read;
+    kb_buf_head = 0; kb_buf_tail = 0;
     //  ----------------------------------------------------------------------------
     //lv_demo_widgets();
     //while (1);
@@ -255,7 +276,7 @@ int  main(int arg, char *argv[])
     lv_obj_set_y(btn1, 20);
 
     lv_obj_set_x(btn2, 20);
-    lv_obj_set_y(btn2, 70);
+    lv_obj_set_y(btn2, 70);    
 
     lv_obj_t * ta1;
     ta1 = lv_textarea_create(lv_scr_act(), NULL);
@@ -263,6 +284,11 @@ int  main(int arg, char *argv[])
     lv_obj_set_size(ta1, 200, 100);
     lv_obj_align(ta1, NULL, LV_ALIGN_CENTER, 0, 0);
     lv_textarea_set_text(ta1, "A text in a Text Area");    /*Set an initial text*/
+
+    lv_group_t *g = lv_group_create();
+    lv_group_add_obj(g, ta1);
+    lv_indev_set_group(&indev_drv2, g);
+    
 
     char buf_X[10];
     char buf_Y[10];
@@ -307,8 +333,11 @@ int  main(int arg, char *argv[])
             case Window:
                 break;
             case Keyboard:
-                //printf("%c", usr_data->data[0]);
-                //lv_textarea_add_char(ta1, usr_data->data[0]);
+                // printf("%c", usr_data->data[0]);
+                // lv_textarea_add_char(ta1, usr_data->data[0]);
+                if((kb_buf_tail + 256 - kb_buf_head) % 256 < 255) {
+                    kb_buf[kb_buf_tail++] = usr_data->data[0];
+                }
                 break;
             case Mouse:
             {

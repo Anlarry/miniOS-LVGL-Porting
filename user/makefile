@@ -197,9 +197,14 @@ music_main.o : gui/demo/lv_demo_music_main.c gui/lvgl/lvgl.h gui/demo/lv_demo_mu
 
 demo.o : gui/demo.c gui/lvgl/lvgl.h gui/demo/lv_demo_music_main.h gui/demo/lv_demo_widgets.h
 	$(CC) $(CFLAGS) -o $@ $<
-demo.bin : demo.o gui/icon.o keyboard.o widgets.o music.o music_list.o music_main.o $(music_Os) printer.o printer_theme.o $(print_Os) liblvgl.a mylib.o $(START_O) $(OBJSULIB)
+# demo.bin : demo.o gui/icon.o keyboard.o widgets.o music.o music_list.o music_main.o $(music_Os) printer.o printer_theme.o $(print_Os) liblvgl.a mylib.o $(START_O) $(OBJSULIB)
+# 	$(LD) $(LDFLAGS) -o $@ $^
+# demo.gdb.bin :  demo.o gui/icon.o keyboard.o  widgets.o music.o music_list.o music_main.o $(music_Os) printer.o printer_theme.o $(print_Os) liblvgl.a mylib.o $(START_O) $(OBJSULIB)
+# 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
+
+demo.bin : demo.o gui/icon.o keyboard.o  liblvgl.a mylib.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS) -o $@ $^
-demo.gdb.bin :  demo.o gui/icon.o keyboard.o  widgets.o music.o music_list.o music_main.o $(music_Os) printer.o printer_theme.o $(print_Os) liblvgl.a mylib.o $(START_O) $(OBJSULIB)
+demo.gdb.bin :  demo.o gui/icon.o keyboard.o  liblvgl.a mylib.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 mylib.o : gui/mylib.c

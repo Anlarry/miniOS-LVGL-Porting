@@ -53,6 +53,8 @@ CMakeFiles/*
 /user/gui/lvgl/CMakeFiles/*
 /user/gui/lvgl/.github/*
 
+/LatexTemplate/*
+
 *.map
 
 *.tar
