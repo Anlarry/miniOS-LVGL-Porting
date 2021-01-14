@@ -174,7 +174,6 @@ bool my_input_read(lv_indev_drv_t *drv, lv_indev_data_t *data)
     data->point.x = touchpad_x;// > 0 ? (touchpad_x < 640 ? touchpad_x : 640): 0;
     data->point.y = touchpad_y;// > 0 ? (touchpad_y < 480 ? touchpad_y : 480): 0;
     data->state = left_pressed == 1 ? LV_INDEV_STATE_PR : LV_INDEV_STATE_REL;
-
     return false; /*No buffering now so no more data read*/
 }
 

@@ -29,20 +29,20 @@ void Test() {
         .type = P2P_A,
         .data = {0}
     };
-    static int i=0;
-    static int j=0;
-    i++;
-    j++;
+    static int i=0, j=0;
+    i++;j++;
+
     GUI *gui_data = msg.data;
     gui_data->type = Button;
-    gui_data->data[0] = 250+i*10;
-    gui_data->data[1] = 250+j*10;
+    gui_data->data[0] = 250 + i*5;
+    gui_data->data[1] = 250 + j*5;
     send(&msg);
 
     return ;
 }
 
 void main(int arg, char *argv[]) {
+
     IPC_MSG msg = {
         .src = -1,
         .dst = 4,
@@ -59,8 +59,8 @@ void main(int arg, char *argv[]) {
     
     int btn = msg.data[0];
 
-    lv_obj_set_x_c(btn, 400);
-    lv_obj_set_y_c(btn, 400);
+    lv_obj_set_x_c(btn, 40);
+    lv_obj_set_y_c(btn, 40);
 
     memset(&msg, 0, sizeof(msg));
     msg.dst = 4;

@@ -3,7 +3,7 @@
 #INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 #	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin \
 #	client.bin  demo.bin
-INIT =  client.bin gui_service.bin
+INIT =  client.bin gui_service.bin demo.bin
 # INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 # 	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin \
 # 	client.bin  
@@ -163,11 +163,33 @@ gui_service_gdb.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a  $(STAR
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 
-demo.o : gui/demo.c gui/lvgl/lvgl.h
+
+widgets.o : gui/demo/lv_demo_widgets.c gui/lvgl/lvgl.h
 	$(CC) $(CFLAGS) -o $@ $<
-demo.bin : demo.o gui/icon.o liblvgl.a mylib.o $(START_O) $(OBJSULIB) 
+
+#music_LIB := music.a
+music_SRC := $(wildcard gui/demo/assets/*.c)
+
+
+music_Os := $(patsubst %.c, %.o,$(music_SRC))
+#
+#$(music_LIB) : $(music_Os)
+#	ar rcs $(music_LIB) $(music_Os)
+#
+music.o :  gui/demo/lv_demo_music.c  gui/lvgl/lvgl.h
+	$(CC) $(CFLAGS) -o $@ $<
+music_list.o : gui/demo/lv_demo_music_list.c  gui/lvgl/lvgl.h gui/demo/lv_demo_music.h
+	$(CC) $(CFLAGS) -o $@ $<
+music_main.o : gui/demo/lv_demo_music_main.c gui/lvgl/lvgl.h gui/demo/lv_demo_music.h gui/demo/lv_demo_music_list.h gui/demo/assets/spectrum_1.h gui/demo/assets/spectrum_2.h gui/demo/assets/spectrum_3.h
+#	echo -e "\033[41:36m!!!!!!!!!!!!!! $(music_SRC)\033[0m"
+	$(CC) $(CFLAGS) -o $@ $<
+
+demo.o : gui/demo.c gui/lvgl/lvgl.h gui/demo/lv_demo_music_main.h gui/demo/lv_demo_widgets.h
+	$(CC) $(CFLAGS) -o $@ $<
+demo.bin : demo.o gui/icon.o widgets.o music_list.o music_main.o  $(music_Os) music.o liblvgl.a mylib.o $(START_O) $(OBJSULIB)
+	echo -e "\033[31;36m!!!!!!!!!!!!!! $(music_SRC)\033[0m"
 	$(LD) $(LDFLAGS) -o $@ $^
-demo.gdb.bin : demo.o gui/icon.o liblvgl.a mylib.o $(START_O) $(OBJSULIB)
+demo.gdb.bin : demo.o gui/icon.o widgets.o music_list.o music_main.o music.o $(music_Os)  liblvgl.a mylib.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 mylib.o : gui/mylib.c
