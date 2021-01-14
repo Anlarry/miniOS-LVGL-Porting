@@ -1,9 +1,9 @@
-# INIT = init.bin
+#INIT = demo.bin
 
-INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
-	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin \
-	client.bin demo.bin
-
+#INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
+#	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin \
+#	client.bin  demo.bin
+INIT =  demo.bin
 # INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 # 	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin \
 # 	client.bin  
@@ -14,7 +14,7 @@ INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 
 # you can add your elf in $(BIN) latter
 BIN = $(INIT)
-GDB_BIN = shell_0.gdb.bin gui_service.gdb.bin client.gdb.bin
+GDB_BIN = shell_0.gdb.bin gui_service.gdb.bin client.gdb.bin demo.gdb.bin
 TAR_NAME = app.tar
 HD = ../b.img
 
@@ -48,7 +48,7 @@ INSTALL_PHY_SECTOR = 7095	# modified by mingxuan 2020-10-12
 # assert(INSTALL_PHY_SECTOR > PART_START_SECTOR)
 
 # 写入硬盘的文件大小
-INSTALL_NR_SECTORS = 1000
+INSTALL_NR_SECTORS = 1500
 # INSTALL_NR_SECTORS = 200	# modified by mingxuan 2020-10-12
 
 INSTALL_START_SECTOR = $(shell echo $$(($(INSTALL_PHY_SECTOR)-$(PART_START_SECTOR))))
@@ -162,13 +162,13 @@ gui_service.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a $(START_O) 
 gui_service_gdb.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a  $(START_O) $(OBJSULIB) 
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
-gui_service.gdb.bin : gui_service.o gui/icon.o gui/callbacks.o liblvgl.a  $(START_O) $(OBJSULIB)
-	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 demo.o : gui/demo.c gui/lvgl/lvgl.h
 	$(CC) $(CFLAGS) -o $@ $<
 demo.bin : demo.o gui/icon.o liblvgl.a mylib.o $(START_O) $(OBJSULIB) 
 	$(LD) $(LDFLAGS) -o $@ $^
+demo.gdb.bin : demo.o gui/icon.o liblvgl.a mylib.o $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 mylib.o : gui/mylib.c
 	$(CC) $(CFLAGS) -o $@ $<

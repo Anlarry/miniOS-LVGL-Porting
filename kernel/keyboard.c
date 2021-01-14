@@ -55,6 +55,8 @@ void kb_handler(int irq){
 
 void mouse_handler(int irq){
 	u8 scan_code =  in_byte(0x60);
+	//u8 s2 = in_byte(0x60);
+	//u8 s3 = in_byte(0x60);
 	if(!mouse_init){
 		mouse_init = 1;
 		return;
@@ -64,9 +66,20 @@ void mouse_handler(int irq){
 	if(mouse_in.count==3){
 		TTY* p_tty;
 		for (p_tty = TTY_FIRST; p_tty < TTY_END; p_tty++) {
+		    //disable_int();
 			if(p_tty->console==&console_table[current_console]){
 				p_tty->mouse_left_button = mouse_in.buf[0]&0x01;
-				
+
+				unsigned int x = mouse_in.buf[2] & 0xff;
+				unsigned int y = mouse_in.buf[1] & 0xff;
+
+
+//				float fx = x*1.0/(x+y);
+//				float fy = y*1.0/(x+y);
+//
+//				x = fx*10;
+//				y = fy*10;
+
 				u8 mid_button = mouse_in.buf[0]&0b100;
 				if(mid_button==0b100){
 					p_tty->mouse_mid_button = 1;
@@ -79,32 +92,53 @@ void mouse_handler(int irq){
 					u8 dir_X = mouse_in.buf[0]&0x10;
 
 
-					if(dir_Y&0x20 ){//down
-						p_tty->mouse_Y += 2;
+					if(dir_Y&0x20){//down
+						p_tty->mouse_Y -= y | 0xffffff00;
 					}else{//up
-						p_tty->mouse_Y -= 2;
+						p_tty->mouse_Y -= y;
 
 					}
 
-                    if(dir_X&0x10){//left
-                        p_tty->mouse_X -= 2;
+                    if(dir_X&0x10 ){//left
+                        p_tty->mouse_X -= x;
                     }else{//right
-                        p_tty->mouse_X += 2;
+                        p_tty->mouse_X -= x | 0xffffff00;
 
                     }
-
+//                static int dx[40];
+//                static int dy[40];
+//
+//                for(int i=0; i<39; i++)
+//                {
+//                    dx[i] = dx[i+1];
+//                    dy[i] = dy[i+1];
+//                }
+//                dx[39] = p_tty->mouse_X;
+//                dy[39] = p_tty->mouse_Y;
+//                int sum = 0;
+//                int mx=0, my=0;
+//                for(int i=0; i<39; i++)
+//                {
+//                    mx+=i*i*dx[i];
+//                    my+=i*i*dy[i];
+//                    sum+=i*i;
+//                }
+//                mx /= sum;
+//                my /= sum;
 
 				IPC_MSG msg = {
 					.src = 1,
 					.dst = 4,
 					.type = P2P_A,
-					.data = {Mouse, p_tty->mouse_left_button, p_tty->mouse_mid_button, p_tty->mouse_X, p_tty->mouse_Y}
+					.data = {Mouse, p_tty->mouse_left_button, p_tty->mouse_mid_button, p_tty->mouse_X/100, p_tty->mouse_Y/100}
 				};
 				sys_send(&msg);
 			}
 		}
 		
 		mouse_in.count=0;
+
+		//enable_int();
 	}
 
 
@@ -126,7 +160,7 @@ PUBLIC void init_kb(){
 
 	column		= 0;
 	
-	set_leds();
+    set_leds();
 	put_irq_handler(KEYBOARD_IRQ, kb_handler);
 	enable_irq(KEYBOARD_IRQ);
 

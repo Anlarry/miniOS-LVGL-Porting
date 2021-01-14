@@ -361,6 +361,27 @@ PRIVATE int initialize_processes()
 		
 		/****************代码数据*****************************/
 		p_proc->task.regs.eip= (u32)initial;//进程入口线性地址		edit by visual 2016.5.17
+
+        for( AddrLin=0xfdf00000; AddrLin > 0xfd000000; AddrLin-=num_4K )
+        {//栈
+            //addr_phy_temp = (u32)do_kmalloc_4k();//为栈申请一个物理页,Task的栈是在内核里面 //delete by visual 2016.5.19
+            //if( addr_phy_temp<0 || (addr_phy_temp&0x3FF)!=0  )
+            //{
+            //	disp_color_str("kernel_main Error:addr_phy_temp",0x74);
+            //	return -1;
+            //}
+            err_temp = lin_mapping_phy(	AddrLin,//线性地址
+                                           AddrLin,//物理地址		//edit by visual 2016.5.19
+                                           pid,//进程pid	//edit by visual 2016.5.19
+                                           PG_P  | PG_USU | PG_RWW,//页目录的属性位
+                                           PG_P  | PG_USU | PG_RWW);//页表的属性位
+            if( err_temp!=0 )
+            {
+                disp_color_str("kernel_main Error:lin_mapping_phy",0x74);
+                return -1;
+            }
+
+        }
 		
 		/****************栈（此时堆、栈已经区分，以后实验会重新规划堆的位置）*****************************/
 		p_proc->task.regs.esp=(u32)StackLinBase;			//栈地址最高处	

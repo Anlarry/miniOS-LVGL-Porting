@@ -578,7 +578,6 @@ void initial()
 	do_vclose(stderr);
     //printf("%d", p_proc_current);
 
-
 	exec("orange/demo.bin");
 
 	while(1);

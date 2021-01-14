@@ -70,8 +70,8 @@ void sys_flush(ROI* roi)
     //uint8_t *p = 0;
     Color *ptr = kernel_buffer;
 
-    for(int i = y1; i <= y2; i++) {
-        for(int j = x1; j <= x2; j++) {
+    for(int i = y1; i <= y2; ++i) {
+        for(int j = x1; j <= x2; ++j) {
             int p = Coor2Addr(j,i);
          __asm__ (
              "mov %1, %%fs:(%%edi)\n"
@@ -89,8 +89,8 @@ void sys_flush(ROI* roi)
 
 
 
-    __asm__ __volatile__("pop %eax");
-    __asm__ __volatile__("mov %eax, %cr3");
+//    __asm__ __volatile__("pop %eax");
+//    __asm__ __volatile__("mov %eax, %cr3");
 
     __asm__ __volatile__ (
         "mov %%ax, %%fs"

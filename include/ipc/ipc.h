@@ -33,7 +33,7 @@ enum MsgReturn{
     EMPTY ,
 };
 
-
+/*signal*/
 enum SIG_TYPE {
     SIG_SEND,
     SIG_RETURN,

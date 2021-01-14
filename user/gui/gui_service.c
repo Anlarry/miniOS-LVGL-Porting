@@ -24,8 +24,6 @@ static int  touchpad_y = 200;
 static uint32_t left_pressed __attribute__((section(".data")));
 static uint32_t right_pressed __attribute__((section(".data"))) ;
 
-int big_buf[500000] = {1};
-
 void static itoa(char str[], int num)/* 数字前面的 0 不被显示出来, 比如 0000B800 被显示成 B800 */
 {
     char buf[100];
@@ -166,14 +164,15 @@ static void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t
         .y1 = area->y1,
         .y2 = area->y2,
         .color = (Color *)color_p};
-    // GraphFlush(&roi);
+    GraphFlush(&roi);
+    
     lv_disp_flush_ready(disp); /* Indicate you are ready with the flushing*/
 }
 
 bool my_input_read(lv_indev_drv_t *drv, lv_indev_data_t *data)
 {
-    data->point.x = touchpad_x > 0 ? (touchpad_x < 640 ? touchpad_x : 640): 0;
-    data->point.y = touchpad_y > 0 ? (touchpad_y < 480 ? touchpad_y : 480): 0;
+    data->point.x = touchpad_x;// > 0 ? (touchpad_x < 640 ? touchpad_x : 640): 0;
+    data->point.y = touchpad_y;// > 0 ? (touchpad_y < 480 ? touchpad_y : 480): 0;
     data->state = left_pressed == 1 ? LV_INDEV_STATE_PR : LV_INDEV_STATE_REL;
 
     return false; /*No buffering now so no more data read*/
@@ -221,7 +220,7 @@ int  main(int arg, char *argv[])
     lv_obj_t * label;
     lv_obj_t * label2;
     lv_obj_t *win = lv_win_create(lv_scr_act(), NULL);
-    lv_win_set_title(win, "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tThe OS powered by LVGL");
+    lv_win_set_title(win, "\t\t\t\t\t\t\t\t\t\t\t\t\t\tThe OS powered by LVGL");
     lv_win_set_drag(win, true);
     lv_obj_set_x(win, 10);
     lv_obj_set_y(win, 10);
@@ -254,11 +253,11 @@ int  main(int arg, char *argv[])
     lv_obj_set_x(btn2, 20);
     lv_obj_set_y(btn2, 70);
 
-    lv_obj_t * ta1;
-    ta1 = lv_textarea_create(lv_scr_act(), NULL);
-    lv_obj_set_size(ta1, 200, 100);
-    lv_obj_align(ta1, NULL, LV_ALIGN_CENTER, 0, 0);
-    lv_textarea_set_text(ta1, "A text in a Text Area");    /*Set an initial text*/
+//    lv_obj_t * ta1;
+//    ta1 = lv_textarea_create(lv_scr_act(), NULL);
+//    lv_obj_set_size(ta1, 200, 100);
+//    lv_obj_align(ta1, NULL, LV_ALIGN_CENTER, 0, 0);
+//    lv_textarea_set_text(ta1, "A text in a Text Area");    /*Set an initial text*/
 
     char buf_X[10];
     char buf_Y[10];
@@ -304,7 +303,7 @@ int  main(int arg, char *argv[])
                 break;
             case Keyboard:
                 //printf("%c", usr_data->data[0]);
-                lv_textarea_add_char(ta1, usr_data->data[0]);
+                //lv_textarea_add_char(ta1, usr_data->data[0]);
                 break;
             case Mouse:
             {
