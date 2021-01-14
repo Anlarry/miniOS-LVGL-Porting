@@ -579,8 +579,8 @@ void initial()
     //printf("%d", p_proc_current);
 
 
-	exec("orange/gui_service.bin");
-	// exec("orange/demo.bin");
+	// exec("orange/gui_service.bin");
+	exec("orange/demo.bin");
 
 	while(1);
 	
