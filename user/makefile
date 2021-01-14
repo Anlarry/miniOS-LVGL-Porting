@@ -3,7 +3,8 @@
 #INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 #	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin \
 #	client.bin  demo.bin
-INIT =  client.bin gui_service.bin demo.bin
+INIT =  client.bin  demo.bin
+ #gui_service.bin
 # INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 # 	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin \
 # 	client.bin  
@@ -48,7 +49,7 @@ INSTALL_PHY_SECTOR = 7095	# modified by mingxuan 2020-10-12
 # assert(INSTALL_PHY_SECTOR > PART_START_SECTOR)
 
 # 写入硬盘的文件大小
-INSTALL_NR_SECTORS = 1000
+INSTALL_NR_SECTORS = 3500
 # INSTALL_NR_SECTORS = 200	# modified by mingxuan 2020-10-12
 
 INSTALL_START_SECTOR = $(shell echo $$(($(INSTALL_PHY_SECTOR)-$(PART_START_SECTOR))))
@@ -173,9 +174,9 @@ music_SRC := $(wildcard gui/demo/assets/*.c)
 
 music_Os := $(patsubst %.c, %.o,$(music_SRC))
 #
-#$(music_LIB) : $(music_Os)
-#	ar rcs $(music_LIB) $(music_Os)
-#
+$(music_LIB) : $(music_Os)
+	ar rcs $(music_LIB) $(music_Os)
+
 music.o :  gui/demo/lv_demo_music.c  gui/lvgl/lvgl.h
 	$(CC) $(CFLAGS) -o $@ $<
 music_list.o : gui/demo/lv_demo_music_list.c  gui/lvgl/lvgl.h gui/demo/lv_demo_music.h
@@ -186,10 +187,10 @@ music_main.o : gui/demo/lv_demo_music_main.c gui/lvgl/lvgl.h gui/demo/lv_demo_mu
 
 demo.o : gui/demo.c gui/lvgl/lvgl.h gui/demo/lv_demo_music_main.h gui/demo/lv_demo_widgets.h
 	$(CC) $(CFLAGS) -o $@ $<
-demo.bin : demo.o gui/icon.o widgets.o music_list.o music_main.o  $(music_Os) music.o liblvgl.a mylib.o $(START_O) $(OBJSULIB)
-	echo -e "\033[31;36m!!!!!!!!!!!!!! $(music_SRC)\033[0m"
+demo.bin : demo.o gui/icon.o widgets.o music.o music_list.o music_main.o $(music_Os) liblvgl.a mylib.o $(START_O) $(OBJSULIB)
+	#echo -e "\033[31;36m!!!!!!!!!!!!!! $(music_SRC)\033[0m"
 	$(LD) $(LDFLAGS) -o $@ $^
-demo.gdb.bin : demo.o gui/icon.o widgets.o music_list.o music_main.o music.o $(music_Os)  liblvgl.a mylib.o $(START_O) $(OBJSULIB)
+demo.gdb.bin :  demo.o gui/icon.o widgets.o music.o music_list.o music_main.o $(music_Os)  liblvgl.a mylib.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 mylib.o : gui/mylib.c

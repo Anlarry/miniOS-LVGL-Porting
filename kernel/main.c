@@ -364,15 +364,10 @@ PRIVATE int initialize_processes()
 
         for( AddrLin=0xfdf00000; AddrLin > 0xfd000000; AddrLin-=num_4K )
         {//栈
-            //addr_phy_temp = (u32)do_kmalloc_4k();//为栈申请一个物理页,Task的栈是在内核里面 //delete by visual 2016.5.19
-            //if( addr_phy_temp<0 || (addr_phy_temp&0x3FF)!=0  )
-            //{
-            //	disp_color_str("kernel_main Error:addr_phy_temp",0x74);
-            //	return -1;
-            //}
+
             err_temp = lin_mapping_phy(	AddrLin,//线性地址
-                                           AddrLin,//物理地址		//edit by visual 2016.5.19
-                                           pid,//进程pid	//edit by visual 2016.5.19
+                                           AddrLin,//物理地址
+                                           pid,//进程pid	//
                                            PG_P  | PG_USU | PG_RWW,//页目录的属性位
                                            PG_P  | PG_USU | PG_RWW);//页表的属性位
             if( err_temp!=0 )

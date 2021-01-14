@@ -76,7 +76,8 @@ int main(int arg, char *argv[])
     lv_img_set_src(cursor_obj, &my_img_dsc);             /*Set the image source*/
     lv_indev_set_cursor(mouse_indev, cursor_obj);          
 
-    lv_demo_widgets();
+    //lv_demo_widgets();
+    lv_demo_music();
     //  ----------------------------------------------------------------------------
 
     IPC_MSG msg;
