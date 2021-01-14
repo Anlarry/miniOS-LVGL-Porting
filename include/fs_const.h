@@ -125,7 +125,7 @@
 #define	is_special(m)	((((m) & I_TYPE_MASK) == I_BLOCK_SPECIAL) ||	\
 			 (((m) & I_TYPE_MASK) == I_CHAR_SPECIAL))
 
-#define	NR_DEFAULT_FILE_SECTS	2048*2 /* 2048 * 512 = 1MB */
+#define	NR_DEFAULT_FILE_SECTS	2048*4 /* 2048 * 512 = 1MB */
 
 //deleted by xw, 18/12/27
 //#define FSBUF_SIZE	0x100000	//added by xw, 18/6/17

@@ -49,7 +49,7 @@ INSTALL_PHY_SECTOR = 7095	# modified by mingxuan 2020-10-12
 # assert(INSTALL_PHY_SECTOR > PART_START_SECTOR)
 
 # 写入硬盘的文件大小
-INSTALL_NR_SECTORS = 3500
+INSTALL_NR_SECTORS = 6100
 # INSTALL_NR_SECTORS = 200	# modified by mingxuan 2020-10-12
 
 INSTALL_START_SECTOR = $(shell echo $$(($(INSTALL_PHY_SECTOR)-$(PART_START_SECTOR))))
@@ -170,13 +170,19 @@ widgets.o : gui/demo/lv_demo_widgets.c gui/lvgl/lvgl.h
 
 #music_LIB := music.a
 music_SRC := $(wildcard gui/demo/assets/*.c)
-
-
 music_Os := $(patsubst %.c, %.o,$(music_SRC))
+print_SRC := $(wildcard gui/demo/images/*.c)
+print_Os := $(patsubst %.c, %.o,$(print_SRC))
 #
 $(music_LIB) : $(music_Os)
 	ar rcs $(music_LIB) $(music_Os)
 
+printer.o : gui/demo/lv_demo_printer.c gui/demo/lv_demo_printer.h gui/demo/lv_demo_printer_theme.h gui/lvgl/lvgl.h
+	$(CC) $(CFLAGS) -o $@ $<
+printer_theme.o : gui/demo/lv_demo_printer_theme.c gui/demo/lv_demo_printer.h  gui/demo/lv_demo_printer_theme.h gui/lvgl/lvgl.h
+	$(CC) $(CFLAGS) -o $@ $<
+keyboard.o : gui/demo/lv_demo_keypad_encoder.c  gui/demo/lv_demo_keypad_encoder.h
+	$(CC) $(CFLAGS) -o $@ $<
 music.o :  gui/demo/lv_demo_music.c  gui/lvgl/lvgl.h
 	$(CC) $(CFLAGS) -o $@ $<
 music_list.o : gui/demo/lv_demo_music_list.c  gui/lvgl/lvgl.h gui/demo/lv_demo_music.h
@@ -187,10 +193,9 @@ music_main.o : gui/demo/lv_demo_music_main.c gui/lvgl/lvgl.h gui/demo/lv_demo_mu
 
 demo.o : gui/demo.c gui/lvgl/lvgl.h gui/demo/lv_demo_music_main.h gui/demo/lv_demo_widgets.h
 	$(CC) $(CFLAGS) -o $@ $<
-demo.bin : demo.o gui/icon.o widgets.o music.o music_list.o music_main.o $(music_Os) liblvgl.a mylib.o $(START_O) $(OBJSULIB)
-	#echo -e "\033[31;36m!!!!!!!!!!!!!! $(music_SRC)\033[0m"
+demo.bin : demo.o gui/icon.o keyboard.o widgets.o music.o music_list.o music_main.o $(music_Os) printer.o printer_theme.o $(print_Os) liblvgl.a mylib.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS) -o $@ $^
-demo.gdb.bin :  demo.o gui/icon.o widgets.o music.o music_list.o music_main.o $(music_Os)  liblvgl.a mylib.o $(START_O) $(OBJSULIB)
+demo.gdb.bin :  demo.o gui/icon.o keyboard.o  widgets.o music.o music_list.o music_main.o $(music_Os) printer.o printer_theme.o $(print_Os) liblvgl.a mylib.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 mylib.o : gui/mylib.c

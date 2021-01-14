@@ -13,6 +13,8 @@
 #include <ipc/ipc.h>
 #include "./demo/lv_demo_music_main.h"
 #include "./demo/lv_demo_widgets.h"
+#include "./demo/lv_demo_printer.h"
+#include "./demo/lv_demo_keypad_encoder.h"
 
 // ---------------------------------------------------------------------------------------------
 
@@ -77,7 +79,8 @@ int main(int arg, char *argv[])
     lv_indev_set_cursor(mouse_indev, cursor_obj);          
 
     //lv_demo_widgets();
-    lv_demo_music();
+    //lv_demo_music();
+    lv_demo_printer();
     //  ----------------------------------------------------------------------------
 
     IPC_MSG msg;
