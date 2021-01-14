@@ -1,4 +1,4 @@
-# Install script for directory: /home/wang_shuai/miniOS-LVGL-Porting/include/gui/lvgl
+# Install script for directory: /run/media/wind/Software/book/CS/OperatingSys/lab/exp8-2020/miniOS-v1.3.2/include/gui/lvgl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,12 +29,17 @@ endif()
 
 # Install shared libraries without execute permission?
 if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
+  set(CMAKE_INSTALL_SO_NO_EXE "0")
 endif()
 
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
+
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/wang_shuai/miniOS-LVGL-Porting/include/gui/lvgl/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/run/media/wind/Software/book/CS/OperatingSys/lab/exp8-2020/miniOS-v1.3.2/include/gui/lvgl/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

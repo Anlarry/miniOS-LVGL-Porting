@@ -89,8 +89,8 @@ void sys_flush(ROI* roi)
 
 
 
-//    __asm__ __volatile__("pop %eax");
-//    __asm__ __volatile__("mov %eax, %cr3");
+   __asm__ __volatile__("pop %eax");
+   __asm__ __volatile__("mov %eax, %cr3");
 
     __asm__ __volatile__ (
         "mov %%ax, %%fs"

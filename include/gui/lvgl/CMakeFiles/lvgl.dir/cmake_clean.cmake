@@ -110,8 +110,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/lvgl.dir/src/lv_widgets/lv_textarea.o"
   "CMakeFiles/lvgl.dir/src/lv_widgets/lv_tileview.o"
   "CMakeFiles/lvgl.dir/src/lv_widgets/lv_win.o"
-  "liblvgl.pdb"
   "liblvgl.a"
+  "liblvgl.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

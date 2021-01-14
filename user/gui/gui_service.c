@@ -15,7 +15,7 @@
 
 
 static uint32_t buf[LV_HOR_RES_MAX * LV_VER_RES_MAX  / 10]; /*Declare a buffer for 1/10 screen size*/
-//static uint32_t buf_[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10];
+static uint32_t buf_[LV_HOR_RES_MAX * LV_VER_RES_MAX / 10];
 static int  touchpad_x = 200;
 static int  touchpad_y = 200;
 
@@ -70,94 +70,94 @@ void Broadcast() {
 //     }
 // }
 
-//static void test_button()
-//{
-//    static lv_anim_path_t path_overshoot;
-//    lv_anim_path_init(&path_overshoot);
-//    lv_anim_path_set_cb(&path_overshoot, lv_anim_path_overshoot);
-//
-//    static lv_anim_path_t path_ease_out;
-//    lv_anim_path_init(&path_ease_out);
-//    lv_anim_path_set_cb(&path_ease_out, lv_anim_path_ease_out);
-//
-//    static lv_anim_path_t path_ease_in_out;
-//    lv_anim_path_init(&path_ease_in_out);
-//    lv_anim_path_set_cb(&path_ease_in_out, lv_anim_path_ease_in_out);
-//
-//    /*Gum-like button*/
-//    static lv_style_t style_gum;
-//    lv_style_init(&style_gum);
-//    lv_style_set_transform_width(&style_gum, LV_STATE_PRESSED, 10);
-//    lv_style_set_transform_height(&style_gum, LV_STATE_PRESSED, -10);
-//    lv_style_set_value_letter_space(&style_gum, LV_STATE_PRESSED, 5);
-//    lv_style_set_transition_path(&style_gum, LV_STATE_DEFAULT, &path_overshoot);
-//    lv_style_set_transition_path(&style_gum, LV_STATE_PRESSED, &path_ease_in_out);
-//    lv_style_set_transition_time(&style_gum, LV_STATE_DEFAULT, 250);
-//    lv_style_set_transition_delay(&style_gum, LV_STATE_DEFAULT, 100);
-//    lv_style_set_transition_prop_1(&style_gum, LV_STATE_DEFAULT, LV_STYLE_TRANSFORM_WIDTH);
-//    lv_style_set_transition_prop_2(&style_gum, LV_STATE_DEFAULT, LV_STYLE_TRANSFORM_HEIGHT);
-//    lv_style_set_transition_prop_3(&style_gum, LV_STATE_DEFAULT, LV_STYLE_VALUE_LETTER_SPACE);
-//
-//    lv_obj_t * btn4 = lv_btn_create(lv_scr_act(), NULL);
-//    lv_obj_align(btn4, NULL, LV_ALIGN_CENTER, 0, -80);
-//    lv_obj_add_style(btn4, LV_BTN_PART_MAIN, &style_gum);
-//
-//    /*Instead of creating a label add a values string*/
-//    lv_obj_set_style_local_value_str(btn4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, "Gum");
-//
-//    /*Halo on press*/
-//    static lv_style_t style_halo;
-//    lv_style_init(&style_halo);
-//    lv_style_set_transition_time(&style_halo, LV_STATE_PRESSED, 400);
-//    lv_style_set_transition_time(&style_halo, LV_STATE_DEFAULT, 0);
-//    lv_style_set_transition_delay(&style_halo, LV_STATE_DEFAULT, 200);
-//    lv_style_set_outline_width(&style_halo, LV_STATE_DEFAULT, 0);
-//    lv_style_set_outline_width(&style_halo, LV_STATE_PRESSED, 20);
-//    lv_style_set_outline_opa(&style_halo, LV_STATE_DEFAULT, LV_OPA_COVER);
-//    lv_style_set_outline_opa(&style_halo, LV_STATE_FOCUSED, LV_OPA_COVER);   /*Just to be sure, the theme might use it*/
-//    lv_style_set_outline_opa(&style_halo, LV_STATE_PRESSED, LV_OPA_TRANSP);
-//    lv_style_set_transition_prop_1(&style_halo, LV_STATE_DEFAULT, LV_STYLE_OUTLINE_OPA);
-//    lv_style_set_transition_prop_2(&style_halo, LV_STATE_DEFAULT, LV_STYLE_OUTLINE_WIDTH);
-//
-//    lv_obj_t * btn5 = lv_btn_create(lv_scr_act(), NULL);
-//    lv_obj_align(btn5, NULL, LV_ALIGN_CENTER, 0, 0);
-//    lv_obj_add_style(btn5, LV_BTN_PART_MAIN, &style_halo);
-//    lv_obj_set_style_local_value_str(btn5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, "MiniX");
-//
-//    lv_obj_set_x(btn4, 200);
-//    lv_obj_set_y(btn4, 70);
-//
-//    lv_obj_set_x(btn5, 200);
-//    lv_obj_set_y(btn5, 140);
-//    /*Ripple on press*/
-//    static lv_style_t style_ripple;
-//    lv_style_init(&style_ripple);
-//    lv_style_set_transition_time(&style_ripple, LV_STATE_PRESSED, 300);
-//    lv_style_set_transition_time(&style_ripple, LV_STATE_DEFAULT, 0);
-//    lv_style_set_transition_delay(&style_ripple, LV_STATE_DEFAULT, 300);
-//    lv_style_set_bg_opa(&style_ripple, LV_STATE_DEFAULT, 0);
-//    lv_style_set_bg_opa(&style_ripple, LV_STATE_PRESSED, LV_OPA_80);
-//    lv_style_set_border_width(&style_ripple, LV_STATE_DEFAULT, 0);
-//    lv_style_set_outline_width(&style_ripple, LV_STATE_DEFAULT, 0);
-//    lv_style_set_transform_width(&style_ripple, LV_STATE_DEFAULT, -20);
-//    lv_style_set_transform_height(&style_ripple, LV_STATE_DEFAULT, -20);
-//    lv_style_set_transform_width(&style_ripple, LV_STATE_PRESSED, 0);
-//    lv_style_set_transform_height(&style_ripple, LV_STATE_PRESSED, 0);
-//
-//    lv_style_set_transition_path(&style_ripple, LV_STATE_DEFAULT, &path_ease_out);
-//    lv_style_set_transition_prop_1(&style_ripple, LV_STATE_DEFAULT, LV_STYLE_BG_OPA);
-//    lv_style_set_transition_prop_2(&style_ripple, LV_STATE_DEFAULT, LV_STYLE_TRANSFORM_WIDTH);
-//    lv_style_set_transition_prop_3(&style_ripple, LV_STATE_DEFAULT, LV_STYLE_TRANSFORM_HEIGHT);
-//
-//    lv_obj_t * btn3 = lv_btn_create(lv_scr_act(), NULL);
-//    lv_obj_align(btn3, NULL, LV_ALIGN_CENTER, 0, 80);
-//    lv_obj_add_style(btn3, LV_BTN_PART_MAIN, &style_ripple);
-//    lv_obj_set_style_local_value_str(btn3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, "Ripple");
-//}
+static void test_button()
+{
+   static lv_anim_path_t path_overshoot;
+   lv_anim_path_init(&path_overshoot);
+   lv_anim_path_set_cb(&path_overshoot, lv_anim_path_overshoot);
+
+   static lv_anim_path_t path_ease_out;
+   lv_anim_path_init(&path_ease_out);
+   lv_anim_path_set_cb(&path_ease_out, lv_anim_path_ease_out);
+
+   static lv_anim_path_t path_ease_in_out;
+   lv_anim_path_init(&path_ease_in_out);
+   lv_anim_path_set_cb(&path_ease_in_out, lv_anim_path_ease_in_out);
+
+   /*Gum-like button*/
+   static lv_style_t style_gum;
+   lv_style_init(&style_gum);
+   lv_style_set_transform_width(&style_gum, LV_STATE_PRESSED, 10);
+   lv_style_set_transform_height(&style_gum, LV_STATE_PRESSED, -10);
+   lv_style_set_value_letter_space(&style_gum, LV_STATE_PRESSED, 5);
+   lv_style_set_transition_path(&style_gum, LV_STATE_DEFAULT, &path_overshoot);
+   lv_style_set_transition_path(&style_gum, LV_STATE_PRESSED, &path_ease_in_out);
+   lv_style_set_transition_time(&style_gum, LV_STATE_DEFAULT, 250);
+   lv_style_set_transition_delay(&style_gum, LV_STATE_DEFAULT, 100);
+   lv_style_set_transition_prop_1(&style_gum, LV_STATE_DEFAULT, LV_STYLE_TRANSFORM_WIDTH);
+   lv_style_set_transition_prop_2(&style_gum, LV_STATE_DEFAULT, LV_STYLE_TRANSFORM_HEIGHT);
+   lv_style_set_transition_prop_3(&style_gum, LV_STATE_DEFAULT, LV_STYLE_VALUE_LETTER_SPACE);
+
+   lv_obj_t * btn4 = lv_btn_create(lv_scr_act(), NULL);
+   lv_obj_align(btn4, NULL, LV_ALIGN_CENTER, 0, -80);
+   lv_obj_add_style(btn4, LV_BTN_PART_MAIN, &style_gum);
+
+   /*Instead of creating a label add a values string*/
+   lv_obj_set_style_local_value_str(btn4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, "Gum");
+
+   /*Halo on press*/
+   static lv_style_t style_halo;
+   lv_style_init(&style_halo);
+   lv_style_set_transition_time(&style_halo, LV_STATE_PRESSED, 400);
+   lv_style_set_transition_time(&style_halo, LV_STATE_DEFAULT, 0);
+   lv_style_set_transition_delay(&style_halo, LV_STATE_DEFAULT, 200);
+   lv_style_set_outline_width(&style_halo, LV_STATE_DEFAULT, 0);
+   lv_style_set_outline_width(&style_halo, LV_STATE_PRESSED, 20);
+   lv_style_set_outline_opa(&style_halo, LV_STATE_DEFAULT, LV_OPA_COVER);
+   lv_style_set_outline_opa(&style_halo, LV_STATE_FOCUSED, LV_OPA_COVER);   /*Just to be sure, the theme might use it*/
+   lv_style_set_outline_opa(&style_halo, LV_STATE_PRESSED, LV_OPA_TRANSP);
+   lv_style_set_transition_prop_1(&style_halo, LV_STATE_DEFAULT, LV_STYLE_OUTLINE_OPA);
+   lv_style_set_transition_prop_2(&style_halo, LV_STATE_DEFAULT, LV_STYLE_OUTLINE_WIDTH);
+
+   lv_obj_t * btn5 = lv_btn_create(lv_scr_act(), NULL);
+   lv_obj_align(btn5, NULL, LV_ALIGN_CENTER, 0, 0);
+   lv_obj_add_style(btn5, LV_BTN_PART_MAIN, &style_halo);
+   lv_obj_set_style_local_value_str(btn5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, "MiniX");
+
+   lv_obj_set_x(btn4, 200);
+   lv_obj_set_y(btn4, 70);
+
+   lv_obj_set_x(btn5, 200);
+   lv_obj_set_y(btn5, 140);
+   /*Ripple on press*/
+   static lv_style_t style_ripple;
+   lv_style_init(&style_ripple);
+   lv_style_set_transition_time(&style_ripple, LV_STATE_PRESSED, 300);
+   lv_style_set_transition_time(&style_ripple, LV_STATE_DEFAULT, 0);
+   lv_style_set_transition_delay(&style_ripple, LV_STATE_DEFAULT, 300);
+   lv_style_set_bg_opa(&style_ripple, LV_STATE_DEFAULT, 0);
+   lv_style_set_bg_opa(&style_ripple, LV_STATE_PRESSED, LV_OPA_80);
+   lv_style_set_border_width(&style_ripple, LV_STATE_DEFAULT, 0);
+   lv_style_set_outline_width(&style_ripple, LV_STATE_DEFAULT, 0);
+   lv_style_set_transform_width(&style_ripple, LV_STATE_DEFAULT, -20);
+   lv_style_set_transform_height(&style_ripple, LV_STATE_DEFAULT, -20);
+   lv_style_set_transform_width(&style_ripple, LV_STATE_PRESSED, 0);
+   lv_style_set_transform_height(&style_ripple, LV_STATE_PRESSED, 0);
+
+   lv_style_set_transition_path(&style_ripple, LV_STATE_DEFAULT, &path_ease_out);
+   lv_style_set_transition_prop_1(&style_ripple, LV_STATE_DEFAULT, LV_STYLE_BG_OPA);
+   lv_style_set_transition_prop_2(&style_ripple, LV_STATE_DEFAULT, LV_STYLE_TRANSFORM_WIDTH);
+   lv_style_set_transition_prop_3(&style_ripple, LV_STATE_DEFAULT, LV_STYLE_TRANSFORM_HEIGHT);
+
+   lv_obj_t * btn3 = lv_btn_create(lv_scr_act(), NULL);
+   lv_obj_align(btn3, NULL, LV_ALIGN_CENTER, 0, 80);
+   lv_obj_add_style(btn3, LV_BTN_PART_MAIN, &style_ripple);
+   lv_obj_set_style_local_value_str(btn3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, "Ripple");
+}
 
 static void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p)
 {
-
+    // printf("()");
     struct ROI roi = {
         .x1 = area->x1,
         .x2 = area->x2,
@@ -165,7 +165,6 @@ static void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t
         .y2 = area->y2,
         .color = (Color *)color_p};
     GraphFlush(&roi);
-
     lv_disp_flush_ready(disp); /* Indicate you are ready with the flushing*/
 }
 
@@ -191,7 +190,7 @@ int  main(int arg, char *argv[])
 
 
     static lv_disp_buf_t disp_buf;
-    lv_disp_buf_init(&disp_buf, buf, NULL, LV_HOR_RES_MAX * LV_VER_RES_MAX /10);
+    lv_disp_buf_init(&disp_buf, buf, buf_, LV_HOR_RES_MAX * LV_VER_RES_MAX /10);
 
     /* Register disp*/
     lv_disp_drv_t disp_drv;            /*Descriptor of a display driver*/
@@ -359,14 +358,14 @@ int  main(int arg, char *argv[])
                 break;
             }
             if(msg.type == P2P_S) {
-            IPC_MSG ack_msg = {
-                .src = -1,
-                .dst = msg.src,
-                .type = ACK,
-                .data = {ack_data}
-            };
-            send(&ack_msg);
-        }
+                IPC_MSG ack_msg = {
+                    .src = -1,
+                    .dst = msg.src,
+                    .type = ACK,
+                    .data = {ack_data}
+                };
+                send(&ack_msg);
+            }
         }
 
         lv_task_handler();
