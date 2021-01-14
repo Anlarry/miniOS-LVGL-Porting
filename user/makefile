@@ -7,13 +7,13 @@
 #INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 #	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin \
 #	client.bin  demo.bin
-INIT =  client.bin gui_service.bin
+INIT = gui_service.bin client.bin 
 # INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 # 	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin \
 # 	client.bin  
 
 	# BigElf.bin
-INIT = demo.bin 
+# INIT = demo.bin 
 
 
 # you can add your elf in $(BIN) latter

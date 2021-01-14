@@ -56,13 +56,15 @@ void CallBack_{id}(lv_obj_t * obj, lv_event_t event)
         .type = Signal,
         .data = {{SIG_SEND, _Handler[{id}], _Test[{id}]}}
     }}; 
-    send(&sig_test);
+    // send(&sig_test);
     
-    // switch(event) {{
-    //     case LV_EVENT_CLICKED : 
-    //         send(&sig_test);
-    //         break;
-    // }}
+    switch(event) {{
+        case LV_EVENT_CLICKED : 
+            send(&sig_test);    
+            break;
+        case LV_EVENT_VALUE_CHANGED: 
+            break;
+    }}
 }}
 
 '''

@@ -54,20 +54,28 @@ void Broadcast() {
 }
 
 // uint32_t _Handler_t, _Test_t;
+// lv_obj_t *_text;
 // void CallBack(lv_obj_t * obj, lv_event_t event){
-//     IPC_MSG sig_test ;
-//     memset(sig_test.data, 0, sizeof(sig_test.data));
-//     sig_test.dst = 2;
-//     sig_test.type = Signal;
-//     sig_test.data[0] = SIG_SEND; 
-//     sig_test.data[1] = _Handler_t;
-//     sig_test.data[2] = _Test_t;
-//     send(&sig_test);
-//     switch(event) {
-//         case LV_EVENT_CLICKED : 
-
-//             break;
+//     if(event == LV_EVENT_CLICKED) {
+        // printf("Clicked\n");
+//         lv_textarea_add_char(_text, '%');
 //     }
+//     else if(event == LV_EVENT_VALUE_CHANGED) {
+        // printf("Toggled\n");
+//     }
+    // IPC_MSG sig_test ;
+    // memset(sig_test.data, 0, sizeof(sig_test.data));
+    // sig_test.dst = 2;
+    // sig_test.type = Signal;
+    // sig_test.data[0] = SIG_SEND; 
+    // sig_test.data[1] = _Handler_t;
+    // sig_test.data[2] = _Test_t;
+    // send(&sig_test);
+    // switch(event) {
+    //     case LV_EVENT_CLICKED : 
+
+    //         break;
+    // }
 // }
 
 static void test_button()
@@ -157,7 +165,6 @@ static void test_button()
 
 static void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p)
 {
-    // printf("()");
     struct ROI roi = {
         .x1 = area->x1,
         .x2 = area->x2,
@@ -254,6 +261,7 @@ int  main(int arg, char *argv[])
 
     lv_obj_t * ta1;
     ta1 = lv_textarea_create(lv_scr_act(), NULL);
+    // _text = ta1;
     lv_obj_set_size(ta1, 200, 100);
     lv_obj_align(ta1, NULL, LV_ALIGN_CENTER, 0, 0);
     lv_textarea_set_text(ta1, "A text in a Text Area");    /*Set an initial text*/
@@ -349,6 +357,7 @@ int  main(int arg, char *argv[])
                     _Test[_call_back_num] = msg.data[3];
                     _dst[_call_back_num] = msg.src;
                     lv_obj_set_event_cb(msg.data[1], CallBackTable[_call_back_num]);
+                    // lv_obj_set_event_cb(msg.data[1], CallBack);
                     _call_back_num++;
                 }
                 // lv_obj_set_event_cb(msg.data[1], CallBack);
