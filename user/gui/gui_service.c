@@ -195,7 +195,6 @@ int  main(int arg, char *argv[])
     InitLvFontMontserrat_14();
     lv_init();
 
-
     static lv_disp_buf_t disp_buf;
     lv_disp_buf_init(&disp_buf, buf, buf_, LV_HOR_RES_MAX * LV_VER_RES_MAX /10);
 
