@@ -165,7 +165,7 @@ static void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t
         .y2 = area->y2,
         .color = (Color *)color_p};
     GraphFlush(&roi);
-    
+
     lv_disp_flush_ready(disp); /* Indicate you are ready with the flushing*/
 }
 
@@ -253,11 +253,11 @@ int  main(int arg, char *argv[])
     lv_obj_set_x(btn2, 20);
     lv_obj_set_y(btn2, 70);
 
-//    lv_obj_t * ta1;
-//    ta1 = lv_textarea_create(lv_scr_act(), NULL);
-//    lv_obj_set_size(ta1, 200, 100);
-//    lv_obj_align(ta1, NULL, LV_ALIGN_CENTER, 0, 0);
-//    lv_textarea_set_text(ta1, "A text in a Text Area");    /*Set an initial text*/
+    lv_obj_t * ta1;
+    ta1 = lv_textarea_create(lv_scr_act(), NULL);
+    lv_obj_set_size(ta1, 200, 100);
+    lv_obj_align(ta1, NULL, LV_ALIGN_CENTER, 0, 0);
+    lv_textarea_set_text(ta1, "A text in a Text Area");    /*Set an initial text*/
 
     char buf_X[10];
     char buf_Y[10];
@@ -313,8 +313,8 @@ int  main(int arg, char *argv[])
 
 
                 left_pressed = usr_data->data[0];
-//                if(left_pressed)
-//                    lv_textarea_add_char(ta1, '*');
+                if(left_pressed)
+                    lv_textarea_add_char(ta1, '*');
                 int pos = 0;
                 itoa(buf_X, usr_data->data[2]);
                 itoa(buf_Y, usr_data->data[3]);

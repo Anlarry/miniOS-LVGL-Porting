@@ -29,10 +29,14 @@ void Test() {
         .type = P2P_A,
         .data = {0}
     };
+    static int i=0;
+    static int j=0;
+    i++;
+    j++;
     GUI *gui_data = msg.data;
     gui_data->type = Button;
-    gui_data->data[0] = 250;
-    gui_data->data[1] = 250;
+    gui_data->data[0] = 250+i*10;
+    gui_data->data[1] = 250+j*10;
     send(&msg);
 
     return ;
