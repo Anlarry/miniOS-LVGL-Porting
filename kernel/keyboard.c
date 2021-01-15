@@ -130,7 +130,11 @@ void mouse_handler(int irq){
 					.src = 1,
 					.dst = 4,
 					.type = P2P_A,
-					.data = {Mouse, p_tty->mouse_left_button, p_tty->mouse_mid_button, p_tty->mouse_X/100, p_tty->mouse_Y/100}
+					.data = {Mouse,
+                          p_tty->mouse_left_button,
+                          p_tty->mouse_mid_button,
+                          p_tty->mouse_X/100,
+                          p_tty->mouse_Y/100}
 				};
 				sys_send(&msg);
 			}

@@ -22,6 +22,7 @@ void CallBack_0(lv_obj_t * obj, lv_event_t event)
         .type = Signal,
         .data = {SIG_SEND, _Handler[0], _Test[0]}
     }; 
+    // send(&sig_test);
     
     switch(event) {
         case LV_EVENT_CLICKED : 
@@ -616,7 +617,6 @@ void CallBack_29(lv_obj_t * obj, lv_event_t event)
 
 void* CallBackTable[] = {
 
-CallBack_0,
 CallBack_0,
 CallBack_1,
 CallBack_2,

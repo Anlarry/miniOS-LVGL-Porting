@@ -7,7 +7,7 @@
 #INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 #	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin \
 #	client.bin  demo.bin
-INIT =  client.bin  demo.bin
+INIT =  client.bin  demo.bin gui_service.bin
  #gui_service.bin
 # INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 # 	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin gui_service.bin \
