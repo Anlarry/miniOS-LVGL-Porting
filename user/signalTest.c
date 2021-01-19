@@ -1,8 +1,8 @@
 #include "stdio.h"
 #include <signal/signal.h>
 
-void handler() {
-    printf("hanlder");
+void handler(int sig, uint32_t arg) {
+    printf("hanlder %d %d", sig, arg);
     for(int i = 0; i < 100; i++) {
         ;
     }
@@ -17,10 +17,10 @@ void main(int arg,char *argv[]) {
     }
     if(fork_res == 0) {
         int tmp = get_pid();
-        
+        int tick = 0;
         while(1) {
             for(int i = 0; i < 5000000; i++) ;
-            while(kill(pid, sig) < 0) {
+            while(kill(pid, sig, tick++) < 0) {
                 ;
             }
         }

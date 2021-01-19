@@ -486,7 +486,7 @@ lib/ulib.a(vsprintf.o)        lib/ulib.a(printf.o) (vsprintf)
                 0x0000000000000000        0x4 kernel/signal/signal.o
  .text.__x86.get_pc_thunk.bx
                 0x0000000000000000        0x4 kernel/signal/signal.o
- .debug_info    0x0000000000000000      0x860 kernel/signal/signal.o
+ .debug_info    0x0000000000000000      0x86d kernel/signal/signal.o
  .debug_abbrev  0x0000000000000000      0x1e6 kernel/signal/signal.o
  .debug_aranges
                 0x0000000000000000       0x20 kernel/signal/signal.o
