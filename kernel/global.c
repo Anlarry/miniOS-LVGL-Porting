@@ -24,6 +24,7 @@
 #include "fat32.h"	//added by mingxuan 2019-5-17
 #include "vfs.h"	//added by mingxuan 2019-5-17
 
+#include "./signal/ksignal.h"
 /* save the execution environment of each cpu, which doesn't belong to any process.
  * added by xw, 18/6/1
  */
@@ -70,7 +71,11 @@ PUBLIC	system_call		sys_call_table[NR_SYS_CALL] = {	sys_get_ticks, 									//1s
 														sys_delete,			//added by mingxuan 2019-5-17
 														sys_opendir,		//added by mingxuan 2019-5-17
 														sys_createdir,		//added by mingxuan 2019-5-17
-														sys_deletedir		//added by mingxuan 2019-5-17
+														sys_deletedir,		//added by mingxuan 2019-5-17
+
+														sys_signal,
+														sys_sigsend,
+														sys_sigreturn
 														};
 
 PUBLIC TTY tty_table[NR_CONSOLES];			//added by mingxuan 2019-5-19

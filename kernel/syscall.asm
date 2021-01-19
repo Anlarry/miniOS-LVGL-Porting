@@ -37,6 +37,9 @@ _NR_delete 			equ 24 ;    //added by mingxuan 2019-5-17
 _NR_opendir 		equ 25 ;    //added by mingxuan 2019-5-17
 _NR_createdir  		equ 26 ;    //added by mingxuan 2019-5-17
 _NR_deletedir   	equ 27 ;    //added by mingxuan 2019-5-17
+_NR_signal			equ _NR_deletedir+1
+_NR_sigsend			equ _NR_signal+1
+_NR_sigreturn		equ _NR_sigsend+1
 
 INT_VECTOR_SYS_CALL equ 0x90
 
@@ -71,6 +74,10 @@ global	delete		;		//added by mingxuan 2019-5-17
 global  opendir		;		//added by mingxuan 2019-5-17
 global	createdir	;		//added by mingxuan 2019-5-17
 global  deletedir	;		//added by mingxuan 2019-5-17
+
+global signal
+global sigsend	
+global sigreturn
 
 bits 32
 [section .text]
@@ -344,3 +351,22 @@ deletedir:
 	int INT_VECTOR_SYS_CALL
 	add esp, 4
 	ret
+
+; ===================================================================================
+
+%macro	SYS_CALL 1
+	push ebx
+	mov ebx, esp
+	mov	eax, %1
+	int	INT_VECTOR_SYS_CALL
+	pop ebx
+	ret 
+%endmacro
+
+signal:
+	SYS_CALL _NR_signal
+sigsend :
+	SYS_CALL _NR_sigsend
+
+sigreturn :
+	SYS_CALL _NR_sigreturn

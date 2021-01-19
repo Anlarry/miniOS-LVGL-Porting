@@ -76,7 +76,10 @@ OBJS		= kernel/kernel.o kernel/syscall.o kernel/start.o kernel/main.o kernel/clo
 			kernel/elf.o kernel/file.o kernel/exec.o kernel/fork.o kernel/pthread.o \
 			kernel/ktest.o kernel/testfunc.o kernel/fs.o kernel/hd.o \
 			kernel/spinlock.o kernel/fat32.o kernel/base.o kernel/assist.o kernel/vfs.o \
-			kernel/keyboard.o kernel/tty.o kernel/shell.o kernel/console.o lib/ulib.a #added by mingxuan 2019-5-19
+			kernel/keyboard.o kernel/tty.o kernel/shell.o kernel/console.o lib/ulib.a \
+			kernel/signal/signal.o
+			#added by mingxuan 2019-5-19
+
 OBJSINIT	= init/init.o init/initstart.o lib/ulib.a
 #OBJSULIB 	= lib/string.o kernel/syscall.o	#deleted by mingxuan 2019-5-19
 OBJSULIB 	= lib/string.o kernel/syscall.o lib/printf.o lib/vsprintf.o lib/scanf.o #added by mingxuan 2019-5-19
@@ -461,3 +464,8 @@ include ./init/makefile	 #added by mingxuan 2019-5-19
 
 bochsgdb :
 	bochs-gdb -f bochsrc-gdb
+
+# -------------------------------------------------------------------------------
+
+%.c : %.o 
+	$(CC) $(CFLAGS) -o $@ $<

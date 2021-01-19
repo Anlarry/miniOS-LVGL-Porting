@@ -52,6 +52,8 @@
 #define NR_CPUS		1		//numbers of cpu. added by xw, 18/6/1
 #define	NR_FILES	64		//numbers of files a process can own. added by xw, 18/6/14
 
+#define NR_SIGNALS  32		// number of signals
+
 //enum proc_stat	{IDLE,READY,WAITING,RUNNING};		//add by visual smile 2016.4.5
 //enum proc_stat	{IDLE,READY,SLEEPING};		//eliminate RUNNING state
 enum proc_stat	{IDLE,READY,SLEEPING,KILLED};	/* add KILLED state. when a process's state is KILLED, the process
@@ -145,7 +147,7 @@ typedef struct s_proc {
     int priority;
 
 	u32 pid;                   /* process id passed in from MM */
-	char p_name[16];           /* name of the process */
+	char p_name[32];           /* name of the process */
 	
 	enum proc_stat stat;			//add by visual 2016.4.5
 	
@@ -154,6 +156,7 @@ typedef struct s_proc {
 	//added by zcr
 	struct file_desc * filp[NR_FILES];
 	//~zcr
+	void* sig_handler[NR_SIGNALS];
 }PROCESS_0;
 
 //new PROCESS struct with PCB and process's kernel stack
