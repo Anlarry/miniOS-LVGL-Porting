@@ -1,11 +1,11 @@
 # INIT = init.bin
 INIT = shell_0.bin shell_1.bin shell_2.bin execTest.bin pthread.bin \
 	forkTest.bin yieldTest.bin sleepTest.bin Hello.bin \
-	signalTest.bin
+	signalTest_1.bin signalTest_2.bin
 
 # you can add your elf in $(BIN) latter
 BIN = $(INIT)
-GDB_BIN = shell_0.gdb.bin signalTest.gdb.bin
+GDB_BIN = shell_0.gdb.bin signalTest_1.gdb.bin signalTest_2.gdb.bin
 TAR_NAME = app.tar
 HD = ../b.img
 
@@ -142,11 +142,15 @@ Hello.bin : Hello.o $(START_O) $(OBJSULIB)
 
 # --------------------------------------------------------------------
 
-signalTest.bin : signalTest.o signal/signal.o $(START_O) $(OBJSULIB)
+signalTest_1.bin : signalTest_1.o signal/signal.o $(START_O) $(OBJSULIB)
 
-signalTest.gdb.bin : signalTest.o signal/signal.o $(START_O) $(OBJSULIB)
+signalTest_2.bin : signalTest_2.o signal/signal.o $(START_O) $(OBJSULIB)
+
+signalTest_1.gdb.bin : signalTest_1.o signal/signal.o $(START_O) $(OBJSULIB)
 	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
+signalTest_2.gdb.bin : signalTest_2.o signal/signal.o $(START_O) $(OBJSULIB)
+	$(LD) $(LDFLAGS_DEBUG) -o $@ $^
 
 %.o : %.c
 	$(CC) $(CFLAGS) -o $@ $<

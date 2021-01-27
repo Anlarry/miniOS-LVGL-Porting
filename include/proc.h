@@ -157,6 +157,9 @@ typedef struct s_proc {
 	struct file_desc * filp[NR_FILES];
 	//~zcr
 	void* sig_handler[NR_SIGNALS];
+	u32 sig_set;
+	u32 sig_arg[NR_SIGNALS];
+	void* _Hanlder;
 }PROCESS_0;
 
 //new PROCESS struct with PCB and process's kernel stack

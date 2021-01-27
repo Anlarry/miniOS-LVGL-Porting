@@ -21,7 +21,7 @@ int kill(int pid, int sig, ...) {
     Sigaction sigaction = {
         .sig = sig,
         .handler = NULL,
-        ._Handler = HANDLER,
+        
         .arg = *((uint32_t*)ap)
     };
     // if((arg = va_arg(ap, int)) != -1) {
@@ -29,4 +29,8 @@ int kill(int pid, int sig, ...) {
     //     sigaction.arg = arg;
     // }
     return sigsend(pid, &sigaction);
+}
+
+int signal(int sig, void* handler) {
+    return __signal(sig, handler, HANDLER);
 }

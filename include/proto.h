@@ -100,9 +100,6 @@ PUBLIC void sleep(int n);			//added by xw, 18/4/19
 PUBLIC void print_E();
 PUBLIC void print_F();
 
-int signal(int sig, void* handler);
-int sigsend(int pid, Sigaction *sigaction);
-
 /* syscallc.c */		//edit by visual 2016.4.6
 PUBLIC int   sys_get_ticks();           /* sys_call */
 PUBLIC int   sys_get_pid();				//add by visual 2016.4.6

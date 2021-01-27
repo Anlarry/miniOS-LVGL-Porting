@@ -7,7 +7,6 @@
 typedef struct Sigaction {
     int sig;
     void *handler;
-    void *_Handler;
 
     uint32_t arg;
 }Sigaction;
@@ -15,6 +14,8 @@ typedef struct Sigaction {
 void Handler(Sigaction sigaction);
 
 int kill(int pid, int sig, ...);
+
+int signal(int sig, void* handler);
 
 #define HANDLER Handler
 

@@ -11,7 +11,7 @@ lib/ulib.a(syscall.o)         init/init.o (malloc)
  .debug_aranges
                 0x0000000000000000       0x20 init/init.o
  .debug_line    0x0000000000000000      0x14e init/init.o
- .debug_str     0x0000000000000000      0x160 init/init.o
+ .debug_str     0x0000000000000000      0x15a init/init.o
  .note.GNU-stack
                 0x0000000000000000        0x0 init/init.o
  .debug_aranges
@@ -174,7 +174,7 @@ LOAD lib/ulib.a
                 0x0000000008049653                opendir
                 0x0000000008049662                createdir
                 0x0000000008049671                deletedir
-                0x0000000008049680                signal
+                0x0000000008049680                __signal
                 0x000000000804968c                sigsend
                 0x0000000008049698                sigreturn
  *(.gnu.warning)

@@ -75,7 +75,7 @@ global  opendir		;		//added by mingxuan 2019-5-17
 global	createdir	;		//added by mingxuan 2019-5-17
 global  deletedir	;		//added by mingxuan 2019-5-17
 
-global signal
+global __signal
 global sigsend	
 global sigreturn
 
@@ -363,7 +363,7 @@ deletedir:
 	ret 
 %endmacro
 
-signal:
+__signal:
 	SYS_CALL _NR_signal
 sigsend :
 	SYS_CALL _NR_sigsend

@@ -1,0 +1,3 @@
+[submodule "LatexTemplate"]
+	path = LatexTemplate
+	url = ./LatexTemplate

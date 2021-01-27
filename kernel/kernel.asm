@@ -22,6 +22,7 @@ extern	divide_error_handler	;added by xw, 18/12/22
 extern	disp_int
 extern  schedule
 extern  switch_pde
+extern 	process_signal
 
 ; 导入全局变量
 extern	gdt_ptr
@@ -670,7 +671,6 @@ sched:
 ;renew process executing environment. Added by xw, 18/4/19
 renew_env:
 		call	switch_pde		;to change the global variable cr3_ready
-		mov eax, cr3
 		mov 	eax,[cr3_ready]	;to switch the page directory table
 		mov 	cr3,eax
 
@@ -678,6 +678,9 @@ renew_env:
 		lldt	[eax + P_LDT_SEL]				;load LDT
 		lea		ebx, [eax + INIT_STACK_SIZE]
 		mov		dword [tss + TSS3_S_SP0], ebx	;renew esp0
+
+		call 	process_signal
+
 		ret
 
 ; ====================================================================================
