@@ -20,12 +20,13 @@ void main(int arg,char *argv[]) {
         int tick = 0;
         while(1) {
             for(int i = 0; i < 5000000; i++) ;
-            while(kill(pid, sig, tick++) < 0) {
-                ;
+            if(kill(pid, sig, tick++) < 0) {
+                printf("not register");
             }
         }
     }
     else {
+        for(int i = 0; i < 10000000; i++) ;
         signal(sig, handler);
         
         while(1) {

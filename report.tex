@@ -1,0 +1,428 @@
+\documentclass[UTF8]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\input{structure.tex}
+
+\definecolor{Warning}{RGB}{255, 119, 0}
+\definecolor{About\ Sigaction}{RGB}{0, 255, 204}
+\definecolor{thinkcolor}{RGB}{227,196,144}
+
+% \titleformat{\paragraph}
+% {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+% \titlespacing*{\paragraph}
+% {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\begin{document}
+
+% \newtcolorbox{mybox}[2][]
+% {
+%     enhanced,,sharp corners,
+%     title=#2,
+%     coltitle=black,
+%     colback = #2, 
+%     colframe = #2, 
+%     colbacktitle = #2!95!black, 
+%     fonttitle = \bfseries,
+%     boxed title style={
+%         skin=enhancedfirst jigsaw,
+%         size=small,
+%         arc=5mm,
+%         bottom=0mm,
+%         left=5mm,
+%         right=18mm,
+%         top=1mm},
+%     attach boxed title to top left={yshift=-0mm}
+% }
+\newtcolorbox{mybox}[2][]
+{
+    tile,title=#2,colback=#2!10,colbacktitle=#2!75!black
+}
+
+% -------------------------------
+
+\bibliographystyle{plain}
+
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\bibname}{reference}
+
+\renewcommand{\today}{\number\year-\number\month-\number\day}
+
+\title{{\vspace{-50pt}\Huge Signal介绍及实现方法 \linebreak\linebreak}}
+%please write your name, Student #, and Class # in Authors, student ID, and class # respectively
+\author{}
+
+\date{\vspace{-50pt}\today}
+
+\maketitle
+
+\setcounter{secnumdepth}{4}
+\tableofcontents
+
+\section{signal介绍}
+
+信号（signal），基本思想是软件模拟硬件中断。信号，为 Linux 提供了一种处理异步事件的方法，比如终端用户输入了ctrl+c产生SIGINT来中断程序。
+
+\section{signal的使用}
+
+使用kill向某个进程发送信号，出现软中断，类似于硬件中断，该进程执行相应的处理函数（这里将其称为handler），完成后返回被中断的地方。下面是signalTest\_1.c中的代码
+
+\begin{minted}[linenos,mathescape,baselinestretch=1]{cpp}
+void handler(int sig, uint32_t arg) {
+    printf("hanlder %d %d", sig, arg);
+    for(int i = 0; i < 100; i++) {
+        ;
+    }
+}
+
+void main(int arg,char *argv[]) {
+    int pid = get_pid();
+    int sig = 0;
+    int fork_res = fork();
+    if(fork_res < 0) {
+        printf("fork error\n");
+    }
+    if(fork_res == 0) {
+        int tmp = get_pid();
+        int tick = 0;
+        while(1) {
+            for(int i = 0; i < 5000000; i++) ;
+            if(kill(pid, sig, tick++) < 0) {
+                printf("not register");
+            }
+        }
+    }
+    else {
+        for(int i = 0; i < 10000000; i++) ;
+        signal(sig, handler);
+        
+        while(1) {
+            for(int i = 0; i < 1000000; i++) ;
+            printf(". ");
+        }
+    }
+}
+\end{minted}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{fig1.png}
+    \caption{signalTest}
+    \label{fig:signalTest}
+\end{figure}
+
+
+在这个例子中，fork一个子进程，子进程调用kill不断向父进程发送0号信号，父进程调用signal注册hanlder，\autoref{fig:signalTest}。
+
+
+\begin{mybox}{Warning}
+    下面是signal的特点，会和linux有一些差异：
+    \begin{itemize}
+        \item 没有缺省的handler，如果kill在signal函数之前调用，会返回-1
+        \item 这里的kill可以发送一个整型数据给hanlder。handler最多可以有两个参数，第一个是signo，第二个接收kill发送的整型数据。
+        \item 当出现多个相同的信号时会合并为一个信号处理，与linux相似
+        \item 这里的signal存在优先级，0号信号优先级最高
+    \end{itemize}
+\end{mybox}
+
+\section{signal实现方法}
+
+为了弄清楚signal的实现细节，首先我们需要了解signal大致流程。
+
+\subsection{signal处理过程}
+
+首先需要通过signal注册handler，通过kill可向其发送信号。我们从kill发送信号开始，并假设已经注册了handler。假设接收信号的进程为B，发送信号的进程为A。
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{fig3.jpg}
+    \caption{linux中的signal内核处理\cite{linux-signal-zhihu}}
+    \label{fig:signal_linux}
+\end{figure}
+
+A向B发送kill，陷入内核，当B再次被调到时，在B从内核返回用户态之前，处理接收到的信号，返回到handler。在handler结束后，仍需返回内核，恢复到之前被软中断打断的地方
+\cite{linux-sinal-csdn}\cite{linux-signal-meizu}。可以看到存在多次进出内核。
+
+\subsection{实现方法}
+
+\subsubsection{思路}
+
+A调用kill向B发送信号，会在B的PCB中置位，当调度到B时，为了让B进程从内核返回用户态后，执行handler，这个过程和系统调用密切相关，因此我们先分析系统调用内核栈的变化\autoref{fig:sys_stack}。
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width = 0.3\textwidth]{fig4.png}
+    \caption{系统调用内核栈变化}
+    \label{fig:sys_stack}
+\end{figure}
+
+发生系统调用时，CPU根据当前TSS中的ss0、esp0，向栈中压入eip、esp、eflag等\textbf{6}个数据\cite{mit}。当iret返回时，从此恢复。
+也就是说我们需要修改这里的eip让其指向handler，让esp指向handler的上下文。
+
+因为修改了内核栈的寄存器，handler处理结束后还需要返回到之前被中断的地方，因此需要保存原来内核中的堆栈，当handler结束后返回内核进行恢复\autoref{fig:stack_change}。
+
+\begin{figure}[ht]
+    \centering
+    \subfigure[]{
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[width=0.67\textwidth]{fig5.png}
+        \end{minipage}
+    }
+    \subfigure[]{
+        \begin{minipage}{0.4\linewidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{fig6.png}
+        \end{minipage}
+    }
+    \caption{(a)为正常进入内核的堆栈，从esp\_save\_syscall指向的位置到ss0:esp0是我们需要保存的，(b)将原内核中的上下文保存到用户栈，并修改eip和esp。
+    see more in \cite{minix-cnblog}
+    }
+    \label{fig:stack_change}
+\end{figure}
+
+现在的问题变成了，如何实现handler返回后回到内核进行恢复。这里的方法是用\textbf{Handler}包装handler，让其调用\mintinline{cpp}{sigreturn}陷入内核。
+
+\subsubsection{细节}
+
+\begin{minted}[linenos,mathescape,baselinestretch=1]{cpp}
+/*
+ * before B back to user space, call this to process signal,
+ * construct Handler context and change esp、eip
+ */
+void process_signal() {
+    /* speed up */
+    if(!p_proc_current->task.sig_set) {
+        return ;
+    }
+
+    int sig = -1, arg;
+    for(int i = 0; i < 32; i++) {
+        if(p_proc_current->task.sig_set & (1 << i) 
+            && p_proc_current->task.sig_handler[i] /* for stable */) 
+        {
+            p_proc_current->task.sig_set ^= (1 << i);
+            sig = i, arg = p_proc_current->task.sig_arg[i];
+            break;
+        }
+    }
+    if(sig == -1) {
+        return ;
+    }
+
+    STACK_FRAME regs;
+    PROCESS* proc = p_proc_current;
+    memcpy(&regs, &proc->task.regs, sizeof(STACK_FRAME));
+    Sigaction sigaction = {
+        .sig = sig,
+        .handler = proc->task.sig_handler[sig],
+        .arg = proc->task.sig_arg[sig]
+    };
+
+    disable_int();
+
+    uint16_t B_ss = regs.ss & 0xfffc;
+    uint16_t A_es ;
+    
+    /* change es to B_ss */
+    __asm__  (
+        "mov %%es, %%ax\n"
+        "mov %%ebx, %%es\n"
+        : "=a"(A_es)
+        : "b"(B_ss)
+        :
+    );
+    
+    /* save context */
+    int start = *(uint32_t*)(proc->task.esp_save_syscall + 16*4) - sizeof(regs);
+    for(uint32_t* p = start, *sf = proc->task.esp_save_syscall, i=0; i<sizeof(regs) / sizeof(uint32_t) ; i++,p++, sf++) {
+        __asm__ ( 
+            "mov %%eax, %%es:(%%edi)"
+            : 
+            : "a"(*sf), "D"(p)
+            :
+        );
+    }
+
+    /* push para */
+    start -= sizeof(Sigaction);
+    for(uint32_t* p = start, *sf = &sigaction, i = 0; i < sizeof(Sigaction) / sizeof(uint32_t) ;i++, p++, sf++) {
+        __asm__ (
+            "mov %%eax, %%es:(%%edi)"
+            :
+            : "a"(*sf), "D"(p)
+            :
+        );
+    }
+
+    /* Handler return address */
+    start -= sizeof(uint32_t);
+
+    /* switch to Handler */
+    uint32_t *context_p = proc->task.esp_save_syscall;
+    *(context_p + 13) =  proc->task._Hanlder; /* eip */
+    *(context_p + 16) = start; /* esp */
+
+    /*  reverse  */
+    __asm__ __volatile__ (
+        "mov %0, %%es\n"
+        : 
+        : "r"(A_es)
+        :
+    );
+    enable_int();
+}
+
+\end{minted}
+
+在上面的函数中，处理用户堆栈分为：保存原kernel stack中的寄存器值、构造包装函数\textbf{Handler}的参数等。对kernel栈中的变化为：修改eip、esp。
+在kernel.asm中可看到在返回用户栈之前调用该函数。
+
+B返回用户态后执行包装函数，调用handler。
+
+\begin{minted}[linenos,mathescape,baselinestretch=1]{cpp}
+/* In the use of signal mechanism, the existence of Handler will not be felt  */
+void Handler(Sigaction sigaction) {
+    void (*_fun)(int, int);
+    _fun = (void (*)(int, int))sigaction.handler;
+    _fun(sigaction.sig, sigaction.arg);
+    int ebp;
+    __asm__ __volatile__ (
+        "mov %%ebp, %0"
+        : "=r"(ebp)
+        : 
+        :
+    );
+    sigreturn(ebp); /* trap into kernel*/
+}
+\end{minted}
+
+\begin{mybox}{About\ Sigaction}
+    这里的Sigaction是关于signal的信息一个结构体。与其他操作系统定义并不完全相同。
+    \begin{minted}[mathescape,baselinestretch=1]{cpp}
+    typedef struct Sigaction {
+        int sig; /* 信号 */
+        void *handler; /* handler函数指针 */
+        uint32_t arg; /* 传给handler的参数 */
+    }Sigaction;
+    \end{minted}
+
+\end{mybox}
+
+\begin{minted}[linenos,mathescape,baselinestretch=1]{cpp}
+void do_sigreturn(int ebp)
+{
+    STACK_FRAME regs;
+
+    // copy saved regs from stack to  this regs
+    // to some operation to compute true address
+    int esp_syscall = p_proc_current->task.esp_save_syscall;
+    int last_esp = ebp + sizeof(Sigaction) + 8;    //int save esp
+
+    uint16_t user_ss = p_proc_current->task.regs.ss;
+    uint16_t kernel_es ;
+
+    /* change es to B_ss */
+    __asm__  (
+        "mov %%es, %%ax\n"
+        "mov %%ebx, %%es\n"
+        : "=a"(kernel_es)
+        : "b"(user_ss)
+        :
+    );
+
+    for(uint32_t* p = &regs, *q = last_esp, i = 0; i < sizeof(regs) / sizeof(uint32_t);i++, p++, q++)
+    {
+        __asm__ (
+        "mov %%eax, %%es:(%%edi)"
+        :
+        : "a"(*q), "D"(p)
+        :
+        );
+    }
+
+    __asm__ (
+        "mov %%eax, %%es\n"
+        :
+        : "a"(kernel_es)
+    );
+    memcpy(esp_syscall, &regs, sizeof(STACK_FRAME));
+}
+
+\end{minted}
+
+\mintinline{cpp}{sigreturn}中通过传入的Handler的ebp确定原kernel栈的寄存器保存位置，并恢复kernel栈中保存的寄存器。重新返回用户态后，整个信号过程就好像没发生过一样。
+
+\subsection{多个信号的处理}
+
+当存在多个信号时，一次处理一个信号。比如存在0号和5号信号，当0号信号处理结束后，sigreturn陷入内核、恢复山下文，在返回用户态之前的，process\_signal发现还有5号信号，再构造堆栈，返回用户态后执行5号信号的handler，sigreturn再次返回内核...。
+
+\section{系统调用}
+
+主要提供了三个用户接口，都对应一个系统调用。
+
+\paragraph{signal} 注册处理函数，并且将该进程对应的Handler函数指针告诉内核。
+
+\begin{minted}[linenos,mathescape,baselinestretch=1]{cpp}
+/* user space*/
+int signal(int sig, void* handler) {
+    return __signal(sig, handler, HANDLER /* Handler */); /* syscall */
+}
+// -----------------------------------------------------
+/* kernel space */
+int do_signal(int sig, void *handler, void* _Handler) {
+    if((uint32_t)sig >= NR_SIGNALS) {
+        return -1;
+    }
+    p_proc_current->task.sig_handler[sig] = handler;
+    p_proc_current->task._Hanlder = _Handler;
+    return 0;
+}
+\end{minted}
+
+
+\paragraph{kill} 向一个进程发送信号。在对应PCB中的sig\_set，相应位置位。并对相应的handler检查是否为空.
+
+\begin{minted}[linenos,mathescape,baselinestretch=1]{cpp}
+/* user space*/
+int kill(int pid, int sig, ...) {
+    va_list ap = (va_list)((char*)(&sig) + 4);
+    Sigaction sigaction = {
+        .sig = sig,
+        .handler = NULL,
+        
+        .arg = *((uint32_t*)ap)
+    };
+    return sigsend(pid, &sigaction); /* syscall */
+}
+// -----------------------------------------------------
+/* kernel space */
+int do_sigsend(int pid, Sigaction* sigaction_p)
+{
+    PROCESS* proc = &proc_table[pid];
+    if(proc->task.sig_handler[sigaction_p->sig] == NULL ||
+        (proc->task.sig_set & (1 << sigaction_p->sig))) 
+    {
+        return -1;
+    }
+    proc->task.sig_set |= (1 << sigaction_p->sig);
+    proc->task.sig_arg[sigaction_p->sig] = sigaction_p->arg;
+
+    return 0;
+}
+\end{minted}
+
+\begin{mybox}{Warning}
+    在kill中并不判断是否传递了第三个参数，当没有传递第三个参数，sigaction中的arg可能会是一个较随机的值。
+    因此如果handler需要使用第二个参数时，kill需要传递第三个参数。
+\end{mybox}
+
+\paragraph{sigreturn} 从signal handler恢复到原来执行的位置。\textbf{用户不应该直接调用这个系统调用}。
+
+
+
+\bibliography{ref}
+
+\end{document}
